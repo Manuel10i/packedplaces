@@ -1,26 +1,44 @@
 {
-  "name": "busymap-init",
+  "name": "busymap",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit push",
+    "db:seed": "tsx --tsconfig tsconfig.scripts.json src/lib/db/seed.ts",
+    "db:ingest-holidays": "tsx --tsconfig tsconfig.scripts.json scripts/ingest-holidays.ts",
+    "db:precompute": "tsx --tsconfig tsconfig.scripts.json scripts/precompute-heatmap.ts",
+    "db:setup": "npm run db:migrate && npm run db:seed && npm run db:ingest-holidays && npm run db:precompute"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "maplibre-gl": "^5.19.0",
     "next": "16.1.6",
+    "pg": "^8.19.0",
+    "rc-slider": "^11.1.9",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-map-gl": "^8.1.0",
+    "swr": "^2.4.1",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.18.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.9",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
