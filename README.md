@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Packed Places
+
+Visualize tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.
+
+**Live:** [packedplaces.com](https://packedplaces.com) | [map.packedplaces.com](https://map.packedplaces.com)
+
+## Key Stats
+
+- **127** source regions across **75** countries
+- **230+** destinations across 67 countries
+- **2,100+** travel patterns connecting regions to destinations
+- **3** holiday data providers (manual, OpenHolidaysAPI, date-holidays)
+
+## Tech Stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · MapLibre GL · PostgreSQL + PostGIS · Drizzle ORM
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- Docker
+
+### Setup
 
 ```bash
+# Start PostgreSQL
+docker compose up -d
+
+# Install dependencies
+npm install
+
+# Set up database (migrate, seed, ingest holidays, precompute heatmap)
+npm run db:setup
+
+# Start dev server (with Turbopack)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) for the marketing page, or [http://localhost:3000/map](http://localhost:3000/map) for the interactive map.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documentation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Architecture](docs/ARCHITECTURE.md) — System design, database schema, API
+- [Data Sources](docs/DATA-SOURCES.md) — Where the data comes from and how it's processed
+- [Holiday Providers](docs/HOLIDAY-PROVIDERS.md) — Multi-provider holiday system
+- [Adding Regions](docs/ADDING-REGIONS.md) — Contributor guide for adding new regions
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! The easiest way to contribute is by adding new regions, destinations, and travel patterns. See the [Adding Regions](docs/ADDING-REGIONS.md) guide.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

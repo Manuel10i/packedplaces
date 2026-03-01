@@ -1,6 +1,6 @@
 # Architecture
 
-Technical system architecture for Busymap.
+Technical system architecture for Packed Places.
 
 ## Stack
 

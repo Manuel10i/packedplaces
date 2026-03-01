@@ -1,6 +1,6 @@
 # Holiday Provider System
 
-Busymap uses a multi-provider system to fetch school holiday data worldwide.
+Packed Places uses a multi-provider system to fetch school holiday data worldwide.
 
 ## Architecture
 

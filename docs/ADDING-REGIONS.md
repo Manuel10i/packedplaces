@@ -1,6 +1,6 @@
 # Adding New Regions — Contributor Guide
 
-Step-by-step guide for adding a new source region, destinations, and travel patterns to Busymap.
+Step-by-step guide for adding a new source region, destinations, and travel patterns to Packed Places.
 
 ## Prerequisites
 

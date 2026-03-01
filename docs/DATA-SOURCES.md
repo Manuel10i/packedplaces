@@ -1,6 +1,6 @@
 # Data Sources — How data is collected and used
 
-This document describes the data that powers Busymap's heatmap, including where it comes from, how it's structured, and how it's processed.
+This document describes the data that powers Packed Places's heatmap, including where it comes from, how it's structured, and how it's processed.
 
 ## Source Regions
 
@@ -86,7 +86,7 @@ Currently: **~2,100+ travel patterns**.
 
 ## School Holidays
 
-School holidays are a key driver of travel demand. Busymap uses a multi-provider system:
+School holidays are a key driver of travel demand. Packed Places uses a multi-provider system:
 
 ### Provider hierarchy (checked in order)
 1. **Manual JSON** — Hand-curated files in `src/lib/data/manual-holidays/` for countries/regions without API coverage
