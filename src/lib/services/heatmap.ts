@@ -1,4 +1,4 @@
-import { and, between, eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { startOfISOWeek, endOfISOWeek, format } from "date-fns";
 import * as schema from "../db/schema";
@@ -18,7 +18,7 @@ interface ContributingSource {
  * Southern hemisphere: Inverted — Summer weeks 44-14, Winter weeks 22-36
  * Equatorial: Always "shoulder" (all patterns match)
  */
-function getSeasonForWeek(
+export function getSeasonForWeek(
   week: number,
   hemisphere: Hemisphere = "northern",
 ): "winter" | "summer" | "shoulder" {
@@ -45,7 +45,7 @@ function getSeasonForWeek(
  * - null season = year-round, always matches
  * - shoulder season: both winter and summer patterns apply
  */
-function seasonMatches(patternSeason: string | null, weekSeason: string): boolean {
+export function seasonMatches(patternSeason: string | null, weekSeason: string): boolean {
   if (patternSeason === null) return true;
   if (weekSeason === "shoulder") return true;
   return patternSeason === weekSeason;

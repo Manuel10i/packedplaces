@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { useMapStore } from "@/store/useMapStore";
-import { startOfISOWeek, format } from "date-fns";
+import { format } from "date-fns";
 
 const MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

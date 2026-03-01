@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import type { HeatmapResponse, HolidayInfo } from "@/types";
+import type { HeatmapResponse, HolidayInfo, AllDestinationsResponse } from "@/types";
 
 async function fetcher<T>(url: string): Promise<T> {
   const res = await fetch(url, { cache: "no-store" });
@@ -31,6 +31,15 @@ export function useHeatmapData(week: number, year: number) {
     { revalidateOnFocus: false },
   );
 
+  return { data, error, isLoading };
+}
+
+export function useAllDestinations() {
+  const { data, error, isLoading } = useSWR(
+    "/api/destinations",
+    (url: string) => fetcher<AllDestinationsResponse>(url),
+    { revalidateOnFocus: false, revalidateOnReconnect: false },
+  );
   return { data, error, isLoading };
 }
 

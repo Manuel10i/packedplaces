@@ -71,3 +71,18 @@ export interface HolidayInfo {
   startDate: string;
   endDate: string;
 }
+
+export interface AllDestinationsResponse {
+  type: "FeatureCollection";
+  features: {
+    type: "Feature";
+    geometry: {
+      type: "Point";
+      coordinates: [number, number];
+    };
+    properties: {
+      destinationId: string;
+      name: string;
+    };
+  }[];
+}

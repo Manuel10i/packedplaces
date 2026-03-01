@@ -1,17 +1,34 @@
 import { create } from "zustand";
 import { getISOWeek } from "date-fns";
 
+export interface ViewportBounds {
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+}
+
+export interface ViewportCenter {
+  lat: number;
+  lng: number;
+  zoom: number;
+}
+
 interface MapState {
   selectedWeek: number;
   selectedYear: number;
   isPlaying: boolean;
   hoveredDestination: string | null;
+  viewportBounds: ViewportBounds | null;
+  viewportCenter: ViewportCenter | null;
   setSelectedWeek: (week: number) => void;
   setSelectedYear: (year: number) => void;
   togglePlaying: () => void;
   setIsPlaying: (playing: boolean) => void;
   setHoveredDestination: (id: string | null) => void;
   advanceWeek: () => void;
+  setViewportBounds: (bounds: ViewportBounds) => void;
+  setViewportCenter: (center: ViewportCenter) => void;
 }
 
 export const useMapStore = create<MapState>((set, get) => ({
@@ -19,6 +36,8 @@ export const useMapStore = create<MapState>((set, get) => ({
   selectedYear: new Date().getFullYear(),
   isPlaying: false,
   hoveredDestination: null,
+  viewportBounds: null,
+  viewportCenter: null,
   setSelectedWeek: (week) => set({ selectedWeek: week }),
   setSelectedYear: (year) => set({ selectedYear: year }),
   togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),
@@ -32,4 +51,6 @@ export const useMapStore = create<MapState>((set, get) => ({
       set({ selectedWeek: selectedWeek + 1 });
     }
   },
+  setViewportBounds: (bounds) => set({ viewportBounds: bounds }),
+  setViewportCenter: (center) => set({ viewportCenter: center }),
 }));

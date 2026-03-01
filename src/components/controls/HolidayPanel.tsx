@@ -5,6 +5,7 @@ import { useMapStore } from "@/store/useMapStore";
 import { useHolidayData } from "@/hooks/useHeatmapData";
 import { format, parseISO } from "date-fns";
 import { getCountryName, getCountryFlag } from "@/lib/data/countries";
+import { REGION_BOUNDS, boundsOverlap } from "@/lib/data/region-bounds";
 import type { WorldRegion } from "@/types";
 
 const REGION_LABELS: Record<WorldRegion, string> = {
@@ -28,9 +29,10 @@ for (const c of countries) {
 }
 
 export function HolidayPanel() {
-  const { selectedWeek, selectedYear } = useMapStore();
+  const { selectedWeek, selectedYear, viewportBounds } = useMapStore();
   const { data: holidays } = useHolidayData(selectedWeek, selectedYear);
-  const [collapsedRegions, setCollapsedRegions] = useState<Set<WorldRegion>>(new Set());
+  const [collapsedRegions, setCollapsedRegions] = useState<Set<WorldRegion>>(new Set(REGION_ORDER));
+  const [collapsedCountries, setCollapsedCountries] = useState<Set<string>>(new Set());
 
   if (!holidays || holidays.length === 0) {
     return (
@@ -74,7 +76,24 @@ export function HolidayPanel() {
     });
   };
 
-  const activeRegions = REGION_ORDER.filter((r) => byWorldRegion.has(r));
+  const toggleCountry = (countryCode: string) => {
+    setCollapsedCountries((prev) => {
+      const next = new Set(prev);
+      if (next.has(countryCode)) next.delete(countryCode);
+      else next.add(countryCode);
+      return next;
+    });
+  };
+
+  // Filter to regions visible in viewport (if viewport is set)
+  let activeRegions = REGION_ORDER.filter((r) => byWorldRegion.has(r));
+  if (viewportBounds) {
+    activeRegions = activeRegions.filter((r) => {
+      const regionBound = REGION_BOUNDS[r];
+      if (!regionBound) return true;
+      return boundsOverlap(viewportBounds, regionBound);
+    });
+  }
 
   return (
     <div className="max-h-[60vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
@@ -86,7 +105,7 @@ export function HolidayPanel() {
 
         return (
           <div key={worldRegion} className="mb-2 last:mb-0">
-            {/* Only show region header when there are multiple world regions */}
+            {/* Region header */}
             {activeRegions.length > 1 && (
               <button
                 onClick={() => toggleRegion(worldRegion)}
@@ -102,25 +121,42 @@ export function HolidayPanel() {
               </button>
             )}
             {!isCollapsed &&
-              countryCodes.map((countryCode) => (
-                <div key={countryCode} className="mb-3 last:mb-0">
-                  <div className="mb-1.5 text-xs font-semibold text-gray-500">
-                    {getCountryFlag(countryCode)} {getCountryName(countryCode)}
-                  </div>
-                  {byCountry[countryCode].map((h, i) => (
-                    <div
-                      key={`${h.regionId}-${i}`}
-                      className="mb-1 rounded-md bg-gray-50 px-2.5 py-1.5 last:mb-0"
+              countryCodes.map((countryCode) => {
+                const isCountryCollapsed = collapsedCountries.has(countryCode);
+                const countryHolidays = byCountry[countryCode];
+
+                return (
+                  <div key={countryCode} className="mb-3 last:mb-0">
+                    <button
+                      onClick={() => toggleCountry(countryCode)}
+                      className="mb-1.5 flex w-full items-center gap-1 text-xs font-semibold text-gray-500 hover:text-gray-700"
                     >
-                      <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
-                      <div className="text-xs text-gray-500">
-                        {h.holidayName} &middot;{" "}
-                        {formatRange(h.startDate, h.endDate)}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
+                      <span className="transition-transform text-[10px]" style={{ transform: isCountryCollapsed ? "rotate(-90deg)" : "rotate(0)" }}>
+                        &#9662;
+                      </span>
+                      {getCountryFlag(countryCode)} {getCountryName(countryCode)}
+                      {isCountryCollapsed && (
+                        <span className="ml-auto rounded-full bg-gray-100 px-1.5 py-0.5 text-[10px] font-normal text-gray-400">
+                          {countryHolidays.length}
+                        </span>
+                      )}
+                    </button>
+                    {!isCountryCollapsed &&
+                      countryHolidays.map((h, i) => (
+                        <div
+                          key={`${h.regionId}-${i}`}
+                          className="mb-1 rounded-md bg-gray-50 px-2.5 py-1.5 last:mb-0"
+                        >
+                          <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
+                          <div className="text-xs text-gray-500">
+                            {h.holidayName} &middot;{" "}
+                            {formatRange(h.startDate, h.endDate)}
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                );
+              })}
           </div>
         );
       })}

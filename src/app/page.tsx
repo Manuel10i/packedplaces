@@ -5,8 +5,11 @@ import { TimeSlider } from "@/components/controls/TimeSlider";
 import { YearSelector } from "@/components/controls/YearSelector";
 import { HolidayPanel } from "@/components/controls/HolidayPanel";
 import { Legend } from "@/components/controls/Legend";
+import { useUrlSync } from "@/hooks/useUrlSync";
 
 export default function Home() {
+  useUrlSync();
+
   return (
     <div className="relative h-screen w-screen">
       <MapView />
@@ -29,8 +32,8 @@ export default function Home() {
         <Legend />
       </div>
 
-      {/* Bottom: Time slider */}
-      <div className="absolute bottom-4 left-4 right-4 z-10">
+      {/* Bottom: Time slider - right-48 leaves space for MapLibre attribution */}
+      <div className="absolute bottom-4 left-4 right-48 z-10">
         <TimeSlider />
       </div>
     </div>
