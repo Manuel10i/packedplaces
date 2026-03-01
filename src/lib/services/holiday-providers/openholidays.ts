@@ -38,6 +38,8 @@ const FR_ZONES = new Set(["FR-ZA", "FR-ZB", "FR-ZC"]);
 const MACRO_COUNTRY_REGIONS = new Set([
   "SE-SOUTH", "SE-NORTH", "NO-SOUTH", "NO-NORTH",
   "FI-SOUTH", "FI-NORTH",
+  "IT-NORTH", "IT-SOUTH",
+  "ES-MADRID", "ES-CATALONIA", "ES-ANDALUSIA",
 ]);
 
 function extractName(holiday: OpenHolidayApiResponse): string {
