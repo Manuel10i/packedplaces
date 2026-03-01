@@ -6,16 +6,36 @@ import { useMapStore } from "@/store/useMapStore";
 export function useUrlSync() {
   const { selectedWeek, selectedYear, viewportCenter } = useMapStore();
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isFirstRender = useRef(true);
+  const initialized = useRef(false);
 
-  // On store change: update URL (debounced for map moves)
+  // On mount: read URL params and apply to store
   useEffect(() => {
-    // Skip the first render — URL already has the correct params
-    // (store was initialized from them)
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
+    if (initialized.current) return;
+    initialized.current = true;
+
+    const params = new URLSearchParams(window.location.search);
+
+    const week = parseInt(params.get("week") ?? "", 10);
+    if (!isNaN(week) && week >= 1 && week <= 52) {
+      useMapStore.getState().setSelectedWeek(week);
     }
+
+    const year = parseInt(params.get("year") ?? "", 10);
+    if (!isNaN(year) && year >= 2000 && year <= 2100) {
+      useMapStore.getState().setSelectedYear(year);
+    }
+
+    const lat = parseFloat(params.get("lat") ?? "");
+    const lng = parseFloat(params.get("lng") ?? "");
+    const zoom = parseFloat(params.get("zoom") ?? "");
+    if (!isNaN(lat) && !isNaN(lng) && !isNaN(zoom)) {
+      useMapStore.getState().setViewportCenter({ lat, lng, zoom });
+    }
+  }, []);
+
+  // On store change: write back to URL (debounced)
+  useEffect(() => {
+    if (!initialized.current) return;
 
     if (debounceRef.current) {
       clearTimeout(debounceRef.current);

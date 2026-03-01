@@ -1,12 +1,18 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Map, { type MapRef, type MapLayerMouseEvent } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { HeatmapLayer } from "./HeatmapLayer";
 import { DestinationTooltip } from "./DestinationTooltip";
 import { useMapStore } from "@/store/useMapStore";
 import { useHeatmapData, useAllDestinations } from "@/hooks/useHeatmapData";
+
+const INITIAL_VIEW = {
+  latitude: 20,
+  longitude: 0,
+  zoom: 2,
+};
 
 const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
@@ -15,6 +21,7 @@ export function MapView() {
   const { selectedWeek, selectedYear, setHoveredDestination, viewportCenter, setViewportBounds, setViewportCenter } = useMapStore();
   const { data } = useHeatmapData(selectedWeek, selectedYear);
   const { data: allDestinations } = useAllDestinations();
+  const hasAppliedUrlCenter = useRef(false);
   const [tooltipInfo, setTooltipInfo] = useState<{
     x: number;
     y: number;
@@ -22,6 +29,17 @@ export function MapView() {
     score: number;
     sources: { regionName: string; weight: number }[];
   } | null>(null);
+
+  // When viewportCenter is set from URL params, jump to that position
+  useEffect(() => {
+    if (hasAppliedUrlCenter.current) return;
+    if (!viewportCenter || !mapRef.current) return;
+    hasAppliedUrlCenter.current = true;
+    mapRef.current.jumpTo({
+      center: [viewportCenter.lng, viewportCenter.lat],
+      zoom: viewportCenter.zoom,
+    });
+  }, [viewportCenter]);
 
   const onMouseMove = useCallback(
     (e: MapLayerMouseEvent) => {
@@ -89,11 +107,7 @@ export function MapView() {
     <div className="absolute inset-0">
       <Map
         ref={mapRef}
-        initialViewState={{
-          latitude: viewportCenter?.lat ?? 20,
-          longitude: viewportCenter?.lng ?? 0,
-          zoom: viewportCenter?.zoom ?? 2,
-        }}
+        initialViewState={INITIAL_VIEW}
         mapStyle={MAP_STYLE}
         interactiveLayerIds={["destination-circles", "all-destinations"]}
         onMouseMove={onMouseMove}
