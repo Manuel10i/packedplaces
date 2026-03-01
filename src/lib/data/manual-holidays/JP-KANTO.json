@@ -1,0 +1,17 @@
+{
+  "2025": [
+    { "name": "Winter Break", "startDate": "2025-12-25", "endDate": "2025-01-07" },
+    { "name": "Spring Break", "startDate": "2025-03-25", "endDate": "2025-04-06" },
+    { "name": "Summer Break", "startDate": "2025-07-21", "endDate": "2025-08-31" }
+  ],
+  "2026": [
+    { "name": "Winter Break", "startDate": "2025-12-25", "endDate": "2026-01-07" },
+    { "name": "Spring Break", "startDate": "2026-03-25", "endDate": "2026-04-06" },
+    { "name": "Summer Break", "startDate": "2026-07-21", "endDate": "2026-08-31" }
+  ],
+  "2027": [
+    { "name": "Winter Break", "startDate": "2026-12-25", "endDate": "2027-01-07" },
+    { "name": "Spring Break", "startDate": "2027-03-25", "endDate": "2027-04-06" },
+    { "name": "Summer Break", "startDate": "2027-07-21", "endDate": "2027-08-31" }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "2025": [
+    { "name": "Chinese New Year", "startDate": "2025-01-25", "endDate": "2025-02-08" },
+    { "name": "Summer Holiday", "startDate": "2025-07-01", "endDate": "2025-08-31" },
+    { "name": "Golden Week", "startDate": "2025-10-01", "endDate": "2025-10-07" }
+  ],
+  "2026": [
+    { "name": "Chinese New Year", "startDate": "2026-02-14", "endDate": "2026-02-28" },
+    { "name": "Summer Holiday", "startDate": "2026-07-01", "endDate": "2026-08-31" },
+    { "name": "Golden Week", "startDate": "2026-10-01", "endDate": "2026-10-07" }
+  ],
+  "2027": [
+    { "name": "Chinese New Year", "startDate": "2027-02-03", "endDate": "2027-02-17" },
+    { "name": "Summer Holiday", "startDate": "2027-07-01", "endDate": "2027-08-31" },
+    { "name": "Golden Week", "startDate": "2027-10-01", "endDate": "2027-10-07" }
+  ]
+}

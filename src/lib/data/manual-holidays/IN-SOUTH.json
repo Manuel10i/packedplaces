@@ -1,0 +1,20 @@
+{
+  "2025": [
+    { "name": "Winter Break", "startDate": "2025-01-01", "endDate": "2025-01-15" },
+    { "name": "Summer Holiday", "startDate": "2025-05-15", "endDate": "2025-07-01" },
+    { "name": "Diwali Break", "startDate": "2025-10-17", "endDate": "2025-10-27" },
+    { "name": "Christmas Break", "startDate": "2025-12-23", "endDate": "2025-12-31" }
+  ],
+  "2026": [
+    { "name": "Winter Break", "startDate": "2026-01-01", "endDate": "2026-01-15" },
+    { "name": "Summer Holiday", "startDate": "2026-05-15", "endDate": "2026-07-01" },
+    { "name": "Diwali Break", "startDate": "2026-11-05", "endDate": "2026-11-15" },
+    { "name": "Christmas Break", "startDate": "2026-12-23", "endDate": "2026-12-31" }
+  ],
+  "2027": [
+    { "name": "Winter Break", "startDate": "2027-01-01", "endDate": "2027-01-15" },
+    { "name": "Summer Holiday", "startDate": "2027-05-15", "endDate": "2027-07-01" },
+    { "name": "Diwali Break", "startDate": "2027-10-26", "endDate": "2027-11-05" },
+    { "name": "Christmas Break", "startDate": "2027-12-23", "endDate": "2027-12-31" }
+  ]
+}
