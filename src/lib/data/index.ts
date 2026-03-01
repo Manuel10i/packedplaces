@@ -1,4 +1,4 @@
-export { sourceRegions } from "./regions";
-export { destinations } from "./destinations";
-export { travelPatterns } from "./patterns";
+export { sourceRegions } from "./regions/index";
+export { destinations } from "./destinations/index";
+export { travelPatterns } from "./patterns/index";
 export { countries, getCountry, getCountryName, getCountryFlag, getCountriesByRegion } from "./countries";
