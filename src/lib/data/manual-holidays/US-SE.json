@@ -1,0 +1,14 @@
+[
+  { "name": "Winter Break", "startDate": "2026-12-21", "endDate": "2027-01-04" },
+  { "name": "Spring Break", "startDate": "2027-03-15", "endDate": "2027-03-21" },
+  { "name": "Summer Break", "startDate": "2027-06-01", "endDate": "2027-08-15" },
+  { "name": "Thanksgiving Break", "startDate": "2026-11-23", "endDate": "2026-11-29" },
+  { "name": "Winter Break", "startDate": "2027-12-20", "endDate": "2028-01-04" },
+  { "name": "Spring Break", "startDate": "2028-03-13", "endDate": "2028-03-19" },
+  { "name": "Summer Break", "startDate": "2028-06-01", "endDate": "2028-08-15" },
+  { "name": "Thanksgiving Break", "startDate": "2027-11-22", "endDate": "2027-11-28" },
+  { "name": "Winter Break", "startDate": "2025-12-22", "endDate": "2026-01-04" },
+  { "name": "Spring Break", "startDate": "2026-03-16", "endDate": "2026-03-22" },
+  { "name": "Summer Break", "startDate": "2026-06-01", "endDate": "2026-08-15" },
+  { "name": "Thanksgiving Break", "startDate": "2028-11-20", "endDate": "2028-11-26" }
+]
