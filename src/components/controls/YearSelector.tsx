@@ -2,7 +2,8 @@
 
 import { useMapStore } from "@/store/useMapStore";
 
-const YEARS = [2025, 2026, 2027];
+const currentYear = new Date().getFullYear();
+const YEARS = [currentYear, currentYear + 1, currentYear + 2];
 
 export function YearSelector() {
   const { selectedYear, setSelectedYear } = useMapStore();

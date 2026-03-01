@@ -1,36 +1,36 @@
 "use client";
 
+import { useState } from "react";
 import { useMapStore } from "@/store/useMapStore";
 import { useHolidayData } from "@/hooks/useHeatmapData";
 import { format, parseISO } from "date-fns";
+import { getCountryName, getCountryFlag } from "@/lib/data/countries";
+import type { WorldRegion } from "@/types";
 
-const COUNTRY_NAMES: Record<string, string> = {
-  DE: "Germany",
-  AT: "Austria",
-  NL: "Netherlands",
-  BE: "Belgium",
-  CH: "Switzerland",
-  FR: "France",
-  CZ: "Czech Republic",
-  PL: "Poland",
-  LU: "Luxembourg",
+const REGION_LABELS: Record<WorldRegion, string> = {
+  europe: "Europe",
+  asia: "Asia",
+  americas: "Americas",
+  oceania: "Oceania",
+  africa: "Africa",
+  "middle-east": "Middle East",
 };
 
-const COUNTRY_FLAGS: Record<string, string> = {
-  DE: "\u{1F1E9}\u{1F1EA}",
-  AT: "\u{1F1E6}\u{1F1F9}",
-  NL: "\u{1F1F3}\u{1F1F1}",
-  BE: "\u{1F1E7}\u{1F1EA}",
-  CH: "\u{1F1E8}\u{1F1ED}",
-  FR: "\u{1F1EB}\u{1F1F7}",
-  CZ: "\u{1F1E8}\u{1F1FF}",
-  PL: "\u{1F1F5}\u{1F1F1}",
-  LU: "\u{1F1F1}\u{1F1FA}",
-};
+const REGION_ORDER: WorldRegion[] = ["europe", "middle-east", "asia", "americas", "oceania", "africa"];
+
+// Map country codes to world regions for grouping
+const COUNTRY_TO_REGION: Record<string, WorldRegion> = {};
+
+// Populated dynamically from countries data
+import { countries } from "@/lib/data/countries";
+for (const c of countries) {
+  COUNTRY_TO_REGION[c.code] = c.region;
+}
 
 export function HolidayPanel() {
   const { selectedWeek, selectedYear } = useMapStore();
   const { data: holidays } = useHolidayData(selectedWeek, selectedYear);
+  const [collapsedRegions, setCollapsedRegions] = useState<Set<WorldRegion>>(new Set());
 
   if (!holidays || holidays.length === 0) {
     return (
@@ -42,7 +42,7 @@ export function HolidayPanel() {
   }
 
   // Group by country
-  const grouped = holidays.reduce(
+  const byCountry = holidays.reduce(
     (acc, h) => {
       const key = h.countryCode;
       if (!acc[key]) acc[key] = [];
@@ -52,36 +52,78 @@ export function HolidayPanel() {
     {} as Record<string, typeof holidays>,
   );
 
-  // Sort countries by display order
-  const sortedCountries = Object.keys(grouped).sort((a, b) => {
-    const order = ["DE", "AT", "NL", "BE", "FR", "CH", "CZ", "PL", "LU"];
-    const ia = order.indexOf(a);
-    const ib = order.indexOf(b);
-    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-  });
+  // Group countries by world region
+  const byWorldRegion = new Map<WorldRegion, string[]>();
+  for (const countryCode of Object.keys(byCountry)) {
+    const wr = COUNTRY_TO_REGION[countryCode] ?? "europe";
+    if (!byWorldRegion.has(wr)) byWorldRegion.set(wr, []);
+    byWorldRegion.get(wr)!.push(countryCode);
+  }
+
+  // Sort countries within each region alphabetically by name
+  for (const countryCodes of byWorldRegion.values()) {
+    countryCodes.sort((a, b) => getCountryName(a).localeCompare(getCountryName(b)));
+  }
+
+  const toggleRegion = (region: WorldRegion) => {
+    setCollapsedRegions((prev) => {
+      const next = new Set(prev);
+      if (next.has(region)) next.delete(region);
+      else next.add(region);
+      return next;
+    });
+  };
+
+  const activeRegions = REGION_ORDER.filter((r) => byWorldRegion.has(r));
 
   return (
     <div className="max-h-[60vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
       <h3 className="mb-3 text-sm font-semibold text-gray-700">School Holidays</h3>
-      {sortedCountries.map((country) => (
-        <div key={country} className="mb-3 last:mb-0">
-          <div className="mb-1.5 text-xs font-semibold text-gray-500">
-            {COUNTRY_FLAGS[country]} {COUNTRY_NAMES[country] ?? country}
+      {activeRegions.map((worldRegion) => {
+        const countryCodes = byWorldRegion.get(worldRegion)!;
+        const isCollapsed = collapsedRegions.has(worldRegion);
+        const totalHolidays = countryCodes.reduce((sum, cc) => sum + byCountry[cc].length, 0);
+
+        return (
+          <div key={worldRegion} className="mb-2 last:mb-0">
+            {/* Only show region header when there are multiple world regions */}
+            {activeRegions.length > 1 && (
+              <button
+                onClick={() => toggleRegion(worldRegion)}
+                className="mb-1.5 flex w-full items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-gray-600"
+              >
+                <span className="transition-transform" style={{ transform: isCollapsed ? "rotate(-90deg)" : "rotate(0)" }}>
+                  &#9662;
+                </span>
+                {REGION_LABELS[worldRegion]}
+                <span className="ml-auto font-normal normal-case">
+                  {totalHolidays}
+                </span>
+              </button>
+            )}
+            {!isCollapsed &&
+              countryCodes.map((countryCode) => (
+                <div key={countryCode} className="mb-3 last:mb-0">
+                  <div className="mb-1.5 text-xs font-semibold text-gray-500">
+                    {getCountryFlag(countryCode)} {getCountryName(countryCode)}
+                  </div>
+                  {byCountry[countryCode].map((h, i) => (
+                    <div
+                      key={`${h.regionId}-${i}`}
+                      className="mb-1 rounded-md bg-gray-50 px-2.5 py-1.5 last:mb-0"
+                    >
+                      <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
+                      <div className="text-xs text-gray-500">
+                        {h.holidayName} &middot;{" "}
+                        {formatRange(h.startDate, h.endDate)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
           </div>
-          {grouped[country].map((h, i) => (
-            <div
-              key={`${h.regionId}-${i}`}
-              className="mb-1 rounded-md bg-gray-50 px-2.5 py-1.5 last:mb-0"
-            >
-              <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
-              <div className="text-xs text-gray-500">
-                {h.holidayName} &middot;{" "}
-                {formatRange(h.startDate, h.endDate)}
-              </div>
-            </div>
-          ))}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

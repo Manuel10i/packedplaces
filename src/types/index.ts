@@ -1,3 +1,6 @@
+export type Hemisphere = "northern" | "southern" | "equatorial";
+export type WorldRegion = "europe" | "asia" | "americas" | "oceania" | "africa" | "middle-east";
+
 export interface SourceRegion {
   id: string;
   countryCode: string;
@@ -6,6 +9,8 @@ export interface SourceRegion {
   population: number;
   lat: number;
   lng: number;
+  hemisphere: Hemisphere;
+  region: WorldRegion;
 }
 
 export interface Destination {
@@ -14,9 +19,10 @@ export interface Destination {
   country: string;
   lat: number;
   lng: number;
-  category: "ski" | "beach" | "city" | "lake" | "nature";
+  category: "ski" | "beach" | "city" | "lake" | "nature" | "cultural" | "safari" | "island" | "mountain" | "desert" | "tropical";
   seasonality: "winter" | "summer" | "year-round";
   basePopularity: number;
+  region: WorldRegion;
 }
 
 export interface TravelPattern {

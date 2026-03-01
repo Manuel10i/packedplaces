@@ -9,9 +9,9 @@ import { useMapStore } from "@/store/useMapStore";
 import { useHeatmapData } from "@/hooks/useHeatmapData";
 
 const INITIAL_VIEW = {
-  latitude: 48,
-  longitude: 11,
-  zoom: 4.5,
+  latitude: 20,
+  longitude: 0,
+  zoom: 2,
 };
 
 const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";

@@ -17,6 +17,8 @@ export const sourceRegions = pgTable("source_regions", {
   population: integer("population").notNull(),
   lat: real("lat").notNull(),
   lng: real("lng").notNull(),
+  hemisphere: varchar("hemisphere", { length: 16 }).notNull().default("northern"),
+  region: varchar("region", { length: 16 }).notNull().default("europe"),
 });
 
 export const destinations = pgTable("destinations", {
@@ -28,6 +30,7 @@ export const destinations = pgTable("destinations", {
   category: varchar("category", { length: 16 }).notNull(),
   seasonality: varchar("seasonality", { length: 16 }).notNull(),
   basePopularity: real("base_popularity").notNull().default(1.0),
+  region: varchar("region", { length: 16 }).notNull().default("europe"),
 });
 
 export const schoolHolidays = pgTable(

@@ -2,6 +2,7 @@ import { and, between, eq, sql } from "drizzle-orm";
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { startOfISOWeek, endOfISOWeek, format } from "date-fns";
 import * as schema from "../db/schema";
+import type { Hemisphere } from "@/types";
 
 interface ContributingSource {
   regionId: string;
@@ -10,19 +11,35 @@ interface ContributingSource {
 }
 
 /**
- * Determines the season for a given ISO week number.
- * Winter: weeks 44-14 (Nov-Apr)
- * Summer: weeks 22-36 (Jun-Sep)
- * Shoulder: blend zones
+ * Determines the season for a given ISO week number, accounting for hemisphere.
+ * Northern hemisphere: Winter weeks 44-14 (Nov-Apr), Summer weeks 22-36 (Jun-Sep)
+ * Southern hemisphere: Inverted — Summer weeks 44-14, Winter weeks 22-36
+ * Equatorial: Always "shoulder" (all patterns match)
  */
-function getSeasonForWeek(week: number): "winter" | "summer" | "shoulder" {
-  if (week >= 44 || week <= 14) return "winter";
-  if (week >= 22 && week <= 36) return "summer";
+function getSeasonForWeek(
+  week: number,
+  hemisphere: Hemisphere = "northern",
+): "winter" | "summer" | "shoulder" {
+  if (hemisphere === "equatorial") return "shoulder";
+
+  const isNorthernWinter = week >= 44 || week <= 14;
+  const isNorthernSummer = week >= 22 && week <= 36;
+
+  if (hemisphere === "southern") {
+    if (isNorthernWinter) return "summer";
+    if (isNorthernSummer) return "winter";
+    return "shoulder";
+  }
+
+  // Northern hemisphere (default)
+  if (isNorthernWinter) return "winter";
+  if (isNorthernSummer) return "summer";
   return "shoulder";
 }
 
 /**
- * Check if a travel pattern's season matches the current week.
+ * Check if a travel pattern's season matches the current week's season
+ * for the source region's hemisphere.
  * - null season = year-round, always matches
  * - shoulder season: both winter and summer patterns apply
  */
@@ -70,8 +87,6 @@ export async function precomputeHeatmap(
     const weekStartStr = format(weekStart, "yyyy-MM-dd");
     const weekEndStr = format(weekEnd, "yyyy-MM-dd");
 
-    const season = getSeasonForWeek(week);
-
     // Find regions with school holidays overlapping this week
     const holidayRegions = await db
       .select({ sourceRegionId: schema.schoolHolidays.sourceRegionId })
@@ -98,6 +113,9 @@ export async function precomputeHeatmap(
         if (!region) continue;
 
         const populationFactor = region.population / maxPopulation;
+        // Determine season from the source region's hemisphere perspective
+        const hemisphere = (region.hemisphere as Hemisphere) ?? "northern";
+        const season = getSeasonForWeek(week, hemisphere);
 
         for (const pattern of patterns) {
           if (pattern.destinationId !== dest.id) continue;

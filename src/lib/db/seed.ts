@@ -3,9 +3,7 @@ dotenv.config({ path: ".env.local" });
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import * as schema from "./schema";
-import { sourceRegions } from "../data/source-regions";
-import { destinations } from "../data/destinations";
-import { travelPatterns } from "../data/travel-patterns";
+import { sourceRegions, destinations, travelPatterns } from "../data";
 
 async function main() {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
@@ -21,6 +19,8 @@ async function main() {
       population: r.population,
       lat: r.lat,
       lng: r.lng,
+      hemisphere: r.hemisphere,
+      region: r.region,
     })),
   ).onConflictDoNothing();
   console.log(`  ${sourceRegions.length} source regions seeded.`);
@@ -36,6 +36,7 @@ async function main() {
       category: d.category,
       seasonality: d.seasonality,
       basePopularity: d.basePopularity,
+      region: d.region,
     })),
   ).onConflictDoNothing();
   console.log(`  ${destinations.length} destinations seeded.`);

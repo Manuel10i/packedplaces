@@ -9,7 +9,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "Busymap - Tourist Destination Busyness",
-  description: "Visualize tourist destination busyness across Europe based on school holiday schedules",
+  description: "Visualize tourist destination busyness worldwide based on school holiday schedules",
 };
 
 export default function RootLayout({
