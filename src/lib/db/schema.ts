@@ -62,6 +62,22 @@ export const travelPatterns = pgTable(
   },
 );
 
+export const majorEvents = pgTable(
+  "major_events",
+  {
+    id: varchar("id", { length: 64 }).primaryKey(),
+    name: varchar("name", { length: 128 }).notNull(),
+    destinationId: varchar("destination_id", { length: 64 })
+      .notNull()
+      .references(() => destinations.id),
+    startDate: date("start_date").notNull(),
+    endDate: date("end_date").notNull(),
+    year: integer("year").notNull(),
+    trafficBoost: real("traffic_boost").notNull(),
+    category: varchar("category", { length: 16 }).notNull(),
+  },
+);
+
 export const heatmapCache = pgTable(
   "heatmap_cache",
   {

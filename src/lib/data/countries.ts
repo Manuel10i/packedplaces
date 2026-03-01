@@ -46,6 +46,8 @@ export const countries: CountryInfo[] = [
   { code: "MT", name: "Malta", flag: "\u{1F1F2}\u{1F1F9}", region: "europe" },
   { code: "CY", name: "Cyprus", flag: "\u{1F1E8}\u{1F1FE}", region: "europe" },
   { code: "UA", name: "Ukraine", flag: "\u{1F1FA}\u{1F1E6}", region: "europe" },
+  { code: "BA", name: "Bosnia & Herzegovina", flag: "\u{1F1E7}\u{1F1E6}", region: "europe" },
+  { code: "MK", name: "North Macedonia", flag: "\u{1F1F2}\u{1F1F0}", region: "europe" },
 
   // ========================================
   // MIDDLE EAST & NORTH AFRICA
@@ -56,6 +58,9 @@ export const countries: CountryInfo[] = [
   { code: "SA", name: "Saudi Arabia", flag: "\u{1F1F8}\u{1F1E6}", region: "middle-east" },
   { code: "JO", name: "Jordan", flag: "\u{1F1EF}\u{1F1F4}", region: "middle-east" },
   { code: "OM", name: "Oman", flag: "\u{1F1F4}\u{1F1F2}", region: "middle-east" },
+  { code: "QA", name: "Qatar", flag: "\u{1F1F6}\u{1F1E6}", region: "middle-east" },
+  { code: "BH", name: "Bahrain", flag: "\u{1F1E7}\u{1F1ED}", region: "middle-east" },
+  { code: "LB", name: "Lebanon", flag: "\u{1F1F1}\u{1F1E7}", region: "middle-east" },
   { code: "EG", name: "Egypt", flag: "\u{1F1EA}\u{1F1EC}", region: "africa" },
   { code: "MA", name: "Morocco", flag: "\u{1F1F2}\u{1F1E6}", region: "africa" },
   { code: "TN", name: "Tunisia", flag: "\u{1F1F9}\u{1F1F3}", region: "africa" },
@@ -101,6 +106,19 @@ export const countries: CountryInfo[] = [
   { code: "DO", name: "Dominican Republic", flag: "\u{1F1E9}\u{1F1F4}", region: "americas" },
   { code: "JM", name: "Jamaica", flag: "\u{1F1EF}\u{1F1F2}", region: "americas" },
   { code: "EC", name: "Ecuador", flag: "\u{1F1EA}\u{1F1E8}", region: "americas" },
+  { code: "BS", name: "Bahamas", flag: "\u{1F1E7}\u{1F1F8}", region: "americas" },
+  { code: "AW", name: "Aruba", flag: "\u{1F1E6}\u{1F1FC}", region: "americas" },
+  { code: "BB", name: "Barbados", flag: "\u{1F1E7}\u{1F1E7}", region: "americas" },
+  { code: "TC", name: "Turks & Caicos", flag: "\u{1F1F9}\u{1F1E8}", region: "americas" },
+  { code: "LC", name: "St. Lucia", flag: "\u{1F1F1}\u{1F1E8}", region: "americas" },
+  { code: "AG", name: "Antigua & Barbuda", flag: "\u{1F1E6}\u{1F1EC}", region: "americas" },
+  { code: "BZ", name: "Belize", flag: "\u{1F1E7}\u{1F1FF}", region: "americas" },
+  { code: "GT", name: "Guatemala", flag: "\u{1F1EC}\u{1F1F9}", region: "americas" },
+  { code: "PA", name: "Panama", flag: "\u{1F1F5}\u{1F1E6}", region: "americas" },
+  { code: "UY", name: "Uruguay", flag: "\u{1F1FA}\u{1F1FE}", region: "americas" },
+  { code: "BO", name: "Bolivia", flag: "\u{1F1E7}\u{1F1F4}", region: "americas" },
+  { code: "PR", name: "Puerto Rico", flag: "\u{1F1F5}\u{1F1F7}", region: "americas" },
+  { code: "HN", name: "Honduras", flag: "\u{1F1ED}\u{1F1F3}", region: "americas" },
 
   // ========================================
   // OCEANIA
@@ -110,6 +128,10 @@ export const countries: CountryInfo[] = [
   { code: "FJ", name: "Fiji", flag: "\u{1F1EB}\u{1F1EF}", region: "oceania" },
   { code: "WS", name: "Samoa", flag: "\u{1F1FC}\u{1F1F8}", region: "oceania" },
   { code: "PF", name: "French Polynesia", flag: "\u{1F1F5}\u{1F1EB}", region: "oceania" },
+  { code: "CK", name: "Cook Islands", flag: "\u{1F1E8}\u{1F1F0}", region: "oceania" },
+  { code: "VU", name: "Vanuatu", flag: "\u{1F1FB}\u{1F1FA}", region: "oceania" },
+  { code: "TO", name: "Tonga", flag: "\u{1F1F9}\u{1F1F4}", region: "oceania" },
+  { code: "NC", name: "New Caledonia", flag: "\u{1F1F3}\u{1F1E8}", region: "oceania" },
 
   // ========================================
   // AFRICA
@@ -124,6 +146,12 @@ export const countries: CountryInfo[] = [
   { code: "NG", name: "Nigeria", flag: "\u{1F1F3}\u{1F1EC}", region: "africa" },
   { code: "GH", name: "Ghana", flag: "\u{1F1EC}\u{1F1ED}", region: "africa" },
   { code: "ET", name: "Ethiopia", flag: "\u{1F1EA}\u{1F1F9}", region: "africa" },
+  { code: "RW", name: "Rwanda", flag: "\u{1F1F7}\u{1F1FC}", region: "africa" },
+  { code: "UG", name: "Uganda", flag: "\u{1F1FA}\u{1F1EC}", region: "africa" },
+  { code: "SN", name: "Senegal", flag: "\u{1F1F8}\u{1F1F3}", region: "africa" },
+  { code: "CV", name: "Cape Verde", flag: "\u{1F1E8}\u{1F1FB}", region: "africa" },
+  { code: "ZW", name: "Zimbabwe", flag: "\u{1F1FF}\u{1F1FC}", region: "africa" },
+  { code: "ZM", name: "Zambia", flag: "\u{1F1FF}\u{1F1F2}", region: "africa" },
   { code: "MN", name: "Mongolia", flag: "\u{1F1F2}\u{1F1F3}", region: "asia" },
 
   // ========================================
@@ -131,6 +159,8 @@ export const countries: CountryInfo[] = [
   // ========================================
   { code: "RU", name: "Russia", flag: "\u{1F1F7}\u{1F1FA}", region: "europe" },
   { code: "KZ", name: "Kazakhstan", flag: "\u{1F1F0}\u{1F1FF}", region: "asia" },
+  { code: "KG", name: "Kyrgyzstan", flag: "\u{1F1F0}\u{1F1EC}", region: "asia" },
+  { code: "AM", name: "Armenia", flag: "\u{1F1E6}\u{1F1F2}", region: "middle-east" },
   { code: "UZ", name: "Uzbekistan", flag: "\u{1F1FA}\u{1F1FF}", region: "asia" },
   { code: "PK", name: "Pakistan", flag: "\u{1F1F5}\u{1F1F0}", region: "asia" },
   { code: "BD", name: "Bangladesh", flag: "\u{1F1E7}\u{1F1E9}", region: "asia" },

@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "See How Crowded Travel\nDestinations Really Get",
-    "description": "PackedPlaces.com visualizes tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.",
+    "description": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data and major events from 100+ countries.",
     "cta": "Explore the Map",
     "statRegions": "Regions",
     "statDestinations": "Destinations",
@@ -20,7 +20,7 @@
     "step1Title": "Track School Holidays",
     "step1Text": "We collect school holiday schedules from 127 regions using three data providers: hand-curated dates, the OpenHolidaysAPI, and the date-holidays library.",
     "step2Title": "Model Travel Flows",
-    "step2Text": "Over 2,100 travel patterns connect source regions to destinations, weighted by real tourism statistics from UNWTO, Eurostat, and national tourism authorities.",
+    "step2Text": "Over 6,000 travel patterns connect source regions to destinations, weighted by real tourism statistics from UNWTO, Eurostat, and national tourism authorities.",
     "step3Title": "Calculate Crowdedness",
     "step3Text": "Raw traffic scores are divided by each destination's capacity — accounting for category, seasonality, and hemisphere. The result: how packed a place feels."
   },
@@ -99,6 +99,7 @@
   "tooltip": {
     "crowdedness": "Crowdedness: {score}% — {label}",
     "topSources": "Top sources:",
+    "activeEvents": "Active Events",
     "quiet": "Quiet",
     "moderate": "Moderate",
     "busy": "Busy",

@@ -753,4 +753,975 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "LU", destinationId: "FR-PARIS", weight: 0.38, season: null },
   { sourceRegionId: "LU", destinationId: "IT-ROME", weight: 0.32, season: null },
   { sourceRegionId: "LU", destinationId: "EG-HURGHADA", weight: 0.32, season: null },
+
+  // ========================================
+  // NEW DESTINATIONS — INBOUND PATTERNS
+  // ========================================
+
+  // ----------------------------------------
+  // DE-MUNICH (Munich) — major German city
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "DE-MUNICH", weight: 0.72, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "DE-MUNICH", weight: 0.60, season: null },
+  { sourceRegionId: "AT-W", destinationId: "DE-MUNICH", weight: 0.65, season: null },
+  { sourceRegionId: "AT-T", destinationId: "DE-MUNICH", weight: 0.55, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "DE-MUNICH", weight: 0.45, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "DE-MUNICH", weight: 0.52, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-MUNICH", weight: 0.58, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-MUNICH", weight: 0.55, season: null },
+  { sourceRegionId: "JP", destinationId: "DE-MUNICH", weight: 0.45, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "DE-MUNICH", weight: 0.42, season: null },
+  { sourceRegionId: "IT-NORTH", destinationId: "DE-MUNICH", weight: 0.40, season: null },
+  { sourceRegionId: "CZ", destinationId: "DE-MUNICH", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // DE-HAMBURG (Hamburg)
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "DE-HAMBURG", weight: 0.55, season: null },
+  { sourceRegionId: "DE-NI", destinationId: "DE-HAMBURG", weight: 0.60, season: null },
+  { sourceRegionId: "DE-BE", destinationId: "DE-HAMBURG", weight: 0.48, season: null },
+  { sourceRegionId: "DK", destinationId: "DE-HAMBURG", weight: 0.55, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-HAMBURG", weight: 0.45, season: null },
+  { sourceRegionId: "NL-NORTH", destinationId: "DE-HAMBURG", weight: 0.42, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "DE-HAMBURG", weight: 0.48, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-HAMBURG", weight: 0.38, season: null },
+  { sourceRegionId: "NO-SOUTH", destinationId: "DE-HAMBURG", weight: 0.40, season: null },
+
+  // ----------------------------------------
+  // DE-BERLIN (Berlin) — major European city
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "DE-BERLIN", weight: 0.60, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "DE-BERLIN", weight: 0.55, season: null },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "DE-BERLIN", weight: 0.65, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-BERLIN", weight: 0.72, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "DE-BERLIN", weight: 0.55, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "DE-BERLIN", weight: 0.50, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "DE-BERLIN", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-BERLIN", weight: 0.58, season: null },
+  { sourceRegionId: "JP", destinationId: "DE-BERLIN", weight: 0.42, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "DE-BERLIN", weight: 0.48, season: null },
+  { sourceRegionId: "DK", destinationId: "DE-BERLIN", weight: 0.52, season: null },
+  { sourceRegionId: "CZ", destinationId: "DE-BERLIN", weight: 0.42, season: null },
+  { sourceRegionId: "AT-W", destinationId: "DE-BERLIN", weight: 0.40, season: null },
+  { sourceRegionId: "RU-MOW", destinationId: "DE-BERLIN", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // DE-DRESDEN (Dresden)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SN", destinationId: "DE-DRESDEN", weight: 0.65, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "DE-DRESDEN", weight: 0.45, season: null },
+  { sourceRegionId: "CZ", destinationId: "DE-DRESDEN", weight: 0.60, season: null },
+  { sourceRegionId: "PL-SOUTH", destinationId: "DE-DRESDEN", weight: 0.45, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-DRESDEN", weight: 0.38, season: null },
+  { sourceRegionId: "NL-EAST", destinationId: "DE-DRESDEN", weight: 0.35, season: null },
+  { sourceRegionId: "AT-W", destinationId: "DE-DRESDEN", weight: 0.32, season: null },
+
+  // ----------------------------------------
+  // DE-COLOGNE (Cologne)
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "DE-COLOGNE", weight: 0.68, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "DE-COLOGNE", weight: 0.60, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "DE-COLOGNE", weight: 0.55, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-COLOGNE", weight: 0.48, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "DE-COLOGNE", weight: 0.42, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-COLOGNE", weight: 0.38, season: null },
+  { sourceRegionId: "DE-RP", destinationId: "DE-COLOGNE", weight: 0.55, season: null },
+
+  // ----------------------------------------
+  // DE-SYLT (Sylt island)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SH", destinationId: "DE-SYLT", weight: 0.72, season: "summer" },
+  { sourceRegionId: "DE-HH", destinationId: "DE-SYLT", weight: 0.65, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "DE-SYLT", weight: 0.48, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "DE-SYLT", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-BE", destinationId: "DE-SYLT", weight: 0.40, season: "summer" },
+  { sourceRegionId: "DK", destinationId: "DE-SYLT", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // DE-MOSEL (Mosel Valley)
+  // ----------------------------------------
+  { sourceRegionId: "DE-RP", destinationId: "DE-MOSEL", weight: 0.65, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "DE-MOSEL", weight: 0.52, season: "summer" },
+  { sourceRegionId: "BE-WAL", destinationId: "DE-MOSEL", weight: 0.48, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "DE-MOSEL", weight: 0.42, season: "summer" },
+  { sourceRegionId: "FR-NE", destinationId: "DE-MOSEL", weight: 0.40, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-MOSEL", weight: 0.30, season: "summer" },
+
+  // ----------------------------------------
+  // DE-SAXON-SWITZERLAND (Saxon Switzerland)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SN", destinationId: "DE-SAXON-SWITZERLAND", weight: 0.68, season: "summer" },
+  { sourceRegionId: "DE-BE", destinationId: "DE-SAXON-SWITZERLAND", weight: 0.48, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "DE-SAXON-SWITZERLAND", weight: 0.55, season: "summer" },
+  { sourceRegionId: "PL-SOUTH", destinationId: "DE-SAXON-SWITZERLAND", weight: 0.35, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "DE-SAXON-SWITZERLAND", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // DE-BAVARIAN-LAKES (Bavarian Lakes)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "DE-BAVARIAN-LAKES", weight: 0.72, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "DE-BAVARIAN-LAKES", weight: 0.55, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "DE-BAVARIAN-LAKES", weight: 0.48, season: "summer" },
+  { sourceRegionId: "AT-T", destinationId: "DE-BAVARIAN-LAKES", weight: 0.42, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "DE-BAVARIAN-LAKES", weight: 0.40, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-BAVARIAN-LAKES", weight: 0.32, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "DE-BAVARIAN-LAKES", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // IT-NAPLES (Naples)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-NAPLES", weight: 0.42, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "IT-NAPLES", weight: 0.38, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-NAPLES", weight: 0.55, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "IT-NAPLES", weight: 0.42, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-NAPLES", weight: 0.45, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "IT-NAPLES", weight: 0.52, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-NAPLES", weight: 0.38, season: null },
+  { sourceRegionId: "AT-W", destinationId: "IT-NAPLES", weight: 0.35, season: null },
+  { sourceRegionId: "JP", destinationId: "IT-NAPLES", weight: 0.40, season: null },
+
+  // ----------------------------------------
+  // IT-FLORENCE (Florence)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-FLORENCE", weight: 0.55, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "IT-FLORENCE", weight: 0.50, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-FLORENCE", weight: 0.72, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "IT-FLORENCE", weight: 0.58, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-FLORENCE", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "IT-FLORENCE", weight: 0.75, season: null },
+  { sourceRegionId: "US-WEST", destinationId: "IT-FLORENCE", weight: 0.60, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-FLORENCE", weight: 0.50, season: null },
+  { sourceRegionId: "AT-W", destinationId: "IT-FLORENCE", weight: 0.42, season: null },
+  { sourceRegionId: "JP", destinationId: "IT-FLORENCE", weight: 0.62, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "IT-FLORENCE", weight: 0.48, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "IT-FLORENCE", weight: 0.42, season: null },
+
+  // ----------------------------------------
+  // IT-MILAN (Milan)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-MILAN", weight: 0.55, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "IT-MILAN", weight: 0.52, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "IT-MILAN", weight: 0.60, season: null },
+  { sourceRegionId: "CH-FR", destinationId: "IT-MILAN", weight: 0.52, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-MILAN", weight: 0.60, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-MILAN", weight: 0.65, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "IT-MILAN", weight: 0.58, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-MILAN", weight: 0.45, season: null },
+  { sourceRegionId: "JP", destinationId: "IT-MILAN", weight: 0.50, season: null },
+  { sourceRegionId: "AE", destinationId: "IT-MILAN", weight: 0.42, season: null },
+  { sourceRegionId: "AT-W", destinationId: "IT-MILAN", weight: 0.45, season: null },
+
+  // ----------------------------------------
+  // IT-ISCHIA (Ischia)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-ISCHIA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "IT-ISCHIA", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-ISCHIA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "IT-ISCHIA", weight: 0.40, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-ISCHIA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-ISCHIA", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // IT-ELBA (Elba)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-ELBA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "IT-ELBA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-ELBA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "IT-ELBA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-ELBA", weight: 0.32, season: "summer" },
+  { sourceRegionId: "FR-SE", destinationId: "IT-ELBA", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // IT-CAPRI (Capri)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-CAPRI", weight: 0.55, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "IT-CAPRI", weight: 0.60, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "IT-CAPRI", weight: 0.42, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-CAPRI", weight: 0.45, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "IT-CAPRI", weight: 0.48, season: "summer" },
+  { sourceRegionId: "AE", destinationId: "IT-CAPRI", weight: 0.38, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-CAPRI", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // IT-DOLOMITES-SUMMER (Val Gardena Summer)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.65, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.55, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.58, season: "summer" },
+  { sourceRegionId: "AT-T", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.52, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.48, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.38, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "IT-DOLOMITES-SUMMER", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // IT-CINQUE-TERRE-TOWN (Manarola)
+  // ----------------------------------------
+  { sourceRegionId: "US-NORTHEAST", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.65, season: null },
+  { sourceRegionId: "US-WEST", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.55, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.60, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.52, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.48, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.50, season: null },
+  { sourceRegionId: "JP", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.55, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.42, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "IT-CINQUE-TERRE-TOWN", weight: 0.40, season: null },
+
+  // ----------------------------------------
+  // ES-SEVILLE (Seville)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-SEVILLE", weight: 0.60, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "ES-SEVILLE", weight: 0.48, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "ES-SEVILLE", weight: 0.42, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "ES-SEVILLE", weight: 0.38, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-SEVILLE", weight: 0.52, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "ES-SEVILLE", weight: 0.50, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-SEVILLE", weight: 0.38, season: null },
+  { sourceRegionId: "IT-NORTH", destinationId: "ES-SEVILLE", weight: 0.35, season: null },
+  { sourceRegionId: "JP", destinationId: "ES-SEVILLE", weight: 0.40, season: null },
+
+  // ----------------------------------------
+  // ES-GRANADA (Granada)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-GRANADA", weight: 0.55, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-GRANADA", weight: 0.48, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "ES-GRANADA", weight: 0.38, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "ES-GRANADA", weight: 0.48, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-GRANADA", weight: 0.35, season: null },
+  { sourceRegionId: "IT-NORTH", destinationId: "ES-GRANADA", weight: 0.32, season: null },
+  { sourceRegionId: "JP", destinationId: "ES-GRANADA", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // ES-BILBAO (Bilbao)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-BILBAO", weight: 0.50, season: null },
+  { sourceRegionId: "FR-W", destinationId: "ES-BILBAO", weight: 0.55, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-BILBAO", weight: 0.45, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "ES-BILBAO", weight: 0.35, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "ES-BILBAO", weight: 0.42, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-BILBAO", weight: 0.32, season: null },
+
+  // ----------------------------------------
+  // ES-SAN-SEBASTIAN (San Sebastián)
+  // ----------------------------------------
+  { sourceRegionId: "FR-W", destinationId: "ES-SAN-SEBASTIAN", weight: 0.62, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-SAN-SEBASTIAN", weight: 0.50, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-SAN-SEBASTIAN", weight: 0.48, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "ES-SAN-SEBASTIAN", weight: 0.45, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "ES-SAN-SEBASTIAN", weight: 0.35, season: "summer" },
+  { sourceRegionId: "BE-VLG", destinationId: "ES-SAN-SEBASTIAN", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // ES-MARBELLA (Marbella)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-MARBELLA", weight: 0.70, season: "summer" },
+  { sourceRegionId: "GB-SOUTH", destinationId: "ES-MARBELLA", weight: 0.60, season: "summer" },
+  { sourceRegionId: "GB-MIDLANDS", destinationId: "ES-MARBELLA", weight: 0.52, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "ES-MARBELLA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-MARBELLA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "SE-SOUTH", destinationId: "ES-MARBELLA", weight: 0.40, season: "summer" },
+  { sourceRegionId: "NO-SOUTH", destinationId: "ES-MARBELLA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "AE", destinationId: "ES-MARBELLA", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // ES-PAMPLONA (Pamplona)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-PAMPLONA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "ES-PAMPLONA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "FR-W", destinationId: "ES-PAMPLONA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "ES-PAMPLONA", weight: 0.30, season: "summer" },
+  { sourceRegionId: "AU-EAST", destinationId: "ES-PAMPLONA", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // ES-COSTA-DAURADA (Costa Daurada)
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "ES-COSTA-DAURADA", weight: 0.50, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "ES-COSTA-DAURADA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-COSTA-DAURADA", weight: 0.48, season: "summer" },
+  { sourceRegionId: "BE-VLG", destinationId: "ES-COSTA-DAURADA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-COSTA-DAURADA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-COSTA-DAURADA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "ES-COSTA-DAURADA", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // ES-GRAN-CANARIA (Gran Canaria)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-GRAN-CANARIA", weight: 0.65, season: null },
+  { sourceRegionId: "GB-NORTH", destinationId: "ES-GRAN-CANARIA", weight: 0.58, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "ES-GRAN-CANARIA", weight: 0.60, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "ES-GRAN-CANARIA", weight: 0.52, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-GRAN-CANARIA", weight: 0.58, season: null },
+  { sourceRegionId: "NO-SOUTH", destinationId: "ES-GRAN-CANARIA", weight: 0.55, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "ES-GRAN-CANARIA", weight: 0.52, season: null },
+  { sourceRegionId: "DK", destinationId: "ES-GRAN-CANARIA", weight: 0.50, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "ES-GRAN-CANARIA", weight: 0.45, season: null },
+
+  // ----------------------------------------
+  // ES-LA-PALMA (La Palma)
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "ES-LA-PALMA", weight: 0.40, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "ES-LA-PALMA", weight: 0.35, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-LA-PALMA", weight: 0.38, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "ES-LA-PALMA", weight: 0.38, season: null },
+  { sourceRegionId: "NO-SOUTH", destinationId: "ES-LA-PALMA", weight: 0.35, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "ES-LA-PALMA", weight: 0.32, season: null },
+
+  // ----------------------------------------
+  // FR-LYON (Lyon)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-LYON", weight: 0.55, season: null },
+  { sourceRegionId: "FR-SE", destinationId: "FR-LYON", weight: 0.65, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "FR-LYON", weight: 0.48, season: null },
+  { sourceRegionId: "CH-FR", destinationId: "FR-LYON", weight: 0.55, season: null },
+  { sourceRegionId: "BE-WAL", destinationId: "FR-LYON", weight: 0.42, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-LYON", weight: 0.45, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "FR-LYON", weight: 0.40, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "FR-LYON", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // FR-BORDEAUX (Bordeaux)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-BORDEAUX", weight: 0.60, season: null },
+  { sourceRegionId: "FR-W", destinationId: "FR-BORDEAUX", weight: 0.65, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-BORDEAUX", weight: 0.62, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "FR-BORDEAUX", weight: 0.50, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "FR-BORDEAUX", weight: 0.45, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-BORDEAUX", weight: 0.42, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "FR-BORDEAUX", weight: 0.48, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "FR-BORDEAUX", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // FR-MARSEILLE (Marseille)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-MARSEILLE", weight: 0.58, season: null },
+  { sourceRegionId: "FR-SE", destinationId: "FR-MARSEILLE", weight: 0.72, season: null },
+  { sourceRegionId: "BE-WAL", destinationId: "FR-MARSEILLE", weight: 0.45, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-MARSEILLE", weight: 0.48, season: null },
+  { sourceRegionId: "IT-NORTH", destinationId: "FR-MARSEILLE", weight: 0.42, season: null },
+  { sourceRegionId: "CH-FR", destinationId: "FR-MARSEILLE", weight: 0.45, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "FR-MARSEILLE", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // FR-STRASBOURG (Strasbourg)
+  // ----------------------------------------
+  { sourceRegionId: "FR-NE", destinationId: "FR-STRASBOURG", weight: 0.75, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "FR-STRASBOURG", weight: 0.52, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "FR-STRASBOURG", weight: 0.68, season: null },
+  { sourceRegionId: "DE-RP", destinationId: "FR-STRASBOURG", weight: 0.55, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "FR-STRASBOURG", weight: 0.58, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "FR-STRASBOURG", weight: 0.42, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-STRASBOURG", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // FR-CHAMONIX (Chamonix) — ski
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-CHAMONIX", weight: 0.65, season: "winter" },
+  { sourceRegionId: "FR-SE", destinationId: "FR-CHAMONIX", weight: 0.72, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-CHAMONIX", weight: 0.68, season: "winter" },
+  { sourceRegionId: "GB-SOUTH", destinationId: "FR-CHAMONIX", weight: 0.55, season: "winter" },
+  { sourceRegionId: "BE-VLG", destinationId: "FR-CHAMONIX", weight: 0.52, season: "winter" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-CHAMONIX", weight: 0.48, season: "winter" },
+  { sourceRegionId: "CH-DE", destinationId: "FR-CHAMONIX", weight: 0.55, season: "winter" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "FR-CHAMONIX", weight: 0.45, season: "winter" },
+  { sourceRegionId: "AU-EAST", destinationId: "FR-CHAMONIX", weight: 0.38, season: "winter" },
+
+  // ----------------------------------------
+  // FR-DORDOGNE (Dordogne)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-DORDOGNE", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-SOUTH", destinationId: "FR-DORDOGNE", weight: 0.48, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "FR-DORDOGNE", weight: 0.52, season: "summer" },
+  { sourceRegionId: "FR-W", destinationId: "FR-DORDOGNE", weight: 0.60, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-DORDOGNE", weight: 0.38, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "FR-DORDOGNE", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // FR-ANNECY (Lake Annecy)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-ANNECY", weight: 0.62, season: "summer" },
+  { sourceRegionId: "FR-SE", destinationId: "FR-ANNECY", weight: 0.70, season: "summer" },
+  { sourceRegionId: "CH-FR", destinationId: "FR-ANNECY", weight: 0.60, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "FR-ANNECY", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-ANNECY", weight: 0.45, season: "summer" },
+  { sourceRegionId: "BE-WAL", destinationId: "FR-ANNECY", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "FR-ANNECY", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // FR-CAMARGUE (Camargue)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-CAMARGUE", weight: 0.45, season: "summer" },
+  { sourceRegionId: "FR-SE", destinationId: "FR-CAMARGUE", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-CAMARGUE", weight: 0.32, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-CAMARGUE", weight: 0.30, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "FR-CAMARGUE", weight: 0.28, season: "summer" },
+
+  // ----------------------------------------
+  // AT-VIENNA (Vienna)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "AT-VIENNA", weight: 0.62, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "AT-VIENNA", weight: 0.50, season: null },
+  { sourceRegionId: "CZ", destinationId: "AT-VIENNA", weight: 0.65, season: null },
+  { sourceRegionId: "HU", destinationId: "AT-VIENNA", weight: 0.70, season: null },
+  { sourceRegionId: "SK", destinationId: "AT-VIENNA", weight: 0.68, season: null },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "AT-VIENNA", weight: 0.48, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "AT-VIENNA", weight: 0.60, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "AT-VIENNA", weight: 0.58, season: null },
+  { sourceRegionId: "JP", destinationId: "AT-VIENNA", weight: 0.52, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "AT-VIENNA", weight: 0.45, season: null },
+  { sourceRegionId: "RU-MOW", destinationId: "AT-VIENNA", weight: 0.42, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "AT-VIENNA", weight: 0.50, season: null },
+
+  // ----------------------------------------
+  // AT-SALZBURG (Salzburg)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "AT-SALZBURG", weight: 0.70, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "AT-SALZBURG", weight: 0.55, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "AT-SALZBURG", weight: 0.48, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "AT-SALZBURG", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "AT-SALZBURG", weight: 0.52, season: null },
+  { sourceRegionId: "JP", destinationId: "AT-SALZBURG", weight: 0.58, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "AT-SALZBURG", weight: 0.42, season: null },
+  { sourceRegionId: "CZ", destinationId: "AT-SALZBURG", weight: 0.40, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "AT-SALZBURG", weight: 0.45, season: null },
+
+  // ----------------------------------------
+  // AT-WACHAU (Wachau)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "AT-WACHAU", weight: 0.52, season: "summer" },
+  { sourceRegionId: "AT-OOE", destinationId: "AT-WACHAU", weight: 0.65, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "AT-WACHAU", weight: 0.42, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "AT-WACHAU", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "AT-WACHAU", weight: 0.38, season: "summer" },
+  { sourceRegionId: "HU", destinationId: "AT-WACHAU", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // AT-HALLSTATT (Hallstatt)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "AT-HALLSTATT", weight: 0.62, season: null },
+  { sourceRegionId: "JP", destinationId: "AT-HALLSTATT", weight: 0.75, season: null },
+  { sourceRegionId: "KR", destinationId: "AT-HALLSTATT", weight: 0.70, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "AT-HALLSTATT", weight: 0.65, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "AT-HALLSTATT", weight: 0.52, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "AT-HALLSTATT", weight: 0.48, season: null },
+  { sourceRegionId: "AT-OOE", destinationId: "AT-HALLSTATT", weight: 0.58, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "AT-HALLSTATT", weight: 0.45, season: null },
+
+  // ----------------------------------------
+  // CH-ZURICH (Zurich)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BW", destinationId: "CH-ZURICH", weight: 0.58, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "CH-ZURICH", weight: 0.52, season: null },
+  { sourceRegionId: "AT-W", destinationId: "CH-ZURICH", weight: 0.48, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CH-ZURICH", weight: 0.60, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "CH-ZURICH", weight: 0.52, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CH-ZURICH", weight: 0.55, season: null },
+  { sourceRegionId: "JP", destinationId: "CH-ZURICH", weight: 0.48, season: null },
+  { sourceRegionId: "AE", destinationId: "CH-ZURICH", weight: 0.42, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CH-ZURICH", weight: 0.42, season: null },
+
+  // ----------------------------------------
+  // CH-GENEVA (Geneva)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "CH-GENEVA", weight: 0.62, season: null },
+  { sourceRegionId: "FR-SE", destinationId: "CH-GENEVA", weight: 0.58, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CH-GENEVA", weight: 0.58, season: null },
+  { sourceRegionId: "BE-WAL", destinationId: "CH-GENEVA", weight: 0.52, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CH-GENEVA", weight: 0.52, season: null },
+  { sourceRegionId: "AE", destinationId: "CH-GENEVA", weight: 0.45, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "CH-GENEVA", weight: 0.42, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CH-GENEVA", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // CH-LUCERNE (Lucerne)
+  // ----------------------------------------
+  { sourceRegionId: "JP", destinationId: "CH-LUCERNE", weight: 0.70, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "CH-LUCERNE", weight: 0.65, season: null },
+  { sourceRegionId: "KR", destinationId: "CH-LUCERNE", weight: 0.58, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CH-LUCERNE", weight: 0.60, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CH-LUCERNE", weight: 0.55, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "CH-LUCERNE", weight: 0.50, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "CH-LUCERNE", weight: 0.48, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CH-LUCERNE", weight: 0.42, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "CH-LUCERNE", weight: 0.45, season: null },
+
+  // ----------------------------------------
+  // CH-INTERLAKEN (Interlaken)
+  // ----------------------------------------
+  { sourceRegionId: "JP", destinationId: "CH-INTERLAKEN", weight: 0.72, season: null },
+  { sourceRegionId: "KR", destinationId: "CH-INTERLAKEN", weight: 0.65, season: null },
+  { sourceRegionId: "IN-NORTH", destinationId: "CH-INTERLAKEN", weight: 0.60, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CH-INTERLAKEN", weight: 0.58, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CH-INTERLAKEN", weight: 0.55, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "CH-INTERLAKEN", weight: 0.50, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "CH-INTERLAKEN", weight: 0.48, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "CH-INTERLAKEN", weight: 0.55, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CH-INTERLAKEN", weight: 0.40, season: null },
+
+  // ----------------------------------------
+  // CH-TICINO (Ticino)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "CH-TICINO", weight: 0.52, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "CH-TICINO", weight: 0.50, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "CH-TICINO", weight: 0.65, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "CH-TICINO", weight: 0.42, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CH-TICINO", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "CH-TICINO", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // PT-PORTO (Porto)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "PT-PORTO", weight: 0.68, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "PT-PORTO", weight: 0.55, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "PT-PORTO", weight: 0.60, season: null },
+  { sourceRegionId: "FR-W", destinationId: "PT-PORTO", weight: 0.52, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "PT-PORTO", weight: 0.45, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "PT-PORTO", weight: 0.50, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "PT-PORTO", weight: 0.55, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "PT-PORTO", weight: 0.42, season: null },
+  { sourceRegionId: "IE", destinationId: "PT-PORTO", weight: 0.48, season: null },
+
+  // ----------------------------------------
+  // PT-SINTRA (Sintra)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "PT-SINTRA", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "PT-SINTRA", weight: 0.52, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "PT-SINTRA", weight: 0.48, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "PT-SINTRA", weight: 0.38, season: null },
+  { sourceRegionId: "JP", destinationId: "PT-SINTRA", weight: 0.42, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "PT-SINTRA", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // BE-BRUGES (Bruges)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "BE-BRUGES", weight: 0.72, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "BE-BRUGES", weight: 0.60, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "BE-BRUGES", weight: 0.60, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "BE-BRUGES", weight: 0.65, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "BE-BRUGES", weight: 0.58, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "BE-BRUGES", weight: 0.55, season: null },
+  { sourceRegionId: "JP", destinationId: "BE-BRUGES", weight: 0.50, season: null },
+  { sourceRegionId: "IE", destinationId: "BE-BRUGES", weight: 0.48, season: null },
+
+  // ----------------------------------------
+  // BE-BRUSSELS (Brussels)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "BE-BRUSSELS", weight: 0.65, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "BE-BRUSSELS", weight: 0.60, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "BE-BRUSSELS", weight: 0.62, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "BE-BRUSSELS", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "BE-BRUSSELS", weight: 0.52, season: null },
+  { sourceRegionId: "JP", destinationId: "BE-BRUSSELS", weight: 0.42, season: null },
+  { sourceRegionId: "LU", destinationId: "BE-BRUSSELS", weight: 0.55, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "BE-BRUSSELS", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // BE-GHENT (Ghent)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "BE-GHENT", weight: 0.52, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "BE-GHENT", weight: 0.50, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "BE-GHENT", weight: 0.60, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "BE-GHENT", weight: 0.45, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "BE-GHENT", weight: 0.42, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "BE-GHENT", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // NL-AMSTERDAM (Amsterdam)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "NL-AMSTERDAM", weight: 0.82, season: null },
+  { sourceRegionId: "GB-SOUTH", destinationId: "NL-AMSTERDAM", weight: 0.70, season: null },
+  { sourceRegionId: "GB-MIDLANDS", destinationId: "NL-AMSTERDAM", weight: 0.62, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "NL-AMSTERDAM", weight: 0.68, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "NL-AMSTERDAM", weight: 0.65, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "NL-AMSTERDAM", weight: 0.75, season: null },
+  { sourceRegionId: "US-WEST", destinationId: "NL-AMSTERDAM", weight: 0.62, season: null },
+  { sourceRegionId: "JP", destinationId: "NL-AMSTERDAM", weight: 0.58, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "NL-AMSTERDAM", weight: 0.55, season: null },
+  { sourceRegionId: "DK", destinationId: "NL-AMSTERDAM", weight: 0.55, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "NL-AMSTERDAM", weight: 0.62, season: null },
+  { sourceRegionId: "AU-EAST", destinationId: "NL-AMSTERDAM", weight: 0.50, season: null },
+  { sourceRegionId: "CA-EAST", destinationId: "NL-AMSTERDAM", weight: 0.58, season: null },
+
+  // ----------------------------------------
+  // NL-UTRECHT (Utrecht)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "NL-UTRECHT", weight: 0.40, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "NL-UTRECHT", weight: 0.45, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "NL-UTRECHT", weight: 0.42, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "NL-UTRECHT", weight: 0.35, season: null },
+  { sourceRegionId: "NL-EAST", destinationId: "NL-UTRECHT", weight: 0.50, season: null },
+
+  // ----------------------------------------
+  // NL-WADDEN (Wadden Islands)
+  // ----------------------------------------
+  { sourceRegionId: "NL-NORTH", destinationId: "NL-WADDEN", weight: 0.65, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "NL-WADDEN", weight: 0.45, season: "summer" },
+  { sourceRegionId: "DE-NI", destinationId: "NL-WADDEN", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-SH", destinationId: "NL-WADDEN", weight: 0.38, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "NL-WADDEN", weight: 0.28, season: "summer" },
+
+  // ----------------------------------------
+  // PL-KRAKOW (Krakow)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SN", destinationId: "PL-KRAKOW", weight: 0.48, season: null },
+  { sourceRegionId: "DE-BE", destinationId: "PL-KRAKOW", weight: 0.45, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "PL-KRAKOW", weight: 0.65, season: null },
+  { sourceRegionId: "GB-MIDLANDS", destinationId: "PL-KRAKOW", weight: 0.52, season: null },
+  { sourceRegionId: "IE", destinationId: "PL-KRAKOW", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "PL-KRAKOW", weight: 0.50, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "PL-KRAKOW", weight: 0.42, season: null },
+  { sourceRegionId: "CZ", destinationId: "PL-KRAKOW", weight: 0.52, season: null },
+  { sourceRegionId: "SK", destinationId: "PL-KRAKOW", weight: 0.55, season: null },
+  { sourceRegionId: "AT-W", destinationId: "PL-KRAKOW", weight: 0.38, season: null },
+
+  // ----------------------------------------
+  // PL-WARSAW (Warsaw)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BE", destinationId: "PL-WARSAW", weight: 0.52, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "PL-WARSAW", weight: 0.42, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "PL-WARSAW", weight: 0.55, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "PL-WARSAW", weight: 0.45, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "PL-WARSAW", weight: 0.38, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "PL-WARSAW", weight: 0.42, season: null },
+  { sourceRegionId: "NO-SOUTH", destinationId: "PL-WARSAW", weight: 0.38, season: null },
+  { sourceRegionId: "UA", destinationId: "PL-WARSAW", weight: 0.55, season: null },
+
+  // ----------------------------------------
+  // PL-GDANSK (Gdańsk)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BE", destinationId: "PL-GDANSK", weight: 0.45, season: "summer" },
+  { sourceRegionId: "DE-SH", destinationId: "PL-GDANSK", weight: 0.40, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "PL-GDANSK", weight: 0.45, season: "summer" },
+  { sourceRegionId: "SE-SOUTH", destinationId: "PL-GDANSK", weight: 0.52, season: "summer" },
+  { sourceRegionId: "DK", destinationId: "PL-GDANSK", weight: 0.48, season: "summer" },
+  { sourceRegionId: "NL-NORTH", destinationId: "PL-GDANSK", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // PL-ZAKOPANE (Zakopane) — ski
+  // ----------------------------------------
+  { sourceRegionId: "PL-SOUTH", destinationId: "PL-ZAKOPANE", weight: 0.75, season: "winter" },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "PL-ZAKOPANE", weight: 0.65, season: "winter" },
+  { sourceRegionId: "CZ", destinationId: "PL-ZAKOPANE", weight: 0.52, season: "winter" },
+  { sourceRegionId: "SK", destinationId: "PL-ZAKOPANE", weight: 0.48, season: "winter" },
+  { sourceRegionId: "DE-SN", destinationId: "PL-ZAKOPANE", weight: 0.35, season: "winter" },
+  { sourceRegionId: "HU", destinationId: "PL-ZAKOPANE", weight: 0.32, season: "winter" },
+
+  // ----------------------------------------
+  // PL-WROCLAW (Wrocław)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SN", destinationId: "PL-WROCLAW", weight: 0.60, season: null },
+  { sourceRegionId: "DE-BE", destinationId: "PL-WROCLAW", weight: 0.48, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "PL-WROCLAW", weight: 0.45, season: null },
+  { sourceRegionId: "CZ", destinationId: "PL-WROCLAW", weight: 0.52, season: null },
+  { sourceRegionId: "NL-EAST", destinationId: "PL-WROCLAW", weight: 0.35, season: null },
+  { sourceRegionId: "AT-W", destinationId: "PL-WROCLAW", weight: 0.32, season: null },
+
+  // ----------------------------------------
+  // CZ-PRAGUE (Prague)
+  // ----------------------------------------
+  { sourceRegionId: "DE-SN", destinationId: "CZ-PRAGUE", weight: 0.75, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "CZ-PRAGUE", weight: 0.68, season: null },
+  { sourceRegionId: "AT-W", destinationId: "CZ-PRAGUE", weight: 0.65, season: null },
+  { sourceRegionId: "PL-SOUTH", destinationId: "CZ-PRAGUE", weight: 0.62, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CZ-PRAGUE", weight: 0.78, season: null },
+  { sourceRegionId: "GB-MIDLANDS", destinationId: "CZ-PRAGUE", weight: 0.62, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CZ-PRAGUE", weight: 0.70, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "CZ-PRAGUE", weight: 0.55, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "CZ-PRAGUE", weight: 0.58, season: null },
+  { sourceRegionId: "JP", destinationId: "CZ-PRAGUE", weight: 0.52, season: null },
+  { sourceRegionId: "SK", destinationId: "CZ-PRAGUE", weight: 0.60, season: null },
+  { sourceRegionId: "HU", destinationId: "CZ-PRAGUE", weight: 0.55, season: null },
+  { sourceRegionId: "IE", destinationId: "CZ-PRAGUE", weight: 0.60, season: null },
+
+  // ----------------------------------------
+  // CZ-CESKY-KRUMLOV (Český Krumlov)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.58, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.55, season: "summer" },
+  { sourceRegionId: "AT-OOE", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.52, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.60, season: "summer" },
+  { sourceRegionId: "KR", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.52, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "CZ-CESKY-KRUMLOV", weight: 0.45, season: "summer" },
+
+  // ----------------------------------------
+  // CZ-KARLOVY-VARY (Karlovy Vary)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "CZ-KARLOVY-VARY", weight: 0.48, season: null },
+  { sourceRegionId: "DE-SN", destinationId: "CZ-KARLOVY-VARY", weight: 0.52, season: null },
+  { sourceRegionId: "RU-MOW", destinationId: "CZ-KARLOVY-VARY", weight: 0.65, season: null },
+  { sourceRegionId: "RU-SPE", destinationId: "CZ-KARLOVY-VARY", weight: 0.55, season: null },
+  { sourceRegionId: "AT-W", destinationId: "CZ-KARLOVY-VARY", weight: 0.42, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "CZ-KARLOVY-VARY", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // DK-COPENHAGEN (Copenhagen)
+  // ----------------------------------------
+  { sourceRegionId: "DE-HH", destinationId: "DK-COPENHAGEN", weight: 0.65, season: null },
+  { sourceRegionId: "DE-SH", destinationId: "DK-COPENHAGEN", weight: 0.58, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "DK-COPENHAGEN", weight: 0.50, season: null },
+  { sourceRegionId: "NO-SOUTH", destinationId: "DK-COPENHAGEN", weight: 0.70, season: null },
+  { sourceRegionId: "SE-SOUTH", destinationId: "DK-COPENHAGEN", weight: 0.72, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DK-COPENHAGEN", weight: 0.65, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DK-COPENHAGEN", weight: 0.58, season: null },
+  { sourceRegionId: "NL-NORTH", destinationId: "DK-COPENHAGEN", weight: 0.48, season: null },
+  { sourceRegionId: "JP", destinationId: "DK-COPENHAGEN", weight: 0.45, season: null },
+  { sourceRegionId: "FI-SOUTH", destinationId: "DK-COPENHAGEN", weight: 0.55, season: null },
+
+  // ----------------------------------------
+  // HR-SPLIT (Split)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "HR-SPLIT", weight: 0.55, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "HR-SPLIT", weight: 0.48, season: null },
+  { sourceRegionId: "AT-W", destinationId: "HR-SPLIT", weight: 0.52, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "HR-SPLIT", weight: 0.62, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "HR-SPLIT", weight: 0.55, season: null },
+  { sourceRegionId: "CZ", destinationId: "HR-SPLIT", weight: 0.58, season: null },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "HR-SPLIT", weight: 0.52, season: null },
+  { sourceRegionId: "SK", destinationId: "HR-SPLIT", weight: 0.50, season: null },
+  { sourceRegionId: "HU", destinationId: "HR-SPLIT", weight: 0.55, season: null },
+  { sourceRegionId: "SI", destinationId: "HR-SPLIT", weight: 0.60, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "HR-SPLIT", weight: 0.42, season: null },
+
+  // ----------------------------------------
+  // HR-HVAR (Hvar)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "HR-HVAR", weight: 0.58, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "HR-HVAR", weight: 0.52, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "HR-HVAR", weight: 0.45, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "HR-HVAR", weight: 0.48, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "HR-HVAR", weight: 0.42, season: "summer" },
+  { sourceRegionId: "SE-SOUTH", destinationId: "HR-HVAR", weight: 0.40, season: "summer" },
+  { sourceRegionId: "AE", destinationId: "HR-HVAR", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // GR-NAXOS (Naxos)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "GR-NAXOS", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "GR-NAXOS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-NAXOS", weight: 0.50, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-NAXOS", weight: 0.40, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "GR-NAXOS", weight: 0.42, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "GR-NAXOS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "GR-NAXOS", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // GR-PAROS (Paros)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "GR-PAROS", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-PAROS", weight: 0.52, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "GR-PAROS", weight: 0.48, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-PAROS", weight: 0.40, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "GR-PAROS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "GR-PAROS", weight: 0.35, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "GR-PAROS", weight: 0.42, season: "summer" },
+
+  // ----------------------------------------
+  // GR-MILOS (Milos)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-MILOS", weight: 0.55, season: "summer" },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "GR-MILOS", weight: 0.52, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "GR-MILOS", weight: 0.48, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "GR-MILOS", weight: 0.40, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-MILOS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "AU-EAST", destinationId: "GR-MILOS", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // GR-LEFKADA (Lefkada)
+  // ----------------------------------------
+  { sourceRegionId: "DE-NW", destinationId: "GR-LEFKADA", weight: 0.40, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "GR-LEFKADA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-LEFKADA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-LEFKADA", weight: 0.42, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "GR-LEFKADA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "GR-LEFKADA", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // GR-CEPHALONIA (Cephalonia)
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-CEPHALONIA", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-SOUTH", destinationId: "GR-CEPHALONIA", weight: 0.48, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "GR-CEPHALONIA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-CEPHALONIA", weight: 0.40, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "GR-CEPHALONIA", weight: 0.38, season: "summer" },
+  { sourceRegionId: "IE", destinationId: "GR-CEPHALONIA", weight: 0.42, season: "summer" },
+
+  // ----------------------------------------
+  // HU-THERMAL (Thermal Baths — Hévíz)
+  // ----------------------------------------
+  { sourceRegionId: "AT-W", destinationId: "HU-THERMAL", weight: 0.52, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "HU-THERMAL", weight: 0.45, season: null },
+  { sourceRegionId: "CZ", destinationId: "HU-THERMAL", weight: 0.48, season: null },
+  { sourceRegionId: "SK", destinationId: "HU-THERMAL", weight: 0.55, season: null },
+  { sourceRegionId: "RO", destinationId: "HU-THERMAL", weight: 0.42, season: null },
+  { sourceRegionId: "PL-CENTRAL", destinationId: "HU-THERMAL", weight: 0.35, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "HU-THERMAL", weight: 0.30, season: null },
+
+  // ----------------------------------------
+  // LU-LUXEMBOURG (Luxembourg City)
+  // ----------------------------------------
+  { sourceRegionId: "BE-VLG", destinationId: "LU-LUXEMBOURG", weight: 0.55, season: null },
+  { sourceRegionId: "BE-WAL", destinationId: "LU-LUXEMBOURG", weight: 0.60, season: null },
+  { sourceRegionId: "FR-NE", destinationId: "LU-LUXEMBOURG", weight: 0.58, season: null },
+  { sourceRegionId: "DE-RP", destinationId: "LU-LUXEMBOURG", weight: 0.52, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "LU-LUXEMBOURG", weight: 0.45, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "LU-LUXEMBOURG", weight: 0.42, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "LU-LUXEMBOURG", weight: 0.35, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "LU-LUXEMBOURG", weight: 0.30, season: null },
+
+  // ----------------------------------------
+  // TR-ALACATI (Alaçatı)
+  // ----------------------------------------
+  { sourceRegionId: "TR-WEST", destinationId: "TR-ALACATI", weight: 0.70, season: "summer" },
+  { sourceRegionId: "TR-EAST", destinationId: "TR-ALACATI", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "TR-ALACATI", weight: 0.42, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "TR-ALACATI", weight: 0.38, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "TR-ALACATI", weight: 0.35, season: "summer" },
+  { sourceRegionId: "RU-MOW", destinationId: "TR-ALACATI", weight: 0.40, season: "summer" },
+  { sourceRegionId: "UA", destinationId: "TR-ALACATI", weight: 0.35, season: "summer" },
+
+  // ========================================
+  // NEW DESTINATIONS — ADDED 2024
+  // ========================================
+
+  // ----------------------------------------
+  // SI-PORTOROZ (Slovenian Riviera)
+  // ----------------------------------------
+  { sourceRegionId: "SI", destinationId: "SI-PORTOROZ", weight: 0.80, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "SI-PORTOROZ", weight: 0.55, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "SI-PORTOROZ", weight: 0.42, season: "summer" },
+  { sourceRegionId: "IT", destinationId: "SI-PORTOROZ", weight: 0.48, season: "summer" },
+  { sourceRegionId: "HU", destinationId: "SI-PORTOROZ", weight: 0.38, season: "summer" },
+
+  // ----------------------------------------
+  // DE-HEIDELBERG
+  // ----------------------------------------
+  { sourceRegionId: "DE-BW", destinationId: "DE-HEIDELBERG", weight: 0.75, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "DE-HEIDELBERG", weight: 0.55, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "DE-HEIDELBERG", weight: 0.38, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "DE-HEIDELBERG", weight: 0.35, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-HEIDELBERG", weight: 0.28, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-HEIDELBERG", weight: 0.22, season: null },
+
+  // ----------------------------------------
+  // DE-ROTHENBURG (ob der Tauber)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "DE-ROTHENBURG", weight: 0.72, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "DE-ROTHENBURG", weight: 0.60, season: null },
+  { sourceRegionId: "GB-LONDON", destinationId: "DE-ROTHENBURG", weight: 0.35, season: null },
+  { sourceRegionId: "US-NORTHEAST", destinationId: "DE-ROTHENBURG", weight: 0.30, season: null },
+  { sourceRegionId: "JP", destinationId: "DE-ROTHENBURG", weight: 0.28, season: null },
+
+  // ----------------------------------------
+  // IT-ORTISEI (South Tyrol / Dolomites)
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-ORTISEI", weight: 0.75, season: "winter" },
+  { sourceRegionId: "AT-T", destinationId: "IT-ORTISEI", weight: 0.65, season: "winter" },
+  { sourceRegionId: "AT-W", destinationId: "IT-ORTISEI", weight: 0.55, season: "winter" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-ORTISEI", weight: 0.48, season: "winter" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-ORTISEI", weight: 0.40, season: "winter" },
+  { sourceRegionId: "DE-NW", destinationId: "IT-ORTISEI", weight: 0.38, season: "winter" },
+
+  // ----------------------------------------
+  // IT-PORTOFINO
+  // ----------------------------------------
+  { sourceRegionId: "IT", destinationId: "IT-PORTOFINO", weight: 0.70, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "IT-PORTOFINO", weight: 0.50, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "IT-PORTOFINO", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "IT-PORTOFINO", weight: 0.38, season: "summer" },
+  { sourceRegionId: "CH-DE", destinationId: "IT-PORTOFINO", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // FR-MONT-BLANC (Chamonix region)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-MONT-BLANC", weight: 0.72, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "FR-MONT-BLANC", weight: 0.60, season: "winter" },
+  { sourceRegionId: "CH-DE", destinationId: "FR-MONT-BLANC", weight: 0.55, season: "winter" },
+  { sourceRegionId: "DE-BY", destinationId: "FR-MONT-BLANC", weight: 0.48, season: "winter" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-MONT-BLANC", weight: 0.42, season: "winter" },
+  { sourceRegionId: "BE-VLG", destinationId: "FR-MONT-BLANC", weight: 0.38, season: "winter" },
+
+  // ----------------------------------------
+  // FR-COLMAR (Alsace)
+  // ----------------------------------------
+  { sourceRegionId: "FR-IDF", destinationId: "FR-COLMAR", weight: 0.68, season: null },
+  { sourceRegionId: "DE-BW", destinationId: "FR-COLMAR", weight: 0.62, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "FR-COLMAR", weight: 0.45, season: null },
+  { sourceRegionId: "CH-DE", destinationId: "FR-COLMAR", weight: 0.55, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "FR-COLMAR", weight: 0.38, season: null },
+  { sourceRegionId: "BE-VLG", destinationId: "FR-COLMAR", weight: 0.35, season: null },
+
+  // ----------------------------------------
+  // ES-FORMENTERA
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "ES-FORMENTERA", weight: 0.60, season: "summer" },
+  { sourceRegionId: "DE-BW", destinationId: "ES-FORMENTERA", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "ES-FORMENTERA", weight: 0.52, season: "summer" },
+  { sourceRegionId: "IT", destinationId: "ES-FORMENTERA", weight: 0.48, season: "summer" },
+  { sourceRegionId: "FR-IDF", destinationId: "ES-FORMENTERA", weight: 0.45, season: "summer" },
+
+  // ----------------------------------------
+  // PT-ALENTEJO
+  // ----------------------------------------
+  { sourceRegionId: "GB-LONDON", destinationId: "PT-ALENTEJO", weight: 0.48, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "PT-ALENTEJO", weight: 0.42, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "PT-ALENTEJO", weight: 0.35, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "PT-ALENTEJO", weight: 0.32, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "PT-ALENTEJO", weight: 0.28, season: null },
+
+  // ----------------------------------------
+  // AT-LECH (Lech am Arlberg)
+  // ----------------------------------------
+  { sourceRegionId: "AT-W", destinationId: "AT-LECH", weight: 0.70, season: "winter" },
+  { sourceRegionId: "DE-BY", destinationId: "AT-LECH", weight: 0.65, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "AT-LECH", weight: 0.55, season: "winter" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "AT-LECH", weight: 0.48, season: "winter" },
+  { sourceRegionId: "CH-DE", destinationId: "AT-LECH", weight: 0.42, season: "winter" },
+  { sourceRegionId: "BE-VLG", destinationId: "AT-LECH", weight: 0.35, season: "winter" },
+
+  // ----------------------------------------
+  // GR-IKARIA
+  // ----------------------------------------
+  { sourceRegionId: "GR", destinationId: "GR-IKARIA", weight: 0.75, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "GR-IKARIA", weight: 0.32, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "GR-IKARIA", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "GR-IKARIA", weight: 0.25, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "GR-IKARIA", weight: 0.22, season: "summer" },
+
+  // ----------------------------------------
+  // HR-VIS
+  // ----------------------------------------
+  { sourceRegionId: "HR", destinationId: "HR-VIS", weight: 0.78, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "HR-VIS", weight: 0.45, season: "summer" },
+  { sourceRegionId: "AT-W", destinationId: "HR-VIS", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "HR-VIS", weight: 0.35, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "HR-VIS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "PL-SOUTH", destinationId: "HR-VIS", weight: 0.32, season: "summer" },
+
+  // ----------------------------------------
+  // NL-GIETHOORN
+  // ----------------------------------------
+  { sourceRegionId: "NL-NORTH", destinationId: "NL-GIETHOORN", weight: 0.82, season: "summer" },
+  { sourceRegionId: "NL-SOUTH", destinationId: "NL-GIETHOORN", weight: 0.78, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "NL-GIETHOORN", weight: 0.55, season: "summer" },
+  { sourceRegionId: "BE-VLG", destinationId: "NL-GIETHOORN", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "NL-GIETHOORN", weight: 0.35, season: "summer" },
+
+  // ----------------------------------------
+  // PL-MASURIA (Masurian Lakes)
+  // ----------------------------------------
+  { sourceRegionId: "PL-CENTRAL", destinationId: "PL-MASURIA", weight: 0.82, season: "summer" },
+  { sourceRegionId: "PL-SOUTH", destinationId: "PL-MASURIA", weight: 0.72, season: "summer" },
+  { sourceRegionId: "DE-NI", destinationId: "PL-MASURIA", weight: 0.35, season: "summer" },
+  { sourceRegionId: "DE-NW", destinationId: "PL-MASURIA", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "PL-MASURIA", weight: 0.22, season: "summer" },
+
+  // ----------------------------------------
+  // CZ-BRNO
+  // ----------------------------------------
+  { sourceRegionId: "CZ", destinationId: "CZ-BRNO", weight: 0.85, season: null },
+  { sourceRegionId: "SK", destinationId: "CZ-BRNO", weight: 0.60, season: null },
+  { sourceRegionId: "AT-W", destinationId: "CZ-BRNO", weight: 0.48, season: null },
+  { sourceRegionId: "HU", destinationId: "CZ-BRNO", weight: 0.38, season: null },
+  { sourceRegionId: "PL-SOUTH", destinationId: "CZ-BRNO", weight: 0.35, season: null },
+  { sourceRegionId: "DE-BY", destinationId: "CZ-BRNO", weight: 0.30, season: null },
 ];

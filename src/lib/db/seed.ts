@@ -3,7 +3,7 @@ dotenv.config({ path: ".env.local" });
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import * as schema from "./schema";
-import { sourceRegions, destinations, travelPatterns } from "../data";
+import { sourceRegions, destinations, travelPatterns, getEventsForYear } from "../data";
 
 async function main() {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
@@ -56,6 +56,32 @@ async function main() {
     ).onConflictDoNothing();
   }
   console.log(`  ${travelPatterns.length} travel patterns seeded.`);
+
+  console.log("Seeding major events...");
+  const currentYear = new Date().getFullYear();
+  let eventCount = 0;
+  for (let year = currentYear; year <= currentYear + 2; year++) {
+    const events = getEventsForYear(year);
+    if (events.length > 0) {
+      for (let i = 0; i < events.length; i += batchSize) {
+        const batch = events.slice(i, i + batchSize);
+        await db.insert(schema.majorEvents).values(
+          batch.map((e) => ({
+            id: e.id,
+            name: e.name,
+            destinationId: e.destinationId,
+            startDate: e.startDate,
+            endDate: e.endDate,
+            year,
+            trafficBoost: e.trafficBoost,
+            category: e.category,
+          })),
+        ).onConflictDoNothing();
+      }
+      eventCount += events.length;
+    }
+  }
+  console.log(`  ${eventCount} major events seeded (${currentYear}–${currentYear + 2}).`);
 
   console.log("Seed complete. Run scripts/ingest-holidays.ts next.");
   await pool.end();

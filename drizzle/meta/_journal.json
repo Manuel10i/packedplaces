@@ -15,6 +15,13 @@
       "when": 1772350396473,
       "tag": "0001_mysterious_guardian",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772395100185,
+      "tag": "0002_military_rocket_raccoon",
+      "breakpoints": true
     }
   ]
 }

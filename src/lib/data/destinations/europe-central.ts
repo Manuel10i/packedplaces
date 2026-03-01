@@ -165,4 +165,163 @@ export const destinations: Destination[] = [
   // CYPRUS (1)
   // ========================================
   { id: "CY-COAST", name: "Cyprus", country: "CY", lat: 34.92, lng: 33.62, category: "beach", seasonality: "summer", basePopularity: 0.65, region: "europe" },
+
+  // ========================================
+  // GERMANY - cities & nature (8)
+  // ========================================
+  { id: "DE-MUNICH", name: "Munich", country: "DE", lat: 48.14, lng: 11.58, category: "city", seasonality: "year-round", basePopularity: 0.82, region: "europe" },
+  { id: "DE-HAMBURG", name: "Hamburg", country: "DE", lat: 53.55, lng: 9.99, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "DE-BERLIN", name: "Berlin", country: "DE", lat: 52.52, lng: 13.41, category: "city", seasonality: "year-round", basePopularity: 0.85, region: "europe" },
+  { id: "DE-DRESDEN", name: "Dresden", country: "DE", lat: 51.05, lng: 13.74, category: "city", seasonality: "year-round", basePopularity: 0.58, region: "europe" },
+  { id: "DE-COLOGNE", name: "Cologne", country: "DE", lat: 50.94, lng: 6.96, category: "city", seasonality: "year-round", basePopularity: 0.68, region: "europe" },
+  { id: "DE-SYLT", name: "Sylt", country: "DE", lat: 54.91, lng: 8.33, category: "island", seasonality: "summer", basePopularity: 0.62, region: "europe" },
+  { id: "DE-MOSEL", name: "Mosel Valley", country: "DE", lat: 50.10, lng: 7.11, category: "nature", seasonality: "summer", basePopularity: 0.42, region: "europe" },
+  { id: "DE-SAXON-SWITZERLAND", name: "Saxon Switzerland", country: "DE", lat: 50.92, lng: 14.08, category: "nature", seasonality: "summer", basePopularity: 0.45, region: "europe" },
+  { id: "DE-BAVARIAN-LAKES", name: "Bavarian Lakes", country: "DE", lat: 47.71, lng: 11.50, category: "lake", seasonality: "summer", basePopularity: 0.50, region: "europe" },
+
+  // ========================================
+  // ITALY - cities & islands (9)
+  // ========================================
+  { id: "IT-NAPLES", name: "Naples", country: "IT", lat: 40.85, lng: 14.27, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "IT-FLORENCE", name: "Florence", country: "IT", lat: 43.77, lng: 11.25, category: "city", seasonality: "year-round", basePopularity: 0.82, region: "europe", capacityOverride: 3.0 },
+  { id: "IT-MILAN", name: "Milan", country: "IT", lat: 45.46, lng: 9.19, category: "city", seasonality: "year-round", basePopularity: 0.78, region: "europe" },
+  { id: "IT-ISCHIA", name: "Ischia", country: "IT", lat: 40.73, lng: 13.90, category: "island", seasonality: "summer", basePopularity: 0.55, region: "europe" },
+  { id: "IT-ELBA", name: "Elba", country: "IT", lat: 42.78, lng: 10.28, category: "island", seasonality: "summer", basePopularity: 0.50, region: "europe" },
+  { id: "IT-CAPRI", name: "Capri", country: "IT", lat: 40.55, lng: 14.24, category: "island", seasonality: "summer", basePopularity: 0.65, region: "europe", capacityOverride: 0.3 },
+  { id: "IT-DOLOMITES-SUMMER", name: "Val Gardena (Summer)", country: "IT", lat: 46.56, lng: 11.76, category: "mountain", seasonality: "summer", basePopularity: 0.62, region: "europe" },
+  { id: "IT-CINQUE-TERRE-TOWN", name: "Manarola", country: "IT", lat: 44.11, lng: 9.73, category: "cultural", seasonality: "year-round", basePopularity: 0.60, region: "europe", capacityOverride: 0.5 },
+
+  // ========================================
+  // SPAIN - cities & beach (8)
+  // ========================================
+  { id: "ES-SEVILLE", name: "Seville", country: "ES", lat: 37.39, lng: -5.98, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "ES-GRANADA", name: "Granada", country: "ES", lat: 37.18, lng: -3.60, category: "cultural", seasonality: "year-round", basePopularity: 0.68, region: "europe" },
+  { id: "ES-BILBAO", name: "Bilbao", country: "ES", lat: 43.26, lng: -2.93, category: "city", seasonality: "year-round", basePopularity: 0.55, region: "europe" },
+  { id: "ES-SAN-SEBASTIAN", name: "San Sebastián", country: "ES", lat: 43.32, lng: -1.98, category: "city", seasonality: "summer", basePopularity: 0.62, region: "europe" },
+  { id: "ES-MARBELLA", name: "Marbella", country: "ES", lat: 36.51, lng: -4.88, category: "beach", seasonality: "summer", basePopularity: 0.70, region: "europe" },
+  { id: "ES-PAMPLONA", name: "Pamplona", country: "ES", lat: 42.81, lng: -1.64, category: "city", seasonality: "summer", basePopularity: 0.48, region: "europe" },
+  { id: "ES-COSTA-DAURADA", name: "Costa Daurada", country: "ES", lat: 41.12, lng: 1.25, category: "beach", seasonality: "summer", basePopularity: 0.62, region: "europe" },
+  { id: "ES-GRAN-CANARIA", name: "Gran Canaria", country: "ES", lat: 27.95, lng: -15.60, category: "beach", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "ES-LA-PALMA", name: "La Palma", country: "ES", lat: 28.68, lng: -17.76, category: "nature", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
+
+  // ========================================
+  // FRANCE - cities & nature (6)
+  // ========================================
+  { id: "FR-LYON", name: "Lyon", country: "FR", lat: 45.76, lng: 4.84, category: "city", seasonality: "year-round", basePopularity: 0.62, region: "europe" },
+  { id: "FR-BORDEAUX", name: "Bordeaux", country: "FR", lat: 44.84, lng: -0.58, category: "city", seasonality: "year-round", basePopularity: 0.60, region: "europe" },
+  { id: "FR-MARSEILLE", name: "Marseille", country: "FR", lat: 43.30, lng: 5.37, category: "city", seasonality: "year-round", basePopularity: 0.65, region: "europe" },
+  { id: "FR-STRASBOURG", name: "Strasbourg", country: "FR", lat: 48.57, lng: 7.75, category: "city", seasonality: "year-round", basePopularity: 0.55, region: "europe" },
+  { id: "FR-CHAMONIX", name: "Chamonix", country: "FR", lat: 45.92, lng: 6.87, category: "ski", seasonality: "winter", basePopularity: 0.72, region: "europe" },
+  { id: "FR-DORDOGNE", name: "Dordogne", country: "FR", lat: 44.86, lng: 0.75, category: "nature", seasonality: "summer", basePopularity: 0.48, region: "europe" },
+  { id: "FR-ANNECY", name: "Lake Annecy", country: "FR", lat: 45.90, lng: 6.13, category: "lake", seasonality: "summer", basePopularity: 0.55, region: "europe" },
+  { id: "FR-CAMARGUE", name: "Camargue", country: "FR", lat: 43.48, lng: 4.54, category: "nature", seasonality: "summer", basePopularity: 0.38, region: "europe" },
+
+  // ========================================
+  // AUSTRIA - cities & nature (3)
+  // ========================================
+  { id: "AT-VIENNA", name: "Vienna", country: "AT", lat: 48.21, lng: 16.37, category: "city", seasonality: "year-round", basePopularity: 0.82, region: "europe" },
+  { id: "AT-SALZBURG", name: "Salzburg", country: "AT", lat: 47.80, lng: 13.04, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "AT-WACHAU", name: "Wachau", country: "AT", lat: 48.37, lng: 15.42, category: "nature", seasonality: "summer", basePopularity: 0.42, region: "europe" },
+  { id: "AT-HALLSTATT", name: "Hallstatt", country: "AT", lat: 47.56, lng: 13.65, category: "cultural", seasonality: "year-round", basePopularity: 0.58, region: "europe", capacityOverride: 0.5 },
+
+  // ========================================
+  // SWITZERLAND - cities & nature (5)
+  // ========================================
+  { id: "CH-ZURICH", name: "Zurich", country: "CH", lat: 47.37, lng: 8.54, category: "city", seasonality: "year-round", basePopularity: 0.68, region: "europe" },
+  { id: "CH-GENEVA", name: "Geneva", country: "CH", lat: 46.20, lng: 6.14, category: "city", seasonality: "year-round", basePopularity: 0.62, region: "europe" },
+  { id: "CH-LUCERNE", name: "Lucerne", country: "CH", lat: 47.05, lng: 8.31, category: "city", seasonality: "year-round", basePopularity: 0.60, region: "europe" },
+  { id: "CH-INTERLAKEN", name: "Interlaken", country: "CH", lat: 46.69, lng: 7.87, category: "nature", seasonality: "year-round", basePopularity: 0.65, region: "europe" },
+  { id: "CH-TICINO", name: "Ticino", country: "CH", lat: 46.17, lng: 8.80, category: "lake", seasonality: "summer", basePopularity: 0.50, region: "europe" },
+
+  // ========================================
+  // PORTUGAL - cities (2)
+  // ========================================
+  { id: "PT-PORTO", name: "Porto", country: "PT", lat: 41.16, lng: -8.63, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "PT-SINTRA", name: "Sintra", country: "PT", lat: 38.80, lng: -9.39, category: "cultural", seasonality: "year-round", basePopularity: 0.55, region: "europe" },
+
+  // ========================================
+  // BELGIUM - cities (3)
+  // ========================================
+  { id: "BE-BRUGES", name: "Bruges", country: "BE", lat: 51.21, lng: 3.22, category: "city", seasonality: "year-round", basePopularity: 0.68, region: "europe", capacityOverride: 2.0 },
+  { id: "BE-BRUSSELS", name: "Brussels", country: "BE", lat: 50.85, lng: 4.35, category: "city", seasonality: "year-round", basePopularity: 0.62, region: "europe" },
+  { id: "BE-GHENT", name: "Ghent", country: "BE", lat: 51.05, lng: 3.72, category: "city", seasonality: "year-round", basePopularity: 0.52, region: "europe" },
+
+  // ========================================
+  // NETHERLANDS - cities (2)
+  // ========================================
+  { id: "NL-AMSTERDAM", name: "Amsterdam", country: "NL", lat: 52.37, lng: 4.90, category: "city", seasonality: "year-round", basePopularity: 0.88, region: "europe", capacityOverride: 4.0 },
+  { id: "NL-UTRECHT", name: "Utrecht", country: "NL", lat: 52.09, lng: 5.12, category: "city", seasonality: "year-round", basePopularity: 0.45, region: "europe" },
+  { id: "NL-WADDEN", name: "Wadden Islands", country: "NL", lat: 53.42, lng: 5.78, category: "island", seasonality: "summer", basePopularity: 0.45, region: "europe" },
+
+  // ========================================
+  // POLAND - cities & nature (4)
+  // ========================================
+  { id: "PL-KRAKOW", name: "Krakow", country: "PL", lat: 50.06, lng: 19.94, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+  { id: "PL-WARSAW", name: "Warsaw", country: "PL", lat: 52.23, lng: 21.01, category: "city", seasonality: "year-round", basePopularity: 0.60, region: "europe" },
+  { id: "PL-GDANSK", name: "Gdańsk", country: "PL", lat: 54.35, lng: 18.65, category: "city", seasonality: "summer", basePopularity: 0.55, region: "europe" },
+  { id: "PL-ZAKOPANE", name: "Zakopane", country: "PL", lat: 49.30, lng: 19.95, category: "ski", seasonality: "winter", basePopularity: 0.55, region: "europe" },
+  { id: "PL-WROCLAW", name: "Wrocław", country: "PL", lat: 51.11, lng: 17.04, category: "city", seasonality: "year-round", basePopularity: 0.48, region: "europe" },
+
+  // ========================================
+  // CZECH REPUBLIC - cities & cultural (2)
+  // ========================================
+  { id: "CZ-PRAGUE", name: "Prague", country: "CZ", lat: 50.08, lng: 14.44, category: "city", seasonality: "year-round", basePopularity: 0.82, region: "europe" },
+  { id: "CZ-CESKY-KRUMLOV", name: "Český Krumlov", country: "CZ", lat: 48.81, lng: 14.32, category: "cultural", seasonality: "summer", basePopularity: 0.55, region: "europe", capacityOverride: 1.0 },
+  { id: "CZ-KARLOVY-VARY", name: "Karlovy Vary", country: "CZ", lat: 50.23, lng: 12.87, category: "cultural", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
+
+  // ========================================
+  // DENMARK - cities (1)
+  // ========================================
+  { id: "DK-COPENHAGEN", name: "Copenhagen", country: "DK", lat: 55.68, lng: 12.57, category: "city", seasonality: "year-round", basePopularity: 0.72, region: "europe" },
+
+  // ========================================
+  // CROATIA - cities & islands (2)
+  // ========================================
+  { id: "HR-SPLIT", name: "Split", country: "HR", lat: 43.51, lng: 16.44, category: "city", seasonality: "year-round", basePopularity: 0.68, region: "europe" },
+  { id: "HR-HVAR", name: "Hvar", country: "HR", lat: 43.17, lng: 16.44, category: "island", seasonality: "summer", basePopularity: 0.62, region: "europe", capacityOverride: 0.4 },
+
+  // ========================================
+  // GREECE - islands (6)
+  // ========================================
+  { id: "GR-NAXOS", name: "Naxos", country: "GR", lat: 37.10, lng: 25.38, category: "island", seasonality: "summer", basePopularity: 0.55, region: "europe" },
+  { id: "GR-PAROS", name: "Paros", country: "GR", lat: 37.09, lng: 25.15, category: "island", seasonality: "summer", basePopularity: 0.58, region: "europe" },
+  { id: "GR-MILOS", name: "Milos", country: "GR", lat: 36.69, lng: 24.44, category: "island", seasonality: "summer", basePopularity: 0.52, region: "europe" },
+  { id: "GR-LEFKADA", name: "Lefkada", country: "GR", lat: 38.83, lng: 20.71, category: "beach", seasonality: "summer", basePopularity: 0.48, region: "europe" },
+  { id: "GR-CEPHALONIA", name: "Cephalonia", country: "GR", lat: 38.18, lng: 20.49, category: "island", seasonality: "summer", basePopularity: 0.50, region: "europe" },
+
+  // ========================================
+  // HUNGARY - thermal (1)
+  // ========================================
+  { id: "HU-THERMAL", name: "Thermal Baths (Hévíz)", country: "HU", lat: 46.79, lng: 17.19, category: "nature", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
+
+  // ========================================
+  // LUXEMBOURG (1)
+  // ========================================
+  { id: "LU-LUXEMBOURG", name: "Luxembourg City", country: "LU", lat: 49.61, lng: 6.13, category: "city", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
+
+  // ========================================
+  // TURKEY - beach (1)
+  // ========================================
+  { id: "TR-ALACATI", name: "Alaçatı", country: "TR", lat: 38.28, lng: 26.38, category: "beach", seasonality: "summer", basePopularity: 0.55, region: "europe" },
+
+  // ========================================
+  // NEW DESTINATIONS
+  // ========================================
+  { id: "SI-PORTOROZ", name: "Portorož", country: "SI", lat: 45.51, lng: 13.59, category: "beach", seasonality: "summer", basePopularity: 0.42, region: "europe" },
+  { id: "DE-HEIDELBERG", name: "Heidelberg", country: "DE", lat: 49.40, lng: 8.69, category: "city", seasonality: "year-round", basePopularity: 0.48, region: "europe" },
+  { id: "DE-ROTHENBURG", name: "Rothenburg ob der Tauber", country: "DE", lat: 49.38, lng: 10.18, category: "cultural", seasonality: "year-round", basePopularity: 0.45, region: "europe" },
+  { id: "IT-ORTISEI", name: "Ortisei", country: "IT", lat: 46.57, lng: 11.67, category: "ski", seasonality: "winter", basePopularity: 0.52, region: "europe" },
+  { id: "IT-PORTOFINO", name: "Portofino", country: "IT", lat: 44.30, lng: 9.21, category: "beach", seasonality: "summer", basePopularity: 0.55, region: "europe", capacityOverride: 0.3 },
+  { id: "FR-MONT-BLANC", name: "Mont Blanc", country: "FR", lat: 45.83, lng: 6.87, category: "mountain", seasonality: "summer", basePopularity: 0.52, region: "europe" },
+  { id: "FR-COLMAR", name: "Colmar", country: "FR", lat: 48.08, lng: 7.36, category: "cultural", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
+  { id: "ES-FORMENTERA", name: "Formentera", country: "ES", lat: 38.71, lng: 1.44, category: "island", seasonality: "summer", basePopularity: 0.52, region: "europe" },
+  { id: "PT-ALENTEJO", name: "Alentejo Coast", country: "PT", lat: 37.74, lng: -8.79, category: "beach", seasonality: "summer", basePopularity: 0.42, region: "europe" },
+  { id: "AT-LECH", name: "Lech am Arlberg", country: "AT", lat: 47.21, lng: 10.14, category: "ski", seasonality: "winter", basePopularity: 0.68, region: "europe" },
+  { id: "GR-IKARIA", name: "Ikaria", country: "GR", lat: 37.60, lng: 26.17, category: "island", seasonality: "summer", basePopularity: 0.35, region: "europe" },
+  { id: "HR-VIS", name: "Vis", country: "HR", lat: 43.06, lng: 16.18, category: "island", seasonality: "summer", basePopularity: 0.42, region: "europe" },
+  { id: "NL-GIETHOORN", name: "Giethoorn", country: "NL", lat: 52.74, lng: 6.08, category: "nature", seasonality: "summer", basePopularity: 0.38, region: "europe" },
+  { id: "PL-MASURIA", name: "Masuria Lakes", country: "PL", lat: 53.87, lng: 21.54, category: "lake", seasonality: "summer", basePopularity: 0.38, region: "europe" },
+  { id: "CZ-BRNO", name: "Brno", country: "CZ", lat: 49.20, lng: 16.61, category: "city", seasonality: "year-round", basePopularity: 0.38, region: "europe" },
+  { id: "DE-NUREMBERG", name: "Nuremberg", country: "DE", lat: 49.45, lng: 11.08, category: "city", seasonality: "year-round", basePopularity: 0.48, region: "europe" },
+  { id: "IT-RAVENNA", name: "Ravenna", country: "IT", lat: 44.42, lng: 12.20, category: "cultural", seasonality: "year-round", basePopularity: 0.42, region: "europe" },
 ];

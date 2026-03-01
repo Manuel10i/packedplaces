@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "Descubre lo llenos que están\nlos destinos turísticos",
-    "description": "PackedPlaces.com visualiza la masificación turística de más de 230 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de 75 países.",
+    "description": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares y grandes eventos de más de 100 países.",
     "cta": "Explorar el mapa",
     "statRegions": "Regiones",
     "statDestinations": "Destinos",
@@ -20,7 +20,7 @@
     "step1Title": "Rastrear vacaciones escolares",
     "step1Text": "Recopilamos calendarios de vacaciones escolares de 127 regiones usando tres fuentes de datos: fechas curadas manualmente, la OpenHolidaysAPI y la biblioteca date-holidays.",
     "step2Title": "Modelar flujos turísticos",
-    "step2Text": "Más de 2.100 patrones de viaje conectan regiones de origen con destinos, ponderados por estadísticas turísticas reales de la OMT, Eurostat y autoridades nacionales de turismo.",
+    "step2Text": "Más de 6.000 patrones de viaje conectan regiones de origen con destinos, ponderados por estadísticas turísticas reales de la OMT, Eurostat y autoridades nacionales de turismo.",
     "step3Title": "Calcular masificación",
     "step3Text": "Las puntuaciones de tráfico bruto se dividen por la capacidad de cada destino, teniendo en cuenta la categoría, la estacionalidad y el hemisferio. El resultado: lo lleno que se siente un lugar."
   },
@@ -99,6 +99,7 @@
   "tooltip": {
     "crowdedness": "Masificación: {score}% — {label}",
     "topSources": "Principales fuentes:",
+    "activeEvents": "Eventos activos",
     "quiet": "Tranquilo",
     "moderate": "Moderado",
     "busy": "Concurrido",

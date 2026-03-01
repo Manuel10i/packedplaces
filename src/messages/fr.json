@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "Découvrez à quel point les destinations\ntouristiques sont fréquentées",
-    "description": "PackedPlaces.com visualise l'affluence touristique de plus de 230 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de 75 pays.",
+    "description": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires et grands événements de plus de 100 pays.",
     "cta": "Explorer la carte",
     "statRegions": "Régions",
     "statDestinations": "Destinations",
@@ -20,7 +20,7 @@
     "step1Title": "Suivre les vacances scolaires",
     "step1Text": "Nous collectons les calendriers de vacances scolaires de 127 régions en utilisant trois sources de données : des dates manuellement curées, l'OpenHolidaysAPI et la bibliothèque date-holidays.",
     "step2Title": "Modéliser les flux touristiques",
-    "step2Text": "Plus de 2 100 schémas de voyage relient les régions sources aux destinations, pondérés par des statistiques touristiques réelles de l'OMT, d'Eurostat et des autorités nationales du tourisme.",
+    "step2Text": "Plus de 6 000 schémas de voyage relient les régions sources aux destinations, pondérés par des statistiques touristiques réelles de l'OMT, d'Eurostat et des autorités nationales du tourisme.",
     "step3Title": "Calculer l'affluence",
     "step3Text": "Les scores de trafic brut sont divisés par la capacité de chaque destination — en tenant compte de la catégorie, de la saisonnalité et de l'hémisphère. Le résultat : à quel point un lieu est bondé."
   },
@@ -99,6 +99,7 @@
   "tooltip": {
     "crowdedness": "Affluence : {score}% — {label}",
     "topSources": "Principales sources :",
+    "activeEvents": "Événements en cours",
     "quiet": "Calme",
     "moderate": "Modéré",
     "busy": "Fréquenté",

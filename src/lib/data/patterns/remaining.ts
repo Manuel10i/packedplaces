@@ -110,4 +110,121 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NG", destinationId: "FR-PARIS", weight: 0.32, season: null },
   { sourceRegionId: "NG", destinationId: "TR-ISTANBUL", weight: 0.30, season: null },
   { sourceRegionId: "NG", destinationId: "ET-LALIBELA", weight: 0.22, season: "winter" },
+
+  // ========================================
+  // KG-BISHKEK — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "KG-BISHKEK", weight: 0.40, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "KG-BISHKEK", weight: 0.20, season: null },
+  { sourceRegionId: "TR-WEST", destinationId: "KG-BISHKEK", weight: 0.20, season: null },
+  { sourceRegionId: "IN-NORTH", destinationId: "KG-BISHKEK", weight: 0.15, season: null },
+  { sourceRegionId: "KZ", destinationId: "KG-BISHKEK", weight: 0.30, season: null },
+
+  // ========================================
+  // KG-ISSYK-KUL — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "KG-ISSYK-KUL", weight: 0.45, season: "summer" },
+  { sourceRegionId: "KZ", destinationId: "KG-ISSYK-KUL", weight: 0.38, season: "summer" },
+  { sourceRegionId: "CN-EAST", destinationId: "KG-ISSYK-KUL", weight: 0.18, season: "summer" },
+  { sourceRegionId: "TR-WEST", destinationId: "KG-ISSYK-KUL", weight: 0.15, season: "summer" },
+  { sourceRegionId: "UZ", destinationId: "KG-ISSYK-KUL", weight: 0.20, season: "summer" },
+
+  // ========================================
+  // KZ-ALMATY-MOUNTAINS — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "KZ-ALMATY-MOUNTAINS", weight: 0.38, season: null },
+  { sourceRegionId: "KZ", destinationId: "KZ-ALMATY-MOUNTAINS", weight: 0.50, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "KZ-ALMATY-MOUNTAINS", weight: 0.20, season: null },
+  { sourceRegionId: "TR-WEST", destinationId: "KZ-ALMATY-MOUNTAINS", weight: 0.15, season: null },
+  { sourceRegionId: "DE", destinationId: "KZ-ALMATY-MOUNTAINS", weight: 0.12, season: "summer" },
+
+  // ========================================
+  // UZ-BUKHARA — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "UZ-BUKHARA", weight: 0.40, season: null },
+  { sourceRegionId: "TR-WEST", destinationId: "UZ-BUKHARA", weight: 0.30, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "UZ-BUKHARA", weight: 0.15, season: null },
+  { sourceRegionId: "IN-NORTH", destinationId: "UZ-BUKHARA", weight: 0.15, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "UZ-BUKHARA", weight: 0.18, season: null },
+  { sourceRegionId: "DE", destinationId: "UZ-BUKHARA", weight: 0.12, season: null },
+
+  // ========================================
+  // UZ-KHIVA — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "UZ-KHIVA", weight: 0.38, season: null },
+  { sourceRegionId: "TR-WEST", destinationId: "UZ-KHIVA", weight: 0.28, season: null },
+  { sourceRegionId: "FR-IDF", destinationId: "UZ-KHIVA", weight: 0.14, season: null },
+  { sourceRegionId: "IN-NORTH", destinationId: "UZ-KHIVA", weight: 0.12, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "UZ-KHIVA", weight: 0.15, season: null },
+
+  // ========================================
+  // RU-KAMCHATKA — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "RU-KAMCHATKA", weight: 0.40, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "RU-KAMCHATKA", weight: 0.20, season: "summer" },
+  { sourceRegionId: "US-WEST", destinationId: "RU-KAMCHATKA", weight: 0.15, season: "summer" },
+  { sourceRegionId: "CN-EAST", destinationId: "RU-KAMCHATKA", weight: 0.12, season: "summer" },
+  { sourceRegionId: "KR", destinationId: "RU-KAMCHATKA", weight: 0.12, season: "summer" },
+
+  // ========================================
+  // RU-BAIKAL — INBOUND
+  // ========================================
+  { sourceRegionId: "RU-MOW", destinationId: "RU-BAIKAL", weight: 0.50, season: "summer" },
+  { sourceRegionId: "CN-EAST", destinationId: "RU-BAIKAL", weight: 0.20, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "RU-BAIKAL", weight: 0.15, season: "summer" },
+  { sourceRegionId: "KR", destinationId: "RU-BAIKAL", weight: 0.12, season: "summer" },
+  { sourceRegionId: "DE", destinationId: "RU-BAIKAL", weight: 0.10, season: "summer" },
+
+  // ========================================
+  // BD-SUNDARBANS — INBOUND
+  // ========================================
+  { sourceRegionId: "IN-NORTH", destinationId: "BD-SUNDARBANS", weight: 0.30, season: "winter" },
+  { sourceRegionId: "BD", destinationId: "BD-SUNDARBANS", weight: 0.45, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "BD-SUNDARBANS", weight: 0.18, season: "winter" },
+  { sourceRegionId: "AE", destinationId: "BD-SUNDARBANS", weight: 0.12, season: "winter" },
+
+  // ========================================
+  // PK-KARAKORAM — INBOUND
+  // ========================================
+  { sourceRegionId: "PK", destinationId: "PK-KARAKORAM", weight: 0.42, season: "summer" },
+  { sourceRegionId: "CN-EAST", destinationId: "PK-KARAKORAM", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-LONDON", destinationId: "PK-KARAKORAM", weight: 0.20, season: "summer" },
+  { sourceRegionId: "DE", destinationId: "PK-KARAKORAM", weight: 0.15, season: "summer" },
+  { sourceRegionId: "IN-NORTH", destinationId: "PK-KARAKORAM", weight: 0.12, season: "summer" },
+
+  // ========================================
+  // MN-GOBI — INBOUND
+  // ========================================
+  { sourceRegionId: "CN-EAST", destinationId: "MN-GOBI", weight: 0.30, season: "summer" },
+  { sourceRegionId: "RU-MOW", destinationId: "MN-GOBI", weight: 0.28, season: "summer" },
+  { sourceRegionId: "JP", destinationId: "MN-GOBI", weight: 0.22, season: "summer" },
+  { sourceRegionId: "KR", destinationId: "MN-GOBI", weight: 0.18, season: "summer" },
+  { sourceRegionId: "DE", destinationId: "MN-GOBI", weight: 0.12, season: "summer" },
+
+  // ========================================
+  // MM-MANDALAY — INBOUND
+  // ========================================
+  { sourceRegionId: "CN-EAST", destinationId: "MM-MANDALAY", weight: 0.32, season: "winter" },
+  { sourceRegionId: "TH", destinationId: "MM-MANDALAY", weight: 0.25, season: "winter" },
+  { sourceRegionId: "JP", destinationId: "MM-MANDALAY", weight: 0.20, season: "winter" },
+  { sourceRegionId: "KR", destinationId: "MM-MANDALAY", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "MM-MANDALAY", weight: 0.15, season: "winter" },
+
+  // ========================================
+  // LA-4000-ISLANDS — INBOUND
+  // ========================================
+  { sourceRegionId: "TH", destinationId: "LA-4000-ISLANDS", weight: 0.35, season: "winter" },
+  { sourceRegionId: "FR-IDF", destinationId: "LA-4000-ISLANDS", weight: 0.28, season: "winter" },
+  { sourceRegionId: "DE", destinationId: "LA-4000-ISLANDS", weight: 0.22, season: "winter" },
+  { sourceRegionId: "CN-EAST", destinationId: "LA-4000-ISLANDS", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "LA-4000-ISLANDS", weight: 0.15, season: "winter" },
+
+  // ========================================
+  // NP-CHITWAN — INBOUND
+  // ========================================
+  { sourceRegionId: "IN-NORTH", destinationId: "NP-CHITWAN", weight: 0.40, season: "winter" },
+  { sourceRegionId: "IN-SOUTH", destinationId: "NP-CHITWAN", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-LONDON", destinationId: "NP-CHITWAN", weight: 0.20, season: "winter" },
+  { sourceRegionId: "AE", destinationId: "NP-CHITWAN", weight: 0.15, season: "winter" },
+  { sourceRegionId: "DE", destinationId: "NP-CHITWAN", weight: 0.12, season: "winter" },
 ];

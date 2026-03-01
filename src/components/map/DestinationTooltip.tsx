@@ -8,9 +8,10 @@ interface Props {
   name: string;
   score: number;
   sources: { regionName: string; weight: number }[];
+  activeEvents?: string[];
 }
 
-export function DestinationTooltip({ x, y, name, score, sources }: Props) {
+export function DestinationTooltip({ x, y, name, score, sources, activeEvents }: Props) {
   const t = useTranslations("tooltip");
   const scorePercent = Math.round(score * 100);
 
@@ -37,6 +38,16 @@ export function DestinationTooltip({ x, y, name, score, sources }: Props) {
           {t("crowdedness", { score: scorePercent, label: getCrowdednessLabel(score) })}
         </span>
       </div>
+      {activeEvents && activeEvents.length > 0 && (
+        <div className="mt-1.5 border-t border-gray-100 pt-1.5">
+          <div className="text-xs font-medium text-gray-500">{t("activeEvents")}</div>
+          {activeEvents.map((event, i) => (
+            <div key={i} className="text-xs text-orange-600">
+              {event}
+            </div>
+          ))}
+        </div>
+      )}
       {sources.length > 0 && (
         <div className="mt-1.5 border-t border-gray-100 pt-1.5">
           <div className="text-xs font-medium text-gray-500">{t("topSources")}</div>

@@ -21,6 +21,14 @@ vi.mock("@/lib/db", () => ({
       endDate: "endDate",
     },
     sourceRegions: { name: "name", id: "id" },
+    majorEvents: {
+      id: "id",
+      name: "name",
+      destinationId: "destinationId",
+      startDate: "startDate",
+      endDate: "endDate",
+      category: "category",
+    },
   },
 }));
 
@@ -86,6 +94,8 @@ describe("GET /api/heatmap", () => {
       expect(body.metadata.year).toBe(2026);
       expect(body.metadata).toHaveProperty("regionsOnHoliday");
       expect(Array.isArray(body.metadata.regionsOnHoliday)).toBe(true);
+      expect(body.metadata).toHaveProperty("activeEvents");
+      expect(Array.isArray(body.metadata.activeEvents)).toBe(true);
     });
   });
 });

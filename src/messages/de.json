@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "Sieh, wie voll Reiseziele\nwirklich werden",
-    "description": "PackedPlaces.com visualisiert die Auslastung von über 230 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten aus 75 Ländern.",
+    "description": "PackedPlaces.com visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten und Großveranstaltungen aus über 100 Ländern.",
     "cta": "Karte erkunden",
     "statRegions": "Regionen",
     "statDestinations": "Reiseziele",
@@ -20,7 +20,7 @@
     "step1Title": "Schulferien erfassen",
     "step1Text": "Wir sammeln Schulferienkalender aus 127 Regionen mit drei Datenquellen: manuell kuratierte Daten, der OpenHolidaysAPI und der date-holidays-Bibliothek.",
     "step2Title": "Reiseströme modellieren",
-    "step2Text": "Über 2.100 Reisemuster verbinden Herkunftsregionen mit Reisezielen, gewichtet nach realen Tourismusstatistiken von UNWTO, Eurostat und nationalen Tourismusbehörden.",
+    "step2Text": "Über 6.000 Reisemuster verbinden Herkunftsregionen mit Reisezielen, gewichtet nach realen Tourismusstatistiken von UNWTO, Eurostat und nationalen Tourismusbehörden.",
     "step3Title": "Auslastung berechnen",
     "step3Text": "Rohe Verkehrswerte werden durch die Kapazität jedes Reiseziels geteilt — unter Berücksichtigung von Kategorie, Saisonalität und Hemisphäre. Das Ergebnis: wie voll sich ein Ort anfühlt."
   },
@@ -99,6 +99,7 @@
   "tooltip": {
     "crowdedness": "Auslastung: {score}% — {label}",
     "topSources": "Hauptquellen:",
+    "activeEvents": "Veranstaltungen",
     "quiet": "Ruhig",
     "moderate": "Mäßig",
     "busy": "Belebt",

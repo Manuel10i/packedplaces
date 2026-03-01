@@ -47,6 +47,16 @@ export interface HeatmapFeature {
   };
 }
 
+export interface MajorEvent {
+  id: string;
+  name: string;
+  destinationId: string;
+  startDate: string;
+  endDate: string;
+  trafficBoost: number;
+  category: "sports" | "festival" | "cultural" | "music" | "trade";
+}
+
 export interface HeatmapResponse {
   type: "FeatureCollection";
   features: HeatmapFeature[];
@@ -59,6 +69,14 @@ export interface HeatmapResponse {
       holidayName: string;
       startDate: string;
       endDate: string;
+    }[];
+    activeEvents: {
+      id: string;
+      name: string;
+      destinationId: string;
+      startDate: string;
+      endDate: string;
+      category: MajorEvent["category"];
     }[];
   };
 }

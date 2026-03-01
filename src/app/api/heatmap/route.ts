@@ -63,6 +63,24 @@ export async function GET(request: NextRequest) {
       ),
     );
 
+  // Fetch active events overlapping this week
+  const activeEvents = await db
+    .select({
+      id: schema.majorEvents.id,
+      name: schema.majorEvents.name,
+      destinationId: schema.majorEvents.destinationId,
+      startDate: schema.majorEvents.startDate,
+      endDate: schema.majorEvents.endDate,
+      category: schema.majorEvents.category,
+    })
+    .from(schema.majorEvents)
+    .where(
+      and(
+        sql`${schema.majorEvents.startDate} <= ${weekEndStr}`,
+        sql`${schema.majorEvents.endDate} >= ${weekStartStr}`,
+      ),
+    );
+
   const response: HeatmapResponse = {
     type: "FeatureCollection",
     features,
@@ -75,6 +93,14 @@ export async function GET(request: NextRequest) {
         holidayName: h.name,
         startDate: h.startDate,
         endDate: h.endDate,
+      })),
+      activeEvents: activeEvents.map((e) => ({
+        id: e.id,
+        name: e.name,
+        destinationId: e.destinationId,
+        startDate: e.startDate,
+        endDate: e.endDate,
+        category: e.category as "sports" | "festival" | "cultural" | "music" | "trade",
       })),
     },
   };

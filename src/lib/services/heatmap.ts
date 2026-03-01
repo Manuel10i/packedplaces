@@ -6,6 +6,11 @@ import type { Hemisphere } from "@/types";
 import { getSeasonalCapacity } from "../data/capacity";
 import { destinations as staticDestinations } from "../data/destinations";
 
+interface EventBoostEntry {
+  destinationId: string;
+  trafficBoost: number;
+}
+
 interface ContributingSource {
   regionId: string;
   regionName: string;
@@ -94,6 +99,12 @@ export async function precomputeHeatmap(
     patternsByDest.set(pattern.destinationId, existing);
   }
 
+  // Load events for this year
+  const allEvents = await db
+    .select()
+    .from(schema.majorEvents)
+    .where(eq(schema.majorEvents.year, year));
+
   // Holiday boost: regions on school holiday contribute 1.5x vs baseline 1.0x
   const HOLIDAY_BOOST = 1.5;
 
@@ -120,6 +131,15 @@ export async function precomputeHeatmap(
       );
 
     const onHolidayRegionIds = new Set(holidayRegions.map((r) => r.sourceRegionId));
+
+    // Find events active during this week
+    const activeEventBoosts = new Map<string, number>();
+    for (const event of allEvents) {
+      if (event.startDate <= weekEndStr && event.endDate >= weekStartStr) {
+        const existing = activeEventBoosts.get(event.destinationId) ?? 0;
+        activeEventBoosts.set(event.destinationId, existing + event.trafficBoost);
+      }
+    }
 
     // Calculate busyness for each destination
     // ALL regions contribute a baseline; holiday regions get a boost
@@ -149,6 +169,12 @@ export async function precomputeHeatmap(
           regionName: region.name,
           weight: Math.round(contribution * 1000) / 1000,
         });
+      }
+
+      // Add event boost: trafficBoost × basePopularity
+      const eventBoost = activeEventBoosts.get(dest.id);
+      if (eventBoost) {
+        totalScore += eventBoost * dest.basePopularity;
       }
 
       if (totalScore > 0) {

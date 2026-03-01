@@ -141,15 +141,15 @@ export default async function MarketingPage() {
               <p className="mt-1 text-sm text-gray-500">{t("hero.statRegions")}</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gray-900">230+</p>
+              <p className="text-3xl font-bold text-gray-900">700+</p>
               <p className="mt-1 text-sm text-gray-500">{t("hero.statDestinations")}</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gray-900">2,100+</p>
+              <p className="text-3xl font-bold text-gray-900">6,000+</p>
               <p className="mt-1 text-sm text-gray-500">{t("hero.statPatterns")}</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gray-900">75</p>
+              <p className="text-3xl font-bold text-gray-900">100+</p>
               <p className="mt-1 text-sm text-gray-500">{t("hero.statCountries")}</p>
             </div>
           </div>
