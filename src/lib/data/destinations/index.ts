@@ -5,6 +5,7 @@ import { destinations as mena } from "./mena";
 import { destinations as asia } from "./asia";
 import { destinations as americas } from "./americas";
 import { destinations as oceaniaAfrica } from "./oceania-africa";
+import { destinations as remaining } from "./remaining";
 
 export const allDestinations = [
   ...europeCentral,
@@ -14,6 +15,7 @@ export const allDestinations = [
   ...asia,
   ...americas,
   ...oceaniaAfrica,
+  ...remaining,
 ];
 
 export { allDestinations as destinations };
