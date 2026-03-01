@@ -40,6 +40,7 @@ const MACRO_COUNTRY_REGIONS = new Set([
   "FI-SOUTH", "FI-NORTH",
   "IT-NORTH", "IT-SOUTH",
   "ES-MADRID", "ES-CATALONIA", "ES-ANDALUSIA",
+  "TR-WEST", "TR-EAST",
 ]);
 
 function extractName(holiday: OpenHolidayApiResponse): string {
