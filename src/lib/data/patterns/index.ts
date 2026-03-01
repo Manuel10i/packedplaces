@@ -1,8 +1,9 @@
 import { travelPatterns as europeCentral } from "./europe-central";
+import { travelPatterns as europeNorth } from "./europe-north";
 
 export const allTravelPatterns = [
   ...europeCentral,
+  ...europeNorth,
 ];
 
-// Re-export for backwards compatibility
 export { allTravelPatterns as travelPatterns };

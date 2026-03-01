@@ -31,9 +31,14 @@ const SUPPORTED_COUNTRIES = new Set([
   "PL", "PT", "RO", "RS", "SE", "SI", "SK", "SM", "VA",
 ]);
 
-const COUNTRY_LEVEL_REGIONS = new Set(["BE", "CZ", "PL", "LU"]);
+const COUNTRY_LEVEL_REGIONS = new Set(["BE", "CZ", "PL", "LU", "IE", "IS", "DK"]);
 const NL_REGIONS = new Set(["NL-NORTH", "NL-CENTRAL", "NL-SOUTH"]);
 const FR_ZONES = new Set(["FR-ZA", "FR-ZB", "FR-ZC"]);
+// Macro-regions that map to a country (fetch country-level, don't filter)
+const MACRO_COUNTRY_REGIONS = new Set([
+  "SE-SOUTH", "SE-NORTH", "NO-SOUTH", "NO-NORTH",
+  "FI-SOUTH", "FI-NORTH",
+]);
 
 function extractName(holiday: OpenHolidayApiResponse): string {
   return holiday.name.find((n) => n.language === "EN")?.text
@@ -58,12 +63,18 @@ export const openHolidaysProvider: HolidayProvider = {
     const isNL = NL_REGIONS.has(regionId);
     const isFR = FR_ZONES.has(regionId);
     const isCountryLevel = COUNTRY_LEVEL_REGIONS.has(regionId);
+    const isMacroCountry = MACRO_COUNTRY_REGIONS.has(regionId);
+    // GB subdivisions (GB-ENG, GB-SCT, etc.) use subdivision code directly
+    const isGBSubdivision = countryCode === "GB" && regionId.startsWith("GB-");
 
     const url = new URL("https://openholidaysapi.org/SchoolHolidays");
     url.searchParams.set("countryIsoCode", countryCode);
 
-    if (isNL || isFR || isCountryLevel) {
-      // Fetch at country level, filter locally
+    if (isNL || isFR || isCountryLevel || isMacroCountry) {
+      // Fetch at country level, filter locally or use all results
+    } else if (isGBSubdivision) {
+      // GB uses subdivision codes like GB-ENG, GB-SCT
+      url.searchParams.set("subdivisionCode", subdivisionCode);
     } else {
       url.searchParams.set("subdivisionCode", subdivisionCode);
     }

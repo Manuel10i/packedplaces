@@ -4,7 +4,10 @@ import type { HolidayProvider, HolidayResult } from "./types";
 // Countries where OpenHolidaysAPI is better (has subdivision-level school holidays)
 // For these, this provider is only used as a fallback
 const PREFER_OPENHOLIDAYS = new Set([
-  "AT", "BE", "CH", "CZ", "DE", "FR", "LU", "NL", "PL",
+  "AT", "BE", "BG", "CH", "CZ", "DE", "DK", "EE", "ES", "FI",
+  "FR", "GB", "GR", "HR", "HU", "IE", "IS", "IT", "LI", "LT",
+  "LU", "LV", "ME", "NL", "NO", "PL", "PT", "RO", "RS", "SE",
+  "SI", "SK",
 ]);
 
 // Mapping from our region IDs to date-holidays state codes
