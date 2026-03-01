@@ -4,6 +4,7 @@ import { sourceRegions as europeSouthEast } from "./europe-south-east";
 import { sourceRegions as mena } from "./mena";
 import { sourceRegions as asia } from "./asia";
 import { sourceRegions as americas } from "./americas";
+import { sourceRegions as oceaniaAfrica } from "./oceania-africa";
 
 export const allSourceRegions = [
   ...europeCentral,
@@ -12,6 +13,7 @@ export const allSourceRegions = [
   ...mena,
   ...asia,
   ...americas,
+  ...oceaniaAfrica,
 ];
 
 export { allSourceRegions as sourceRegions };
