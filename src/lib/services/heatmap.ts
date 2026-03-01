@@ -76,10 +76,21 @@ export async function precomputeHeatmap(
     patternsByRegion.set(pattern.sourceRegionId, existing);
   }
 
-  // Collect raw scores for normalization
-  const weeklyScores: Map<string, { score: number; sources: ContributingSource[] }>[] = [];
+  // Build index: destination -> patterns pointing at it
+  const patternsByDest = new Map<string, { regionId: string; weight: number; season: string | null }[]>();
+  for (const pattern of allPatterns) {
+    const existing = patternsByDest.get(pattern.destinationId) ?? [];
+    existing.push({ regionId: pattern.sourceRegionId, weight: pattern.weight, season: pattern.season });
+    patternsByDest.set(pattern.destinationId, existing);
+  }
 
-  let maxScoreAcrossYear = 0;
+  // Holiday boost: regions on school holiday contribute 1.5x vs baseline 1.0x
+  const HOLIDAY_BOOST = 1.5;
+
+  // Clear existing cache for this year
+  await db.delete(schema.heatmapCache).where(eq(schema.heatmapCache.year, year));
+
+  let insertCount = 0;
 
   for (let week = 1; week <= 53; week++) {
     const weekStart = startOfISOWeek(new Date(year, 0, 4 + (week - 1) * 7));
@@ -101,61 +112,51 @@ export async function precomputeHeatmap(
     const onHolidayRegionIds = new Set(holidayRegions.map((r) => r.sourceRegionId));
 
     // Calculate busyness for each destination
+    // ALL regions contribute a baseline; holiday regions get a boost
     const destScores = new Map<string, { score: number; sources: ContributingSource[] }>();
+    let weekMax = 0;
 
     for (const dest of allDestinations) {
       let totalScore = 0;
       const sources: ContributingSource[] = [];
+      const patterns = patternsByDest.get(dest.id) ?? [];
 
-      for (const regionId of onHolidayRegionIds) {
-        const patterns = patternsByRegion.get(regionId) ?? [];
-        const region = regionMap.get(regionId);
+      for (const pattern of patterns) {
+        const region = regionMap.get(pattern.regionId);
         if (!region) continue;
 
-        const populationFactor = region.population / maxPopulation;
-        // Determine season from the source region's hemisphere perspective
         const hemisphere = (region.hemisphere as Hemisphere) ?? "northern";
         const season = getSeasonForWeek(week, hemisphere);
+        if (!seasonMatches(pattern.season, season)) continue;
 
-        for (const pattern of patterns) {
-          if (pattern.destinationId !== dest.id) continue;
-          if (!seasonMatches(pattern.season, season)) continue;
+        const populationFactor = region.population / maxPopulation;
+        const isOnHoliday = onHolidayRegionIds.has(region.id);
+        const boost = isOnHoliday ? HOLIDAY_BOOST : 1.0;
+        const contribution = pattern.weight * populationFactor * dest.basePopularity * boost;
 
-          const contribution = pattern.weight * populationFactor * dest.basePopularity;
-          totalScore += contribution;
-          sources.push({
-            regionId: region.id,
-            regionName: region.name,
-            weight: Math.round(contribution * 1000) / 1000,
-          });
-        }
+        totalScore += contribution;
+        sources.push({
+          regionId: region.id,
+          regionName: region.name,
+          weight: Math.round(contribution * 1000) / 1000,
+        });
       }
 
       if (totalScore > 0) {
         destScores.set(dest.id, { score: totalScore, sources });
-        if (totalScore > maxScoreAcrossYear) maxScoreAcrossYear = totalScore;
+        if (totalScore > weekMax) weekMax = totalScore;
       }
     }
 
-    weeklyScores.push(destScores);
-  }
-
-  // Clear existing cache for this year
-  await db.delete(schema.heatmapCache).where(eq(schema.heatmapCache.year, year));
-
-  // Normalize and insert
-  let insertCount = 0;
-  for (let week = 1; week <= 53; week++) {
-    const destScores = weeklyScores[week - 1];
+    // Normalize per-week and insert
     const rows: (typeof schema.heatmapCache.$inferInsert)[] = [];
 
     for (const dest of allDestinations) {
       const entry = destScores.get(dest.id);
-      const normalizedScore = entry && maxScoreAcrossYear > 0
-        ? Math.round((entry.score / maxScoreAcrossYear) * 1000) / 1000
+      const normalizedScore = entry && weekMax > 0
+        ? Math.round((entry.score / weekMax) * 1000) / 1000
         : 0;
 
-      // Only store non-zero entries
       if (normalizedScore > 0) {
         rows.push({
           destinationId: dest.id,
