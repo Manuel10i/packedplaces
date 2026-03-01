@@ -52,6 +52,7 @@ interface HolidayProvider {
 ```
 
 ### Currently covered regions
+- **Austria**: AT-1 through AT-9 (all 9 Bundesländer — overrides OpenHolidaysAPI which is missing Semesterferien and Sommerferien)
 - **US**: US-NE, US-SE, US-MW, US-SW, US-W (5 macro-regions with different break schedules)
 - **China**: CN-EAST, CN-SOUTH, CN-NORTH, CN-CENTRAL (Chinese New Year, Summer, Golden Week)
 - **Japan**: JP-KANTO, JP-KANSAI, JP-OTHER (Winter/Spring/Summer breaks)
@@ -70,6 +71,9 @@ interface HolidayProvider {
 ### Coverage
 33 European countries with subdivision-level data:
 AL, AD, AT, BE, BG, CH, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MC, ME, MK, MT, NL, NO, PL, PT, RO, RS, SE, SI, SK, SM, VA
+
+### Known data gaps
+- **Austria (AT)**: OpenHolidaysAPI does not return Semesterferien (winter break) or Sommerferien (summer holidays). Only Christmas, Easter, Pentecost, Autumn break, and All Souls' Day are provided. For this reason, AT-1 through AT-9 are overridden by manual JSON files with complete holiday data.
 
 ### Special region handling
 - **Netherlands**: Maps `NL-NORTH/CENTRAL/SOUTH` to province groups, filters API results
@@ -142,3 +146,35 @@ The script:
 2. For each region, tries providers in priority order
 3. Inserts results into the `school_holidays` table
 4. Logs per-region success/failure and summary statistics
+
+## Overriding an API provider with manual JSON
+
+When an API provider has incomplete or incorrect data (e.g., OpenHolidaysAPI missing Austrian Semesterferien), you can override it by creating manual JSON files. Because the provider chain uses **first-match semantics**, a manual file for a region completely replaces the API data — it does not merge with it.
+
+### Steps
+
+1. **Create manual JSON files** for each affected region in `src/lib/data/manual-holidays/{regionId}.json`. Each file must contain **all** holidays for that region (not just the missing ones), since the manual provider replaces the API entirely.
+
+2. **Re-ingest holidays** for the affected regions:
+   ```bash
+   npm run db:ingest-holidays -- --region=AT   # by country code
+   npm run db:ingest-holidays -- --region=AT-9  # by specific region
+   ```
+
+3. **Re-precompute the heatmap** so busyness scores reflect the updated holidays:
+   ```bash
+   npm run db:precompute
+   ```
+
+### Example: Austria
+
+Austria's Semesterferien dates are staggered across three groups:
+- **Week 1 (earliest)**: Wien (AT-9), Niederösterreich (AT-3)
+- **Week 2**: Burgenland (AT-1), Kärnten (AT-2), Salzburg (AT-5), Tirol (AT-7), Vorarlberg (AT-8)
+- **Week 3 (latest)**: Oberösterreich (AT-4), Steiermark (AT-6)
+
+Sommerferien also varies:
+- **Eastern states** (AT-1, AT-3, AT-9): Earlier start (late June / early July)
+- **Western states** (AT-2, AT-4, AT-5, AT-6, AT-7, AT-8): Later start (early / mid July)
+
+All other holidays (Weihnachtsferien, Osterferien, Pfingstferien, Herbstferien) are uniform across all 9 Bundesländer.

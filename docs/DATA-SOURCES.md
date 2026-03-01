@@ -96,9 +96,9 @@ School holidays are a key driver of travel demand. Busymap uses a multi-provider
 ### Coverage
 | Provider | Countries | Notes |
 |----------|-----------|-------|
-| OpenHolidaysAPI | AT, BE, BG, CH, CZ, DE, EE, ES, FR, GR, HR, HU, IE, IT, LI, LT, LU, ME, NL, PL, PT, RO, RS, SI, SK | Subdivision-level where applicable |
+| Manual JSON | AT (9 Bundesländer), US (5 regions), CN (4 regions), JP (3 regions), IN (2 regions) | Overrides API providers; AT overrides OpenHolidaysAPI due to missing Semesterferien/Sommerferien |
+| OpenHolidaysAPI | BE, BG, CH, CZ, DE, EE, ES, FR, GR, HR, HU, IE, IT, LI, LT, LU, ME, NL, PL, PT, RO, RS, SI, SK | Subdivision-level where applicable |
 | date-holidays | GB, DK, SE, NO, FI, IS, LV, IL, KR, TH, VN, ID, MY, SG, PH, AU, NZ, ZA, KE, CA, MX, BR, AR, CO, CL, PE, ... | Country or state level |
-| Manual JSON | US (5 regions), CN (4 regions), JP (3 regions), IN (2 regions) | Approximate school calendar windows |
 
 ### Holiday data structure
 Each holiday record has:

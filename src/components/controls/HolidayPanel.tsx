@@ -95,18 +95,21 @@ export function HolidayPanel() {
     });
   }
 
+  // When only 1 region is active, auto-expand it (no header toggle shown)
+  const showRegionHeaders = activeRegions.length > 1;
+
   return (
     <div className="max-h-[60vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
       <h3 className="mb-3 text-sm font-semibold text-gray-700">School Holidays</h3>
       {activeRegions.map((worldRegion) => {
         const countryCodes = byWorldRegion.get(worldRegion)!;
-        const isCollapsed = collapsedRegions.has(worldRegion);
+        const isCollapsed = showRegionHeaders && collapsedRegions.has(worldRegion);
         const totalHolidays = countryCodes.reduce((sum, cc) => sum + byCountry[cc].length, 0);
 
         return (
           <div key={worldRegion} className="mb-2 last:mb-0">
             {/* Region header */}
-            {activeRegions.length > 1 && (
+            {showRegionHeaders && (
               <button
                 onClick={() => toggleRegion(worldRegion)}
                 className="mb-1.5 flex w-full items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-gray-600"

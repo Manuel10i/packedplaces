@@ -83,7 +83,7 @@ export function MapView() {
     setHoveredDestination(null);
   }, [setHoveredDestination]);
 
-  const onMoveEnd = useCallback(() => {
+  const updateViewport = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
 
@@ -103,6 +103,11 @@ export function MapView() {
     });
   }, [setViewportBounds, setViewportCenter]);
 
+  // Set initial viewport bounds when map loads (not just on user interaction)
+  const onLoad = useCallback(() => {
+    updateViewport();
+  }, [updateViewport]);
+
   return (
     <div className="absolute inset-0">
       <Map
@@ -112,7 +117,8 @@ export function MapView() {
         interactiveLayerIds={["destination-circles", "all-destinations"]}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        onMoveEnd={onMoveEnd}
+        onMoveEnd={updateViewport}
+        onLoad={onLoad}
       >
         <HeatmapLayer data={data} allDestinations={allDestinations} />
       </Map>

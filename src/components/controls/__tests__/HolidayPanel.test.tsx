@@ -158,6 +158,27 @@ describe("HolidayPanel", () => {
     expect(screen.queryByText("Middle East")).not.toBeInTheDocument();
   });
 
+  it("auto-expands when only 1 region is active (no hidden region toggle)", () => {
+    mockedUseHolidayData.mockReturnValue({
+      data: mockHolidays,
+      error: undefined,
+      isLoading: false,
+    });
+
+    // Set viewport to only show Europe
+    useMapStore.setState({
+      viewportBounds: { north: 60, south: 40, east: 20, west: -10 },
+    });
+
+    render(<HolidayPanel />);
+
+    // Region header should NOT be shown (only 1 region)
+    expect(screen.queryByText("Europe")).not.toBeInTheDocument();
+    // But country content should be auto-expanded (not collapsed)
+    expect(screen.getByText(/Germany/)).toBeInTheDocument();
+    expect(screen.getByText(/Austria/)).toBeInTheDocument();
+  });
+
   it("shows formatted date ranges after expanding", () => {
     mockedUseHolidayData.mockReturnValue({
       data: mockHolidays,
