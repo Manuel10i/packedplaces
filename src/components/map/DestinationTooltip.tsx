@@ -8,6 +8,14 @@ interface Props {
   sources: { regionName: string; weight: number }[];
 }
 
+function getCrowdednessLabel(score: number): string {
+  if (score < 0.2) return "Quiet";
+  if (score < 0.4) return "Moderate";
+  if (score < 0.6) return "Busy";
+  if (score < 0.8) return "Very Busy";
+  return "Packed";
+}
+
 export function DestinationTooltip({ x, y, name, score, sources }: Props) {
   const scorePercent = Math.round(score * 100);
 
@@ -22,7 +30,7 @@ export function DestinationTooltip({ x, y, name, score, sources }: Props) {
           className="h-2.5 w-2.5 rounded-full"
           style={{ backgroundColor: getScoreColor(score) }}
         />
-        <span className="text-gray-600">Busyness: {scorePercent}%</span>
+        <span className="text-gray-600">Crowdedness: {scorePercent}% &mdash; {getCrowdednessLabel(score)}</span>
       </div>
       {sources.length > 0 && (
         <div className="mt-1.5 border-t border-gray-100 pt-1.5">

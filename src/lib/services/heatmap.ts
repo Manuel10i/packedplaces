@@ -3,6 +3,8 @@ import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { startOfISOWeek, endOfISOWeek, format } from "date-fns";
 import * as schema from "../db/schema";
 import type { Hemisphere } from "@/types";
+import { getSeasonalCapacity } from "../data/capacity";
+import { destinations as staticDestinations } from "../data/destinations";
 
 interface ContributingSource {
   regionId: string;
@@ -67,6 +69,14 @@ export async function precomputeHeatmap(
   // Max population for normalization
   const maxPopulation = Math.max(...allRegions.map((r) => r.population));
 
+  // Build capacity override lookup from static destination data
+  const capacityOverrides = new Map<string, number>();
+  for (const d of staticDestinations) {
+    if (d.capacityOverride != null) {
+      capacityOverrides.set(d.id, d.capacityOverride);
+    }
+  }
+
   // Build lookup maps
   const regionMap = new Map(allRegions.map((r) => [r.id, r]));
   const patternsByRegion = new Map<string, typeof allPatterns>();
@@ -113,8 +123,7 @@ export async function precomputeHeatmap(
 
     // Calculate busyness for each destination
     // ALL regions contribute a baseline; holiday regions get a boost
-    const destScores = new Map<string, { score: number; sources: ContributingSource[] }>();
-    let weekMax = 0;
+    const destScores = new Map<string, { score: number; congestion: number; sources: ContributingSource[] }>();
 
     for (const dest of allDestinations) {
       let totalScore = 0;
@@ -143,18 +152,34 @@ export async function precomputeHeatmap(
       }
 
       if (totalScore > 0) {
-        destScores.set(dest.id, { score: totalScore, sources });
-        if (totalScore > weekMax) weekMax = totalScore;
+        // Compute congestion: raw traffic divided by seasonal capacity
+        const capacity = getSeasonalCapacity(
+          dest.category,
+          dest.lat,
+          dest.seasonality,
+          week,
+          capacityOverrides.get(dest.id),
+        );
+        const congestion = totalScore / capacity;
+
+        destScores.set(dest.id, { score: totalScore, congestion, sources });
       }
     }
 
-    // Normalize per-week and insert
+    // Normalize congestion per-week using 95th percentile (not max)
+    // This prevents a single extreme outlier from compressing the whole scale
+    const congestionValues = [...destScores.values()]
+      .map((e) => e.congestion)
+      .sort((a, b) => a - b);
+    const p95Index = Math.floor(congestionValues.length * 0.95);
+    const weekNorm = congestionValues[p95Index] ?? 1;
+
     const rows: (typeof schema.heatmapCache.$inferInsert)[] = [];
 
     for (const dest of allDestinations) {
       const entry = destScores.get(dest.id);
-      const normalizedScore = entry && weekMax > 0
-        ? Math.round((entry.score / weekMax) * 1000) / 1000
+      const normalizedScore = entry && weekNorm > 0
+        ? Math.round(Math.min(entry.congestion / weekNorm, 1) * 1000) / 1000
         : 0;
 
       if (normalizedScore > 0) {

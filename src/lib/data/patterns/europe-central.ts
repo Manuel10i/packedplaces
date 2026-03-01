@@ -113,6 +113,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "DE-BY", destinationId: "IT-SUEDTIROL", weight: 0.68, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "IT-DOLOMITES", weight: 0.58, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "IT-GARDASEE", weight: 0.72, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "IT-JESOLO", weight: 0.52, season: "summer" },
+  { sourceRegionId: "DE-BY", destinationId: "IT-CAORLE", weight: 0.48, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "IT-ADRIATIC", weight: 0.52, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "IT-TUSCANY", weight: 0.48, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "IT-LIGURIA", weight: 0.40, season: "summer" },
@@ -332,6 +334,8 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
 
   // AT-9 (Wien) -> Italian Adriatic, Croatia, Greece, domestic ski
+  { sourceRegionId: "AT-9", destinationId: "IT-JESOLO", weight: 0.68, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "IT-CAORLE", weight: 0.62, season: "summer" },
   { sourceRegionId: "AT-9", destinationId: "IT-ADRIATIC", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-9", destinationId: "HR-ISTRIA", weight: 0.62, season: "summer" },
   { sourceRegionId: "AT-9", destinationId: "HR-DALMATIA", weight: 0.58, season: "summer" },
@@ -355,6 +359,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-9", destinationId: "HU-BALATON", weight: 0.38, season: "summer" },
 
   // AT-3 (Niederösterreich) -> similar to Wien
+  { sourceRegionId: "AT-3", destinationId: "IT-JESOLO", weight: 0.62, season: "summer" },
+  { sourceRegionId: "AT-3", destinationId: "IT-CAORLE", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-3", destinationId: "HR-ISTRIA", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-3", destinationId: "IT-ADRIATIC", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-3", destinationId: "HR-DALMATIA", weight: 0.52, season: "summer" },
@@ -370,6 +376,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-3", destinationId: "ME-COAST", weight: 0.32, season: "summer" },
 
   // AT-4 (Oberösterreich)
+  { sourceRegionId: "AT-4", destinationId: "IT-JESOLO", weight: 0.58, season: "summer" },
+  { sourceRegionId: "AT-4", destinationId: "IT-CAORLE", weight: 0.55, season: "summer" },
   { sourceRegionId: "AT-4", destinationId: "IT-GARDASEE", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-4", destinationId: "HR-ISTRIA", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-4", destinationId: "HR-DALMATIA", weight: 0.48, season: "summer" },
@@ -383,6 +391,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-4", destinationId: "ES-MALLORCA", weight: 0.38, season: "summer" },
 
   // AT-5 (Salzburg)
+  { sourceRegionId: "AT-5", destinationId: "IT-JESOLO", weight: 0.52, season: "summer" },
+  { sourceRegionId: "AT-5", destinationId: "IT-CAORLE", weight: 0.48, season: "summer" },
   { sourceRegionId: "AT-5", destinationId: "IT-GARDASEE", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-5", destinationId: "HR-DALMATIA", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-5", destinationId: "GR-CORFU", weight: 0.48, season: "summer" },
@@ -393,6 +403,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-5", destinationId: "ES-MALLORCA", weight: 0.38, season: "summer" },
 
   // AT-6 (Steiermark)
+  { sourceRegionId: "AT-6", destinationId: "IT-JESOLO", weight: 0.58, season: "summer" },
+  { sourceRegionId: "AT-6", destinationId: "IT-CAORLE", weight: 0.55, season: "summer" },
   { sourceRegionId: "AT-6", destinationId: "HR-ISTRIA", weight: 0.62, season: "summer" },
   { sourceRegionId: "AT-6", destinationId: "HR-DALMATIA", weight: 0.55, season: "summer" },
   { sourceRegionId: "AT-6", destinationId: "HR-KVARNER", weight: 0.48, season: "summer" },
@@ -424,6 +436,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-8", destinationId: "ES-MALLORCA", weight: 0.38, season: "summer" },
 
   // AT-2 (Kärnten)
+  { sourceRegionId: "AT-2", destinationId: "IT-JESOLO", weight: 0.55, season: "summer" },
+  { sourceRegionId: "AT-2", destinationId: "IT-CAORLE", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-2", destinationId: "HR-ISTRIA", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-2", destinationId: "IT-ADRIATIC", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-2", destinationId: "HR-DALMATIA", weight: 0.48, season: "summer" },
@@ -434,6 +448,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AT-2", destinationId: "TR-ANTALYA", weight: 0.35, season: "summer" },
 
   // AT-1 (Burgenland)
+  { sourceRegionId: "AT-1", destinationId: "IT-JESOLO", weight: 0.55, season: "summer" },
+  { sourceRegionId: "AT-1", destinationId: "IT-CAORLE", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-1", destinationId: "HR-ISTRIA", weight: 0.58, season: "summer" },
   { sourceRegionId: "AT-1", destinationId: "HR-DALMATIA", weight: 0.52, season: "summer" },
   { sourceRegionId: "AT-1", destinationId: "IT-ADRIATIC", weight: 0.48, season: "summer" },
@@ -659,6 +675,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CZ", destinationId: "GR-KOS", weight: 0.38, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "GR-ZAKYNTHOS", weight: 0.35, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "IT-ADRIATIC", weight: 0.52, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "IT-JESOLO", weight: 0.48, season: "summer" },
+  { sourceRegionId: "CZ", destinationId: "IT-CAORLE", weight: 0.45, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "IT-GARDASEE", weight: 0.48, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "TR-ANTALYA", weight: 0.52, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "TR-BODRUM", weight: 0.35, season: "summer" },

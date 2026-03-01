@@ -39,6 +39,7 @@ Destinations are places people travel to. Each has:
 - **category**: One of `ski`, `beach`, `city`, `lake`, `nature`, `cultural`, `safari`, `island`, `mountain`, `desert`, `tropical`
 - **seasonality**: `"winter"`, `"summer"`, or `"year-round"` — when the destination is in season
 - **basePopularity**: 0-1 scale calibrated from UNWTO international arrival volumes. 1.0 = top global destinations (Paris, Bangkok), 0.3 = niche destinations
+- **capacityOverride** (optional): Overrides the category-level capacity for outlier destinations. Used by the congestion scoring system. Example: Bangkok and NYC get `8.0` (mega-city, far beyond typical "city" capacity), Santorini gets `0.4` (tiny island, much less than typical "beach")
 - **lat/lng**: Point coordinates for map display
 
 ### Selection criteria
@@ -108,27 +109,56 @@ Each holiday record has:
 
 ## Heatmap Computation
 
-The heatmap score for each destination is computed per ISO week:
+The heatmap shows **crowdedness** (how packed a place feels), not raw traffic volume. This is achieved by dividing raw traffic scores by each destination's seasonal capacity.
 
 ### Algorithm
 ```
 For each destination D, for each week W:
-  score = 0
+  rawScore = 0
   For each source region R with a travel pattern to D:
     1. Determine season from R's hemisphere perspective
     2. Check if pattern's season matches (null = always matches)
     3. Check if R is on school holiday during week W
     4. holidayBoost = isOnHoliday ? 1.5 : 1.0
     5. contribution = pattern.weight * (R.population / maxPopulation) * holidayBoost
-    6. score += contribution
-  Normalize score to 0-1 range across all destinations for week W
+    6. rawScore += contribution
+  capacity = getSeasonalCapacity(D.category, D.lat, D.seasonality, W, D.capacityOverride)
+  congestion = rawScore / capacity
+  Normalize congestion to 0-1 range across all destinations for week W
 ```
 
+### Capacity system
+
+Each destination category has a default capacity with seasonal variation (`src/lib/data/capacity.ts`):
+
+| Category | Peak | Off-Peak | Notes |
+|----------|------|----------|-------|
+| city | 5.0 | 4.0 | Massive year-round infrastructure |
+| cultural | 2.5 | 2.0 | Similar to cities |
+| beach | 2.0 | 0.5 | Highly seasonal infrastructure |
+| tropical | 1.5 | 1.0 | Year-round but limited |
+| ski | 1.5 | 0.3 | Limited beds, very low summer |
+| nature | 1.2 | 0.6 | Moderate, some year-round |
+| lake | 1.0 | 0.3 | Seasonal |
+| island | 1.0 | 0.4 | Limited by geography |
+| safari | 0.8 | 0.3 | Very limited lodges |
+| mountain | 0.6 | 0.3 | Very limited |
+| desert | 0.5 | 0.2 | Extremely limited |
+
+**Seasonal capacity selection:**
+- Destination hemisphere is determined from latitude (>15°N = northern, <-15° = southern, else equatorial)
+- If destination's `seasonality` matches the current season at its location → peak capacity
+- If opposite season → off-peak capacity
+- If shoulder season or year-round → average of peak and off-peak
+
+**Capacity overrides:** Outlier destinations can set `capacityOverride` to replace the category peak. The off-peak is scaled proportionally. Current overrides: Bangkok (8.0), NYC (8.0), London (7.0), Paris (7.0), Santorini (0.4), Maldives (0.3).
+
 ### Key design decisions
+- **Congestion over traffic**: A score of 0.8 means "this place is packed relative to its capacity", not "lots of people go here". Tyrol ski resorts show red with moderate traffic; Bangkok stays green with high traffic
 - **Season is relative to the source**: A "winter" pattern for AU-NSW means June-August (southern winter), while for DE-BW it means December-February
 - **Population weighting**: Larger source regions contribute proportionally more
 - **Holiday boost**: 1.5x multiplier when a source region is on school holiday
-- **Normalization**: Scores are normalized per-week so the heatmap always shows relative busyness
+- **Normalization**: Congestion scores are normalized per-week so the heatmap always shows relative crowdedness
 
 ### Caching
 Results are precomputed for 3 years (current + 2) and stored in the `heatmap_cache` database table, keyed by `(destinationId, year, week)`. The API reads directly from this cache.

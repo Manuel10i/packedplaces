@@ -55,7 +55,7 @@ export const destinations: Destination[] = [
   // ========================================
   // MALDIVES (1)
   // ========================================
-  { id: "MV-MALDIVES", name: "Maldives", country: "MV", lat: 3.20, lng: 73.22, category: "island", seasonality: "winter", basePopularity: 0.85, region: "asia" },
+  { id: "MV-MALDIVES", name: "Maldives", country: "MV", lat: 3.20, lng: 73.22, category: "island", seasonality: "winter", basePopularity: 0.85, region: "asia", capacityOverride: 0.3 },
 
   // ========================================
   // SRI LANKA (1)

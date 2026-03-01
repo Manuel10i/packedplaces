@@ -64,8 +64,11 @@ Add entries to the matching destinations file:
   seasonality: "summer",    // "winter" | "summer" | "year-round"
   basePopularity: 0.65,     // 0-1 scale (see DATA-SOURCES.md for calibration)
   region: "europe",         // World region
+  capacityOverride: 0.4,    // Optional: override category capacity for outliers (see DATA-SOURCES.md)
 }
 ```
+
+Most destinations don't need `capacityOverride` — the category-level capacity defaults handle typical destinations well. Only add an override for extreme outliers where the category default would give misleading crowdedness scores (e.g., mega-cities like Bangkok that dwarf a typical "city", or tiny islands like Santorini that are much smaller than a typical "beach" destination). See `src/lib/data/capacity.ts` for the category defaults.
 
 ## Step 4: Add travel patterns
 

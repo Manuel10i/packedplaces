@@ -23,7 +23,9 @@ export const destinations: Destination[] = [
   { id: "IT-GARDASEE", name: "Gardasee", country: "IT", lat: 45.64, lng: 10.71, category: "lake", seasonality: "summer", basePopularity: 0.85, region: "europe" },
   { id: "IT-COMO", name: "Lake Como", country: "IT", lat: 46.01, lng: 9.26, category: "lake", seasonality: "summer", basePopularity: 0.72, region: "europe" },
   { id: "IT-MAGGIORE", name: "Lake Maggiore", country: "IT", lat: 45.96, lng: 8.63, category: "lake", seasonality: "summer", basePopularity: 0.60, region: "europe" },
-  { id: "IT-ADRIATIC", name: "Adriatic Coast (Rimini)", country: "IT", lat: 44.06, lng: 12.57, category: "beach", seasonality: "summer", basePopularity: 0.75, region: "europe" },
+  { id: "IT-ADRIATIC", name: "Adriatic Coast (Rimini)", country: "IT", lat: 44.06, lng: 12.57, category: "beach", seasonality: "summer", basePopularity: 0.75, region: "europe", capacityOverride: 0.6 },
+  { id: "IT-CAORLE", name: "Caorle", country: "IT", lat: 45.60, lng: 12.88, category: "beach", seasonality: "summer", basePopularity: 0.65, region: "europe", capacityOverride: 0.4 },
+  { id: "IT-JESOLO", name: "Jesolo", country: "IT", lat: 45.53, lng: 12.64, category: "beach", seasonality: "summer", basePopularity: 0.68, region: "europe", capacityOverride: 0.4 },
   { id: "IT-TUSCANY", name: "Toscana", country: "IT", lat: 43.35, lng: 11.30, category: "city", seasonality: "summer", basePopularity: 0.70, region: "europe" },
   { id: "IT-LIGURIA", name: "Liguria & Cinque Terre", country: "IT", lat: 44.31, lng: 9.32, category: "beach", seasonality: "summer", basePopularity: 0.72, region: "europe" },
   { id: "IT-AMALFI", name: "Amalfi Coast", country: "IT", lat: 40.63, lng: 14.60, category: "beach", seasonality: "summer", basePopularity: 0.78, region: "europe" },
@@ -58,7 +60,7 @@ export const destinations: Destination[] = [
   { id: "FR-NORMANDY", name: "Normandy", country: "FR", lat: 49.18, lng: -0.37, category: "beach", seasonality: "summer", basePopularity: 0.55, region: "europe" },
   { id: "FR-BRITTANY", name: "Brittany", country: "FR", lat: 48.20, lng: -2.93, category: "beach", seasonality: "summer", basePopularity: 0.58, region: "europe" },
   { id: "FR-ALPS", name: "French Alps", country: "FR", lat: 45.18, lng: 5.72, category: "ski", seasonality: "winter", basePopularity: 0.80, region: "europe" },
-  { id: "FR-PARIS", name: "Paris", country: "FR", lat: 48.86, lng: 2.35, category: "city", seasonality: "year-round", basePopularity: 0.92, region: "europe" },
+  { id: "FR-PARIS", name: "Paris", country: "FR", lat: 48.86, lng: 2.35, category: "city", seasonality: "year-round", basePopularity: 0.92, region: "europe", capacityOverride: 7.0 },
   { id: "FR-PROVENCE", name: "Provence", country: "FR", lat: 43.95, lng: 5.45, category: "nature", seasonality: "summer", basePopularity: 0.72, region: "europe" },
   { id: "FR-LOIRE", name: "Loire Valley", country: "FR", lat: 47.38, lng: 0.69, category: "nature", seasonality: "summer", basePopularity: 0.55, region: "europe" },
 
@@ -99,7 +101,7 @@ export const destinations: Destination[] = [
   { id: "GR-RHODES", name: "Rhodos", country: "GR", lat: 36.43, lng: 28.22, category: "beach", seasonality: "summer", basePopularity: 0.74, region: "europe" },
   { id: "GR-KOS", name: "Kos", country: "GR", lat: 36.85, lng: 26.89, category: "beach", seasonality: "summer", basePopularity: 0.68, region: "europe" },
   { id: "GR-ZAKYNTHOS", name: "Zakynthos", country: "GR", lat: 37.75, lng: 20.88, category: "beach", seasonality: "summer", basePopularity: 0.65, region: "europe" },
-  { id: "GR-SANTORINI", name: "Santorini", country: "GR", lat: 36.39, lng: 25.46, category: "beach", seasonality: "summer", basePopularity: 0.75, region: "europe" },
+  { id: "GR-SANTORINI", name: "Santorini", country: "GR", lat: 36.39, lng: 25.46, category: "beach", seasonality: "summer", basePopularity: 0.75, region: "europe", capacityOverride: 0.4 },
   { id: "GR-HALKIDIKI", name: "Halkidiki", country: "GR", lat: 40.20, lng: 23.70, category: "beach", seasonality: "summer", basePopularity: 0.65, region: "europe" },
 
   // ========================================

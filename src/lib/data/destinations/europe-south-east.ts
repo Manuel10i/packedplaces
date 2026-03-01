@@ -4,7 +4,7 @@ export const destinations: Destination[] = [
   // ========================================
   // CROATIA (1 new)
   // ========================================
-  { id: "HR-DUBROVNIK", name: "Dubrovnik", country: "HR", lat: 42.65, lng: 18.09, category: "city", seasonality: "summer", basePopularity: 0.82, region: "europe" },
+  { id: "HR-DUBROVNIK", name: "Dubrovnik", country: "HR", lat: 42.65, lng: 18.09, category: "city", seasonality: "summer", basePopularity: 0.82, region: "europe", capacityOverride: 0.5 },
 
   // ========================================
   // GREECE (2 new)

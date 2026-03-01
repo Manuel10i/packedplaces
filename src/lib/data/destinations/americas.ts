@@ -7,7 +7,7 @@ export const destinations: Destination[] = [
   { id: "US-HAWAII", name: "Hawaii", country: "US", lat: 21.31, lng: -157.86, category: "island", seasonality: "winter", basePopularity: 0.88, region: "americas" },
   { id: "US-FLORIDA", name: "Florida", country: "US", lat: 25.76, lng: -80.19, category: "beach", seasonality: "winter", basePopularity: 0.90, region: "americas" },
   { id: "US-LAS-VEGAS", name: "Las Vegas", country: "US", lat: 36.17, lng: -115.14, category: "city", seasonality: "year-round", basePopularity: 0.85, region: "americas" },
-  { id: "US-NYC", name: "New York City", country: "US", lat: 40.71, lng: -74.01, category: "city", seasonality: "year-round", basePopularity: 0.95, region: "americas" },
+  { id: "US-NYC", name: "New York City", country: "US", lat: 40.71, lng: -74.01, category: "city", seasonality: "year-round", basePopularity: 0.95, region: "americas", capacityOverride: 8.0 },
   { id: "US-CALIFORNIA", name: "California Coast", country: "US", lat: 34.05, lng: -118.24, category: "beach", seasonality: "summer", basePopularity: 0.88, region: "americas" },
   { id: "US-COLORADO-SKI", name: "Colorado Ski", country: "US", lat: 39.64, lng: -106.37, category: "ski", seasonality: "winter", basePopularity: 0.78, region: "americas" },
   { id: "US-UTAH-NP", name: "Utah National Parks", country: "US", lat: 38.73, lng: -109.57, category: "nature", seasonality: "year-round", basePopularity: 0.72, region: "americas" },

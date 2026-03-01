@@ -23,6 +23,7 @@ export interface Destination {
   seasonality: "winter" | "summer" | "year-round";
   basePopularity: number;
   region: WorldRegion;
+  capacityOverride?: number;
 }
 
 export interface TravelPattern {

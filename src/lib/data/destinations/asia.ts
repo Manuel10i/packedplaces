@@ -4,7 +4,7 @@ export const destinations: Destination[] = [
   // ========================================
   // THAILAND (5)
   // ========================================
-  { id: "TH-BANGKOK", name: "Bangkok", country: "TH", lat: 13.76, lng: 100.50, category: "city", seasonality: "year-round", basePopularity: 0.90, region: "asia" },
+  { id: "TH-BANGKOK", name: "Bangkok", country: "TH", lat: 13.76, lng: 100.50, category: "city", seasonality: "year-round", basePopularity: 0.90, region: "asia", capacityOverride: 8.0 },
   { id: "TH-PHUKET", name: "Phuket", country: "TH", lat: 7.88, lng: 98.39, category: "beach", seasonality: "winter", basePopularity: 0.88, region: "asia" },
   { id: "TH-KOH-SAMUI", name: "Koh Samui", country: "TH", lat: 9.51, lng: 100.06, category: "island", seasonality: "winter", basePopularity: 0.75, region: "asia" },
   { id: "TH-CHIANG-MAI", name: "Chiang Mai", country: "TH", lat: 18.79, lng: 98.98, category: "cultural", seasonality: "winter", basePopularity: 0.72, region: "asia" },

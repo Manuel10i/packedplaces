@@ -92,9 +92,9 @@ export function HeatmapLayer({ data }: Props) {
             ["linear"],
             ["zoom"],
             3,
-            4,
+            ["interpolate", ["linear"], ["get", "busynessScore"], 0, 3, 1, 6],
             7,
-            10,
+            ["interpolate", ["linear"], ["get", "busynessScore"], 0, 8, 1, 14],
           ],
           "circle-color": [
             "interpolate",

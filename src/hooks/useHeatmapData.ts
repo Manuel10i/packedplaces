@@ -2,7 +2,7 @@ import useSWR from "swr";
 import type { HeatmapResponse, HolidayInfo } from "@/types";
 
 async function fetcher<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
   return res.json() as Promise<T>;
 }
 

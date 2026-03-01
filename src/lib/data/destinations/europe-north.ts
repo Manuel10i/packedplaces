@@ -4,7 +4,7 @@ export const destinations: Destination[] = [
   // ========================================
   // UNITED KINGDOM (3)
   // ========================================
-  { id: "GB-LONDON", name: "London", country: "GB", lat: 51.51, lng: -0.13, category: "city", seasonality: "year-round", basePopularity: 0.95, region: "europe" },
+  { id: "GB-LONDON", name: "London", country: "GB", lat: 51.51, lng: -0.13, category: "city", seasonality: "year-round", basePopularity: 0.95, region: "europe", capacityOverride: 7.0 },
   { id: "GB-CORNWALL", name: "Cornwall & Devon", country: "GB", lat: 50.27, lng: -5.05, category: "beach", seasonality: "summer", basePopularity: 0.68, region: "europe" },
   { id: "GB-HIGHLANDS", name: "Scottish Highlands", country: "GB", lat: 57.12, lng: -4.71, category: "nature", seasonality: "summer", basePopularity: 0.62, region: "europe" },
 

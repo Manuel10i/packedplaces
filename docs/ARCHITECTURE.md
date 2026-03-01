@@ -58,6 +58,7 @@ src/
 │   ├── data/
 │   │   ├── index.ts           # Aggregated exports
 │   │   ├── countries.ts       # Country metadata (name, flag, region)
+│   │   ├── capacity.ts        # Category capacity table + seasonal capacity helper
 │   │   ├── regions/           # Source region definitions per world region
 │   │   ├── destinations/      # Destination definitions per world region
 │   │   ├── patterns/          # Travel pattern definitions per world region
@@ -137,7 +138,7 @@ drizzle/
 | destination_id | varchar(32) FK | → destinations.id |
 | year | integer | Year |
 | week | integer | ISO week number |
-| score | double | 0-1 busyness score |
+| score | double | 0-1 crowdedness score (congestion-normalized) |
 | contributing_sources | jsonb | Array of contributing regions |
 
 ## API
@@ -148,7 +149,7 @@ Query parameters:
 - `year` (required): Year (e.g., 2026)
 - `week` (required): ISO week number (1-52)
 
-Response: GeoJSON FeatureCollection with destination points, each having a `busynessScore` and `contributingSources` in properties.
+Response: GeoJSON FeatureCollection with destination points, each having a `busynessScore` (capacity-normalized crowdedness) and `contributingSources` in properties.
 
 ## Hemisphere-Aware Seasonality
 
