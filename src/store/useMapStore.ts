@@ -31,13 +31,39 @@ interface MapState {
   setViewportCenter: (center: ViewportCenter) => void;
 }
 
+function getInitialUrlParams(): {
+  week?: number;
+  year?: number;
+  viewportCenter?: ViewportCenter;
+} {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+
+  const week = parseInt(params.get("week") ?? "", 10);
+  const year = parseInt(params.get("year") ?? "", 10);
+  const lat = parseFloat(params.get("lat") ?? "");
+  const lng = parseFloat(params.get("lng") ?? "");
+  const zoom = parseFloat(params.get("zoom") ?? "");
+
+  return {
+    week: !isNaN(week) && week >= 1 && week <= 52 ? week : undefined,
+    year: !isNaN(year) && year >= 2000 && year <= 2100 ? year : undefined,
+    viewportCenter:
+      !isNaN(lat) && !isNaN(lng) && !isNaN(zoom)
+        ? { lat, lng, zoom }
+        : undefined,
+  };
+}
+
+const urlParams = getInitialUrlParams();
+
 export const useMapStore = create<MapState>((set, get) => ({
-  selectedWeek: getISOWeek(new Date()),
-  selectedYear: new Date().getFullYear(),
+  selectedWeek: urlParams.week ?? getISOWeek(new Date()),
+  selectedYear: urlParams.year ?? new Date().getFullYear(),
   isPlaying: false,
   hoveredDestination: null,
   viewportBounds: null,
-  viewportCenter: null,
+  viewportCenter: urlParams.viewportCenter ?? null,
   setSelectedWeek: (week) => set({ selectedWeek: week }),
   setSelectedYear: (year) => set({ selectedYear: year }),
   togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),

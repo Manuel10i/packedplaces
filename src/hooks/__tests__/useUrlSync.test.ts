@@ -42,28 +42,18 @@ describe("useUrlSync", () => {
     });
   });
 
-  it("reads week and year from URL params on mount", () => {
-    window.location.search = "?week=30&year=2026";
-
+  it("skips URL update on first render", () => {
     renderHook(() => useUrlSync());
 
-    const state = useMapStore.getState();
-    expect(state.selectedWeek).toBe(30);
-    expect(state.selectedYear).toBe(2026);
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+
+    // Should not call replaceState on first render
+    expect(replaceStateSpy).not.toHaveBeenCalled();
   });
 
-  it("reads lat/lng/zoom from URL params and sets viewportCenter", () => {
-    window.location.search = "?week=10&year=2026&lat=48.8&lng=2.3&zoom=12";
-
-    renderHook(() => useUrlSync());
-
-    const state = useMapStore.getState();
-    expect(state.viewportCenter).toEqual({ lat: 48.8, lng: 2.3, zoom: 12 });
-  });
-
-  it("updates URL via replaceState after store values change and timers advance", () => {
-    window.location.search = "";
-
+  it("updates URL via replaceState after store values change", () => {
     const { rerender } = renderHook(() => useUrlSync());
 
     // Change store values
@@ -85,5 +75,26 @@ describe("useUrlSync", () => {
     const url = lastCall?.[2] as string;
     expect(url).toContain("week=42");
     expect(url).toContain("year=2027");
+  });
+
+  it("includes viewport center in URL when set", () => {
+    const { rerender } = renderHook(() => useUrlSync());
+
+    act(() => {
+      useMapStore.getState().setViewportCenter({ lat: 48.8, lng: 2.3, zoom: 12 });
+    });
+
+    rerender();
+
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+
+    expect(replaceStateSpy).toHaveBeenCalled();
+    const lastCall = replaceStateSpy.mock.calls.at(-1);
+    const url = lastCall?.[2] as string;
+    expect(url).toContain("lat=48.8");
+    expect(url).toContain("lng=2.3");
+    expect(url).toContain("zoom=12.0");
   });
 });
