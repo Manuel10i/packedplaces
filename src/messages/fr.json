@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "brand": "PackedPlaces.com",
+    "howItWorks": "Comment ça marche",
+    "data": "Données",
+    "openSource": "Open Source",
+    "openMap": "Ouvrir la carte"
+  },
+  "hero": {
+    "headline": "Découvrez à quel point les destinations\ntouristiques sont fréquentées",
+    "description": "PackedPlaces.com visualise l'affluence touristique de plus de 230 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de 75 pays.",
+    "cta": "Explorer la carte",
+    "statRegions": "Régions",
+    "statDestinations": "Destinations",
+    "statPatterns": "Modèles",
+    "statCountries": "Pays"
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "step1Title": "Suivre les vacances scolaires",
+    "step1Text": "Nous collectons les calendriers de vacances scolaires de 127 régions en utilisant trois sources de données : des dates manuellement curées, l'OpenHolidaysAPI et la bibliothèque date-holidays.",
+    "step2Title": "Modéliser les flux touristiques",
+    "step2Text": "Plus de 2 100 schémas de voyage relient les régions sources aux destinations, pondérés par des statistiques touristiques réelles de l'OMT, d'Eurostat et des autorités nationales du tourisme.",
+    "step3Title": "Calculer l'affluence",
+    "step3Text": "Les scores de trafic brut sont divisés par la capacité de chaque destination — en tenant compte de la catégorie, de la saisonnalité et de l'hémisphère. Le résultat : à quel point un lieu est bondé."
+  },
+  "features": {
+    "title": "Fonctionnalités",
+    "crowdednessTitle": "Affluence, pas trafic",
+    "crowdednessText": "Mesure la congestion par rapport à la capacité. Un village de ski bondé obtient un score plus élevé qu'une métropole animée.",
+    "hemisphereTitle": "Saisons selon l'hémisphère",
+    "hemisphereText": "Hiver australien = juin. Le modèle gère correctement l'inversion des saisons entre les hémisphères.",
+    "categoriesTitle": "11 catégories de destination",
+    "categoriesText": "Ski, plage, ville, île, safari, désert, tropical, lac, nature, culturel et montagne — chacun avec une capacité calibrée.",
+    "boostTitle": "Effet de boost vacances",
+    "boostText": "Multiplicateur de 1,5x pendant les vacances scolaires capture la hausse de la demande de voyage lorsque les familles partent en vacances.",
+    "timelineTitle": "Chronologie semaine par semaine",
+    "timelineText": "Parcourez ou animez chaque semaine de l'année pour voir l'affluence évoluer en temps réel.",
+    "providersTitle": "Vacances multi-sources",
+    "providersText": "Trois fournisseurs en cascade — manuel, OpenHolidaysAPI et date-holidays — assurent une couverture mondiale des vacances scolaires."
+  },
+  "data": {
+    "title": "Données et méthodologie",
+    "sourcesTitle": "Sources de données",
+    "populationLabel": "Population",
+    "populationText": "Eurostat, US Census, ABS, UN World Population Prospects",
+    "tourismLabel": "Flux touristiques",
+    "tourismText": "UNWTO Compendium, nuitées Eurostat, NTTO, JNTO",
+    "holidaysLabel": "Vacances scolaires",
+    "holidaysText": "Curation manuelle, OpenHolidaysAPI, bibliothèque date-holidays",
+    "geographyLabel": "Géographie",
+    "geographyText": "Coordonnées, classification hémisphérique, attribution de catégorie",
+    "capacityTitle": "Capacité par catégorie",
+    "capacityDescription": "Chaque catégorie a une capacité de haute et basse saison qui détermine comment le trafic se traduit en affluence.",
+    "colCategory": "Catégorie",
+    "colPeak": "Haute",
+    "colOffPeak": "Basse",
+    "catCity": "Ville",
+    "catBeach": "Plage",
+    "catSki": "Ski",
+    "catIsland": "Île",
+    "catSafari": "Safari",
+    "catDesert": "Désert"
+  },
+  "openSource": {
+    "title": "Open Source",
+    "description": "PackedPlaces.com est entièrement open source. Parcourez le code, signalez des problèmes ou contribuez de nouvelles régions et destinations.",
+    "viewOnGithub": "Voir sur GitHub",
+    "contributions": "Contributions bienvenues"
+  },
+  "footer": {
+    "copyright": "PackedPlaces.com © {year}",
+    "github": "GitHub",
+    "docs": "Documentation"
+  },
+  "map": {
+    "title": "PackedPlaces.com"
+  },
+  "slider": {
+    "week": "Semaine {week}",
+    "play": "Lecture",
+    "pause": "Pause"
+  },
+  "holidays": {
+    "title": "Vacances scolaires",
+    "noHolidays": "Pas de vacances scolaires cette semaine",
+    "regionEurope": "Europe",
+    "regionAsia": "Asie",
+    "regionAmericas": "Amériques",
+    "regionOceania": "Océanie",
+    "regionAfrica": "Afrique",
+    "regionMiddleEast": "Moyen-Orient"
+  },
+  "legend": {
+    "title": "Affluence",
+    "quiet": "Calme",
+    "packed": "Bondé"
+  },
+  "tooltip": {
+    "crowdedness": "Affluence : {score}% — {label}",
+    "topSources": "Principales sources :",
+    "quiet": "Calme",
+    "moderate": "Modéré",
+    "busy": "Fréquenté",
+    "veryBusy": "Très fréquenté",
+    "packed": "Bondé"
+  },
+  "switcher": {
+    "label": "Langue",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "brand": "PackedPlaces.com",
+    "howItWorks": "So funktioniert's",
+    "data": "Daten",
+    "openSource": "Open Source",
+    "openMap": "Karte öffnen"
+  },
+  "hero": {
+    "headline": "Sieh, wie voll Reiseziele\nwirklich werden",
+    "description": "PackedPlaces.com visualisiert die Auslastung von über 230 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten aus 75 Ländern.",
+    "cta": "Karte erkunden",
+    "statRegions": "Regionen",
+    "statDestinations": "Reiseziele",
+    "statPatterns": "Muster",
+    "statCountries": "Länder"
+  },
+  "howItWorks": {
+    "title": "So funktioniert's",
+    "step1Title": "Schulferien erfassen",
+    "step1Text": "Wir sammeln Schulferienkalender aus 127 Regionen mit drei Datenquellen: manuell kuratierte Daten, der OpenHolidaysAPI und der date-holidays-Bibliothek.",
+    "step2Title": "Reiseströme modellieren",
+    "step2Text": "Über 2.100 Reisemuster verbinden Herkunftsregionen mit Reisezielen, gewichtet nach realen Tourismusstatistiken von UNWTO, Eurostat und nationalen Tourismusbehörden.",
+    "step3Title": "Auslastung berechnen",
+    "step3Text": "Rohe Verkehrswerte werden durch die Kapazität jedes Reiseziels geteilt — unter Berücksichtigung von Kategorie, Saisonalität und Hemisphäre. Das Ergebnis: wie voll sich ein Ort anfühlt."
+  },
+  "features": {
+    "title": "Funktionen",
+    "crowdednessTitle": "Auslastung, nicht Verkehr",
+    "crowdednessText": "Misst Überfüllung relativ zur Kapazität. Ein volles Skidorf erzielt höhere Werte als eine belebte Metropole.",
+    "hemisphereTitle": "Hemisphären-bewusste Jahreszeiten",
+    "hemisphereText": "Australischer Winter = Juni. Das Modell berücksichtigt korrekt die Jahreszeiten-Umkehr zwischen den Hemisphären.",
+    "categoriesTitle": "11 Zielkategorien",
+    "categoriesText": "Ski, Strand, Stadt, Insel, Safari, Wüste, Tropen, See, Natur, Kultur und Berg — jeweils mit angepasster Kapazität.",
+    "boostTitle": "Ferien-Boost-Effekt",
+    "boostText": "1,5-facher Multiplikator während der Schulferien erfasst den Anstieg der Reisenachfrage, wenn Familien verreisen.",
+    "timelineTitle": "Woche-für-Woche-Zeitleiste",
+    "timelineText": "Blättern oder animieren Sie durch jede Woche des Jahres, um die Auslastung in Echtzeit zu verfolgen.",
+    "providersTitle": "Mehrere Ferienquellen",
+    "providersText": "Drei kaskadierende Anbieter — manuell, OpenHolidaysAPI und date-holidays — gewährleisten weltweite Schulferien-Abdeckung."
+  },
+  "data": {
+    "title": "Daten & Methodik",
+    "sourcesTitle": "Datenquellen",
+    "populationLabel": "Bevölkerung",
+    "populationText": "Eurostat, US Census, ABS, UN World Population Prospects",
+    "tourismLabel": "Tourismusströme",
+    "tourismText": "UNWTO Compendium, Eurostat-Übernachtungen, NTTO, JNTO",
+    "holidaysLabel": "Schulferien",
+    "holidaysText": "Manuelle Pflege, OpenHolidaysAPI, date-holidays-Bibliothek",
+    "geographyLabel": "Geographie",
+    "geographyText": "Koordinaten, Hemisphären-Klassifikation, Kategorie-Zuweisung",
+    "capacityTitle": "Kapazität nach Kategorie",
+    "capacityDescription": "Jede Kategorie hat eine Haupt- und Nebensaison-Kapazität, die bestimmt, wie sich Verkehr in Auslastung übersetzt.",
+    "colCategory": "Kategorie",
+    "colPeak": "Hauptsaison",
+    "colOffPeak": "Nebensaison",
+    "catCity": "Stadt",
+    "catBeach": "Strand",
+    "catSki": "Ski",
+    "catIsland": "Insel",
+    "catSafari": "Safari",
+    "catDesert": "Wüste"
+  },
+  "openSource": {
+    "title": "Open Source",
+    "description": "PackedPlaces.com ist vollständig quelloffen. Durchstöbern Sie den Code, melden Sie Probleme oder tragen Sie neue Regionen und Reiseziele bei.",
+    "viewOnGithub": "Auf GitHub ansehen",
+    "contributions": "Beiträge willkommen"
+  },
+  "footer": {
+    "copyright": "PackedPlaces.com © {year}",
+    "github": "GitHub",
+    "docs": "Dokumentation"
+  },
+  "map": {
+    "title": "PackedPlaces.com"
+  },
+  "slider": {
+    "week": "Woche {week}",
+    "play": "Abspielen",
+    "pause": "Pause"
+  },
+  "holidays": {
+    "title": "Schulferien",
+    "noHolidays": "Keine Schulferien diese Woche",
+    "regionEurope": "Europa",
+    "regionAsia": "Asien",
+    "regionAmericas": "Amerika",
+    "regionOceania": "Ozeanien",
+    "regionAfrica": "Afrika",
+    "regionMiddleEast": "Naher Osten"
+  },
+  "legend": {
+    "title": "Auslastung",
+    "quiet": "Ruhig",
+    "packed": "Voll"
+  },
+  "tooltip": {
+    "crowdedness": "Auslastung: {score}% — {label}",
+    "topSources": "Hauptquellen:",
+    "quiet": "Ruhig",
+    "moderate": "Mäßig",
+    "busy": "Belebt",
+    "veryBusy": "Sehr belebt",
+    "packed": "Voll"
+  },
+  "switcher": {
+    "label": "Sprache",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

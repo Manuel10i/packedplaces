@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithIntl } from "@/test-utils";
 import { DestinationTooltip } from "../DestinationTooltip";
 
 const defaultProps = {
@@ -15,56 +16,56 @@ const defaultProps = {
 
 describe("DestinationTooltip", () => {
   it("renders destination name", () => {
-    render(<DestinationTooltip {...defaultProps} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} />);
     expect(screen.getByText("Barcelona")).toBeInTheDocument();
   });
 
   it("shows crowdedness percentage", () => {
-    render(<DestinationTooltip {...defaultProps} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} />);
     // score 0.5 -> 50%
     expect(screen.getByText(/50%/)).toBeInTheDocument();
   });
 
   it("shows crowdedness label for score 0.5 (Busy)", () => {
-    render(<DestinationTooltip {...defaultProps} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} />);
     expect(screen.getByText(/Busy/)).toBeInTheDocument();
   });
 
   it("shows 'Top sources' when sources are provided", () => {
-    render(<DestinationTooltip {...defaultProps} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} />);
     expect(screen.getByText("Top sources:")).toBeInTheDocument();
   });
 
   it("shows source region names", () => {
-    render(<DestinationTooltip {...defaultProps} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} />);
     expect(screen.getByText("Baden-W\u00fcrttemberg")).toBeInTheDocument();
     expect(screen.getByText("Bavaria")).toBeInTheDocument();
   });
 
   it("does not show 'Top sources' when sources array is empty", () => {
-    render(
+    renderWithIntl(
       <DestinationTooltip {...defaultProps} sources={[]} />,
     );
     expect(screen.queryByText("Top sources:")).not.toBeInTheDocument();
   });
 
   it("shows Quiet for score < 0.2", () => {
-    render(<DestinationTooltip {...defaultProps} score={0.1} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} score={0.1} />);
     expect(screen.getByText(/Quiet/)).toBeInTheDocument();
   });
 
   it("shows Moderate for score 0.2-0.4", () => {
-    render(<DestinationTooltip {...defaultProps} score={0.3} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} score={0.3} />);
     expect(screen.getByText(/Moderate/)).toBeInTheDocument();
   });
 
   it("shows Very Busy for score 0.6-0.8", () => {
-    render(<DestinationTooltip {...defaultProps} score={0.7} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} score={0.7} />);
     expect(screen.getByText(/Very Busy/)).toBeInTheDocument();
   });
 
   it("shows Packed for score >= 0.8", () => {
-    render(<DestinationTooltip {...defaultProps} score={0.9} />);
+    renderWithIntl(<DestinationTooltip {...defaultProps} score={0.9} />);
     expect(screen.getByText(/Packed/)).toBeInTheDocument();
   });
 });

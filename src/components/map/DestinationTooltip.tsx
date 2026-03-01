@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface Props {
   x: number;
   y: number;
@@ -8,16 +10,17 @@ interface Props {
   sources: { regionName: string; weight: number }[];
 }
 
-function getCrowdednessLabel(score: number): string {
-  if (score < 0.2) return "Quiet";
-  if (score < 0.4) return "Moderate";
-  if (score < 0.6) return "Busy";
-  if (score < 0.8) return "Very Busy";
-  return "Packed";
-}
-
 export function DestinationTooltip({ x, y, name, score, sources }: Props) {
+  const t = useTranslations("tooltip");
   const scorePercent = Math.round(score * 100);
+
+  function getCrowdednessLabel(s: number): string {
+    if (s < 0.2) return t("quiet");
+    if (s < 0.4) return t("moderate");
+    if (s < 0.6) return t("busy");
+    if (s < 0.8) return t("veryBusy");
+    return t("packed");
+  }
 
   return (
     <div
@@ -30,11 +33,13 @@ export function DestinationTooltip({ x, y, name, score, sources }: Props) {
           className="h-2.5 w-2.5 rounded-full"
           style={{ backgroundColor: getScoreColor(score) }}
         />
-        <span className="text-gray-600">Crowdedness: {scorePercent}% &mdash; {getCrowdednessLabel(score)}</span>
+        <span className="text-gray-600">
+          {t("crowdedness", { score: scorePercent, label: getCrowdednessLabel(score) })}
+        </span>
       </div>
       {sources.length > 0 && (
         <div className="mt-1.5 border-t border-gray-100 pt-1.5">
-          <div className="text-xs font-medium text-gray-500">Top sources:</div>
+          <div className="text-xs font-medium text-gray-500">{t("topSources")}</div>
           {sources.map((s, i) => (
             <div key={i} className="text-xs text-gray-600">
               {s.regionName}

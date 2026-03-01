@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "brand": "PackedPlaces.com",
+    "howItWorks": "Cómo funciona",
+    "data": "Datos",
+    "openSource": "Código abierto",
+    "openMap": "Abrir mapa"
+  },
+  "hero": {
+    "headline": "Descubre lo llenos que están\nlos destinos turísticos",
+    "description": "PackedPlaces.com visualiza la masificación turística de más de 230 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de 75 países.",
+    "cta": "Explorar el mapa",
+    "statRegions": "Regiones",
+    "statDestinations": "Destinos",
+    "statPatterns": "Patrones",
+    "statCountries": "Países"
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "step1Title": "Rastrear vacaciones escolares",
+    "step1Text": "Recopilamos calendarios de vacaciones escolares de 127 regiones usando tres fuentes de datos: fechas curadas manualmente, la OpenHolidaysAPI y la biblioteca date-holidays.",
+    "step2Title": "Modelar flujos turísticos",
+    "step2Text": "Más de 2.100 patrones de viaje conectan regiones de origen con destinos, ponderados por estadísticas turísticas reales de la OMT, Eurostat y autoridades nacionales de turismo.",
+    "step3Title": "Calcular masificación",
+    "step3Text": "Las puntuaciones de tráfico bruto se dividen por la capacidad de cada destino, teniendo en cuenta la categoría, la estacionalidad y el hemisferio. El resultado: lo lleno que se siente un lugar."
+  },
+  "features": {
+    "title": "Características",
+    "crowdednessTitle": "Masificación, no tráfico",
+    "crowdednessText": "Mide la congestión relativa a la capacidad. Una estación de esquí llena puntúa más alto que una metrópolis concurrida.",
+    "hemisphereTitle": "Estaciones según hemisferio",
+    "hemisphereText": "Invierno australiano = junio. El modelo maneja correctamente la inversión de estaciones entre hemisferios.",
+    "categoriesTitle": "11 categorías de destino",
+    "categoriesText": "Esquí, playa, ciudad, isla, safari, desierto, tropical, lago, naturaleza, cultural y montaña — cada uno con capacidad ajustada.",
+    "boostTitle": "Efecto de impulso vacacional",
+    "boostText": "Multiplicador de 1,5x durante las vacaciones escolares captura el aumento de la demanda de viajes cuando las familias salen de vacaciones.",
+    "timelineTitle": "Línea temporal semana a semana",
+    "timelineText": "Navega o anima cada semana del año para ver cómo cambia la masificación en tiempo real.",
+    "providersTitle": "Múltiples fuentes de vacaciones",
+    "providersText": "Tres proveedores en cascada — manual, OpenHolidaysAPI y date-holidays — aseguran cobertura global de vacaciones escolares."
+  },
+  "data": {
+    "title": "Datos y metodología",
+    "sourcesTitle": "Fuentes de datos",
+    "populationLabel": "Población",
+    "populationText": "Eurostat, US Census, ABS, UN World Population Prospects",
+    "tourismLabel": "Flujos turísticos",
+    "tourismText": "UNWTO Compendium, pernoctaciones Eurostat, NTTO, JNTO",
+    "holidaysLabel": "Vacaciones escolares",
+    "holidaysText": "Curación manual, OpenHolidaysAPI, biblioteca date-holidays",
+    "geographyLabel": "Geografía",
+    "geographyText": "Coordenadas, clasificación hemisférica, asignación de categoría",
+    "capacityTitle": "Capacidad por categoría",
+    "capacityDescription": "Cada categoría tiene una capacidad de temporada alta y baja que determina cómo el tráfico se traduce en masificación.",
+    "colCategory": "Categoría",
+    "colPeak": "Alta",
+    "colOffPeak": "Baja",
+    "catCity": "Ciudad",
+    "catBeach": "Playa",
+    "catSki": "Esquí",
+    "catIsland": "Isla",
+    "catSafari": "Safari",
+    "catDesert": "Desierto"
+  },
+  "openSource": {
+    "title": "Código abierto",
+    "description": "PackedPlaces.com es completamente de código abierto. Explora el código, reporta problemas o contribuye con nuevas regiones y destinos.",
+    "viewOnGithub": "Ver en GitHub",
+    "contributions": "Contribuciones bienvenidas"
+  },
+  "footer": {
+    "copyright": "PackedPlaces.com © {year}",
+    "github": "GitHub",
+    "docs": "Documentación"
+  },
+  "map": {
+    "title": "PackedPlaces.com"
+  },
+  "slider": {
+    "week": "Semana {week}",
+    "play": "Reproducir",
+    "pause": "Pausa"
+  },
+  "holidays": {
+    "title": "Vacaciones escolares",
+    "noHolidays": "No hay vacaciones escolares esta semana",
+    "regionEurope": "Europa",
+    "regionAsia": "Asia",
+    "regionAmericas": "América",
+    "regionOceania": "Oceanía",
+    "regionAfrica": "África",
+    "regionMiddleEast": "Oriente Medio"
+  },
+  "legend": {
+    "title": "Masificación",
+    "quiet": "Tranquilo",
+    "packed": "Lleno"
+  },
+  "tooltip": {
+    "crowdedness": "Masificación: {score}% — {label}",
+    "topSources": "Principales fuentes:",
+    "quiet": "Tranquilo",
+    "moderate": "Moderado",
+    "busy": "Concurrido",
+    "veryBusy": "Muy concurrido",
+    "packed": "Lleno"
+  },
+  "switcher": {
+    "label": "Idioma",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français"
+  }
+}

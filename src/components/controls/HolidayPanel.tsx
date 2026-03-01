@@ -1,20 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { useMapStore } from "@/store/useMapStore";
 import { useHolidayData } from "@/hooks/useHeatmapData";
 import { format, parseISO } from "date-fns";
+import { getDateLocale } from "@/i18n/date-locale";
 import { getCountryName, getCountryFlag } from "@/lib/data/countries";
 import { REGION_BOUNDS, boundsOverlap } from "@/lib/data/region-bounds";
 import type { WorldRegion } from "@/types";
+import type { Locale } from "@/i18n/config";
+import type { Locale as DateFnsLocale } from "date-fns";
 
-const REGION_LABELS: Record<WorldRegion, string> = {
-  europe: "Europe",
-  asia: "Asia",
-  americas: "Americas",
-  oceania: "Oceania",
-  africa: "Africa",
-  "middle-east": "Middle East",
+const REGION_LABEL_KEYS: Record<WorldRegion, string> = {
+  europe: "regionEurope",
+  asia: "regionAsia",
+  americas: "regionAmericas",
+  oceania: "regionOceania",
+  africa: "regionAfrica",
+  "middle-east": "regionMiddleEast",
 };
 
 const REGION_ORDER: WorldRegion[] = ["europe", "middle-east", "asia", "americas", "oceania", "africa"];
@@ -33,12 +37,14 @@ export function HolidayPanel() {
   const { data: holidays } = useHolidayData(selectedWeek, selectedYear);
   const [collapsedRegions, setCollapsedRegions] = useState<Set<WorldRegion>>(new Set(REGION_ORDER));
   const [collapsedCountries, setCollapsedCountries] = useState<Set<string>>(new Set());
+  const t = useTranslations("holidays");
+  const locale = useLocale() as Locale;
 
   if (!holidays || holidays.length === 0) {
     return (
       <div className="rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
-        <h3 className="mb-2 text-sm font-semibold text-gray-700">School Holidays</h3>
-        <p className="text-xs text-gray-400">No school holidays this week</p>
+        <h3 className="mb-2 text-sm font-semibold text-gray-700">{t("title")}</h3>
+        <p className="text-xs text-gray-400">{t("noHolidays")}</p>
       </div>
     );
   }
@@ -98,9 +104,11 @@ export function HolidayPanel() {
   // When only 1 region is active, auto-expand it (no header toggle shown)
   const showRegionHeaders = activeRegions.length > 1;
 
+  const dateLocale = getDateLocale(locale);
+
   return (
     <div className="max-h-[60vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
-      <h3 className="mb-3 text-sm font-semibold text-gray-700">School Holidays</h3>
+      <h3 className="mb-3 text-sm font-semibold text-gray-700">{t("title")}</h3>
       {activeRegions.map((worldRegion) => {
         const countryCodes = byWorldRegion.get(worldRegion)!;
         const isCollapsed = showRegionHeaders && collapsedRegions.has(worldRegion);
@@ -117,7 +125,7 @@ export function HolidayPanel() {
                 <span className="transition-transform" style={{ transform: isCollapsed ? "rotate(-90deg)" : "rotate(0)" }}>
                   &#9662;
                 </span>
-                {REGION_LABELS[worldRegion]}
+                {t(REGION_LABEL_KEYS[worldRegion])}
                 <span className="ml-auto font-normal normal-case">
                   {totalHolidays}
                 </span>
@@ -153,7 +161,7 @@ export function HolidayPanel() {
                           <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
                           <div className="text-xs text-gray-500">
                             {h.holidayName} &middot;{" "}
-                            {formatRange(h.startDate, h.endDate)}
+                            {formatRange(h.startDate, h.endDate, dateLocale)}
                           </div>
                         </div>
                       ))}
@@ -167,9 +175,9 @@ export function HolidayPanel() {
   );
 }
 
-function formatRange(start: string, end: string): string {
+function formatRange(start: string, end: string, dateLocale: DateFnsLocale): string {
   try {
-    return `${format(parseISO(start), "MMM d")} - ${format(parseISO(end), "MMM d")}`;
+    return `${format(parseISO(start), "MMM d", { locale: dateLocale })} - ${format(parseISO(end), "MMM d", { locale: dateLocale })}`;
   } catch {
     return `${start} - ${end}`;
   }

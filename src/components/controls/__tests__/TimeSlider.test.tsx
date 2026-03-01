@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { screen, fireEvent } from "@testing-library/react";
+import { renderWithIntl } from "@/test-utils";
 
 vi.mock("rc-slider", () => ({
   default: (props: { min?: number; max?: number; value?: number; onChange?: (v: number) => void }) => (
@@ -28,18 +29,18 @@ describe("TimeSlider", () => {
   });
 
   it("renders play button", () => {
-    render(<TimeSlider />);
+    renderWithIntl(<TimeSlider />);
     const playButton = screen.getByTitle("Play");
     expect(playButton).toBeInTheDocument();
   });
 
   it("shows 'Week X' where X is the current week", () => {
-    render(<TimeSlider />);
+    renderWithIntl(<TimeSlider />);
     expect(screen.getByText("Week 10")).toBeInTheDocument();
   });
 
   it("clicking play button toggles isPlaying in the store", () => {
-    render(<TimeSlider />);
+    renderWithIntl(<TimeSlider />);
     expect(useMapStore.getState().isPlaying).toBe(false);
 
     const playButton = screen.getByTitle("Play");
@@ -49,7 +50,7 @@ describe("TimeSlider", () => {
 
   it("shows pause button when isPlaying is true", () => {
     useMapStore.setState({ isPlaying: true });
-    render(<TimeSlider />);
+    renderWithIntl(<TimeSlider />);
     const pauseButton = screen.getByTitle("Pause");
     expect(pauseButton).toBeInTheDocument();
   });

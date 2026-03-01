@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,19 +10,36 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Busymap - Tourist Destination Busyness",
-  description: "Visualize tourist destination busyness worldwide based on school holiday schedules",
+  title: {
+    default: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    template: "%s | PackedPlaces.com",
+  },
+  description:
+    "PackedPlaces.com visualizes tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.",
+  openGraph: {
+    title: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    description:
+      "Visualize tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.",
+    url: "https://packedplaces.com",
+    siteName: "PackedPlaces.com",
+    type: "website",
+  },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${geistSans.variable} antialiased`}>
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

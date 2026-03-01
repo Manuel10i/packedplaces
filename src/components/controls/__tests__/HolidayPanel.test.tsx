@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { screen, fireEvent } from "@testing-library/react";
+import { renderWithIntl } from "@/test-utils";
 import type { HolidayInfo } from "@/types";
 
 vi.mock("@/hooks/useHeatmapData", () => ({
@@ -55,7 +56,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
     expect(
       screen.getByText("No school holidays this week"),
     ).toBeInTheDocument();
@@ -68,7 +69,7 @@ describe("HolidayPanel", () => {
       isLoading: true,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
     expect(
       screen.getByText("No school holidays this week"),
     ).toBeInTheDocument();
@@ -81,7 +82,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
     expect(screen.getByText("School Holidays")).toBeInTheDocument();
     expect(screen.getByText("Europe")).toBeInTheDocument();
     expect(screen.getByText("Middle East")).toBeInTheDocument();
@@ -94,7 +95,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
     expect(screen.getByText("Europe")).toBeInTheDocument();
     expect(screen.queryByText(/Baden-W/)).not.toBeInTheDocument();
     expect(screen.queryByText("Vienna")).not.toBeInTheDocument();
@@ -107,7 +108,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
 
     expect(screen.queryByText(/Baden-W/)).not.toBeInTheDocument();
 
@@ -124,7 +125,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
 
     // Expand Europe region
     fireEvent.click(screen.getByText("Europe"));
@@ -151,7 +152,7 @@ describe("HolidayPanel", () => {
       viewportBounds: { north: 60, south: 40, east: 20, west: -10 },
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
 
     expect(screen.getByText("School Holidays")).toBeInTheDocument();
     // Middle East should be filtered out
@@ -170,7 +171,7 @@ describe("HolidayPanel", () => {
       viewportBounds: { north: 60, south: 40, east: 20, west: -10 },
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
 
     // Region header should NOT be shown (only 1 region)
     expect(screen.queryByText("Europe")).not.toBeInTheDocument();
@@ -186,7 +187,7 @@ describe("HolidayPanel", () => {
       isLoading: false,
     });
 
-    render(<HolidayPanel />);
+    renderWithIntl(<HolidayPanel />);
 
     // Expand Europe
     fireEvent.click(screen.getByText("Europe"));

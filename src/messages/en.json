@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "brand": "PackedPlaces.com",
+    "howItWorks": "How It Works",
+    "data": "Data",
+    "openSource": "Open Source",
+    "openMap": "Open Map"
+  },
+  "hero": {
+    "headline": "See How Crowded Travel\nDestinations Really Get",
+    "description": "PackedPlaces.com visualizes tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.",
+    "cta": "Explore the Map",
+    "statRegions": "Regions",
+    "statDestinations": "Destinations",
+    "statPatterns": "Patterns",
+    "statCountries": "Countries"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1Title": "Track School Holidays",
+    "step1Text": "We collect school holiday schedules from 127 regions using three data providers: hand-curated dates, the OpenHolidaysAPI, and the date-holidays library.",
+    "step2Title": "Model Travel Flows",
+    "step2Text": "Over 2,100 travel patterns connect source regions to destinations, weighted by real tourism statistics from UNWTO, Eurostat, and national tourism authorities.",
+    "step3Title": "Calculate Crowdedness",
+    "step3Text": "Raw traffic scores are divided by each destination's capacity — accounting for category, seasonality, and hemisphere. The result: how packed a place feels."
+  },
+  "features": {
+    "title": "Features",
+    "crowdednessTitle": "Crowdedness, Not Traffic",
+    "crowdednessText": "Measures congestion relative to capacity. A packed ski village scores higher than a busy metropolis.",
+    "hemisphereTitle": "Hemisphere-Aware Seasons",
+    "hemisphereText": "Australian winter = June. The model correctly handles season inversion across hemispheres.",
+    "categoriesTitle": "11 Destination Categories",
+    "categoriesText": "Ski, beach, city, island, safari, desert, tropical, lake, nature, cultural, and mountain — each with tuned capacity.",
+    "boostTitle": "Holiday Boost Effect",
+    "boostText": "1.5x multiplier during school breaks captures the surge in travel demand when families hit the road.",
+    "timelineTitle": "Week-by-Week Timeline",
+    "timelineText": "Scrub or animate through every week of the year to see crowdedness shift in real time.",
+    "providersTitle": "Multi-Provider Holidays",
+    "providersText": "Three cascading providers — manual, OpenHolidaysAPI, and date-holidays — ensure global school holiday coverage."
+  },
+  "data": {
+    "title": "Data & Methodology",
+    "sourcesTitle": "Data Sources",
+    "populationLabel": "Population",
+    "populationText": "Eurostat, US Census, ABS, UN World Population Prospects",
+    "tourismLabel": "Tourism flows",
+    "tourismText": "UNWTO Compendium, Eurostat overnight stays, NTTO, JNTO",
+    "holidaysLabel": "School holidays",
+    "holidaysText": "Manual curation, OpenHolidaysAPI, date-holidays library",
+    "geographyLabel": "Geography",
+    "geographyText": "Coordinates, hemisphere classification, category assignment",
+    "capacityTitle": "Capacity by Category",
+    "capacityDescription": "Each category has a peak and off-peak capacity that determines how traffic translates to crowdedness.",
+    "colCategory": "Category",
+    "colPeak": "Peak",
+    "colOffPeak": "Off-Peak",
+    "catCity": "City",
+    "catBeach": "Beach",
+    "catSki": "Ski",
+    "catIsland": "Island",
+    "catSafari": "Safari",
+    "catDesert": "Desert"
+  },
+  "openSource": {
+    "title": "Open Source",
+    "description": "PackedPlaces.com is fully open source. Browse the code, report issues, or contribute new regions and destinations.",
+    "viewOnGithub": "View on GitHub",
+    "contributions": "Contributions Welcome"
+  },
+  "footer": {
+    "copyright": "PackedPlaces.com © {year}",
+    "github": "GitHub",
+    "docs": "Documentation"
+  },
+  "map": {
+    "title": "PackedPlaces.com"
+  },
+  "slider": {
+    "week": "Week {week}",
+    "play": "Play",
+    "pause": "Pause"
+  },
+  "holidays": {
+    "title": "School Holidays",
+    "noHolidays": "No school holidays this week",
+    "regionEurope": "Europe",
+    "regionAsia": "Asia",
+    "regionAmericas": "Americas",
+    "regionOceania": "Oceania",
+    "regionAfrica": "Africa",
+    "regionMiddleEast": "Middle East"
+  },
+  "legend": {
+    "title": "Crowdedness",
+    "quiet": "Quiet",
+    "packed": "Packed"
+  },
+  "tooltip": {
+    "crowdedness": "Crowdedness: {score}% — {label}",
+    "topSources": "Top sources:",
+    "quiet": "Quiet",
+    "moderate": "Moderate",
+    "busy": "Busy",
+    "veryBusy": "Very Busy",
+    "packed": "Packed"
+  },
+  "switcher": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "fr": "Français"
+  }
+}
