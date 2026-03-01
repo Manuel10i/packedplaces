@@ -1,0 +1,13 @@
+[
+  { "name": "Winter Break", "startDate": "2026-02-16", "endDate": "2026-02-20" },
+  { "name": "Easter Holiday", "startDate": "2026-04-09", "endDate": "2026-04-13" },
+  { "name": "Summer Holiday", "startDate": "2026-06-06", "endDate": "2026-08-31" },
+  { "name": "Christmas Holiday", "startDate": "2026-12-19", "endDate": "2027-01-02" },
+  { "name": "Winter Break", "startDate": "2027-02-15", "endDate": "2027-02-19" },
+  { "name": "Easter Holiday", "startDate": "2027-03-25", "endDate": "2027-03-29" },
+  { "name": "Summer Holiday", "startDate": "2027-06-05", "endDate": "2027-08-31" },
+  { "name": "Christmas Holiday", "startDate": "2027-12-18", "endDate": "2028-01-02" },
+  { "name": "Winter Break", "startDate": "2028-02-14", "endDate": "2028-02-18" },
+  { "name": "Easter Holiday", "startDate": "2028-04-13", "endDate": "2028-04-17" },
+  { "name": "Summer Holiday", "startDate": "2028-06-03", "endDate": "2028-08-31" }
+]

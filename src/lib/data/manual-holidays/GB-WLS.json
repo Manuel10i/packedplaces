@@ -1,0 +1,14 @@
+[
+  { "name": "February Half Term", "startDate": "2026-02-16", "endDate": "2026-02-20" },
+  { "name": "Easter Holiday", "startDate": "2026-03-30", "endDate": "2026-04-10" },
+  { "name": "May Half Term", "startDate": "2026-05-25", "endDate": "2026-05-29" },
+  { "name": "Summer Holiday", "startDate": "2026-07-20", "endDate": "2026-09-01" },
+  { "name": "October Half Term", "startDate": "2026-10-26", "endDate": "2026-10-30" },
+  { "name": "Christmas Holiday", "startDate": "2026-12-21", "endDate": "2027-01-02" },
+  { "name": "February Half Term", "startDate": "2027-02-15", "endDate": "2027-02-19" },
+  { "name": "Easter Holiday", "startDate": "2027-03-29", "endDate": "2027-04-09" },
+  { "name": "May Half Term", "startDate": "2027-05-31", "endDate": "2027-06-04" },
+  { "name": "Summer Holiday", "startDate": "2027-07-19", "endDate": "2027-09-01" },
+  { "name": "October Half Term", "startDate": "2027-10-25", "endDate": "2027-10-29" },
+  { "name": "Christmas Holiday", "startDate": "2027-12-20", "endDate": "2028-01-03" }
+]
