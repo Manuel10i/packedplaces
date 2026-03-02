@@ -7,6 +7,7 @@ import { TimeSlider } from "@/components/controls/TimeSlider";
 import { YearSelector } from "@/components/controls/YearSelector";
 import { HolidayPanel } from "@/components/controls/HolidayPanel";
 import { Legend } from "@/components/controls/Legend";
+import { LayerToggle } from "@/components/controls/LayerToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useUrlSync } from "@/hooks/useUrlSync";
 
@@ -40,7 +41,8 @@ export default function MapPage() {
         <div className="flex-1">
           <TimeSlider />
         </div>
-        <div className="w-48 shrink-0">
+        <div className="flex w-48 shrink-0 flex-col gap-2">
+          <LayerToggle />
           <Legend />
         </div>
       </div>

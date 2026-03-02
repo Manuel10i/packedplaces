@@ -107,6 +107,12 @@
     "music": "Musik",
     "trade": "Messen & Expos"
   },
+  "layers": {
+    "title": "Ebenen",
+    "heatmap": "Heatmap",
+    "events": "Events",
+    "holidayRegions": "Ferienregionen"
+  },
   "legend": {
     "title": "Auslastung",
     "quiet": "Ruhig",

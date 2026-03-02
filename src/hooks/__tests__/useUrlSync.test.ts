@@ -52,13 +52,15 @@ describe("useUrlSync", () => {
     expect(state.selectedYear).toBe(2026);
   });
 
-  it("reads lat/lng/zoom from URL params and sets viewportCenter", () => {
-    window.location.search = "?week=10&year=2026&lat=48.8&lng=2.3&zoom=12";
+  it("reads layers param from URL and restores layer visibility", () => {
+    window.location.search = "?week=10&year=2026&layers=r";
 
     renderHook(() => useUrlSync());
 
     const state = useMapStore.getState();
-    expect(state.viewportCenter).toEqual({ lat: 48.8, lng: 2.3, zoom: 12 });
+    expect(state.showHeatmap).toBe(false);
+    expect(state.showEvents).toBe(false);
+    expect(state.showHolidayRegions).toBe(true);
   });
 
   it("updates URL via replaceState after store values change", () => {

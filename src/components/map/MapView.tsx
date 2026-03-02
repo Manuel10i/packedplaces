@@ -1,14 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Map, { type MapRef, type MapLayerMouseEvent } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { HeatmapLayer } from "./HeatmapLayer";
+import { HolidayRegionsLayer } from "./HolidayRegionsLayer";
 import { DestinationTooltip } from "./DestinationTooltip";
 import { useMapStore } from "@/store/useMapStore";
 import { useHeatmapData, useAllDestinations } from "@/hooks/useHeatmapData";
 
-const INITIAL_VIEW = {
+const DEFAULT_VIEW = {
   latitude: 20,
   longitude: 0,
   zoom: 2,
@@ -16,12 +17,24 @@ const INITIAL_VIEW = {
 
 const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
+function getInitialView() {
+  if (typeof window === "undefined") return DEFAULT_VIEW;
+  const params = new URLSearchParams(window.location.search);
+  const lat = parseFloat(params.get("lat") ?? "");
+  const lng = parseFloat(params.get("lng") ?? "");
+  const zoom = parseFloat(params.get("zoom") ?? "");
+  if (!isNaN(lat) && !isNaN(lng) && !isNaN(zoom)) {
+    return { latitude: lat, longitude: lng, zoom };
+  }
+  return DEFAULT_VIEW;
+}
+
 export function MapView() {
   const mapRef = useRef<MapRef>(null);
-  const { selectedWeek, selectedYear, setHoveredDestination, viewportCenter, setViewportBounds, setViewportCenter } = useMapStore();
+  const { selectedWeek, selectedYear, setHoveredDestination, setViewportBounds, setViewportCenter, showHeatmap } = useMapStore();
   const { data } = useHeatmapData(selectedWeek, selectedYear);
   const { data: allDestinations } = useAllDestinations();
-  const hasAppliedUrlCenter = useRef(false);
+  const [initialView] = useState(getInitialView);
   const [tooltipInfo, setTooltipInfo] = useState<{
     x: number;
     y: number;
@@ -30,17 +43,6 @@ export function MapView() {
     sources: { regionName: string; weight: number }[];
     destinationId: string;
   } | null>(null);
-
-  // When viewportCenter is set from URL params, jump to that position
-  useEffect(() => {
-    if (hasAppliedUrlCenter.current) return;
-    if (!viewportCenter || !mapRef.current) return;
-    hasAppliedUrlCenter.current = true;
-    mapRef.current.jumpTo({
-      center: [viewportCenter.lng, viewportCenter.lat],
-      zoom: viewportCenter.zoom,
-    });
-  }, [viewportCenter]);
 
   const onMouseMove = useCallback(
     (e: MapLayerMouseEvent) => {
@@ -105,23 +107,27 @@ export function MapView() {
     });
   }, [setViewportBounds, setViewportCenter]);
 
-  // Set initial viewport bounds when map loads (not just on user interaction)
   const onLoad = useCallback(() => {
     updateViewport();
   }, [updateViewport]);
+
+  const interactiveLayerIds = showHeatmap
+    ? ["destination-circles", "all-destinations"]
+    : ["all-destinations"];
 
   return (
     <div className="absolute inset-0">
       <Map
         ref={mapRef}
-        initialViewState={INITIAL_VIEW}
+        initialViewState={initialView}
         mapStyle={MAP_STYLE}
-        interactiveLayerIds={["destination-circles", "all-destinations"]}
+        interactiveLayerIds={interactiveLayerIds}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         onMoveEnd={updateViewport}
         onLoad={onLoad}
       >
+        <HolidayRegionsLayer regionsOnHoliday={data?.metadata.regionsOnHoliday} />
         <HeatmapLayer data={data} allDestinations={allDestinations} />
       </Map>
       {tooltipInfo && (

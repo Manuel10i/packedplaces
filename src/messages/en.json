@@ -107,6 +107,12 @@
     "music": "Music",
     "trade": "Trade & Expos"
   },
+  "layers": {
+    "title": "Layers",
+    "heatmap": "Heatmap",
+    "events": "Events",
+    "holidayRegions": "Holiday Regions"
+  },
   "legend": {
     "title": "Crowdedness",
     "quiet": "Quiet",

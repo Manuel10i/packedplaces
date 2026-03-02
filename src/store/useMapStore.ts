@@ -21,6 +21,9 @@ interface MapState {
   hoveredDestination: string | null;
   viewportBounds: ViewportBounds | null;
   viewportCenter: ViewportCenter | null;
+  showHeatmap: boolean;
+  showEvents: boolean;
+  showHolidayRegions: boolean;
   setSelectedWeek: (week: number) => void;
   setSelectedYear: (year: number) => void;
   togglePlaying: () => void;
@@ -29,6 +32,9 @@ interface MapState {
   advanceWeek: () => void;
   setViewportBounds: (bounds: ViewportBounds) => void;
   setViewportCenter: (center: ViewportCenter) => void;
+  setShowHeatmap: (show: boolean) => void;
+  setShowEvents: (show: boolean) => void;
+  setShowHolidayRegions: (show: boolean) => void;
 }
 
 export const useMapStore = create<MapState>((set, get) => ({
@@ -38,6 +44,9 @@ export const useMapStore = create<MapState>((set, get) => ({
   hoveredDestination: null,
   viewportBounds: null,
   viewportCenter: null,
+  showHeatmap: true,
+  showEvents: true,
+  showHolidayRegions: false,
   setSelectedWeek: (week) => set({ selectedWeek: week }),
   setSelectedYear: (year) => set({ selectedYear: year }),
   togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),
@@ -53,4 +62,7 @@ export const useMapStore = create<MapState>((set, get) => ({
   },
   setViewportBounds: (bounds) => set({ viewportBounds: bounds }),
   setViewportCenter: (center) => set({ viewportCenter: center }),
+  setShowHeatmap: (show) => set({ showHeatmap: show }),
+  setShowEvents: (show) => set({ showEvents: show }),
+  setShowHolidayRegions: (show) => set({ showHolidayRegions: show }),
 }));

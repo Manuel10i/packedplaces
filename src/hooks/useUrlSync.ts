@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { useMapStore } from "@/store/useMapStore";
 
 export function useUrlSync() {
-  const { selectedWeek, selectedYear, viewportCenter } = useMapStore();
+  const { selectedWeek, selectedYear, viewportCenter, showHeatmap, showEvents, showHolidayRegions } = useMapStore();
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const initialized = useRef(false);
 
@@ -25,11 +25,14 @@ export function useUrlSync() {
       useMapStore.getState().setSelectedYear(year);
     }
 
-    const lat = parseFloat(params.get("lat") ?? "");
-    const lng = parseFloat(params.get("lng") ?? "");
-    const zoom = parseFloat(params.get("zoom") ?? "");
-    if (!isNaN(lat) && !isNaN(lng) && !isNaN(zoom)) {
-      useMapStore.getState().setViewportCenter({ lat, lng, zoom });
+    // lat/lng/zoom are restored directly by MapView's initialViewState
+
+    const layers = params.get("layers");
+    if (layers !== null) {
+      const store = useMapStore.getState();
+      store.setShowHeatmap(layers.includes("h"));
+      store.setShowEvents(layers.includes("e"));
+      store.setShowHolidayRegions(layers.includes("r"));
     }
   }, []);
 
@@ -52,6 +55,15 @@ export function useUrlSync() {
         params.set("zoom", viewportCenter.zoom.toFixed(1));
       }
 
+      const layers =
+        (showHeatmap ? "h" : "") +
+        (showEvents ? "e" : "") +
+        (showHolidayRegions ? "r" : "");
+      if (layers !== "he") {
+        // Only include when non-default (default is heatmap + events on)
+        params.set("layers", layers);
+      }
+
       window.history.replaceState(null, "", `?${params.toString()}`);
     }, 300);
 
@@ -60,5 +72,5 @@ export function useUrlSync() {
         clearTimeout(debounceRef.current);
       }
     };
-  }, [selectedWeek, selectedYear, viewportCenter]);
+  }, [selectedWeek, selectedYear, viewportCenter, showHeatmap, showEvents, showHolidayRegions]);
 }

@@ -15,7 +15,8 @@
     "db:setup": "npm run db:migrate && npm run db:seed && npm run db:ingest-holidays && npm run db:precompute",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "build:boundaries": "tsx --tsconfig tsconfig.scripts.json scripts/build-region-boundaries.ts"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -38,6 +39,10 @@
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
+    "@turf/helpers": "^7.3.4",
+    "@turf/simplify": "^7.3.4",
+    "@turf/truncate": "^7.3.4",
+    "@turf/union": "^7.3.4",
     "@types/node": "^20",
     "@types/pg": "^8.18.0",
     "@types/react": "^19",

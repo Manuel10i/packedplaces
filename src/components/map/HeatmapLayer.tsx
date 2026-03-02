@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { Source, Layer, Marker } from "react-map-gl/maplibre";
 import type { HeatmapResponse, AllDestinationsResponse, MajorEvent } from "@/types";
+import { useMapStore } from "@/store/useMapStore";
 
 interface Props {
   data: HeatmapResponse | undefined;
@@ -33,6 +34,9 @@ interface EventMarker {
 const SHOW_ZERO_SCORES = process.env.NEXT_PUBLIC_SHOW_ZERO_SCORES !== "false";
 
 export function HeatmapLayer({ data, allDestinations }: Props) {
+  const showHeatmap = useMapStore((s) => s.showHeatmap);
+  const showEvents = useMapStore((s) => s.showEvents);
+
   const geojson = useMemo(() => {
     if (!data) return emptyGeoJSON;
     if (SHOW_ZERO_SCORES) return data;
@@ -107,140 +111,143 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
         </Source>
       )}
 
-      {/* Heatmap data layer - rendered on top */}
-      <Source id="heatmap-source" type="geojson" data={geojson}>
-        {/* Heatmap layer - visible at lower zoom levels */}
-        <Layer
-          id="heatmap-layer"
-          type="heatmap"
-          paint={{
-            "heatmap-weight": [
-              "interpolate",
-              ["linear"],
-              ["get", "busynessScore"],
-              0,
-              0,
-              0.5,
-              0.5,
-              1,
-              1,
-            ],
-            "heatmap-intensity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              3,
-              0.8,
-              6,
-              2,
-            ],
-            "heatmap-color": [
-              "interpolate",
-              ["linear"],
-              ["heatmap-density"],
-              0,
-              "rgba(0, 0, 0, 0)",
-              0.1,
-              "rgba(34, 197, 94, 0.4)",
-              0.3,
-              "rgba(250, 204, 21, 0.6)",
-              0.5,
-              "rgba(249, 115, 22, 0.7)",
-              0.7,
-              "rgba(239, 68, 68, 0.8)",
-              1.0,
-              "rgba(185, 28, 28, 0.9)",
-            ],
-            "heatmap-radius": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              3,
-              30,
-              5,
-              50,
-              7,
-              70,
-            ],
-            "heatmap-opacity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              5,
-              0.9,
-              8,
-              0.6,
-            ],
-          }}
-        />
+      {/* Heatmap data layer - rendered on top, toggleable */}
+      {showHeatmap && (
+        <Source id="heatmap-source" type="geojson" data={geojson}>
+          {/* Heatmap layer - visible at lower zoom levels */}
+          <Layer
+            id="heatmap-layer"
+            type="heatmap"
+            paint={{
+              "heatmap-weight": [
+                "interpolate",
+                ["linear"],
+                ["get", "busynessScore"],
+                0,
+                0,
+                0.5,
+                0.5,
+                1,
+                1,
+              ],
+              "heatmap-intensity": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                3,
+                0.8,
+                6,
+                2,
+              ],
+              "heatmap-color": [
+                "interpolate",
+                ["linear"],
+                ["heatmap-density"],
+                0,
+                "rgba(0, 0, 0, 0)",
+                0.1,
+                "rgba(34, 197, 94, 0.4)",
+                0.3,
+                "rgba(250, 204, 21, 0.6)",
+                0.5,
+                "rgba(249, 115, 22, 0.7)",
+                0.7,
+                "rgba(239, 68, 68, 0.8)",
+                1.0,
+                "rgba(185, 28, 28, 0.9)",
+              ],
+              "heatmap-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                3,
+                30,
+                5,
+                50,
+                7,
+                70,
+              ],
+              "heatmap-opacity": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                5,
+                0.9,
+                8,
+                0.6,
+              ],
+            }}
+          />
 
-        {/* Circle layer - visible at higher zoom for clicking */}
-        <Layer
-          id="destination-circles"
-          type="circle"
-          paint={{
-            "circle-radius": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              3,
-              ["interpolate", ["linear"], ["get", "busynessScore"], 0, 3, 1, 6],
-              7,
-              ["interpolate", ["linear"], ["get", "busynessScore"], 0, 8, 1, 14],
-            ],
-            "circle-color": [
-              "interpolate",
-              ["linear"],
-              ["get", "busynessScore"],
-              0,
-              "#22c55e",
-              0.3,
-              "#facc15",
-              0.6,
-              "#f97316",
-              1.0,
-              "#dc2626",
-            ],
-            "circle-opacity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              5,
-              0.1,
-              7,
-              0.8,
-            ],
-            "circle-stroke-width": 1,
-            "circle-stroke-color": "#ffffff",
-            "circle-stroke-opacity": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              5,
-              0,
-              7,
-              0.8,
-            ],
-          }}
-        />
-      </Source>
+          {/* Circle layer - visible at higher zoom for clicking */}
+          <Layer
+            id="destination-circles"
+            type="circle"
+            paint={{
+              "circle-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                3,
+                ["interpolate", ["linear"], ["get", "busynessScore"], 0, 3, 1, 6],
+                7,
+                ["interpolate", ["linear"], ["get", "busynessScore"], 0, 8, 1, 14],
+              ],
+              "circle-color": [
+                "interpolate",
+                ["linear"],
+                ["get", "busynessScore"],
+                0,
+                "#22c55e",
+                0.3,
+                "#facc15",
+                0.6,
+                "#f97316",
+                1.0,
+                "#dc2626",
+              ],
+              "circle-opacity": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                5,
+                0.1,
+                7,
+                0.8,
+              ],
+              "circle-stroke-width": 1,
+              "circle-stroke-color": "#ffffff",
+              "circle-stroke-opacity": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                5,
+                0,
+                7,
+                0.8,
+              ],
+            }}
+          />
+        </Source>
+      )}
 
       {/* Event markers — HTML emoji markers at destinations with active events */}
-      {eventMarkers.map((m) => (
-        <Marker
-          key={m.destinationId}
-          longitude={m.lng}
-          latitude={m.lat}
-          anchor="bottom"
-        >
-          <div
-            className="pointer-events-none select-none text-lg drop-shadow-md"
-            title={m.label}
+      {showEvents &&
+        eventMarkers.map((m) => (
+          <Marker
+            key={m.destinationId}
+            longitude={m.lng}
+            latitude={m.lat}
+            anchor="bottom"
           >
-            {m.emoji}
-          </div>
-        </Marker>
-      ))}
+            <div
+              className="pointer-events-none select-none text-lg drop-shadow-md"
+              title={m.label}
+            >
+              {m.emoji}
+            </div>
+          </Marker>
+        ))}
     </>
   );
 }

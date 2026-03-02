@@ -107,6 +107,12 @@
     "music": "Musique",
     "trade": "Salons & Expos"
   },
+  "layers": {
+    "title": "Couches",
+    "heatmap": "Carte thermique",
+    "events": "Événements",
+    "holidayRegions": "Régions en vacances"
+  },
   "legend": {
     "title": "Affluence",
     "quiet": "Calme",

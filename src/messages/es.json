@@ -107,6 +107,12 @@
     "music": "Música",
     "trade": "Ferias & Expos"
   },
+  "layers": {
+    "title": "Capas",
+    "heatmap": "Mapa de calor",
+    "events": "Eventos",
+    "holidayRegions": "Regiones de vacaciones"
+  },
   "legend": {
     "title": "Masificación",
     "quiet": "Tranquilo",
