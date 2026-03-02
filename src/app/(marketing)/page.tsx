@@ -135,7 +135,7 @@ export default async function MarketingPage() {
               {t("hero.cta")} &rarr;
             </a>
           </div>
-          <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-5">
             <div>
               <p className="text-3xl font-bold text-gray-900">127</p>
               <p className="mt-1 text-sm text-gray-500">{t("hero.statRegions")}</p>
@@ -147,6 +147,10 @@ export default async function MarketingPage() {
             <div>
               <p className="text-3xl font-bold text-gray-900">6,000+</p>
               <p className="mt-1 text-sm text-gray-500">{t("hero.statPatterns")}</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-gray-900">50+</p>
+              <p className="mt-1 text-sm text-gray-500">{t("hero.statEvents")}</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-gray-900">100+</p>
@@ -162,40 +166,20 @@ export default async function MarketingPage() {
           <h2 className="text-center text-3xl font-bold text-gray-900">
             {t("howItWorks.title")}
           </h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700">
-                1
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {([1, 2, 3, 4] as const).map((step) => (
+              <div key={step} className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700">
+                  {step}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {t(`howItWorks.step${step}Title`)}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  {t(`howItWorks.step${step}Text`)}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {t("howItWorks.step1Title")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("howItWorks.step1Text")}
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700">
-                2
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {t("howItWorks.step2Title")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("howItWorks.step2Text")}
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700">
-                3
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {t("howItWorks.step3Title")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("howItWorks.step3Text")}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -255,6 +239,14 @@ export default async function MarketingPage() {
                 {t("features.providersText")}
               </p>
             </div>
+            <div className="rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm">
+              <h3 className="text-base font-semibold text-gray-900">
+                {t("features.eventsTitle")}
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                {t("features.eventsText")}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -282,6 +274,10 @@ export default async function MarketingPage() {
                 <li className="flex gap-3">
                   <span className="font-medium text-gray-900">{t("data.holidaysLabel")}</span>
                   <span>{t("data.holidaysText")}</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="font-medium text-gray-900">{t("data.eventsLabel")}</span>
+                  <span>{t("data.eventsDataText")}</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="font-medium text-gray-900">{t("data.geographyLabel")}</span>

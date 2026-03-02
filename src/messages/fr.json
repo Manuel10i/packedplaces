@@ -13,6 +13,7 @@
     "statRegions": "Régions",
     "statDestinations": "Destinations",
     "statPatterns": "Modèles",
+    "statEvents": "Événements",
     "statCountries": "Pays"
   },
   "howItWorks": {
@@ -21,8 +22,10 @@
     "step1Text": "Nous collectons les calendriers de vacances scolaires de 127 régions en utilisant trois sources de données : des dates manuellement curées, l'OpenHolidaysAPI et la bibliothèque date-holidays.",
     "step2Title": "Modéliser les flux touristiques",
     "step2Text": "Plus de 6 000 schémas de voyage relient les régions sources aux destinations, pondérés par des statistiques touristiques réelles de l'OMT, d'Eurostat et des autorités nationales du tourisme.",
-    "step3Title": "Calculer l'affluence",
-    "step3Text": "Les scores de trafic brut sont divisés par la capacité de chaque destination — en tenant compte de la catégorie, de la saisonnalité et de l'hémisphère. Le résultat : à quel point un lieu est bondé."
+    "step3Title": "Suivre les grands événements",
+    "step3Text": "Plus de 50 grands événements — de la Coupe du Monde FIFA et des Jeux Olympiques à l'Oktoberfest et au Carnaval — sont intégrés, augmentant les scores des destinations pendant les semaines d'événement.",
+    "step4Title": "Calculer l'affluence",
+    "step4Text": "Les scores de trafic brut sont divisés par la capacité de chaque destination — en tenant compte de la catégorie, de la saisonnalité et de l'hémisphère. Le résultat : à quel point un lieu est bondé."
   },
   "features": {
     "title": "Fonctionnalités",
@@ -37,7 +40,9 @@
     "timelineTitle": "Chronologie semaine par semaine",
     "timelineText": "Parcourez ou animez chaque semaine de l'année pour voir l'affluence évoluer en temps réel.",
     "providersTitle": "Vacances multi-sources",
-    "providersText": "Trois fournisseurs en cascade — manuel, OpenHolidaysAPI et date-holidays — assurent une couverture mondiale des vacances scolaires."
+    "providersText": "Trois fournisseurs en cascade — manuel, OpenHolidaysAPI et date-holidays — assurent une couverture mondiale des vacances scolaires.",
+    "eventsTitle": "50+ grands événements",
+    "eventsText": "Jeux Olympiques, Coupe du Monde FIFA, Oktoberfest, Carnaval, Grand Chelem et plus — les événements majeurs attirant des millions de visiteurs sont suivis et affichés sur la carte."
   },
   "data": {
     "title": "Données et méthodologie",
@@ -48,6 +53,8 @@
     "tourismText": "UNWTO Compendium, nuitées Eurostat, NTTO, JNTO",
     "holidaysLabel": "Vacances scolaires",
     "holidaysText": "Curation manuelle, OpenHolidaysAPI, bibliothèque date-holidays",
+    "eventsLabel": "Grands événements",
+    "eventsDataText": "50+ événements récurrents et ponctuels dont les Jeux Olympiques, la Coupe du Monde FIFA, festivals et Grand Chelem",
     "geographyLabel": "Géographie",
     "geographyText": "Coordonnées, classification hémisphérique, attribution de catégorie",
     "capacityTitle": "Capacité par catégorie",

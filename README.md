@@ -1,14 +1,15 @@
 # Packed Places
 
-Visualize tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.
+Visualize tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data and major events from 100+ countries.
 
 **Live:** [packedplaces.com](https://packedplaces.com) | [map.packedplaces.com](https://map.packedplaces.com)
 
 ## Key Stats
 
-- **127** source regions across **75** countries
-- **230+** destinations across 67 countries
-- **2,100+** travel patterns connecting regions to destinations
+- **127** source regions across **100+** countries
+- **700+** destinations across 90+ countries
+- **6,000+** travel patterns connecting regions to destinations
+- **50+** major events (Olympics, FIFA World Cup, Oktoberfest, Grand Slams, and more)
 - **3** holiday data providers (manual, OpenHolidaysAPI, date-holidays)
 
 ## Tech Stack

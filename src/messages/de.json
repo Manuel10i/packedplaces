@@ -13,6 +13,7 @@
     "statRegions": "Regionen",
     "statDestinations": "Reiseziele",
     "statPatterns": "Muster",
+    "statEvents": "Events",
     "statCountries": "Länder"
   },
   "howItWorks": {
@@ -21,8 +22,10 @@
     "step1Text": "Wir sammeln Schulferienkalender aus 127 Regionen mit drei Datenquellen: manuell kuratierte Daten, der OpenHolidaysAPI und der date-holidays-Bibliothek.",
     "step2Title": "Reiseströme modellieren",
     "step2Text": "Über 6.000 Reisemuster verbinden Herkunftsregionen mit Reisezielen, gewichtet nach realen Tourismusstatistiken von UNWTO, Eurostat und nationalen Tourismusbehörden.",
-    "step3Title": "Auslastung berechnen",
-    "step3Text": "Rohe Verkehrswerte werden durch die Kapazität jedes Reiseziels geteilt — unter Berücksichtigung von Kategorie, Saisonalität und Hemisphäre. Das Ergebnis: wie voll sich ein Ort anfühlt."
+    "step3Title": "Großveranstaltungen erfassen",
+    "step3Text": "Über 50 Großveranstaltungen — von der FIFA-WM und Olympia bis zum Oktoberfest und Karneval — werden zusätzlich berücksichtigt und erhöhen die Auslastung in den Veranstaltungswochen.",
+    "step4Title": "Auslastung berechnen",
+    "step4Text": "Rohe Verkehrswerte werden durch die Kapazität jedes Reiseziels geteilt — unter Berücksichtigung von Kategorie, Saisonalität und Hemisphäre. Das Ergebnis: wie voll sich ein Ort anfühlt."
   },
   "features": {
     "title": "Funktionen",
@@ -37,7 +40,9 @@
     "timelineTitle": "Woche-für-Woche-Zeitleiste",
     "timelineText": "Blättern oder animieren Sie durch jede Woche des Jahres, um die Auslastung in Echtzeit zu verfolgen.",
     "providersTitle": "Mehrere Ferienquellen",
-    "providersText": "Drei kaskadierende Anbieter — manuell, OpenHolidaysAPI und date-holidays — gewährleisten weltweite Schulferien-Abdeckung."
+    "providersText": "Drei kaskadierende Anbieter — manuell, OpenHolidaysAPI und date-holidays — gewährleisten weltweite Schulferien-Abdeckung.",
+    "eventsTitle": "50+ Großveranstaltungen",
+    "eventsText": "Olympia, FIFA-WM, Oktoberfest, Karneval, Grand Slams und mehr — Großveranstaltungen, die Millionen Besucher anziehen, werden auf der Karte angezeigt."
   },
   "data": {
     "title": "Daten & Methodik",
@@ -48,6 +53,8 @@
     "tourismText": "UNWTO Compendium, Eurostat-Übernachtungen, NTTO, JNTO",
     "holidaysLabel": "Schulferien",
     "holidaysText": "Manuelle Pflege, OpenHolidaysAPI, date-holidays-Bibliothek",
+    "eventsLabel": "Großveranstaltungen",
+    "eventsDataText": "50+ wiederkehrende und einmalige Events wie Olympia, FIFA-WM, Festivals und Grand Slams",
     "geographyLabel": "Geographie",
     "geographyText": "Koordinaten, Hemisphären-Klassifikation, Kategorie-Zuweisung",
     "capacityTitle": "Kapazität nach Kategorie",

@@ -13,6 +13,7 @@
     "statRegions": "Regions",
     "statDestinations": "Destinations",
     "statPatterns": "Patterns",
+    "statEvents": "Events",
     "statCountries": "Countries"
   },
   "howItWorks": {
@@ -21,8 +22,10 @@
     "step1Text": "We collect school holiday schedules from 127 regions using three data providers: hand-curated dates, the OpenHolidaysAPI, and the date-holidays library.",
     "step2Title": "Model Travel Flows",
     "step2Text": "Over 6,000 travel patterns connect source regions to destinations, weighted by real tourism statistics from UNWTO, Eurostat, and national tourism authorities.",
-    "step3Title": "Calculate Crowdedness",
-    "step3Text": "Raw traffic scores are divided by each destination's capacity — accounting for category, seasonality, and hemisphere. The result: how packed a place feels."
+    "step3Title": "Track Major Events",
+    "step3Text": "Over 50 major events — from the FIFA World Cup and Olympics to Oktoberfest and Carnival — are layered on top, boosting destination scores during event weeks.",
+    "step4Title": "Calculate Crowdedness",
+    "step4Text": "Raw traffic scores are divided by each destination's capacity — accounting for category, seasonality, and hemisphere. The result: how packed a place feels."
   },
   "features": {
     "title": "Features",
@@ -37,7 +40,9 @@
     "timelineTitle": "Week-by-Week Timeline",
     "timelineText": "Scrub or animate through every week of the year to see crowdedness shift in real time.",
     "providersTitle": "Multi-Provider Holidays",
-    "providersText": "Three cascading providers — manual, OpenHolidaysAPI, and date-holidays — ensure global school holiday coverage."
+    "providersText": "Three cascading providers — manual, OpenHolidaysAPI, and date-holidays — ensure global school holiday coverage.",
+    "eventsTitle": "50+ Major Events",
+    "eventsText": "Olympics, FIFA World Cup, Oktoberfest, Carnival, Grand Slams, and more — major events that drive millions of visitors are tracked and shown on the map."
   },
   "data": {
     "title": "Data & Methodology",
@@ -48,6 +53,8 @@
     "tourismText": "UNWTO Compendium, Eurostat overnight stays, NTTO, JNTO",
     "holidaysLabel": "School holidays",
     "holidaysText": "Manual curation, OpenHolidaysAPI, date-holidays library",
+    "eventsLabel": "Major events",
+    "eventsDataText": "50+ recurring and one-time events including Olympics, FIFA World Cup, festivals, and Grand Slams",
     "geographyLabel": "Geography",
     "geographyText": "Coordinates, hemisphere classification, category assignment",
     "capacityTitle": "Capacity by Category",

@@ -20,7 +20,8 @@ Static data files (TypeScript)
 [seed.ts] ──────────────► PostgreSQL
     │                      ├── source_regions
     │                      ├── destinations
-    │                      └── travel_patterns
+    │                      ├── travel_patterns
+    │                      └── major_events
     │
 [ingest-holidays.ts] ───► PostgreSQL
     │                      └── school_holidays
@@ -34,7 +35,7 @@ Static data files (TypeScript)
 API Route: /api/heatmap?year=2026&week=15
     │
     ▼
-MapLibre GL (circle + heatmap layers)
+MapLibre GL (circle + heatmap layers + event markers)
 ```
 
 ## Directory Structure
@@ -49,11 +50,15 @@ src/
 │           └── route.ts    # Heatmap API endpoint
 ├── components/
 │   ├── controls/
-│   │   ├── HolidayPanel.tsx   # Holiday info sidebar
-│   │   ├── WeekSlider.tsx     # Week selection slider
+│   │   ├── HolidayPanel.tsx   # Holidays & Events sidebar (collapsible sections)
+│   │   ├── Legend.tsx         # Crowdedness color legend
+│   │   ├── TimeSlider.tsx     # Week selection slider
 │   │   └── YearSelector.tsx   # Year tab selector
-│   └── map/
-│       └── MapView.tsx        # MapLibre GL map component
+│   ├── map/
+│   │   ├── MapView.tsx        # MapLibre GL map component
+│   │   ├── HeatmapLayer.tsx   # Heatmap circles + event emoji markers
+│   │   └── DestinationTooltip.tsx  # Tooltip with crowdedness + active events
+│   └── LanguageSwitcher.tsx   # Language selector (en/de/es/fr)
 ├── lib/
 │   ├── data/
 │   │   ├── index.ts           # Aggregated exports
@@ -62,6 +67,7 @@ src/
 │   │   ├── regions/           # Source region definitions per world region
 │   │   ├── destinations/      # Destination definitions per world region
 │   │   ├── patterns/          # Travel pattern definitions per world region
+│   │   ├── events/            # Major event definitions (recurring + one-time)
 │   │   └── manual-holidays/   # Manual holiday JSON files
 │   ├── db/
 │   │   ├── schema.ts          # Drizzle schema
@@ -131,6 +137,18 @@ drizzle/
 | end_date | date | End of holiday |
 | year | integer | Calendar year |
 
+### major_events
+| Column | Type | Description |
+|--------|------|-------------|
+| id | varchar(64) PK | Event identifier |
+| name | varchar(128) | Display name |
+| destination_id | varchar(32) FK | → destinations.id |
+| start_date | date | Start of event |
+| end_date | date | End of event |
+| year | integer | Calendar year |
+| traffic_boost | double | 0.1–1.0 boost factor |
+| category | varchar(16) | sports, festival, cultural, music, trade |
+
 ### heatmap_cache
 | Column | Type | Description |
 |--------|------|-------------|
@@ -149,7 +167,7 @@ Query parameters:
 - `year` (required): Year (e.g., 2026)
 - `week` (required): ISO week number (1-52)
 
-Response: GeoJSON FeatureCollection with destination points, each having a `busynessScore` (capacity-normalized crowdedness) and `contributingSources` in properties.
+Response: GeoJSON FeatureCollection with destination points, each having a `busynessScore` (capacity-normalized crowdedness) and `contributingSources` in properties. Metadata includes `activeEvents` for the requested week (name, destinationId, category, dates).
 
 ## Hemisphere-Aware Seasonality
 

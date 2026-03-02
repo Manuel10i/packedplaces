@@ -105,7 +105,31 @@ If you created a new data file (not adding to an existing one), update the index
 - `src/lib/data/destinations/index.ts`
 - `src/lib/data/patterns/index.ts`
 
-## Step 7: Holiday data
+## Step 7: Add major events (optional)
+
+If your destination hosts major events (festivals, sports, trade shows), add them to the event files:
+
+- **Recurring events**: `src/lib/data/events/recurring.ts` — Annual events with template dates
+- **One-time events**: `src/lib/data/events/one-time.ts` — Year-specific events
+
+```typescript
+// Recurring event example
+{
+  id: "xx-event-name",
+  name: "Event Name",
+  destinationId: "XX-DESTINATION",
+  startMonth: 9,
+  startDay: 19,
+  endMonth: 10,
+  endDay: 4,
+  trafficBoost: 0.5,        // 0.1–1.0 scale
+  category: "festival",     // "sports" | "festival" | "cultural" | "music" | "trade"
+}
+```
+
+Boost calibration: 0.8–1.0 for massive global events (Olympics), 0.5–0.7 for major events (Oktoberfest), 0.3–0.4 for significant events (F1 GP), 0.1–0.2 for moderate events (Grand Slams).
+
+## Step 8: Holiday data
 
 Check if your country is covered by the existing providers:
 1. **OpenHolidaysAPI**: Check `SUPPORTED_COUNTRIES` in `src/lib/services/holiday-providers/openholidays.ts`
@@ -120,7 +144,7 @@ Manual holiday JSON format:
 ]
 ```
 
-## Step 8: Verify
+## Step 9: Verify
 
 ```bash
 # Type check
@@ -143,6 +167,8 @@ npm run dev
 - [ ] New destinations appear on the map at correct coordinates
 - [ ] Sliding through weeks shows heatmap responding to school holidays
 - [ ] HolidayPanel shows the new country with correct flag
+- [ ] Events panel shows any added events during the correct weeks
+- [ ] Event emoji markers appear on the map at the correct destination
 - [ ] For southern hemisphere: verify season inversion works (July = winter)
 - [ ] No TypeScript errors
 - [ ] No foreign key violations during seed

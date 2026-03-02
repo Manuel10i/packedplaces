@@ -28,7 +28,7 @@ Source regions represent populations that travel. Each region has:
 - **Large countries (China, Japan, India, Brazil, Australia)**: 2-5 macro-regions
 - **Small/medium countries**: Single national region
 
-Currently: **~127 source regions across 75 countries**.
+Currently: **~127 source regions across 100+ countries**.
 
 ## Destinations
 
@@ -48,7 +48,7 @@ Destinations are places people travel to. Each has:
 3. Geographic diversity within each country
 4. Category coverage (each major category represented per region)
 
-Currently: **~230 destinations across 67 countries**.
+Currently: **~700 destinations across 90+ countries**.
 
 ## Travel Patterns
 
@@ -82,7 +82,7 @@ Travel patterns define the flow of tourists from source regions to destinations.
 | 0.30-0.49 | Moderate flow | JP → TH-BANGKOK, AR → BR-RIO |
 | 0.15-0.29 | Minor flow | NG → ET-LALIBELA, KH → JP-TOKYO |
 
-Currently: **~2,100+ travel patterns**.
+Currently: **~6,000+ travel patterns**.
 
 ## School Holidays
 
@@ -107,6 +107,34 @@ Each holiday record has:
 - **startDate / endDate**: Date range
 - **year**: Calendar year
 
+## Major Events
+
+Major events (Olympics, FIFA World Cup, Oktoberfest, festivals, Grand Slams, etc.) are a separate crowdedness factor. Unlike school holidays which boost source regions, events boost destinations directly.
+
+### Event data structure
+Each event has:
+- **id**: Unique identifier
+- **name**: Display name (e.g., "FIFA World Cup")
+- **destinationId**: Which destination is affected
+- **startDate / endDate**: Event date range
+- **year**: Calendar year
+- **trafficBoost**: 0.1–1.0 boost factor (multiplied by destination's basePopularity)
+- **category**: `"sports"`, `"festival"`, `"cultural"`, `"music"`, or `"trade"`
+
+### Event types
+- **Recurring events** (~40): Annual events with fixed or approximate dates (Oktoberfest, Grand Slams, Carnival, etc.). Materialized into year-specific rows during seeding.
+- **One-time events** (~15): Events tied to a specific year (Olympics 2026, FIFA World Cup 2026, etc.)
+
+### Boost scale
+| Boost | Meaning | Example |
+|-------|---------|---------|
+| 0.8–1.0 | Massive global event | Summer Olympics, FIFA World Cup |
+| 0.5–0.7 | Major event | Oktoberfest, Carnival Rio, Winter Olympics |
+| 0.3–0.4 | Significant event | F1 Grand Prix, Edinburgh Fringe, King's Day |
+| 0.1–0.2 | Moderate event | Grand Slams, Burning Man, Art Basel |
+
+Currently: **50+ events** across sports, festivals, cultural events, music festivals, and trade shows.
+
 ## Heatmap Computation
 
 The heatmap shows **crowdedness** (how packed a place feels), not raw traffic volume. This is achieved by dividing raw traffic scores by each destination's seasonal capacity.
@@ -122,6 +150,9 @@ For each destination D, for each week W:
     4. holidayBoost = isOnHoliday ? 1.5 : 1.0
     5. contribution = pattern.weight * (R.population / maxPopulation) * holidayBoost
     6. rawScore += contribution
+  For each active event E at destination D during week W:       ← NEW
+    7. eventBoost = E.trafficBoost * D.basePopularity
+    8. rawScore += eventBoost
   capacity = getSeasonalCapacity(D.category, D.lat, D.seasonality, W, D.capacityOverride)
   congestion = rawScore / capacity
   Normalize congestion to 0-1 range across all destinations for week W
@@ -158,6 +189,7 @@ Each destination category has a default capacity with seasonal variation (`src/l
 - **Season is relative to the source**: A "winter" pattern for AU-NSW means June-August (southern winter), while for DE-BW it means December-February
 - **Population weighting**: Larger source regions contribute proportionally more
 - **Holiday boost**: 1.5x multiplier when a source region is on school holiday
+- **Event boost**: Major events add traffic directly to destinations, scaled by the event's trafficBoost and the destination's basePopularity
 - **Normalization**: Congestion scores are normalized per-week so the heatmap always shows relative crowdedness
 
 ### Caching

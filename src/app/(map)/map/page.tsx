@@ -19,26 +19,29 @@ export default function MapPage() {
 
       {/* Top-left: title + year selector + language */}
       <div className="absolute left-4 top-4 z-10 flex items-center gap-3">
-        <h1 className="rounded-xl bg-white/95 px-4 py-2 text-lg font-bold text-gray-800 shadow-lg backdrop-blur-sm">
+        <a
+          href="/"
+          className="rounded-xl bg-white/95 px-4 py-2 text-lg font-bold text-gray-800 shadow-lg backdrop-blur-sm hover:bg-white transition-colors"
+        >
           {t("title")}
-        </h1>
+        </a>
         <YearSelector />
         <LanguageSwitcher variant="map" />
       </div>
 
       {/* Right sidebar: Holidays & Events panel */}
-      <div className="absolute right-4 top-4 z-10 w-72">
+      <div className="absolute right-4 top-[66px] z-10 w-72">
         <HolidayPanel />
       </div>
 
-      {/* Bottom-left: Legend */}
-      <div className="absolute bottom-24 left-4 z-10 w-48">
-        <Legend />
-      </div>
-
-      {/* Bottom: Time slider - right-48 leaves space for MapLibre attribution */}
-      <div className="absolute bottom-4 left-4 right-48 z-10">
-        <TimeSlider />
+      {/* Bottom: Time slider + Legend */}
+      <div className="absolute bottom-10 left-4 right-4 z-10 flex items-end gap-3">
+        <div className="flex-1">
+          <TimeSlider />
+        </div>
+        <div className="w-48 shrink-0">
+          <Legend />
+        </div>
       </div>
     </div>
   );
