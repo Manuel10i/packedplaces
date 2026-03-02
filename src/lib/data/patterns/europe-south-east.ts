@@ -353,23 +353,23 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // SK-BRATISLAVA
   // ========================================
-  { sourceRegionId: "AT-W", destinationId: "SK-BRATISLAVA", weight: 0.70, season: null },
+  { sourceRegionId: "AT-9", destinationId: "SK-BRATISLAVA", weight: 0.70, season: null },
   { sourceRegionId: "SK", destinationId: "SK-BRATISLAVA", weight: 0.90, season: null },
   { sourceRegionId: "CZ", destinationId: "SK-BRATISLAVA", weight: 0.50, season: null },
   { sourceRegionId: "HU", destinationId: "SK-BRATISLAVA", weight: 0.50, season: null },
-  { sourceRegionId: "PL-SOUTH", destinationId: "SK-BRATISLAVA", weight: 0.30, season: null },
+  { sourceRegionId: "PL", destinationId: "SK-BRATISLAVA", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "SK-BRATISLAVA", weight: 0.30, season: null },
   { sourceRegionId: "DE-BW", destinationId: "SK-BRATISLAVA", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "SK-BRATISLAVA", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "SK-BRATISLAVA", weight: 0.28, season: null },
 
   // ========================================
   // SK-HIGH-TATRAS
   // ========================================
   { sourceRegionId: "SK", destinationId: "SK-HIGH-TATRAS", weight: 0.75, season: "winter" },
-  { sourceRegionId: "PL-SOUTH", destinationId: "SK-HIGH-TATRAS", weight: 0.55, season: "winter" },
+  { sourceRegionId: "PL", destinationId: "SK-HIGH-TATRAS", weight: 0.55, season: "winter" },
   { sourceRegionId: "CZ", destinationId: "SK-HIGH-TATRAS", weight: 0.50, season: "winter" },
   { sourceRegionId: "HU", destinationId: "SK-HIGH-TATRAS", weight: 0.40, season: "winter" },
-  { sourceRegionId: "PL-CENTRAL", destinationId: "SK-HIGH-TATRAS", weight: 0.32, season: "winter" },
+  { sourceRegionId: "PL", destinationId: "SK-HIGH-TATRAS", weight: 0.32, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "SK-HIGH-TATRAS", weight: 0.28, season: "winter" },
 
   // ========================================
@@ -380,8 +380,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "HU", destinationId: "RS-BELGRADE", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RS-BELGRADE", weight: 0.20, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "RS-BELGRADE", weight: 0.20, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RS-BELGRADE", weight: 0.22, season: null },
-  { sourceRegionId: "AT-W", destinationId: "RS-BELGRADE", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RS-BELGRADE", weight: 0.22, season: null },
+  { sourceRegionId: "AT-9", destinationId: "RS-BELGRADE", weight: 0.25, season: null },
   { sourceRegionId: "SI", destinationId: "RS-BELGRADE", weight: 0.28, season: null },
 
   // ========================================
@@ -391,7 +391,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "HU", destinationId: "RS-NOVI-SAD", weight: 0.35, season: null },
   { sourceRegionId: "HR", destinationId: "RS-NOVI-SAD", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RS-NOVI-SAD", weight: 0.18, season: null },
-  { sourceRegionId: "AT-W", destinationId: "RS-NOVI-SAD", weight: 0.20, season: null },
+  { sourceRegionId: "AT-9", destinationId: "RS-NOVI-SAD", weight: 0.20, season: null },
   { sourceRegionId: "SK", destinationId: "RS-NOVI-SAD", weight: 0.22, season: null },
 
   // ========================================
@@ -402,8 +402,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SI", destinationId: "BA-SARAJEVO", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BA-SARAJEVO", weight: 0.25, season: null },
   { sourceRegionId: "DE-NW", destinationId: "BA-SARAJEVO", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BA-SARAJEVO", weight: 0.25, season: null },
-  { sourceRegionId: "AT-W", destinationId: "BA-SARAJEVO", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BA-SARAJEVO", weight: 0.25, season: null },
+  { sourceRegionId: "AT-9", destinationId: "BA-SARAJEVO", weight: 0.28, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "BA-SARAJEVO", weight: 0.25, season: null },
 
   // ========================================
@@ -413,9 +413,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RS", destinationId: "BA-MOSTAR", weight: 0.35, season: null },
   { sourceRegionId: "SI", destinationId: "BA-MOSTAR", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BA-MOSTAR", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BA-MOSTAR", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BA-MOSTAR", weight: 0.28, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "BA-MOSTAR", weight: 0.20, season: null },
-  { sourceRegionId: "AT-W", destinationId: "BA-MOSTAR", weight: 0.25, season: null },
+  { sourceRegionId: "AT-9", destinationId: "BA-MOSTAR", weight: 0.25, season: null },
 
   // ========================================
   // MK-OHRID
@@ -425,16 +425,16 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "HR", destinationId: "MK-OHRID", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "MK-OHRID", weight: 0.22, season: "summer" },
   { sourceRegionId: "TR-WEST", destinationId: "MK-OHRID", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MK-OHRID", weight: 0.20, season: "summer" },
-  { sourceRegionId: "GR-THESSALONIKI", destinationId: "MK-OHRID", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "MK-OHRID", weight: 0.20, season: "summer" },
+  { sourceRegionId: "BG", destinationId: "MK-OHRID", weight: 0.35, season: "summer" },
 
   // ========================================
   // LT-VILNIUS
   // ========================================
-  { sourceRegionId: "PL-NORTH", destinationId: "LT-VILNIUS", weight: 0.50, season: null },
+  { sourceRegionId: "PL", destinationId: "LT-VILNIUS", weight: 0.50, season: null },
   { sourceRegionId: "FI-SOUTH", destinationId: "LT-VILNIUS", weight: 0.30, season: null },
   { sourceRegionId: "RU-MOW", destinationId: "LT-VILNIUS", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "LT-VILNIUS", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "LT-VILNIUS", weight: 0.20, season: null },
   { sourceRegionId: "DE-NW", destinationId: "LT-VILNIUS", weight: 0.22, season: null },
   { sourceRegionId: "DK", destinationId: "LT-VILNIUS", weight: 0.18, season: null },
   { sourceRegionId: "SE-SOUTH", destinationId: "LT-VILNIUS", weight: 0.25, season: null },
@@ -446,9 +446,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "FI-SOUTH", destinationId: "LV-RIGA", weight: 0.35, season: null },
   { sourceRegionId: "SE-SOUTH", destinationId: "LV-RIGA", weight: 0.30, season: null },
   { sourceRegionId: "DE-NW", destinationId: "LV-RIGA", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "LV-RIGA", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "LV-RIGA", weight: 0.28, season: null },
   { sourceRegionId: "RU-MOW", destinationId: "LV-RIGA", weight: 0.28, season: null },
-  { sourceRegionId: "PL-NORTH", destinationId: "LV-RIGA", weight: 0.30, season: null },
+  { sourceRegionId: "PL", destinationId: "LV-RIGA", weight: 0.30, season: null },
   { sourceRegionId: "EE", destinationId: "LV-RIGA", weight: 0.40, season: null },
   { sourceRegionId: "LT", destinationId: "LV-RIGA", weight: 0.45, season: null },
 
@@ -460,7 +460,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "TR-WEST", destinationId: "GR-THESSALONIKI", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "GR-THESSALONIKI", weight: 0.30, season: null },
   { sourceRegionId: "DE-NW", destinationId: "GR-THESSALONIKI", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-THESSALONIKI", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-THESSALONIKI", weight: 0.28, season: null },
   { sourceRegionId: "RO", destinationId: "GR-THESSALONIKI", weight: 0.28, season: null },
   { sourceRegionId: "SK", destinationId: "GR-THESSALONIKI", weight: 0.22, season: null },
 
@@ -468,18 +468,18 @@ export const travelPatterns: TravelPattern[] = [
   // GR-METEORA
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "GR-METEORA", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-METEORA", weight: 0.30, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "GR-METEORA", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-METEORA", weight: 0.30, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "GR-METEORA", weight: 0.25, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "GR-METEORA", weight: 0.25, season: null },
   { sourceRegionId: "BG", destinationId: "GR-METEORA", weight: 0.28, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GR-METEORA", weight: 0.28, season: null },
+  { sourceRegionId: "US-NE", destinationId: "GR-METEORA", weight: 0.28, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "GR-METEORA", weight: 0.22, season: null },
 
   // ========================================
   // GR-CORFU-TOWN
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-CORFU-TOWN", weight: 0.48, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GR-CORFU-TOWN", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-CORFU-TOWN", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-CORFU-TOWN", weight: 0.42, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "GR-CORFU-TOWN", weight: 0.32, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GR-CORFU-TOWN", weight: 0.28, season: "summer" },
   { sourceRegionId: "IT-NORTH", destinationId: "GR-CORFU-TOWN", weight: 0.30, season: "summer" },
@@ -489,8 +489,8 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // GR-SKIATHOS
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-SKIATHOS", weight: 0.42, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GR-SKIATHOS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-SKIATHOS", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-SKIATHOS", weight: 0.38, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "GR-SKIATHOS", weight: 0.28, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "GR-SKIATHOS", weight: 0.25, season: "summer" },
   { sourceRegionId: "SE-SOUTH", destinationId: "GR-SKIATHOS", weight: 0.22, season: "summer" },
@@ -501,7 +501,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "GR-SAMOS", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GR-SAMOS", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-SAMOS", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-SAMOS", weight: 0.28, season: "summer" },
   { sourceRegionId: "TR-WEST", destinationId: "GR-SAMOS", weight: 0.25, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "GR-SAMOS", weight: 0.22, season: "summer" },
   { sourceRegionId: "SE-SOUTH", destinationId: "GR-SAMOS", weight: 0.18, season: "summer" },
@@ -511,12 +511,12 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "RO", destinationId: "RO-BUCHAREST", weight: 0.70, season: null },
   { sourceRegionId: "BG", destinationId: "RO-BUCHAREST", weight: 0.30, season: null },
-  { sourceRegionId: "MD", destinationId: "RO-BUCHAREST", weight: 0.35, season: null },
+  { sourceRegionId: "RO", destinationId: "RO-BUCHAREST", weight: 0.35, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RO-BUCHAREST", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RO-BUCHAREST", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RO-BUCHAREST", weight: 0.25, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "RO-BUCHAREST", weight: 0.22, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "RO-BUCHAREST", weight: 0.20, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "RO-BUCHAREST", weight: 0.20, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "RO-BUCHAREST", weight: 0.20, season: null },
 
   // ========================================
   // RO-TRANSYLVANIA
@@ -524,10 +524,10 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RO", destinationId: "RO-TRANSYLVANIA", weight: 0.60, season: null },
   { sourceRegionId: "HU", destinationId: "RO-TRANSYLVANIA", weight: 0.40, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RO-TRANSYLVANIA", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RO-TRANSYLVANIA", weight: 0.28, season: null },
-  { sourceRegionId: "PL-SOUTH", destinationId: "RO-TRANSYLVANIA", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RO-TRANSYLVANIA", weight: 0.28, season: null },
+  { sourceRegionId: "PL", destinationId: "RO-TRANSYLVANIA", weight: 0.22, season: null },
   { sourceRegionId: "CZ", destinationId: "RO-TRANSYLVANIA", weight: 0.20, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "RO-TRANSYLVANIA", weight: 0.22, season: null },
+  { sourceRegionId: "US-NE", destinationId: "RO-TRANSYLVANIA", weight: 0.22, season: null },
 
   // ========================================
   // RO-MARAMURES
@@ -535,43 +535,43 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RO", destinationId: "RO-MARAMURES", weight: 0.55, season: "summer" },
   { sourceRegionId: "HU", destinationId: "RO-MARAMURES", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "RO-MARAMURES", weight: 0.18, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "RO-MARAMURES", weight: 0.20, season: "summer" },
-  { sourceRegionId: "PL-SOUTH", destinationId: "RO-MARAMURES", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "RO-MARAMURES", weight: 0.20, season: "summer" },
+  { sourceRegionId: "PL", destinationId: "RO-MARAMURES", weight: 0.20, season: "summer" },
 
   // ========================================
   // UA-LVIV
   // ========================================
   { sourceRegionId: "UA", destinationId: "UA-LVIV", weight: 0.70, season: null },
-  { sourceRegionId: "PL-SOUTH", destinationId: "UA-LVIV", weight: 0.40, season: null },
-  { sourceRegionId: "PL-CENTRAL", destinationId: "UA-LVIV", weight: 0.30, season: null },
+  { sourceRegionId: "PL", destinationId: "UA-LVIV", weight: 0.40, season: null },
+  { sourceRegionId: "PL", destinationId: "UA-LVIV", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "UA-LVIV", weight: 0.18, season: null },
   { sourceRegionId: "SK", destinationId: "UA-LVIV", weight: 0.22, season: null },
   { sourceRegionId: "HU", destinationId: "UA-LVIV", weight: 0.18, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "UA-LVIV", weight: 0.15, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "UA-LVIV", weight: 0.15, season: null },
 
   // ========================================
   // HR-PLITVICE
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "HR-PLITVICE", weight: 0.35, season: "summer" },
   { sourceRegionId: "DE-BW", destinationId: "HR-PLITVICE", weight: 0.30, season: "summer" },
-  { sourceRegionId: "AT-W", destinationId: "HR-PLITVICE", weight: 0.40, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "HR-PLITVICE", weight: 0.40, season: "summer" },
   { sourceRegionId: "SI", destinationId: "HR-PLITVICE", weight: 0.45, season: "summer" },
   { sourceRegionId: "HU", destinationId: "HR-PLITVICE", weight: 0.38, season: "summer" },
   { sourceRegionId: "SK", destinationId: "HR-PLITVICE", weight: 0.35, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "HR-PLITVICE", weight: 0.35, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "HR-PLITVICE", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "HR-PLITVICE", weight: 0.28, season: "summer" },
 
   // ========================================
   // HR-ZADAR
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "HR-ZADAR", weight: 0.38, season: "summer" },
   { sourceRegionId: "DE-BW", destinationId: "HR-ZADAR", weight: 0.32, season: "summer" },
-  { sourceRegionId: "AT-W", destinationId: "HR-ZADAR", weight: 0.42, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "HR-ZADAR", weight: 0.42, season: "summer" },
   { sourceRegionId: "SI", destinationId: "HR-ZADAR", weight: 0.48, season: "summer" },
   { sourceRegionId: "HU", destinationId: "HR-ZADAR", weight: 0.40, season: "summer" },
   { sourceRegionId: "SK", destinationId: "HR-ZADAR", weight: 0.38, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "HR-ZADAR", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "HR-ZADAR", weight: 0.30, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "HR-ZADAR", weight: 0.30, season: "summer" },
 
   // ========================================
   // ME-DURMITOR
@@ -580,7 +580,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "HR", destinationId: "ME-DURMITOR", weight: 0.30, season: "summer" },
   { sourceRegionId: "SI", destinationId: "ME-DURMITOR", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "ME-DURMITOR", weight: 0.18, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "ME-DURMITOR", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "ME-DURMITOR", weight: 0.20, season: "summer" },
   { sourceRegionId: "BG", destinationId: "ME-DURMITOR", weight: 0.22, season: "summer" },
 
   // ========================================
@@ -590,7 +590,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "IT-NORTH", destinationId: "AL-KSAMIL", weight: 0.30, season: "summer" },
   { sourceRegionId: "RS", destinationId: "AL-KSAMIL", weight: 0.38, season: "summer" },
   { sourceRegionId: "HR", destinationId: "AL-KSAMIL", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AL-KSAMIL", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "AL-KSAMIL", weight: 0.22, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "AL-KSAMIL", weight: 0.20, season: "summer" },
   { sourceRegionId: "SK", destinationId: "AL-KSAMIL", weight: 0.18, season: "summer" },
 
@@ -599,18 +599,18 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "AL-BERAT", weight: 0.20, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "AL-BERAT", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AL-BERAT", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AL-BERAT", weight: 0.22, season: null },
   { sourceRegionId: "RS", destinationId: "AL-BERAT", weight: 0.25, season: null },
   { sourceRegionId: "HR", destinationId: "AL-BERAT", weight: 0.20, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "AL-BERAT", weight: 0.18, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "AL-BERAT", weight: 0.18, season: null },
 
   // ========================================
   // SI-LJUBLJANA
   // ========================================
-  { sourceRegionId: "AT-W", destinationId: "SI-LJUBLJANA", weight: 0.45, season: null },
+  { sourceRegionId: "AT-9", destinationId: "SI-LJUBLJANA", weight: 0.45, season: null },
   { sourceRegionId: "DE-BY", destinationId: "SI-LJUBLJANA", weight: 0.38, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "SI-LJUBLJANA", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "SI-LJUBLJANA", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "SI-LJUBLJANA", weight: 0.30, season: null },
   { sourceRegionId: "HR", destinationId: "SI-LJUBLJANA", weight: 0.38, season: null },
   { sourceRegionId: "HU", destinationId: "SI-LJUBLJANA", weight: 0.30, season: null },
   { sourceRegionId: "CZ", destinationId: "SI-LJUBLJANA", weight: 0.25, season: null },
@@ -619,13 +619,13 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // SI-PIRAN
   // ========================================
-  { sourceRegionId: "AT-W", destinationId: "SI-PIRAN", weight: 0.42, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "SI-PIRAN", weight: 0.42, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "SI-PIRAN", weight: 0.35, season: "summer" },
   { sourceRegionId: "IT-NORTH", destinationId: "SI-PIRAN", weight: 0.40, season: "summer" },
   { sourceRegionId: "HU", destinationId: "SI-PIRAN", weight: 0.32, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "SI-PIRAN", weight: 0.28, season: "summer" },
   { sourceRegionId: "SK", destinationId: "SI-PIRAN", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SI-PIRAN", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "SI-PIRAN", weight: 0.22, season: "summer" },
 
   // ========================================
   // BG-PLOVDIV
@@ -635,8 +635,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RS", destinationId: "BG-PLOVDIV", weight: 0.25, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "BG-PLOVDIV", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BG-PLOVDIV", weight: 0.20, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BG-PLOVDIV", weight: 0.22, season: null },
-  { sourceRegionId: "GR-THESSALONIKI", destinationId: "BG-PLOVDIV", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BG-PLOVDIV", weight: 0.22, season: null },
+  { sourceRegionId: "BG", destinationId: "BG-PLOVDIV", weight: 0.28, season: null },
 
   // ========================================
   // BG-BANSKO
@@ -644,8 +644,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BG", destinationId: "BG-BANSKO", weight: 0.70, season: "winter" },
   { sourceRegionId: "RO", destinationId: "BG-BANSKO", weight: 0.30, season: "winter" },
   { sourceRegionId: "RS", destinationId: "BG-BANSKO", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BG-BANSKO", weight: 0.32, season: "winter" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "BG-BANSKO", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BG-BANSKO", weight: 0.32, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BG-BANSKO", weight: 0.28, season: "winter" },
   { sourceRegionId: "IL", destinationId: "BG-BANSKO", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "BG-BANSKO", weight: 0.20, season: "winter" },
 
@@ -655,15 +655,15 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "HU", destinationId: "HU-EGER", weight: 0.65, season: null },
   { sourceRegionId: "SK", destinationId: "HU-EGER", weight: 0.35, season: null },
   { sourceRegionId: "CZ", destinationId: "HU-EGER", weight: 0.28, season: null },
-  { sourceRegionId: "PL-SOUTH", destinationId: "HU-EGER", weight: 0.22, season: null },
-  { sourceRegionId: "AT-W", destinationId: "HU-EGER", weight: 0.25, season: null },
+  { sourceRegionId: "PL", destinationId: "HU-EGER", weight: 0.22, season: null },
+  { sourceRegionId: "AT-9", destinationId: "HU-EGER", weight: 0.25, season: null },
   { sourceRegionId: "DE-BY", destinationId: "HU-EGER", weight: 0.18, season: null },
 
   // ========================================
   // RS-EXIT (Exit Festival, Novi Sad)
   // ========================================
   { sourceRegionId: "RS", destinationId: "RS-EXIT", weight: 0.60, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "RS-EXIT", weight: 0.30, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "RS-EXIT", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "RS-EXIT", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "RS-EXIT", weight: 0.20, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "RS-EXIT", weight: 0.18, season: "summer" },
@@ -674,13 +674,13 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // MT-GOZO
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "MT-GOZO", weight: 0.45, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "MT-GOZO", weight: 0.38, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "MT-GOZO", weight: 0.45, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "MT-GOZO", weight: 0.38, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "MT-GOZO", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "MT-GOZO", weight: 0.25, season: "summer" },
   { sourceRegionId: "IT-NORTH", destinationId: "MT-GOZO", weight: 0.30, season: "summer" },
   { sourceRegionId: "IT-SOUTH", destinationId: "MT-GOZO", weight: 0.25, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "MT-GOZO", weight: 0.22, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "MT-GOZO", weight: 0.22, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "MT-GOZO", weight: 0.20, season: "summer" },
 
   // ========================================
@@ -691,8 +691,8 @@ export const travelPatterns: TravelPattern[] = [
   // GR-RHODES-TOWN (Old Town, Rhodes)
   // ----------------------------------------
   { sourceRegionId: "DE-BY", destinationId: "GR-RHODES-TOWN", weight: 0.55, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-RHODES-TOWN", weight: 0.52, season: "summer" },
-  { sourceRegionId: "PL-SOUTH", destinationId: "GR-RHODES-TOWN", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-RHODES-TOWN", weight: 0.52, season: "summer" },
+  { sourceRegionId: "PL", destinationId: "GR-RHODES-TOWN", weight: 0.42, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "GR-RHODES-TOWN", weight: 0.38, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "GR-RHODES-TOWN", weight: 0.35, season: "summer" },
   { sourceRegionId: "RU-MOW", destinationId: "GR-RHODES-TOWN", weight: 0.40, season: "summer" },
@@ -709,16 +709,16 @@ export const travelPatterns: TravelPattern[] = [
   // ----------------------------------------
   // GR-HYDRA (Car-free Saronic island)
   // ----------------------------------------
-  { sourceRegionId: "GB-LONDON", destinationId: "GR-HYDRA", weight: 0.48, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GR-HYDRA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GR-HYDRA", weight: 0.48, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GR-HYDRA", weight: 0.45, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "GR-HYDRA", weight: 0.42, season: "summer" },
-  { sourceRegionId: "AT-W", destinationId: "GR-HYDRA", weight: 0.35, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GR-HYDRA", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "GR-HYDRA", weight: 0.35, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GR-HYDRA", weight: 0.28, season: "summer" },
 
   // ----------------------------------------
   // HR-ROVINJ (Istria, Croatia)
   // ----------------------------------------
-  { sourceRegionId: "AT-W", destinationId: "HR-ROVINJ", weight: 0.72, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "HR-ROVINJ", weight: 0.72, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "HR-ROVINJ", weight: 0.65, season: "summer" },
   { sourceRegionId: "SI", destinationId: "HR-ROVINJ", weight: 0.68, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "HR-ROVINJ", weight: 0.55, season: "summer" },
@@ -729,10 +729,10 @@ export const travelPatterns: TravelPattern[] = [
   // HR-BRAC (Dalmatian island)
   // ----------------------------------------
   { sourceRegionId: "HR", destinationId: "HR-BRAC", weight: 0.82, season: "summer" },
-  { sourceRegionId: "AT-W", destinationId: "HR-BRAC", weight: 0.60, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "HR-BRAC", weight: 0.60, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "HR-BRAC", weight: 0.55, season: "summer" },
   { sourceRegionId: "CZ", destinationId: "HR-BRAC", weight: 0.48, season: "summer" },
-  { sourceRegionId: "PL-SOUTH", destinationId: "HR-BRAC", weight: 0.42, season: "summer" },
+  { sourceRegionId: "PL", destinationId: "HR-BRAC", weight: 0.42, season: "summer" },
 
   // ----------------------------------------
   // RO-SIBIU (Transylvania)
@@ -740,8 +740,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RO", destinationId: "RO-SIBIU", weight: 0.82, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RO-SIBIU", weight: 0.35, season: null },
   { sourceRegionId: "HU", destinationId: "RO-SIBIU", weight: 0.45, season: null },
-  { sourceRegionId: "AT-W", destinationId: "RO-SIBIU", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RO-SIBIU", weight: 0.25, season: null },
+  { sourceRegionId: "AT-9", destinationId: "RO-SIBIU", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RO-SIBIU", weight: 0.25, season: null },
 
   // ----------------------------------------
   // RO-BRASOV (Transylvania)
@@ -749,9 +749,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RO", destinationId: "RO-BRASOV", weight: 0.85, season: null },
   { sourceRegionId: "HU", destinationId: "RO-BRASOV", weight: 0.48, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RO-BRASOV", weight: 0.38, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RO-BRASOV", weight: 0.30, season: null },
-  { sourceRegionId: "AT-W", destinationId: "RO-BRASOV", weight: 0.28, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "RO-BRASOV", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RO-BRASOV", weight: 0.30, season: null },
+  { sourceRegionId: "AT-9", destinationId: "RO-BRASOV", weight: 0.28, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "RO-BRASOV", weight: 0.22, season: null },
 
   // ----------------------------------------
   // BG-RILA (Rila Monastery / Mountains)
@@ -760,24 +760,24 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RO", destinationId: "BG-RILA", weight: 0.42, season: null },
   { sourceRegionId: "RS", destinationId: "BG-RILA", weight: 0.38, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BG-RILA", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BG-RILA", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BG-RILA", weight: 0.22, season: null },
 
   // ----------------------------------------
   // AL-GJIROKASTER (UNESCO city, Albania)
   // ----------------------------------------
   { sourceRegionId: "RS", destinationId: "AL-GJIROKASTER", weight: 0.55, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AL-GJIROKASTER", weight: 0.38, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AL-GJIROKASTER", weight: 0.38, season: null },
   { sourceRegionId: "DE-BY", destinationId: "AL-GJIROKASTER", weight: 0.28, season: null },
   { sourceRegionId: "IT-NORTH", destinationId: "AL-GJIROKASTER", weight: 0.32, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "AL-GJIROKASTER", weight: 0.22, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "AL-GJIROKASTER", weight: 0.22, season: null },
 
   // ----------------------------------------
   // ME-TIVAT (Montenegro, Bay of Kotor)
   // ----------------------------------------
   { sourceRegionId: "RS", destinationId: "ME-TIVAT", weight: 0.72, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "ME-TIVAT", weight: 0.52, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "ME-TIVAT", weight: 0.52, season: "summer" },
   { sourceRegionId: "RU-MOW", destinationId: "ME-TIVAT", weight: 0.55, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "ME-TIVAT", weight: 0.38, season: "summer" },
   { sourceRegionId: "TR-WEST", destinationId: "ME-TIVAT", weight: 0.30, season: "summer" },
-  { sourceRegionId: "AT-W", destinationId: "ME-TIVAT", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AT-9", destinationId: "ME-TIVAT", weight: 0.28, season: "summer" },
 ];

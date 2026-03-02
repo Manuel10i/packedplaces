@@ -353,111 +353,111 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // GB-EDINBURGH -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-SCOTLAND", destinationId: "GB-EDINBURGH", weight: 0.90, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-EDINBURGH", weight: 0.70, season: null },
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-EDINBURGH", weight: 0.60, season: null },
+  { sourceRegionId: "GB-SCT", destinationId: "GB-EDINBURGH", weight: 0.90, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-EDINBURGH", weight: 0.70, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-EDINBURGH", weight: 0.60, season: null },
   { sourceRegionId: "IE", destinationId: "GB-EDINBURGH", weight: 0.30, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-EDINBURGH", weight: 0.30, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GB-EDINBURGH", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-EDINBURGH", weight: 0.25, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-EDINBURGH", weight: 0.22, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-EDINBURGH", weight: 0.22, season: "summer" },
   { sourceRegionId: "NL-NORTH", destinationId: "GB-EDINBURGH", weight: 0.20, season: "summer" },
 
   // ========================================
   // GB-BATH -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-BATH", weight: 0.70, season: null },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-BATH", weight: 0.55, season: null },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-BATH", weight: 0.45, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-BATH", weight: 0.35, season: "summer" },
-  { sourceRegionId: "US-WEST", destinationId: "GB-BATH", weight: 0.25, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "GB-BATH", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BATH", weight: 0.70, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BATH", weight: 0.55, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BATH", weight: 0.45, season: null },
+  { sourceRegionId: "US-NE", destinationId: "GB-BATH", weight: 0.35, season: "summer" },
+  { sourceRegionId: "US-W", destinationId: "GB-BATH", weight: 0.25, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "GB-BATH", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "GB-BATH", weight: 0.20, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-BATH", weight: 0.22, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-BATH", weight: 0.22, season: "summer" },
 
   // ========================================
   // GB-LAKE-DISTRICT -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-LAKE-DISTRICT", weight: 0.75, season: "summer" },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-LAKE-DISTRICT", weight: 0.60, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-LAKE-DISTRICT", weight: 0.45, season: "summer" },
-  { sourceRegionId: "GB-SCOTLAND", destinationId: "GB-LAKE-DISTRICT", weight: 0.35, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-LAKE-DISTRICT", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-LAKE-DISTRICT", weight: 0.75, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-LAKE-DISTRICT", weight: 0.60, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-LAKE-DISTRICT", weight: 0.45, season: "summer" },
+  { sourceRegionId: "GB-SCT", destinationId: "GB-LAKE-DISTRICT", weight: 0.35, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GB-LAKE-DISTRICT", weight: 0.25, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-LAKE-DISTRICT", weight: 0.18, season: "summer" },
 
   // ========================================
   // GB-YORK -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-YORK", weight: 0.72, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-YORK", weight: 0.55, season: null },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-YORK", weight: 0.48, season: null },
-  { sourceRegionId: "GB-SCOTLAND", destinationId: "GB-YORK", weight: 0.35, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-YORK", weight: 0.28, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "GB-YORK", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-YORK", weight: 0.72, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-YORK", weight: 0.55, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-YORK", weight: 0.48, season: null },
+  { sourceRegionId: "GB-SCT", destinationId: "GB-YORK", weight: 0.35, season: null },
+  { sourceRegionId: "US-NE", destinationId: "GB-YORK", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "GB-YORK", weight: 0.20, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "GB-YORK", weight: 0.18, season: "summer" },
 
   // ========================================
   // GB-COTSWOLDS -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-COTSWOLDS", weight: 0.75, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-COTSWOLDS", weight: 0.55, season: "summer" },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-COTSWOLDS", weight: 0.50, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-COTSWOLDS", weight: 0.38, season: "summer" },
-  { sourceRegionId: "US-WEST", destinationId: "GB-COTSWOLDS", weight: 0.28, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "GB-COTSWOLDS", weight: 0.25, season: "summer" },
-  { sourceRegionId: "JP", destinationId: "GB-COTSWOLDS", weight: 0.20, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-COTSWOLDS", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-COTSWOLDS", weight: 0.75, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-COTSWOLDS", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-COTSWOLDS", weight: 0.50, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GB-COTSWOLDS", weight: 0.38, season: "summer" },
+  { sourceRegionId: "US-W", destinationId: "GB-COTSWOLDS", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "GB-COTSWOLDS", weight: 0.25, season: "summer" },
+  { sourceRegionId: "JP-KANTO", destinationId: "GB-COTSWOLDS", weight: 0.20, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-COTSWOLDS", weight: 0.22, season: "summer" },
 
   // ========================================
   // GB-BRIGHTON -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-BRIGHTON", weight: 0.80, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-BRIGHTON", weight: 0.60, season: "summer" },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-BRIGHTON", weight: 0.38, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-BRIGHTON", weight: 0.30, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BRIGHTON", weight: 0.80, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BRIGHTON", weight: 0.60, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-BRIGHTON", weight: 0.38, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-BRIGHTON", weight: 0.30, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "GB-BRIGHTON", weight: 0.20, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-BRIGHTON", weight: 0.18, season: "summer" },
 
   // ========================================
   // GB-GLASGOW -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-SCOTLAND", destinationId: "GB-GLASGOW", weight: 0.85, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-GLASGOW", weight: 0.55, season: null },
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-GLASGOW", weight: 0.50, season: null },
+  { sourceRegionId: "GB-SCT", destinationId: "GB-GLASGOW", weight: 0.85, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-GLASGOW", weight: 0.55, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-GLASGOW", weight: 0.50, season: null },
   { sourceRegionId: "IE", destinationId: "GB-GLASGOW", weight: 0.35, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-GLASGOW", weight: 0.22, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GB-GLASGOW", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-GLASGOW", weight: 0.18, season: "summer" },
 
   // ========================================
   // IE-DUBLIN -> inbound patterns
   // ========================================
   { sourceRegionId: "IE", destinationId: "IE-DUBLIN", weight: 0.90, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "IE-DUBLIN", weight: 0.60, season: null },
-  { sourceRegionId: "GB-NORTH", destinationId: "IE-DUBLIN", weight: 0.40, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "IE-DUBLIN", weight: 0.40, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "IE-DUBLIN", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "IE-DUBLIN", weight: 0.60, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "IE-DUBLIN", weight: 0.40, season: null },
+  { sourceRegionId: "US-NE", destinationId: "IE-DUBLIN", weight: 0.40, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "IE-DUBLIN", weight: 0.20, season: null },
   { sourceRegionId: "DE-NW", destinationId: "IE-DUBLIN", weight: 0.25, season: null },
   { sourceRegionId: "NL-NORTH", destinationId: "IE-DUBLIN", weight: 0.22, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "IE-DUBLIN", weight: 0.28, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "IE-DUBLIN", weight: 0.28, season: "summer" },
 
   // ========================================
   // IE-GALWAY -> inbound patterns
   // ========================================
   { sourceRegionId: "IE", destinationId: "IE-GALWAY", weight: 0.85, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "IE-GALWAY", weight: 0.40, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "IE-GALWAY", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "IE-GALWAY", weight: 0.40, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "IE-GALWAY", weight: 0.35, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "IE-GALWAY", weight: 0.20, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "IE-GALWAY", weight: 0.18, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "IE-GALWAY", weight: 0.22, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "IE-GALWAY", weight: 0.18, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "IE-GALWAY", weight: 0.22, season: "summer" },
 
   // ========================================
   // IE-KERRY -> inbound patterns
   // ========================================
   { sourceRegionId: "IE", destinationId: "IE-KERRY", weight: 0.80, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "IE-KERRY", weight: 0.38, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "IE-KERRY", weight: 0.42, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "IE-KERRY", weight: 0.38, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "IE-KERRY", weight: 0.42, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "IE-KERRY", weight: 0.18, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "IE-KERRY", weight: 0.25, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "IE-KERRY", weight: 0.15, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "IE-KERRY", weight: 0.25, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "IE-KERRY", weight: 0.15, season: "summer" },
 
   // ========================================
   // SE-STOCKHOLM -> inbound patterns
@@ -468,8 +468,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "FI-SOUTH", destinationId: "SE-STOCKHOLM", weight: 0.40, season: null },
   { sourceRegionId: "DK", destinationId: "SE-STOCKHOLM", weight: 0.50, season: null },
   { sourceRegionId: "DE-NI", destinationId: "SE-STOCKHOLM", weight: 0.30, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "SE-STOCKHOLM", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SE-STOCKHOLM", weight: 0.32, season: null },
+  { sourceRegionId: "US-NE", destinationId: "SE-STOCKHOLM", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "SE-STOCKHOLM", weight: 0.32, season: null },
 
   // ========================================
   // SE-GOTHENBURG -> inbound patterns
@@ -479,7 +479,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "DK", destinationId: "SE-GOTHENBURG", weight: 0.55, season: null },
   { sourceRegionId: "DE-NI", destinationId: "SE-GOTHENBURG", weight: 0.28, season: "summer" },
   { sourceRegionId: "NL-NORTH", destinationId: "SE-GOTHENBURG", weight: 0.22, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SE-GOTHENBURG", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "SE-GOTHENBURG", weight: 0.25, season: null },
 
   // ========================================
   // SE-VISBY -> inbound patterns
@@ -499,8 +499,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-OSLO", weight: 0.40, season: null },
   { sourceRegionId: "DK", destinationId: "NO-OSLO", weight: 0.40, season: null },
   { sourceRegionId: "DE-NI", destinationId: "NO-OSLO", weight: 0.20, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-OSLO", weight: 0.30, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "NO-OSLO", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-OSLO", weight: 0.30, season: null },
+  { sourceRegionId: "US-NE", destinationId: "NO-OSLO", weight: 0.25, season: "summer" },
   { sourceRegionId: "NL-NORTH", destinationId: "NO-OSLO", weight: 0.22, season: null },
 
   // ========================================
@@ -511,8 +511,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-BERGEN", weight: 0.35, season: "summer" },
   { sourceRegionId: "DK", destinationId: "NO-BERGEN", weight: 0.38, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "NO-BERGEN", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-BERGEN", weight: 0.32, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "NO-BERGEN", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-BERGEN", weight: 0.32, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "NO-BERGEN", weight: 0.28, season: "summer" },
   { sourceRegionId: "NL-NORTH", destinationId: "NO-BERGEN", weight: 0.22, season: "summer" },
 
   // ========================================
@@ -523,8 +523,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-TROMSO", weight: 0.38, season: "winter" },
   { sourceRegionId: "DK", destinationId: "NO-TROMSO", weight: 0.35, season: "winter" },
   { sourceRegionId: "DE-NI", destinationId: "NO-TROMSO", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-TROMSO", weight: 0.35, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "NO-TROMSO", weight: 0.25, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-TROMSO", weight: 0.35, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "NO-TROMSO", weight: 0.25, season: "winter" },
   { sourceRegionId: "CN-EAST", destinationId: "NO-TROMSO", weight: 0.30, season: "winter" },
 
   // ========================================
@@ -535,7 +535,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-STAVANGER", weight: 0.30, season: "summer" },
   { sourceRegionId: "DK", destinationId: "NO-STAVANGER", weight: 0.32, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "NO-STAVANGER", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-STAVANGER", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-STAVANGER", weight: 0.20, season: "summer" },
 
   // ========================================
   // FI-HELSINKI -> inbound patterns
@@ -544,40 +544,40 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "FI-NORTH", destinationId: "FI-HELSINKI", weight: 0.70, season: null },
   { sourceRegionId: "SE-SOUTH", destinationId: "FI-HELSINKI", weight: 0.30, season: null },
   { sourceRegionId: "DE-NI", destinationId: "FI-HELSINKI", weight: 0.20, season: null },
-  { sourceRegionId: "JP", destinationId: "FI-HELSINKI", weight: 0.20, season: "summer" },
+  { sourceRegionId: "JP-KANTO", destinationId: "FI-HELSINKI", weight: 0.20, season: "summer" },
   { sourceRegionId: "DK", destinationId: "FI-HELSINKI", weight: 0.28, season: null },
   { sourceRegionId: "NO-SOUTH", destinationId: "FI-HELSINKI", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "FI-HELSINKI", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "FI-HELSINKI", weight: 0.25, season: null },
 
   // ========================================
   // FI-ROVANIEMI -> inbound patterns
   // ========================================
   { sourceRegionId: "FI-SOUTH", destinationId: "FI-ROVANIEMI", weight: 0.80, season: "winter" },
   { sourceRegionId: "FI-NORTH", destinationId: "FI-ROVANIEMI", weight: 0.55, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "FI-ROVANIEMI", weight: 0.45, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "FI-ROVANIEMI", weight: 0.45, season: "winter" },
   { sourceRegionId: "DE-NI", destinationId: "FI-ROVANIEMI", weight: 0.35, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "FI-ROVANIEMI", weight: 0.30, season: "winter" },
+  { sourceRegionId: "JP-KANTO", destinationId: "FI-ROVANIEMI", weight: 0.30, season: "winter" },
   { sourceRegionId: "CN-EAST", destinationId: "FI-ROVANIEMI", weight: 0.28, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "FI-ROVANIEMI", weight: 0.28, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "FI-ROVANIEMI", weight: 0.28, season: "winter" },
   { sourceRegionId: "NL-NORTH", destinationId: "FI-ROVANIEMI", weight: 0.25, season: "winter" },
 
   // ========================================
   // IS-AKUREYRI -> inbound patterns
   // ========================================
   { sourceRegionId: "IS", destinationId: "IS-AKUREYRI", weight: 0.80, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "IS-AKUREYRI", weight: 0.30, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "IS-AKUREYRI", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "IS-AKUREYRI", weight: 0.30, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "IS-AKUREYRI", weight: 0.35, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "IS-AKUREYRI", weight: 0.20, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "IS-AKUREYRI", weight: 0.18, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "IS-AKUREYRI", weight: 0.18, season: "summer" },
   { sourceRegionId: "NL-NORTH", destinationId: "IS-AKUREYRI", weight: 0.18, season: "summer" },
 
   // ========================================
   // GB-JERSEY -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-JERSEY", weight: 0.65, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-JERSEY", weight: 0.55, season: "summer" },
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-JERSEY", weight: 0.40, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-JERSEY", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-JERSEY", weight: 0.65, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-JERSEY", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-JERSEY", weight: 0.40, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-JERSEY", weight: 0.35, season: "summer" },
   { sourceRegionId: "IE", destinationId: "GB-JERSEY", weight: 0.25, season: "summer" },
 
   // ========================================
@@ -587,9 +587,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-NORTH", destinationId: "SE-ABISKO", weight: 0.55, season: "winter" },
   { sourceRegionId: "NO-SOUTH", destinationId: "SE-ABISKO", weight: 0.35, season: "winter" },
   { sourceRegionId: "DK", destinationId: "SE-ABISKO", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SE-ABISKO", weight: 0.32, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SE-ABISKO", weight: 0.32, season: "winter" },
   { sourceRegionId: "CN-EAST", destinationId: "SE-ABISKO", weight: 0.28, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "SE-ABISKO", weight: 0.25, season: "winter" },
+  { sourceRegionId: "JP-KANTO", destinationId: "SE-ABISKO", weight: 0.25, season: "winter" },
 
   // ========================================
   // NO-PREIKESTOLEN -> inbound patterns
@@ -599,8 +599,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-PREIKESTOLEN", weight: 0.35, season: "summer" },
   { sourceRegionId: "DK", destinationId: "NO-PREIKESTOLEN", weight: 0.32, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "NO-PREIKESTOLEN", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-PREIKESTOLEN", weight: 0.25, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "NO-PREIKESTOLEN", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-PREIKESTOLEN", weight: 0.25, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "NO-PREIKESTOLEN", weight: 0.22, season: "summer" },
 
   // ========================================
   // FI-LAKE-SAIMAA -> inbound patterns
@@ -609,7 +609,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "FI-NORTH", destinationId: "FI-LAKE-SAIMAA", weight: 0.50, season: "summer" },
   { sourceRegionId: "SE-SOUTH", destinationId: "FI-LAKE-SAIMAA", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "FI-LAKE-SAIMAA", weight: 0.18, season: "summer" },
-  { sourceRegionId: "JP", destinationId: "FI-LAKE-SAIMAA", weight: 0.15, season: "summer" },
+  { sourceRegionId: "JP-KANTO", destinationId: "FI-LAKE-SAIMAA", weight: 0.15, season: "summer" },
 
   // ========================================
   // DK-BORNHOLM -> inbound patterns
@@ -624,12 +624,12 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // GB-ISLE-OF-SKYE -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-SCOTLAND", destinationId: "GB-ISLE-OF-SKYE", weight: 0.85, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-ISLE-OF-SKYE", weight: 0.55, season: "summer" },
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-ISLE-OF-SKYE", weight: 0.45, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-ISLE-OF-SKYE", weight: 0.35, season: "summer" },
-  { sourceRegionId: "US-WEST", destinationId: "GB-ISLE-OF-SKYE", weight: 0.25, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "GB-ISLE-OF-SKYE", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-SCT", destinationId: "GB-ISLE-OF-SKYE", weight: 0.85, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-ISLE-OF-SKYE", weight: 0.55, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-ISLE-OF-SKYE", weight: 0.45, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "GB-ISLE-OF-SKYE", weight: 0.35, season: "summer" },
+  { sourceRegionId: "US-W", destinationId: "GB-ISLE-OF-SKYE", weight: 0.25, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "GB-ISLE-OF-SKYE", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-ISLE-OF-SKYE", weight: 0.20, season: "summer" },
 
   // ========================================
@@ -638,51 +638,51 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NO-SOUTH", destinationId: "NO-SVALBARD", weight: 0.65, season: "summer" },
   { sourceRegionId: "NO-NORTH", destinationId: "NO-SVALBARD", weight: 0.50, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "NO-SVALBARD", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-SVALBARD", weight: 0.30, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "NO-SVALBARD", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-SVALBARD", weight: 0.30, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "NO-SVALBARD", weight: 0.25, season: "summer" },
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-SVALBARD", weight: 0.30, season: "summer" },
 
   // ========================================
   // IE-CLIFFS-MOHER -> inbound patterns
   // ========================================
   { sourceRegionId: "IE", destinationId: "IE-CLIFFS-MOHER", weight: 0.88, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "IE-CLIFFS-MOHER", weight: 0.45, season: "summer" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "IE-CLIFFS-MOHER", weight: 0.48, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "IE-CLIFFS-MOHER", weight: 0.45, season: "summer" },
+  { sourceRegionId: "US-NE", destinationId: "IE-CLIFFS-MOHER", weight: 0.48, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "IE-CLIFFS-MOHER", weight: 0.22, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "IE-CLIFFS-MOHER", weight: 0.20, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "IE-CLIFFS-MOHER", weight: 0.28, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "IE-CLIFFS-MOHER", weight: 0.20, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "IE-CLIFFS-MOHER", weight: 0.28, season: "summer" },
 
   // ========================================
   // GB-WINDSOR -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-WINDSOR", weight: 0.80, season: null },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-WINDSOR", weight: 0.55, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "GB-WINDSOR", weight: 0.45, season: "summer" },
-  { sourceRegionId: "US-WEST", destinationId: "GB-WINDSOR", weight: 0.32, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "GB-WINDSOR", weight: 0.30, season: "summer" },
-  { sourceRegionId: "JP", destinationId: "GB-WINDSOR", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-WINDSOR", weight: 0.80, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-WINDSOR", weight: 0.55, season: null },
+  { sourceRegionId: "US-NE", destinationId: "GB-WINDSOR", weight: 0.45, season: "summer" },
+  { sourceRegionId: "US-W", destinationId: "GB-WINDSOR", weight: 0.32, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "GB-WINDSOR", weight: 0.30, season: "summer" },
+  { sourceRegionId: "JP-KANTO", destinationId: "GB-WINDSOR", weight: 0.28, season: "summer" },
   { sourceRegionId: "CN-EAST", destinationId: "GB-WINDSOR", weight: 0.25, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "GB-WINDSOR", weight: 0.30, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "GB-WINDSOR", weight: 0.30, season: null },
 
   // ========================================
   // SE-ICEHOTEL -> inbound patterns
   // ========================================
   { sourceRegionId: "SE-SOUTH", destinationId: "SE-ICEHOTEL", weight: 0.65, season: "winter" },
   { sourceRegionId: "SE-NORTH", destinationId: "SE-ICEHOTEL", weight: 0.50, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SE-ICEHOTEL", weight: 0.40, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SE-ICEHOTEL", weight: 0.40, season: "winter" },
   { sourceRegionId: "DE-NI", destinationId: "SE-ICEHOTEL", weight: 0.30, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "SE-ICEHOTEL", weight: 0.28, season: "winter" },
+  { sourceRegionId: "JP-KANTO", destinationId: "SE-ICEHOTEL", weight: 0.28, season: "winter" },
   { sourceRegionId: "CN-EAST", destinationId: "SE-ICEHOTEL", weight: 0.25, season: "winter" },
   { sourceRegionId: "DK", destinationId: "SE-ICEHOTEL", weight: 0.32, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "SE-ICEHOTEL", weight: 0.22, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "SE-ICEHOTEL", weight: 0.22, season: "winter" },
 
   // ========================================
   // GB-SNOWDONIA -> inbound patterns
   // ========================================
-  { sourceRegionId: "GB-MIDLANDS", destinationId: "GB-SNOWDONIA", weight: 0.72, season: "summer" },
-  { sourceRegionId: "GB-NORTH", destinationId: "GB-SNOWDONIA", weight: 0.65, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GB-SNOWDONIA", weight: 0.45, season: "summer" },
-  { sourceRegionId: "GB-SOUTH", destinationId: "GB-SNOWDONIA", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-SNOWDONIA", weight: 0.72, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-SNOWDONIA", weight: 0.65, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-SNOWDONIA", weight: 0.45, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "GB-SNOWDONIA", weight: 0.35, season: "summer" },
   { sourceRegionId: "IE", destinationId: "GB-SNOWDONIA", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "GB-SNOWDONIA", weight: 0.15, season: "summer" },
 
@@ -694,7 +694,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SE-SOUTH", destinationId: "NO-ATLANTIC-ROAD", weight: 0.30, season: "summer" },
   { sourceRegionId: "DK", destinationId: "NO-ATLANTIC-ROAD", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-NI", destinationId: "NO-ATLANTIC-ROAD", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NO-ATLANTIC-ROAD", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NO-ATLANTIC-ROAD", weight: 0.20, season: "summer" },
 
   // ========================================
   // DK-AARHUS -> inbound patterns
@@ -705,5 +705,5 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "DE-NI", destinationId: "DK-AARHUS", weight: 0.30, season: null },
   { sourceRegionId: "DE-NW", destinationId: "DK-AARHUS", weight: 0.25, season: null },
   { sourceRegionId: "NL-NORTH", destinationId: "DK-AARHUS", weight: 0.20, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "DK-AARHUS", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "DK-AARHUS", weight: 0.18, season: "summer" },
 ];

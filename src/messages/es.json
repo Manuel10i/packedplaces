@@ -91,6 +91,15 @@
     "regionAfrica": "África",
     "regionMiddleEast": "Oriente Medio"
   },
+  "events": {
+    "title": "Grandes eventos",
+    "noEvents": "No hay grandes eventos esta semana",
+    "sports": "Deportes",
+    "festival": "Festivales",
+    "cultural": "Cultural",
+    "music": "Música",
+    "trade": "Ferias & Expos"
+  },
   "legend": {
     "title": "Masificación",
     "quiet": "Tranquilo",

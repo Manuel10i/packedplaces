@@ -156,7 +156,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "AU-PERTH", weight: 0.40, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-PERTH", weight: 0.30, season: null },
   { sourceRegionId: "SG", destinationId: "AU-PERTH", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-PERTH", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-PERTH", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "AU-PERTH", weight: 0.15, season: null },
 
   // ========================================
@@ -175,7 +175,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "AU-NSW", destinationId: "AU-ULURU", weight: 0.55, season: "winter" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-ULURU", weight: 0.45, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-ULURU", weight: 0.35, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-ULURU", weight: 0.35, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "AU-ULURU", weight: 0.25, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "AU-ULURU", weight: 0.20, season: "winter" },
   { sourceRegionId: "JP-KANTO", destinationId: "AU-ULURU", weight: 0.20, season: "winter" },
@@ -188,7 +188,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-QLD", destinationId: "AU-BYRON-BAY", weight: 0.60, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-BYRON-BAY", weight: 0.50, season: "summer" },
   { sourceRegionId: "NZ", destinationId: "AU-BYRON-BAY", weight: 0.30, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-BYRON-BAY", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-BYRON-BAY", weight: 0.20, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "AU-BYRON-BAY", weight: 0.18, season: "summer" },
 
   // ========================================
@@ -197,7 +197,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-SA", destinationId: "AU-KANGAROO", weight: 0.75, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "AU-KANGAROO", weight: 0.45, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-KANGAROO", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-KANGAROO", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-KANGAROO", weight: 0.25, season: null },
   { sourceRegionId: "DE-BY", destinationId: "AU-KANGAROO", weight: 0.18, season: null },
 
   // ========================================
@@ -207,7 +207,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "AU-ADELAIDE", weight: 0.50, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-ADELAIDE", weight: 0.45, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-ADELAIDE", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-ADELAIDE", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-ADELAIDE", weight: 0.20, season: null },
   { sourceRegionId: "SG", destinationId: "AU-ADELAIDE", weight: 0.15, season: null },
 
   // ========================================
@@ -216,7 +216,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-WA", destinationId: "AU-BROOME", weight: 0.80, season: "winter" },
   { sourceRegionId: "AU-NSW", destinationId: "AU-BROOME", weight: 0.30, season: "winter" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-BROOME", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-BROOME", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-BROOME", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "AU-BROOME", weight: 0.15, season: "winter" },
 
   // ========================================
@@ -224,7 +224,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "AU-WA", destinationId: "AU-NINGALOO", weight: 0.85, season: "winter" },
   { sourceRegionId: "AU-NSW", destinationId: "AU-NINGALOO", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-NINGALOO", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-NINGALOO", weight: 0.20, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "AU-NINGALOO", weight: 0.15, season: "winter" },
   { sourceRegionId: "NZ", destinationId: "AU-NINGALOO", weight: 0.15, season: "winter" },
 
@@ -234,7 +234,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-WA", destinationId: "AU-MARGARET-RIVER", weight: 0.85, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-MARGARET-RIVER", weight: 0.28, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "AU-MARGARET-RIVER", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-MARGARET-RIVER", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-MARGARET-RIVER", weight: 0.22, season: null },
   { sourceRegionId: "SG", destinationId: "AU-MARGARET-RIVER", weight: 0.18, season: null },
 
   // ========================================
@@ -243,7 +243,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-WELLINGTON", weight: 0.70, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-WELLINGTON", weight: 0.40, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-WELLINGTON", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-WELLINGTON", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-WELLINGTON", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "NZ-WELLINGTON", weight: 0.22, season: null },
   { sourceRegionId: "DE-BY", destinationId: "NZ-WELLINGTON", weight: 0.15, season: null },
 
@@ -253,7 +253,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-ROTORUA", weight: 0.75, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-ROTORUA", weight: 0.45, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-ROTORUA", weight: 0.38, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-ROTORUA", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-ROTORUA", weight: 0.30, season: null },
   { sourceRegionId: "US-W", destinationId: "NZ-ROTORUA", weight: 0.25, season: null },
   { sourceRegionId: "JP-KANTO", destinationId: "NZ-ROTORUA", weight: 0.20, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "NZ-ROTORUA", weight: 0.25, season: null },
@@ -264,7 +264,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-MILFORD", weight: 0.70, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-MILFORD", weight: 0.45, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-MILFORD", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-MILFORD", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-MILFORD", weight: 0.35, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-MILFORD", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "NZ-MILFORD", weight: 0.22, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "NZ-MILFORD", weight: 0.20, season: "summer" },
@@ -274,7 +274,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "NZ", destinationId: "NZ-ABEL-TASMAN", weight: 0.72, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-ABEL-TASMAN", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-ABEL-TASMAN", weight: 0.30, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-ABEL-TASMAN", weight: 0.30, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "NZ-ABEL-TASMAN", weight: 0.22, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-ABEL-TASMAN", weight: 0.20, season: "summer" },
 
@@ -283,7 +283,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "NZ", destinationId: "NZ-HOBBITON", weight: 0.65, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-HOBBITON", weight: 0.42, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-HOBBITON", weight: 0.40, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-HOBBITON", weight: 0.40, season: null },
   { sourceRegionId: "US-W", destinationId: "NZ-HOBBITON", weight: 0.38, season: null },
   { sourceRegionId: "US-NE", destinationId: "NZ-HOBBITON", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "NZ-HOBBITON", weight: 0.22, season: null },
@@ -293,7 +293,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "NZ", destinationId: "NZ-TONGARIRO", weight: 0.72, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-TONGARIRO", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-TONGARIRO", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-TONGARIRO", weight: 0.28, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-TONGARIRO", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "NZ-TONGARIRO", weight: 0.18, season: "summer" },
 
@@ -302,7 +302,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "NZ", destinationId: "NZ-KAIKOURA", weight: 0.68, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-KAIKOURA", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-KAIKOURA", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-KAIKOURA", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "NZ-KAIKOURA", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "NZ-KAIKOURA", weight: 0.15, season: null },
 
@@ -324,7 +324,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "CK-RAROTONGA", weight: 0.35, season: "winter" },
   { sourceRegionId: "AU-VIC", destinationId: "CK-RAROTONGA", weight: 0.28, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "CK-RAROTONGA", weight: 0.22, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CK-RAROTONGA", weight: 0.15, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "CK-RAROTONGA", weight: 0.15, season: "winter" },
 
   // ========================================
   // VU-VANUATU (destination) -> sources
@@ -342,7 +342,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "TO-TONGA", weight: 0.38, season: "winter" },
   { sourceRegionId: "AU-QLD", destinationId: "TO-TONGA", weight: 0.30, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "TO-TONGA", weight: 0.18, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "TO-TONGA", weight: 0.12, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "TO-TONGA", weight: 0.12, season: "winter" },
 
   // ========================================
   // NC-NOUMEA (destination) -> sources
@@ -359,14 +359,14 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "PG-PNG", weight: 0.50, season: null },
   { sourceRegionId: "AU-QLD", destinationId: "PG-PNG", weight: 0.45, season: null },
   { sourceRegionId: "NZ", destinationId: "PG-PNG", weight: 0.20, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "PG-PNG", weight: 0.15, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "PG-PNG", weight: 0.15, season: null },
   { sourceRegionId: "US-W", destinationId: "PG-PNG", weight: 0.12, season: null },
 
   // ========================================
   // ZA-DURBAN (destination) -> sources
   // ========================================
   { sourceRegionId: "ZA", destinationId: "ZA-DURBAN", weight: 0.75, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-DURBAN", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-DURBAN", weight: 0.25, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "ZA-DURBAN", weight: 0.18, season: "summer" },
   { sourceRegionId: "AE", destinationId: "ZA-DURBAN", weight: 0.20, season: "summer" },
   { sourceRegionId: "IN-SOUTH", destinationId: "ZA-DURBAN", weight: 0.22, season: "summer" },
@@ -376,7 +376,7 @@ export const travelPatterns: TravelPattern[] = [
   // ZA-STELLENBOSCH (destination) -> sources
   // ========================================
   { sourceRegionId: "ZA", destinationId: "ZA-STELLENBOSCH", weight: 0.70, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-STELLENBOSCH", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-STELLENBOSCH", weight: 0.35, season: null },
   { sourceRegionId: "DE-BY", destinationId: "ZA-STELLENBOSCH", weight: 0.25, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "ZA-STELLENBOSCH", weight: 0.22, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "ZA-STELLENBOSCH", weight: 0.18, season: null },
@@ -385,7 +385,7 @@ export const travelPatterns: TravelPattern[] = [
   // ZA-DRAKENSBERG (destination) -> sources
   // ========================================
   { sourceRegionId: "ZA", destinationId: "ZA-DRAKENSBERG", weight: 0.72, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-DRAKENSBERG", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-DRAKENSBERG", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "ZA-DRAKENSBERG", weight: 0.20, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "ZA-DRAKENSBERG", weight: 0.15, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "ZA-DRAKENSBERG", weight: 0.15, season: "summer" },
@@ -393,7 +393,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // ZW-VICTORIA-FALLS (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "ZW-VICTORIA-FALLS", weight: 0.40, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "ZW-VICTORIA-FALLS", weight: 0.40, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "ZW-VICTORIA-FALLS", weight: 0.20, season: null },
   { sourceRegionId: "US-NE", destinationId: "ZW-VICTORIA-FALLS", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "ZW-VICTORIA-FALLS", weight: 0.20, season: null },
@@ -404,7 +404,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // ZM-SOUTH-LUANGWA (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "ZM-SOUTH-LUANGWA", weight: 0.40, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "ZM-SOUTH-LUANGWA", weight: 0.40, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "ZM-SOUTH-LUANGWA", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "ZM-SOUTH-LUANGWA", weight: 0.20, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "ZM-SOUTH-LUANGWA", weight: 0.30, season: "winter" },
@@ -414,7 +414,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // RW-VOLCANOES (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "RW-VOLCANOES", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RW-VOLCANOES", weight: 0.30, season: null },
   { sourceRegionId: "US-NE", destinationId: "RW-VOLCANOES", weight: 0.30, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "RW-VOLCANOES", weight: 0.20, season: null },
   { sourceRegionId: "FR-ZC", destinationId: "RW-VOLCANOES", weight: 0.20, season: null },
@@ -425,7 +425,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // UG-BWINDI (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "UG-BWINDI", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "UG-BWINDI", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "UG-BWINDI", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "UG-BWINDI", weight: 0.22, season: null },
   { sourceRegionId: "DE-BY", destinationId: "UG-BWINDI", weight: 0.18, season: null },
@@ -435,7 +435,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // RW-KIGALI (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "RW-KIGALI", weight: 0.32, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RW-KIGALI", weight: 0.32, season: null },
   { sourceRegionId: "US-NE", destinationId: "RW-KIGALI", weight: 0.25, season: null },
   { sourceRegionId: "FR-ZC", destinationId: "RW-KIGALI", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "RW-KIGALI", weight: 0.18, season: null },
@@ -445,7 +445,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // TZ-KILIMANJARO (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TZ-KILIMANJARO", weight: 0.38, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "TZ-KILIMANJARO", weight: 0.38, season: null },
   { sourceRegionId: "US-NE", destinationId: "TZ-KILIMANJARO", weight: 0.32, season: null },
   { sourceRegionId: "US-W", destinationId: "TZ-KILIMANJARO", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "TZ-KILIMANJARO", weight: 0.25, season: null },
@@ -456,7 +456,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // TZ-NGORONGORO (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TZ-NGORONGORO", weight: 0.40, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "TZ-NGORONGORO", weight: 0.40, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "TZ-NGORONGORO", weight: 0.35, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "TZ-NGORONGORO", weight: 0.28, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "TZ-NGORONGORO", weight: 0.25, season: "summer" },
@@ -466,7 +466,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // KE-LAMU (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "KE-LAMU", weight: 0.38, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "KE-LAMU", weight: 0.38, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "KE-LAMU", weight: 0.25, season: "winter" },
   { sourceRegionId: "AE", destinationId: "KE-LAMU", weight: 0.28, season: "winter" },
   { sourceRegionId: "IT-NORTH", destinationId: "KE-LAMU", weight: 0.20, season: "winter" },
@@ -476,7 +476,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // KE-NAIROBI (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "KE-NAIROBI", weight: 0.42, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "KE-NAIROBI", weight: 0.42, season: null },
   { sourceRegionId: "AE", destinationId: "KE-NAIROBI", weight: 0.38, season: null },
   { sourceRegionId: "IN-NORTH", destinationId: "KE-NAIROBI", weight: 0.30, season: null },
   { sourceRegionId: "US-NE", destinationId: "KE-NAIROBI", weight: 0.28, season: null },
@@ -488,7 +488,7 @@ export const travelPatterns: TravelPattern[] = [
   // SN-DAKAR (destination) -> sources
   // ========================================
   { sourceRegionId: "FR-ZC", destinationId: "SN-DAKAR", weight: 0.45, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "SN-DAKAR", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "SN-DAKAR", weight: 0.30, season: null },
   { sourceRegionId: "FR-ZB", destinationId: "SN-DAKAR", weight: 0.30, season: null },
   { sourceRegionId: "US-NE", destinationId: "SN-DAKAR", weight: 0.22, season: null },
   { sourceRegionId: "DE-BY", destinationId: "SN-DAKAR", weight: 0.18, season: null },
@@ -499,14 +499,14 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "FR-ZC", destinationId: "SN-SAINT-LOUIS", weight: 0.48, season: "winter" },
   { sourceRegionId: "FR-ZB", destinationId: "SN-SAINT-LOUIS", weight: 0.32, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SN-SAINT-LOUIS", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SN-SAINT-LOUIS", weight: 0.20, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "SN-SAINT-LOUIS", weight: 0.15, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "SN-SAINT-LOUIS", weight: 0.12, season: "winter" },
 
   // ========================================
   // CV-SAL (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "CV-SAL", weight: 0.50, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "CV-SAL", weight: 0.50, season: null },
   { sourceRegionId: "DE-BY", destinationId: "CV-SAL", weight: 0.42, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "CV-SAL", weight: 0.38, season: null },
   { sourceRegionId: "FR-ZC", destinationId: "CV-SAL", weight: 0.30, season: null },
@@ -516,7 +516,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // CV-SANTIAGO (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "CV-SANTIAGO", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "CV-SANTIAGO", weight: 0.35, season: null },
   { sourceRegionId: "FR-ZC", destinationId: "CV-SANTIAGO", weight: 0.40, season: null },
   { sourceRegionId: "DE-BY", destinationId: "CV-SANTIAGO", weight: 0.28, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "CV-SANTIAGO", weight: 0.22, season: null },
@@ -527,7 +527,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "FR-ZC", destinationId: "MG-NOSY-BE", weight: 0.45, season: "winter" },
   { sourceRegionId: "IT-NORTH", destinationId: "MG-NOSY-BE", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MG-NOSY-BE", weight: 0.25, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MG-NOSY-BE", weight: 0.25, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "MG-NOSY-BE", weight: 0.22, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "MG-NOSY-BE", weight: 0.20, season: "winter" },
   { sourceRegionId: "AU-NSW", destinationId: "MG-NOSY-BE", weight: 0.12, season: "winter" },
@@ -536,7 +536,7 @@ export const travelPatterns: TravelPattern[] = [
   // MZ-TOFO (destination) -> sources
   // ========================================
   { sourceRegionId: "ZA", destinationId: "MZ-TOFO", weight: 0.55, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MZ-TOFO", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MZ-TOFO", weight: 0.28, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "MZ-TOFO", weight: 0.18, season: "winter" },
   { sourceRegionId: "AU-NSW", destinationId: "MZ-TOFO", weight: 0.15, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "MZ-TOFO", weight: 0.12, season: "winter" },
@@ -544,7 +544,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // ET-OMO (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "ET-OMO", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "ET-OMO", weight: 0.28, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "ET-OMO", weight: 0.22, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "ET-OMO", weight: 0.20, season: "winter" },
   { sourceRegionId: "FR-ZC", destinationId: "ET-OMO", weight: 0.18, season: "winter" },
@@ -553,7 +553,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // ET-SIMIEN (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "ET-SIMIEN", weight: 0.30, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "ET-SIMIEN", weight: 0.30, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "ET-SIMIEN", weight: 0.25, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "ET-SIMIEN", weight: 0.22, season: "winter" },
   { sourceRegionId: "FR-ZC", destinationId: "ET-SIMIEN", weight: 0.18, season: "winter" },
@@ -563,7 +563,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // TZ-PEMBA (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TZ-PEMBA", weight: 0.32, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "TZ-PEMBA", weight: 0.32, season: "winter" },
   { sourceRegionId: "IT-NORTH", destinationId: "TZ-PEMBA", weight: 0.25, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "TZ-PEMBA", weight: 0.22, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "TZ-PEMBA", weight: 0.20, season: "winter" },
@@ -574,7 +574,7 @@ export const travelPatterns: TravelPattern[] = [
   // ZA-WILD-COAST (destination) -> sources
   // ========================================
   { sourceRegionId: "ZA", destinationId: "ZA-WILD-COAST", weight: 0.72, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-WILD-COAST", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-WILD-COAST", weight: 0.22, season: "summer" },
   { sourceRegionId: "DE-BY", destinationId: "ZA-WILD-COAST", weight: 0.15, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "ZA-WILD-COAST", weight: 0.12, season: "summer" },
   { sourceRegionId: "NL-SOUTH", destinationId: "ZA-WILD-COAST", weight: 0.12, season: "summer" },
@@ -583,7 +583,7 @@ export const travelPatterns: TravelPattern[] = [
   // NA-SOSSUSVLEI (destination) -> sources
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "NA-SOSSUSVLEI", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NA-SOSSUSVLEI", weight: 0.35, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "NA-SOSSUSVLEI", weight: 0.35, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "NA-SOSSUSVLEI", weight: 0.42, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "NA-SOSSUSVLEI", weight: 0.25, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "NA-SOSSUSVLEI", weight: 0.20, season: "winter" },
@@ -593,7 +593,7 @@ export const travelPatterns: TravelPattern[] = [
   // NA-ETOSHA (destination) -> sources
   // ========================================
   { sourceRegionId: "DE-BY", destinationId: "NA-ETOSHA", weight: 0.40, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NA-ETOSHA", weight: 0.38, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "NA-ETOSHA", weight: 0.38, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "NA-ETOSHA", weight: 0.45, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "NA-ETOSHA", weight: 0.28, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "NA-ETOSHA", weight: 0.22, season: "winter" },
@@ -602,7 +602,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // BW-CHOBE (destination) -> sources
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "BW-CHOBE", weight: 0.38, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BW-CHOBE", weight: 0.38, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "BW-CHOBE", weight: 0.28, season: "winter" },
   { sourceRegionId: "ZA", destinationId: "BW-CHOBE", weight: 0.45, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "BW-CHOBE", weight: 0.28, season: "winter" },
@@ -615,7 +615,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.85, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.40, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.25, season: null },
   { sourceRegionId: "US-W", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.20, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "AU-BLUE-MOUNTAINS", weight: 0.22, season: null },
 
@@ -626,7 +626,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-QLD", destinationId: "AU-DAINTREE", weight: 0.70, season: "winter" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-DAINTREE", weight: 0.40, season: "winter" },
   { sourceRegionId: "NZ", destinationId: "AU-DAINTREE", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-DAINTREE", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-DAINTREE", weight: 0.22, season: "winter" },
   { sourceRegionId: "JP-KANTO", destinationId: "AU-DAINTREE", weight: 0.18, season: "winter" },
 
   // ========================================
@@ -635,7 +635,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "AU-PHILLIP-ISLAND", weight: 0.80, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-PHILLIP-ISLAND", weight: 0.42, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-PHILLIP-ISLAND", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-PHILLIP-ISLAND", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-PHILLIP-ISLAND", weight: 0.20, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "AU-PHILLIP-ISLAND", weight: 0.18, season: null },
 
   // ========================================
@@ -644,7 +644,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-COROMANDEL", weight: 0.78, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-COROMANDEL", weight: 0.32, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-COROMANDEL", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-COROMANDEL", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-COROMANDEL", weight: 0.20, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-COROMANDEL", weight: 0.15, season: "summer" },
 
   // ========================================
@@ -653,7 +653,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-WANAKA", weight: 0.72, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-WANAKA", weight: 0.42, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-WANAKA", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-WANAKA", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-WANAKA", weight: 0.30, season: null },
   { sourceRegionId: "US-W", destinationId: "NZ-WANAKA", weight: 0.25, season: null },
   { sourceRegionId: "DE-BY", destinationId: "NZ-WANAKA", weight: 0.18, season: null },
 
@@ -665,7 +665,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "FJ-MAMANUCA", weight: 0.48, season: "winter" },
   { sourceRegionId: "NZ", destinationId: "FJ-MAMANUCA", weight: 0.52, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "FJ-MAMANUCA", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "FJ-MAMANUCA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "FJ-MAMANUCA", weight: 0.18, season: "winter" },
 
   // ========================================
   // PF-MOOREA (destination) -> sources
@@ -685,7 +685,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "AU-SUNSHINE-COAST", weight: 0.65, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-SUNSHINE-COAST", weight: 0.55, season: "summer" },
   { sourceRegionId: "NZ", destinationId: "AU-SUNSHINE-COAST", weight: 0.30, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-SUNSHINE-COAST", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-SUNSHINE-COAST", weight: 0.18, season: "summer" },
   { sourceRegionId: "JP-KANTO", destinationId: "AU-SUNSHINE-COAST", weight: 0.15, season: "summer" },
 
   // ========================================
@@ -694,7 +694,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "AU-GREAT-OCEAN", weight: 0.80, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-GREAT-OCEAN", weight: 0.45, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-GREAT-OCEAN", weight: 0.32, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-GREAT-OCEAN", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-GREAT-OCEAN", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "AU-GREAT-OCEAN", weight: 0.22, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "AU-GREAT-OCEAN", weight: 0.20, season: null },
   { sourceRegionId: "JP-KANTO", destinationId: "AU-GREAT-OCEAN", weight: 0.18, season: null },
@@ -710,7 +710,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "AU-NOOSA", weight: 0.65, season: "summer" },
   { sourceRegionId: "AU-QLD", destinationId: "AU-NOOSA", weight: 0.80, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-NOOSA", weight: 0.32, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-NOOSA", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-NOOSA", weight: 0.18, season: "summer" },
 
   // ----------------------------------------
   // AU-BAROSSA (South Australia wine)
@@ -719,7 +719,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-VIC", destinationId: "AU-BAROSSA", weight: 0.55, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "AU-BAROSSA", weight: 0.45, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-BAROSSA", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-BAROSSA", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-BAROSSA", weight: 0.22, season: null },
 
   // ----------------------------------------
   // AU-ROTTNEST (Western Australia island)
@@ -736,7 +736,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "AU-KAKADU", weight: 0.45, season: "winter" },
   { sourceRegionId: "AU-VIC", destinationId: "AU-KAKADU", weight: 0.42, season: "winter" },
   { sourceRegionId: "AU-QLD", destinationId: "AU-KAKADU", weight: 0.40, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-KAKADU", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-KAKADU", weight: 0.28, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "AU-KAKADU", weight: 0.20, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "AU-KAKADU", weight: 0.15, season: "winter" },
 
@@ -747,7 +747,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "AU-FRASER", weight: 0.60, season: null },
   { sourceRegionId: "AU-VIC", destinationId: "AU-FRASER", weight: 0.48, season: null },
   { sourceRegionId: "NZ", destinationId: "AU-FRASER", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AU-FRASER", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AU-FRASER", weight: 0.20, season: null },
 
   // ----------------------------------------
   // NZ-BAY-ISLANDS (Bay of Islands)
@@ -755,7 +755,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-BAY-ISLANDS", weight: 0.80, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-BAY-ISLANDS", weight: 0.42, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-BAY-ISLANDS", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-BAY-ISLANDS", weight: 0.28, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-BAY-ISLANDS", weight: 0.28, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-BAY-ISLANDS", weight: 0.22, season: "summer" },
 
   // ----------------------------------------
@@ -764,7 +764,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "NZ", destinationId: "NZ-FIORDLAND", weight: 0.75, season: "summer" },
   { sourceRegionId: "AU-NSW", destinationId: "NZ-FIORDLAND", weight: 0.50, season: "summer" },
   { sourceRegionId: "AU-VIC", destinationId: "NZ-FIORDLAND", weight: 0.48, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "NZ-FIORDLAND", weight: 0.35, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-FIORDLAND", weight: 0.35, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "NZ-FIORDLAND", weight: 0.30, season: "summer" },
   { sourceRegionId: "CN-EAST", destinationId: "NZ-FIORDLAND", weight: 0.28, season: "summer" },
 
@@ -781,7 +781,7 @@ export const travelPatterns: TravelPattern[] = [
   // ZA-HERMANUS (Whale watching, Western Cape)
   // ----------------------------------------
   { sourceRegionId: "ZA", destinationId: "ZA-HERMANUS", weight: 0.82, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-HERMANUS", weight: 0.38, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-HERMANUS", weight: 0.38, season: null },
   { sourceRegionId: "DE-BY", destinationId: "ZA-HERMANUS", weight: 0.28, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "ZA-HERMANUS", weight: 0.22, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "ZA-HERMANUS", weight: 0.18, season: null },
@@ -790,7 +790,7 @@ export const travelPatterns: TravelPattern[] = [
   // ZA-ADDO (Addo Elephant Park, Eastern Cape)
   // ----------------------------------------
   { sourceRegionId: "ZA", destinationId: "ZA-ADDO", weight: 0.78, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "ZA-ADDO", weight: 0.42, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "ZA-ADDO", weight: 0.42, season: null },
   { sourceRegionId: "DE-BY", destinationId: "ZA-ADDO", weight: 0.30, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "ZA-ADDO", weight: 0.25, season: null },
   { sourceRegionId: "AU-NSW", destinationId: "ZA-ADDO", weight: 0.18, season: null },
@@ -800,7 +800,7 @@ export const travelPatterns: TravelPattern[] = [
   // ----------------------------------------
   { sourceRegionId: "KE", destinationId: "TZ-MAFIA", weight: 0.48, season: null },
   { sourceRegionId: "ZA", destinationId: "TZ-MAFIA", weight: 0.40, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "TZ-MAFIA", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "TZ-MAFIA", weight: 0.35, season: null },
   { sourceRegionId: "DE-BY", destinationId: "TZ-MAFIA", weight: 0.22, season: null },
   { sourceRegionId: "AE", destinationId: "TZ-MAFIA", weight: 0.28, season: null },
 
@@ -808,7 +808,7 @@ export const travelPatterns: TravelPattern[] = [
   // KE-SAMBURU (Northern Kenya safari)
   // ----------------------------------------
   { sourceRegionId: "KE", destinationId: "KE-SAMBURU", weight: 0.72, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "KE-SAMBURU", weight: 0.48, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "KE-SAMBURU", weight: 0.48, season: null },
   { sourceRegionId: "ZA", destinationId: "KE-SAMBURU", weight: 0.35, season: null },
   { sourceRegionId: "AE", destinationId: "KE-SAMBURU", weight: 0.30, season: null },
   { sourceRegionId: "US-NE", destinationId: "KE-SAMBURU", weight: 0.25, season: null },
@@ -818,7 +818,7 @@ export const travelPatterns: TravelPattern[] = [
   // UG-MURCHISON (Murchison Falls, Uganda)
   // ----------------------------------------
   { sourceRegionId: "KE", destinationId: "UG-MURCHISON", weight: 0.55, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "UG-MURCHISON", weight: 0.45, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "UG-MURCHISON", weight: 0.45, season: null },
   { sourceRegionId: "ZA", destinationId: "UG-MURCHISON", weight: 0.30, season: null },
   { sourceRegionId: "AE", destinationId: "UG-MURCHISON", weight: 0.25, season: null },
   { sourceRegionId: "US-NE", destinationId: "UG-MURCHISON", weight: 0.22, season: null },
@@ -827,7 +827,7 @@ export const travelPatterns: TravelPattern[] = [
   // MZ-BAZARUTO (Bazaruto Archipelago, Mozambique)
   // ----------------------------------------
   { sourceRegionId: "ZA", destinationId: "MZ-BAZARUTO", weight: 0.72, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "MZ-BAZARUTO", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "MZ-BAZARUTO", weight: 0.35, season: null },
   { sourceRegionId: "KE", destinationId: "MZ-BAZARUTO", weight: 0.30, season: null },
   { sourceRegionId: "AE", destinationId: "MZ-BAZARUTO", weight: 0.28, season: null },
   { sourceRegionId: "PT", destinationId: "MZ-BAZARUTO", weight: 0.25, season: null },
@@ -836,8 +836,18 @@ export const travelPatterns: TravelPattern[] = [
   // RW-NYUNGWE (Nyungwe Forest, Rwanda)
   // ----------------------------------------
   { sourceRegionId: "KE", destinationId: "RW-NYUNGWE", weight: 0.48, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "RW-NYUNGWE", weight: 0.40, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "RW-NYUNGWE", weight: 0.40, season: null },
   { sourceRegionId: "ZA", destinationId: "RW-NYUNGWE", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "RW-NYUNGWE", weight: 0.25, season: null },
   { sourceRegionId: "AE", destinationId: "RW-NYUNGWE", weight: 0.20, season: null },
+
+  // ========================================
+  // NZ-AUCKLAND — INBOUND
+  // ========================================
+  { sourceRegionId: "NZ", destinationId: "NZ-AUCKLAND", weight: 0.80, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "NZ-AUCKLAND", weight: 0.55, season: null },
+  { sourceRegionId: "AU-VIC", destinationId: "NZ-AUCKLAND", weight: 0.48, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "NZ-AUCKLAND", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "NZ-AUCKLAND", weight: 0.38, season: null },
+  { sourceRegionId: "US-W", destinationId: "NZ-AUCKLAND", weight: 0.28, season: null },
 ];

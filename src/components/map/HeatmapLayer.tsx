@@ -1,7 +1,8 @@
 "use client";
 
-import { Source, Layer } from "react-map-gl/maplibre";
-import type { HeatmapResponse, AllDestinationsResponse } from "@/types";
+import { useMemo } from "react";
+import { Source, Layer, Marker } from "react-map-gl/maplibre";
+import type { HeatmapResponse, AllDestinationsResponse, MajorEvent } from "@/types";
 
 interface Props {
   data: HeatmapResponse | undefined;
@@ -13,9 +14,72 @@ const emptyGeoJSON: GeoJSON.FeatureCollection = {
   features: [],
 };
 
+const CATEGORY_EMOJI: Record<MajorEvent["category"], string> = {
+  sports: "\u26BD",
+  festival: "\uD83C\uDF89",
+  cultural: "\uD83C\uDFAD",
+  music: "\uD83C\uDFB5",
+  trade: "\uD83D\uDCBC",
+};
+
+interface EventMarker {
+  destinationId: string;
+  lng: number;
+  lat: number;
+  emoji: string;
+  label: string;
+}
+
 export function HeatmapLayer({ data, allDestinations }: Props) {
   const geojson = data ?? emptyGeoJSON;
   const allDestsGeojson = allDestinations ?? emptyGeoJSON;
+
+  // Build event markers by matching active events to destination coordinates
+  const eventMarkers = useMemo<EventMarker[]>(() => {
+    if (!data?.metadata.activeEvents?.length) return [];
+
+    // Build a coordinate lookup from heatmap features + allDestinations
+    const coordMap = new Map<string, [number, number]>();
+    for (const f of data.features) {
+      coordMap.set(f.properties.destinationId, f.geometry.coordinates);
+    }
+    if (allDestinations) {
+      for (const f of allDestinations.features) {
+        if (!coordMap.has(f.properties.destinationId)) {
+          coordMap.set(f.properties.destinationId, f.geometry.coordinates);
+        }
+      }
+    }
+
+    // Deduplicate by destinationId — pick the first event's emoji if multiple
+    const byDest = new Map<string, { emoji: string; names: string[] }>();
+    for (const event of data.metadata.activeEvents) {
+      const existing = byDest.get(event.destinationId);
+      if (existing) {
+        existing.names.push(event.name);
+      } else {
+        byDest.set(event.destinationId, {
+          emoji: CATEGORY_EMOJI[event.category] ?? "\uD83D\uDCCD",
+          names: [event.name],
+        });
+      }
+    }
+
+    const markers: EventMarker[] = [];
+    for (const [destId, info] of byDest) {
+      const coords = coordMap.get(destId);
+      if (!coords) continue;
+      markers.push({
+        destinationId: destId,
+        lng: coords[0],
+        lat: coords[1],
+        emoji: info.emoji,
+        label: info.names.join(", "),
+      });
+    }
+
+    return markers;
+  }, [data, allDestinations]);
 
   return (
     <>
@@ -149,6 +213,23 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
           }}
         />
       </Source>
+
+      {/* Event markers — HTML emoji markers at destinations with active events */}
+      {eventMarkers.map((m) => (
+        <Marker
+          key={m.destinationId}
+          longitude={m.lng}
+          latitude={m.lat}
+          anchor="bottom"
+        >
+          <div
+            className="pointer-events-none select-none text-lg drop-shadow-md"
+            title={m.label}
+          >
+            {m.emoji}
+          </div>
+        </Marker>
+      ))}
     </>
   );
 }

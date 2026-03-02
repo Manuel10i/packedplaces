@@ -28,6 +28,7 @@ export function MapView() {
     name: string;
     score: number;
     sources: { regionName: string; weight: number }[];
+    destinationId: string;
   } | null>(null);
 
   // When viewportCenter is set from URL params, jump to that position
@@ -72,6 +73,7 @@ export function MapView() {
         name: props.name,
         score: props.busynessScore ?? 0,
         sources,
+        destinationId: props.destinationId,
       });
       setHoveredDestination(props.destinationId);
     },
@@ -122,7 +124,14 @@ export function MapView() {
       >
         <HeatmapLayer data={data} allDestinations={allDestinations} />
       </Map>
-      {tooltipInfo && <DestinationTooltip {...tooltipInfo} />}
+      {tooltipInfo && (
+        <DestinationTooltip
+          {...tooltipInfo}
+          activeEvents={data?.metadata.activeEvents
+            .filter((e) => e.destinationId === tooltipInfo.destinationId)
+            .map((e) => e.name)}
+        />
+      )}
     </div>
   );
 }

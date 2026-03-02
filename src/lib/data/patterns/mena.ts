@@ -264,8 +264,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AE", destinationId: "SA-RIYADH", weight: 0.50, season: "winter" },
   { sourceRegionId: "EG", destinationId: "SA-RIYADH", weight: 0.30, season: "winter" },
   { sourceRegionId: "IN-NORTH", destinationId: "SA-RIYADH", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SA-RIYADH", weight: 0.20, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "SA-RIYADH", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SA-RIYADH", weight: 0.20, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "SA-RIYADH", weight: 0.18, season: "winter" },
 
   // ========================================
   // JEDDAH
@@ -274,7 +274,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AE", destinationId: "SA-JEDDAH", weight: 0.45, season: "winter" },
   { sourceRegionId: "EG", destinationId: "SA-JEDDAH", weight: 0.35, season: "winter" },
   { sourceRegionId: "IN-NORTH", destinationId: "SA-JEDDAH", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SA-JEDDAH", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SA-JEDDAH", weight: 0.18, season: "winter" },
   { sourceRegionId: "TR-WEST", destinationId: "SA-JEDDAH", weight: 0.22, season: "winter" },
 
   // ========================================
@@ -282,9 +282,9 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "SA", destinationId: "SA-ALULA", weight: 0.70, season: "winter" },
   { sourceRegionId: "AE", destinationId: "SA-ALULA", weight: 0.40, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SA-ALULA", weight: 0.22, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "SA-ALULA", weight: 0.18, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "SA-ALULA", weight: 0.15, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SA-ALULA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "SA-ALULA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "SA-ALULA", weight: 0.15, season: "winter" },
 
   // ========================================
   // DOHA
@@ -292,10 +292,10 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AE", destinationId: "QA-DOHA", weight: 0.60, season: "winter" },
   { sourceRegionId: "SA", destinationId: "QA-DOHA", weight: 0.50, season: "winter" },
   { sourceRegionId: "IN-NORTH", destinationId: "QA-DOHA", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "QA-DOHA", weight: 0.30, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "QA-DOHA", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "QA-DOHA", weight: 0.30, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "QA-DOHA", weight: 0.20, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "QA-DOHA", weight: 0.18, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "QA-DOHA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "QA-DOHA", weight: 0.18, season: "winter" },
 
   // ========================================
   // MANAMA
@@ -303,7 +303,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SA", destinationId: "BH-MANAMA", weight: 0.75, season: "winter" },
   { sourceRegionId: "AE", destinationId: "BH-MANAMA", weight: 0.45, season: "winter" },
   { sourceRegionId: "IN-NORTH", destinationId: "BH-MANAMA", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BH-MANAMA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BH-MANAMA", weight: 0.22, season: "winter" },
   { sourceRegionId: "EG", destinationId: "BH-MANAMA", weight: 0.25, season: "winter" },
 
   // ========================================
@@ -311,21 +311,21 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "AE", destinationId: "LB-BEIRUT", weight: 0.40, season: null },
   { sourceRegionId: "SA", destinationId: "LB-BEIRUT", weight: 0.30, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "LB-BEIRUT", weight: 0.30, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "LB-BEIRUT", weight: 0.30, season: null },
   { sourceRegionId: "EG", destinationId: "LB-BEIRUT", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "LB-BEIRUT", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "LB-BEIRUT", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "LB-BEIRUT", weight: 0.15, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "LB-BEIRUT", weight: 0.18, season: null },
+  { sourceRegionId: "US-NE", destinationId: "LB-BEIRUT", weight: 0.18, season: null },
 
   // ========================================
   // WADI RUM
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "JO-WADI-RUM", weight: 0.32, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "JO-WADI-RUM", weight: 0.32, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "JO-WADI-RUM", weight: 0.28, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "JO-WADI-RUM", weight: 0.25, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "JO-WADI-RUM", weight: 0.25, season: "winter" },
   { sourceRegionId: "AE", destinationId: "JO-WADI-RUM", weight: 0.35, season: "winter" },
   { sourceRegionId: "SA", destinationId: "JO-WADI-RUM", weight: 0.30, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "JO-WADI-RUM", weight: 0.22, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "JO-WADI-RUM", weight: 0.22, season: "winter" },
 
   // ========================================
   // AQABA
@@ -333,7 +333,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AE", destinationId: "JO-AQABA", weight: 0.35, season: "winter" },
   { sourceRegionId: "SA", destinationId: "JO-AQABA", weight: 0.30, season: "winter" },
   { sourceRegionId: "IL", destinationId: "JO-AQABA", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "JO-AQABA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "JO-AQABA", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "JO-AQABA", weight: 0.20, season: "winter" },
 
   // ========================================
@@ -341,17 +341,17 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "AE", destinationId: "JO-AMMAN", weight: 0.42, season: null },
   { sourceRegionId: "SA", destinationId: "JO-AMMAN", weight: 0.38, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "JO-AMMAN", weight: 0.30, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "JO-AMMAN", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "JO-AMMAN", weight: 0.30, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "JO-AMMAN", weight: 0.25, season: null },
   { sourceRegionId: "DE-BY", destinationId: "JO-AMMAN", weight: 0.22, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "JO-AMMAN", weight: 0.20, season: null },
+  { sourceRegionId: "US-NE", destinationId: "JO-AMMAN", weight: 0.20, season: null },
 
   // ========================================
   // ISFAHAN
   // ========================================
   { sourceRegionId: "TR-WEST", destinationId: "IR-ISFAHAN", weight: 0.30, season: null },
   { sourceRegionId: "AE", destinationId: "IR-ISFAHAN", weight: 0.20, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "IR-ISFAHAN", weight: 0.15, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "IR-ISFAHAN", weight: 0.15, season: null },
   { sourceRegionId: "DE-BY", destinationId: "IR-ISFAHAN", weight: 0.15, season: null },
   { sourceRegionId: "RU-MOW", destinationId: "IR-ISFAHAN", weight: 0.18, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "IR-ISFAHAN", weight: 0.15, season: null },
@@ -361,7 +361,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "TR-WEST", destinationId: "IR-SHIRAZ", weight: 0.28, season: null },
   { sourceRegionId: "AE", destinationId: "IR-SHIRAZ", weight: 0.18, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "IR-SHIRAZ", weight: 0.15, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "IR-SHIRAZ", weight: 0.15, season: null },
   { sourceRegionId: "DE-BY", destinationId: "IR-SHIRAZ", weight: 0.12, season: null },
   { sourceRegionId: "RU-MOW", destinationId: "IR-SHIRAZ", weight: 0.15, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "IR-SHIRAZ", weight: 0.12, season: null },
@@ -375,7 +375,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "SA", destinationId: "AZ-BAKU", weight: 0.20, season: null },
   { sourceRegionId: "IL", destinationId: "AZ-BAKU", weight: 0.15, season: null },
   { sourceRegionId: "DE-BY", destinationId: "AZ-BAKU", weight: 0.18, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AZ-BAKU", weight: 0.15, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AZ-BAKU", weight: 0.15, season: null },
   { sourceRegionId: "IN-NORTH", destinationId: "AZ-BAKU", weight: 0.18, season: null },
 
   // ========================================
@@ -394,42 +394,42 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "RU-MOW", destinationId: "AM-YEREVAN", weight: 0.45, season: null },
   { sourceRegionId: "IL", destinationId: "AM-YEREVAN", weight: 0.30, season: null },
   { sourceRegionId: "AE", destinationId: "AM-YEREVAN", weight: 0.25, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "AM-YEREVAN", weight: 0.20, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "AM-YEREVAN", weight: 0.20, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "AM-YEREVAN", weight: 0.18, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "AM-YEREVAN", weight: 0.18, season: null },
+  { sourceRegionId: "US-NE", destinationId: "AM-YEREVAN", weight: 0.18, season: null },
   { sourceRegionId: "DE-BY", destinationId: "AM-YEREVAN", weight: 0.15, season: null },
 
   // ========================================
   // CHEFCHAOUEN
   // ========================================
-  { sourceRegionId: "FR-IDF", destinationId: "MA-CHEFCHAOUEN", weight: 0.38, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "MA-CHEFCHAOUEN", weight: 0.32, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "MA-CHEFCHAOUEN", weight: 0.38, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "MA-CHEFCHAOUEN", weight: 0.32, season: null },
   { sourceRegionId: "DE-BY", destinationId: "MA-CHEFCHAOUEN", weight: 0.25, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "MA-CHEFCHAOUEN", weight: 0.22, season: null },
   { sourceRegionId: "ES-MADRID", destinationId: "MA-CHEFCHAOUEN", weight: 0.35, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "MA-CHEFCHAOUEN", weight: 0.20, season: null },
+  { sourceRegionId: "US-NE", destinationId: "MA-CHEFCHAOUEN", weight: 0.20, season: null },
   { sourceRegionId: "AE", destinationId: "MA-CHEFCHAOUEN", weight: 0.18, season: null },
 
   // ========================================
   // SAHARA MOROCCO (MERZOUGA)
   // ========================================
-  { sourceRegionId: "FR-IDF", destinationId: "MA-SAHARA", weight: 0.35, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MA-SAHARA", weight: 0.28, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "MA-SAHARA", weight: 0.35, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MA-SAHARA", weight: 0.28, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "MA-SAHARA", weight: 0.22, season: "winter" },
   { sourceRegionId: "ES-MADRID", destinationId: "MA-SAHARA", weight: 0.30, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "MA-SAHARA", weight: 0.20, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "MA-SAHARA", weight: 0.15, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "MA-SAHARA", weight: 0.15, season: "winter" },
 
   // ========================================
   // ASWAN
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "EG-ASWAN", weight: 0.30, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "EG-ASWAN", weight: 0.30, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "EG-ASWAN", weight: 0.28, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "EG-ASWAN", weight: 0.25, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "EG-ASWAN", weight: 0.25, season: "winter" },
   { sourceRegionId: "IT-NORTH", destinationId: "EG-ASWAN", weight: 0.22, season: "winter" },
   { sourceRegionId: "AE", destinationId: "EG-ASWAN", weight: 0.28, season: "winter" },
   { sourceRegionId: "EG", destinationId: "EG-ASWAN", weight: 0.45, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "EG-ASWAN", weight: 0.20, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "EG-ASWAN", weight: 0.20, season: "winter" },
 
   // ========================================
   // DAHAB
@@ -437,16 +437,16 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "IL", destinationId: "EG-DAHAB", weight: 0.40, season: "winter" },
   { sourceRegionId: "RU-MOW", destinationId: "EG-DAHAB", weight: 0.35, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "EG-DAHAB", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "EG-DAHAB", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "EG-DAHAB", weight: 0.22, season: "winter" },
   { sourceRegionId: "EG", destinationId: "EG-DAHAB", weight: 0.38, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "EG-DAHAB", weight: 0.18, season: "winter" },
 
   // ========================================
   // EPHESUS & IZMIR
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TR-EPHESUS", weight: 0.35, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "TR-EPHESUS", weight: 0.35, season: null },
   { sourceRegionId: "DE-BY", destinationId: "TR-EPHESUS", weight: 0.30, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "TR-EPHESUS", weight: 0.28, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "TR-EPHESUS", weight: 0.28, season: null },
   { sourceRegionId: "NL-SOUTH", destinationId: "TR-EPHESUS", weight: 0.25, season: null },
   { sourceRegionId: "AE", destinationId: "TR-EPHESUS", weight: 0.30, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "TR-EPHESUS", weight: 0.45, season: null },
@@ -455,9 +455,9 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // PAMUKKALE
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TR-PAMUKKALE", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "TR-PAMUKKALE", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "TR-PAMUKKALE", weight: 0.25, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "TR-PAMUKKALE", weight: 0.22, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "TR-PAMUKKALE", weight: 0.22, season: null },
   { sourceRegionId: "AE", destinationId: "TR-PAMUKKALE", weight: 0.25, season: null },
   { sourceRegionId: "TR-WEST", destinationId: "TR-PAMUKKALE", weight: 0.40, season: null },
   { sourceRegionId: "RU-MOW", destinationId: "TR-PAMUKKALE", weight: 0.22, season: null },
@@ -475,21 +475,21 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // GÖREME (BALLOON RIDES)
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TR-GOREME", weight: 0.38, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "TR-GOREME", weight: 0.38, season: null },
   { sourceRegionId: "DE-BY", destinationId: "TR-GOREME", weight: 0.32, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "TR-GOREME", weight: 0.30, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "TR-GOREME", weight: 0.30, season: null },
   { sourceRegionId: "AE", destinationId: "TR-GOREME", weight: 0.35, season: null },
   { sourceRegionId: "SA", destinationId: "TR-GOREME", weight: 0.30, season: null },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "TR-GOREME", weight: 0.28, season: null },
+  { sourceRegionId: "US-NE", destinationId: "TR-GOREME", weight: 0.28, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "TR-GOREME", weight: 0.25, season: null },
-  { sourceRegionId: "JP", destinationId: "TR-GOREME", weight: 0.20, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "TR-GOREME", weight: 0.20, season: null },
 
   // ========================================
   // SAHARAN TUNISIA (TOZEUR)
   // ========================================
-  { sourceRegionId: "FR-IDF", destinationId: "TN-SAHARA", weight: 0.30, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "TN-SAHARA", weight: 0.30, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "TN-SAHARA", weight: 0.20, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "TN-SAHARA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "TN-SAHARA", weight: 0.18, season: "winter" },
   { sourceRegionId: "IT-NORTH", destinationId: "TN-SAHARA", weight: 0.20, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "TN-SAHARA", weight: 0.15, season: "winter" },
 
@@ -498,7 +498,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "AE", destinationId: "AE-RAS-KHAIMAH", weight: 0.55, season: "winter" },
   { sourceRegionId: "SA", destinationId: "AE-RAS-KHAIMAH", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AE-RAS-KHAIMAH", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AE-RAS-KHAIMAH", weight: 0.28, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "AE-RAS-KHAIMAH", weight: 0.22, season: "winter" },
   { sourceRegionId: "IN-NORTH", destinationId: "AE-RAS-KHAIMAH", weight: 0.25, season: "winter" },
   { sourceRegionId: "RU-MOW", destinationId: "AE-RAS-KHAIMAH", weight: 0.22, season: "winter" },
@@ -509,16 +509,16 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AE", destinationId: "OM-SALALAH", weight: 0.45, season: "summer" },
   { sourceRegionId: "SA", destinationId: "OM-SALALAH", weight: 0.38, season: "summer" },
   { sourceRegionId: "IN-NORTH", destinationId: "OM-SALALAH", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "OM-SALALAH", weight: 0.18, season: "summer" },
-  { sourceRegionId: "IN-WEST", destinationId: "OM-SALALAH", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "OM-SALALAH", weight: 0.18, season: "summer" },
+  { sourceRegionId: "IN-SOUTH", destinationId: "OM-SALALAH", weight: 0.22, season: "summer" },
 
   // ========================================
   // NEOM
   // ========================================
   { sourceRegionId: "SA", destinationId: "SA-NEOM", weight: 0.60, season: "winter" },
   { sourceRegionId: "AE", destinationId: "SA-NEOM", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "SA-NEOM", weight: 0.18, season: "winter" },
-  { sourceRegionId: "US-NORTHEAST", destinationId: "SA-NEOM", weight: 0.15, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "SA-NEOM", weight: 0.18, season: "winter" },
+  { sourceRegionId: "US-NE", destinationId: "SA-NEOM", weight: 0.15, season: "winter" },
   { sourceRegionId: "CN-EAST", destinationId: "SA-NEOM", weight: 0.12, season: "winter" },
 
   // ========================================
@@ -527,7 +527,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "IL", destinationId: "IL-EILAT", weight: 0.65, season: "winter" },
   { sourceRegionId: "RU-MOW", destinationId: "IL-EILAT", weight: 0.30, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "IL-EILAT", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "IL-EILAT", weight: 0.22, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "IL-EILAT", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "IL-EILAT", weight: 0.22, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "IL-EILAT", weight: 0.20, season: "winter" },
   { sourceRegionId: "UA", destinationId: "IL-EILAT", weight: 0.22, season: "winter" },
 ];

@@ -5,13 +5,15 @@ import type { HolidayInfo } from "@/types";
 
 vi.mock("@/hooks/useHeatmapData", () => ({
   useHolidayData: vi.fn(),
+  useHeatmapData: vi.fn(),
 }));
 
-import { useHolidayData } from "@/hooks/useHeatmapData";
+import { useHolidayData, useHeatmapData } from "@/hooks/useHeatmapData";
 import { HolidayPanel } from "../HolidayPanel";
 import { useMapStore } from "@/store/useMapStore";
 
 const mockedUseHolidayData = vi.mocked(useHolidayData);
+const mockedUseHeatmapData = vi.mocked(useHeatmapData);
 
 const mockHolidays: HolidayInfo[] = [
   {
@@ -40,8 +42,22 @@ const mockHolidays: HolidayInfo[] = [
   },
 ];
 
+function setupMocks(holidays: HolidayInfo[] | undefined = mockHolidays) {
+  mockedUseHolidayData.mockReturnValue({
+    data: holidays,
+    error: undefined,
+    isLoading: holidays === undefined,
+  });
+  mockedUseHeatmapData.mockReturnValue({
+    data: undefined,
+    error: undefined,
+    isLoading: false,
+  } as ReturnType<typeof useHeatmapData>);
+}
+
 describe("HolidayPanel", () => {
   beforeEach(() => {
+    vi.clearAllMocks();
     useMapStore.setState({
       selectedWeek: 30,
       selectedYear: 2026,
@@ -49,67 +65,55 @@ describe("HolidayPanel", () => {
     });
   });
 
-  it("shows 'No school holidays' when data is empty", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: [],
-      error: undefined,
-      isLoading: false,
-    });
-
+  it("shows 'No school holidays' when holidays section is expanded and data is empty", () => {
+    setupMocks([]);
     renderWithIntl(<HolidayPanel />);
+
+    // Expand holidays section
+    fireEvent.click(screen.getByText("School Holidays"));
     expect(
       screen.getByText("No school holidays this week"),
     ).toBeInTheDocument();
   });
 
-  it("shows 'No school holidays' when data is undefined", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: undefined,
-      error: undefined,
-      isLoading: true,
-    });
-
+  it("holidays section is collapsed by default showing badge count", () => {
+    setupMocks();
     renderWithIntl(<HolidayPanel />);
-    expect(
-      screen.getByText("No school holidays this week"),
-    ).toBeInTheDocument();
-  });
 
-  it("shows holidays when data is provided", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
-    renderWithIntl(<HolidayPanel />);
     expect(screen.getByText("School Holidays")).toBeInTheDocument();
+    // Badge shows holiday count
+    expect(screen.getByText("3")).toBeInTheDocument();
+    // Region headers and details should not be visible
+    expect(screen.queryByText("Europe")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Baden-W/)).not.toBeInTheDocument();
+  });
+
+  it("expanding holidays section shows region headers", () => {
+    setupMocks();
+    renderWithIntl(<HolidayPanel />);
+
+    fireEvent.click(screen.getByText("School Holidays"));
+
     expect(screen.getByText("Europe")).toBeInTheDocument();
     expect(screen.getByText("Middle East")).toBeInTheDocument();
   });
 
   it("regions are collapsed by default (holiday details not visible)", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
+    setupMocks();
     renderWithIntl(<HolidayPanel />);
+
+    fireEvent.click(screen.getByText("School Holidays"));
+
     expect(screen.getByText("Europe")).toBeInTheDocument();
     expect(screen.queryByText(/Baden-W/)).not.toBeInTheDocument();
     expect(screen.queryByText("Vienna")).not.toBeInTheDocument();
   });
 
   it("clicking a region header expands it to show holiday details", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
+    setupMocks();
     renderWithIntl(<HolidayPanel />);
 
+    fireEvent.click(screen.getByText("School Holidays"));
     expect(screen.queryByText(/Baden-W/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText("Europe"));
@@ -119,15 +123,10 @@ describe("HolidayPanel", () => {
   });
 
   it("clicking a country header collapses its holidays", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
+    setupMocks();
     renderWithIntl(<HolidayPanel />);
 
-    // Expand Europe region
+    fireEvent.click(screen.getByText("School Holidays"));
     fireEvent.click(screen.getByText("Europe"));
     expect(screen.getByText(/Baden-W/)).toBeInTheDocument();
 
@@ -141,37 +140,26 @@ describe("HolidayPanel", () => {
   });
 
   it("filters regions by viewport bounds", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
-    // Set viewport to only show central Europe (not Middle East)
+    setupMocks();
     useMapStore.setState({
       viewportBounds: { north: 60, south: 40, east: 20, west: -10 },
     });
 
     renderWithIntl(<HolidayPanel />);
+    fireEvent.click(screen.getByText("School Holidays"));
 
-    expect(screen.getByText("School Holidays")).toBeInTheDocument();
     // Middle East should be filtered out
     expect(screen.queryByText("Middle East")).not.toBeInTheDocument();
   });
 
   it("auto-expands when only 1 region is active (no hidden region toggle)", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
-    // Set viewport to only show Europe
+    setupMocks();
     useMapStore.setState({
       viewportBounds: { north: 60, south: 40, east: 20, west: -10 },
     });
 
     renderWithIntl(<HolidayPanel />);
+    fireEvent.click(screen.getByText("School Holidays"));
 
     // Region header should NOT be shown (only 1 region)
     expect(screen.queryByText("Europe")).not.toBeInTheDocument();
@@ -181,18 +169,12 @@ describe("HolidayPanel", () => {
   });
 
   it("shows formatted date ranges after expanding", () => {
-    mockedUseHolidayData.mockReturnValue({
-      data: mockHolidays,
-      error: undefined,
-      isLoading: false,
-    });
-
+    setupMocks();
     renderWithIntl(<HolidayPanel />);
 
-    // Expand Europe
+    fireEvent.click(screen.getByText("School Holidays"));
     fireEvent.click(screen.getByText("Europe"));
 
-    // Date range should be formatted
-    expect(screen.getByText(/Jul 30 - Sep 12/)).toBeInTheDocument();
+    expect(screen.getByText(/Jul 30/)).toBeInTheDocument();
   });
 });

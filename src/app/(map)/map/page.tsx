@@ -26,7 +26,7 @@ export default function MapPage() {
         <LanguageSwitcher variant="map" />
       </div>
 
-      {/* Right sidebar: Holiday panel */}
+      {/* Right sidebar: Holidays & Events panel */}
       <div className="absolute right-4 top-4 z-10 w-72">
         <HolidayPanel />
       </div>

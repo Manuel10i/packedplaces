@@ -305,7 +305,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "US-CHICAGO", weight: 0.30, season: null },
   { sourceRegionId: "US-SE", destinationId: "US-CHICAGO", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "US-CHICAGO", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-CHICAGO", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-CHICAGO", weight: 0.20, season: null },
 
   // ========================================
   // US CITIES — SAN FRANCISCO
@@ -314,9 +314,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-SAN-FRANCISCO", weight: 0.50, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-SAN-FRANCISCO", weight: 0.38, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-SAN-FRANCISCO", weight: 0.40, season: null },
-  { sourceRegionId: "JP", destinationId: "US-SAN-FRANCISCO", weight: 0.30, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-SAN-FRANCISCO", weight: 0.30, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "US-SAN-FRANCISCO", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-SAN-FRANCISCO", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-SAN-FRANCISCO", weight: 0.25, season: null },
 
   // ========================================
   // US CITIES — WASHINGTON DC
@@ -326,7 +326,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-WASHINGTON-DC", weight: 0.42, season: null },
   { sourceRegionId: "US-W", destinationId: "US-WASHINGTON-DC", weight: 0.35, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "US-WASHINGTON-DC", weight: 0.32, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-WASHINGTON-DC", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-WASHINGTON-DC", weight: 0.22, season: null },
 
   // ========================================
   // US CITIES — NEW ORLEANS
@@ -346,7 +346,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-NASHVILLE", weight: 0.42, season: null },
   { sourceRegionId: "US-SW", destinationId: "US-NASHVILLE", weight: 0.35, season: null },
   { sourceRegionId: "US-W", destinationId: "US-NASHVILLE", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-NASHVILLE", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-NASHVILLE", weight: 0.18, season: null },
 
   // ========================================
   // US CITIES — BOSTON
@@ -355,7 +355,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "US-BOSTON", weight: 0.40, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-BOSTON", weight: 0.38, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "US-BOSTON", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-BOSTON", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-BOSTON", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "US-BOSTON", weight: 0.25, season: null },
 
   // ========================================
@@ -365,7 +365,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-WEST", destinationId: "US-SEATTLE", weight: 0.55, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-SEATTLE", weight: 0.38, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-SEATTLE", weight: 0.32, season: null },
-  { sourceRegionId: "JP", destinationId: "US-SEATTLE", weight: 0.28, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-SEATTLE", weight: 0.28, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "US-SEATTLE", weight: 0.25, season: null },
 
   // ========================================
@@ -375,7 +375,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-WEST", destinationId: "US-PORTLAND", weight: 0.45, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-PORTLAND", weight: 0.30, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-PORTLAND", weight: 0.28, season: null },
-  { sourceRegionId: "JP", destinationId: "US-PORTLAND", weight: 0.20, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-PORTLAND", weight: 0.20, season: null },
 
   // ========================================
   // US CITIES — CHARLESTON
@@ -384,7 +384,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-CHARLESTON", weight: 0.48, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-CHARLESTON", weight: 0.35, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "US-CHARLESTON", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-CHARLESTON", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-CHARLESTON", weight: 0.18, season: null },
 
   // ========================================
   // US CITIES — SAVANNAH
@@ -393,7 +393,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-SAVANNAH", weight: 0.40, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-SAVANNAH", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "US-SAVANNAH", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-SAVANNAH", weight: 0.15, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-SAVANNAH", weight: 0.15, season: null },
 
   // ========================================
   // US CITIES — AUSTIN
@@ -413,7 +413,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-ASPEN", weight: 0.48, season: "winter" },
   { sourceRegionId: "US-SW", destinationId: "US-ASPEN", weight: 0.42, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "US-ASPEN", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-ASPEN", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-ASPEN", weight: 0.22, season: "winter" },
 
   // ========================================
   // US SKI — JACKSON HOLE
@@ -449,8 +449,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-NAPA", weight: 0.40, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-NAPA", weight: 0.35, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-NAPA", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-NAPA", weight: 0.22, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "US-NAPA", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-NAPA", weight: 0.22, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "US-NAPA", weight: 0.20, season: null },
 
   // ========================================
   // US NATURE — SEDONA
@@ -460,7 +460,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-SEDONA", weight: 0.40, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-SEDONA", weight: 0.35, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-SEDONA", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-SEDONA", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-SEDONA", weight: 0.18, season: null },
 
   // ========================================
   // US NATURE — YELLOWSTONE
@@ -470,7 +470,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-YELLOWSTONE", weight: 0.42, season: "summer" },
   { sourceRegionId: "US-SW", destinationId: "US-YELLOWSTONE", weight: 0.38, season: "summer" },
   { sourceRegionId: "CA-WEST", destinationId: "US-YELLOWSTONE", weight: 0.32, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-YELLOWSTONE", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-YELLOWSTONE", weight: 0.20, season: "summer" },
 
   // ========================================
   // US NATURE — GRAND CANYON
@@ -480,7 +480,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-GRAND-CANYON", weight: 0.48, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-GRAND-CANYON", weight: 0.42, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-GRAND-CANYON", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-GRAND-CANYON", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-GRAND-CANYON", weight: 0.28, season: null },
   { sourceRegionId: "DE-NW", destinationId: "US-GRAND-CANYON", weight: 0.22, season: null },
 
   // ========================================
@@ -490,8 +490,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-ALASKA", weight: 0.42, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-ALASKA", weight: 0.35, season: "summer" },
   { sourceRegionId: "CA-WEST", destinationId: "US-ALASKA", weight: 0.32, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-ALASKA", weight: 0.22, season: "summer" },
-  { sourceRegionId: "AU-EAST", destinationId: "US-ALASKA", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-ALASKA", weight: 0.22, season: "summer" },
+  { sourceRegionId: "AU-NSW", destinationId: "US-ALASKA", weight: 0.18, season: "summer" },
 
   // ========================================
   // US NATURE — ZION
@@ -501,7 +501,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-ZION", weight: 0.45, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-ZION", weight: 0.38, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-ZION", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-ZION", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-ZION", weight: 0.22, season: null },
 
   // ========================================
   // US NATURE — BRYCE CANYON
@@ -510,7 +510,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "US-BRYCE", weight: 0.52, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-BRYCE", weight: 0.38, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "US-BRYCE", weight: 0.30, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-BRYCE", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-BRYCE", weight: 0.20, season: "summer" },
 
   // ========================================
   // US NATURE — ACADIA
@@ -519,7 +519,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-EAST", destinationId: "US-ACADIA", weight: 0.42, season: "summer" },
   { sourceRegionId: "US-SE", destinationId: "US-ACADIA", weight: 0.32, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-ACADIA", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-ACADIA", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-ACADIA", weight: 0.18, season: "summer" },
 
   // ========================================
   // US NATURE — GLACIER
@@ -528,7 +528,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-WEST", destinationId: "US-GLACIER", weight: 0.45, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-GLACIER", weight: 0.42, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "US-GLACIER", weight: 0.32, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-GLACIER", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-GLACIER", weight: 0.20, season: "summer" },
 
   // ========================================
   // US NATURE — BIG SUR
@@ -537,7 +537,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-WEST", destinationId: "US-BIG-SUR", weight: 0.40, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-BIG-SUR", weight: 0.35, season: null },
   { sourceRegionId: "US-MW", destinationId: "US-BIG-SUR", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-BIG-SUR", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "US-BIG-SUR", weight: 0.20, season: null },
 
   // ========================================
   // US BEACH — KEY WEST
@@ -563,7 +563,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-EAST", destinationId: "US-CAPE-COD", weight: 0.35, season: "summer" },
   { sourceRegionId: "US-SE", destinationId: "US-CAPE-COD", weight: 0.30, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-CAPE-COD", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-CAPE-COD", weight: 0.18, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-CAPE-COD", weight: 0.18, season: "summer" },
 
   // ========================================
   // US ISLAND — MAUI
@@ -573,8 +573,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-MAUI", weight: 0.52, season: "winter" },
   { sourceRegionId: "CA-WEST", destinationId: "US-MAUI", weight: 0.45, season: null },
   { sourceRegionId: "US-SE", destinationId: "US-MAUI", weight: 0.40, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "US-MAUI", weight: 0.25, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "US-MAUI", weight: 0.22, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-MAUI", weight: 0.25, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "US-MAUI", weight: 0.22, season: null },
 
   // ========================================
   // US BEACH — MIAMI BEACH
@@ -584,7 +584,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-MIAMI-BEACH", weight: 0.60, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "US-MIAMI-BEACH", weight: 0.45, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "US-MIAMI-BEACH", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-MIAMI-BEACH", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-MIAMI-BEACH", weight: 0.28, season: "winter" },
   { sourceRegionId: "BR-SE", destinationId: "US-MIAMI-BEACH", weight: 0.25, season: null },
 
   // ========================================
@@ -603,24 +603,24 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "CA-VANCOUVER", weight: 0.50, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "CA-VANCOUVER", weight: 0.40, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "CA-VANCOUVER", weight: 0.30, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "CA-VANCOUVER", weight: 0.30, season: null },
-  { sourceRegionId: "JP", destinationId: "CA-VANCOUVER", weight: 0.20, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "CA-VANCOUVER", weight: 0.30, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "CA-VANCOUVER", weight: 0.20, season: null },
 
   // ========================================
   // CANADA — MONTREAL
   // ========================================
   { sourceRegionId: "CA-EAST", destinationId: "CA-MONTREAL", weight: 0.85, season: null },
   { sourceRegionId: "US-NE", destinationId: "CA-MONTREAL", weight: 0.55, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "CA-MONTREAL", weight: 0.38, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "CA-MONTREAL", weight: 0.38, season: null },
   { sourceRegionId: "US-MW", destinationId: "CA-MONTREAL", weight: 0.30, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-MONTREAL", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-MONTREAL", weight: 0.22, season: null },
 
   // ========================================
   // CANADA — QUEBEC CITY
   // ========================================
   { sourceRegionId: "CA-EAST", destinationId: "CA-QUEBEC-CITY", weight: 0.80, season: null },
   { sourceRegionId: "US-NE", destinationId: "CA-QUEBEC-CITY", weight: 0.50, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "CA-QUEBEC-CITY", weight: 0.35, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "CA-QUEBEC-CITY", weight: 0.35, season: null },
   { sourceRegionId: "US-MW", destinationId: "CA-QUEBEC-CITY", weight: 0.28, season: null },
   { sourceRegionId: "US-SE", destinationId: "CA-QUEBEC-CITY", weight: 0.22, season: null },
 
@@ -630,7 +630,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-EAST", destinationId: "CA-TORONTO", weight: 0.85, season: null },
   { sourceRegionId: "US-NE", destinationId: "CA-TORONTO", weight: 0.55, season: null },
   { sourceRegionId: "US-MW", destinationId: "CA-TORONTO", weight: 0.42, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-TORONTO", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-TORONTO", weight: 0.30, season: null },
   { sourceRegionId: "US-SE", destinationId: "CA-TORONTO", weight: 0.28, season: null },
   { sourceRegionId: "CN-EAST", destinationId: "CA-TORONTO", weight: 0.25, season: null },
 
@@ -639,7 +639,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "CA-EAST", destinationId: "CA-PEI", weight: 0.70, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "CA-PEI", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-PEI", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-PEI", weight: 0.22, season: "summer" },
   { sourceRegionId: "US-SE", destinationId: "CA-PEI", weight: 0.18, season: "summer" },
 
   // ========================================
@@ -647,9 +647,9 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "US-NE", destinationId: "MX-TULUM", weight: 0.60, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "MX-TULUM", weight: 0.40, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-TULUM", weight: 0.50, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "MX-TULUM", weight: 0.50, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "MX-TULUM", weight: 0.40, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MX-TULUM", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MX-TULUM", weight: 0.20, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "MX-TULUM", weight: 0.38, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "MX-TULUM", weight: 0.32, season: "winter" },
 
@@ -660,14 +660,14 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "MX-RIVIERA-MAYA", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "MX-RIVIERA-MAYA", weight: 0.50, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "MX-RIVIERA-MAYA", weight: 0.45, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-RIVIERA-MAYA", weight: 0.55, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "MX-RIVIERA-MAYA", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "MX-RIVIERA-MAYA", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MX-RIVIERA-MAYA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MX-RIVIERA-MAYA", weight: 0.22, season: "winter" },
 
   // ========================================
   // MEXICO — GUADALAJARA
   // ========================================
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-GUADALAJARA", weight: 0.72, season: null },
+  { sourceRegionId: "MX", destinationId: "MX-GUADALAJARA", weight: 0.72, season: null },
   { sourceRegionId: "US-SW", destinationId: "MX-GUADALAJARA", weight: 0.45, season: null },
   { sourceRegionId: "US-W", destinationId: "MX-GUADALAJARA", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "MX-GUADALAJARA", weight: 0.25, season: null },
@@ -676,27 +676,27 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // MEXICO — MERIDA
   // ========================================
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-MERIDA", weight: 0.65, season: null },
+  { sourceRegionId: "MX", destinationId: "MX-MERIDA", weight: 0.65, season: null },
   { sourceRegionId: "US-SW", destinationId: "MX-MERIDA", weight: 0.38, season: null },
   { sourceRegionId: "US-NE", destinationId: "MX-MERIDA", weight: 0.30, season: null },
   { sourceRegionId: "US-SE", destinationId: "MX-MERIDA", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "MX-MERIDA", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "MX-MERIDA", weight: 0.18, season: null },
 
   // ========================================
   // MEXICO — SAN MIGUEL DE ALLENDE
   // ========================================
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-SAN-MIGUEL", weight: 0.62, season: null },
+  { sourceRegionId: "MX", destinationId: "MX-SAN-MIGUEL", weight: 0.62, season: null },
   { sourceRegionId: "US-SW", destinationId: "MX-SAN-MIGUEL", weight: 0.45, season: null },
   { sourceRegionId: "US-NE", destinationId: "MX-SAN-MIGUEL", weight: 0.38, season: null },
   { sourceRegionId: "US-W", destinationId: "MX-SAN-MIGUEL", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "MX-SAN-MIGUEL", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "MX-SAN-MIGUEL", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "MX-SAN-MIGUEL", weight: 0.20, season: null },
 
   // ========================================
   // MEXICO — SAYULITA
   // ========================================
   { sourceRegionId: "US-W", destinationId: "MX-SAYULITA", weight: 0.55, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-SAYULITA", weight: 0.48, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "MX-SAYULITA", weight: 0.48, season: "winter" },
   { sourceRegionId: "CA-WEST", destinationId: "MX-SAYULITA", weight: 0.40, season: "winter" },
   { sourceRegionId: "US-SW", destinationId: "MX-SAYULITA", weight: 0.35, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "MX-SAYULITA", weight: 0.28, season: "winter" },
@@ -708,7 +708,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "BS-NASSAU", weight: 0.60, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "BS-NASSAU", weight: 0.40, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "BS-NASSAU", weight: 0.35, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BS-NASSAU", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BS-NASSAU", weight: 0.20, season: "winter" },
 
   // ========================================
   // CARIBBEAN — ARUBA
@@ -717,13 +717,13 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "AW-ARUBA", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "AW-ARUBA", weight: 0.45, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "AW-ARUBA", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AW-ARUBA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AW-ARUBA", weight: 0.22, season: "winter" },
   { sourceRegionId: "NL-SOUTH", destinationId: "AW-ARUBA", weight: 0.30, season: "winter" },
 
   // ========================================
   // CARIBBEAN — BARBADOS
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "BB-BARBADOS", weight: 0.55, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BB-BARBADOS", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "BB-BARBADOS", weight: 0.45, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "BB-BARBADOS", weight: 0.38, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "BB-BARBADOS", weight: 0.35, season: "winter" },
@@ -736,12 +736,12 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "TC-TURKS", weight: 0.55, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "TC-TURKS", weight: 0.40, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "TC-TURKS", weight: 0.35, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "TC-TURKS", weight: 0.25, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "TC-TURKS", weight: 0.25, season: "winter" },
 
   // ========================================
   // CARIBBEAN — ST. LUCIA
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "LC-ST-LUCIA", weight: 0.55, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "LC-ST-LUCIA", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "LC-ST-LUCIA", weight: 0.45, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "LC-ST-LUCIA", weight: 0.38, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "LC-ST-LUCIA", weight: 0.32, season: "winter" },
@@ -750,7 +750,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // CARIBBEAN — ANTIGUA
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "AG-ANTIGUA", weight: 0.52, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "AG-ANTIGUA", weight: 0.52, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "AG-ANTIGUA", weight: 0.38, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "AG-ANTIGUA", weight: 0.30, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "AG-ANTIGUA", weight: 0.28, season: "winter" },
@@ -779,7 +779,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "US-SE", destinationId: "KY-CAYMAN", weight: 0.60, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "KY-CAYMAN", weight: 0.52, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "KY-CAYMAN", weight: 0.42, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "KY-CAYMAN", weight: 0.42, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "KY-CAYMAN", weight: 0.35, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "KY-CAYMAN", weight: 0.28, season: "winter" },
 
@@ -795,7 +795,7 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   // CARIBBEAN — TRINIDAD & TOBAGO
   // ========================================
-  { sourceRegionId: "GB-LONDON", destinationId: "TT-TRINIDAD", weight: 0.45, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "TT-TRINIDAD", weight: 0.45, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "TT-TRINIDAD", weight: 0.28, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "TT-TRINIDAD", weight: 0.25, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "TT-TRINIDAD", weight: 0.22, season: "winter" },
@@ -807,7 +807,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "BM-BERMUDA", weight: 0.60, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "BM-BERMUDA", weight: 0.40, season: null },
   { sourceRegionId: "US-SE", destinationId: "BM-BERMUDA", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BM-BERMUDA", weight: 0.30, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BM-BERMUDA", weight: 0.30, season: null },
   { sourceRegionId: "US-MW", destinationId: "BM-BERMUDA", weight: 0.22, season: null },
 
   // ========================================
@@ -815,9 +815,9 @@ export const travelPatterns: TravelPattern[] = [
   // ========================================
   { sourceRegionId: "US-W", destinationId: "GT-ANTIGUA", weight: 0.45, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "GT-ANTIGUA", weight: 0.40, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "GT-ANTIGUA", weight: 0.38, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "GT-ANTIGUA", weight: 0.38, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "GT-ANTIGUA", weight: 0.28, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "GT-ANTIGUA", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "GT-ANTIGUA", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-NW", destinationId: "GT-ANTIGUA", weight: 0.18, season: "winter" },
 
   // ========================================
@@ -827,8 +827,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "BZ-BELIZE", weight: 0.42, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "BZ-BELIZE", weight: 0.35, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "BZ-BELIZE", weight: 0.28, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "BZ-BELIZE", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BZ-BELIZE", weight: 0.18, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "BZ-BELIZE", weight: 0.25, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BZ-BELIZE", weight: 0.18, season: "winter" },
 
   // ========================================
   // CENTRAL AMERICA — PANAMA CITY
@@ -836,9 +836,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "PA-PANAMA", weight: 0.48, season: null },
   { sourceRegionId: "US-SE", destinationId: "PA-PANAMA", weight: 0.42, season: null },
   { sourceRegionId: "CO", destinationId: "PA-PANAMA", weight: 0.45, season: null },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "PA-PANAMA", weight: 0.30, season: null },
+  { sourceRegionId: "MX", destinationId: "PA-PANAMA", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "PA-PANAMA", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "PA-PANAMA", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "PA-PANAMA", weight: 0.18, season: null },
 
   // ========================================
   // CENTRAL AMERICA — ROATAN
@@ -847,7 +847,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "HN-ROATAN", weight: 0.40, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "HN-ROATAN", weight: 0.32, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "HN-ROATAN", weight: 0.25, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "HN-ROATAN", weight: 0.18, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "HN-ROATAN", weight: 0.18, season: "winter" },
 
   // ========================================
   // SOUTH AMERICA — MONTEVIDEO
@@ -856,7 +856,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "UY-MONTEVIDEO", weight: 0.45, season: null },
   { sourceRegionId: "CL", destinationId: "UY-MONTEVIDEO", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "UY-MONTEVIDEO", weight: 0.22, season: null },
-  { sourceRegionId: "ES", destinationId: "UY-MONTEVIDEO", weight: 0.20, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "UY-MONTEVIDEO", weight: 0.20, season: null },
 
   // ========================================
   // SOUTH AMERICA — PUNTA DEL ESTE
@@ -865,7 +865,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "UY-PUNTA", weight: 0.55, season: "summer" },
   { sourceRegionId: "CL", destinationId: "UY-PUNTA", weight: 0.38, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "UY-PUNTA", weight: 0.25, season: "summer" },
-  { sourceRegionId: "ES", destinationId: "UY-PUNTA", weight: 0.22, season: "summer" },
+  { sourceRegionId: "ES-MADRID", destinationId: "UY-PUNTA", weight: 0.22, season: "summer" },
 
   // ========================================
   // SOUTH AMERICA — BOGOTA
@@ -873,8 +873,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CO", destinationId: "CO-BOGOTA", weight: 0.75, season: null },
   { sourceRegionId: "US-SE", destinationId: "CO-BOGOTA", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "CO-BOGOTA", weight: 0.30, season: null },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "CO-BOGOTA", weight: 0.28, season: null },
-  { sourceRegionId: "ES", destinationId: "CO-BOGOTA", weight: 0.25, season: null },
+  { sourceRegionId: "MX", destinationId: "CO-BOGOTA", weight: 0.28, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "CO-BOGOTA", weight: 0.25, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "CO-BOGOTA", weight: 0.20, season: null },
 
   // ========================================
@@ -885,7 +885,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "CO-MEDELLIN", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "CO-MEDELLIN", weight: 0.22, season: null },
   { sourceRegionId: "AR", destinationId: "CO-MEDELLIN", weight: 0.20, season: null },
-  { sourceRegionId: "ES", destinationId: "CO-MEDELLIN", weight: 0.18, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "CO-MEDELLIN", weight: 0.18, season: null },
 
   // ========================================
   // SOUTH AMERICA — SANTA MARTA
@@ -894,7 +894,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "CO-SANTA-MARTA", weight: 0.30, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "CO-SANTA-MARTA", weight: 0.28, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "CO-SANTA-MARTA", weight: 0.22, season: "winter" },
-  { sourceRegionId: "ES", destinationId: "CO-SANTA-MARTA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "ES-MADRID", destinationId: "CO-SANTA-MARTA", weight: 0.18, season: "winter" },
 
   // ========================================
   // SOUTH AMERICA — TAYRONA NP
@@ -903,7 +903,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "CO-TAYRONA", weight: 0.28, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "CO-TAYRONA", weight: 0.25, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "CO-TAYRONA", weight: 0.20, season: "winter" },
-  { sourceRegionId: "ES", destinationId: "CO-TAYRONA", weight: 0.18, season: "winter" },
+  { sourceRegionId: "ES-MADRID", destinationId: "CO-TAYRONA", weight: 0.18, season: "winter" },
 
   // ========================================
   // SOUTH AMERICA — QUITO
@@ -913,7 +913,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "EC-QUITO", weight: 0.30, season: null },
   { sourceRegionId: "CA-EAST", destinationId: "EC-QUITO", weight: 0.25, season: null },
   { sourceRegionId: "DE-NW", destinationId: "EC-QUITO", weight: 0.18, season: null },
-  { sourceRegionId: "ES", destinationId: "EC-QUITO", weight: 0.18, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "EC-QUITO", weight: 0.18, season: null },
 
   // ========================================
   // SOUTH AMERICA — BANOS
@@ -922,7 +922,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "EC-BANOS", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "EC-BANOS", weight: 0.22, season: null },
   { sourceRegionId: "DE-NW", destinationId: "EC-BANOS", weight: 0.18, season: null },
-  { sourceRegionId: "ES", destinationId: "EC-BANOS", weight: 0.15, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "EC-BANOS", weight: 0.15, season: null },
 
   // ========================================
   // SOUTH AMERICA — LA PAZ
@@ -970,7 +970,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "AR-USHUAIA", weight: 0.35, season: "summer" },
   { sourceRegionId: "CL", destinationId: "AR-USHUAIA", weight: 0.38, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "AR-USHUAIA", weight: 0.25, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "AR-USHUAIA", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "AR-USHUAIA", weight: 0.20, season: "summer" },
   { sourceRegionId: "DE-NW", destinationId: "AR-USHUAIA", weight: 0.18, season: "summer" },
 
   // ========================================
@@ -989,8 +989,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "CL-EASTER-ISLAND", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "CL-EASTER-ISLAND", weight: 0.28, season: null },
   { sourceRegionId: "US-W", destinationId: "CL-EASTER-ISLAND", weight: 0.25, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "CL-EASTER-ISLAND", weight: 0.22, season: null },
-  { sourceRegionId: "JP", destinationId: "CL-EASTER-ISLAND", weight: 0.18, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "CL-EASTER-ISLAND", weight: 0.22, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "CL-EASTER-ISLAND", weight: 0.18, season: null },
 
   // ========================================
   // SOUTH AMERICA — VALPARAISO
@@ -999,7 +999,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "CL-VALPARAISO", weight: 0.45, season: null },
   { sourceRegionId: "US-NE", destinationId: "CL-VALPARAISO", weight: 0.28, season: null },
   { sourceRegionId: "BR-SE", destinationId: "CL-VALPARAISO", weight: 0.25, season: null },
-  { sourceRegionId: "ES", destinationId: "CL-VALPARAISO", weight: 0.20, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "CL-VALPARAISO", weight: 0.20, season: null },
 
   // ========================================
   // SOUTH AMERICA — SALVADOR DE BAHIA
@@ -1008,8 +1008,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-NE", destinationId: "BR-SALVADOR", weight: 0.55, season: null },
   { sourceRegionId: "AR", destinationId: "BR-SALVADOR", weight: 0.30, season: null },
   { sourceRegionId: "US-NE", destinationId: "BR-SALVADOR", weight: 0.25, season: null },
-  { sourceRegionId: "ES", destinationId: "BR-SALVADOR", weight: 0.22, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "BR-SALVADOR", weight: 0.18, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "BR-SALVADOR", weight: 0.22, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "BR-SALVADOR", weight: 0.18, season: null },
 
   // ========================================
   // SOUTH AMERICA — PANTANAL
@@ -1018,7 +1018,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "BR-PANTANAL", weight: 0.30, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "BR-PANTANAL", weight: 0.22, season: "winter" },
   { sourceRegionId: "DE-NW", destinationId: "BR-PANTANAL", weight: 0.18, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BR-PANTANAL", weight: 0.15, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "BR-PANTANAL", weight: 0.15, season: "winter" },
 
   // ========================================
   // SOUTH AMERICA — AMAZON (MANAUS)
@@ -1027,8 +1027,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-NE", destinationId: "BR-AMAZON", weight: 0.35, season: null },
   { sourceRegionId: "US-NE", destinationId: "BR-AMAZON", weight: 0.28, season: null },
   { sourceRegionId: "DE-NW", destinationId: "BR-AMAZON", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BR-AMAZON", weight: 0.20, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "BR-AMAZON", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BR-AMAZON", weight: 0.20, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "BR-AMAZON", weight: 0.18, season: null },
 
   // ========================================
   // NEW DESTINATIONS — ADDED 2024
@@ -1050,7 +1050,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SW", destinationId: "US-MOAB", weight: 0.65, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-MOAB", weight: 0.42, season: "summer" },
   { sourceRegionId: "CA-WEST", destinationId: "US-MOAB", weight: 0.32, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-MOAB", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-MOAB", weight: 0.22, season: "summer" },
 
   // ----------------------------------------
   // US-MONTEREY (California)
@@ -1059,7 +1059,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "US-MONTEREY", weight: 0.45, season: "summer" },
   { sourceRegionId: "US-SW", destinationId: "US-MONTEREY", weight: 0.48, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-MONTEREY", weight: 0.35, season: null },
-  { sourceRegionId: "JP", destinationId: "US-MONTEREY", weight: 0.22, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-MONTEREY", weight: 0.22, season: null },
 
   // ----------------------------------------
   // US-MARTHA-VINEYARD
@@ -1068,7 +1068,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SE", destinationId: "US-MARTHA-VINEYARD", weight: 0.42, season: "summer" },
   { sourceRegionId: "US-MW", destinationId: "US-MARTHA-VINEYARD", weight: 0.35, season: "summer" },
   { sourceRegionId: "CA-EAST", destinationId: "US-MARTHA-VINEYARD", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-MARTHA-VINEYARD", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-MARTHA-VINEYARD", weight: 0.20, season: "summer" },
 
   // ----------------------------------------
   // US-PALM-SPRINGS (California desert)
@@ -1077,7 +1077,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SW", destinationId: "US-PALM-SPRINGS", weight: 0.60, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "US-PALM-SPRINGS", weight: 0.42, season: "winter" },
   { sourceRegionId: "CA-WEST", destinationId: "US-PALM-SPRINGS", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-PALM-SPRINGS", weight: 0.22, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-PALM-SPRINGS", weight: 0.22, season: "winter" },
 
   // ----------------------------------------
   // US-TELLURIDE (Colorado ski)
@@ -1095,7 +1095,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-SW", destinationId: "US-MAMMOTH", weight: 0.58, season: "winter" },
   { sourceRegionId: "CA-WEST", destinationId: "US-MAMMOTH", weight: 0.35, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "US-MAMMOTH", weight: 0.30, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "US-MAMMOTH", weight: 0.25, season: "winter" },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-MAMMOTH", weight: 0.25, season: "winter" },
 
   // ----------------------------------------
   // US-SARASOTA (Florida Gulf Coast)
@@ -1104,7 +1104,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-MW", destinationId: "US-SARASOTA", weight: 0.65, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "US-SARASOTA", weight: 0.55, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "US-SARASOTA", weight: 0.30, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "US-SARASOTA", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "US-SARASOTA", weight: 0.20, season: "winter" },
 
   // ----------------------------------------
   // US-SAN-DIEGO
@@ -1112,9 +1112,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "US-SAN-DIEGO", weight: 0.80, season: null },
   { sourceRegionId: "US-SW", destinationId: "US-SAN-DIEGO", weight: 0.68, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-SAN-DIEGO", weight: 0.50, season: "summer" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "US-SAN-DIEGO", weight: 0.45, season: null },
+  { sourceRegionId: "MX", destinationId: "US-SAN-DIEGO", weight: 0.45, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-SAN-DIEGO", weight: 0.35, season: null },
-  { sourceRegionId: "JP", destinationId: "US-SAN-DIEGO", weight: 0.22, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-SAN-DIEGO", weight: 0.22, season: null },
 
   // ----------------------------------------
   // US-HONOLULU (Oahu, Hawaii)
@@ -1122,9 +1122,9 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "US-HONOLULU", weight: 0.78, season: null },
   { sourceRegionId: "US-NE", destinationId: "US-HONOLULU", weight: 0.58, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "US-HONOLULU", weight: 0.55, season: "winter" },
-  { sourceRegionId: "JP", destinationId: "US-HONOLULU", weight: 0.65, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "US-HONOLULU", weight: 0.65, season: null },
   { sourceRegionId: "CA-WEST", destinationId: "US-HONOLULU", weight: 0.42, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "US-HONOLULU", weight: 0.30, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "US-HONOLULU", weight: 0.30, season: null },
 
   // ----------------------------------------
   // CA-JASPER (Alberta)
@@ -1133,7 +1133,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-EAST", destinationId: "CA-JASPER", weight: 0.52, season: "summer" },
   { sourceRegionId: "US-W", destinationId: "CA-JASPER", weight: 0.45, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "CA-JASPER", weight: 0.30, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-JASPER", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-JASPER", weight: 0.22, season: "summer" },
 
   // ----------------------------------------
   // CA-VICTORIA (British Columbia)
@@ -1142,7 +1142,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-W", destinationId: "CA-VICTORIA", weight: 0.60, season: "summer" },
   { sourceRegionId: "CA-EAST", destinationId: "CA-VICTORIA", weight: 0.45, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "CA-VICTORIA", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-VICTORIA", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-VICTORIA", weight: 0.25, season: "summer" },
 
   // ----------------------------------------
   // CA-HALIFAX (Nova Scotia)
@@ -1150,13 +1150,13 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CA-EAST", destinationId: "CA-HALIFAX", weight: 0.82, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "CA-HALIFAX", weight: 0.55, season: "summer" },
   { sourceRegionId: "CA-WEST", destinationId: "CA-HALIFAX", weight: 0.38, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CA-HALIFAX", weight: 0.28, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "CA-HALIFAX", weight: 0.22, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "CA-HALIFAX", weight: 0.28, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "CA-HALIFAX", weight: 0.22, season: "summer" },
 
   // ----------------------------------------
   // MX-HUATULCO (Oaxaca Coast)
   // ----------------------------------------
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-HUATULCO", weight: 0.72, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "MX-HUATULCO", weight: 0.72, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "MX-HUATULCO", weight: 0.45, season: "winter" },
   { sourceRegionId: "US-W", destinationId: "MX-HUATULCO", weight: 0.38, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "MX-HUATULCO", weight: 0.30, season: "winter" },
@@ -1169,14 +1169,14 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "MX-COZUMEL", weight: 0.60, season: "winter" },
   { sourceRegionId: "US-MW", destinationId: "MX-COZUMEL", weight: 0.55, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "MX-COZUMEL", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "MX-COZUMEL", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "MX-COZUMEL", weight: 0.28, season: "winter" },
 
   // ----------------------------------------
   // MX-CABO-PULMO (Marine reserve, Baja)
   // ----------------------------------------
   { sourceRegionId: "US-W", destinationId: "MX-CABO-PULMO", weight: 0.65, season: "winter" },
   { sourceRegionId: "US-SW", destinationId: "MX-CABO-PULMO", weight: 0.58, season: "winter" },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "MX-CABO-PULMO", weight: 0.55, season: "winter" },
+  { sourceRegionId: "MX", destinationId: "MX-CABO-PULMO", weight: 0.55, season: "winter" },
   { sourceRegionId: "US-NE", destinationId: "MX-CABO-PULMO", weight: 0.35, season: "winter" },
   { sourceRegionId: "CA-WEST", destinationId: "MX-CABO-PULMO", weight: 0.30, season: "winter" },
 
@@ -1186,7 +1186,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "CR-MANUEL-ANTONIO", weight: 0.60, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "CR-MANUEL-ANTONIO", weight: 0.55, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "CR-MANUEL-ANTONIO", weight: 0.40, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CR-MANUEL-ANTONIO", weight: 0.28, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "CR-MANUEL-ANTONIO", weight: 0.28, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "CR-MANUEL-ANTONIO", weight: 0.22, season: "winter" },
 
   // ----------------------------------------
@@ -1195,7 +1195,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "CR-ARENAL", weight: 0.58, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "CR-ARENAL", weight: 0.50, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "CR-ARENAL", weight: 0.38, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CR-ARENAL", weight: 0.30, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "CR-ARENAL", weight: 0.30, season: "winter" },
   { sourceRegionId: "DE-BY", destinationId: "CR-ARENAL", weight: 0.25, season: "winter" },
 
   // ----------------------------------------
@@ -1204,8 +1204,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "US-NE", destinationId: "PA-BOCAS", weight: 0.50, season: "winter" },
   { sourceRegionId: "US-SE", destinationId: "PA-BOCAS", weight: 0.45, season: "winter" },
   { sourceRegionId: "CA-EAST", destinationId: "PA-BOCAS", weight: 0.32, season: "winter" },
-  { sourceRegionId: "GB-LONDON", destinationId: "PA-BOCAS", weight: 0.28, season: "winter" },
-  { sourceRegionId: "FR-IDF", destinationId: "PA-BOCAS", weight: 0.20, season: "winter" },
+  { sourceRegionId: "GB-ENG", destinationId: "PA-BOCAS", weight: 0.28, season: "winter" },
+  { sourceRegionId: "FR-ZA", destinationId: "PA-BOCAS", weight: 0.20, season: "winter" },
 
   // ----------------------------------------
   // CO-LETICIA (Amazon, Colombia)
@@ -1213,7 +1213,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CO", destinationId: "CO-LETICIA", weight: 0.65, season: null },
   { sourceRegionId: "BR-SE", destinationId: "CO-LETICIA", weight: 0.38, season: null },
   { sourceRegionId: "US-NE", destinationId: "CO-LETICIA", weight: 0.25, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "CO-LETICIA", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "CO-LETICIA", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "CO-LETICIA", weight: 0.15, season: null },
 
   // ----------------------------------------
@@ -1222,7 +1222,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "PE", destinationId: "PE-AREQUIPA", weight: 0.78, season: null },
   { sourceRegionId: "CL", destinationId: "PE-AREQUIPA", weight: 0.50, season: null },
   { sourceRegionId: "US-NE", destinationId: "PE-AREQUIPA", weight: 0.32, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "PE-AREQUIPA", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "PE-AREQUIPA", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "PE-AREQUIPA", weight: 0.22, season: null },
 
   // ----------------------------------------
@@ -1232,7 +1232,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "CL", destinationId: "PE-HUACACHINA", weight: 0.45, season: null },
   { sourceRegionId: "AR", destinationId: "PE-HUACACHINA", weight: 0.38, season: null },
   { sourceRegionId: "US-NE", destinationId: "PE-HUACACHINA", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "PE-HUACACHINA", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "PE-HUACACHINA", weight: 0.22, season: null },
 
   // ----------------------------------------
   // BR-LENCOIS (Lençóis Maranhenses)
@@ -1240,8 +1240,8 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "BR-LENCOIS", weight: 0.62, season: "summer" },
   { sourceRegionId: "BR-NE", destinationId: "BR-LENCOIS", weight: 0.70, season: "summer" },
   { sourceRegionId: "AR", destinationId: "BR-LENCOIS", weight: 0.30, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "BR-LENCOIS", weight: 0.22, season: "summer" },
-  { sourceRegionId: "FR-IDF", destinationId: "BR-LENCOIS", weight: 0.20, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "BR-LENCOIS", weight: 0.22, season: "summer" },
+  { sourceRegionId: "FR-ZA", destinationId: "BR-LENCOIS", weight: 0.20, season: "summer" },
 
   // ----------------------------------------
   // BR-BONITO (Eco-tourism, Mato Grosso do Sul)
@@ -1249,7 +1249,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "BR-BONITO", weight: 0.68, season: null },
   { sourceRegionId: "BR-NE", destinationId: "BR-BONITO", weight: 0.45, season: null },
   { sourceRegionId: "AR", destinationId: "BR-BONITO", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BR-BONITO", weight: 0.20, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BR-BONITO", weight: 0.20, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BR-BONITO", weight: 0.18, season: null },
 
   // ----------------------------------------
@@ -1258,7 +1258,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "AR-CAFAYATE", weight: 0.80, season: null },
   { sourceRegionId: "CL", destinationId: "AR-CAFAYATE", weight: 0.42, season: null },
   { sourceRegionId: "BR-SE", destinationId: "AR-CAFAYATE", weight: 0.35, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "AR-CAFAYATE", weight: 0.25, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "AR-CAFAYATE", weight: 0.25, season: null },
   { sourceRegionId: "US-NE", destinationId: "AR-CAFAYATE", weight: 0.20, season: null },
 
   // ----------------------------------------
@@ -1268,16 +1268,16 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "CL-LAKE-DISTRICT", weight: 0.65, season: "summer" },
   { sourceRegionId: "BR-SE", destinationId: "CL-LAKE-DISTRICT", weight: 0.35, season: "summer" },
   { sourceRegionId: "US-NE", destinationId: "CL-LAKE-DISTRICT", weight: 0.28, season: "summer" },
-  { sourceRegionId: "GB-LONDON", destinationId: "CL-LAKE-DISTRICT", weight: 0.25, season: "summer" },
+  { sourceRegionId: "GB-ENG", destinationId: "CL-LAKE-DISTRICT", weight: 0.25, season: "summer" },
 
   // ----------------------------------------
   // EC-AMAZON (Ecuador Amazon)
   // ----------------------------------------
   { sourceRegionId: "US-NE", destinationId: "EC-AMAZON", weight: 0.42, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "EC-AMAZON", weight: 0.35, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "EC-AMAZON", weight: 0.28, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "EC-AMAZON", weight: 0.35, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "EC-AMAZON", weight: 0.28, season: null },
   { sourceRegionId: "DE-BY", destinationId: "EC-AMAZON", weight: 0.22, season: null },
-  { sourceRegionId: "AU-EAST", destinationId: "EC-AMAZON", weight: 0.18, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "EC-AMAZON", weight: 0.18, season: null },
 
   // ----------------------------------------
   // BO-SUCRE (Bolivia)
@@ -1285,7 +1285,7 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AR", destinationId: "BO-SUCRE", weight: 0.52, season: null },
   { sourceRegionId: "CL", destinationId: "BO-SUCRE", weight: 0.45, season: null },
   { sourceRegionId: "US-NE", destinationId: "BO-SUCRE", weight: 0.28, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "BO-SUCRE", weight: 0.22, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "BO-SUCRE", weight: 0.22, season: null },
   { sourceRegionId: "DE-BY", destinationId: "BO-SUCRE", weight: 0.18, season: null },
 
   // ----------------------------------------
@@ -1295,15 +1295,15 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "BR-SE", destinationId: "UY-COLONIA", weight: 0.55, season: null },
   { sourceRegionId: "CL", destinationId: "UY-COLONIA", weight: 0.40, season: null },
   { sourceRegionId: "US-NE", destinationId: "UY-COLONIA", weight: 0.22, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "UY-COLONIA", weight: 0.18, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "UY-COLONIA", weight: 0.18, season: null },
 
   // ----------------------------------------
   // GT-TIKAL (Guatemala, Maya ruins)
   // ----------------------------------------
   { sourceRegionId: "US-NE", destinationId: "GT-TIKAL", weight: 0.45, season: null },
   { sourceRegionId: "US-SE", destinationId: "GT-TIKAL", weight: 0.40, season: null },
-  { sourceRegionId: "MX-CENTRAL", destinationId: "GT-TIKAL", weight: 0.55, season: null },
-  { sourceRegionId: "GB-LONDON", destinationId: "GT-TIKAL", weight: 0.30, season: null },
+  { sourceRegionId: "MX", destinationId: "GT-TIKAL", weight: 0.55, season: null },
+  { sourceRegionId: "GB-ENG", destinationId: "GT-TIKAL", weight: 0.30, season: null },
   { sourceRegionId: "DE-BY", destinationId: "GT-TIKAL", weight: 0.22, season: null },
-  { sourceRegionId: "FR-IDF", destinationId: "GT-TIKAL", weight: 0.20, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "GT-TIKAL", weight: 0.20, season: null },
 ];

@@ -9,6 +9,16 @@ async function main() {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
   const db = drizzle(pool, { schema });
 
+  // Clear all tables in dependency order (children first)
+  console.log("Clearing existing data...");
+  await db.delete(schema.heatmapCache);
+  await db.delete(schema.majorEvents);
+  await db.delete(schema.travelPatterns);
+  await db.delete(schema.schoolHolidays);
+  await db.delete(schema.destinations);
+  await db.delete(schema.sourceRegions);
+  console.log("  Done.");
+
   console.log("Seeding source regions...");
   await db.insert(schema.sourceRegions).values(
     sourceRegions.map((r) => ({
