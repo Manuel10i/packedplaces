@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Map, { type MapRef, type MapLayerMouseEvent } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { HeatmapLayer } from "./HeatmapLayer";
@@ -8,6 +8,7 @@ import { HolidayRegionsLayer } from "./HolidayRegionsLayer";
 import { DestinationTooltip } from "./DestinationTooltip";
 import { useMapStore } from "@/store/useMapStore";
 import { useHeatmapData, useAllDestinations } from "@/hooks/useHeatmapData";
+import { useLocale } from "next-intl";
 
 const DEFAULT_VIEW = {
   latitude: 20,
@@ -29,8 +30,45 @@ function getInitialView() {
   return DEFAULT_VIEW;
 }
 
+/**
+ * Set map label language by replacing text-field on all symbol layers.
+ *
+ * CARTO vector tiles use mixed naming conventions:
+ *   - `name_en`, `name_de` (underscore)
+ *   - `name:fr`, `name:es`, `name:it`, ... (colon)
+ *   - `name` (local/default)
+ *
+ * We use a MapLibre `coalesce` expression to try the locale-specific
+ * property first, then fall back to `name` (local) then `name_en`.
+ */
+function setMapLanguage(map: MapRef, locale: string) {
+  // The tile properties to try, in priority order
+  const localeProp = locale === "en" ? "name_en" : locale === "de" ? "name_de" : `name:${locale}`;
+  const nameExpr: unknown[] = ["coalesce", ["get", localeProp], ["get", "name"], ["get", "name_en"]];
+
+  const style = map.getStyle();
+  if (!style?.layers) return;
+
+  const gl = map.getMap();
+  for (const layer of style.layers) {
+    if (layer.type !== "symbol") continue;
+    const textField = (layer.layout as Record<string, unknown>)?.["text-field"];
+    if (!textField) continue;
+
+    // Only touch layers that reference a name property
+    const s = JSON.stringify(textField);
+    if (!s.includes("name")) continue;
+
+    // Skip layers that use non-name fields like {iso_a2} or {ref}
+    if (!s.includes("name_en") && !s.includes("name_de") && !s.includes("{name}") && !s.includes("name:")) continue;
+
+    gl.setLayoutProperty(layer.id, "text-field", nameExpr);
+  }
+}
+
 export function MapView() {
   const mapRef = useRef<MapRef>(null);
+  const locale = useLocale();
   const { selectedWeek, selectedYear, setHoveredDestination, setViewportBounds, setViewportCenter, showHeatmap } = useMapStore();
   const { data } = useHeatmapData(selectedWeek, selectedYear);
   const { data: allDestinations } = useAllDestinations();
@@ -107,9 +145,22 @@ export function MapView() {
     });
   }, [setViewportBounds, setViewportCenter]);
 
+  const mapLoaded = useRef(false);
+
   const onLoad = useCallback(() => {
+    mapLoaded.current = true;
+    if (mapRef.current) {
+      setMapLanguage(mapRef.current, locale);
+    }
     updateViewport();
-  }, [updateViewport]);
+  }, [updateViewport, locale]);
+
+  // Re-apply language when locale changes after map is already loaded
+  useEffect(() => {
+    if (mapLoaded.current && mapRef.current) {
+      setMapLanguage(mapRef.current, locale);
+    }
+  }, [locale]);
 
   const interactiveLayerIds = showHeatmap
     ? ["destination-circles", "all-destinations"]
