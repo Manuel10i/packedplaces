@@ -30,8 +30,17 @@ interface EventMarker {
   label: string;
 }
 
+const SHOW_ZERO_SCORES = process.env.NEXT_PUBLIC_SHOW_ZERO_SCORES !== "false";
+
 export function HeatmapLayer({ data, allDestinations }: Props) {
-  const geojson = data ?? emptyGeoJSON;
+  const geojson = useMemo(() => {
+    if (!data) return emptyGeoJSON;
+    if (SHOW_ZERO_SCORES) return data;
+    return {
+      ...data,
+      features: data.features.filter((f) => f.properties.busynessScore > 0),
+    };
+  }, [data]);
   const allDestsGeojson = allDestinations ?? emptyGeoJSON;
 
   // Build event markers by matching active events to destination coordinates
@@ -84,17 +93,19 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
   return (
     <>
       {/* All destinations as grey dots - rendered first (beneath heatmap) */}
-      <Source id="all-destinations-source" type="geojson" data={allDestsGeojson}>
-        <Layer
-          id="all-destinations"
-          type="circle"
-          paint={{
-            "circle-radius": 3,
-            "circle-color": "#9ca3af",
-            "circle-opacity": 0.5,
-          }}
-        />
-      </Source>
+      {SHOW_ZERO_SCORES && (
+        <Source id="all-destinations-source" type="geojson" data={allDestsGeojson}>
+          <Layer
+            id="all-destinations"
+            type="circle"
+            paint={{
+              "circle-radius": 3,
+              "circle-color": "#9ca3af",
+              "circle-opacity": 0.5,
+            }}
+          />
+        </Source>
+      )}
 
       {/* Heatmap data layer - rendered on top */}
       <Source id="heatmap-source" type="geojson" data={geojson}>
