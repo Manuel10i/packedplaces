@@ -1,4 +1,4 @@
-import type { Hemisphere } from "@/types";
+import { startOfISOWeek } from "date-fns";
 
 /**
  * Category-level capacity defaults with seasonal variation.
@@ -19,54 +19,40 @@ export const CATEGORY_CAPACITY: Record<string, { peak: number; offPeak: number }
   desert:   { peak: 0.5, offPeak: 0.2 },
 };
 
-/**
- * Determine the hemisphere of a destination from its latitude.
- * >15°N = northern, <-15° = southern, else equatorial.
- */
-function getDestinationHemisphere(lat: number): Hemisphere {
-  if (lat > 15) return "northern";
-  if (lat < -15) return "southern";
-  return "equatorial";
+/** Map ISO week (1-53) to month (1-12) using date-fns startOfISOWeek. */
+function getMonthForWeek(week: number): number {
+  // Use a reference year (2024) to convert week number to a date
+  const date = startOfISOWeek(new Date(2024, 0, 4 + (week - 1) * 7));
+  return date.getMonth() + 1; // getMonth() is 0-based
 }
 
 /**
- * Determines the season for a given ISO week number, accounting for hemisphere.
+ * Attractiveness factor (0-1) for a destination in a given week.
+ * Peak months -> 1.0, adjacent months -> 0.25, other months -> 0.05
+ *
+ * Values are intentionally aggressive so that off-season demand drops
+ * sharply (e.g. monsoon onset is abrupt, not gradual).
  */
-function getSeasonForWeek(
-  week: number,
-  hemisphere: Hemisphere,
-): "winter" | "summer" | "shoulder" {
-  if (hemisphere === "equatorial") return "shoulder";
-
-  const isNorthernWinter = week >= 44 || week <= 14;
-  const isNorthernSummer = week >= 22 && week <= 36;
-
-  if (hemisphere === "southern") {
-    if (isNorthernWinter) return "summer";
-    if (isNorthernSummer) return "winter";
-    return "shoulder";
-  }
-
-  if (isNorthernWinter) return "winter";
-  if (isNorthernSummer) return "summer";
-  return "shoulder";
+export function getAttractiveness(peakMonths: number[], week: number): number {
+  if (peakMonths.length === 12) return 1.0; // year-round shortcut
+  const month = getMonthForWeek(week);
+  if (peakMonths.includes(month)) return 1.0;
+  const prev = month === 1 ? 12 : month - 1;
+  const next = month === 12 ? 1 : month + 1;
+  if (peakMonths.includes(prev) || peakMonths.includes(next)) return 0.25;
+  return 0.05;
 }
 
 /**
  * Compute the effective capacity for a destination in a given week.
  *
- * Logic:
- * - Determine destination hemisphere from latitude
- * - Get current season at the destination
- * - If destination's seasonality matches current season -> peak capacity
- * - If opposite season -> offPeak capacity
- * - If shoulder or year-round -> average of peak + offPeak
- * - If capacityOverride is provided, it replaces peak capacity
+ * Uses peakMonths to derive an attractiveness factor (0-1), then
+ * interpolates between offPeak and peak capacity.
+ * If capacityOverride is provided, it replaces peak capacity.
  */
 export function getSeasonalCapacity(
   category: string,
-  lat: number,
-  seasonality: string,
+  peakMonths: number[],
   week: number,
   capacityOverride?: number,
 ): number {
@@ -74,19 +60,13 @@ export function getSeasonalCapacity(
   const peak = capacityOverride ?? cap.peak;
   const offPeak = capacityOverride ? offPeak_from_override(capacityOverride, cap) : cap.offPeak;
 
-  const hemisphere = getDestinationHemisphere(lat);
-  const currentSeason = getSeasonForWeek(week, hemisphere);
-
-  if (seasonality === "year-round" || currentSeason === "shoulder") {
-    return (peak + offPeak) / 2;
-  }
-
-  // Check if the destination's peak season matches the current season
-  const isPeakSeason =
-    (seasonality === "winter" && currentSeason === "winter") ||
-    (seasonality === "summer" && currentSeason === "summer");
-
-  return isPeakSeason ? peak : offPeak;
+  // Use a higher floor (0.5) for capacity — infrastructure doesn't shrink as
+  // aggressively as demand.  Demand in heatmap.ts uses the raw attractiveness
+  // (which can drop to 0.15), so the congestion ratio drops significantly
+  // during off-season instead of demand and capacity cancelling each other out.
+  const attractiveness = getAttractiveness(peakMonths, week);
+  const capacityFactor = Math.max(attractiveness, 0.5);
+  return offPeak + (peak - offPeak) * capacityFactor;
 }
 
 /**

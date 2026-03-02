@@ -3,7 +3,7 @@ import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { startOfISOWeek, endOfISOWeek, format } from "date-fns";
 import * as schema from "../db/schema";
 import type { Hemisphere } from "@/types";
-import { getSeasonalCapacity } from "../data/capacity";
+import { getSeasonalCapacity, getAttractiveness } from "../data/capacity";
 import { destinations as staticDestinations } from "../data/destinations";
 
 interface ContributingSource {
@@ -69,12 +69,14 @@ export async function precomputeHeatmap(
   // Max population for normalization
   const maxPopulation = Math.max(...allRegions.map((r) => r.population));
 
-  // Build capacity override lookup from static destination data
+  // Build capacity override and peakMonths lookups from static destination data
   const capacityOverrides = new Map<string, number>();
+  const peakMonthsMap = new Map<string, number[]>();
   for (const d of staticDestinations) {
     if (d.capacityOverride != null) {
       capacityOverrides.set(d.id, d.capacityOverride);
     }
+    peakMonthsMap.set(d.id, d.peakMonths);
   }
 
   // Build lookup maps
@@ -145,6 +147,9 @@ export async function precomputeHeatmap(
       const sources: ContributingSource[] = [];
       const patterns = patternsByDest.get(dest.id) ?? [];
 
+      const peakMonths = peakMonthsMap.get(dest.id) ?? Array.from({length: 12}, (_, i) => i + 1);
+      const attractiveness = getAttractiveness(peakMonths, week);
+
       for (const pattern of patterns) {
         const region = regionMap.get(pattern.regionId);
         if (!region) continue;
@@ -156,7 +161,7 @@ export async function precomputeHeatmap(
         const populationFactor = region.population / maxPopulation;
         const isOnHoliday = onHolidayRegionIds.has(region.id);
         const boost = isOnHoliday ? HOLIDAY_BOOST : 1.0;
-        const contribution = pattern.weight * populationFactor * dest.basePopularity * boost;
+        const contribution = pattern.weight * populationFactor * dest.basePopularity * boost * attractiveness;
 
         totalScore += contribution;
         sources.push({
@@ -176,8 +181,7 @@ export async function precomputeHeatmap(
         // Compute congestion: raw traffic divided by seasonal capacity
         const capacity = getSeasonalCapacity(
           dest.category,
-          dest.lat,
-          dest.seasonality,
+          peakMonths,
           week,
           capacityOverrides.get(dest.id),
         );

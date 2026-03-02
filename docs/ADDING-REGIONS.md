@@ -61,12 +61,29 @@ Add entries to the matching destinations file:
   lat: 40.00,
   lng: 20.00,
   category: "beach",        // ski | beach | city | lake | nature | cultural | safari | island | mountain | desert | tropical
-  seasonality: "summer",    // "winter" | "summer" | "year-round"
+  peakMonths: [5, 6, 7, 8, 9],  // Months 1-12 when destination is in peak season
   basePopularity: 0.65,     // 0-1 scale (see DATA-SOURCES.md for calibration)
   region: "europe",         // World region
   capacityOverride: 0.4,    // Optional: override category capacity for outliers (see DATA-SOURCES.md)
 }
 ```
+
+### Choosing peakMonths
+
+`peakMonths` should reflect the months when the destination actually receives the most tourists, based on real-world weather and climate:
+
+| Pattern | Example peakMonths | Destinations |
+|---------|-------------------|--------------|
+| Northern summer beach | `[5, 6, 7, 8, 9]` | Mediterranean, US coasts |
+| Southern summer beach | `[11, 12, 1, 2, 3]` | Australia, South America |
+| Monsoon avoidance | `[3, 4, 5, 10, 11]` | Nepal, Northern India |
+| Tropical dry season | `[4, 5, 6, 7, 8, 9, 10]` | Bali, Lombok |
+| Desert winter | `[10, 11, 12, 1, 2, 3, 4]` | Egypt, Jordan |
+| Safari dual-peak | `[1, 2, 7, 8, 9, 10]` | Kenya, Tanzania |
+| Ski season | `[12, 1, 2, 3]` | Alps, Rockies |
+| Year-round city | `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]` | Paris, London, Tokyo |
+
+Demand drops sharply outside peak months (to 25% for adjacent months, 5% for far-off months), so getting these right is important for accurate crowdedness scores.
 
 Most destinations don't need `capacityOverride` — the category-level capacity defaults handle typical destinations well. Only add an override for extreme outliers where the category default would give misleading crowdedness scores (e.g., mega-cities like Bangkok that dwarf a typical "city", or tiny islands like Santorini that are much smaller than a typical "beach" destination). See `src/lib/data/capacity.ts` for the category defaults.
 

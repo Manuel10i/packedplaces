@@ -37,7 +37,7 @@ Destinations are places people travel to. Each has:
 - **id**: Unique identifier (e.g., `ES-MALLORCA`, `TH-PHUKET`, `US-HAWAII`)
 - **country**: ISO country code
 - **category**: One of `ski`, `beach`, `city`, `lake`, `nature`, `cultural`, `safari`, `island`, `mountain`, `desert`, `tropical`
-- **seasonality**: `"winter"`, `"summer"`, or `"year-round"` — when the destination is in season
+- **peakMonths**: Array of months (1-12) when the destination is in peak season. Reflects real-world weather patterns — e.g., `[3, 4, 5, 10, 11]` for Everest (avoiding monsoon), `[4, 5, 6, 7, 8, 9, 10]` for Bali (dry season), `[10, 11, 12, 1, 2, 3, 4]` for Cairo (avoiding summer heat). Year-round destinations use all 12 months.
 - **basePopularity**: 0-1 scale calibrated from UNWTO international arrival volumes. 1.0 = top global destinations (Paris, Bangkok), 0.3 = niche destinations
 - **capacityOverride** (optional): Overrides the category-level capacity for outlier destinations. Used by the congestion scoring system. Example: Bangkok and NYC get `8.0` (mega-city, far beyond typical "city" capacity), Santorini gets `0.4` (tiny island, much less than typical "beach")
 - **lat/lng**: Point coordinates for map display
@@ -148,12 +148,13 @@ For each destination D, for each week W:
     2. Check if pattern's season matches (null = always matches)
     3. Check if R is on school holiday during week W
     4. holidayBoost = isOnHoliday ? 1.5 : 1.0
-    5. contribution = pattern.weight * (R.population / maxPopulation) * holidayBoost
-    6. rawScore += contribution
-  For each active event E at destination D during week W:       ← NEW
-    7. eventBoost = E.trafficBoost * D.basePopularity
-    8. rawScore += eventBoost
-  capacity = getSeasonalCapacity(D.category, D.lat, D.seasonality, W, D.capacityOverride)
+    5. attractiveness = getAttractiveness(D.peakMonths, W)
+    6. contribution = pattern.weight * (R.population / maxPopulation) * holidayBoost * attractiveness
+    7. rawScore += contribution
+  For each active event E at destination D during week W:
+    8. eventBoost = E.trafficBoost * D.basePopularity
+    9. rawScore += eventBoost
+  capacity = getSeasonalCapacity(D.category, D.peakMonths, W, D.capacityOverride)
   congestion = rawScore / capacity
   Normalize congestion to 0-1 range across all destinations for week W
 ```
@@ -176,11 +177,14 @@ Each destination category has a default capacity with seasonal variation (`src/l
 | mountain | 0.6 | 0.3 | Very limited |
 | desert | 0.5 | 0.2 | Extremely limited |
 
-**Seasonal capacity selection:**
-- Destination hemisphere is determined from latitude (>15°N = northern, <-15° = southern, else equatorial)
-- If destination's `seasonality` matches the current season at its location → peak capacity
-- If opposite season → off-peak capacity
-- If shoulder season or year-round → average of peak and off-peak
+**Monthly attractiveness model:**
+Each destination's `peakMonths` array drives both demand and capacity:
+- **Peak months** (month in peakMonths): attractiveness = 1.0 → full demand, peak capacity
+- **Adjacent months** (month next to a peak month): attractiveness = 0.25 → sharp demand drop
+- **Off-season months** (far from any peak month): attractiveness = 0.05 → near-zero demand
+- **Capacity floor**: Capacity uses `max(attractiveness, 0.5)` so infrastructure doesn't collapse proportionally — this ensures off-season congestion drops due to low demand, not inflated capacity
+
+Weather patterns modeled: South/SE Asian monsoons, East Asian rainy seasons, desert extreme heat (40°C+), safari dry/wet seasons, Pacific cyclone seasons, tropical dry/wet cycles, polar winters, and altitude-specific seasons (e.g., Everest trekking windows).
 
 **Capacity overrides:** Outlier destinations can set `capacityOverride` to replace the category peak. The off-peak is scaled proportionally. Current overrides: Bangkok (8.0), NYC (8.0), London (7.0), Paris (7.0), Santorini (0.4), Maldives (0.3).
 

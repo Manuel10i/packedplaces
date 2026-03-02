@@ -47,8 +47,8 @@ describe("destinations data integrity", () => {
       expect(dest.category).toBeTruthy();
       expect(typeof dest.category).toBe("string");
 
-      expect(dest.seasonality).toBeTruthy();
-      expect(typeof dest.seasonality).toBe("string");
+      expect(Array.isArray(dest.peakMonths)).toBe(true);
+      expect(dest.peakMonths.length).toBeGreaterThan(0);
 
       expect(typeof dest.basePopularity).toBe("number");
 
@@ -96,10 +96,16 @@ describe("destinations data integrity", () => {
     }
   });
 
-  it("all seasonality values are valid", () => {
-    const validSeasonalities = ["winter", "summer", "year-round"];
+  it("all peakMonths values are valid (1-12, no duplicates, at most 12)", () => {
     for (const dest of allDestinations) {
-      expect(validSeasonalities).toContain(dest.seasonality);
+      expect(dest.peakMonths.length).toBeGreaterThan(0);
+      expect(dest.peakMonths.length).toBeLessThanOrEqual(12);
+      const unique = new Set(dest.peakMonths);
+      expect(unique.size).toBe(dest.peakMonths.length);
+      for (const m of dest.peakMonths) {
+        expect(m).toBeGreaterThanOrEqual(1);
+        expect(m).toBeLessThanOrEqual(12);
+      }
     }
   });
 

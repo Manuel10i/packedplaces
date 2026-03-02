@@ -44,7 +44,7 @@ async function main() {
       lat: d.lat,
       lng: d.lng,
       category: d.category,
-      seasonality: d.seasonality,
+      peakMonths: d.peakMonths,
       basePopularity: d.basePopularity,
       region: d.region,
     })),

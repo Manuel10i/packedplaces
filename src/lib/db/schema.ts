@@ -28,7 +28,7 @@ export const destinations = pgTable("destinations", {
   lat: real("lat").notNull(),
   lng: real("lng").notNull(),
   category: varchar("category", { length: 16 }).notNull(),
-  seasonality: varchar("seasonality", { length: 16 }).notNull(),
+  peakMonths: jsonb("peak_months").notNull().$type<number[]>(),
   basePopularity: real("base_popularity").notNull().default(1.0),
   region: varchar("region", { length: 16 }).notNull().default("europe"),
 });

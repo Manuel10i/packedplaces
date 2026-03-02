@@ -20,7 +20,7 @@ export interface Destination {
   lat: number;
   lng: number;
   category: "ski" | "beach" | "city" | "lake" | "nature" | "cultural" | "safari" | "island" | "mountain" | "desert" | "tropical";
-  seasonality: "winter" | "summer" | "year-round";
+  peakMonths: number[];  // Months 1-12 when destination is in peak season
   basePopularity: number;
   region: WorldRegion;
   capacityOverride?: number;

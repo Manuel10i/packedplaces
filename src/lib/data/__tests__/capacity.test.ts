@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { CATEGORY_CAPACITY, getSeasonalCapacity } from "@/lib/data/capacity";
+import { CATEGORY_CAPACITY, getSeasonalCapacity, getAttractiveness } from "@/lib/data/capacity";
 
 describe("CATEGORY_CAPACITY", () => {
   const expectedCategories = [
@@ -28,112 +28,158 @@ describe("CATEGORY_CAPACITY", () => {
   });
 });
 
+describe("getAttractiveness", () => {
+  it("returns 1.0 for year-round destinations (all 12 months)", () => {
+    const allMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    expect(getAttractiveness(allMonths, 1)).toBe(1.0);
+    expect(getAttractiveness(allMonths, 26)).toBe(1.0);
+    expect(getAttractiveness(allMonths, 52)).toBe(1.0);
+  });
+
+  it("returns 1.0 for a peak month", () => {
+    // Summer beach: peak months 5-9, week 30 ≈ July -> peak
+    expect(getAttractiveness([5, 6, 7, 8, 9], 30)).toBe(1.0);
+  });
+
+  it("returns 0.25 for an adjacent month", () => {
+    // Peak months 5-9, month 4 (April) is adjacent to 5
+    // Week 15 ≈ April -> adjacent
+    expect(getAttractiveness([5, 6, 7, 8, 9], 15)).toBe(0.25);
+  });
+
+  it("returns 0.05 for a far-off month", () => {
+    // Peak months 5-9, month 1 (January) is not adjacent
+    // Week 1 ≈ January -> far off
+    expect(getAttractiveness([5, 6, 7, 8, 9], 1)).toBe(0.05);
+  });
+
+  it("handles wrap-around: December adjacent to January peak", () => {
+    // Peak months include January (1), so December (12) is adjacent
+    // Week 50 ≈ December -> adjacent to month 1
+    expect(getAttractiveness([1, 2, 3], 50)).toBe(0.25);
+  });
+
+  it("handles wrap-around: January adjacent to December peak", () => {
+    // Peak months include December (12), so January (1) is adjacent
+    // Week 1 ≈ January -> adjacent to month 12
+    expect(getAttractiveness([11, 12], 1)).toBe(0.25);
+  });
+
+  it("Everest monsoon: June (adjacent to May peak) gets 0.25", () => {
+    // peakMonths [3,4,5,10,11], June = adjacent to May
+    // Week 24 ≈ June
+    expect(getAttractiveness([3, 4, 5, 10, 11], 24)).toBe(0.25);
+  });
+
+  it("Everest monsoon: July (far off) gets 0.05", () => {
+    // peakMonths [3,4,5,10,11], July = not adjacent to any peak
+    // Week 30 ≈ July
+    expect(getAttractiveness([3, 4, 5, 10, 11], 30)).toBe(0.05);
+  });
+});
+
 describe("getSeasonalCapacity", () => {
-  // Beach: peak=2.0, offPeak=0.5, summer seasonality
-  // Northern hemisphere (lat > 15): week 30 is summer, week 1 is winter
+  // Beach: peak=2.0, offPeak=0.5
 
-  it("returns peak capacity when season matches (beach in northern summer)", () => {
-    // Beach destination, northern hemisphere (lat=40), summer seasonality, week 30 = summer
-    const result = getSeasonalCapacity("beach", 40, "summer", 30);
-    expect(result).toBe(2.0); // peak
-  });
-
-  it("returns offPeak capacity for opposite season (beach in northern winter)", () => {
-    // Beach destination, northern hemisphere (lat=40), summer seasonality, week 1 = winter
-    const result = getSeasonalCapacity("beach", 40, "summer", 1);
-    expect(result).toBe(0.5); // offPeak
-  });
-
-  it("returns peak capacity for ski in northern winter", () => {
-    // Ski destination, northern hemisphere (lat=47), winter seasonality, week 1 = winter
-    const result = getSeasonalCapacity("ski", 47, "winter", 1);
-    expect(result).toBe(1.5); // peak
-  });
-
-  it("returns offPeak for ski in northern summer", () => {
-    // Ski, northern hemisphere, winter seasonality, week 30 = summer (opposite)
-    const result = getSeasonalCapacity("ski", 47, "winter", 30);
-    expect(result).toBe(0.3); // offPeak
-  });
-
-  it("returns average for year-round seasonality", () => {
-    // City, northern hemisphere, year-round, any week
-    // city: peak=5.0, offPeak=4.0 -> average = 4.5
-    const result = getSeasonalCapacity("city", 48, "year-round", 30);
-    expect(result).toBe(4.5);
-  });
-
-  it("returns average for shoulder season", () => {
-    // Beach, northern hemisphere, summer seasonality, week 20 = shoulder
-    // beach: peak=2.0, offPeak=0.5 -> average = 1.25
-    const result = getSeasonalCapacity("beach", 40, "summer", 20);
-    expect(result).toBe(1.25);
-  });
-
-  it("handles capacityOverride by replacing peak and scaling offPeak proportionally", () => {
-    // Beach default: peak=2.0, offPeak=0.5, ratio=0.25
-    // Override peak=4.0 -> offPeak = 4.0 * 0.25 = 1.0
-    // Summer seasonality, week 30 = northern summer (peak) -> returns 4.0
-    const result = getSeasonalCapacity("beach", 40, "summer", 30, 4.0);
-    expect(result).toBe(4.0);
-  });
-
-  it("capacityOverride scales offPeak when in off-season", () => {
-    // Beach default: peak=2.0, offPeak=0.5, ratio=0.25
-    // Override peak=4.0 -> offPeak = 4.0 * 0.25 = 1.0
-    // Summer seasonality, week 1 = northern winter (off-peak) -> returns 1.0
-    const result = getSeasonalCapacity("beach", 40, "summer", 1, 4.0);
-    expect(result).toBe(1.0);
-  });
-
-  it("capacityOverride returns average for year-round seasonality", () => {
-    // City default: peak=5.0, offPeak=4.0, ratio=0.8
-    // Override peak=7.0 -> offPeak = 7.0 * 0.8 = 5.6
-    // Year-round -> average = (7.0 + 5.6) / 2 = 6.3
-    const result = getSeasonalCapacity("city", 48, "year-round", 30, 7.0);
-    expect(result).toBeCloseTo(6.3, 10);
-  });
-
-  it("southern hemisphere inverts seasons (summer destination, week 1 = southern summer)", () => {
-    // lat=-30 (southern hemisphere), summer seasonality, week 1
-    // In southern hemisphere, week 1 (northern winter) = summer -> peak
-    // Beach: peak=2.0
-    const result = getSeasonalCapacity("beach", -30, "summer", 1);
+  it("returns peak capacity during peak months", () => {
+    // Beach, summer peak months [5,6,7,8,9], week 30 ≈ July = peak
+    // capacity = 0.5 + (2.0 - 0.5) * 1.0 = 2.0
+    const result = getSeasonalCapacity("beach", [5, 6, 7, 8, 9], 30);
     expect(result).toBe(2.0);
   });
 
-  it("southern hemisphere: summer destination in week 30 = winter (off-peak)", () => {
-    // lat=-30 (southern hemisphere), summer seasonality, week 30
-    // In southern hemisphere, week 30 (northern summer) = winter -> off-peak
-    // Beach: offPeak=0.5
-    const result = getSeasonalCapacity("beach", -30, "summer", 30);
-    expect(result).toBe(0.5);
+  it("returns midpoint capacity during far-off months (capacity floor at 0.5)", () => {
+    // Beach, summer peak months [5,6,7,8,9], week 1 ≈ January = far off
+    // attractiveness=0.05 but capacity uses max(0.05, 0.5)=0.5
+    // capacity = 0.5 + 1.5 * 0.5 = 1.25
+    const result = getSeasonalCapacity("beach", [5, 6, 7, 8, 9], 1);
+    expect(result).toBeCloseTo(1.25, 10);
   });
 
-  it("equatorial always returns shoulder (average)", () => {
-    // lat=5 (equatorial, between -15 and 15), any seasonality, any week
-    // Beach: peak=2.0, offPeak=0.5 -> average = 1.25
-    const result = getSeasonalCapacity("beach", 5, "summer", 30);
-    expect(result).toBe(1.25);
+  it("returns peak capacity for ski in winter months", () => {
+    // Ski: peak=1.5, offPeak=0.3, winter peak months [11,12,1,2,3], week 1 ≈ Jan = peak
+    const result = getSeasonalCapacity("ski", [11, 12, 1, 2, 3], 1);
+    expect(result).toBe(1.5);
   });
 
-  it("unknown category returns default capacity", () => {
-    // Unknown category defaults to { peak: 1.0, offPeak: 0.5 }
-    // Northern hemisphere, winter seasonality, week 1 (winter) -> peak = 1.0
-    const result = getSeasonalCapacity("unknown_category", 48, "winter", 1);
+  it("returns midpoint for ski in summer months (capacity floor at 0.5)", () => {
+    // Ski, winter peak months [11,12,1,2,3], week 30 ≈ July = far off
+    // attractiveness=0.05 capped to 0.5
+    // capacity = 0.3 + (1.5 - 0.3) * 0.5 = 0.9
+    const result = getSeasonalCapacity("ski", [11, 12, 1, 2, 3], 30);
+    expect(result).toBeCloseTo(0.9, 10);
+  });
+
+  it("returns full peak for year-round destinations", () => {
+    // City: peak=5.0, offPeak=4.0, all 12 months
+    // attractiveness = 1.0, capacity = 4.0 + 1.0 * 1.0 = 5.0
+    const allMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const result = getSeasonalCapacity("city", allMonths, 30);
+    expect(result).toBe(5.0);
+  });
+
+  it("returns midpoint capacity for adjacent months (floor at 0.5)", () => {
+    // Beach, peak [5,6,7,8,9], week 15 ≈ April = adjacent (0.25 -> capped to 0.5)
+    // capacity = 0.5 + 1.5 * 0.5 = 1.25
+    const result = getSeasonalCapacity("beach", [5, 6, 7, 8, 9], 15);
+    expect(result).toBeCloseTo(1.25, 10);
+  });
+
+  it("handles capacityOverride during peak months", () => {
+    // Override peak=4.0 -> offPeak = 4.0 * 0.25 = 1.0
+    // Week 30 = peak -> capacity = 1.0 + 3.0 * 1.0 = 4.0
+    const result = getSeasonalCapacity("beach", [5, 6, 7, 8, 9], 30, 4.0);
+    expect(result).toBe(4.0);
+  });
+
+  it("capacityOverride during off-season uses capacity floor", () => {
+    // Override peak=4.0 -> offPeak = 1.0
+    // Week 1 = far off, attractiveness=0.05 capped to 0.5
+    // capacity = 1.0 + 3.0 * 0.5 = 2.5
+    const result = getSeasonalCapacity("beach", [5, 6, 7, 8, 9], 1, 4.0);
+    expect(result).toBeCloseTo(2.5, 10);
+  });
+
+  it("capacityOverride with year-round returns peak capacity", () => {
+    // Override peak=7.0 -> offPeak = 5.6, year-round -> factor 1.0
+    // capacity = 5.6 + 1.4 * 1.0 = 7.0
+    const allMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const result = getSeasonalCapacity("city", allMonths, 30, 7.0);
+    expect(result).toBeCloseTo(7.0, 10);
+  });
+
+  it("unknown category returns default capacity during peak", () => {
+    // { peak: 1.0, offPeak: 0.5 }, peak month -> 0.5 + 0.5 * 1.0 = 1.0
+    const result = getSeasonalCapacity("unknown_category", [11, 12, 1, 2, 3], 1);
     expect(result).toBe(1.0);
   });
 
-  it("unknown category returns default offPeak for opposite season", () => {
-    // Unknown defaults to { peak: 1.0, offPeak: 0.5 }
-    // Winter seasonality, week 30 (summer, opposite) -> offPeak = 0.5
-    const result = getSeasonalCapacity("unknown_category", 48, "winter", 30);
-    expect(result).toBe(0.5);
+  it("unknown category returns midpoint for off-season", () => {
+    // { peak: 1.0, offPeak: 0.5 }, far off -> factor capped to 0.5
+    // 0.5 + 0.5 * 0.5 = 0.75
+    const result = getSeasonalCapacity("unknown_category", [11, 12, 1, 2, 3], 30);
+    expect(result).toBeCloseTo(0.75, 10);
   });
 
-  it("unknown category returns average for year-round", () => {
-    // Unknown defaults to { peak: 1.0, offPeak: 0.5 } -> average = 0.75
-    const result = getSeasonalCapacity("unknown_category", 48, "year-round", 30);
-    expect(result).toBe(0.75);
+  it("unknown category returns peak for year-round", () => {
+    const allMonths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const result = getSeasonalCapacity("unknown_category", allMonths, 30);
+    expect(result).toBe(1.0);
+  });
+
+  it("Everest monsoon: congestion drops dramatically in July", () => {
+    // Mountain: peak=0.6, offPeak=0.3, peakMonths=[3,4,5,10,11]
+    // October (peak): capacity = 0.3 + 0.3 * 1.0 = 0.6
+    // July (far off): capacity = 0.3 + 0.3 * 0.5 = 0.45 (floor)
+    // Demand ratio: 0.05 (July) vs 1.0 (October)
+    // Congestion ratio: (D*0.05/0.45) / (D/0.6) = 0.067 → ~7% of peak
+    const peakMonths = [3, 4, 5, 10, 11];
+    const capPeak = getSeasonalCapacity("mountain", peakMonths, 43); // Oct
+    const capMonsoon = getSeasonalCapacity("mountain", peakMonths, 30); // Jul
+    expect(capPeak).toBe(0.6);
+    expect(capMonsoon).toBeCloseTo(0.45, 10);
+    // With demand attractiveness: 0.05/0.45 vs 1.0/0.6 → ratio ≈ 0.067
+    const congestionRatio = (0.05 / capMonsoon) / (1.0 / capPeak);
+    expect(congestionRatio).toBeCloseTo(0.067, 2);
   });
 });

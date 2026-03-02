@@ -114,7 +114,7 @@ drizzle/
 | country | varchar(4) | ISO country code |
 | lat, lng | double | Point coordinates |
 | category | varchar(16) | ski, beach, city, etc. |
-| seasonality | varchar(16) | winter, summer, year-round |
+| peak_months | jsonb | Array of months (1-12) when destination is in peak season |
 | base_popularity | double | 0-1 popularity score |
 | region | varchar(16) | World region grouping |
 
@@ -169,9 +169,27 @@ Query parameters:
 
 Response: GeoJSON FeatureCollection with destination points, each having a `busynessScore` (capacity-normalized crowdedness) and `contributingSources` in properties. Metadata includes `activeEvents` for the requested week (name, destinationId, category, dates).
 
-## Hemisphere-Aware Seasonality
+## Seasonality Model
 
-The season for a given week depends on the source region's hemisphere:
+### Per-Month Peak Seasons (Destination-Side)
+
+Each destination has a `peakMonths` array (e.g., `[3, 4, 5, 10, 11]` for Everest) that defines when it is in peak season. An **attractiveness factor** is derived from this for each ISO week:
+
+| Current month vs. peakMonths | Attractiveness |
+|------------------------------|---------------|
+| Month is in peakMonths | 1.0 (full demand) |
+| Month is adjacent to a peak month | 0.25 |
+| Month is far from any peak month | 0.05 |
+
+This attractiveness factor is used in two ways:
+1. **Demand dampening**: Multiplied into travel pattern contributions so off-season demand drops sharply
+2. **Capacity interpolation**: Interpolates between off-peak and peak capacity (with a floor of 0.5 to prevent infrastructure from collapsing proportionally)
+
+Weather patterns modeled include: South/SE Asian monsoons, East Asian rainy seasons, desert extreme heat, safari dry/wet seasons, cyclone and typhoon seasons, polar winters, and tropical dry/wet cycles.
+
+### Hemisphere-Aware Seasons (Source-Side)
+
+The season for a given week depends on the **source region's** hemisphere:
 
 | Week Range | Northern | Southern | Equatorial |
 |------------|----------|----------|------------|
@@ -179,4 +197,4 @@ The season for a given week depends on the source region's hemisphere:
 | 22-36 | Summer | Winter | Shoulder |
 | 15-21, 37-43 | Shoulder | Shoulder | Shoulder |
 
-This ensures that Australian winter holidays (June-July) correctly match "winter" travel patterns, even though it's summer in the northern hemisphere.
+This ensures that Australian winter holidays (June-July) correctly match "winter" travel patterns, even though it's summer in the northern hemisphere. The source-side season filtering and the destination-side attractiveness model work together to produce accurate crowdedness scores.
