@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { MapView } from "@/components/map/MapView";
 import { TimeSlider } from "@/components/controls/TimeSlider";
@@ -19,12 +20,12 @@ export default function MapPage() {
 
       {/* Top-left: title + year selector + language */}
       <div className="absolute left-4 top-4 z-10 flex items-center gap-3">
-        <a
+        <Link
           href="/"
           className="rounded-xl bg-white/95 px-4 py-2 text-lg font-bold text-gray-800 shadow-lg backdrop-blur-sm hover:bg-white transition-colors"
         >
           {t("title")}
-        </a>
+        </Link>
         <YearSelector />
         <LanguageSwitcher variant="map" />
       </div>

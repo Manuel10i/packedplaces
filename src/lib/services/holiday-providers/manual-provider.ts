@@ -18,7 +18,7 @@ const MANUAL_DATA_DIR = join(process.cwd(), "src/lib/data/manual-holidays");
 export const manualProvider: HolidayProvider = {
   name: "Manual JSON",
 
-  supports(regionId: string, countryCode: string): boolean {
+  supports(regionId: string, _countryCode: string): boolean {
     const filePath = join(MANUAL_DATA_DIR, `${regionId}.json`);
     return existsSync(filePath);
   },

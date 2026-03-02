@@ -6,11 +6,6 @@ import type { Hemisphere } from "@/types";
 import { getSeasonalCapacity } from "../data/capacity";
 import { destinations as staticDestinations } from "../data/destinations";
 
-interface EventBoostEntry {
-  destinationId: string;
-  trafficBoost: number;
-}
-
 interface ContributingSource {
   regionId: string;
   regionName: string;
