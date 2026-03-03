@@ -21,17 +21,6 @@ const mockHolidays = [
   },
 ];
 
-const mockEvents = [
-  {
-    id: "oktoberfest-2026",
-    name: "Oktoberfest",
-    destinationId: "DE-MUNICH",
-    startDate: "2026-09-19",
-    endDate: "2026-10-04",
-    category: "festival",
-  },
-];
-
 // Mock the db module before imports — returns actual data so .map() callbacks are exercised
 vi.mock("@/lib/db", () => ({
   db: {

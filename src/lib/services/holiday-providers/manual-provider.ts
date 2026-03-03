@@ -25,8 +25,8 @@ export const manualProvider: HolidayProvider = {
 
   async fetchHolidays(
     regionId: string,
-    countryCode: string,
-    subdivisionCode: string,
+    _countryCode: string,
+    _subdivisionCode: string,
     validFrom: string,
     validTo: string,
   ): Promise<HolidayResult[]> {
