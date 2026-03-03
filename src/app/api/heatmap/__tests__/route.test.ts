@@ -1,13 +1,45 @@
 import { vi, describe, it, expect } from "vitest";
 
-// Mock the db module before imports
+const mockCacheEntries = [
+  {
+    destinationId: "AT-VIENNA",
+    destinationName: "Vienna",
+    lat: 48.21,
+    lng: 16.37,
+    busynessScore: 0.65,
+    contributingSources: [{ regionId: "DE-BAVARIA", weight: 0.8 }],
+  },
+];
+
+const mockHolidays = [
+  {
+    sourceRegionId: "DE-BAVARIA",
+    name: "Summer Break",
+    startDate: "2026-07-01",
+    endDate: "2026-08-15",
+    regionName: "Bavaria",
+  },
+];
+
+const mockEvents = [
+  {
+    id: "oktoberfest-2026",
+    name: "Oktoberfest",
+    destinationId: "DE-MUNICH",
+    startDate: "2026-09-19",
+    endDate: "2026-10-04",
+    category: "festival",
+  },
+];
+
+// Mock the db module before imports — returns actual data so .map() callbacks are exercised
 vi.mock("@/lib/db", () => ({
   db: {
     select: () => ({
       from: () => ({
-        where: () => Promise.resolve([]),
+        where: () => Promise.resolve(mockCacheEntries),
         innerJoin: () => ({
-          where: () => Promise.resolve([]),
+          where: () => Promise.resolve(mockHolidays),
         }),
       }),
     }),
@@ -79,7 +111,7 @@ describe("GET /api/heatmap", () => {
   });
 
   describe("successful response", () => {
-    it("returns a valid GeoJSON FeatureCollection", async () => {
+    it("returns a valid GeoJSON FeatureCollection with mapped data", async () => {
       const response = await GET(
         makeRequest({ week: "10", year: "2026" }),
       );
@@ -89,12 +121,17 @@ describe("GET /api/heatmap", () => {
       expect(body.type).toBe("FeatureCollection");
       expect(body).toHaveProperty("features");
       expect(Array.isArray(body.features)).toBe(true);
+      expect(body.features).toHaveLength(1);
+      expect(body.features[0].geometry.coordinates).toEqual([16.37, 48.21]);
+      expect(body.features[0].properties.name).toBe("Vienna");
+      expect(body.features[0].properties.busynessScore).toBe(0.65);
+
       expect(body).toHaveProperty("metadata");
       expect(body.metadata.week).toBe(10);
       expect(body.metadata.year).toBe(2026);
-      expect(body.metadata).toHaveProperty("regionsOnHoliday");
-      expect(Array.isArray(body.metadata.regionsOnHoliday)).toBe(true);
-      expect(body.metadata).toHaveProperty("activeEvents");
+      expect(body.metadata.regionsOnHoliday).toHaveLength(1);
+      expect(body.metadata.regionsOnHoliday[0].regionName).toBe("Bavaria");
+      expect(body.metadata.regionsOnHoliday[0].holidayName).toBe("Summer Break");
       expect(Array.isArray(body.metadata.activeEvents)).toBe(true);
     });
   });

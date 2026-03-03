@@ -191,62 +191,69 @@ export default async function MarketingPage() {
             {t("features.title")}
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+            <a href="/features/crowdedness" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.crowdednessTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.crowdednessText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/seasonality" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.hemisphereTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.hemisphereText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/categories" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.categoriesTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.categoriesText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/holiday-boost" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.boostTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.boostText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/timeline" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.timelineTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.timelineText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/holiday-providers" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.providersTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.providersText")}
               </p>
-            </div>
-            <div className="rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm">
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
+            <a href="/features/events" className="block rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm transition-colors hover:border-orange-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.eventsTitle")}
               </h3>
               <p className="mt-2 text-sm text-gray-600">
                 {t("features.eventsText")}
               </p>
-            </div>
+              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
+            </a>
           </div>
         </div>
       </section>
