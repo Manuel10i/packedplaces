@@ -31,7 +31,14 @@ function scoreToColor(score: number): string {
   return "#dc2626";
 }
 
-function BoostChart() {
+interface BoostChartProps {
+  labelSchoolHolidays: string;
+  legendNormal: string;
+  legendHoliday: string;
+  legendBase: string;
+}
+
+function BoostChart({ labelSchoolHolidays, legendNormal, legendHoliday, legendBase }: BoostChartProps) {
   const barW = CW / WEEKS.length - 4;
 
   return (
@@ -81,7 +88,7 @@ function BoostChart() {
         textAnchor="middle"
         fontWeight={600}
       >
-        School Holidays
+        {labelSchoolHolidays}
       </text>
 
       {/* Base score bars (ghost) */}
@@ -154,11 +161,11 @@ function BoostChart() {
       {/* Legend */}
       <g transform={`translate(${CL}, ${CT + CH + 30})`}>
         <rect width={10} height={10} fill="#94a3b8" rx={2} />
-        <text x={14} y={9} fontSize={9} fill="#6b7280">Normal week</text>
+        <text x={14} y={9} fontSize={9} fill="#6b7280">{legendNormal}</text>
         <rect x={110} width={10} height={10} fill="#f97316" rx={2} />
-        <text x={124} y={9} fontSize={9} fill="#6b7280">Holiday week (1.5x boost)</text>
+        <text x={124} y={9} fontSize={9} fill="#6b7280">{legendHoliday}</text>
         <rect x={280} width={10} height={10} fill="#d1d5db" rx={2} opacity={0.5} />
-        <text x={294} y={9} fontSize={9} fill="#6b7280">Base score (without boost)</text>
+        <text x={294} y={9} fontSize={9} fill="#6b7280">{legendBase}</text>
       </g>
     </svg>
   );
@@ -192,7 +199,12 @@ export default async function HolidayBoostPage() {
         <h3 className="mb-2 text-sm font-semibold text-gray-700">
           {t("chartTitle")}
         </h3>
-        <BoostChart />
+        <BoostChart
+          labelSchoolHolidays={t("chartSchoolHolidays")}
+          legendNormal={t("chartLegendNormal")}
+          legendHoliday={t("chartLegendHoliday")}
+          legendBase={t("chartLegendBase")}
+        />
       </div>
 
       {/* Key Insight */}
@@ -208,23 +220,17 @@ export default async function HolidayBoostPage() {
       <p className="mt-2 text-sm text-gray-600">{t("staggeringText")}</p>
 
       <div className="mt-6 space-y-2">
-        {[
-          { region: "Bavaria (DE)", weeks: "Aug 1 – Sep 12", timing: "Late summer" },
-          { region: "NRW (DE)", weeks: "Jul 5 – Aug 17", timing: "Mid summer" },
-          { region: "England (UK)", weeks: "Jul 22 – Sep 2", timing: "Late July" },
-          { region: "Île-de-France (FR)", weeks: "Jul 5 – Sep 1", timing: "Early July" },
-          { region: "New South Wales (AU)", weeks: "Dec 20 – Jan 28", timing: "December" },
-        ].map((item) => (
+        {(["Bavaria", "NRW", "England", "IleDeFrance", "NSW"] as const).map((key) => (
           <div
-            key={item.region}
+            key={key}
             className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-4 py-2 text-sm"
           >
             <span className="w-36 shrink-0 font-medium text-gray-900">
-              {item.region}
+              {t(`region${key}`)}
             </span>
-            <span className="text-gray-600">{item.weeks}</span>
+            <span className="text-gray-600">{t(`dates${key}`)}</span>
             <span className="ml-auto text-xs text-gray-400">
-              {item.timing}
+              {t(`timing${key}`)}
             </span>
           </div>
         ))}
