@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact — PackedPlaces.com",
   description:
     "Get in touch with the PackedPlaces.com team — questions, feedback, and suggestions welcome.",
+  robots: { index: false, follow: false },
 };
 
 export default async function ContactPage() {

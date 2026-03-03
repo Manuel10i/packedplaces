@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy — PackedPlaces.com",
   description:
     "Privacy policy for PackedPlaces.com — how we handle your data, cookies, and analytics.",
+  robots: { index: false, follow: false },
 };
 
 export default async function PrivacyPage() {

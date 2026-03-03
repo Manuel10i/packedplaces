@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     siteName: "PackedPlaces.com",
     type: "website",
   },
+  alternates: {
+    languages: {
+      en: "https://packedplaces.com",
+      de: "https://packedplaces.com",
+      es: "https://packedplaces.com",
+      fr: "https://packedplaces.com",
+      "x-default": "https://packedplaces.com",
+    },
+  },
 };
 
 export default async function RootLayout({
