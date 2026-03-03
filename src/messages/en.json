@@ -78,7 +78,9 @@
   "footer": {
     "copyright": "© {year} 10ideen.at",
     "github": "GitHub",
-    "docs": "Documentation"
+    "docs": "Documentation",
+    "privacy": "Privacy",
+    "contact": "Contact"
   },
   "map": {
     "title": "PackedPlaces.com"
@@ -134,6 +136,56 @@
     "de": "Deutsch",
     "es": "Español",
     "fr": "Français"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: March 2026",
+    "controllerTitle": "Data Controller",
+    "controllerText": "PackedPlaces.com is operated by 10ideen.at. For any privacy-related inquiries, please use our contact form.",
+    "collectTitle": "What Data We Collect",
+    "collectText": "PackedPlaces.com is designed to collect as little personal data as possible. We do not require user accounts or logins. The only personal data we process comes from voluntary contact form submissions and anonymized analytics.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "We use a single functional cookie to remember your language preference:",
+    "cookieLocale": "Stores your preferred language (en, de, es, fr). Expires after 1 year.",
+    "analyticsTitle": "Google Analytics",
+    "analyticsText": "We use Google Analytics 4 to understand how visitors use our site. Google Analytics collects anonymized usage data including pages visited, time on site, and general geographic region. No personally identifiable information is collected. You can opt out by using a browser extension or enabling Do Not Track.",
+    "contactDataTitle": "Contact Form Data",
+    "contactDataText": "When you submit our contact form, we collect your name, email address, and message. This data is sent via email using Resend and is used solely to respond to your inquiry. We do not store contact form submissions in a database or share them with third parties.",
+    "rightsTitle": "Your Rights (GDPR)",
+    "rightsText": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:",
+    "rightAccess": "Right of access — request a copy of your personal data",
+    "rightRectification": "Right to rectification — request correction of inaccurate data",
+    "rightErasure": "Right to erasure — request deletion of your personal data",
+    "rightRestriction": "Right to restriction — request limited processing of your data",
+    "rightPortability": "Right to data portability — receive your data in a structured format",
+    "rightObjection": "Right to object — object to processing of your personal data",
+    "retentionTitle": "Data Retention",
+    "retentionText": "Contact form emails are retained only as long as needed to respond to your inquiry. Analytics data is retained according to Google Analytics default settings (14 months).",
+    "changesTitle": "Changes to This Policy",
+    "changesText": "We may update this privacy policy from time to time. Changes will be posted on this page with an updated date.",
+    "contactTitle": "Contact Us",
+    "contactText": "If you have questions about this privacy policy or wish to exercise your GDPR rights, please reach out via our contact form."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question, suggestion, or want to report an issue? We'd love to hear from you.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "successTitle": "Message sent!",
+    "successText": "Thank you for reaching out. We'll get back to you as soon as possible.",
+    "errorRequired": "Please fill in all fields.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorCaptcha": "Please complete the captcha verification.",
+    "errorServer": "Something went wrong. Please try again later.",
+    "errorTurnstile": "Captcha verification failed. Please try again."
   },
   "featurePages": {
     "shell": {

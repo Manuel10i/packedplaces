@@ -78,7 +78,9 @@
   "footer": {
     "copyright": "© {year} 10ideen.at",
     "github": "GitHub",
-    "docs": "Dokumentation"
+    "docs": "Dokumentation",
+    "privacy": "Datenschutz",
+    "contact": "Kontakt"
   },
   "map": {
     "title": "PackedPlaces.com"
@@ -134,6 +136,56 @@
     "de": "Deutsch",
     "es": "Español",
     "fr": "Français"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: März 2026",
+    "controllerTitle": "Verantwortlicher",
+    "controllerText": "PackedPlaces.com wird von 10ideen.at betrieben. Für datenschutzbezogene Anfragen nutzen Sie bitte unser Kontaktformular.",
+    "collectTitle": "Welche Daten wir erheben",
+    "collectText": "PackedPlaces.com ist darauf ausgelegt, so wenig personenbezogene Daten wie möglich zu erheben. Wir benötigen keine Benutzerkonten oder Anmeldungen. Die einzigen personenbezogenen Daten, die wir verarbeiten, stammen aus freiwilligen Kontaktformular-Eingaben und anonymisierten Analysen.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Wir verwenden ein einziges funktionales Cookie, um Ihre Spracheinstellung zu speichern:",
+    "cookieLocale": "Speichert Ihre bevorzugte Sprache (en, de, es, fr). Läuft nach 1 Jahr ab.",
+    "analyticsTitle": "Google Analytics",
+    "analyticsText": "Wir verwenden Google Analytics 4, um zu verstehen, wie Besucher unsere Website nutzen. Google Analytics erfasst anonymisierte Nutzungsdaten wie besuchte Seiten, Verweildauer und allgemeine geografische Region. Es werden keine personenbezogenen Daten erhoben. Sie können die Erfassung durch eine Browser-Erweiterung oder die Aktivierung von Do Not Track deaktivieren.",
+    "contactDataTitle": "Kontaktformular-Daten",
+    "contactDataText": "Wenn Sie unser Kontaktformular absenden, erheben wir Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht. Diese Daten werden per E-Mail über Resend gesendet und ausschließlich zur Beantwortung Ihrer Anfrage verwendet. Wir speichern Kontaktformular-Eingaben nicht in einer Datenbank und geben sie nicht an Dritte weiter.",
+    "rightsTitle": "Ihre Rechte (DSGVO)",
+    "rightsText": "Gemäß der Datenschutz-Grundverordnung (DSGVO) haben Sie folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
+    "rightAccess": "Auskunftsrecht — Kopie Ihrer personenbezogenen Daten anfordern",
+    "rightRectification": "Recht auf Berichtigung — Korrektur unrichtiger Daten verlangen",
+    "rightErasure": "Recht auf Löschung — Löschung Ihrer personenbezogenen Daten verlangen",
+    "rightRestriction": "Recht auf Einschränkung — eingeschränkte Verarbeitung Ihrer Daten verlangen",
+    "rightPortability": "Recht auf Datenübertragbarkeit — Ihre Daten in einem strukturierten Format erhalten",
+    "rightObjection": "Widerspruchsrecht — der Verarbeitung Ihrer personenbezogenen Daten widersprechen",
+    "retentionTitle": "Datenspeicherung",
+    "retentionText": "Kontaktformular-E-Mails werden nur so lange aufbewahrt, wie es zur Beantwortung Ihrer Anfrage erforderlich ist. Analysedaten werden gemäß den Standardeinstellungen von Google Analytics (14 Monate) aufbewahrt.",
+    "changesTitle": "Änderungen dieser Richtlinie",
+    "changesText": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.",
+    "contactTitle": "Kontakt",
+    "contactText": "Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer DSGVO-Rechte nutzen Sie bitte unser Kontaktformular."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie eine Frage, einen Vorschlag oder möchten Sie ein Problem melden? Wir freuen uns auf Ihre Nachricht.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "sie@beispiel.de",
+    "subjectLabel": "Betreff",
+    "subjectPlaceholder": "Worum geht es?",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Ihre Nachricht...",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Nachricht gesendet!",
+    "successText": "Vielen Dank für Ihre Nachricht. Wir melden uns so bald wie möglich.",
+    "errorRequired": "Bitte füllen Sie alle Felder aus.",
+    "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "errorCaptcha": "Bitte schließen Sie die Captcha-Verifizierung ab.",
+    "errorServer": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+    "errorTurnstile": "Captcha-Überprüfung fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
   "featurePages": {
     "shell": {

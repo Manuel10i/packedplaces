@@ -78,7 +78,9 @@
   "footer": {
     "copyright": "© {year} 10ideen.at",
     "github": "GitHub",
-    "docs": "Documentación"
+    "docs": "Documentación",
+    "privacy": "Privacidad",
+    "contact": "Contacto"
   },
   "map": {
     "title": "PackedPlaces.com"
@@ -134,6 +136,56 @@
     "de": "Deutsch",
     "es": "Español",
     "fr": "Français"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: marzo 2026",
+    "controllerTitle": "Responsable del tratamiento",
+    "controllerText": "PackedPlaces.com es operado por 10ideen.at. Para consultas relacionadas con la privacidad, utilice nuestro formulario de contacto.",
+    "collectTitle": "Qué datos recopilamos",
+    "collectText": "PackedPlaces.com está diseñado para recopilar la menor cantidad posible de datos personales. No requerimos cuentas de usuario ni inicios de sesión. Los únicos datos personales que procesamos provienen de envíos voluntarios del formulario de contacto y análisis anonimizados.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Utilizamos una única cookie funcional para recordar su preferencia de idioma:",
+    "cookieLocale": "Almacena su idioma preferido (en, de, es, fr). Expira después de 1 año.",
+    "analyticsTitle": "Google Analytics",
+    "analyticsText": "Utilizamos Google Analytics 4 para comprender cómo los visitantes usan nuestro sitio. Google Analytics recopila datos de uso anónimos como páginas visitadas, tiempo en el sitio y región geográfica general. No se recopila información de identificación personal. Puede desactivarlo usando una extensión del navegador o habilitando Do Not Track.",
+    "contactDataTitle": "Datos del formulario de contacto",
+    "contactDataText": "Cuando envía nuestro formulario de contacto, recopilamos su nombre, dirección de correo electrónico y mensaje. Estos datos se envían por correo electrónico a través de Resend y se utilizan únicamente para responder a su consulta. No almacenamos los envíos del formulario de contacto en una base de datos ni los compartimos con terceros.",
+    "rightsTitle": "Sus derechos (RGPD)",
+    "rightsText": "Según el Reglamento General de Protección de Datos (RGPD), tiene los siguientes derechos respecto a sus datos personales:",
+    "rightAccess": "Derecho de acceso — solicitar una copia de sus datos personales",
+    "rightRectification": "Derecho de rectificación — solicitar la corrección de datos inexactos",
+    "rightErasure": "Derecho de supresión — solicitar la eliminación de sus datos personales",
+    "rightRestriction": "Derecho a la limitación — solicitar el procesamiento limitado de sus datos",
+    "rightPortability": "Derecho a la portabilidad — recibir sus datos en un formato estructurado",
+    "rightObjection": "Derecho de oposición — oponerse al procesamiento de sus datos personales",
+    "retentionTitle": "Retención de datos",
+    "retentionText": "Los correos electrónicos del formulario de contacto se conservan solo el tiempo necesario para responder a su consulta. Los datos de análisis se conservan según la configuración predeterminada de Google Analytics (14 meses).",
+    "changesTitle": "Cambios en esta política",
+    "changesText": "Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada.",
+    "contactTitle": "Contacto",
+    "contactText": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos RGPD, contáctenos a través de nuestro formulario de contacto."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tiene una pregunta, sugerencia o quiere reportar un problema? Nos encantaría saber de usted.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "usted@ejemplo.com",
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "¿De qué se trata?",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Su mensaje...",
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Gracias por contactarnos. Le responderemos lo antes posible.",
+    "errorRequired": "Por favor, complete todos los campos.",
+    "errorEmail": "Por favor, introduzca una dirección de correo electrónico válida.",
+    "errorCaptcha": "Por favor, complete la verificación captcha.",
+    "errorServer": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
+    "errorTurnstile": "La verificación captcha falló. Por favor, inténtelo de nuevo."
   },
   "featurePages": {
     "shell": {

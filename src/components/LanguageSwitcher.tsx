@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { locales } from "@/i18n/config";
+import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   variant: "nav" | "map";
@@ -16,6 +17,7 @@ export function LanguageSwitcher({ variant }: Props) {
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const newLocale = e.target.value;
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
+    trackEvent("language_switch", { locale: newLocale });
     router.refresh();
   }
 

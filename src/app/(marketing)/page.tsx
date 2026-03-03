@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
@@ -107,12 +108,12 @@ export default async function MarketingPage() {
               {t("nav.openSource")}
             </a>
             <LanguageSwitcher variant="nav" />
-            <a
+            <Link
               href="/map"
               className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
             >
               {t("nav.openMap")} &rarr;
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -128,12 +129,12 @@ export default async function MarketingPage() {
             {t("hero.description")}
           </p>
           <div className="mt-10">
-            <a
+            <Link
               href="/map"
               className="inline-block rounded-lg bg-gray-900 px-8 py-3 text-base font-medium text-white hover:bg-gray-800"
             >
               {t("hero.cta")} &rarr;
-            </a>
+            </Link>
           </div>
           <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-5">
             <div>
@@ -191,7 +192,7 @@ export default async function MarketingPage() {
             {t("features.title")}
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/features/crowdedness" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            <Link href="/features/crowdedness" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.crowdednessTitle")}
               </h3>
@@ -199,8 +200,8 @@ export default async function MarketingPage() {
                 {t("features.crowdednessText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/seasonality" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            </Link>
+            <Link href="/features/seasonality" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.hemisphereTitle")}
               </h3>
@@ -208,8 +209,8 @@ export default async function MarketingPage() {
                 {t("features.hemisphereText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/categories" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            </Link>
+            <Link href="/features/categories" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.categoriesTitle")}
               </h3>
@@ -217,8 +218,8 @@ export default async function MarketingPage() {
                 {t("features.categoriesText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/holiday-boost" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            </Link>
+            <Link href="/features/holiday-boost" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.boostTitle")}
               </h3>
@@ -226,8 +227,8 @@ export default async function MarketingPage() {
                 {t("features.boostText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/timeline" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            </Link>
+            <Link href="/features/timeline" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.timelineTitle")}
               </h3>
@@ -235,8 +236,8 @@ export default async function MarketingPage() {
                 {t("features.timelineText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/holiday-providers" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
+            </Link>
+            <Link href="/features/holiday-providers" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.providersTitle")}
               </h3>
@@ -244,8 +245,8 @@ export default async function MarketingPage() {
                 {t("features.providersText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
-            <a href="/features/events" className="block rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm transition-colors hover:border-orange-300">
+            </Link>
+            <Link href="/features/events" className="block rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm transition-colors hover:border-orange-300">
               <h3 className="text-base font-semibold text-gray-900">
                 {t("features.eventsTitle")}
               </h3>
@@ -253,7 +254,7 @@ export default async function MarketingPage() {
                 {t("features.eventsText")}
               </p>
               <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -397,6 +398,12 @@ export default async function MarketingPage() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-gray-500 sm:flex-row">
           <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-gray-900">
+              {t("footer.privacy")}
+            </Link>
+            <Link href="/contact" className="hover:text-gray-900">
+              {t("footer.contact")}
+            </Link>
             <a
               href="https://github.com/Manuel10i/packedplaces"
               target="_blank"

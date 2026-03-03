@@ -19,6 +19,8 @@
     "build:boundaries": "tsx --tsconfig tsconfig.scripts.json scripts/build-region-boundaries.ts"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.4.2",
+    "@next/third-parties": "^16.1.6",
     "date-fns": "^4.1.0",
     "date-holidays": "^3.26.8",
     "dotenv": "^17.3.1",
@@ -31,6 +33,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-map-gl": "^8.1.0",
+    "resend": "^6.9.3",
     "swr": "^2.4.1",
     "zustand": "^5.0.11"
   },

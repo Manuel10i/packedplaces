@@ -78,7 +78,9 @@
   "footer": {
     "copyright": "© {year} 10ideen.at",
     "github": "GitHub",
-    "docs": "Documentation"
+    "docs": "Documentation",
+    "privacy": "Confidentialité",
+    "contact": "Contact"
   },
   "map": {
     "title": "PackedPlaces.com"
@@ -134,6 +136,56 @@
     "de": "Deutsch",
     "es": "Español",
     "fr": "Français"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : mars 2026",
+    "controllerTitle": "Responsable du traitement",
+    "controllerText": "PackedPlaces.com est exploité par 10ideen.at. Pour toute question relative à la confidentialité, veuillez utiliser notre formulaire de contact.",
+    "collectTitle": "Données que nous collectons",
+    "collectText": "PackedPlaces.com est conçu pour collecter le moins de données personnelles possible. Nous n'exigeons ni comptes utilisateur ni connexions. Les seules données personnelles que nous traitons proviennent des soumissions volontaires du formulaire de contact et des analyses anonymisées.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Nous utilisons un seul cookie fonctionnel pour mémoriser votre préférence linguistique :",
+    "cookieLocale": "Stocke votre langue préférée (en, de, es, fr). Expire après 1 an.",
+    "analyticsTitle": "Google Analytics",
+    "analyticsText": "Nous utilisons Google Analytics 4 pour comprendre comment les visiteurs utilisent notre site. Google Analytics collecte des données d'utilisation anonymisées telles que les pages visitées, le temps passé sur le site et la région géographique générale. Aucune information personnellement identifiable n'est collectée. Vous pouvez vous désinscrire en utilisant une extension de navigateur ou en activant Do Not Track.",
+    "contactDataTitle": "Données du formulaire de contact",
+    "contactDataText": "Lorsque vous soumettez notre formulaire de contact, nous collectons votre nom, adresse e-mail et message. Ces données sont envoyées par e-mail via Resend et sont utilisées uniquement pour répondre à votre demande. Nous ne stockons pas les soumissions du formulaire de contact dans une base de données et ne les partageons pas avec des tiers.",
+    "rightsTitle": "Vos droits (RGPD)",
+    "rightsText": "En vertu du Règlement général sur la protection des données (RGPD), vous disposez des droits suivants concernant vos données personnelles :",
+    "rightAccess": "Droit d'accès — demander une copie de vos données personnelles",
+    "rightRectification": "Droit de rectification — demander la correction de données inexactes",
+    "rightErasure": "Droit à l'effacement — demander la suppression de vos données personnelles",
+    "rightRestriction": "Droit à la limitation — demander un traitement limité de vos données",
+    "rightPortability": "Droit à la portabilité — recevoir vos données dans un format structuré",
+    "rightObjection": "Droit d'opposition — s'opposer au traitement de vos données personnelles",
+    "retentionTitle": "Conservation des données",
+    "retentionText": "Les e-mails du formulaire de contact sont conservés uniquement le temps nécessaire pour répondre à votre demande. Les données d'analyse sont conservées selon les paramètres par défaut de Google Analytics (14 mois).",
+    "changesTitle": "Modifications de cette politique",
+    "changesText": "Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Les modifications seront publiées sur cette page avec une date mise à jour.",
+    "contactTitle": "Nous contacter",
+    "contactText": "Si vous avez des questions sur cette politique de confidentialité ou souhaitez exercer vos droits RGPD, contactez-nous via notre formulaire de contact."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Vous avez une question, une suggestion ou souhaitez signaler un problème ? Nous serions ravis de vous entendre.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "vous@exemple.com",
+    "subjectLabel": "Objet",
+    "subjectPlaceholder": "De quoi s'agit-il ?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Votre message...",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successText": "Merci de nous avoir contactés. Nous vous répondrons dans les meilleurs délais.",
+    "errorRequired": "Veuillez remplir tous les champs.",
+    "errorEmail": "Veuillez saisir une adresse e-mail valide.",
+    "errorCaptcha": "Veuillez compléter la vérification captcha.",
+    "errorServer": "Une erreur est survenue. Veuillez réessayer plus tard.",
+    "errorTurnstile": "La vérification captcha a échoué. Veuillez réessayer."
   },
   "featurePages": {
     "shell": {
