@@ -10,6 +10,33 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand teal — ocean / travel primary */
+  --color-brand-50: #effcfc;
+  --color-brand-100: #d7f6f7;
+  --color-brand-200: #b3ecef;
+  --color-brand-300: #7edde3;
+  --color-brand-400: #41c5cf;
+  --color-brand-500: #25a9b5;
+  --color-brand-600: #228998;
+  --color-brand-700: #226f7c;
+  --color-brand-800: #245a66;
+  --color-brand-900: #224b57;
+
+  /* Sunset orange — warm CTA accent */
+  --color-sunset-50: #fff7ed;
+  --color-sunset-100: #ffedd5;
+  --color-sunset-200: #fed7aa;
+  --color-sunset-300: #fdba74;
+  --color-sunset-400: #fb923c;
+  --color-sunset-500: #f97316;
+  --color-sunset-600: #ea580c;
+  --color-sunset-700: #c2410c;
+
+  /* Sand — warm neutral */
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f3efe8;
+  --color-sand-200: #e8e0d4;
 }
 
 body {
@@ -24,4 +51,116 @@ body {
 .rc-slider-mark-text {
   font-size: 10px !important;
   color: #9ca3af !important;
+}
+
+/* ─── Keyframes ─── */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ─── Utility classes ─── */
+
+@utility animate-on-scroll {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+@utility animate-on-scroll-delay-1 {
+  animation: fade-in-up 0.6s ease-out 0.1s both;
+}
+
+@utility animate-on-scroll-delay-2 {
+  animation: fade-in-up 0.6s ease-out 0.2s both;
+}
+
+@utility animate-on-scroll-delay-3 {
+  animation: fade-in-up 0.6s ease-out 0.3s both;
+}
+
+@utility animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@utility animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@utility animate-pulse-dot {
+  animation: pulse-dot 3s ease-in-out infinite;
+}
+
+@utility animate-scale-in {
+  animation: scale-in 0.5s ease-out both;
+}
+
+@utility card-hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-4px) rotate(-0.5deg) scale(1.02);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@utility bg-hero-gradient {
+  background: linear-gradient(135deg, var(--color-brand-50) 0%, #e0f2fe 40%, var(--color-sunset-50) 100%);
+}
+
+@utility bg-section-warm {
+  background-color: var(--color-sand-50);
+}
+
+@utility bg-section-cool {
+  background: linear-gradient(180deg, var(--color-brand-50) 0%, #ffffff 100%);
+}
+
+@utility bg-cta-gradient {
+  background: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-500) 50%, #0ea5e9 100%);
+}
+
+@utility text-gradient-hero {
+  background: linear-gradient(135deg, var(--color-brand-700), var(--color-brand-500), #0ea5e9, var(--color-sunset-500));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
 }

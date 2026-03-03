@@ -77,13 +77,31 @@ function WorldMapDots({ className }: { className?: string }) {
   );
 }
 
+const HERO_STATS = [
+  { value: "127", key: "hero.statRegions" },
+  { value: "700+", key: "hero.statDestinations" },
+  { value: "6,000+", key: "hero.statPatterns" },
+  { value: "50+", key: "hero.statEvents" },
+  { value: "100+", key: "hero.statCountries" },
+] as const;
+
+const FEATURES = [
+  { href: "/features/crowdedness", titleKey: "features.crowdednessTitle", textKey: "features.crowdednessText", accent: "border-brand-400", learnColor: "text-brand-600" },
+  { href: "/features/seasonality", titleKey: "features.hemisphereTitle", textKey: "features.hemisphereText", accent: "border-sky-400", learnColor: "text-sky-600" },
+  { href: "/features/categories", titleKey: "features.categoriesTitle", textKey: "features.categoriesText", accent: "border-violet-400", learnColor: "text-violet-600" },
+  { href: "/features/holiday-boost", titleKey: "features.boostTitle", textKey: "features.boostText", accent: "border-sunset-400", learnColor: "text-sunset-600" },
+  { href: "/features/timeline", titleKey: "features.timelineTitle", textKey: "features.timelineText", accent: "border-blue-400", learnColor: "text-blue-600" },
+  { href: "/features/holiday-providers", titleKey: "features.providersTitle", textKey: "features.providersText", accent: "border-emerald-400", learnColor: "text-emerald-600" },
+  { href: "/features/events", titleKey: "features.eventsTitle", textKey: "features.eventsText", accent: "border-orange-400", learnColor: "text-orange-600" },
+] as const;
+
 export default async function MarketingPage() {
   const t = await getTranslations();
 
   return (
     <>
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <span className="text-xl font-bold text-gray-900">
             {t("nav.brand")}
@@ -91,26 +109,26 @@ export default async function MarketingPage() {
           <div className="flex items-center gap-8">
             <a
               href="#how-it-works"
-              className="hidden text-sm text-gray-600 hover:text-gray-900 sm:inline"
+              className="hidden text-sm text-gray-600 transition-colors hover:text-brand-600 sm:inline"
             >
               {t("nav.howItWorks")}
             </a>
             <a
               href="#data"
-              className="hidden text-sm text-gray-600 hover:text-gray-900 sm:inline"
+              className="hidden text-sm text-gray-600 transition-colors hover:text-brand-600 sm:inline"
             >
               {t("nav.data")}
             </a>
             <a
               href="#open-source"
-              className="hidden text-sm text-gray-600 hover:text-gray-900 sm:inline"
+              className="hidden text-sm text-gray-600 transition-colors hover:text-brand-600 sm:inline"
             >
               {t("nav.openSource")}
             </a>
             <LanguageSwitcher variant="nav" />
             <Link
               href="/map"
-              className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
             >
               {t("nav.openMap")} &rarr;
             </Link>
@@ -119,58 +137,44 @@ export default async function MarketingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-20">
-        <WorldMapDots className="pointer-events-none absolute inset-0 m-auto h-full w-full max-w-5xl text-gray-300 opacity-30" />
+      <section className="relative overflow-hidden bg-hero-gradient py-20">
+        <WorldMapDots className="pointer-events-none absolute inset-0 m-auto h-full w-full max-w-5xl text-brand-300 animate-pulse-dot" />
         <div className="relative mx-auto max-w-6xl px-6 text-center">
-          <h1 className="whitespace-pre-line text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h1 className="animate-on-scroll whitespace-pre-line text-4xl font-bold tracking-tight text-gradient-hero sm:text-5xl lg:text-6xl">
             {t("hero.headline")}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+          <p className="animate-on-scroll-delay-1 mx-auto mt-6 max-w-2xl text-lg text-gray-600">
             {t("hero.description")}
           </p>
-          <div className="mt-10">
+          <div className="animate-on-scroll-delay-2 mt-10">
             <Link
               href="/map"
-              className="inline-block rounded-lg bg-gray-900 px-8 py-3 text-base font-medium text-white hover:bg-gray-800"
+              className="inline-block rounded-lg bg-cta-gradient px-8 py-3 text-base font-medium text-white transition-transform hover:scale-105"
             >
               {t("hero.cta")} &rarr;
             </Link>
           </div>
           <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-5">
-            <div>
-              <p className="text-3xl font-bold text-gray-900">127</p>
-              <p className="mt-1 text-sm text-gray-500">{t("hero.statRegions")}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">700+</p>
-              <p className="mt-1 text-sm text-gray-500">{t("hero.statDestinations")}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">6,000+</p>
-              <p className="mt-1 text-sm text-gray-500">{t("hero.statPatterns")}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">50+</p>
-              <p className="mt-1 text-sm text-gray-500">{t("hero.statEvents")}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-gray-900">100+</p>
-              <p className="mt-1 text-sm text-gray-500">{t("hero.statCountries")}</p>
-            </div>
+            {HERO_STATS.map((stat, i) => (
+              <div key={stat.key} className={`animate-on-scroll${i > 0 ? `-delay-${Math.min(i, 3)}` : ""}`}>
+                <p className="text-3xl font-bold text-brand-600">{stat.value}</p>
+                <p className="mt-1 text-sm text-gray-500">{t(stat.key)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="bg-gray-50 py-20">
+      <section id="how-it-works" className="bg-section-warm py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="animate-on-scroll text-center text-3xl font-bold text-gray-900">
             {t("howItWorks.title")}
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {([1, 2, 3, 4] as const).map((step) => (
-              <div key={step} className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700">
+              <div key={step} className={`card-hover-lift animate-on-scroll-delay-${Math.min(step, 3)} rounded-xl border border-gray-100 bg-white p-6 shadow-sm`}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 text-lg font-bold text-brand-700">
                   {step}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">
@@ -188,81 +192,33 @@ export default async function MarketingPage() {
       {/* Features */}
       <section id="features" className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="animate-on-scroll text-center text-3xl font-bold text-gray-900">
             {t("features.title")}
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href="/features/crowdedness" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.crowdednessTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.crowdednessText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/seasonality" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.hemisphereTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.hemisphereText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/categories" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.categoriesTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.categoriesText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/holiday-boost" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.boostTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.boostText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/timeline" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.timelineTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.timelineText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/holiday-providers" className="block rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-gray-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.providersTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.providersText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
-            <Link href="/features/events" className="block rounded-xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm transition-colors hover:border-orange-300">
-              <h3 className="text-base font-semibold text-gray-900">
-                {t("features.eventsTitle")}
-              </h3>
-              <p className="mt-2 text-sm text-gray-600">
-                {t("features.eventsText")}
-              </p>
-              <p className="mt-3 text-sm font-medium text-gray-900">{t("featurePages.shell.learnMore")} &rarr;</p>
-            </Link>
+            {FEATURES.map((feat, i) => (
+              <Link
+                key={feat.href}
+                href={feat.href}
+                className={`card-hover-lift animate-on-scroll-delay-${Math.min(i + 1, 3)} block rounded-xl border-t-4 ${feat.accent} border border-gray-100 bg-white p-6 shadow-sm`}
+              >
+                <h3 className="text-base font-semibold text-gray-900">
+                  {t(feat.titleKey)}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  {t(feat.textKey)}
+                </p>
+                <p className={`mt-3 text-sm font-medium ${feat.learnColor}`}>{t("featurePages.shell.learnMore")} &rarr;</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Data & Methodology */}
-      <section id="data" className="bg-gray-50 py-20">
+      <section id="data" className="bg-section-cool py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="animate-on-scroll text-center text-3xl font-bold text-gray-900">
             {t("data.title")}
           </h2>
           <div className="mt-12 grid gap-12 md:grid-cols-2">
@@ -303,9 +259,9 @@ export default async function MarketingPage() {
               <table className="mt-4 w-full text-left text-sm">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="pb-2 font-medium text-gray-900">{t("data.colCategory")}</th>
-                    <th className="pb-2 font-medium text-gray-900">{t("data.colPeak")}</th>
-                    <th className="pb-2 font-medium text-gray-900">{t("data.colOffPeak")}</th>
+                    <th className="pb-2 font-medium text-brand-800">{t("data.colCategory")}</th>
+                    <th className="pb-2 font-medium text-brand-800">{t("data.colPeak")}</th>
+                    <th className="pb-2 font-medium text-brand-800">{t("data.colOffPeak")}</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-600">
@@ -347,14 +303,14 @@ export default async function MarketingPage() {
       </section>
 
       {/* Open Source */}
-      <section id="open-source" className="relative overflow-hidden bg-white py-20">
-        <WorldMapDots className="pointer-events-none absolute inset-0 m-auto h-full w-full max-w-4xl text-gray-200 opacity-20" />
+      <section id="open-source" className="relative overflow-hidden bg-hero-gradient py-20">
+        <WorldMapDots className="pointer-events-none absolute inset-0 m-auto h-full w-full max-w-4xl text-brand-300 animate-pulse-dot" />
         <div className="relative mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">{t("openSource.title")}</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600">
+          <h2 className="animate-on-scroll text-3xl font-bold text-gray-900">{t("openSource.title")}</h2>
+          <p className="animate-on-scroll-delay-1 mx-auto mt-4 max-w-2xl text-gray-600">
             {t("openSource.description")}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
+          <div className="animate-on-scroll-delay-2 mt-8 flex flex-wrap justify-center gap-2">
             {[
               "Next.js 16",
               "React 19",
@@ -366,18 +322,18 @@ export default async function MarketingPage() {
             ].map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm text-gray-700"
+                className="rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-sm text-brand-700"
               >
                 {tech}
               </span>
             ))}
           </div>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="animate-on-scroll-delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="https://github.com/Manuel10i/packedplaces"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-medium text-white hover:bg-gray-800"
+              className="inline-block rounded-lg bg-cta-gradient px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-105"
             >
               {t("openSource.viewOnGithub")}
             </a>
@@ -385,7 +341,7 @@ export default async function MarketingPage() {
               href="https://github.com/Manuel10i/packedplaces/blob/main/docs/ADDING-REGIONS.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              className="inline-block rounded-lg border border-brand-300 bg-white/80 px-6 py-3 text-sm font-medium text-brand-700 transition-colors hover:bg-white"
             >
               {t("openSource.contributions")}
             </a>
@@ -394,21 +350,21 @@ export default async function MarketingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 bg-white py-8">
+      <footer className="border-t border-sand-200 bg-sand-50 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-gray-500 sm:flex-row">
           <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-gray-900">
+            <Link href="/privacy" className="transition-colors hover:text-brand-600">
               {t("footer.privacy")}
             </Link>
-            <Link href="/contact" className="hover:text-gray-900">
+            <Link href="/contact" className="transition-colors hover:text-brand-600">
               {t("footer.contact")}
             </Link>
             <a
               href="https://github.com/Manuel10i/packedplaces"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-900"
+              className="transition-colors hover:text-brand-600"
             >
               {t("footer.github")}
             </a>
@@ -416,7 +372,7 @@ export default async function MarketingPage() {
               href="https://github.com/Manuel10i/packedplaces/tree/main/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-900"
+              className="transition-colors hover:text-brand-600"
             >
               {t("footer.docs")}
             </a>

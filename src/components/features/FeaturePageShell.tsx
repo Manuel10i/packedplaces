@@ -27,7 +27,7 @@ export async function FeaturePageShell({ slug, children }: Props) {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-xl font-bold text-gray-900">
             {t("nav.brand")}
@@ -36,7 +36,7 @@ export async function FeaturePageShell({ slug, children }: Props) {
             <LanguageSwitcher variant="nav" />
             <Link
               href="/map"
-              className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
             >
               {t("nav.openMap")} &rarr;
             </Link>
@@ -48,14 +48,14 @@ export async function FeaturePageShell({ slug, children }: Props) {
         <div className="mx-auto max-w-4xl px-6">
           <Link
             href="/#features"
-            className="text-sm text-gray-500 hover:text-gray-900"
+            className="text-sm text-gray-500 transition-colors hover:text-brand-600"
           >
             &larr; {shell("back")}
           </Link>
-          <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="animate-on-scroll mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {feature("title")}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="animate-on-scroll-delay-1 mt-4 max-w-2xl text-lg text-gray-600">
             {feature("subtitle")}
           </p>
         </div>
@@ -65,7 +65,7 @@ export async function FeaturePageShell({ slug, children }: Props) {
         <div className="mx-auto max-w-4xl px-6">{children}</div>
       </section>
 
-      <section className="border-t border-gray-100 bg-gray-50 py-16">
+      <section className="border-t border-sand-200 bg-section-warm py-16">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-lg font-semibold text-gray-900">
             {shell("exploreOther")}
@@ -75,7 +75,7 @@ export async function FeaturePageShell({ slug, children }: Props) {
               <Link
                 key={f.slug}
                 href={`/features/${f.slug}`}
-                className="rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:border-gray-300"
+                className="card-hover-lift rounded-lg border border-gray-200 bg-white p-4"
               >
                 <h3 className="text-sm font-semibold text-gray-900">
                   {nav(`${f.key}Title`)}
@@ -96,27 +96,27 @@ export async function FeaturePageShell({ slug, children }: Props) {
         <p className="mt-2 text-gray-600">{shell("mapDesc")}</p>
         <Link
           href="/map"
-          className="mt-6 inline-block rounded-lg bg-gray-900 px-8 py-3 text-base font-medium text-white hover:bg-gray-800"
+          className="mt-6 inline-block rounded-lg bg-cta-gradient px-8 py-3 text-base font-medium text-white transition-transform hover:scale-105"
         >
           {shell("openMap")} &rarr;
         </Link>
       </section>
 
-      <footer className="border-t border-gray-100 bg-white py-8">
+      <footer className="border-t border-sand-200 bg-sand-50 py-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 px-6 text-sm text-gray-500 sm:flex-row">
           <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-gray-900">
+            <Link href="/privacy" className="transition-colors hover:text-brand-600">
               {t("footer.privacy")}
             </Link>
-            <Link href="/contact" className="hover:text-gray-900">
+            <Link href="/contact" className="transition-colors hover:text-brand-600">
               {t("footer.contact")}
             </Link>
             <a
               href="https://github.com/Manuel10i/packedplaces"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-900"
+              className="transition-colors hover:text-brand-600"
             >
               {t("footer.github")}
             </a>

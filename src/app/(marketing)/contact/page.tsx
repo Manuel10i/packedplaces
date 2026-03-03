@@ -16,7 +16,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="text-xl font-bold text-gray-900">
             {t("nav.brand")}
@@ -25,7 +25,7 @@ export default async function ContactPage() {
             <LanguageSwitcher variant="nav" />
             <Link
               href="/map"
-              className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
             >
               {t("nav.openMap")} &rarr;
             </Link>
@@ -33,7 +33,7 @@ export default async function ContactPage() {
         </div>
       </nav>
 
-      <section className="bg-white py-16">
+      <section className="bg-sand-50 py-16">
         <div className="mx-auto max-w-2xl px-6">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {c("title")}
@@ -46,21 +46,21 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-100 bg-white py-8">
+      <footer className="border-t border-sand-200 bg-sand-50 py-8">
         <div className="mx-auto flex max-w-2xl flex-col items-center justify-between gap-4 px-6 text-sm text-gray-500 sm:flex-row">
           <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-gray-900">
+            <Link href="/privacy" className="transition-colors hover:text-brand-600">
               {t("footer.privacy")}
             </Link>
-            <Link href="/contact" className="hover:text-gray-900">
+            <Link href="/contact" className="transition-colors hover:text-brand-600">
               {t("footer.contact")}
             </Link>
             <a
               href="https://github.com/Manuel10i/packedplaces"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-900"
+              className="transition-colors hover:text-brand-600"
             >
               {t("footer.github")}
             </a>
