@@ -42,7 +42,7 @@ export function LanguageSwitcher({ variant }: Props) {
     <select
       value={locale}
       onChange={handleChange}
-      className="cursor-pointer rounded-lg bg-white/95 px-2 py-1 text-xs font-medium text-gray-700 shadow-lg outline-none backdrop-blur-sm"
+      className="w-fit cursor-pointer rounded-lg bg-white/95 px-2 py-1 text-xs font-medium text-gray-700 shadow-lg outline-none backdrop-blur-sm"
       aria-label={t("label")}
     >
       {locales.map((l) => (

@@ -19,15 +19,14 @@ export default function MapPage() {
     <div className="relative h-screen w-screen">
       <MapView />
 
-      {/* Top-left: title + year selector + language */}
-      <div className="absolute left-4 top-4 z-10 flex items-center gap-3">
+      {/* Top-left: title + language */}
+      <div className="absolute left-4 top-4 z-10 flex flex-col gap-1">
         <Link
           href="/"
           className="rounded-xl bg-white/95 px-4 py-2 text-lg font-bold text-gray-800 shadow-lg backdrop-blur-sm hover:bg-white transition-colors"
         >
           {t("title")}
         </Link>
-        <YearSelector />
         <LanguageSwitcher variant="map" />
       </div>
 
@@ -36,9 +35,10 @@ export default function MapPage() {
         <HolidayPanel />
       </div>
 
-      {/* Bottom: Time slider + Legend */}
+      {/* Bottom: Year selector + Time slider + Legend */}
       <div className="absolute bottom-10 left-4 right-4 z-10 flex items-end gap-3">
-        <div className="flex-1">
+        <div className="flex flex-1 flex-col gap-2">
+          <YearSelector />
           <TimeSlider />
         </div>
         <div className="flex w-48 shrink-0 flex-col gap-2">

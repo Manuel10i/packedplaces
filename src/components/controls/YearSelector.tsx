@@ -9,7 +9,7 @@ export function YearSelector() {
   const { selectedYear, setSelectedYear } = useMapStore();
 
   return (
-    <div className="flex gap-1 rounded-lg bg-white/95 p-1 shadow-lg backdrop-blur-sm">
+    <div className="flex w-fit gap-1 rounded-lg bg-white/95 p-1 shadow-lg backdrop-blur-sm">
       {YEARS.map((year) => (
         <button
           key={year}
