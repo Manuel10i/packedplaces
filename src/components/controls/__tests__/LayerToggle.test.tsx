@@ -9,7 +9,7 @@ describe("LayerToggle", () => {
     useMapStore.setState({
       showHeatmap: true,
       showEvents: true,
-      showHolidayRegions: false,
+      showHolidayRegions: true,
     });
   });
 
@@ -25,7 +25,7 @@ describe("LayerToggle", () => {
     renderWithIntl(<LayerToggle />);
     expect(screen.getByLabelText("Heatmap")).toBeChecked();
     expect(screen.getByLabelText("Events")).toBeChecked();
-    expect(screen.getByLabelText("Holiday Regions")).not.toBeChecked();
+    expect(screen.getByLabelText("Holiday Regions")).toBeChecked();
   });
 
   it("toggles showHeatmap when heatmap checkbox is clicked", () => {
@@ -43,6 +43,6 @@ describe("LayerToggle", () => {
   it("toggles showHolidayRegions when holiday regions checkbox is clicked", () => {
     renderWithIntl(<LayerToggle />);
     fireEvent.click(screen.getByLabelText("Holiday Regions"));
-    expect(useMapStore.getState().showHolidayRegions).toBe(true);
+    expect(useMapStore.getState().showHolidayRegions).toBe(false);
   });
 });

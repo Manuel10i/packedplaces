@@ -46,7 +46,7 @@ export const useMapStore = create<MapState>((set, get) => ({
   viewportCenter: null,
   showHeatmap: true,
   showEvents: true,
-  showHolidayRegions: false,
+  showHolidayRegions: true,
   setSelectedWeek: (week) => set({ selectedWeek: week }),
   setSelectedYear: (year) => set({ selectedYear: year }),
   togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),

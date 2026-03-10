@@ -59,8 +59,8 @@ export function useUrlSync() {
         (showHeatmap ? "h" : "") +
         (showEvents ? "e" : "") +
         (showHolidayRegions ? "r" : "");
-      if (layers !== "he") {
-        // Only include when non-default (default is heatmap + events on)
+      if (layers !== "her") {
+        // Only include when non-default (default is heatmap + events + regions on)
         params.set("layers", layers);
       }
 
