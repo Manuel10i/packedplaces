@@ -24,6 +24,7 @@ interface MapState {
   showHeatmap: boolean;
   showEvents: boolean;
   showHolidayRegions: boolean;
+  disclaimerAccepted: boolean;
   setSelectedWeek: (week: number) => void;
   setSelectedYear: (year: number) => void;
   togglePlaying: () => void;
@@ -35,6 +36,7 @@ interface MapState {
   setShowHeatmap: (show: boolean) => void;
   setShowEvents: (show: boolean) => void;
   setShowHolidayRegions: (show: boolean) => void;
+  setDisclaimerAccepted: () => void;
 }
 
 export const useMapStore = create<MapState>((set, get) => ({
@@ -47,6 +49,7 @@ export const useMapStore = create<MapState>((set, get) => ({
   showHeatmap: true,
   showEvents: true,
   showHolidayRegions: true,
+  disclaimerAccepted: true,
   setSelectedWeek: (week) => set({ selectedWeek: week }),
   setSelectedYear: (year) => set({ selectedYear: year }),
   togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })),
@@ -65,4 +68,12 @@ export const useMapStore = create<MapState>((set, get) => ({
   setShowHeatmap: (show) => set({ showHeatmap: show }),
   setShowEvents: (show) => set({ showEvents: show }),
   setShowHolidayRegions: (show) => set({ showHolidayRegions: show }),
+  setDisclaimerAccepted: () => {
+    try {
+      localStorage.setItem("map_disclaimer_accepted", "1");
+    } catch {
+      // storage full or blocked
+    }
+    set({ disclaimerAccepted: true });
+  },
 }));

@@ -3,5 +3,5 @@ export default function MapLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="flex h-screen w-screen flex-col overflow-hidden">{children}</div>;
+  return <div className="flex w-screen flex-col overflow-hidden" style={{ height: "100dvh" }}>{children}</div>;
 }

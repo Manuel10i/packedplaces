@@ -16,9 +16,7 @@ export default function MapPage() {
   const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
 
   function handleTogglePanel() {
-    // Desktop: toggle sidebar
     setIsPanelOpen((v) => !v);
-    // Mobile: toggle bottom sheet
     setMobileSheetOpen((v) => !v);
   }
 
@@ -31,8 +29,10 @@ export default function MapPage() {
 
       {/* Middle: map + optional sidebar */}
       <div className="flex min-h-0 flex-1">
-        <div className="relative flex-1">
-          <MapView />
+        <div className="relative min-h-0 flex-1">
+          <div className="absolute inset-0">
+            <MapView />
+          </div>
         </div>
 
         {/* Desktop sidebar — always mounted, animated width */}

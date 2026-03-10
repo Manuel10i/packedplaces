@@ -1,27 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useMapStore } from "@/store/useMapStore";
 import { trackEvent } from "@/lib/analytics";
-
-const STORAGE_KEY = "map_disclaimer_accepted";
 
 export function MapDisclaimer() {
   const t = useTranslations("disclaimer");
-  const [visible, setVisible] = useState(false);
+  const disclaimerAccepted = useMapStore((s) => s.disclaimerAccepted);
+  const setDisclaimerAccepted = useMapStore((s) => s.setDisclaimerAccepted);
 
+  // After hydration, check localStorage and show modal if not accepted
   useEffect(() => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      setVisible(true);
+    try {
+      if (localStorage.getItem("map_disclaimer_accepted") !== "1") {
+        useMapStore.setState({ disclaimerAccepted: false });
+      }
+    } catch {
+      useMapStore.setState({ disclaimerAccepted: false });
     }
   }, []);
 
-  if (!visible) return null;
+  if (disclaimerAccepted) return null;
 
   function handleAccept() {
-    localStorage.setItem(STORAGE_KEY, "1");
     trackEvent("disclaimer_accepted");
-    setVisible(false);
+    setDisclaimerAccepted();
   }
 
   function handleDecline() {
