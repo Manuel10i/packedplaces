@@ -6,7 +6,7 @@ import { locales } from "@/i18n/config";
 import { trackEvent } from "@/lib/analytics";
 
 interface Props {
-  variant: "nav" | "map";
+  variant: "nav" | "map" | "header";
 }
 
 export function LanguageSwitcher({ variant }: Props) {
@@ -27,6 +27,23 @@ export function LanguageSwitcher({ variant }: Props) {
         value={locale}
         onChange={handleChange}
         className="hidden cursor-pointer border-none bg-transparent text-sm text-gray-600 outline-none hover:text-gray-900 sm:inline"
+        aria-label={t("label")}
+      >
+        {locales.map((l) => (
+          <option key={l} value={l}>
+            {t(l)}
+          </option>
+        ))}
+      </select>
+    );
+  }
+
+  if (variant === "header") {
+    return (
+      <select
+        value={locale}
+        onChange={handleChange}
+        className="cursor-pointer border-none bg-transparent text-sm font-medium text-gray-600 outline-none hover:text-gray-900"
         aria-label={t("label")}
       >
         {locales.map((l) => (

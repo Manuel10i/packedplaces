@@ -167,7 +167,7 @@ export function MapView() {
     : ["all-destinations"];
 
   return (
-    <div className="absolute inset-0">
+    <div className="h-full w-full">
       <Map
         ref={mapRef}
         initialViewState={initialView}

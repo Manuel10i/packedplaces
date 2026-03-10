@@ -43,7 +43,11 @@ for (const c of countries) {
   COUNTRY_TO_REGION[c.code] = c.region;
 }
 
-export function HolidayPanel() {
+interface HolidayPanelProps {
+  className?: string;
+}
+
+export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm" }: HolidayPanelProps) {
   const { selectedWeek, selectedYear, viewportBounds } = useMapStore();
   const { data: holidays } = useHolidayData(selectedWeek, selectedYear);
   const { data: heatmapData } = useHeatmapData(selectedWeek, selectedYear);
@@ -121,7 +125,7 @@ export function HolidayPanel() {
   };
 
   return (
-    <div className="max-h-[70vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm">
+    <div className={className}>
       {/* ===== School Holidays section ===== */}
       <button
         onClick={() => setHolidaysOpen((v) => !v)}

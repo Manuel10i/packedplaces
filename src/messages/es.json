@@ -83,12 +83,14 @@
     "contact": "Contacto"
   },
   "map": {
-    "title": "PackedPlaces.com"
+    "title": "PackedPlaces.com",
+    "holidays": "Vacaciones y eventos"
   },
   "slider": {
     "week": "Semana {week}",
     "play": "Reproducir",
-    "pause": "Pausa"
+    "pause": "Pausa",
+    "today": "Hoy"
   },
   "holidays": {
     "title": "Vacaciones escolares",

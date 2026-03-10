@@ -5,7 +5,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { useTranslations, useLocale } from "next-intl";
 import { useMapStore } from "@/store/useMapStore";
-import { format } from "date-fns";
+import { format, getISOWeek } from "date-fns";
 import { getDateLocale } from "@/i18n/date-locale";
 import type { Locale } from "@/i18n/config";
 
@@ -32,8 +32,12 @@ function getMonthMarks(locale: Locale): Record<number, string> {
   return marks;
 }
 
-export function TimeSlider() {
-  const { selectedWeek, selectedYear, isPlaying, setSelectedWeek, togglePlaying, advanceWeek } = useMapStore();
+interface TimeSliderProps {
+  className?: string;
+}
+
+export function TimeSlider({ className = "rounded-xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm" }: TimeSliderProps) {
+  const { selectedWeek, selectedYear, isPlaying, setSelectedWeek, setSelectedYear, togglePlaying, advanceWeek } = useMapStore();
   const t = useTranslations("slider");
   const locale = useLocale() as Locale;
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -51,11 +55,25 @@ export function TimeSlider() {
   }, [isPlaying, advanceWeek]);
 
   return (
-    <div className="rounded-xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm">
+    <div className={className}>
       <div className="mb-1 flex items-center justify-between">
-        <span className="text-sm font-semibold text-gray-700">
-          {t("week", { week: selectedWeek })}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-semibold text-gray-700">
+            {t("week", { week: selectedWeek })}
+          </span>
+          {!(selectedWeek === getISOWeek(new Date()) && selectedYear === new Date().getFullYear()) && (
+            <button
+              onClick={() => {
+                const now = new Date();
+                setSelectedYear(now.getFullYear());
+                setSelectedWeek(getISOWeek(now));
+              }}
+              className="rounded px-1.5 py-0.5 text-xs font-medium text-blue-600 transition-colors hover:bg-blue-50"
+            >
+              {t("today")}
+            </button>
+          )}
+        </div>
         <span className="text-sm text-gray-500">
           {getWeekDateRange(selectedYear, selectedWeek, locale)}
         </span>

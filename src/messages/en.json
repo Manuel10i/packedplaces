@@ -83,12 +83,14 @@
     "contact": "Contact"
   },
   "map": {
-    "title": "PackedPlaces.com"
+    "title": "PackedPlaces.com",
+    "holidays": "Holidays & Events"
   },
   "slider": {
     "week": "Week {week}",
     "play": "Play",
-    "pause": "Pause"
+    "pause": "Pause",
+    "today": "Today"
   },
   "holidays": {
     "title": "School Holidays",

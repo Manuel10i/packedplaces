@@ -2,11 +2,15 @@
 
 import { useTranslations } from "next-intl";
 
-export function Legend() {
+interface LegendProps {
+  className?: string;
+}
+
+export function Legend({ className = "rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm" }: LegendProps) {
   const t = useTranslations("legend");
 
   return (
-    <div className="rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
+    <div className={className}>
       <div className="mb-1.5 text-xs font-semibold text-gray-500">{t("title")}</div>
       <div className="flex items-center gap-2">
         <span className="text-xs text-gray-500">{t("quiet")}</span>
