@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     languages: {
       en: "https://packedplaces.com",
-      de: "https://packedplaces.com",
+      de: "https://keinplatzfrei.de",
       es: "https://packedplaces.com",
       fr: "https://packedplaces.com",
       "x-default": "https://packedplaces.com",

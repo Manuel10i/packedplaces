@@ -2,13 +2,16 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
 
 const BASE_URL = "https://packedplaces.com";
+const DE_BASE_URL = "https://keinplatzfrei.de";
 
 function langAlternates(path: string) {
-  const url = path ? `${BASE_URL}/${path}` : BASE_URL;
   return {
     languages: Object.fromEntries([
-      ...locales.map((l) => [l, url]),
-      ["x-default", url],
+      ...locales.map((l) => {
+        const base = l === "de" ? DE_BASE_URL : BASE_URL;
+        return [l, path ? `${base}/${path}` : base];
+      }),
+      ["x-default", path ? `${BASE_URL}/${path}` : BASE_URL],
     ]),
   };
 }
