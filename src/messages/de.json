@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "KeinPlatzFrei.de",
+    "brand": "PackedPlaces.com",
     "howItWorks": "So funktioniert's",
     "data": "Daten",
     "openSource": "Open Source",
@@ -8,7 +8,7 @@
   },
   "hero": {
     "headline": "Sieh, wie voll Reiseziele\nwirklich werden",
-    "description": "KeinPlatzFrei.de visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten und Großveranstaltungen aus über 100 Ländern.",
+    "description": "PackedPlaces.com visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten und Großveranstaltungen aus über 100 Ländern.",
     "cta": "Karte erkunden",
     "statRegions": "Regionen",
     "statDestinations": "Reiseziele",
@@ -71,7 +71,7 @@
   },
   "openSource": {
     "title": "Open Source",
-    "description": "KeinPlatzFrei.de ist vollständig quelloffen. Durchstöbern Sie den Code, melden Sie Probleme oder tragen Sie neue Regionen und Reiseziele bei.",
+    "description": "PackedPlaces.com ist vollständig quelloffen. Durchstöbern Sie den Code, melden Sie Probleme oder tragen Sie neue Regionen und Reiseziele bei.",
     "viewOnGithub": "Auf GitHub ansehen",
     "contributions": "Beiträge willkommen"
   },
@@ -83,8 +83,14 @@
     "contact": "Kontakt"
   },
   "map": {
-    "title": "KeinPlatzFrei.de",
+    "title": "PackedPlaces.com",
     "holidays": "Ferien & Events"
+  },
+  "disclaimer": {
+    "title": "Datenhinweis",
+    "body": "Die auf dieser Karte dargestellten Auslastungswerte und Reisedaten sind berechnete Schätzungen auf Basis öffentlich verfügbarer Informationen wie Schulferienkalendern, Veranstaltungsdaten und Tourismusstatistiken. Obwohl wir um Genauigkeit bemüht sind, können die Daten von den tatsächlichen Gegebenheiten abweichen. PackedPlaces übernimmt keine Haftung für etwaige Ungenauigkeiten. Bitte nutzen Sie diese Informationen als hilfreiche Orientierung, nicht als Garantie.",
+    "accept": "Verstanden",
+    "decline": "Verlassen"
   },
   "slider": {
     "week": "Woche {week}",
@@ -143,9 +149,9 @@
     "title": "Datenschutzerklärung",
     "lastUpdated": "Zuletzt aktualisiert: März 2026",
     "controllerTitle": "Verantwortlicher",
-    "controllerText": "KeinPlatzFrei.de wird von 10ideen.at betrieben. Für datenschutzbezogene Anfragen nutzen Sie bitte unser Kontaktformular.",
+    "controllerText": "PackedPlaces.com wird von 10ideen.at betrieben. Für datenschutzbezogene Anfragen nutzen Sie bitte unser Kontaktformular.",
     "collectTitle": "Welche Daten wir erheben",
-    "collectText": "KeinPlatzFrei.de ist darauf ausgelegt, so wenig personenbezogene Daten wie möglich zu erheben. Wir benötigen keine Benutzerkonten oder Anmeldungen. Die einzigen personenbezogenen Daten, die wir verarbeiten, stammen aus freiwilligen Kontaktformular-Eingaben und anonymisierten Analysen.",
+    "collectText": "PackedPlaces.com ist darauf ausgelegt, so wenig personenbezogene Daten wie möglich zu erheben. Wir benötigen keine Benutzerkonten oder Anmeldungen. Die einzigen personenbezogenen Daten, die wir verarbeiten, stammen aus freiwilligen Kontaktformular-Eingaben und anonymisierten Analysen.",
     "cookiesTitle": "Cookies",
     "cookiesText": "Wir verwenden ein einziges funktionales Cookie, um Ihre Spracheinstellung zu speichern:",
     "cookieLocale": "Speichert Ihre bevorzugte Sprache (en, de, es, fr). Läuft nach 1 Jahr ab.",

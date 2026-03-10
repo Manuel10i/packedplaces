@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MapView } from "@/components/map/MapView";
 import { MapHeader } from "@/components/map/MapHeader";
+import { MapDisclaimer } from "@/components/map/MapDisclaimer";
 import { TimeSlider } from "@/components/controls/TimeSlider";
 import { YearSelector } from "@/components/controls/YearSelector";
 import { HolidayPanel } from "@/components/controls/HolidayPanel";
@@ -23,6 +24,8 @@ export default function MapPage() {
 
   return (
     <>
+      <MapDisclaimer />
+
       {/* Header */}
       <MapHeader onTogglePanel={handleTogglePanel} isPanelOpen={isPanelOpen} />
 

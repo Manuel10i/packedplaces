@@ -86,6 +86,12 @@
     "title": "PackedPlaces.com",
     "holidays": "Holidays & Events"
   },
+  "disclaimer": {
+    "title": "Data Disclaimer",
+    "body": "The crowdedness scores and travel data shown on this map are calculated estimates based on publicly available information, including school holiday schedules, event calendars, and tourism statistics. While we strive for accuracy, the data may not perfectly reflect real-world conditions. PackedPlaces cannot be held responsible for any inaccuracies. Please use this information as a helpful guide, not as a guarantee.",
+    "accept": "I understand",
+    "decline": "Leave"
+  },
   "slider": {
     "week": "Week {week}",
     "play": "Play",

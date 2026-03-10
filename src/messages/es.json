@@ -86,6 +86,12 @@
     "title": "PackedPlaces.com",
     "holidays": "Vacaciones y eventos"
   },
+  "disclaimer": {
+    "title": "Aviso sobre los datos",
+    "body": "Las puntuaciones de masificación y los datos de viaje mostrados en este mapa son estimaciones calculadas a partir de información pública, incluyendo calendarios de vacaciones escolares, agendas de eventos y estadísticas turísticas. Aunque nos esforzamos por ser precisos, los datos pueden no reflejar perfectamente las condiciones reales. PackedPlaces no se hace responsable de posibles inexactitudes. Por favor, utilice esta información como una guía orientativa, no como una garantía.",
+    "accept": "Entendido",
+    "decline": "Salir"
+  },
   "slider": {
     "week": "Semana {week}",
     "play": "Reproducir",
