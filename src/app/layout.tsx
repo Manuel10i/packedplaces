@@ -14,8 +14,11 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
+    // Every page title already includes the brand (e.g. "Contact — PackedPlaces.com"),
+    // so a "%s | PackedPlaces.com" template doubled it. Drop the template; page titles
+    // are used as-is and the brand appears once.
     default: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
-    template: "%s | PackedPlaces.com",
+    template: "%s",
   },
   description:
     "PackedPlaces.com visualizes tourist crowdedness for 230+ destinations worldwide, week by week, powered by school holiday data from 75 countries.",
