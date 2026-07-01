@@ -2,6 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+const webAppJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "PackedPlaces",
+  url: "https://packedplaces.com",
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Web",
+  description:
+    "See how crowded travel destinations really get, week by week, powered by school holiday data from 75 countries.",
+  inLanguage: ["en", "de", "es", "fr"],
+};
 
 export const metadata: Metadata = {
   title: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
@@ -100,6 +113,7 @@ export default async function MarketingPage() {
 
   return (
     <>
+      <JsonLd data={webAppJsonLd} />
       {/* Navigation */}
       <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
