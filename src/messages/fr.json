@@ -14,7 +14,11 @@
     "statDestinations": "Destinations",
     "statPatterns": "Modèles",
     "statEvents": "Événements",
-    "statCountries": "Pays"
+    "statCountries": "Pays",
+    "searchPlaceholder": "Cherchez une destination, par ex. Hallstatt",
+    "searchLabel": "Rechercher une destination",
+    "searchNoResults": "Aucune destination trouvee",
+    "searchHint": "ou simplement"
   },
   "howItWorks": {
     "title": "Comment ça marche",

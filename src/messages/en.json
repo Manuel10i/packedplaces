@@ -14,7 +14,11 @@
     "statDestinations": "Destinations",
     "statPatterns": "Patterns",
     "statEvents": "Events",
-    "statCountries": "Countries"
+    "statCountries": "Countries",
+    "searchPlaceholder": "Search a destination, e.g. Hallstatt",
+    "searchLabel": "Search a travel destination",
+    "searchNoResults": "No destination found",
+    "searchHint": "or just"
   },
   "howItWorks": {
     "title": "How It Works",
