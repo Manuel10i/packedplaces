@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
+import { allDestinationSlugs } from "@/lib/destinations";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -26,11 +27,24 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return PATHS.map(({ path, changeFrequency, priority }) => ({
+  const staticEntries = PATHS.map(({ path, changeFrequency, priority }) => ({
     url: path ? `${BASE_URL}/${path}` : BASE_URL,
     lastModified: new Date(),
     changeFrequency,
     priority,
     alternates: langAlternates(path),
   }));
+
+  const destinationEntries = allDestinationSlugs().map((slug) => {
+    const path = `destination/${slug}`;
+    return {
+      url: `${BASE_URL}/${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: langAlternates(path),
+    };
+  });
+
+  return [...staticEntries, ...destinationEntries];
 }

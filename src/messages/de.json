@@ -396,5 +396,37 @@
       "oneTime": "Einmalig",
       "oneTimeDesc": "Wechselnde Austragungsorte: Winterolympiade 2026 (Italien), FIFA-WM 2026 (Nordamerika), Sommerolympiade 2028 (Los Angeles)."
     }
+  },
+  "destination": {
+    "metaTitle": "{name}: beste Reisezeit und wann es voll ist",
+    "metaDescription": "Sieh Monat für Monat, wann {name} am vollsten und am ruhigsten ist. Hauptsaison ist {months}. Plane deinen Besuch um die Menschenmengen herum.",
+    "metaDescriptionYearRound": "Sieh Monat für Monat, wie voll {name} übers Jahr wird, und plane deinen Besuch um die Menschenmengen herum.",
+    "h1": "Wann ist {name} voll?",
+    "intro": "{name} ist ein Reiseziel der Kategorie {category} in {country}. Die Hauptsaison ist {months}. So voll wird es übers Jahr, damit du den richtigen Zeitpunkt wählen kannst.",
+    "introYearRound": "{name} ist ein Reiseziel der Kategorie {category} in {country} und ganzjährig gut besucht. So verschieben sich die Menschenmengen über die Monate.",
+    "calendarHeading": "Andrang nach Monat",
+    "busiestHeading": "Vollste Monate",
+    "quietestHeading": "Ruhigste Monate",
+    "none": "Keine klar ruhigen Monate",
+    "disclaimer": "Schätzungen auf Basis saisonaler Reisenachfrage-Modellierung, keine Live-Besucherzahlen.",
+    "mapCta": "Aktuellen Andrang für {name} auf der Karte ansehen",
+    "legend": {
+      "low": "Ruhig",
+      "medium": "Mittel",
+      "high": "Voll"
+    },
+    "categories": {
+      "ski": "Ski",
+      "beach": "Strand",
+      "city": "Stadt",
+      "lake": "See",
+      "nature": "Natur",
+      "cultural": "Kultur",
+      "safari": "Safari",
+      "island": "Insel",
+      "mountain": "Berg",
+      "desert": "Wüste",
+      "tropical": "Tropen"
+    }
   }
 }

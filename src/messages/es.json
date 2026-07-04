@@ -396,5 +396,37 @@
       "oneTime": "Únicos",
       "oneTimeDesc": "Ciudades anfitrionas cambiantes: Juegos Olímpicos de Invierno 2026 (Italia), Copa del Mundo FIFA 2026 (Norteamérica), Juegos Olímpicos de Verano 2028 (Los Ángeles)."
     }
+  },
+  "destination": {
+    "metaTitle": "{name}: mejor época para visitar y cuándo hay aglomeraciones",
+    "metaDescription": "Descubre mes a mes cuándo {name} está más lleno y más tranquilo. La temporada alta es {months}. Planifica tu visita evitando las aglomeraciones.",
+    "metaDescriptionYearRound": "Descubre mes a mes lo concurrido que está {name} durante el año y planifica tu visita evitando las aglomeraciones.",
+    "h1": "¿Cuándo hay aglomeraciones en {name}?",
+    "intro": "{name} es un destino de {category} en {country}. Su temporada alta es {months}. Así de concurrido está durante el año, para que elijas el mejor momento para ir.",
+    "introYearRound": "{name} es un destino de {category} en {country} que está concurrido todo el año. Así cambian las aglomeraciones a lo largo de los meses.",
+    "calendarHeading": "Nivel de aglomeración por mes",
+    "busiestHeading": "Meses más concurridos",
+    "quietestHeading": "Meses más tranquilos",
+    "none": "Sin meses claramente tranquilos",
+    "disclaimer": "Estimaciones basadas en un modelo de demanda de viajes estacional, no en recuentos de visitantes en tiempo real.",
+    "mapCta": "Ver el nivel de aglomeración de {name} en el mapa",
+    "legend": {
+      "low": "Tranquilo",
+      "medium": "Moderado",
+      "high": "Concurrido"
+    },
+    "categories": {
+      "ski": "esquí",
+      "beach": "playa",
+      "city": "ciudad",
+      "lake": "lago",
+      "nature": "naturaleza",
+      "cultural": "cultura",
+      "safari": "safari",
+      "island": "isla",
+      "mountain": "montaña",
+      "desert": "desierto",
+      "tropical": "tropical"
+    }
   }
 }

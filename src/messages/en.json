@@ -396,5 +396,37 @@
       "oneTime": "One-Time",
       "oneTimeDesc": "Moving host cities: Winter Olympics 2026 (Italy), FIFA World Cup 2026 (North America), Summer Olympics 2028 (Los Angeles)."
     }
+  },
+  "destination": {
+    "metaTitle": "{name}: best time to visit and when it is crowded",
+    "metaDescription": "See month by month when {name} is busiest and quietest. Peak season is {months}. Plan your visit around the crowds.",
+    "metaDescriptionYearRound": "See how crowded {name} gets month by month across the year, and plan your visit around the crowds.",
+    "h1": "When is {name} crowded?",
+    "intro": "{name} is a {category} destination in {country}. Its peak season is {months}. Here is how busy it gets across the year, so you can pick the right time to go.",
+    "introYearRound": "{name} is a {category} destination in {country} that stays busy year-round. Here is how the crowds shift across the months.",
+    "calendarHeading": "Crowd levels by month",
+    "busiestHeading": "Busiest months",
+    "quietestHeading": "Quietest months",
+    "none": "No clearly quiet months",
+    "disclaimer": "Estimates based on seasonal travel-demand modelling, not live visitor counts.",
+    "mapCta": "See live crowd levels for {name} on the map",
+    "legend": {
+      "low": "Quiet",
+      "medium": "Moderate",
+      "high": "Busy"
+    },
+    "categories": {
+      "ski": "ski",
+      "beach": "beach",
+      "city": "city",
+      "lake": "lake",
+      "nature": "nature",
+      "cultural": "cultural",
+      "safari": "safari",
+      "island": "island",
+      "mountain": "mountain",
+      "desert": "desert",
+      "tropical": "tropical"
+    }
   }
 }
