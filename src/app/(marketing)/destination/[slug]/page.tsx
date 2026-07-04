@@ -7,9 +7,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getCountryName } from "@/lib/data";
 import {
   allDestinationSlugs,
-  getDestinationBySlug,
+  getSlugEntry,
+  localizedSlugsForSlug,
+  hreflangSlugMap,
   crowdByMonth,
   type CrowdLevel,
+  type LocalizedSlugs,
 } from "@/lib/destinations";
 
 const BASE_URL = "https://packedplaces.com";
@@ -18,6 +21,25 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return allDestinationSlugs().map((slug) => ({ slug }));
+}
+
+const destUrl = (slug: string) => `${BASE_URL}/destination/${slug}`;
+
+/** hreflang alternates as full URLs, keyed by hreflang value. */
+function hreflangLanguages(slug: string): Record<string, string> | undefined {
+  const map = hreflangSlugMap(slug);
+  if (!map) return undefined;
+  return Object.fromEntries(
+    Object.entries(map).map(([lang, s]) => [lang, destUrl(s)]),
+  );
+}
+
+/** Per-locale hrefs for the language switcher (only locales with a dedicated URL). */
+function switcherHrefs(alts: LocalizedSlugs): Record<string, string> {
+  const hrefs: Record<string, string> = {};
+  if (alts.en) hrefs.en = `/destination/${alts.en}`;
+  if (alts.de) hrefs.de = `/destination/${alts.de}`;
+  return hrefs;
 }
 
 function monthNames(locale: string, style: "long" | "short"): string[] {
@@ -42,21 +64,28 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const d = getDestinationBySlug(slug);
-  if (!d) return {};
-  const locale = await getLocale();
-  const t = await getTranslations("destination");
+  const entry = getSlugEntry(slug);
+  if (!entry) return {};
+  const { destination: d, displayName } = entry;
+  // German slugs (e.g. /destination/wien) always render as the German variant so
+  // the hreflang="de" URL genuinely serves German content.
+  const locale = entry.locale === "de" ? "de" : await getLocale();
+  const t = await getTranslations({ locale, namespace: "destination" });
   const long = monthNames(locale, "long");
   const busiest = d.peakMonths.map((m) => long[m - 1]);
-  const canonical = `${BASE_URL}/destination/${slug}`;
+  const canonical = destUrl(slug);
+  const languages = hreflangLanguages(slug);
   return {
-    title: t("metaTitle", { name: d.name }),
+    title: t("metaTitle", { name: displayName }),
     description:
       d.peakMonths.length === 12
-        ? t("metaDescriptionYearRound", { name: d.name })
-        : t("metaDescription", { name: d.name, months: joinList(locale, busiest) }),
-    alternates: { canonical },
-    openGraph: { title: t("metaTitle", { name: d.name }), url: canonical },
+        ? t("metaDescriptionYearRound", { name: displayName })
+        : t("metaDescription", { name: displayName, months: joinList(locale, busiest) }),
+    alternates: {
+      canonical,
+      ...(languages ? { languages } : {}),
+    },
+    openGraph: { title: t("metaTitle", { name: displayName }), url: canonical },
   };
 }
 
@@ -66,12 +95,16 @@ export default async function DestinationPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const d = getDestinationBySlug(slug);
-  if (!d) notFound();
+  const entry = getSlugEntry(slug);
+  if (!entry) notFound();
+  const { destination: d, displayName } = entry;
 
-  const locale = await getLocale();
-  const t = await getTranslations("destination");
-  const nav = await getTranslations("nav");
+  // German slugs force German rendering (see generateMetadata).
+  const locale = entry.locale === "de" ? "de" : await getLocale();
+  const t = await getTranslations({ locale, namespace: "destination" });
+  const nav = await getTranslations({ locale, namespace: "nav" });
+  const alts = localizedSlugsForSlug(slug);
+  const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
 
   const long = monthNames(locale, "long");
   const short = monthNames(locale, "short");
@@ -85,10 +118,10 @@ export default async function DestinationPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
-    name: d.name,
+    name: displayName,
     address: { "@type": "PostalAddress", addressCountry: d.country },
     geo: { "@type": "GeoCoordinates", latitude: d.lat, longitude: d.lng },
-    url: `${BASE_URL}/destination/${slug}`,
+    url: destUrl(slug),
   };
 
   return (
@@ -100,7 +133,11 @@ export default async function DestinationPage({
             {nav("brand")}
           </Link>
           <div className="flex items-center gap-4">
-            <LanguageSwitcher variant="nav" />
+            <LanguageSwitcher
+              variant="nav"
+              currentLocale={locale}
+              hrefByLocale={hrefByLocale}
+            />
             <Link
               href={mapUrl}
               className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
@@ -117,13 +154,13 @@ export default async function DestinationPage({
             {category} &middot; {country}
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            {t("h1", { name: d.name })}
+            {t("h1", { name: displayName })}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-600">
             {d.peakMonths.length === 12
-              ? t("introYearRound", { name: d.name, category, country })
+              ? t("introYearRound", { name: displayName, category, country })
               : t("intro", {
-                  name: d.name,
+                  name: displayName,
                   category,
                   country,
                   months: joinList(locale, busiest),
@@ -182,7 +219,7 @@ export default async function DestinationPage({
               href={mapUrl}
               className="inline-block rounded-lg bg-cta-gradient px-6 py-3 text-base font-medium text-white transition-transform hover:scale-105"
             >
-              {t("mapCta", { name: d.name })} &rarr;
+              {t("mapCta", { name: displayName })} &rarr;
             </Link>
           </div>
         </div>

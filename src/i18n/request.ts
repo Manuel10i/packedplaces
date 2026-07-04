@@ -2,7 +2,21 @@ import { getRequestConfig } from "next-intl/server";
 import { cookies, headers } from "next/headers";
 import { locales, defaultLocale } from "./config";
 
-export default getRequestConfig(async () => {
+function isLocale(value: string | undefined): value is (typeof locales)[number] {
+  return !!value && locales.includes(value as (typeof locales)[number]);
+}
+
+export default getRequestConfig(async ({ requestLocale }) => {
+  // An explicit locale (e.g. from getTranslations({ locale }) on a German
+  // destination slug) wins, so that page can render fully in that language.
+  const requested = await requestLocale;
+  if (isLocale(requested)) {
+    return {
+      locale: requested,
+      messages: (await import(`../messages/${requested}.json`)).default,
+    };
+  }
+
   const cookieStore = await cookies();
   const cookieLocale = cookieStore.get("NEXT_LOCALE")?.value;
 

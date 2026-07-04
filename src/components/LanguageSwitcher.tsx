@@ -7,10 +7,19 @@ import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   variant: "nav" | "map" | "header";
+  /**
+   * Optional per-locale hrefs. When the chosen locale has a dedicated URL
+   * (e.g. a German destination slug), navigate there instead of just
+   * re-rendering the current page in the new locale.
+   */
+  hrefByLocale?: Partial<Record<string, string>>;
+  /** Locale to show as selected, overriding the request locale (slug-driven pages). */
+  currentLocale?: string;
 }
 
-export function LanguageSwitcher({ variant }: Props) {
-  const locale = useLocale();
+export function LanguageSwitcher({ variant, hrefByLocale, currentLocale }: Props) {
+  const requestLocale = useLocale();
+  const locale = currentLocale ?? requestLocale;
   const router = useRouter();
   const t = useTranslations("switcher");
 
@@ -18,7 +27,12 @@ export function LanguageSwitcher({ variant }: Props) {
     const newLocale = e.target.value;
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
     trackEvent("language_switch", { locale: newLocale });
-    router.refresh();
+    const href = hrefByLocale?.[newLocale];
+    if (href) {
+      router.push(href);
+    } else {
+      router.refresh();
+    }
   }
 
   if (variant === "nav") {
