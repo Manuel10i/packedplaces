@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
-import { allDestinationSlugs } from "@/lib/destinations";
+import { allDestinationSlugs, hreflangSlugMap } from "@/lib/destinations";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -11,6 +11,17 @@ function langAlternates(path: string) {
       ...locales.map((l) => [l, url]),
       ["x-default", url],
     ]),
+  };
+}
+
+/** hreflang cluster for a destination slug (German exonym slugs get their own de URL). */
+function destinationAlternates(slug: string) {
+  const map = hreflangSlugMap(slug);
+  if (!map) return langAlternates(`destination/${slug}`);
+  return {
+    languages: Object.fromEntries(
+      Object.entries(map).map(([lang, s]) => [lang, `${BASE_URL}/destination/${s}`]),
+    ),
   };
 }
 
@@ -42,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      alternates: langAlternates(path),
+      alternates: destinationAlternates(slug),
     };
   });
 

@@ -173,8 +173,20 @@ export function getCountry(code: string): CountryInfo | undefined {
   return byCode.get(code);
 }
 
-export function getCountryName(code: string): string {
-  return byCode.get(code)?.name ?? code;
+/**
+ * Country display name. Defaults to the curated English name; when a non-English
+ * locale is given, the localized name is resolved via Intl.DisplayNames
+ * (e.g. getCountryName("AT", "de") -> "Österreich").
+ */
+export function getCountryName(code: string, locale?: string): string {
+  const fallback = byCode.get(code)?.name ?? code;
+  if (!locale || locale.startsWith("en")) return fallback;
+  try {
+    const localized = new Intl.DisplayNames([locale], { type: "region" }).of(code);
+    return localized && localized !== code ? localized : fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 export function getCountryFlag(code: string): string {
