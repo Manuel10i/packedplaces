@@ -396,5 +396,37 @@
       "oneTime": "Ponctuels",
       "oneTimeDesc": "Villes hôtes changeantes : Jeux Olympiques d'hiver 2026 (Italie), Coupe du Monde FIFA 2026 (Amérique du Nord), Jeux Olympiques d'été 2028 (Los Angeles)."
     }
+  },
+  "destination": {
+    "metaTitle": "{name} : meilleure période pour visiter et quand il y a foule",
+    "metaDescription": "Découvrez mois par mois quand {name} est le plus fréquenté et le plus calme. La haute saison est {months}. Planifiez votre visite en évitant la foule.",
+    "metaDescriptionYearRound": "Découvrez la fréquentation de {name} mois par mois et planifiez votre visite en évitant la foule.",
+    "h1": "Quand y a-t-il foule à {name} ?",
+    "intro": "{name} est une destination de type {category} en {country}. Sa haute saison est {months}. Voici sa fréquentation au fil des mois, pour choisir le bon moment pour partir.",
+    "introYearRound": "{name} est une destination de type {category} en {country}, fréquentée en permanence. Voici comment la foule évolue au fil des mois.",
+    "calendarHeading": "Niveau de fréquentation par mois",
+    "busiestHeading": "Mois les plus fréquentés",
+    "quietestHeading": "Mois les plus calmes",
+    "none": "Aucun mois clairement calme",
+    "disclaimer": "Estimations basées sur une modélisation de la demande touristique saisonnière, pas sur des comptages en temps réel.",
+    "mapCta": "Voir la fréquentation de {name} sur la carte",
+    "legend": {
+      "low": "Calme",
+      "medium": "Modéré",
+      "high": "Fréquenté"
+    },
+    "categories": {
+      "ski": "ski",
+      "beach": "plage",
+      "city": "ville",
+      "lake": "lac",
+      "nature": "nature",
+      "cultural": "culture",
+      "safari": "safari",
+      "island": "île",
+      "mountain": "montagne",
+      "desert": "désert",
+      "tropical": "tropical"
+    }
   }
 }
