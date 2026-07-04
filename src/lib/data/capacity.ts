@@ -20,7 +20,7 @@ export const CATEGORY_CAPACITY: Record<string, { peak: number; offPeak: number }
 };
 
 /** Map ISO week (1-53) to month (1-12) using date-fns startOfISOWeek. */
-function getMonthForWeek(week: number): number {
+export function getMonthForWeek(week: number): number {
   // Use a reference year (2024) to convert week number to a date
   const date = startOfISOWeek(new Date(2024, 0, 4 + (week - 1) * 7));
   return date.getMonth() + 1; // getMonth() is 0-based

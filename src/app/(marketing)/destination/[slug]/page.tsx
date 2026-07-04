@@ -10,10 +10,14 @@ import {
   getSlugEntry,
   localizedSlugsForSlug,
   hreflangSlugMap,
-  crowdByMonth,
-  type CrowdLevel,
   type LocalizedSlugs,
 } from "@/lib/destinations";
+import { getMonthlyBusyness } from "@/lib/services/destination-busyness";
+import {
+  busynessColor,
+  busynessLabelKey,
+  BUSYNESS_BANDS,
+} from "@/lib/busyness-scale";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -52,11 +56,23 @@ function joinList(locale: string, items: string[]): string {
   return lf.format(items);
 }
 
-const LEVEL_CLASS: Record<CrowdLevel, string> = {
-  high: "bg-red-500",
-  medium: "bg-amber-400",
-  low: "bg-emerald-400",
-};
+/**
+ * Summarize a destination's 12 monthly busyness scores into its own peak and
+ * quiet months (relative to that destination, so even a generally quiet place
+ * shows when it is comparatively busier) and whether it is busy all year.
+ */
+function summarizeBusyness(scores: number[]) {
+  const max = Math.max(...scores);
+  const min = Math.min(...scores);
+  const range = max - min;
+  const near = range * 0.15;
+  const peakIdx = range > 0 ? scores.flatMap((s, i) => (s >= max - near ? [i] : [])) : [];
+  const quietIdx = range > 0 ? scores.flatMap((s, i) => (s <= min + near ? [i] : [])) : [];
+  // Busy in every month (even the quietest stays "busy"), or a perfectly flat
+  // profile with no month to single out — either way, use the year-round copy.
+  const yearRound = min >= 0.4 || range === 0;
+  return { peakIdx, quietIdx, yearRound };
+}
 
 export async function generateMetadata({
   params,
@@ -72,15 +88,15 @@ export async function generateMetadata({
   const locale = entry.locale === "de" ? "de" : await getLocale();
   const t = await getTranslations({ locale, namespace: "destination" });
   const long = monthNames(locale, "long");
-  const busiest = d.peakMonths.map((m) => long[m - 1]);
+  const { peakIdx, yearRound } = summarizeBusyness(getMonthlyBusyness(d.id));
+  const busiest = peakIdx.map((i) => long[i]);
   const canonical = destUrl(slug);
   const languages = hreflangLanguages(slug);
   return {
     title: t("metaTitle", { name: displayName }),
-    description:
-      d.peakMonths.length === 12
-        ? t("metaDescriptionYearRound", { name: displayName })
-        : t("metaDescription", { name: displayName, months: joinList(locale, busiest) }),
+    description: yearRound
+      ? t("metaDescriptionYearRound", { name: displayName })
+      : t("metaDescription", { name: displayName, months: joinList(locale, busiest) }),
     alternates: {
       canonical,
       ...(languages ? { languages } : {}),
@@ -103,14 +119,18 @@ export default async function DestinationPage({
   const locale = entry.locale === "de" ? "de" : await getLocale();
   const t = await getTranslations({ locale, namespace: "destination" });
   const nav = await getTranslations({ locale, namespace: "nav" });
+  const tip = await getTranslations({ locale, namespace: "tooltip" });
   const alts = localizedSlugsForSlug(slug);
   const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
 
   const long = monthNames(locale, "long");
   const short = monthNames(locale, "short");
-  const crowd = crowdByMonth(d.peakMonths);
-  const busiest = long.filter((_, i) => crowd[i] === "high");
-  const quietest = long.filter((_, i) => crowd[i] === "low");
+  // Same crowdedness model as the map (services/busyness-core), aggregated to
+  // months — so the calendar here matches the map instead of a raw peakMonths flag.
+  const scores = getMonthlyBusyness(d.id);
+  const { peakIdx, quietIdx, yearRound } = summarizeBusyness(scores);
+  const busiest = peakIdx.map((i) => long[i]);
+  const quietest = quietIdx.map((i) => long[i]);
   const category = t(`categories.${d.category}`);
   const country = getCountryName(d.country, locale);
   const mapUrl = `/map?lat=${d.lat.toFixed(1)}&lng=${d.lng.toFixed(1)}&zoom=6`;
@@ -157,7 +177,7 @@ export default async function DestinationPage({
             {t("h1", { name: displayName })}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-600">
-            {d.peakMonths.length === 12
+            {yearRound
               ? t("introYearRound", { name: displayName, category, country })
               : t("intro", {
                   name: displayName,
@@ -173,22 +193,29 @@ export default async function DestinationPage({
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-xl font-bold text-gray-900">{t("calendarHeading")}</h2>
           <div className="mt-6 grid grid-cols-6 gap-3 sm:grid-cols-12">
-            {crowd.map((level, i) => (
-              <div key={i} className="flex flex-col items-center gap-2">
-                <div
-                  className={`h-16 w-full rounded ${LEVEL_CLASS[level]}`}
-                  title={`${long[i]}: ${t(`legend.${level}`)}`}
-                  aria-label={`${long[i]}: ${t(`legend.${level}`)}`}
-                />
-                <span className="text-xs text-gray-500">{short[i]}</span>
-              </div>
-            ))}
+            {scores.map((score, i) => {
+              const label = tip(busynessLabelKey(score));
+              return (
+                <div key={i} className="flex flex-col items-center gap-2">
+                  <div
+                    className="h-16 w-full rounded"
+                    style={{ backgroundColor: busynessColor(score) }}
+                    title={`${long[i]}: ${label}`}
+                    aria-label={`${long[i]}: ${label}`}
+                  />
+                  <span className="text-xs text-gray-500">{short[i]}</span>
+                </div>
+              );
+            })}
           </div>
           <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
-            {(["low", "medium", "high"] as CrowdLevel[]).map((lvl) => (
-              <span key={lvl} className="inline-flex items-center gap-1.5">
-                <span className={`inline-block h-3 w-3 rounded ${LEVEL_CLASS[lvl]}`} />
-                {t(`legend.${lvl}`)}
+            {BUSYNESS_BANDS.map((key, band) => (
+              <span key={key} className="inline-flex items-center gap-1.5">
+                <span
+                  className="inline-block h-3 w-3 rounded"
+                  style={{ backgroundColor: busynessColor(band * 0.2 + 0.1) }}
+                />
+                {tip(key)}
               </span>
             ))}
           </div>
