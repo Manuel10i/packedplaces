@@ -4,14 +4,17 @@ import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { destinations as allDestinations } from "@/lib/data/destinations";
+import { geoPlaces } from "@/lib/data/geo-search";
+import { getCountryFlag } from "@/lib/data";
 import type { Destination } from "@/types";
 
 type Match = {
   id: string;
   name: string;
-  country: string;
+  label: string;
   lat: number;
   lng: number;
+  zoom: number;
 };
 
 const normalize = (s: string) =>
@@ -21,19 +24,36 @@ const normalize = (s: string) =>
     .toLowerCase()
     .trim();
 
-// Built once at module load: a slim, diacritic-folded index sorted by
-// popularity so the most-searched places surface first.
-const INDEX: Array<Match & { norm: string }> = allDestinations
+// Built once at module load: a slim, diacritic-folded index. Specific
+// destinations rank first (by popularity), then capitals, then countries.
+const destinationMatches: Array<Match & { norm: string }> = allDestinations
   .slice()
   .sort((a: Destination, b: Destination) => b.basePopularity - a.basePopularity)
   .map((d: Destination) => ({
     id: d.id,
     name: d.name,
-    country: d.country,
+    label: getCountryFlag(d.country) || d.country,
     lat: d.lat,
     lng: d.lng,
+    zoom: 8,
     norm: normalize(d.name),
   }));
+
+// Countries + capitals, skipping any whose name already exists as a destination.
+const seen = new Set(destinationMatches.map((d) => d.norm));
+const geoMatches: Array<Match & { norm: string }> = geoPlaces
+  .filter((p) => !seen.has(normalize(p.name)))
+  .map((p) => ({
+    id: `${p.kind}:${p.cc}`,
+    name: p.name,
+    label: getCountryFlag(p.cc) || p.cc,
+    lat: p.lat,
+    lng: p.lng,
+    zoom: p.zoom,
+    norm: normalize(p.name),
+  }));
+
+const INDEX: Array<Match & { norm: string }> = [...destinationMatches, ...geoMatches];
 
 const MAX_RESULTS = 8;
 const MIN_QUERY = 2;
@@ -53,7 +73,7 @@ export function HeroDestinationSearch() {
   }, [query]);
 
   const go = (d: Match) => {
-    router.push(`/map?lat=${d.lat.toFixed(2)}&lng=${d.lng.toFixed(2)}&zoom=8`);
+    router.push(`/map?lat=${d.lat.toFixed(2)}&lng=${d.lng.toFixed(2)}&zoom=${d.zoom}`);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -121,7 +141,7 @@ export function HeroDestinationSearch() {
                 >
                   <span className="font-medium">{d.name}</span>
                   <span className="ml-3 shrink-0 text-xs text-gray-400">
-                    {d.country}
+                    {d.label}
                   </span>
                 </button>
               </li>
