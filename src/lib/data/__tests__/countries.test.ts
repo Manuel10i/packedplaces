@@ -27,6 +27,25 @@ describe("getCountryName", () => {
   it("returns the code itself for empty string", () => {
     expect(getCountryName("")).toBe("");
   });
+
+  it("returns the curated English name when locale is English", () => {
+    expect(getCountryName("AT", "en")).toBe("Austria");
+    expect(getCountryName("AT", "en-US")).toBe("Austria");
+  });
+
+  it("localizes the name for a non-English locale via Intl.DisplayNames", () => {
+    expect(getCountryName("AT", "de")).toBe("Österreich");
+    expect(getCountryName("CH", "de")).toBe("Schweiz");
+    expect(getCountryName("AT", "fr")).toBe("Autriche");
+  });
+
+  it("falls back to the English name for an unknown code with a locale", () => {
+    expect(getCountryName("XX", "de")).toBe("XX");
+  });
+
+  it("falls back gracefully when the locale is invalid", () => {
+    expect(getCountryName("AT", "!!invalid")).toBe("Austria");
+  });
 });
 
 describe("getCountryFlag", () => {
