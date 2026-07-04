@@ -112,7 +112,7 @@ export default async function DestinationPage({
   const busiest = long.filter((_, i) => crowd[i] === "high");
   const quietest = long.filter((_, i) => crowd[i] === "low");
   const category = t(`categories.${d.category}`);
-  const country = getCountryName(d.country);
+  const country = getCountryName(d.country, locale);
   const mapUrl = `/map?lat=${d.lat.toFixed(1)}&lng=${d.lng.toFixed(1)}&zoom=6`;
 
   const jsonLd = {
