@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { HeroDestinationSearch } from "@/components/HeroDestinationSearch";
 
 const webAppJsonLd = {
   "@context": "https://schema.org",
@@ -161,12 +162,16 @@ export default async function MarketingPage() {
             {t("hero.description")}
           </p>
           <div className="animate-on-scroll-delay-2 mt-10">
-            <Link
-              href="/map"
-              className="inline-block rounded-lg bg-cta-gradient px-8 py-3 text-base font-medium text-white transition-transform hover:scale-105"
-            >
-              {t("hero.cta")} &rarr;
-            </Link>
+            <HeroDestinationSearch />
+            <p className="mt-4 text-sm text-gray-500">
+              {t("hero.searchHint")}{" "}
+              <Link
+                href="/map"
+                className="font-medium text-brand-600 underline-offset-2 hover:underline"
+              >
+                {t("hero.cta")} &rarr;
+              </Link>
+            </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-5">
             {HERO_STATS.map((stat, i) => (

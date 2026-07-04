@@ -14,7 +14,11 @@
     "statDestinations": "Destinos",
     "statPatterns": "Patrones",
     "statEvents": "Eventos",
-    "statCountries": "Países"
+    "statCountries": "Países",
+    "searchPlaceholder": "Busca un destino, p. ej. Hallstatt",
+    "searchLabel": "Buscar un destino de viaje",
+    "searchNoResults": "No se encontro ningun destino",
+    "searchHint": "o simplemente"
   },
   "howItWorks": {
     "title": "Cómo funciona",
