@@ -1,6 +1,7 @@
 // AUTO-GENERATED. Searchable countries + capitals for the hero/map search.
-// Country names + centroids: mledoze/countries (MIT, https://github.com/mledoze/countries).
+// Country names + centroids + translations: mledoze/countries (MIT, https://github.com/mledoze/countries).
 // Capital coordinates: public country-capital-lat-long dataset, validated against known capitals.
+// cityAliases: curated well-known German exonyms (Wien->Vienna, etc.), keyed by normalized English name.
 // Regenerate rather than hand-editing.
 
 export type GeoPlace = {
@@ -10,6 +11,7 @@ export type GeoPlace = {
   lng: number;
   zoom: number;
   cc: string;
+  aliases?: string[];
 };
 
 export const geoPlaces: GeoPlace[] = [
@@ -1755,7 +1757,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 33,
     "lng": 65,
     "zoom": 4,
-    "cc": "AF"
+    "cc": "AF",
+    "aliases": [
+      "Afganistán",
+      "Afeganistão"
+    ]
   },
   {
     "name": "Åland Islands",
@@ -1763,7 +1769,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 60.1167,
     "lng": 19.9,
     "zoom": 4,
-    "cc": "AX"
+    "cc": "AX",
+    "aliases": [
+      "Åland",
+      "Ahvenanmaa",
+      "Alandia",
+      "Isole Aland",
+      "Alândia",
+      "Ålandeilanden"
+    ]
   },
   {
     "name": "Albania",
@@ -1771,7 +1785,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 41,
     "lng": 20,
     "zoom": 4,
-    "cc": "AL"
+    "cc": "AL",
+    "aliases": [
+      "Albanien",
+      "Albanie",
+      "Albanië"
+    ]
   },
   {
     "name": "Algeria",
@@ -1779,7 +1798,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 28,
     "lng": 3,
     "zoom": 4,
-    "cc": "DZ"
+    "cc": "DZ",
+    "aliases": [
+      "Algerien",
+      "Algérie",
+      "Argelia",
+      "Argélia",
+      "Algerije"
+    ]
   },
   {
     "name": "American Samoa",
@@ -1787,7 +1813,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -14.3333,
     "lng": -170,
     "zoom": 4,
-    "cc": "AS"
+    "cc": "AS",
+    "aliases": [
+      "Amerikanisch-Samoa",
+      "Samoa américaines",
+      "Samoa Americana",
+      "Samoa Americane",
+      "Amerikaans Samoa"
+    ]
   },
   {
     "name": "Andorra",
@@ -1795,7 +1828,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 42.5,
     "lng": 1.5,
     "zoom": 4,
-    "cc": "AD"
+    "cc": "AD",
+    "aliases": [
+      "Andorre"
+    ]
   },
   {
     "name": "Angola",
@@ -1819,7 +1855,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -90,
     "lng": 0,
     "zoom": 4,
-    "cc": "AQ"
+    "cc": "AQ",
+    "aliases": [
+      "Antarktis",
+      "Antarctique",
+      "Antártida",
+      "Antartide"
+    ]
   },
   {
     "name": "Antigua and Barbuda",
@@ -1827,7 +1869,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 17.05,
     "lng": -61.8,
     "zoom": 4,
-    "cc": "AG"
+    "cc": "AG",
+    "aliases": [
+      "Antigua und Barbuda",
+      "Antigua-et-Barbuda",
+      "Antigua y Barbuda",
+      "Antigua e Barbuda",
+      "Antígua e Barbuda",
+      "Antigua en Barbuda"
+    ]
   },
   {
     "name": "Argentina",
@@ -1835,7 +1885,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -34,
     "lng": -64,
     "zoom": 4,
-    "cc": "AR"
+    "cc": "AR",
+    "aliases": [
+      "Argentinien",
+      "Argentine",
+      "Argentinië"
+    ]
   },
   {
     "name": "Armenia",
@@ -1843,7 +1898,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 40,
     "lng": 45,
     "zoom": 4,
-    "cc": "AM"
+    "cc": "AM",
+    "aliases": [
+      "Armenien",
+      "Arménie",
+      "Armenië"
+    ]
   },
   {
     "name": "Aruba",
@@ -1859,7 +1919,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -27,
     "lng": 133,
     "zoom": 4,
-    "cc": "AU"
+    "cc": "AU",
+    "aliases": [
+      "Australien",
+      "Australie",
+      "Australië"
+    ]
   },
   {
     "name": "Austria",
@@ -1867,7 +1932,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 47.3333,
     "lng": 13.3333,
     "zoom": 4,
-    "cc": "AT"
+    "cc": "AT",
+    "aliases": [
+      "Österreich",
+      "Autriche",
+      "Oostenrijk"
+    ]
   },
   {
     "name": "Azerbaijan",
@@ -1875,7 +1945,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 40.5,
     "lng": 47.5,
     "zoom": 4,
-    "cc": "AZ"
+    "cc": "AZ",
+    "aliases": [
+      "Aserbaidschan",
+      "Azerbaïdjan",
+      "Azerbaiyán",
+      "Azerbeijão",
+      "Azerbeidzjan"
+    ]
   },
   {
     "name": "Bahamas",
@@ -1891,7 +1968,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 26,
     "lng": 50.55,
     "zoom": 4,
-    "cc": "BH"
+    "cc": "BH",
+    "aliases": [
+      "Bahreïn",
+      "Bahrein"
+    ]
   },
   {
     "name": "Bangladesh",
@@ -1899,7 +1980,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 24,
     "lng": 90,
     "zoom": 4,
-    "cc": "BD"
+    "cc": "BD",
+    "aliases": [
+      "Bangladesch"
+    ]
   },
   {
     "name": "Barbados",
@@ -1907,7 +1991,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13.1667,
     "lng": -59.5333,
     "zoom": 4,
-    "cc": "BB"
+    "cc": "BB",
+    "aliases": [
+      "Barbade"
+    ]
   },
   {
     "name": "Belarus",
@@ -1915,7 +2002,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 53,
     "lng": 28,
     "zoom": 4,
-    "cc": "BY"
+    "cc": "BY",
+    "aliases": [
+      "Biélorussie",
+      "Bielorrusia",
+      "Bielorussia",
+      "Bielorússia",
+      "Wit-Rusland"
+    ]
   },
   {
     "name": "Belgium",
@@ -1923,7 +2017,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 50.8333,
     "lng": 4,
     "zoom": 4,
-    "cc": "BE"
+    "cc": "BE",
+    "aliases": [
+      "Belgien",
+      "Belgique",
+      "Bélgica",
+      "Belgio",
+      "België"
+    ]
   },
   {
     "name": "Belize",
@@ -1931,7 +2032,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 17.25,
     "lng": -88.75,
     "zoom": 4,
-    "cc": "BZ"
+    "cc": "BZ",
+    "aliases": [
+      "Belice"
+    ]
   },
   {
     "name": "Benin",
@@ -1947,7 +2051,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 32.3333,
     "lng": -64.75,
     "zoom": 4,
-    "cc": "BM"
+    "cc": "BM",
+    "aliases": [
+      "Bermudes",
+      "Bermudas"
+    ]
   },
   {
     "name": "Bhutan",
@@ -1955,7 +2063,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 27.5,
     "lng": 90.5,
     "zoom": 4,
-    "cc": "BT"
+    "cc": "BT",
+    "aliases": [
+      "Bhoutan",
+      "Bután",
+      "Butão"
+    ]
   },
   {
     "name": "Bolivia",
@@ -1963,7 +2076,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -17,
     "lng": -65,
     "zoom": 4,
-    "cc": "BO"
+    "cc": "BO",
+    "aliases": [
+      "Bolivien",
+      "Bolivie"
+    ]
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -1971,7 +2088,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 44,
     "lng": 18,
     "zoom": 4,
-    "cc": "BA"
+    "cc": "BA",
+    "aliases": [
+      "Bosnien und Herzegowina",
+      "Bosnie-Herzégovine",
+      "Bosnia y Herzegovina",
+      "Bosnia ed Erzegovina",
+      "Bósnia e Herzegovina",
+      "Bosnië en Herzegovina"
+    ]
   },
   {
     "name": "Botswana",
@@ -1987,7 +2112,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -54.4333,
     "lng": 3.4,
     "zoom": 4,
-    "cc": "BV"
+    "cc": "BV",
+    "aliases": [
+      "Bouvetinsel",
+      "Île Bouvet",
+      "Isla Bouvet",
+      "Isola Bouvet",
+      "Ilha Bouvet",
+      "Bouveteiland"
+    ]
   },
   {
     "name": "Brazil",
@@ -1995,7 +2128,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -10,
     "lng": -55,
     "zoom": 4,
-    "cc": "BR"
+    "cc": "BR",
+    "aliases": [
+      "Brasilien",
+      "Brésil",
+      "Brasil",
+      "Brasile",
+      "Brazilië"
+    ]
   },
   {
     "name": "British Indian Ocean Territory",
@@ -2003,7 +2143,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -6,
     "lng": 71.5,
     "zoom": 4,
-    "cc": "IO"
+    "cc": "IO",
+    "aliases": [
+      "Britisches Territorium im Indischen Ozean",
+      "Territoire britannique de l'océan Indien",
+      "Territorio Británico del Océano Índico",
+      "Territorio britannico dell'oceano indiano",
+      "Território Britânico do Oceano Índico",
+      "Britse Gebieden in de Indische Oceaan"
+    ]
   },
   {
     "name": "British Virgin Islands",
@@ -2011,7 +2159,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.4314,
     "lng": -64.6231,
     "zoom": 4,
-    "cc": "VG"
+    "cc": "VG",
+    "aliases": [
+      "Britische Jungferninseln",
+      "Îles Vierges britanniques",
+      "Islas Vírgenes del Reino Unido",
+      "Isole Vergini Britanniche",
+      "Ilhas Virgens",
+      "Britse Maagdeneilanden"
+    ]
   },
   {
     "name": "Brunei",
@@ -2027,7 +2183,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 43,
     "lng": 25,
     "zoom": 4,
-    "cc": "BG"
+    "cc": "BG",
+    "aliases": [
+      "Bulgarien",
+      "Bulgarie",
+      "Bulgarije"
+    ]
   },
   {
     "name": "Burkina Faso",
@@ -2051,7 +2212,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13,
     "lng": 105,
     "zoom": 4,
-    "cc": "KH"
+    "cc": "KH",
+    "aliases": [
+      "Kambodscha",
+      "Cambodge",
+      "Camboya",
+      "Cambogia",
+      "Camboja",
+      "Cambodja"
+    ]
   },
   {
     "name": "Cameroon",
@@ -2059,7 +2228,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 6,
     "lng": 12,
     "zoom": 4,
-    "cc": "CM"
+    "cc": "CM",
+    "aliases": [
+      "Kamerun",
+      "Cameroun",
+      "Camerún",
+      "Camerun",
+      "Camarões",
+      "Kameroen"
+    ]
   },
   {
     "name": "Canada",
@@ -2067,7 +2244,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 60,
     "lng": -95,
     "zoom": 4,
-    "cc": "CA"
+    "cc": "CA",
+    "aliases": [
+      "Kanada"
+    ]
   },
   {
     "name": "Cape Verde",
@@ -2075,7 +2255,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 16,
     "lng": -24,
     "zoom": 4,
-    "cc": "CV"
+    "cc": "CV",
+    "aliases": [
+      "Kap Verde",
+      "Îles du Cap-Vert",
+      "Cabo Verde",
+      "Capo Verde",
+      "Kaapverdië"
+    ]
   },
   {
     "name": "Caribbean Netherlands",
@@ -2083,7 +2270,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 12.18,
     "lng": -68.25,
     "zoom": 4,
-    "cc": "BQ"
+    "cc": "BQ",
+    "aliases": [
+      "Karibische Niederlande",
+      "Pays-Bas caribéens",
+      "Caribe Neerlandés",
+      "Paesi Bassi caraibici",
+      "Países Baixos Caribenhos",
+      "Caribisch Nederland"
+    ]
   },
   {
     "name": "Cayman Islands",
@@ -2091,7 +2286,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 19.5,
     "lng": -80.5,
     "zoom": 4,
-    "cc": "KY"
+    "cc": "KY",
+    "aliases": [
+      "Kaimaninseln",
+      "Îles Caïmans",
+      "Islas Caimán",
+      "Isole Cayman",
+      "Ilhas Caimão",
+      "Caymaneilanden"
+    ]
   },
   {
     "name": "Central African Republic",
@@ -2099,7 +2302,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 7,
     "lng": 21,
     "zoom": 4,
-    "cc": "CF"
+    "cc": "CF",
+    "aliases": [
+      "Zentralafrikanische Republik",
+      "République centrafricaine",
+      "República Centroafricana",
+      "Repubblica Centrafricana",
+      "República Centro-Africana",
+      "Centraal-Afrikaanse Republiek"
+    ]
   },
   {
     "name": "Chad",
@@ -2107,7 +2318,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15,
     "lng": 19,
     "zoom": 4,
-    "cc": "TD"
+    "cc": "TD",
+    "aliases": [
+      "Tschad",
+      "Tchad",
+      "Ciad",
+      "Chade",
+      "Tsjaad"
+    ]
   },
   {
     "name": "Chile",
@@ -2115,7 +2333,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -30,
     "lng": -71,
     "zoom": 4,
-    "cc": "CL"
+    "cc": "CL",
+    "aliases": [
+      "Chili",
+      "Cile"
+    ]
   },
   {
     "name": "China",
@@ -2123,7 +2345,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 35,
     "lng": 105,
     "zoom": 4,
-    "cc": "CN"
+    "cc": "CN",
+    "aliases": [
+      "Chine",
+      "Cina"
+    ]
   },
   {
     "name": "Christmas Island",
@@ -2131,7 +2357,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -10.5,
     "lng": 105.6667,
     "zoom": 4,
-    "cc": "CX"
+    "cc": "CX",
+    "aliases": [
+      "Weihnachtsinsel",
+      "Île Christmas",
+      "Isla de Navidad",
+      "Isola di Natale",
+      "Ilha do Natal",
+      "Christmaseiland"
+    ]
   },
   {
     "name": "Cocos (Keeling) Islands",
@@ -2139,7 +2373,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -12.5,
     "lng": 96.8333,
     "zoom": 4,
-    "cc": "CC"
+    "cc": "CC",
+    "aliases": [
+      "Kokosinseln",
+      "Îles Cocos",
+      "Islas Cocos o Islas Keeling",
+      "Isole Cocos e Keeling",
+      "Ilhas Cocos (Keeling)",
+      "Cocoseilanden"
+    ]
   },
   {
     "name": "Colombia",
@@ -2147,7 +2389,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 4,
     "lng": -72,
     "zoom": 4,
-    "cc": "CO"
+    "cc": "CO",
+    "aliases": [
+      "Kolumbien",
+      "Colombie"
+    ]
   },
   {
     "name": "Comoros",
@@ -2155,7 +2401,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -12.1667,
     "lng": 44.25,
     "zoom": 4,
-    "cc": "KM"
+    "cc": "KM",
+    "aliases": [
+      "Komoren",
+      "Comores",
+      "Comoras",
+      "Comore",
+      "Comoren"
+    ]
   },
   {
     "name": "Congo",
@@ -2163,7 +2416,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -1,
     "lng": 15,
     "zoom": 4,
-    "cc": "CG"
+    "cc": "CG",
+    "aliases": [
+      "Kongo"
+    ]
   },
   {
     "name": "Cook Islands",
@@ -2171,7 +2427,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -21.2333,
     "lng": -159.7667,
     "zoom": 4,
-    "cc": "CK"
+    "cc": "CK",
+    "aliases": [
+      "Cookinseln",
+      "Îles Cook",
+      "Islas Cook",
+      "Isole Cook",
+      "Ilhas Cook",
+      "Cookeilanden"
+    ]
   },
   {
     "name": "Costa Rica",
@@ -2187,7 +2451,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 45.1667,
     "lng": 15.5,
     "zoom": 4,
-    "cc": "HR"
+    "cc": "HR",
+    "aliases": [
+      "Kroatien",
+      "Croatie",
+      "Croacia",
+      "Croazia",
+      "Croácia",
+      "Kroatië"
+    ]
   },
   {
     "name": "Cuba",
@@ -2195,7 +2467,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 21.5,
     "lng": -80,
     "zoom": 4,
-    "cc": "CU"
+    "cc": "CU",
+    "aliases": [
+      "Kuba"
+    ]
   },
   {
     "name": "Curaçao",
@@ -2203,7 +2478,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 12.1167,
     "lng": -68.9333,
     "zoom": 4,
-    "cc": "CW"
+    "cc": "CW",
+    "aliases": [
+      "Curazao",
+      "ilha da Curação"
+    ]
   },
   {
     "name": "Cyprus",
@@ -2211,7 +2490,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 35,
     "lng": 33,
     "zoom": 4,
-    "cc": "CY"
+    "cc": "CY",
+    "aliases": [
+      "Zypern",
+      "Chypre",
+      "Chipre",
+      "Cipro"
+    ]
   },
   {
     "name": "Czechia",
@@ -2219,7 +2504,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 49.75,
     "lng": 15.5,
     "zoom": 4,
-    "cc": "CZ"
+    "cc": "CZ",
+    "aliases": [
+      "Tschechien",
+      "Tchéquie",
+      "Chequia",
+      "Cechia",
+      "Chéquia",
+      "Tsjechië"
+    ]
   },
   {
     "name": "Denmark",
@@ -2227,7 +2520,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 56,
     "lng": 10,
     "zoom": 4,
-    "cc": "DK"
+    "cc": "DK",
+    "aliases": [
+      "Dänemark",
+      "Danemark",
+      "Dinamarca",
+      "Danimarca",
+      "Denemarken"
+    ]
   },
   {
     "name": "Djibouti",
@@ -2235,7 +2535,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 11.5,
     "lng": 43,
     "zoom": 4,
-    "cc": "DJ"
+    "cc": "DJ",
+    "aliases": [
+      "Dschibuti",
+      "Gibuti"
+    ]
   },
   {
     "name": "Dominica",
@@ -2243,7 +2547,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15.4167,
     "lng": -61.3333,
     "zoom": 4,
-    "cc": "DM"
+    "cc": "DM",
+    "aliases": [
+      "Dominique"
+    ]
   },
   {
     "name": "Dominican Republic",
@@ -2251,7 +2558,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 19,
     "lng": -70.6667,
     "zoom": 4,
-    "cc": "DO"
+    "cc": "DO",
+    "aliases": [
+      "Dominikanische Republik",
+      "République dominicaine",
+      "República Dominicana",
+      "Repubblica Dominicana",
+      "Dominicaanse Republiek"
+    ]
   },
   {
     "name": "DR Congo",
@@ -2259,7 +2573,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 0,
     "lng": 25,
     "zoom": 4,
-    "cc": "CD"
+    "cc": "CD",
+    "aliases": [
+      "Kongo (Dem. Rep.)",
+      "Congo (Rép. dém.)",
+      "Congo (Rep. Dem.)",
+      "República Democrática do Congo",
+      "Congo (DRC)"
+    ]
   },
   {
     "name": "Ecuador",
@@ -2267,7 +2588,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -2,
     "lng": -77.5,
     "zoom": 4,
-    "cc": "EC"
+    "cc": "EC",
+    "aliases": [
+      "Équateur",
+      "Equador"
+    ]
   },
   {
     "name": "Egypt",
@@ -2275,7 +2600,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 27,
     "lng": 30,
     "zoom": 4,
-    "cc": "EG"
+    "cc": "EG",
+    "aliases": [
+      "Ägypten",
+      "Égypte",
+      "Egipto",
+      "Egitto",
+      "Egito",
+      "Egypte"
+    ]
   },
   {
     "name": "El Salvador",
@@ -2283,7 +2616,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13.8333,
     "lng": -88.9167,
     "zoom": 4,
-    "cc": "SV"
+    "cc": "SV",
+    "aliases": [
+      "Salvador"
+    ]
   },
   {
     "name": "Equatorial Guinea",
@@ -2291,7 +2627,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 2,
     "lng": 10,
     "zoom": 4,
-    "cc": "GQ"
+    "cc": "GQ",
+    "aliases": [
+      "Äquatorialguinea",
+      "Guinée équatoriale",
+      "Guinea Ecuatorial",
+      "Guinea Equatoriale",
+      "Guiné Equatorial",
+      "Equatoriaal-Guinea"
+    ]
   },
   {
     "name": "Eritrea",
@@ -2299,7 +2643,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15,
     "lng": 39,
     "zoom": 4,
-    "cc": "ER"
+    "cc": "ER",
+    "aliases": [
+      "Érythrée",
+      "Eritreia"
+    ]
   },
   {
     "name": "Estonia",
@@ -2307,7 +2655,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 59,
     "lng": 26,
     "zoom": 4,
-    "cc": "EE"
+    "cc": "EE",
+    "aliases": [
+      "Estland",
+      "Estonie"
+    ]
   },
   {
     "name": "Eswatini",
@@ -2315,7 +2667,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -26.5,
     "lng": 31.5,
     "zoom": 4,
-    "cc": "SZ"
+    "cc": "SZ",
+    "aliases": [
+      "Esuatini",
+      "Essuatíni",
+      "Swaziland"
+    ]
   },
   {
     "name": "Ethiopia",
@@ -2323,7 +2680,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 8,
     "lng": 38,
     "zoom": 4,
-    "cc": "ET"
+    "cc": "ET",
+    "aliases": [
+      "Äthiopien",
+      "Éthiopie",
+      "Etiopía",
+      "Etiopia",
+      "Etiópia",
+      "Ethiopië"
+    ]
   },
   {
     "name": "Falkland Islands",
@@ -2331,7 +2696,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -51.75,
     "lng": -59,
     "zoom": 4,
-    "cc": "FK"
+    "cc": "FK",
+    "aliases": [
+      "Falklandinseln",
+      "Îles Malouines",
+      "Islas Malvinas",
+      "Isole Falkland o Isole Malvine",
+      "Ilhas Malvinas",
+      "Falklandeilanden"
+    ]
   },
   {
     "name": "Faroe Islands",
@@ -2339,7 +2712,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 62,
     "lng": -7,
     "zoom": 4,
-    "cc": "FO"
+    "cc": "FO",
+    "aliases": [
+      "Färöer-Inseln",
+      "Îles Féroé",
+      "Islas Faroe",
+      "Isole Far Oer",
+      "Ilhas Faroé",
+      "Faeröer"
+    ]
   },
   {
     "name": "Fiji",
@@ -2347,7 +2728,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -18,
     "lng": 175,
     "zoom": 4,
-    "cc": "FJ"
+    "cc": "FJ",
+    "aliases": [
+      "Fidschi",
+      "Fidji",
+      "Fiyi",
+      "Figi"
+    ]
   },
   {
     "name": "Finland",
@@ -2355,7 +2742,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 64,
     "lng": 26,
     "zoom": 4,
-    "cc": "FI"
+    "cc": "FI",
+    "aliases": [
+      "Finnland",
+      "Finlande",
+      "Finlandia",
+      "Finlândia"
+    ]
   },
   {
     "name": "France",
@@ -2363,7 +2756,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 46,
     "lng": 2,
     "zoom": 4,
-    "cc": "FR"
+    "cc": "FR",
+    "aliases": [
+      "Frankreich",
+      "Francia",
+      "França",
+      "Frankrijk"
+    ]
   },
   {
     "name": "French Guiana",
@@ -2371,7 +2770,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 4,
     "lng": -53,
     "zoom": 4,
-    "cc": "GF"
+    "cc": "GF",
+    "aliases": [
+      "Französisch-Guayana",
+      "Guyane",
+      "Guayana Francesa",
+      "Guyana francese",
+      "Guiana Francesa",
+      "Frans-Guyana"
+    ]
   },
   {
     "name": "French Polynesia",
@@ -2379,7 +2786,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -15,
     "lng": -140,
     "zoom": 4,
-    "cc": "PF"
+    "cc": "PF",
+    "aliases": [
+      "Französisch-Polynesien",
+      "Polynésie française",
+      "Polinesia Francesa",
+      "Polinesia Francese",
+      "Polinésia Francesa",
+      "Frans-Polynesië"
+    ]
   },
   {
     "name": "French Southern and Antarctic Lands",
@@ -2387,7 +2802,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -49.25,
     "lng": 69.167,
     "zoom": 4,
-    "cc": "TF"
+    "cc": "TF",
+    "aliases": [
+      "Französische Süd- und Antarktisgebiete",
+      "Terres australes et antarctiques françaises",
+      "Tierras Australes y Antárticas Francesas",
+      "Territori Francesi del Sud",
+      "Terras Austrais e Antárticas Francesas",
+      "Franse Gebieden in de zuidelijke Indische Oceaan"
+    ]
   },
   {
     "name": "Gabon",
@@ -2395,7 +2818,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -1,
     "lng": 11.75,
     "zoom": 4,
-    "cc": "GA"
+    "cc": "GA",
+    "aliases": [
+      "Gabun",
+      "Gabão"
+    ]
   },
   {
     "name": "Gambia",
@@ -2403,7 +2830,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13.4667,
     "lng": -16.5667,
     "zoom": 4,
-    "cc": "GM"
+    "cc": "GM",
+    "aliases": [
+      "Gambie"
+    ]
   },
   {
     "name": "Georgia",
@@ -2411,7 +2841,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 42,
     "lng": 43.5,
     "zoom": 4,
-    "cc": "GE"
+    "cc": "GE",
+    "aliases": [
+      "Georgien",
+      "Géorgie",
+      "Georgië"
+    ]
   },
   {
     "name": "Germany",
@@ -2419,7 +2854,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 51,
     "lng": 9,
     "zoom": 4,
-    "cc": "DE"
+    "cc": "DE",
+    "aliases": [
+      "Deutschland",
+      "Allemagne",
+      "Alemania",
+      "Germania",
+      "Alemanha",
+      "Duitsland"
+    ]
   },
   {
     "name": "Ghana",
@@ -2427,7 +2870,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 8,
     "lng": -2,
     "zoom": 4,
-    "cc": "GH"
+    "cc": "GH",
+    "aliases": [
+      "Gana"
+    ]
   },
   {
     "name": "Gibraltar",
@@ -2435,7 +2881,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 36.1333,
     "lng": -5.35,
     "zoom": 4,
-    "cc": "GI"
+    "cc": "GI",
+    "aliases": [
+      "Gibilterra"
+    ]
   },
   {
     "name": "Greece",
@@ -2443,7 +2892,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 39,
     "lng": 22,
     "zoom": 4,
-    "cc": "GR"
+    "cc": "GR",
+    "aliases": [
+      "Griechenland",
+      "Grèce",
+      "Grecia",
+      "Grécia",
+      "Griekenland"
+    ]
   },
   {
     "name": "Greenland",
@@ -2451,7 +2907,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 72,
     "lng": -40,
     "zoom": 4,
-    "cc": "GL"
+    "cc": "GL",
+    "aliases": [
+      "Grönland",
+      "Groenland",
+      "Groenlandia",
+      "Gronelândia"
+    ]
   },
   {
     "name": "Grenada",
@@ -2459,7 +2921,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 12.1167,
     "lng": -61.6667,
     "zoom": 4,
-    "cc": "GD"
+    "cc": "GD",
+    "aliases": [
+      "Grenade",
+      "Granada"
+    ]
   },
   {
     "name": "Guadeloupe",
@@ -2467,7 +2933,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 16.25,
     "lng": -61.5833,
     "zoom": 4,
-    "cc": "GP"
+    "cc": "GP",
+    "aliases": [
+      "Guadalupe",
+      "Guadeloupa"
+    ]
   },
   {
     "name": "Guam",
@@ -2491,7 +2961,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 49.4667,
     "lng": -2.5833,
     "zoom": 4,
-    "cc": "GG"
+    "cc": "GG",
+    "aliases": [
+      "Guernesey"
+    ]
   },
   {
     "name": "Guinea",
@@ -2499,7 +2972,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 11,
     "lng": -10,
     "zoom": 4,
-    "cc": "GN"
+    "cc": "GN",
+    "aliases": [
+      "Guinée",
+      "Guiné",
+      "Guinee"
+    ]
   },
   {
     "name": "Guinea-Bissau",
@@ -2507,7 +2985,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 12,
     "lng": -15,
     "zoom": 4,
-    "cc": "GW"
+    "cc": "GW",
+    "aliases": [
+      "Guinée-Bissau",
+      "Guinea-Bisáu",
+      "Guiné-Bissau",
+      "Guinee-Bissau"
+    ]
   },
   {
     "name": "Guyana",
@@ -2515,7 +2999,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 5,
     "lng": -59,
     "zoom": 4,
-    "cc": "GY"
+    "cc": "GY",
+    "aliases": [
+      "Guiana"
+    ]
   },
   {
     "name": "Haiti",
@@ -2531,7 +3018,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -53.1,
     "lng": 72.5167,
     "zoom": 4,
-    "cc": "HM"
+    "cc": "HM",
+    "aliases": [
+      "Heard und die McDonaldinseln",
+      "Îles Heard-et-MacDonald",
+      "Islas Heard y McDonald",
+      "Isole Heard e McDonald",
+      "Ilha Heard e Ilhas McDonald",
+      "Heard-en McDonaldeilanden"
+    ]
   },
   {
     "name": "Honduras",
@@ -2555,7 +3050,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 47,
     "lng": 20,
     "zoom": 4,
-    "cc": "HU"
+    "cc": "HU",
+    "aliases": [
+      "Ungarn",
+      "Hongrie",
+      "Hungría",
+      "Ungheria",
+      "Hungria",
+      "Hongarije"
+    ]
   },
   {
     "name": "Iceland",
@@ -2563,7 +3066,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 65,
     "lng": -18,
     "zoom": 4,
-    "cc": "IS"
+    "cc": "IS",
+    "aliases": [
+      "Island",
+      "Islande",
+      "Islandia",
+      "Islanda",
+      "Islândia",
+      "IJsland"
+    ]
   },
   {
     "name": "India",
@@ -2571,7 +3082,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 20,
     "lng": 77,
     "zoom": 4,
-    "cc": "IN"
+    "cc": "IN",
+    "aliases": [
+      "Indien",
+      "Inde"
+    ]
   },
   {
     "name": "Indonesia",
@@ -2579,7 +3094,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -5,
     "lng": 120,
     "zoom": 4,
-    "cc": "ID"
+    "cc": "ID",
+    "aliases": [
+      "Indonesien",
+      "Indonésie",
+      "Indonesië"
+    ]
   },
   {
     "name": "Iran",
@@ -2587,7 +3107,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 32,
     "lng": 53,
     "zoom": 4,
-    "cc": "IR"
+    "cc": "IR",
+    "aliases": [
+      "Irão"
+    ]
   },
   {
     "name": "Iraq",
@@ -2595,7 +3118,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 33,
     "lng": 44,
     "zoom": 4,
-    "cc": "IQ"
+    "cc": "IQ",
+    "aliases": [
+      "Irak",
+      "Iraque"
+    ]
   },
   {
     "name": "Ireland",
@@ -2603,7 +3130,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 53,
     "lng": -8,
     "zoom": 4,
-    "cc": "IE"
+    "cc": "IE",
+    "aliases": [
+      "Irland",
+      "Irlande",
+      "Irlanda",
+      "Ierland"
+    ]
   },
   {
     "name": "Isle of Man",
@@ -2611,7 +3144,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 54.25,
     "lng": -4.5,
     "zoom": 4,
-    "cc": "IM"
+    "cc": "IM",
+    "aliases": [
+      "Insel Man",
+      "Île de Man",
+      "Isla de Man",
+      "Isola di Man",
+      "Ilha de Man"
+    ]
   },
   {
     "name": "Israel",
@@ -2619,7 +3159,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 31.47,
     "lng": 35.13,
     "zoom": 4,
-    "cc": "IL"
+    "cc": "IL",
+    "aliases": [
+      "Israele"
+    ]
   },
   {
     "name": "Italy",
@@ -2627,7 +3170,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 42.8333,
     "lng": 12.8333,
     "zoom": 4,
-    "cc": "IT"
+    "cc": "IT",
+    "aliases": [
+      "Italien",
+      "Italie",
+      "Italia",
+      "Itália",
+      "Italië"
+    ]
   },
   {
     "name": "Ivory Coast",
@@ -2635,7 +3185,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 8,
     "lng": -5,
     "zoom": 4,
-    "cc": "CI"
+    "cc": "CI",
+    "aliases": [
+      "Côte d'Ivoire",
+      "Costa de Marfil",
+      "Costa d'Avorio",
+      "Costa do Marfim",
+      "Ivoorkust"
+    ]
   },
   {
     "name": "Jamaica",
@@ -2643,7 +3200,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.25,
     "lng": -77.5,
     "zoom": 4,
-    "cc": "JM"
+    "cc": "JM",
+    "aliases": [
+      "Jamaika",
+      "Jamaïque",
+      "Giamaica"
+    ]
   },
   {
     "name": "Japan",
@@ -2651,7 +3213,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 36,
     "lng": 138,
     "zoom": 4,
-    "cc": "JP"
+    "cc": "JP",
+    "aliases": [
+      "Japon",
+      "Japón",
+      "Giappone",
+      "Japão"
+    ]
   },
   {
     "name": "Jersey",
@@ -2659,7 +3227,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 49.25,
     "lng": -2.1667,
     "zoom": 4,
-    "cc": "JE"
+    "cc": "JE",
+    "aliases": [
+      "Isola di Jersey"
+    ]
   },
   {
     "name": "Jordan",
@@ -2667,7 +3238,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 31,
     "lng": 36,
     "zoom": 4,
-    "cc": "JO"
+    "cc": "JO",
+    "aliases": [
+      "Jordanien",
+      "Jordanie",
+      "Jordania",
+      "Giordania",
+      "Jordânia",
+      "Jordanië"
+    ]
   },
   {
     "name": "Kazakhstan",
@@ -2675,7 +3254,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 48,
     "lng": 68,
     "zoom": 4,
-    "cc": "KZ"
+    "cc": "KZ",
+    "aliases": [
+      "Kasachstan",
+      "Kazajistán",
+      "Kazakistan",
+      "Cazaquistão",
+      "Kazachstan"
+    ]
   },
   {
     "name": "Kenya",
@@ -2683,7 +3269,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 1,
     "lng": 38,
     "zoom": 4,
-    "cc": "KE"
+    "cc": "KE",
+    "aliases": [
+      "Kenia",
+      "Quénia"
+    ]
   },
   {
     "name": "Kiribati",
@@ -2707,7 +3297,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 29.5,
     "lng": 45.75,
     "zoom": 4,
-    "cc": "KW"
+    "cc": "KW",
+    "aliases": [
+      "Koweït",
+      "Koeweit"
+    ]
   },
   {
     "name": "Kyrgyzstan",
@@ -2715,7 +3309,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 41,
     "lng": 75,
     "zoom": 4,
-    "cc": "KG"
+    "cc": "KG",
+    "aliases": [
+      "Kirgisistan",
+      "Kirghizistan",
+      "Kirguizistán",
+      "Quirguistão",
+      "Kirgizië"
+    ]
   },
   {
     "name": "Laos",
@@ -2731,7 +3332,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 57,
     "lng": 25,
     "zoom": 4,
-    "cc": "LV"
+    "cc": "LV",
+    "aliases": [
+      "Lettland",
+      "Lettonie",
+      "Letonia",
+      "Lettonia",
+      "Letónia",
+      "Letland"
+    ]
   },
   {
     "name": "Lebanon",
@@ -2739,7 +3348,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 33.8333,
     "lng": 35.8333,
     "zoom": 4,
-    "cc": "LB"
+    "cc": "LB",
+    "aliases": [
+      "Libanon",
+      "Liban",
+      "Líbano",
+      "Libano"
+    ]
   },
   {
     "name": "Lesotho",
@@ -2747,7 +3362,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -29.5,
     "lng": 28.5,
     "zoom": 4,
-    "cc": "LS"
+    "cc": "LS",
+    "aliases": [
+      "Lesoto"
+    ]
   },
   {
     "name": "Liberia",
@@ -2763,7 +3381,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 25,
     "lng": 17,
     "zoom": 4,
-    "cc": "LY"
+    "cc": "LY",
+    "aliases": [
+      "Libyen",
+      "Libye",
+      "Libia",
+      "Líbia",
+      "Libië"
+    ]
   },
   {
     "name": "Liechtenstein",
@@ -2779,7 +3404,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 56,
     "lng": 24,
     "zoom": 4,
-    "cc": "LT"
+    "cc": "LT",
+    "aliases": [
+      "Litauen",
+      "Lituanie",
+      "Lituania",
+      "Lituânia",
+      "Litouwen"
+    ]
   },
   {
     "name": "Luxembourg",
@@ -2787,7 +3419,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 49.75,
     "lng": 6.1667,
     "zoom": 4,
-    "cc": "LU"
+    "cc": "LU",
+    "aliases": [
+      "Luxemburg",
+      "Luxemburgo",
+      "Lussemburgo"
+    ]
   },
   {
     "name": "Macau",
@@ -2795,7 +3432,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 22.1667,
     "lng": 113.55,
     "zoom": 4,
-    "cc": "MO"
+    "cc": "MO",
+    "aliases": [
+      "Macao"
+    ]
   },
   {
     "name": "Madagascar",
@@ -2803,7 +3443,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -20,
     "lng": 47,
     "zoom": 4,
-    "cc": "MG"
+    "cc": "MG",
+    "aliases": [
+      "Madagaskar"
+    ]
   },
   {
     "name": "Malawi",
@@ -2819,7 +3462,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 2.5,
     "lng": 112.5,
     "zoom": 4,
-    "cc": "MY"
+    "cc": "MY",
+    "aliases": [
+      "Malaisie",
+      "Malasia",
+      "Malesia",
+      "Malásia",
+      "Maleisië"
+    ]
   },
   {
     "name": "Maldives",
@@ -2827,7 +3477,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 3.25,
     "lng": 73,
     "zoom": 4,
-    "cc": "MV"
+    "cc": "MV",
+    "aliases": [
+      "Malediven",
+      "Maldivas",
+      "Maldive",
+      "Maldiven"
+    ]
   },
   {
     "name": "Mali",
@@ -2843,7 +3499,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 35.8333,
     "lng": 14.5833,
     "zoom": 4,
-    "cc": "MT"
+    "cc": "MT",
+    "aliases": [
+      "Malte"
+    ]
   },
   {
     "name": "Marshall Islands",
@@ -2851,7 +3510,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 9,
     "lng": 168,
     "zoom": 4,
-    "cc": "MH"
+    "cc": "MH",
+    "aliases": [
+      "Marshallinseln",
+      "Îles Marshall",
+      "Islas Marshall",
+      "Isole Marshall",
+      "Ilhas Marshall",
+      "Marshalleilanden"
+    ]
   },
   {
     "name": "Martinique",
@@ -2859,7 +3526,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 14.6667,
     "lng": -61,
     "zoom": 4,
-    "cc": "MQ"
+    "cc": "MQ",
+    "aliases": [
+      "Martinica"
+    ]
   },
   {
     "name": "Mauritania",
@@ -2867,7 +3537,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 20,
     "lng": -12,
     "zoom": 4,
-    "cc": "MR"
+    "cc": "MR",
+    "aliases": [
+      "Mauretanien",
+      "Mauritanie",
+      "Mauritanië"
+    ]
   },
   {
     "name": "Mauritius",
@@ -2875,7 +3550,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -20.2833,
     "lng": 57.55,
     "zoom": 4,
-    "cc": "MU"
+    "cc": "MU",
+    "aliases": [
+      "Île Maurice",
+      "Mauricio",
+      "Maurício"
+    ]
   },
   {
     "name": "Mayotte",
@@ -2891,7 +3571,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 23,
     "lng": -102,
     "zoom": 4,
-    "cc": "MX"
+    "cc": "MX",
+    "aliases": [
+      "Mexiko",
+      "Mexique",
+      "Messico"
+    ]
   },
   {
     "name": "Micronesia",
@@ -2899,7 +3584,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 6.9167,
     "lng": 158.25,
     "zoom": 4,
-    "cc": "FM"
+    "cc": "FM",
+    "aliases": [
+      "Mikronesien",
+      "Micronésie",
+      "Micronesië"
+    ]
   },
   {
     "name": "Moldova",
@@ -2907,7 +3597,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 47,
     "lng": 29,
     "zoom": 4,
-    "cc": "MD"
+    "cc": "MD",
+    "aliases": [
+      "Moldawien",
+      "Moldavie",
+      "Moldavia",
+      "Moldávia",
+      "Moldavië"
+    ]
   },
   {
     "name": "Monaco",
@@ -2915,7 +3612,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 43.7333,
     "lng": 7.4,
     "zoom": 4,
-    "cc": "MC"
+    "cc": "MC",
+    "aliases": [
+      "Principato di Monaco"
+    ]
   },
   {
     "name": "Mongolia",
@@ -2923,7 +3623,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 46,
     "lng": 105,
     "zoom": 4,
-    "cc": "MN"
+    "cc": "MN",
+    "aliases": [
+      "Mongolei",
+      "Mongolie",
+      "Mongolië"
+    ]
   },
   {
     "name": "Montenegro",
@@ -2947,7 +3652,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 32,
     "lng": -5,
     "zoom": 4,
-    "cc": "MA"
+    "cc": "MA",
+    "aliases": [
+      "Marokko",
+      "Maroc",
+      "Marruecos",
+      "Marocco",
+      "Marrocos"
+    ]
   },
   {
     "name": "Mozambique",
@@ -2955,7 +3667,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -18.25,
     "lng": 35,
     "zoom": 4,
-    "cc": "MZ"
+    "cc": "MZ",
+    "aliases": [
+      "Mosambik",
+      "Mozambico",
+      "Moçambique"
+    ]
   },
   {
     "name": "Myanmar",
@@ -2963,7 +3680,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 22,
     "lng": 98,
     "zoom": 4,
-    "cc": "MM"
+    "cc": "MM",
+    "aliases": [
+      "Birmanie",
+      "Birmania"
+    ]
   },
   {
     "name": "Namibia",
@@ -2971,7 +3692,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -22,
     "lng": 17,
     "zoom": 4,
-    "cc": "NA"
+    "cc": "NA",
+    "aliases": [
+      "Namibie",
+      "Namibië"
+    ]
   },
   {
     "name": "Nauru",
@@ -2995,7 +3720,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 52.5,
     "lng": 5.75,
     "zoom": 4,
-    "cc": "NL"
+    "cc": "NL",
+    "aliases": [
+      "Niederlande",
+      "Pays-Bas",
+      "Países Bajos",
+      "Paesi Bassi",
+      "Holanda",
+      "Nederland"
+    ]
   },
   {
     "name": "New Caledonia",
@@ -3003,7 +3736,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -21.5,
     "lng": 165.5,
     "zoom": 4,
-    "cc": "NC"
+    "cc": "NC",
+    "aliases": [
+      "Neukaledonien",
+      "Nouvelle-Calédonie",
+      "Nueva Caledonia",
+      "Nuova Caledonia",
+      "Nova Caledónia",
+      "Nieuw-Caledonië"
+    ]
   },
   {
     "name": "New Zealand",
@@ -3011,7 +3752,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -41,
     "lng": 174,
     "zoom": 4,
-    "cc": "NZ"
+    "cc": "NZ",
+    "aliases": [
+      "Neuseeland",
+      "Nouvelle-Zélande",
+      "Nueva Zelanda",
+      "Nuova Zelanda",
+      "Nova Zelândia",
+      "Nieuw-Zeeland"
+    ]
   },
   {
     "name": "Nicaragua",
@@ -3051,7 +3800,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -29.0333,
     "lng": 167.95,
     "zoom": 4,
-    "cc": "NF"
+    "cc": "NF",
+    "aliases": [
+      "Norfolkinsel",
+      "Île Norfolk",
+      "Isla de Norfolk",
+      "Isola Norfolk",
+      "Ilha Norfolk",
+      "Norfolkeiland"
+    ]
   },
   {
     "name": "North Korea",
@@ -3059,7 +3816,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 40,
     "lng": 127,
     "zoom": 4,
-    "cc": "KP"
+    "cc": "KP",
+    "aliases": [
+      "Nordkorea",
+      "Corée du Nord",
+      "Corea del Norte",
+      "Corea del Nord",
+      "Coreia do Norte",
+      "Noord-Korea"
+    ]
   },
   {
     "name": "North Macedonia",
@@ -3067,7 +3832,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 41.8333,
     "lng": 22,
     "zoom": 4,
-    "cc": "MK"
+    "cc": "MK",
+    "aliases": [
+      "Nordmazedonien",
+      "Macédoine du Nord",
+      "Macedonia del Norte",
+      "Macedonia del Nord",
+      "Macedónia do Norte",
+      "Noord-Macedonië"
+    ]
   },
   {
     "name": "Northern Mariana Islands",
@@ -3075,7 +3848,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15.2,
     "lng": 145.75,
     "zoom": 4,
-    "cc": "MP"
+    "cc": "MP",
+    "aliases": [
+      "Nördliche Marianen",
+      "Îles Mariannes du Nord",
+      "Islas Marianas del Norte",
+      "Isole Marianne Settentrionali",
+      "Marianas Setentrionais",
+      "Noordelijke Marianeneilanden"
+    ]
   },
   {
     "name": "Norway",
@@ -3083,7 +3864,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 62,
     "lng": 10,
     "zoom": 4,
-    "cc": "NO"
+    "cc": "NO",
+    "aliases": [
+      "Norwegen",
+      "Norvège",
+      "Noruega",
+      "Norvegia",
+      "Noorwegen"
+    ]
   },
   {
     "name": "Oman",
@@ -3091,7 +3879,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 21,
     "lng": 57,
     "zoom": 4,
-    "cc": "OM"
+    "cc": "OM",
+    "aliases": [
+      "Omã"
+    ]
   },
   {
     "name": "Pakistan",
@@ -3099,7 +3890,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 30,
     "lng": 70,
     "zoom": 4,
-    "cc": "PK"
+    "cc": "PK",
+    "aliases": [
+      "Paquistão"
+    ]
   },
   {
     "name": "Palau",
@@ -3107,7 +3901,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 7.5,
     "lng": 134.5,
     "zoom": 4,
-    "cc": "PW"
+    "cc": "PW",
+    "aliases": [
+      "Palaos (Palau)"
+    ]
   },
   {
     "name": "Palestine",
@@ -3115,7 +3912,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 31.9,
     "lng": 35.2,
     "zoom": 4,
-    "cc": "PS"
+    "cc": "PS",
+    "aliases": [
+      "Palästina",
+      "Palestina",
+      "Palestijnse gebieden"
+    ]
   },
   {
     "name": "Panama",
@@ -3131,7 +3933,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -6,
     "lng": 147,
     "zoom": 4,
-    "cc": "PG"
+    "cc": "PG",
+    "aliases": [
+      "Papua-Neuguinea",
+      "Papouasie-Nouvelle-Guinée",
+      "Papúa Nueva Guinea",
+      "Papua Nuova Guinea",
+      "Papua Nova Guiné",
+      "Papoea-Nieuw-Guinea"
+    ]
   },
   {
     "name": "Paraguay",
@@ -3139,7 +3949,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -23,
     "lng": -58,
     "zoom": 4,
-    "cc": "PY"
+    "cc": "PY",
+    "aliases": [
+      "Paraguai"
+    ]
   },
   {
     "name": "Peru",
@@ -3147,7 +3960,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -10,
     "lng": -76,
     "zoom": 4,
-    "cc": "PE"
+    "cc": "PE",
+    "aliases": [
+      "Pérou"
+    ]
   },
   {
     "name": "Philippines",
@@ -3155,7 +3971,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13,
     "lng": 122,
     "zoom": 4,
-    "cc": "PH"
+    "cc": "PH",
+    "aliases": [
+      "Philippinen",
+      "Filipinas",
+      "Filippine",
+      "Filipijnen"
+    ]
   },
   {
     "name": "Pitcairn Islands",
@@ -3163,7 +3985,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -25.0667,
     "lng": -130.1,
     "zoom": 4,
-    "cc": "PN"
+    "cc": "PN",
+    "aliases": [
+      "Pitcairninseln",
+      "Îles Pitcairn",
+      "Islas Pitcairn",
+      "Isole Pitcairn",
+      "Ilhas Pitcairn",
+      "Pitcairneilanden"
+    ]
   },
   {
     "name": "Poland",
@@ -3171,7 +4001,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 52,
     "lng": 20,
     "zoom": 4,
-    "cc": "PL"
+    "cc": "PL",
+    "aliases": [
+      "Polen",
+      "Pologne",
+      "Polonia",
+      "Polónia"
+    ]
   },
   {
     "name": "Portugal",
@@ -3179,7 +4015,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 39.5,
     "lng": -8,
     "zoom": 4,
-    "cc": "PT"
+    "cc": "PT",
+    "aliases": [
+      "Portogallo"
+    ]
   },
   {
     "name": "Puerto Rico",
@@ -3187,7 +4026,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.25,
     "lng": -66.5,
     "zoom": 4,
-    "cc": "PR"
+    "cc": "PR",
+    "aliases": [
+      "Porto Rico"
+    ]
   },
   {
     "name": "Qatar",
@@ -3195,7 +4037,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 25.5,
     "lng": 51.25,
     "zoom": 4,
-    "cc": "QA"
+    "cc": "QA",
+    "aliases": [
+      "Katar",
+      "Catar"
+    ]
   },
   {
     "name": "Réunion",
@@ -3203,7 +4049,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -21.15,
     "lng": 55.5,
     "zoom": 4,
-    "cc": "RE"
+    "cc": "RE",
+    "aliases": [
+      "Riunione",
+      "Reunião"
+    ]
   },
   {
     "name": "Romania",
@@ -3211,7 +4061,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 46,
     "lng": 25,
     "zoom": 4,
-    "cc": "RO"
+    "cc": "RO",
+    "aliases": [
+      "Rumänien",
+      "Roumanie",
+      "Rumania",
+      "Roménia",
+      "Roemenië"
+    ]
   },
   {
     "name": "Russia",
@@ -3219,7 +4076,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 60,
     "lng": 100,
     "zoom": 4,
-    "cc": "RU"
+    "cc": "RU",
+    "aliases": [
+      "Russland",
+      "Russie",
+      "Rusia",
+      "Rusland"
+    ]
   },
   {
     "name": "Rwanda",
@@ -3227,7 +4090,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -2,
     "lng": 30,
     "zoom": 4,
-    "cc": "RW"
+    "cc": "RW",
+    "aliases": [
+      "Ruanda"
+    ]
   },
   {
     "name": "Saint Barthélemy",
@@ -3235,7 +4101,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.5,
     "lng": -63.4167,
     "zoom": 4,
-    "cc": "BL"
+    "cc": "BL",
+    "aliases": [
+      "San Bartolomé",
+      "Antille Francesi",
+      "São Bartolomeu"
+    ]
   },
   {
     "name": "Saint Helena, Ascension and Tristan da Cunha",
@@ -3243,7 +4114,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -15.95,
     "lng": -5.72,
     "zoom": 4,
-    "cc": "SH"
+    "cc": "SH",
+    "aliases": [
+      "St. Helena, Ascension und Tristan da Cunha",
+      "Sainte-Hélène, Ascension et Tristan da Cunha",
+      "Santa Elena, Ascensión y Tristán de Acuña",
+      "Sant'Elena, Ascensione e Tristan da Cunha",
+      "Santa Helena, Ascensão e Tristão da Cunha",
+      "Sint-Helena, Ascension en Tristan da Cunha"
+    ]
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -3251,7 +4130,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 17.3333,
     "lng": -62.75,
     "zoom": 4,
-    "cc": "KN"
+    "cc": "KN",
+    "aliases": [
+      "St. Kitts und Nevis",
+      "Saint-Christophe-et-Niévès",
+      "San Cristóbal y Nieves",
+      "Saint Kitts e Nevis",
+      "São Cristóvão e Nevis",
+      "Saint Kitts en Nevis"
+    ]
   },
   {
     "name": "Saint Lucia",
@@ -3259,7 +4146,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13.8833,
     "lng": -60.9667,
     "zoom": 4,
-    "cc": "LC"
+    "cc": "LC",
+    "aliases": [
+      "St. Lucia",
+      "Sainte-Lucie",
+      "Santa Lucía",
+      "Santa Lucia",
+      "Santa Lúcia"
+    ]
   },
   {
     "name": "Saint Martin",
@@ -3267,7 +4161,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.0833,
     "lng": -63.95,
     "zoom": 4,
-    "cc": "MF"
+    "cc": "MF",
+    "aliases": [
+      "São Martinho"
+    ]
   },
   {
     "name": "Saint Pierre and Miquelon",
@@ -3275,7 +4172,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 46.8333,
     "lng": -56.3333,
     "zoom": 4,
-    "cc": "PM"
+    "cc": "PM",
+    "aliases": [
+      "St. Pierre und Miquelon",
+      "Saint-Pierre-et-Miquelon",
+      "San Pedro y Miquelón",
+      "Saint-Pierre e Miquelon",
+      "Saint Pierre en Miquelon"
+    ]
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -3283,7 +4187,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 13.25,
     "lng": -61.2,
     "zoom": 4,
-    "cc": "VC"
+    "cc": "VC",
+    "aliases": [
+      "St. Vincent und die Grenadinen",
+      "Saint-Vincent-et-les-Grenadines",
+      "San Vicente y Granadinas",
+      "Saint Vincent e Grenadine",
+      "São Vincente e Granadinas",
+      "Saint Vincent en de Grenadines"
+    ]
   },
   {
     "name": "Samoa",
@@ -3299,7 +4211,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 43.7667,
     "lng": 12.4167,
     "zoom": 4,
-    "cc": "SM"
+    "cc": "SM",
+    "aliases": [
+      "Saint-Marin"
+    ]
   },
   {
     "name": "São Tomé and Príncipe",
@@ -3307,7 +4222,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 1,
     "lng": 7,
     "zoom": 4,
-    "cc": "ST"
+    "cc": "ST",
+    "aliases": [
+      "São Tomé und Príncipe",
+      "São Tomé et Príncipe",
+      "Santo Tomé y Príncipe",
+      "São Tomé e Príncipe",
+      "Sao Tomé en Principe"
+    ]
   },
   {
     "name": "Saudi Arabia",
@@ -3315,7 +4237,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 25,
     "lng": 45,
     "zoom": 4,
-    "cc": "SA"
+    "cc": "SA",
+    "aliases": [
+      "Saudi-Arabien",
+      "Arabie Saoudite",
+      "Arabia Saudí",
+      "Arabia Saudita",
+      "Arábia Saudita",
+      "Saoedi-Arabië"
+    ]
   },
   {
     "name": "Senegal",
@@ -3331,7 +4261,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 44,
     "lng": 21,
     "zoom": 4,
-    "cc": "RS"
+    "cc": "RS",
+    "aliases": [
+      "Serbien",
+      "Serbie",
+      "Sérvia",
+      "Servië"
+    ]
   },
   {
     "name": "Seychelles",
@@ -3339,7 +4275,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -4.5833,
     "lng": 55.6667,
     "zoom": 4,
-    "cc": "SC"
+    "cc": "SC",
+    "aliases": [
+      "Seychellen",
+      "Seicheles"
+    ]
   },
   {
     "name": "Sierra Leone",
@@ -3347,7 +4287,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 8.5,
     "lng": -11.5,
     "zoom": 4,
-    "cc": "SL"
+    "cc": "SL",
+    "aliases": [
+      "Serra Leoa"
+    ]
   },
   {
     "name": "Singapore",
@@ -3355,7 +4298,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 1.3667,
     "lng": 103.8,
     "zoom": 4,
-    "cc": "SG"
+    "cc": "SG",
+    "aliases": [
+      "Singapur",
+      "Singapour",
+      "Singapura"
+    ]
   },
   {
     "name": "Sint Maarten",
@@ -3363,7 +4311,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.0333,
     "lng": -63.05,
     "zoom": 4,
-    "cc": "SX"
+    "cc": "SX",
+    "aliases": [
+      "Saint-Martin",
+      "São Martinho"
+    ]
   },
   {
     "name": "Slovakia",
@@ -3371,7 +4323,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 48.6667,
     "lng": 19.5,
     "zoom": 4,
-    "cc": "SK"
+    "cc": "SK",
+    "aliases": [
+      "Slowakei",
+      "Slovaquie",
+      "Eslovaquia",
+      "Slovacchia",
+      "Eslováquia",
+      "Slowakije"
+    ]
   },
   {
     "name": "Slovenia",
@@ -3379,7 +4339,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 46.1167,
     "lng": 14.8167,
     "zoom": 4,
-    "cc": "SI"
+    "cc": "SI",
+    "aliases": [
+      "Slowenien",
+      "Slovénie",
+      "Eslovenia",
+      "Eslovénia",
+      "Slovenië"
+    ]
   },
   {
     "name": "Solomon Islands",
@@ -3387,7 +4354,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -8,
     "lng": 159,
     "zoom": 4,
-    "cc": "SB"
+    "cc": "SB",
+    "aliases": [
+      "Salomonen",
+      "Îles Salomon",
+      "Islas Salomón",
+      "Isole Salomone",
+      "Ilhas Salomão",
+      "Salomonseilanden"
+    ]
   },
   {
     "name": "Somalia",
@@ -3395,7 +4370,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 10,
     "lng": 49,
     "zoom": 4,
-    "cc": "SO"
+    "cc": "SO",
+    "aliases": [
+      "Somalie",
+      "Somalië"
+    ]
   },
   {
     "name": "South Africa",
@@ -3403,7 +4382,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -29,
     "lng": 24,
     "zoom": 4,
-    "cc": "ZA"
+    "cc": "ZA",
+    "aliases": [
+      "Südafrika",
+      "Afrique du Sud",
+      "Sudáfrica",
+      "Sud Africa",
+      "África do Sul",
+      "Zuid-Afrika"
+    ]
   },
   {
     "name": "South Georgia",
@@ -3411,7 +4398,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -54.5,
     "lng": -37,
     "zoom": 4,
-    "cc": "GS"
+    "cc": "GS",
+    "aliases": [
+      "Südgeorgien und die Südlichen Sandwichinseln",
+      "Géorgie du Sud-et-les Îles Sandwich du Sud",
+      "Islas Georgias del Sur y Sandwich del Sur",
+      "Georgia del Sud e Isole Sandwich Meridionali",
+      "Ilhas Geórgia do Sul e Sandwich do Sul",
+      "Zuid-Georgia en Zuidelijke Sandwicheilanden"
+    ]
   },
   {
     "name": "South Korea",
@@ -3419,7 +4414,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 37,
     "lng": 127.5,
     "zoom": 4,
-    "cc": "KR"
+    "cc": "KR",
+    "aliases": [
+      "Südkorea",
+      "Corée du Sud",
+      "Corea del Sur",
+      "Corea del Sud",
+      "Coreia do Sul",
+      "Zuid-Korea"
+    ]
   },
   {
     "name": "South Sudan",
@@ -3427,7 +4430,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 7,
     "lng": 30,
     "zoom": 4,
-    "cc": "SS"
+    "cc": "SS",
+    "aliases": [
+      "Südsudan",
+      "Soudan du Sud",
+      "Sudán del Sur",
+      "Sudan del sud",
+      "Sudão do Sul",
+      "Zuid-Soedan"
+    ]
   },
   {
     "name": "Spain",
@@ -3435,7 +4446,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 40,
     "lng": -4,
     "zoom": 4,
-    "cc": "ES"
+    "cc": "ES",
+    "aliases": [
+      "Spanien",
+      "Espagne",
+      "España",
+      "Spagna",
+      "Espanha",
+      "Spanje"
+    ]
   },
   {
     "name": "Sri Lanka",
@@ -3451,7 +4470,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15,
     "lng": 30,
     "zoom": 4,
-    "cc": "SD"
+    "cc": "SD",
+    "aliases": [
+      "Soudan",
+      "Sudão",
+      "Soedan"
+    ]
   },
   {
     "name": "Suriname",
@@ -3459,7 +4483,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 4,
     "lng": -56,
     "zoom": 4,
-    "cc": "SR"
+    "cc": "SR",
+    "aliases": [
+      "Surinam"
+    ]
   },
   {
     "name": "Svalbard and Jan Mayen",
@@ -3467,7 +4494,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 78,
     "lng": 20,
     "zoom": 4,
-    "cc": "SJ"
+    "cc": "SJ",
+    "aliases": [
+      "Spitzbergen und Jan Mayen",
+      "Svalbard et Jan Mayen",
+      "Islas Svalbard y Jan Mayen",
+      "Svalbard e Jan Mayen",
+      "Ilhas Svalbard e Jan Mayen",
+      "Svalbard en Jan Mayen"
+    ]
   },
   {
     "name": "Sweden",
@@ -3475,7 +4510,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 62,
     "lng": 15,
     "zoom": 4,
-    "cc": "SE"
+    "cc": "SE",
+    "aliases": [
+      "Schweden",
+      "Suède",
+      "Suecia",
+      "Svezia",
+      "Suécia",
+      "Zweden"
+    ]
   },
   {
     "name": "Switzerland",
@@ -3483,7 +4526,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 47,
     "lng": 8,
     "zoom": 4,
-    "cc": "CH"
+    "cc": "CH",
+    "aliases": [
+      "Schweiz",
+      "Suisse",
+      "Suiza",
+      "Svizzera",
+      "Suíça",
+      "Zwitserland"
+    ]
   },
   {
     "name": "Syria",
@@ -3491,7 +4542,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 35,
     "lng": 38,
     "zoom": 4,
-    "cc": "SY"
+    "cc": "SY",
+    "aliases": [
+      "Syrien",
+      "Syrie",
+      "Siria",
+      "Síria",
+      "Syrië"
+    ]
   },
   {
     "name": "Taiwan",
@@ -3499,7 +4557,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 23.5,
     "lng": 121,
     "zoom": 4,
-    "cc": "TW"
+    "cc": "TW",
+    "aliases": [
+      "Ilha Formosa"
+    ]
   },
   {
     "name": "Tajikistan",
@@ -3507,7 +4568,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 39,
     "lng": 71,
     "zoom": 4,
-    "cc": "TJ"
+    "cc": "TJ",
+    "aliases": [
+      "Tadschikistan",
+      "Tadjikistan",
+      "Tayikistán",
+      "Tagikistan",
+      "Tajiquistão",
+      "Tadzjikistan"
+    ]
   },
   {
     "name": "Tanzania",
@@ -3515,7 +4584,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -6,
     "lng": 35,
     "zoom": 4,
-    "cc": "TZ"
+    "cc": "TZ",
+    "aliases": [
+      "Tansania",
+      "Tanzanie"
+    ]
   },
   {
     "name": "Thailand",
@@ -3523,7 +4596,12 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15,
     "lng": 100,
     "zoom": 4,
-    "cc": "TH"
+    "cc": "TH",
+    "aliases": [
+      "Thaïlande",
+      "Tailandia",
+      "Tailândia"
+    ]
   },
   {
     "name": "Timor-Leste",
@@ -3531,7 +4609,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -8.8333,
     "lng": 125.9167,
     "zoom": 4,
-    "cc": "TL"
+    "cc": "TL",
+    "aliases": [
+      "Osttimor",
+      "Timor oriental",
+      "Timor Oriental",
+      "Timor Est",
+      "Oost-Timor"
+    ]
   },
   {
     "name": "Togo",
@@ -3547,7 +4632,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -9,
     "lng": -172,
     "zoom": 4,
-    "cc": "TK"
+    "cc": "TK",
+    "aliases": [
+      "Islas Tokelau",
+      "Isole Tokelau"
+    ]
   },
   {
     "name": "Tonga",
@@ -3563,7 +4652,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 11,
     "lng": -61,
     "zoom": 4,
-    "cc": "TT"
+    "cc": "TT",
+    "aliases": [
+      "Trinidad und Tobago",
+      "Trinité-et-Tobago",
+      "Trinidad y Tobago",
+      "Trinidad e Tobago",
+      "Trinidade e Tobago",
+      "Trinidad en Tobago"
+    ]
   },
   {
     "name": "Tunisia",
@@ -3571,7 +4668,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 34,
     "lng": 9,
     "zoom": 4,
-    "cc": "TN"
+    "cc": "TN",
+    "aliases": [
+      "Tunesien",
+      "Tunisie",
+      "Túnez",
+      "Tunesië"
+    ]
   },
   {
     "name": "Türkiye",
@@ -3579,7 +4682,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 39,
     "lng": 35,
     "zoom": 4,
-    "cc": "TR"
+    "cc": "TR",
+    "aliases": [
+      "Türkei",
+      "Turquie",
+      "Turquía",
+      "Turchia",
+      "Turquia",
+      "Turkije"
+    ]
   },
   {
     "name": "Turkmenistan",
@@ -3587,7 +4698,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 40,
     "lng": 60,
     "zoom": 4,
-    "cc": "TM"
+    "cc": "TM",
+    "aliases": [
+      "Turquemenistão"
+    ]
   },
   {
     "name": "Turks and Caicos Islands",
@@ -3595,7 +4709,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 21.75,
     "lng": -71.5833,
     "zoom": 4,
-    "cc": "TC"
+    "cc": "TC",
+    "aliases": [
+      "Turks-und Caicosinseln",
+      "Îles Turques-et-Caïques",
+      "Islas Turks y Caicos",
+      "Isole Turks e Caicos",
+      "Ilhas Turks e Caicos",
+      "Turks-en Caicoseilanden"
+    ]
   },
   {
     "name": "Tuvalu",
@@ -3611,7 +4733,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 1,
     "lng": 32,
     "zoom": 4,
-    "cc": "UG"
+    "cc": "UG",
+    "aliases": [
+      "Ouganda",
+      "Oeganda"
+    ]
   },
   {
     "name": "Ukraine",
@@ -3619,7 +4745,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 49,
     "lng": 32,
     "zoom": 4,
-    "cc": "UA"
+    "cc": "UA",
+    "aliases": [
+      "Ucrania",
+      "Ucraina",
+      "Ucrânia",
+      "Oekraïne"
+    ]
   },
   {
     "name": "United Arab Emirates",
@@ -3627,7 +4759,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 24,
     "lng": 54,
     "zoom": 4,
-    "cc": "AE"
+    "cc": "AE",
+    "aliases": [
+      "Vereinigte Arabische Emirate",
+      "Émirats arabes unis",
+      "Emiratos Árabes Unidos",
+      "Emirati Arabi Uniti",
+      "Emirados Árabes Unidos",
+      "Verenigde Arabische Emiraten"
+    ]
   },
   {
     "name": "United Kingdom",
@@ -3635,7 +4775,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 54,
     "lng": -2,
     "zoom": 4,
-    "cc": "GB"
+    "cc": "GB",
+    "aliases": [
+      "Vereinigtes Königreich",
+      "Royaume-Uni",
+      "Reino Unido",
+      "Regno Unito",
+      "Verenigd Koninkrijk"
+    ]
   },
   {
     "name": "United States",
@@ -3643,7 +4790,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 38,
     "lng": -97,
     "zoom": 4,
-    "cc": "US"
+    "cc": "US",
+    "aliases": [
+      "Vereinigte Staaten",
+      "États-Unis",
+      "Estados Unidos",
+      "Stati Uniti d'America",
+      "Verenigde Staten"
+    ]
   },
   {
     "name": "United States Minor Outlying Islands",
@@ -3651,7 +4805,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 19.3,
     "lng": 166.6333,
     "zoom": 4,
-    "cc": "UM"
+    "cc": "UM",
+    "aliases": [
+      "Kleinere Inselbesitzungen der Vereinigten Staaten",
+      "Îles mineures éloignées des États-Unis",
+      "Islas Ultramarinas Menores de Estados Unidos",
+      "Isole minori esterne degli Stati Uniti d'America",
+      "Ilhas Menores Distantes dos Estados Unidos",
+      "Kleine afgelegen eilanden van de Verenigde Staten"
+    ]
   },
   {
     "name": "United States Virgin Islands",
@@ -3659,7 +4821,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 18.35,
     "lng": -64.9333,
     "zoom": 4,
-    "cc": "VI"
+    "cc": "VI",
+    "aliases": [
+      "Amerikanische Jungferninseln",
+      "Îles Vierges des États-Unis",
+      "Islas Vírgenes de los Estados Unidos",
+      "Isole Vergini americane",
+      "Ilhas Virgens dos Estados Unidos",
+      "Amerikaanse Maagdeneilanden"
+    ]
   },
   {
     "name": "Uruguay",
@@ -3667,7 +4837,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -33,
     "lng": -56,
     "zoom": 4,
-    "cc": "UY"
+    "cc": "UY",
+    "aliases": [
+      "Uruguai"
+    ]
   },
   {
     "name": "Uzbekistan",
@@ -3675,7 +4848,13 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 41,
     "lng": 64,
     "zoom": 4,
-    "cc": "UZ"
+    "cc": "UZ",
+    "aliases": [
+      "Usbekistan",
+      "Ouzbékistan",
+      "Uzbequistão",
+      "Oezbekistan"
+    ]
   },
   {
     "name": "Vanuatu",
@@ -3691,7 +4870,15 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 41.9,
     "lng": 12.45,
     "zoom": 4,
-    "cc": "VA"
+    "cc": "VA",
+    "aliases": [
+      "Vatikanstadt",
+      "Cité du Vatican",
+      "Ciudad del Vaticano",
+      "Città del Vaticano",
+      "Cidade do Vaticano",
+      "Vaticaanstad"
+    ]
   },
   {
     "name": "Venezuela",
@@ -3707,7 +4894,10 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 16.1667,
     "lng": 107.8333,
     "zoom": 4,
-    "cc": "VN"
+    "cc": "VN",
+    "aliases": [
+      "Vietname"
+    ]
   },
   {
     "name": "Wallis and Futuna",
@@ -3715,7 +4905,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -13.3,
     "lng": -176.2,
     "zoom": 4,
-    "cc": "WF"
+    "cc": "WF",
+    "aliases": [
+      "Wallis und Futuna",
+      "Wallis-et-Futuna",
+      "Wallis y Futuna",
+      "Wallis e Futuna",
+      "Wallis en Futuna"
+    ]
   },
   {
     "name": "Western Sahara",
@@ -3723,7 +4920,14 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 24.5,
     "lng": -13,
     "zoom": 4,
-    "cc": "EH"
+    "cc": "EH",
+    "aliases": [
+      "Westsahara",
+      "Sahara Occidental",
+      "Sahara Occidentale",
+      "Saara Ocidental",
+      "Westelijke Sahara"
+    ]
   },
   {
     "name": "Yemen",
@@ -3731,7 +4935,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": 15,
     "lng": 48,
     "zoom": 4,
-    "cc": "YE"
+    "cc": "YE",
+    "aliases": [
+      "Jemen",
+      "Iémen"
+    ]
   },
   {
     "name": "Zambia",
@@ -3739,7 +4947,11 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -15,
     "lng": 30,
     "zoom": 4,
-    "cc": "ZM"
+    "cc": "ZM",
+    "aliases": [
+      "Sambia",
+      "Zambie"
+    ]
   },
   {
     "name": "Zimbabwe",
@@ -3747,6 +4959,138 @@ export const geoPlaces: GeoPlace[] = [
     "lat": -20,
     "lng": 30,
     "zoom": 4,
-    "cc": "ZW"
+    "cc": "ZW",
+    "aliases": [
+      "Simbabwe",
+      "Zimbabue"
+    ]
   }
 ];
+
+// Alternate city names (currently German exonyms) keyed by normalized English name.
+export const cityAliases: Record<string, string[]> = {
+  "vienna": [
+    "Wien"
+  ],
+  "munich": [
+    "München"
+  ],
+  "cologne": [
+    "Köln"
+  ],
+  "nuremberg": [
+    "Nürnberg"
+  ],
+  "rome": [
+    "Rom"
+  ],
+  "milan": [
+    "Mailand"
+  ],
+  "florence": [
+    "Florenz"
+  ],
+  "venice": [
+    "Venedig"
+  ],
+  "naples": [
+    "Neapel"
+  ],
+  "prague": [
+    "Prag"
+  ],
+  "warsaw": [
+    "Warschau"
+  ],
+  "krakow": [
+    "Krakau"
+  ],
+  "gdansk": [
+    "Danzig"
+  ],
+  "moscow": [
+    "Moskau"
+  ],
+  "kyiv": [
+    "Kiew"
+  ],
+  "lviv": [
+    "Lemberg"
+  ],
+  "lisbon": [
+    "Lissabon"
+  ],
+  "athens": [
+    "Athen"
+  ],
+  "copenhagen": [
+    "Kopenhagen"
+  ],
+  "geneva": [
+    "Genf"
+  ],
+  "zurich": [
+    "Zürich"
+  ],
+  "brussels": [
+    "Brüssel"
+  ],
+  "bucharest": [
+    "Bukarest"
+  ],
+  "belgrade": [
+    "Belgrad"
+  ],
+  "beijing": [
+    "Peking"
+  ],
+  "newdelhi": [
+    "Neu-Delhi"
+  ],
+  "cairo": [
+    "Kairo"
+  ],
+  "damascus": [
+    "Damaskus"
+  ],
+  "tehran": [
+    "Teheran"
+  ],
+  "baghdad": [
+    "Bagdad"
+  ],
+  "algiers": [
+    "Algier"
+  ],
+  "havana": [
+    "Havanna"
+  ],
+  "mexicocity": [
+    "Mexiko-Stadt",
+    "Mexico-Stadt"
+  ],
+  "strasbourg": [
+    "Straßburg"
+  ],
+  "gothenburg": [
+    "Göteborg"
+  ],
+  "tbilisi": [
+    "Tiflis"
+  ],
+  "yerevan": [
+    "Eriwan"
+  ],
+  "vilnius": [
+    "Wilna"
+  ],
+  "chisinau": [
+    "Kischinau"
+  ],
+  "bratislava": [
+    "Pressburg"
+  ],
+  "lyon": [
+    "Lyon"
+  ]
+};

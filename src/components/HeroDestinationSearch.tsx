@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { destinations as allDestinations } from "@/lib/data/destinations";
-import { geoPlaces } from "@/lib/data/geo-search";
+import { geoPlaces, cityAliases } from "@/lib/data/geo-search";
 import { getCountryFlag } from "@/lib/data";
 import type { Destination } from "@/types";
 
@@ -24,9 +24,18 @@ const normalize = (s: string) =>
     .toLowerCase()
     .trim();
 
+type Indexed = Match & { norms: string[] };
+
+// Alternate search names for a place: localized names (from geoPlaces.aliases,
+// e.g. Deutschland for Germany) plus curated city exonyms (e.g. Wien for Vienna).
+function buildNorms(name: string, extra: string[] = []): string[] {
+  const aliases = cityAliases[normalize(name)] ?? [];
+  return [...new Set([name, ...extra, ...aliases].map(normalize))];
+}
+
 // Built once at module load: a slim, diacritic-folded index. Specific
 // destinations rank first (by popularity), then capitals, then countries.
-const destinationMatches: Array<Match & { norm: string }> = allDestinations
+const destinationMatches: Indexed[] = allDestinations
   .slice()
   .sort((a: Destination, b: Destination) => b.basePopularity - a.basePopularity)
   .map((d: Destination) => ({
@@ -36,12 +45,12 @@ const destinationMatches: Array<Match & { norm: string }> = allDestinations
     lat: d.lat,
     lng: d.lng,
     zoom: 8,
-    norm: normalize(d.name),
+    norms: buildNorms(d.name),
   }));
 
 // Countries + capitals, skipping any whose name already exists as a destination.
-const seen = new Set(destinationMatches.map((d) => d.norm));
-const geoMatches: Array<Match & { norm: string }> = geoPlaces
+const seen = new Set(destinationMatches.map((d) => normalize(d.name)));
+const geoMatches: Indexed[] = geoPlaces
   .filter((p) => !seen.has(normalize(p.name)))
   .map((p) => ({
     id: `${p.kind}:${p.cc}`,
@@ -50,10 +59,10 @@ const geoMatches: Array<Match & { norm: string }> = geoPlaces
     lat: p.lat,
     lng: p.lng,
     zoom: p.zoom,
-    norm: normalize(p.name),
+    norms: buildNorms(p.name, p.aliases ?? []),
   }));
 
-const INDEX: Array<Match & { norm: string }> = [...destinationMatches, ...geoMatches];
+const INDEX: Indexed[] = [...destinationMatches, ...geoMatches];
 
 const MAX_RESULTS = 8;
 const MIN_QUERY = 2;
@@ -69,7 +78,7 @@ export function HeroDestinationSearch() {
   const results = useMemo(() => {
     const q = normalize(query);
     if (q.length < MIN_QUERY) return [];
-    return INDEX.filter((d) => d.norm.includes(q)).slice(0, MAX_RESULTS);
+    return INDEX.filter((d) => d.norms.some((n) => n.includes(q))).slice(0, MAX_RESULTS);
   }, [query]);
 
   const go = (d: Match) => {
