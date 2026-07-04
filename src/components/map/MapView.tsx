@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Map, { type MapRef, type MapLayerMouseEvent } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { HeatmapLayer } from "./HeatmapLayer";
@@ -18,9 +19,7 @@ const DEFAULT_VIEW = {
 
 const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
-function getInitialView() {
-  if (typeof window === "undefined") return DEFAULT_VIEW;
-  const params = new URLSearchParams(window.location.search);
+function viewFromParams(params: URLSearchParams): typeof DEFAULT_VIEW {
   const lat = parseFloat(params.get("lat") ?? "");
   const lng = parseFloat(params.get("lng") ?? "");
   const zoom = parseFloat(params.get("zoom") ?? "");
@@ -69,10 +68,13 @@ function setMapLanguage(map: MapRef, locale: string) {
 export function MapView() {
   const mapRef = useRef<MapRef>(null);
   const locale = useLocale();
+  const searchParams = useSearchParams();
   const { selectedWeek, selectedYear, setHoveredDestination, setViewportBounds, setViewportCenter, showHeatmap } = useMapStore();
   const { data } = useHeatmapData(selectedWeek, selectedYear);
   const { data: allDestinations } = useAllDestinations();
-  const [initialView] = useState(getInitialView);
+  // Read the deep-link target from Next's router-managed search params (reliable
+  // during client-side navigation, unlike window.location during render).
+  const [initialView] = useState(() => viewFromParams(new URLSearchParams(searchParams.toString())));
   const [tooltipInfo, setTooltipInfo] = useState<{
     x: number;
     y: number;
