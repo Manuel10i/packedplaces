@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { getCountryName } from "@/lib/data";
 import {
   allDestinationSlugs,
@@ -118,7 +119,6 @@ export default async function DestinationPage({
   // German slugs force German rendering (see generateMetadata).
   const locale = entry.locale === "de" ? "de" : await getLocale();
   const t = await getTranslations({ locale, namespace: "destination" });
-  const nav = await getTranslations({ locale, namespace: "nav" });
   const tip = await getTranslations({ locale, namespace: "tooltip" });
   const alts = localizedSlugsForSlug(slug);
   const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
@@ -147,26 +147,12 @@ export default async function DestinationPage({
   return (
     <>
       <JsonLd data={jsonLd} />
-      <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold text-gray-900">
-            {nav("brand")}
-          </Link>
-          <div className="flex items-center gap-4">
-            <LanguageSwitcher
-              variant="nav"
-              currentLocale={locale}
-              hrefByLocale={hrefByLocale}
-            />
-            <Link
-              href={mapUrl}
-              className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
-            >
-              {nav("openMap")} &rarr;
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader
+        locale={locale}
+        currentLocale={locale}
+        hrefByLocale={hrefByLocale}
+        mapHref={mapUrl}
+      />
 
       <section className="bg-white pb-8 pt-10">
         <div className="mx-auto max-w-4xl px-6">
@@ -251,6 +237,8 @@ export default async function DestinationPage({
           </div>
         </div>
       </section>
+
+      <SiteFooter locale={locale} />
     </>
   );
 }
