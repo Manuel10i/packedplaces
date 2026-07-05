@@ -30,6 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
+    // Resolve relative metadata URLs (og:image / twitter:image from the file-based
+    // opengraph-image route) against the production origin. Without this, Next.js
+    // falls back to http://localhost:3000, which shipped broken social previews.
+    metadataBase: new URL("https://packedplaces.com"),
     title: {
       // Every page title already includes the brand (e.g. "Contact — PackedPlaces.com"),
       // so a "%s | PackedPlaces.com" template doubled it. Drop the template; page titles
@@ -45,15 +49,10 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "PackedPlaces.com",
       type: "website",
     },
-    alternates: {
-      languages: {
-        en: "https://packedplaces.com",
-        de: "https://packedplaces.com",
-        es: "https://packedplaces.com",
-        fr: "https://packedplaces.com",
-        "x-default": "https://packedplaces.com",
-      },
-    },
+    // No hreflang alternates: the site serves every language from the same URL
+    // (locale is negotiated, not path-prefixed), so per-language alternates would
+    // all point here and signal nothing. Destination pages that genuinely have
+    // distinct de/en URLs set their own alternates.
   };
 }
 
