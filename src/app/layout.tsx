@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -54,8 +54,8 @@ export default async function RootLayout({
       <body className={`${geistSans.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <CookieConsent gaId={gaId} />
         </NextIntlClientProvider>
-        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

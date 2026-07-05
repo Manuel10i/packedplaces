@@ -1,4 +1,11 @@
 {
+  "consent": {
+    "title": "Cookie-Hinweis",
+    "message": "Wir verwenden Cookies für anonyme Statistik, um die Seite zu verbessern. Bis du zustimmst, wird nichts getrackt.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "learnMore": "Mehr erfahren"
+  },
   "nav": {
     "brand": "PackedPlaces.com",
     "howItWorks": "So funktioniert's",
