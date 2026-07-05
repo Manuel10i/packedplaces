@@ -28,6 +28,7 @@ function destinationAlternates(slug: string) {
 const PATHS = [
   { path: "", changeFrequency: "weekly" as const, priority: 1 },
   { path: "map", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "best-time", changeFrequency: "weekly" as const, priority: 0.8 },
   { path: "features/crowdedness", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "features/seasonality", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "features/categories", changeFrequency: "monthly" as const, priority: 0.7 },

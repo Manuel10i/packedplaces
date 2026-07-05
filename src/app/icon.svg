@@ -1,22 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="pin" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#111827"/>
-      <stop offset="100%" stop-color="#374151"/>
-    </linearGradient>
-    <radialGradient id="heat" cx="50%" cy="45%" r="50%">
-      <stop offset="0%" stop-color="#ef4444"/>
-      <stop offset="45%" stop-color="#f97316"/>
-      <stop offset="100%" stop-color="#facc15"/>
-    </radialGradient>
-    <filter id="shadow" x="-10%" y="-5%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity=".18"/>
-    </filter>
-  </defs>
-  <!-- Pin body -->
-  <path d="M256 16C161.3 16 84 93.3 84 188c0 130 172 302 172 302s172-172 172-302C428 93.3 350.7 16 256 16z" fill="url(#pin)" filter="url(#shadow)"/>
-  <!-- Heat core -->
-  <circle cx="256" cy="188" r="96" fill="url(#heat)"/>
-  <!-- Inner bright spot -->
-  <circle cx="256" cy="176" r="36" fill="#fff" opacity=".35"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Atlas Editorial mark: compass needle over paper with graticule -->
+  <rect width="64" height="64" rx="12" fill="#f6f1e7"/>
+  <g stroke="#22303a" stroke-opacity="0.10" stroke-width="1">
+    <path d="M0 21h64M0 43h64M21 0v64M43 0v64"/>
+  </g>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#175e5a" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="16.5" fill="none" stroke="#175e5a" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="0.6"/>
+  <path d="M32 12 L36.5 29 L32 32 L27.5 29 Z" fill="#c2542f"/>
+  <path d="M32 52 L36.5 35 L32 32 L27.5 35 Z" fill="#c2542f" fill-opacity="0.45"/>
+  <circle cx="32" cy="32" r="3" fill="#22303a"/>
 </svg>

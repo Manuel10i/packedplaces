@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useMapStore } from "@/store/useMapStore";
 import { trackEvent } from "@/lib/analytics";
+import { Button } from "@/components/ui/Button";
 
 export function MapDisclaimer() {
   const t = useTranslations("disclaimer");
@@ -34,23 +35,18 @@ export function MapDisclaimer() {
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4">
-      <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
-        <h2 className="text-lg font-bold text-gray-900">{t("title")}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-gray-600">{t("body")}</p>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 backdrop-blur-[2px]">
+      <div className="w-full max-w-md rounded-[4px] border border-line bg-surface-raised bg-paper-grain p-6 shadow-2xl">
+        <h2 className="font-display text-xl text-ink">{t("title")}</h2>
+        <div aria-hidden className="mt-3 h-px w-12 bg-accent/70" />
+        <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("body")}</p>
         <div className="mt-6 flex gap-3">
-          <button
-            onClick={handleDecline}
-            className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50"
-          >
+          <Button variant="secondary" className="flex-1" onClick={handleDecline}>
             {t("decline")}
-          </button>
-          <button
-            onClick={handleAccept}
-            className="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-          >
+          </Button>
+          <Button className="flex-1" onClick={handleAccept}>
             {t("accept")}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

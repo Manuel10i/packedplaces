@@ -1,24 +1,35 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { getCountryName } from "@/lib/data";
 import {
   allDestinationSlugs,
   getSlugEntry,
+  localizedDestinationName,
   localizedSlugsForSlug,
   hreflangSlugMap,
   type LocalizedSlugs,
 } from "@/lib/destinations";
-import { getMonthlyBusyness } from "@/lib/services/destination-busyness";
+import {
+  getMonthlyBusyness,
+  getWeeklyBusyness,
+} from "@/lib/services/destination-busyness";
+import { quietAlternatives } from "@/lib/quiet-alternatives";
+import { slugForDestination } from "@/lib/destinations";
+import { getCountryFlag } from "@/lib/data";
 import {
   busynessColor,
   busynessLabelKey,
   BUSYNESS_BANDS,
 } from "@/lib/busyness-scale";
+import { CrowdCurve } from "@/components/ui/CrowdCurve";
+import { DestinationActions } from "@/components/destination/DestinationActions";
+import Link from "next/link";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -45,6 +56,13 @@ function switcherHrefs(alts: LocalizedSlugs): Record<string, string> {
   if (alts.en) hrefs.en = `/destination/${alts.en}`;
   if (alts.de) hrefs.de = `/destination/${alts.de}`;
   return hrefs;
+}
+
+/** "48.21°N 16.37°E" — degrees with hemisphere suffixes, 2 decimals. */
+function formatCoordinates(lat: number, lng: number): string {
+  const latStr = `${Math.abs(lat).toFixed(2)}°${lat >= 0 ? "N" : "S"}`;
+  const lngStr = `${Math.abs(lng).toFixed(2)}°${lng >= 0 ? "E" : "W"}`;
+  return `${latStr} ${lngStr}`;
 }
 
 function monthNames(locale: string, style: "long" | "short"): string[] {
@@ -83,10 +101,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const entry = getSlugEntry(slug);
   if (!entry) return {};
-  const { destination: d, displayName } = entry;
+  const { destination: d } = entry;
   // German slugs (e.g. /destination/wien) always render as the German variant so
   // the hreflang="de" URL genuinely serves German content.
   const locale = entry.locale === "de" ? "de" : await getLocale();
+  // German rendering (via slug or via the language switcher) uses the exonym.
+  const displayName = locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
   const t = await getTranslations({ locale, namespace: "destination" });
   const long = monthNames(locale, "long");
   const { peakIdx, yearRound } = summarizeBusyness(getMonthlyBusyness(d.id));
@@ -102,7 +122,18 @@ export async function generateMetadata({
       canonical,
       ...(languages ? { languages } : {}),
     },
-    openGraph: { title: t("metaTitle", { name: displayName }), url: canonical },
+    openGraph: {
+      title: t("metaTitle", { name: displayName }),
+      url: canonical,
+      images: [
+        {
+          url: `${BASE_URL}/api/og/destination/${slug}`,
+          width: 1200,
+          height: 630,
+          alt: displayName,
+        },
+      ],
+    },
   };
 }
 
@@ -114,12 +145,16 @@ export default async function DestinationPage({
   const { slug } = await params;
   const entry = getSlugEntry(slug);
   if (!entry) notFound();
-  const { destination: d, displayName } = entry;
+  const { destination: d } = entry;
 
   // German slugs force German rendering (see generateMetadata).
   const locale = entry.locale === "de" ? "de" : await getLocale();
+  const displayName = locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
   const t = await getTranslations({ locale, namespace: "destination" });
   const tip = await getTranslations({ locale, namespace: "tooltip" });
+  const tSaved = await getTranslations({ locale, namespace: "saved" });
+  const tShare = await getTranslations({ locale, namespace: "share" });
+  const tAlt = await getTranslations({ locale, namespace: "alternatives" });
   const alts = localizedSlugsForSlug(slug);
   const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
 
@@ -128,6 +163,8 @@ export default async function DestinationPage({
   // Same crowdedness model as the map (services/busyness-core), aggregated to
   // months — so the calendar here matches the map instead of a raw peakMonths flag.
   const scores = getMonthlyBusyness(d.id);
+  const weekly = getWeeklyBusyness(d.id).slice(0, 52);
+  const alternatives = quietAlternatives(d.id);
   const { peakIdx, quietIdx, yearRound } = summarizeBusyness(scores);
   const busiest = peakIdx.map((i) => long[i]);
   const quietest = quietIdx.map((i) => long[i]);
@@ -154,15 +191,15 @@ export default async function DestinationPage({
         mapHref={mapUrl}
       />
 
-      <section className="bg-white pb-8 pt-10">
+      <section className="bg-atlas-field pb-10 pt-12">
         <div className="mx-auto max-w-4xl px-6">
-          <p className="text-sm font-medium uppercase tracking-wide text-gray-400">
-            {category} &middot; {country}
+          <p className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">
+            {category} &middot; {country} &middot; {formatCoordinates(d.lat, d.lng)}
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="mt-4 font-display text-4xl leading-[1.08] text-ink sm:text-5xl">
             {t("h1", { name: displayName })}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-600">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">
             {yearRound
               ? t("introYearRound", { name: displayName, category, country })
               : t("intro", {
@@ -172,33 +209,49 @@ export default async function DestinationPage({
                   months: joinList(locale, busiest),
                 })}
           </p>
+          <div className="mt-6">
+            <DestinationActions
+              destinationId={d.id}
+              saveLabel={tSaved("save")}
+              savedLabel={tSaved("saved")}
+              shareLabel={tShare("share")}
+              copiedLabel={tShare("copied")}
+              share={{
+                title: `${displayName} — PackedPlaces`,
+                text: t("shareText", { name: displayName }),
+                url: destUrl(slug),
+              }}
+            />
+          </div>
         </div>
       </section>
 
-      <section className="bg-white pb-16">
+      <section className="bg-surface pb-16 pt-10">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-xl font-bold text-gray-900">{t("calendarHeading")}</h2>
-          <div className="mt-6 grid grid-cols-6 gap-3 sm:grid-cols-12">
+          <h2 className="font-display text-2xl text-ink">{t("calendarHeading")}</h2>
+          <div className="mt-6 grid grid-cols-6 gap-px sm:grid-cols-12">
             {scores.map((score, i) => {
               const label = tip(busynessLabelKey(score));
               return (
                 <div key={i} className="flex flex-col items-center gap-2">
                   <div
-                    className="h-16 w-full rounded"
+                    className="h-16 w-full rounded-[2px]"
                     style={{ backgroundColor: busynessColor(score) }}
                     title={`${long[i]}: ${label}`}
                     aria-label={`${long[i]}: ${label}`}
                   />
-                  <span className="text-xs text-gray-500">{short[i]}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+                    {short[i]}
+                  </span>
                 </div>
               );
             })}
           </div>
-          <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
+          <div className="mt-4 flex flex-wrap gap-4 font-mono text-[11px] uppercase tracking-wider text-ink-faint">
             {BUSYNESS_BANDS.map((key, band) => (
               <span key={key} className="inline-flex items-center gap-1.5">
                 <span
-                  className="inline-block h-3 w-3 rounded"
+                  className="inline-block h-3 w-3 rounded-[2px]"
                   style={{ backgroundColor: busynessColor(band * 0.2 + 0.1) }}
                 />
                 {tip(key)}
@@ -207,33 +260,72 @@ export default async function DestinationPage({
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <Card className="p-6">
+              <h3 className="font-mono text-[11px] uppercase tracking-widest text-accent">
                 {t("busiestHeading")}
               </h3>
-              <p className="mt-2 text-lg font-medium text-gray-900">
+              <p className="mt-3 font-display text-xl text-ink">
                 {busiest.length ? joinList(locale, busiest) : t("none")}
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-200 p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            </Card>
+            <Card className="p-6">
+              <h3 className="font-mono text-[11px] uppercase tracking-widest text-accent-2">
                 {t("quietestHeading")}
               </h3>
-              <p className="mt-2 text-lg font-medium text-gray-900">
+              <p className="mt-3 font-display text-xl text-ink">
                 {quietest.length ? joinList(locale, quietest) : t("none")}
               </p>
+            </Card>
+          </div>
+
+          <div className="mt-12">
+            <h2 className="font-display text-2xl text-ink">{t("curveHeading")}</h2>
+            <div className="mt-5 text-ink">
+              <CrowdCurve
+                series={[{ id: d.id, values: weekly }]}
+                markMinMax
+                ariaLabel={t("curveAria", { name: displayName })}
+                monthLabels={short}
+                className="h-32"
+              />
             </div>
           </div>
 
-          <p className="mt-6 text-xs text-gray-400">{t("disclaimer")}</p>
+          {alternatives.length > 0 && (
+            <div className="mt-12">
+              <h2 className="font-display text-2xl text-ink">{tAlt("title")}</h2>
+              <p className="mt-1 text-sm text-ink-muted">{tAlt("lede")}</p>
+              <div className="mt-5 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2">
+                {alternatives.map((alt) => (
+                  <Link
+                    key={alt.destination.id}
+                    href={`/destination/${slugForDestination(alt.destination)}`}
+                    className="group bg-surface-raised p-4 transition-colors hover:bg-surface-sunken"
+                  >
+                    <p className="font-display text-lg text-ink transition-colors group-hover:text-accent">
+                      {getCountryFlag(alt.destination.country)}{" "}
+                      {localizedDestinationName(alt.destination, locale)}
+                    </p>
+                    <p className="mt-1 flex items-center justify-between gap-3">
+                      <span className="text-xs text-ink-faint">
+                        {getCountryName(alt.destination.country, locale)}
+                      </span>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-accent-2">
+                        {tAlt("calmer", { bands: alt.bandsCalmer })}
+                      </span>
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <p className="mt-6 text-xs leading-relaxed text-ink-faint">{t("disclaimer")}</p>
 
           <div className="mt-10">
-            <Link
-              href={mapUrl}
-              className="inline-block rounded-lg bg-cta-gradient px-6 py-3 text-base font-medium text-white transition-transform hover:scale-105"
-            >
+            <Button href={mapUrl} size="lg">
               {t("mapCta", { name: displayName })} &rarr;
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

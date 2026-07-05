@@ -11,7 +11,8 @@
     "howItWorks": "How It Works",
     "data": "Data",
     "openSource": "Open Source",
-    "openMap": "Open Map"
+    "openMap": "Open Map",
+    "menu": "Menu"
   },
   "hero": {
     "headline": "See How Crowded Travel\nDestinations Really Get",
@@ -88,14 +89,18 @@
   },
   "footer": {
     "copyright": "© {year} 10ideen.at",
+    "tagline": "Know when the world travels — and when it doesn't.",
     "github": "GitHub",
     "docs": "Documentation",
     "privacy": "Privacy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "bestTime": "Best time to visit",
+    "compare": "Compare places"
   },
   "map": {
     "title": "PackedPlaces.com",
-    "holidays": "Holidays & Events"
+    "holidays": "Holidays & Events",
+    "close": "Close"
   },
   "disclaimer": {
     "title": "Data Disclaimer",
@@ -107,7 +112,9 @@
     "week": "Week {week}",
     "play": "Play",
     "pause": "Pause",
-    "today": "Today"
+    "today": "Today",
+    "prevWeek": "Previous week",
+    "nextWeek": "Next week"
   },
   "holidays": {
     "title": "School Holidays",
@@ -191,7 +198,9 @@
     "changesTitle": "Changes to This Policy",
     "changesText": "We may update this privacy policy from time to time. Changes will be posted on this page with an updated date.",
     "contactTitle": "Contact Us",
-    "contactText": "If you have questions about this privacy policy or wish to exercise your GDPR rights, please reach out via our contact form."
+    "contactText": "If you have questions about this privacy policy or wish to exercise your GDPR rights, please reach out via our contact form.",
+    "metaTitle": "Privacy Policy — PackedPlaces.com",
+    "metaDescription": "Privacy policy for PackedPlaces.com — how we handle your data, cookies, and analytics."
   },
   "contact": {
     "title": "Contact Us",
@@ -212,7 +221,9 @@
     "errorEmail": "Please enter a valid email address.",
     "errorCaptcha": "Please complete the captcha verification.",
     "errorServer": "Something went wrong. Please try again later.",
-    "errorTurnstile": "Captcha verification failed. Please try again."
+    "errorTurnstile": "Captcha verification failed. Please try again.",
+    "metaTitle": "Contact — PackedPlaces.com",
+    "metaDescription": "Get in touch with the PackedPlaces.com team — questions, feedback, and suggestions welcome."
   },
   "featurePages": {
     "shell": {
@@ -442,6 +453,72 @@
       "mountain": "mountain",
       "desert": "desert",
       "tropical": "tropical"
-    }
+    },
+    "curveHeading": "A typical year, week by week",
+    "curveAria": "Weekly crowd curve for {name}: teal ring marks the quietest week, terracotta dot the busiest",
+    "shareText": "How crowded does {name} really get? See the week-by-week forecast."
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "meta": {
+    "title": "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    "description": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data from 100+ countries.",
+    "ogTitle": "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    "ogDescription": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data from 100+ countries."
+  },
+  "bestTime": {
+    "metaTitle": "Best Time to Visit — PackedPlaces.com",
+    "metaDescription": "Pick any of 700+ destinations and see its quietest and busiest weeks of the year at a glance.",
+    "eyebrow": "Best time",
+    "title": "When should you go?",
+    "lede": "Pick a destination and see its crowd curve for the year — the quietest and busiest weeks, at a glance.",
+    "pickerPlaceholder": "Search a destination, e.g. Hallstatt",
+    "pickerLabel": "Search a destination",
+    "noResults": "No destination found",
+    "empty": "Search for a destination to see when it's quiet.",
+    "loading": "Loading crowd data…",
+    "quietestLabel": "Quietest week",
+    "busiestLabel": "Busiest week",
+    "weekN": "Week {week}",
+    "topWeeksTitle": "Calmest weeks of {year}",
+    "openOnMap": "Open on map",
+    "shareText": "Best time to visit {name}: around {date}",
+    "curveAria": "Crowd curve for {name}: quietest in week {quiet}, busiest in week {busy}",
+    "teaserCta": "Find your quiet week",
+    "sampleCaption": "A year in {name} — the teal ring marks the quietest week, the terracotta dot the busiest.",
+    "flat": "Crowd levels barely change here over the year — any week is about the same."
+  },
+  "saved": {
+    "save": "Save place",
+    "saved": "Saved",
+    "compareCta": "Compare saved places"
+  },
+  "compare": {
+    "metaTitle": "Compare Crowds — PackedPlaces.com",
+    "eyebrow": "Compare",
+    "title": "Which is calmer, when?",
+    "lede": "Your saved places side by side, week by week.",
+    "empty": "No saved places yet.",
+    "emptyHint": "Star destinations on the map, on destination pages or in the best-time finder to compare them here.",
+    "findPlaces": "Find a place",
+    "openMap": "Open the map",
+    "loading": "Loading crowd data…",
+    "quietestCol": "Quietest",
+    "remove": "Remove {name}",
+    "shareText": "Comparing crowds: {names}",
+    "curveAria": "Weekly crowd comparison of the selected destinations"
+  },
+  "share": {
+    "share": "Share",
+    "copied": "Link copied"
+  },
+  "alternatives": {
+    "title": "Quieter alternatives",
+    "lede": "Similar places that stay calmer in peak season.",
+    "calmer": "{bands, plural, one {# band calmer} other {# bands calmer}}"
   }
 }

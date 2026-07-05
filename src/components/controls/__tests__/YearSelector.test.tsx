@@ -26,15 +26,15 @@ describe("YearSelector", () => {
     expect(useMapStore.getState().selectedYear).toBe(currentYear + 1);
   });
 
-  it("current year button has the selected style (bg-blue-600)", () => {
+  it("current year button has the selected style (bg-accent-2)", () => {
     render(<YearSelector />);
     const currentYearButton = screen.getByText(String(currentYear));
-    expect(currentYearButton.className).toContain("bg-blue-600");
+    expect(currentYearButton.className).toContain("bg-accent-2");
   });
 
-  it("non-selected year buttons do not have bg-blue-600", () => {
+  it("non-selected year buttons do not have bg-accent-2", () => {
     render(<YearSelector />);
     const nextYearButton = screen.getByText(String(currentYear + 1));
-    expect(nextYearButton.className).not.toContain("bg-blue-600");
+    expect(nextYearButton.className).not.toContain("bg-accent-2");
   });
 });

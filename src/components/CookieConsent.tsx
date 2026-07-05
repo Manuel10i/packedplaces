@@ -4,6 +4,7 @@ import { useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/Button";
 import {
   getConsent,
   setConsent,
@@ -61,32 +62,24 @@ export function CookieConsent({ gaId }: Props) {
           <div
             role="dialog"
             aria-label={t("title")}
-            className="mx-auto flex max-w-3xl flex-col gap-3 rounded-xl border border-gray-200 bg-white/95 p-4 shadow-lg backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+            className="mx-auto flex max-w-3xl flex-col gap-3 rounded-[4px] border border-line bg-surface-raised/95 p-4 shadow-xl backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:gap-6"
           >
-            <p className="text-sm text-gray-600">
+            <p className="text-sm leading-relaxed text-ink-muted">
               {t("message")}{" "}
               <Link
                 href="/privacy"
-                className="font-medium text-brand-600 underline-offset-2 hover:underline"
+                className="font-medium text-accent-2 underline decoration-dotted underline-offset-4 transition-colors hover:text-accent"
               >
                 {t("learnMore")}
               </Link>
             </p>
             <div className="flex shrink-0 gap-3">
-              <button
-                type="button"
-                onClick={() => setConsent("denied")}
-                className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
-              >
+              <Button variant="secondary" size="sm" onClick={() => setConsent("denied")}>
                 {t("decline")}
-              </button>
-              <button
-                type="button"
-                onClick={() => setConsent("granted")}
-                className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
-              >
+              </Button>
+              <Button size="sm" onClick={() => setConsent("granted")}>
                 {t("accept")}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

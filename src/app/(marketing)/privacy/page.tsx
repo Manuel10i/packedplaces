@@ -4,12 +4,51 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ConsentControls } from "@/components/ConsentControls";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — PackedPlaces.com",
-  description:
-    "Privacy policy for PackedPlaces.com — how we handle your data, cookies, and analytics.",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const p = await getTranslations("privacy");
+  return {
+    title: p("metaTitle"),
+    description: p("metaDescription"),
+    robots: { index: false, follow: false },
+  };
+}
+
+const SECTIONS = [
+  { titleKey: "controllerTitle", textKey: "controllerText" },
+  { titleKey: "collectTitle", textKey: "collectText" },
+] as const;
+
+const RIGHTS_KEYS = [
+  "rightAccess",
+  "rightRectification",
+  "rightErasure",
+  "rightRestriction",
+  "rightPortability",
+  "rightObjection",
+] as const;
+
+const TAIL_SECTIONS = [
+  { titleKey: "retentionTitle", textKey: "retentionText" },
+  { titleKey: "changesTitle", textKey: "changesText" },
+  { titleKey: "contactTitle", textKey: "contactText" },
+] as const;
+
+function SectionTitle({
+  index,
+  children,
+}: {
+  index: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <h2 className="flex items-baseline gap-3 font-display text-xl text-ink">
+      <span aria-hidden className="font-mono text-xs tracking-widest text-accent">
+        {String(index).padStart(2, "0")}
+      </span>
+      {children}
+    </h2>
+  );
+}
 
 export default async function PrivacyPage() {
   const p = await getTranslations("privacy");
@@ -18,107 +57,78 @@ export default async function PrivacyPage() {
     <>
       <SiteHeader />
 
-      <section className="bg-sand-50 py-16">
+      <section className="bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-6">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="font-display text-4xl leading-[1.08] text-ink sm:text-5xl">
             {p("title")}
           </h1>
-          <p className="mt-2 text-sm text-gray-500">{p("lastUpdated")}</p>
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-ink-faint">
+            {p("lastUpdated")}
+          </p>
 
-          <div className="mt-10 space-y-10 text-gray-600">
-            {/* Data Controller */}
-            <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("controllerTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("controllerText")}</p>
-            </div>
-
-            {/* What Data We Collect */}
-            <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("collectTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("collectText")}</p>
-            </div>
+          <div className="mt-12 space-y-10 text-ink-muted">
+            {/* Data Controller / What Data We Collect */}
+            {SECTIONS.map((s, i) => (
+              <div key={s.titleKey}>
+                <SectionTitle index={i + 1}>{p(s.titleKey)}</SectionTitle>
+                <p className="mt-3 text-sm leading-relaxed">{p(s.textKey)}</p>
+              </div>
+            ))}
 
             {/* Cookies */}
             <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("cookiesTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("cookiesText")}</p>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
-                <li>
-                  <strong>NEXT_LOCALE</strong> — {p("cookieLocale")}
+              <SectionTitle index={3}>{p("cookiesTitle")}</SectionTitle>
+              <p className="mt-3 text-sm leading-relaxed">{p("cookiesText")}</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li className="border-l-2 border-dotted border-accent/50 pl-4 leading-relaxed">
+                  <strong className="font-mono text-xs text-ink">NEXT_LOCALE</strong> —{" "}
+                  {p("cookieLocale")}
                 </li>
               </ul>
             </div>
 
             {/* Google Analytics */}
             <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("analyticsTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("analyticsText")}</p>
+              <SectionTitle index={4}>{p("analyticsTitle")}</SectionTitle>
+              <p className="mt-3 text-sm leading-relaxed">{p("analyticsText")}</p>
             </div>
 
             {/* Manage consent */}
             <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("manageTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("manageText")}</p>
+              <SectionTitle index={5}>{p("manageTitle")}</SectionTitle>
+              <p className="mt-3 text-sm leading-relaxed">{p("manageText")}</p>
               <ConsentControls />
             </div>
 
             {/* Contact Form */}
             <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("contactDataTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("contactDataText")}</p>
+              <SectionTitle index={6}>{p("contactDataTitle")}</SectionTitle>
+              <p className="mt-3 text-sm leading-relaxed">{p("contactDataText")}</p>
             </div>
 
             {/* Your Rights */}
             <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("rightsTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("rightsText")}</p>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
-                <li>{p("rightAccess")}</li>
-                <li>{p("rightRectification")}</li>
-                <li>{p("rightErasure")}</li>
-                <li>{p("rightRestriction")}</li>
-                <li>{p("rightPortability")}</li>
-                <li>{p("rightObjection")}</li>
+              <SectionTitle index={7}>{p("rightsTitle")}</SectionTitle>
+              <p className="mt-3 text-sm leading-relaxed">{p("rightsText")}</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                {RIGHTS_KEYS.map((key) => (
+                  <li
+                    key={key}
+                    className="border-l-2 border-dotted border-accent/50 pl-4 leading-relaxed"
+                  >
+                    {p(key)}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Data Retention */}
-            <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("retentionTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("retentionText")}</p>
-            </div>
-
-            {/* Policy Changes */}
-            <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("changesTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("changesText")}</p>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
-                {p("contactTitle")}
-              </h2>
-              <p className="mt-2 text-sm">{p("contactText")}</p>
-            </div>
+            {/* Data Retention / Policy Changes / Contact */}
+            {TAIL_SECTIONS.map((s, i) => (
+              <div key={s.titleKey}>
+                <SectionTitle index={i + 8}>{p(s.titleKey)}</SectionTitle>
+                <p className="mt-3 text-sm leading-relaxed">{p(s.textKey)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

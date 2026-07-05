@@ -11,7 +11,8 @@
     "howItWorks": "Cómo funciona",
     "data": "Datos",
     "openSource": "Código abierto",
-    "openMap": "Abrir mapa"
+    "openMap": "Abrir mapa",
+    "menu": "Menú"
   },
   "hero": {
     "headline": "Descubre lo llenos que están\nlos destinos turísticos",
@@ -88,14 +89,18 @@
   },
   "footer": {
     "copyright": "© {year} 10ideen.at",
+    "tagline": "Saber cuándo viaja el mundo — y cuándo no.",
     "github": "GitHub",
     "docs": "Documentación",
     "privacy": "Privacidad",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "bestTime": "Mejor época para viajar",
+    "compare": "Comparar lugares"
   },
   "map": {
     "title": "PackedPlaces.com",
-    "holidays": "Vacaciones y eventos"
+    "holidays": "Vacaciones y eventos",
+    "close": "Cerrar"
   },
   "disclaimer": {
     "title": "Aviso sobre los datos",
@@ -107,7 +112,9 @@
     "week": "Semana {week}",
     "play": "Reproducir",
     "pause": "Pausa",
-    "today": "Hoy"
+    "today": "Hoy",
+    "prevWeek": "Semana anterior",
+    "nextWeek": "Semana siguiente"
   },
   "holidays": {
     "title": "Vacaciones escolares",
@@ -191,7 +198,9 @@
     "changesTitle": "Cambios en esta política",
     "changesText": "Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada.",
     "contactTitle": "Contacto",
-    "contactText": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos RGPD, contáctenos a través de nuestro formulario de contacto."
+    "contactText": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos RGPD, contáctenos a través de nuestro formulario de contacto.",
+    "metaTitle": "Política de privacidad — PackedPlaces.com",
+    "metaDescription": "Política de privacidad de PackedPlaces.com — cómo tratamos sus datos, cookies y analíticas."
   },
   "contact": {
     "title": "Contacto",
@@ -212,7 +221,9 @@
     "errorEmail": "Por favor, introduzca una dirección de correo electrónico válida.",
     "errorCaptcha": "Por favor, complete la verificación captcha.",
     "errorServer": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
-    "errorTurnstile": "La verificación captcha falló. Por favor, inténtelo de nuevo."
+    "errorTurnstile": "La verificación captcha falló. Por favor, inténtelo de nuevo.",
+    "metaTitle": "Contacto — PackedPlaces.com",
+    "metaDescription": "Póngase en contacto con el equipo de PackedPlaces.com — preguntas, comentarios y sugerencias son bienvenidos."
   },
   "featurePages": {
     "shell": {
@@ -442,6 +453,72 @@
       "mountain": "montaña",
       "desert": "desierto",
       "tropical": "tropical"
-    }
+    },
+    "curveHeading": "Un año típico, semana a semana",
+    "curveAria": "Curva semanal de afluencia de {name}: el anillo verde azulado marca la semana más tranquila, el punto terracota la más concurrida",
+    "shareText": "¿Cuánta gente hay realmente en {name}? Mira la previsión semana a semana."
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "meta": {
+    "title": "PackedPlaces.com — Descubra lo masificados que están realmente los destinos turísticos",
+    "description": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de más de 100 países.",
+    "ogTitle": "PackedPlaces.com — Descubra lo masificados que están realmente los destinos turísticos",
+    "ogDescription": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de más de 100 países."
+  },
+  "bestTime": {
+    "metaTitle": "Mejor época para viajar — PackedPlaces.com",
+    "metaDescription": "Elige uno de los más de 700 destinos y ve de un vistazo sus semanas más tranquilas y más concurridas del año.",
+    "eyebrow": "Mejor época",
+    "title": "¿Cuándo deberías ir?",
+    "lede": "Elige un destino y ve su curva de afluencia del año — las semanas más tranquilas y más concurridas, de un vistazo.",
+    "pickerPlaceholder": "Busca un destino, p. ej. Hallstatt",
+    "pickerLabel": "Buscar un destino",
+    "noResults": "No se encontró ningún destino",
+    "empty": "Busca un destino para ver cuándo está tranquilo.",
+    "loading": "Cargando datos de afluencia…",
+    "quietestLabel": "Semana más tranquila",
+    "busiestLabel": "Semana más concurrida",
+    "weekN": "Semana {week}",
+    "topWeeksTitle": "Semanas más tranquilas de {year}",
+    "openOnMap": "Abrir en el mapa",
+    "shareText": "Mejor época para visitar {name}: alrededor del {date}",
+    "curveAria": "Curva de afluencia de {name}: más tranquila en la semana {quiet}, más concurrida en la semana {busy}",
+    "teaserCta": "Encuentra tu semana tranquila",
+    "sampleCaption": "Un año en {name} — el anillo verde azulado marca la semana más tranquila, el punto terracota la más concurrida.",
+    "flat": "La afluencia apenas cambia aquí a lo largo del año — cualquier semana es parecida."
+  },
+  "saved": {
+    "save": "Guardar lugar",
+    "saved": "Guardado",
+    "compareCta": "Comparar lugares guardados"
+  },
+  "compare": {
+    "metaTitle": "Comparar afluencia — PackedPlaces.com",
+    "eyebrow": "Comparar",
+    "title": "¿Dónde hay menos gente, y cuándo?",
+    "lede": "Tus lugares guardados lado a lado, semana a semana.",
+    "empty": "Aún no hay lugares guardados.",
+    "emptyHint": "Marca destinos en el mapa, en las páginas de destino o en el buscador de mejor época para compararlos aquí.",
+    "findPlaces": "Buscar un lugar",
+    "openMap": "Abrir el mapa",
+    "loading": "Cargando datos de afluencia…",
+    "quietestCol": "Más tranquila",
+    "remove": "Quitar {name}",
+    "shareText": "Comparando afluencia: {names}",
+    "curveAria": "Comparación semanal de afluencia de los destinos seleccionados"
+  },
+  "share": {
+    "share": "Compartir",
+    "copied": "Enlace copiado"
+  },
+  "alternatives": {
+    "title": "Alternativas más tranquilas",
+    "lede": "Lugares similares que se mantienen más tranquilos en temporada alta.",
+    "calmer": "{bands, plural, one {# nivel más tranquilo} other {# niveles más tranquilo}}"
   }
 }

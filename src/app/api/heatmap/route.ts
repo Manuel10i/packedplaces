@@ -107,7 +107,9 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(response, {
     headers: {
-      "Cache-Control": "public, max-age=86400",
+      // Short fresh window so recomputed heatmap data reaches clients quickly;
+      // stale-while-revalidate keeps repeat views instant.
+      "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
     },
   });
 }

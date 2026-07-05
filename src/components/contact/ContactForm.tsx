@@ -5,6 +5,9 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useTranslations } from "next-intl";
 import { submitContactForm } from "@/app/(marketing)/contact/actions";
 import { trackEvent } from "@/lib/analytics";
+import { Button } from "@/components/ui/Button";
+import { Input, Textarea } from "@/components/ui/Input";
+import { useResolvedTheme } from "@/components/theme/useResolvedTheme";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -16,8 +19,12 @@ const ERROR_MAP: Record<string, string> = {
   SERVER_ERROR: "errorServer",
 };
 
+const LABEL_CLASSES =
+  "block font-mono text-[11px] uppercase tracking-widest text-ink-faint";
+
 export function ContactForm() {
   const t = useTranslations("contact");
+  const theme = useResolvedTheme();
   const [status, setStatus] = useState<Status>("idle");
   const [errorKey, setErrorKey] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -43,11 +50,14 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-green-200 bg-green-50 p-8 text-center">
-        <h2 className="text-xl font-semibold text-green-900">
+      <div className="rounded-[4px] border border-accent-2/40 bg-surface-raised p-8 text-center">
+        <p className="font-mono text-[11px] uppercase tracking-widest text-accent-2">
+          &#10003;
+        </p>
+        <h2 className="mt-3 font-display text-xl text-ink">
           {t("successTitle")}
         </h2>
-        <p className="mt-2 text-sm text-green-700">{t("successText")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("successText")}</p>
       </div>
     );
   }
@@ -55,91 +65,80 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {status === "error" && errorKey && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div className="rounded-[3px] border border-accent/50 bg-accent/10 px-4 py-3 text-sm text-ink">
           {t(ERROR_MAP[errorKey] ?? "errorServer")}
         </div>
       )}
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="name" className={LABEL_CLASSES}>
             {t("nameLabel")}
           </label>
-          <input
+          <Input
             id="name"
             name="name"
             type="text"
             required
             placeholder={t("namePlaceholder")}
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="mt-2"
           />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="email" className={LABEL_CLASSES}>
             {t("emailLabel")}
           </label>
-          <input
+          <Input
             id="email"
             name="email"
             type="email"
             required
             placeholder={t("emailPlaceholder")}
-            className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="mt-2"
           />
         </div>
       </div>
 
       <div>
-        <label
-          htmlFor="subject"
-          className="block text-sm font-medium text-gray-700"
-        >
+        <label htmlFor="subject" className={LABEL_CLASSES}>
           {t("subjectLabel")}
         </label>
-        <input
+        <Input
           id="subject"
           name="subject"
           type="text"
           required
           placeholder={t("subjectPlaceholder")}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2"
         />
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-gray-700"
-        >
+        <label htmlFor="message" className={LABEL_CLASSES}>
           {t("messageLabel")}
         </label>
-        <textarea
+        <Textarea
           id="message"
           name="message"
           rows={5}
           required
           placeholder={t("messagePlaceholder")}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2"
         />
       </div>
 
       {siteKey && (
-        <Turnstile ref={turnstileRef} siteKey={siteKey} />
+        <Turnstile ref={turnstileRef} siteKey={siteKey} options={{ theme }} />
       )}
 
-      <button
+      <Button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-lg bg-cta-gradient px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-105 disabled:opacity-50"
+        size="lg"
+        className="disabled:pointer-events-none disabled:opacity-50"
       >
         {status === "submitting" ? t("submitting") : t("submit")}
-      </button>
+      </Button>
     </form>
   );
 }

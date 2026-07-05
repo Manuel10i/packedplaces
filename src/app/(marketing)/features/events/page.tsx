@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { FeaturePageShell } from "@/components/features/FeaturePageShell";
+import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
   title: "50+ Major Events — PackedPlaces.com",
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 const EVENT_CATEGORIES = [
-  { key: "sports", label: "Sports", color: "#3b82f6" },
-  { key: "festival", label: "Festivals", color: "#f97316" },
-  { key: "cultural", label: "Cultural", color: "#8b5cf6" },
-  { key: "music", label: "Music", color: "#22c55e" },
-  { key: "trade", label: "Trade & Expos", color: "#6b7280" },
+  { key: "sports", label: "Sports", color: "var(--accent-2)" },
+  { key: "festival", label: "Festivals", color: "var(--accent)" },
+  { key: "cultural", label: "Cultural", color: crowdColor(0.3, "light") },
+  { key: "music", label: "Music", color: crowdColor(0.1, "light") },
+  { key: "trade", label: "Trade & Expos", color: "var(--ink-faint)" },
 ];
 
 const EVENTS = [
@@ -78,14 +79,14 @@ function EventTimeline() {
             y1={16}
             x2={chartL + i * monthW}
             y2={chartH - 30}
-            stroke="#e5e7eb"
+            style={{ stroke: "var(--line)" }}
             strokeWidth={0.5}
           />
           <text
             x={chartL + i * monthW + monthW / 2}
             y={12}
             fontSize={9}
-            fill="#9ca3af"
+            style={{ fill: "var(--ink-faint)" }}
             textAnchor="middle"
           >
             {month}
@@ -98,7 +99,7 @@ function EventTimeline() {
         y1={16}
         x2={chartL + 12 * monthW}
         y2={chartH - 30}
-        stroke="#e5e7eb"
+        style={{ stroke: "var(--line)" }}
         strokeWidth={0.5}
       />
 
@@ -107,7 +108,7 @@ function EventTimeline() {
         const x = chartL + evt.month * monthW + 2;
         const w = evt.duration * monthW - 4;
         const y = 20 + rows[i] * rowH;
-        const color = CAT_COLORS[evt.cat] || "#6b7280";
+        const color = CAT_COLORS[evt.cat] || "var(--ink-faint)";
         return (
           <g key={i}>
             <rect
@@ -115,9 +116,9 @@ function EventTimeline() {
               y={y}
               width={w}
               height={rowH - 4}
-              fill={color}
+              style={{ fill: color }}
               opacity={0.2}
-              rx={4}
+              rx={3}
             />
             <rect
               x={x}
@@ -125,17 +126,17 @@ function EventTimeline() {
               width={w}
               height={rowH - 4}
               fill="none"
-              stroke={color}
+              style={{ stroke: color }}
               strokeWidth={1}
               opacity={0.5}
-              rx={4}
+              rx={3}
             />
             {w > 30 && (
               <text
                 x={x + 5}
                 y={y + rowH / 2 + 1}
                 fontSize={7.5}
-                fill="#374151"
+                style={{ fill: "var(--ink)" }}
                 fontWeight={500}
               >
                 {evt.name}
@@ -151,8 +152,8 @@ function EventTimeline() {
           key={cat.key}
           transform={`translate(${labelW + chartL + i * 100}, ${chartH - 14})`}
         >
-          <rect width={10} height={10} fill={cat.color} rx={2} opacity={0.6} />
-          <text x={14} y={9} fontSize={9} fill="#6b7280">
+          <rect width={10} height={10} style={{ fill: cat.color }} rx={2} opacity={0.6} />
+          <text x={14} y={9} fontSize={9} style={{ fill: "var(--ink-muted)" }}>
             {cat.label}
           </text>
         </g>
@@ -162,10 +163,10 @@ function EventTimeline() {
 }
 
 function boostToColor(boost: number): string {
-  if (boost >= 0.7) return "text-red-600 bg-red-50";
-  if (boost >= 0.4) return "text-orange-600 bg-orange-50";
-  if (boost >= 0.2) return "text-yellow-700 bg-yellow-50";
-  return "text-gray-600 bg-gray-50";
+  if (boost >= 0.7) return crowdColor(0.9, "light");
+  if (boost >= 0.4) return crowdColor(0.6, "light");
+  if (boost >= 0.2) return crowdColor(0.3, "light");
+  return "var(--ink-muted)";
 }
 
 function boostToLabelKey(boost: number): string {
@@ -182,76 +183,79 @@ export default async function EventsPage() {
   return (
     <FeaturePageShell slug="events">
       {/* How events work */}
-      <h2 className="text-xl font-bold text-gray-900">
+      <h2 className="font-display text-2xl text-ink">
         {t("addOnTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("addOnText")}
       </p>
 
       {/* Timeline */}
-      <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-6">
-        <h3 className="mb-3 text-sm font-semibold text-gray-700">
+      <div className="mt-8 overflow-hidden rounded-[4px] border border-line bg-surface-sunken p-4 sm:p-6">
+        <h3 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-widest text-accent">
           {t("chartTitle")}
         </h3>
         <EventTimeline />
       </div>
 
       {/* Event categories */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("categoriesTitle")}
       </h2>
-      <div className="mt-4 grid gap-3 sm:grid-cols-5">
+      <div className="mt-4 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-5">
         {EVENT_CATEGORIES.map((cat) => {
           const count = EVENTS.filter((e) => e.cat === cat.key).length;
           return (
             <div
               key={cat.key}
-              className="rounded-lg border border-gray-200 bg-white p-3 text-center"
+              className="bg-surface-raised p-3 text-center"
             >
               <div
+                aria-hidden
                 className="mx-auto h-2 w-8 rounded-full"
                 style={{ backgroundColor: cat.color }}
               />
-              <p className="mt-2 text-sm font-semibold text-gray-900">
+              <p className="mt-2 text-sm font-medium text-ink">
                 {cat.label}
               </p>
-              <p className="text-xs text-gray-500">{t("eventsShown", { count })}</p>
+              <p className="mt-0.5 font-mono text-[10px] text-ink-faint">{t("eventsShown", { count })}</p>
             </div>
           );
         })}
       </div>
 
       {/* Featured events */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("highImpactTitle")}
       </h2>
-      <div className="mt-4 space-y-2">
+      <div className="mt-4 divide-y divide-line border-y border-line">
         {EVENTS.filter((e) => e.boost >= 0.4)
           .sort((a, b) => b.boost - a.boost)
           .map((evt) => (
             <div
               key={evt.name}
-              className="flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-4 py-3"
+              className="flex items-center gap-3 py-3"
             >
               <div
+                aria-hidden
                 className="h-2 w-2 shrink-0 rounded-full"
                 style={{
                   backgroundColor:
                     CAT_COLORS[evt.cat],
                 }}
               />
-              <span className="font-medium text-gray-900 text-sm">
+              <span className="text-sm font-medium text-ink">
                 {evt.name}
               </span>
-              <span className="text-xs text-gray-500">{evt.location}</span>
-              <span className="ml-auto flex items-center gap-2">
+              <span className="text-xs text-ink-faint">{evt.location}</span>
+              <span className="ml-auto flex items-center gap-3">
                 <span
-                  className={`rounded-full px-2 py-0.5 text-xs font-medium ${boostToColor(evt.boost)}`}
+                  className="rounded-[3px] border border-line bg-surface-sunken px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-wider"
+                  style={{ color: boostToColor(evt.boost) }}
                 >
                   {t(boostToLabelKey(evt.boost))}
                 </span>
-                <span className="text-sm font-semibold text-gray-700">
+                <span className="font-mono text-sm text-ink">
                   +{(evt.boost * 100).toFixed(0)}%
                 </span>
               </span>
@@ -260,30 +264,30 @@ export default async function EventsPage() {
       </div>
 
       {/* Key Insight */}
-      <div className="mt-10 rounded-r-lg border-l-4 border-orange-500 bg-orange-50 p-4">
-        <p className="text-sm font-semibold text-orange-900">{s("keyInsight")}</p>
-        <p className="mt-1 text-sm text-orange-800">
+      <div className="mt-10 border-l-2 border-dotted border-accent/50 pl-4">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-widest text-accent">{s("keyInsight")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
           {t("insightText")}
         </p>
       </div>
 
       {/* Recurring vs one-time */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("recurringTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("recurringText")}
       </p>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
-          <p className="text-sm font-semibold text-gray-900">{t("recurring")}</p>
-          <p className="mt-1 text-xs text-gray-600">
+      <div className="mt-4 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2">
+        <div className="bg-surface-raised p-4">
+          <p className="font-display text-base text-ink">{t("recurring")}</p>
+          <p className="mt-1 text-xs leading-relaxed text-ink-muted">
             {t("recurringDesc")}
           </p>
         </div>
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
-          <p className="text-sm font-semibold text-gray-900">{t("oneTime")}</p>
-          <p className="mt-1 text-xs text-gray-600">
+        <div className="bg-surface-raised p-4">
+          <p className="font-display text-base text-ink">{t("oneTime")}</p>
+          <p className="mt-1 text-xs leading-relaxed text-ink-muted">
             {t("oneTimeDesc")}
           </p>
         </div>

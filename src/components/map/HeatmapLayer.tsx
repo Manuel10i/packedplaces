@@ -2,8 +2,16 @@
 
 import { useMemo } from "react";
 import { Source, Layer, Marker } from "react-map-gl/maplibre";
-import type { HeatmapResponse, AllDestinationsResponse, MajorEvent } from "@/types";
+import type { HeatmapResponse, AllDestinationsResponse } from "@/types";
 import { useMapStore } from "@/store/useMapStore";
+import {
+  crowdCircleColorExpr,
+  crowdHeatmapColorExpr,
+  CIRCLE_STROKE_COLOR,
+  MUTED_DOT_COLOR,
+} from "@/lib/crowd-palette";
+import { CATEGORY_EMOJI, DEFAULT_EVENT_EMOJI } from "@/lib/event-categories";
+import { useResolvedTheme } from "@/components/theme/useResolvedTheme";
 
 interface Props {
   data: HeatmapResponse | undefined;
@@ -13,14 +21,6 @@ interface Props {
 const emptyGeoJSON: GeoJSON.FeatureCollection = {
   type: "FeatureCollection",
   features: [],
-};
-
-const CATEGORY_EMOJI: Record<MajorEvent["category"], string> = {
-  sports: "\u26BD",
-  festival: "\uD83C\uDF89",
-  cultural: "\uD83C\uDFAD",
-  music: "\uD83C\uDFB5",
-  trade: "\uD83D\uDCBC",
 };
 
 interface EventMarker {
@@ -36,6 +36,7 @@ const SHOW_ZERO_SCORES = process.env.NEXT_PUBLIC_SHOW_ZERO_SCORES !== "false";
 export function HeatmapLayer({ data, allDestinations }: Props) {
   const showHeatmap = useMapStore((s) => s.showHeatmap);
   const showEvents = useMapStore((s) => s.showEvents);
+  const mode = useResolvedTheme();
 
   const geojson = useMemo(() => {
     if (!data) return emptyGeoJSON;
@@ -72,7 +73,7 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
         existing.names.push(event.name);
       } else {
         byDest.set(event.destinationId, {
-          emoji: CATEGORY_EMOJI[event.category] ?? "\uD83D\uDCCD",
+          emoji: CATEGORY_EMOJI[event.category] ?? DEFAULT_EVENT_EMOJI,
           names: [event.name],
         });
       }
@@ -104,7 +105,7 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
             type="circle"
             paint={{
               "circle-radius": 3,
-              "circle-color": "#9ca3af",
+              "circle-color": MUTED_DOT_COLOR[mode],
               "circle-opacity": 0.5,
             }}
           />
@@ -139,23 +140,7 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
                 6,
                 2,
               ],
-              "heatmap-color": [
-                "interpolate",
-                ["linear"],
-                ["heatmap-density"],
-                0,
-                "rgba(0, 0, 0, 0)",
-                0.1,
-                "rgba(34, 197, 94, 0.4)",
-                0.3,
-                "rgba(250, 204, 21, 0.6)",
-                0.5,
-                "rgba(249, 115, 22, 0.7)",
-                0.7,
-                "rgba(239, 68, 68, 0.8)",
-                1.0,
-                "rgba(185, 28, 28, 0.9)",
-              ],
+              "heatmap-color": crowdHeatmapColorExpr(mode),
               "heatmap-radius": [
                 "interpolate",
                 ["linear"],
@@ -193,19 +178,7 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
                 7,
                 ["interpolate", ["linear"], ["get", "busynessScore"], 0, 8, 1, 14],
               ],
-              "circle-color": [
-                "interpolate",
-                ["linear"],
-                ["get", "busynessScore"],
-                0,
-                "#22c55e",
-                0.3,
-                "#facc15",
-                0.6,
-                "#f97316",
-                1.0,
-                "#dc2626",
-              ],
+              "circle-color": crowdCircleColorExpr(mode),
               "circle-opacity": [
                 "interpolate",
                 ["linear"],
@@ -216,7 +189,7 @@ export function HeatmapLayer({ data, allDestinations }: Props) {
                 0.8,
               ],
               "circle-stroke-width": 1,
-              "circle-stroke-color": "#ffffff",
+              "circle-stroke-color": CIRCLE_STROKE_COLOR[mode],
               "circle-stroke-opacity": [
                 "interpolate",
                 ["linear"],

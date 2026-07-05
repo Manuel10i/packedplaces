@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { FeaturePageShell } from "@/components/features/FeaturePageShell";
+import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
   title: "Multi-Provider Holidays — PackedPlaces.com",
@@ -12,10 +13,7 @@ const PROVIDERS = [
   {
     tier: 1,
     nameKey: "manualName" as const,
-    color: "#2563eb",
-    bg: "bg-blue-50",
-    border: "border-blue-200",
-    text: "text-blue-900",
+    color: "var(--accent-2)",
     regions: 20,
     accuracyKey: "highest" as const,
     descKey: "manualDesc" as const,
@@ -24,10 +22,7 @@ const PROVIDERS = [
   {
     tier: 2,
     nameKey: "apiName" as const,
-    color: "#8b5cf6",
-    bg: "bg-purple-50",
-    border: "border-purple-200",
-    text: "text-purple-900",
+    color: "var(--accent)",
     regions: 55,
     accuracyKey: "high" as const,
     descKey: "apiDesc" as const,
@@ -36,10 +31,7 @@ const PROVIDERS = [
   {
     tier: 3,
     nameKey: "libraryName" as const,
-    color: "#f59e0b",
-    bg: "bg-amber-50",
-    border: "border-amber-200",
-    text: "text-amber-900",
+    color: crowdColor(0.3, "light"),
     regions: 52,
     accuracyKey: "good" as const,
     descKey: "libraryDesc" as const,
@@ -69,7 +61,7 @@ function CascadeDiagram() {
         return (
           <g key={p.tier}>
             {/* Tier label */}
-            <text x={0} y={y + 18} fontSize={10} fill="#6b7280">
+            <text x={0} y={y + 18} fontSize={10} style={{ fill: "var(--ink-faint)" }}>
               Tier {p.tier}
             </text>
 
@@ -79,9 +71,9 @@ function CascadeDiagram() {
               y={y}
               width={w}
               height={36}
-              fill={p.color}
+              style={{ fill: p.color }}
               opacity={0.15}
-              rx={6}
+              rx={4}
             />
             <rect
               x={130}
@@ -95,9 +87,9 @@ function CascadeDiagram() {
                 barMax
               }
               height={36}
-              fill={p.color}
+              style={{ fill: p.color }}
               opacity={0.05}
-              rx={i === 0 ? 6 : 0}
+              rx={i === 0 ? 4 : 0}
             />
             {/* New portion highlighted */}
             <rect
@@ -113,13 +105,13 @@ function CascadeDiagram() {
               y={y}
               width={(p.regions / total) * barMax}
               height={36}
-              fill={p.color}
+              style={{ fill: p.color }}
               opacity={0.3}
               rx={
                 i === 0
-                  ? 6
+                  ? 4
                   : i === PROVIDERS.length - 1
-                    ? 6
+                    ? 4
                     : 0
               }
             />
@@ -129,12 +121,12 @@ function CascadeDiagram() {
               x={140}
               y={y + 16}
               fontSize={11}
-              fill="#1f2937"
+              style={{ fill: "var(--ink)" }}
               fontWeight={600}
             >
               Tier {p.tier}
             </text>
-            <text x={140} y={y + 30} fontSize={9} fill="#6b7280">
+            <text x={140} y={y + 30} fontSize={9} style={{ fill: "var(--ink-muted)" }}>
               +{p.regions} regions ({cumulative} total)
             </text>
 
@@ -143,7 +135,7 @@ function CascadeDiagram() {
               x={130 + w + 8}
               y={y + 22}
               fontSize={10}
-              fill={p.color}
+              style={{ fill: p.color }}
               fontWeight={600}
             >
               {Math.round((cumulative / total) * 100)}%
@@ -155,7 +147,7 @@ function CascadeDiagram() {
                 x={60}
                 y={y + 50}
                 fontSize={14}
-                fill="#d1d5db"
+                style={{ fill: "var(--line-strong)" }}
                 textAnchor="middle"
               >
                 &#8595;
@@ -175,15 +167,15 @@ export default async function HolidayProvidersPage() {
   return (
     <FeaturePageShell slug="holiday-providers">
       {/* Provider cascade */}
-      <h2 className="text-xl font-bold text-gray-900">
+      <h2 className="font-display text-2xl text-ink">
         {t("tiersTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("tiersText")}
       </p>
 
       {/* Cascade diagram */}
-      <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-6">
+      <div className="mt-8 overflow-hidden rounded-[4px] border border-line bg-surface-sunken p-4 sm:p-6">
         <CascadeDiagram />
       </div>
 
@@ -192,60 +184,62 @@ export default async function HolidayProvidersPage() {
         {PROVIDERS.map((p) => (
           <div
             key={p.tier}
-            className={`rounded-xl border ${p.border} ${p.bg} p-5`}
+            className="rounded-[4px] border border-line bg-surface-raised p-5"
           >
             <div className="flex items-center gap-3">
               <span
-                className="flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white"
+                aria-hidden
+                className="h-2.5 w-2.5 shrink-0 rounded-full"
                 style={{ backgroundColor: p.color }}
-              >
-                {p.tier}
+              />
+              <span className="font-mono text-xs tracking-widest text-accent">
+                0{p.tier}
               </span>
-              <h3 className={`text-base font-semibold ${p.text}`}>{t(p.nameKey)}</h3>
-              <span className="ml-auto text-sm font-medium text-gray-500">
+              <h3 className="font-display text-base text-ink">{t(p.nameKey)}</h3>
+              <span className="ml-auto font-mono text-xs text-ink-faint">
                 {p.regions} {t("regions")}
               </span>
             </div>
-            <p className="mt-3 text-sm text-gray-700">{t(p.descKey)}</p>
-            <p className="mt-2 text-xs text-gray-500">
-              <span className="font-medium">{t("examples")}:</span> {p.examples}
+            <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t(p.descKey)}</p>
+            <p className="mt-2 text-xs text-ink-faint">
+              <span className="font-medium text-ink-muted">{t("examples")}:</span> {p.examples}
             </p>
           </div>
         ))}
       </div>
 
       {/* Key Insight */}
-      <div className="mt-10 rounded-r-lg border-l-4 border-purple-500 bg-purple-50 p-4">
-        <p className="text-sm font-semibold text-purple-900">{s("keyInsight")}</p>
-        <p className="mt-1 text-sm text-purple-800">
+      <div className="mt-10 border-l-2 border-dotted border-accent/50 pl-4">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-widest text-accent">{s("keyInsight")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
           {t("insightText")}
         </p>
       </div>
 
       {/* Why school holidays matter */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("whyTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("whyText")}
       </p>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-          <p className="text-2xl font-bold text-gray-900">127</p>
-          <p className="mt-1 text-xs text-gray-500">
+      <div className="mt-6 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-3">
+        <div className="bg-surface-raised p-5 text-center">
+          <p className="font-display text-3xl text-ink">127</p>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-ink-faint">
             {t("statRegions")}
           </p>
         </div>
-        <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-          <p className="text-2xl font-bold text-gray-900">6–12</p>
-          <p className="mt-1 text-xs text-gray-500">
+        <div className="bg-surface-raised p-5 text-center">
+          <p className="font-display text-3xl text-ink">6–12</p>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-ink-faint">
             {t("statWeeks")}
           </p>
         </div>
-        <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-          <p className="text-2xl font-bold text-gray-900">1.5x</p>
-          <p className="mt-1 text-xs text-gray-500">
+        <div className="bg-surface-raised p-5 text-center">
+          <p className="font-display text-3xl text-ink">1.5x</p>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-ink-faint">
             {t("statMultiplier")}
           </p>
         </div>
