@@ -18,11 +18,28 @@ interface QueuedEvent {
 
 let consent: ConsentState = "unknown";
 let initialized = false;
+let gaId: string | undefined;
 const queue: QueuedEvent[] = [];
 const listeners = new Set<() => void>();
 
 function notify() {
   for (const l of listeners) l();
+}
+
+/**
+ * Toggle Google Analytics' official opt-out flag so that even an already-loaded
+ * GA runtime stops sending once consent is withdrawn (and resumes on re-grant).
+ */
+function applyGaDisable() {
+  if (typeof window === "undefined" || !gaId) return;
+  (window as unknown as Record<string, boolean>)[`ga-disable-${gaId}`] =
+    consent !== "granted";
+}
+
+/** Register the GA measurement id so consent changes can enable/disable it. */
+export function setGaId(id?: string) {
+  gaId = id;
+  applyGaDisable();
 }
 
 function readStored(): ConsentState {
@@ -40,6 +57,7 @@ function ensureInit() {
   if (!initialized && typeof window !== "undefined") {
     consent = readStored();
     initialized = true;
+    applyGaDisable();
   }
 }
 
@@ -66,6 +84,7 @@ export function setConsent(next: "granted" | "denied") {
       /* ignore storage errors (private mode etc.) */
     }
   }
+  applyGaDisable();
   if (next === "granted") {
     flush();
   } else {

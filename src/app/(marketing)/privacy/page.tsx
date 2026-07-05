@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ConsentControls } from "@/components/ConsentControls";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — PackedPlaces.com",
@@ -60,6 +61,15 @@ export default async function PrivacyPage() {
                 {p("analyticsTitle")}
               </h2>
               <p className="mt-2 text-sm">{p("analyticsText")}</p>
+            </div>
+
+            {/* Manage consent */}
+            <div>
+              <h2 className="border-l-2 border-brand-400 pl-3 text-lg font-semibold text-gray-900">
+                {p("manageTitle")}
+              </h2>
+              <p className="mt-2 text-sm">{p("manageText")}</p>
+              <ConsentControls />
             </div>
 
             {/* Contact Form */}
