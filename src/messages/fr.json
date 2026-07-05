@@ -11,7 +11,8 @@
     "howItWorks": "Comment ça marche",
     "data": "Données",
     "openSource": "Open Source",
-    "openMap": "Ouvrir la carte"
+    "openMap": "Ouvrir la carte",
+    "menu": "Menu"
   },
   "hero": {
     "headline": "Découvrez à quel point les destinations\ntouristiques sont fréquentées",
@@ -88,14 +89,18 @@
   },
   "footer": {
     "copyright": "© {year} 10ideen.at",
+    "tagline": "Savoir quand le monde voyage — et quand il ne voyage pas.",
     "github": "GitHub",
     "docs": "Documentation",
     "privacy": "Confidentialité",
-    "contact": "Contact"
+    "contact": "Contact",
+    "bestTime": "Meilleure période",
+    "compare": "Comparer des lieux"
   },
   "map": {
     "title": "PackedPlaces.com",
-    "holidays": "Vacances et événements"
+    "holidays": "Vacances et événements",
+    "close": "Fermer"
   },
   "disclaimer": {
     "title": "Avis sur les données",
@@ -107,7 +112,9 @@
     "week": "Semaine {week}",
     "play": "Lecture",
     "pause": "Pause",
-    "today": "Aujourd'hui"
+    "today": "Aujourd'hui",
+    "prevWeek": "Semaine précédente",
+    "nextWeek": "Semaine suivante"
   },
   "holidays": {
     "title": "Vacances scolaires",
@@ -191,7 +198,9 @@
     "changesTitle": "Modifications de cette politique",
     "changesText": "Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Les modifications seront publiées sur cette page avec une date mise à jour.",
     "contactTitle": "Nous contacter",
-    "contactText": "Si vous avez des questions sur cette politique de confidentialité ou souhaitez exercer vos droits RGPD, contactez-nous via notre formulaire de contact."
+    "contactText": "Si vous avez des questions sur cette politique de confidentialité ou souhaitez exercer vos droits RGPD, contactez-nous via notre formulaire de contact.",
+    "metaTitle": "Politique de confidentialité — PackedPlaces.com",
+    "metaDescription": "Politique de confidentialité de PackedPlaces.com — comment nous traitons vos données, cookies et analyses."
   },
   "contact": {
     "title": "Contact",
@@ -212,7 +221,9 @@
     "errorEmail": "Veuillez saisir une adresse e-mail valide.",
     "errorCaptcha": "Veuillez compléter la vérification captcha.",
     "errorServer": "Une erreur est survenue. Veuillez réessayer plus tard.",
-    "errorTurnstile": "La vérification captcha a échoué. Veuillez réessayer."
+    "errorTurnstile": "La vérification captcha a échoué. Veuillez réessayer.",
+    "metaTitle": "Contact — PackedPlaces.com",
+    "metaDescription": "Contactez l'équipe de PackedPlaces.com — questions, retours et suggestions bienvenus."
   },
   "featurePages": {
     "shell": {
@@ -442,6 +453,72 @@
       "mountain": "montagne",
       "desert": "désert",
       "tropical": "tropical"
-    }
+    },
+    "curveHeading": "Une année typique, semaine par semaine",
+    "curveAria": "Courbe d'affluence hebdomadaire de {name} : l'anneau sarcelle marque la semaine la plus calme, le point terracotta la plus fréquentée",
+    "shareText": "Quelle affluence à {name}, vraiment ? Voyez la prévision semaine par semaine."
+  },
+  "theme": {
+    "label": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "meta": {
+    "title": "PackedPlaces.com — Découvrez l'affluence réelle des destinations touristiques",
+    "description": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de plus de 100 pays.",
+    "ogTitle": "PackedPlaces.com — Découvrez l'affluence réelle des destinations touristiques",
+    "ogDescription": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de plus de 100 pays."
+  },
+  "bestTime": {
+    "metaTitle": "Meilleure période pour partir — PackedPlaces.com",
+    "metaDescription": "Choisissez l'une des 700+ destinations et voyez d'un coup d'œil ses semaines les plus calmes et les plus fréquentées de l'année.",
+    "eyebrow": "Meilleure période",
+    "title": "Quand partir ?",
+    "lede": "Choisissez une destination et découvrez sa courbe d'affluence sur l'année — les semaines les plus calmes et les plus fréquentées, en un coup d'œil.",
+    "pickerPlaceholder": "Cherchez une destination, par ex. Hallstatt",
+    "pickerLabel": "Rechercher une destination",
+    "noResults": "Aucune destination trouvée",
+    "empty": "Recherchez une destination pour voir quand elle est calme.",
+    "loading": "Chargement des données d'affluence…",
+    "quietestLabel": "Semaine la plus calme",
+    "busiestLabel": "Semaine la plus fréquentée",
+    "weekN": "Semaine {week}",
+    "topWeeksTitle": "Semaines les plus calmes de {year}",
+    "openOnMap": "Ouvrir sur la carte",
+    "shareText": "Meilleure période pour visiter {name} : autour du {date}",
+    "curveAria": "Courbe d'affluence de {name} : la plus calme en semaine {quiet}, la plus fréquentée en semaine {busy}",
+    "teaserCta": "Trouvez votre semaine calme",
+    "sampleCaption": "Une année à {name} — l'anneau sarcelle marque la semaine la plus calme, le point terracotta la plus fréquentée.",
+    "flat": "L'affluence varie à peine ici au fil de l'année — toutes les semaines se valent."
+  },
+  "saved": {
+    "save": "Enregistrer le lieu",
+    "saved": "Enregistré",
+    "compareCta": "Comparer les lieux enregistrés"
+  },
+  "compare": {
+    "metaTitle": "Comparer l'affluence — PackedPlaces.com",
+    "eyebrow": "Comparer",
+    "title": "Où est-ce plus calme, et quand ?",
+    "lede": "Vos lieux enregistrés côte à côte, semaine par semaine.",
+    "empty": "Aucun lieu enregistré pour l'instant.",
+    "emptyHint": "Ajoutez des destinations depuis la carte, les pages de destination ou le chercheur de meilleure période pour les comparer ici.",
+    "findPlaces": "Trouver un lieu",
+    "openMap": "Ouvrir la carte",
+    "loading": "Chargement des données d'affluence…",
+    "quietestCol": "La plus calme",
+    "remove": "Retirer {name}",
+    "shareText": "Comparaison d'affluence : {names}",
+    "curveAria": "Comparaison hebdomadaire de l'affluence des destinations sélectionnées"
+  },
+  "share": {
+    "share": "Partager",
+    "copied": "Lien copié"
+  },
+  "alternatives": {
+    "title": "Alternatives plus calmes",
+    "lede": "Des lieux similaires qui restent plus calmes en haute saison.",
+    "calmer": "{bands, plural, one {# niveau plus calme} other {# niveaux plus calmes}}"
   }
 }

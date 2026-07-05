@@ -7,18 +7,8 @@ import { useTranslations, useLocale } from "next-intl";
 import { useMapStore } from "@/store/useMapStore";
 import { format, getISOWeek } from "date-fns";
 import { getDateLocale } from "@/i18n/date-locale";
+import { getWeekDateRange } from "@/lib/week-dates";
 import type { Locale } from "@/i18n/config";
-
-function getWeekDateRange(year: number, week: number, locale: Locale): string {
-  const dateLocale = getDateLocale(locale);
-  const jan4 = new Date(year, 0, 4);
-  const dayOfWeek = jan4.getDay() || 7;
-  const monday = new Date(jan4);
-  monday.setDate(jan4.getDate() - dayOfWeek + 1 + (week - 1) * 7);
-  const sunday = new Date(monday);
-  sunday.setDate(monday.getDate() + 6);
-  return `${format(monday, "MMM d", { locale: dateLocale })} - ${format(sunday, "MMM d, yyyy", { locale: dateLocale })}`;
-}
 
 function getMonthMarks(locale: Locale): Record<number, string> {
   const dateLocale = getDateLocale(locale);
@@ -36,7 +26,7 @@ interface TimeSliderProps {
   className?: string;
 }
 
-export function TimeSlider({ className = "rounded-xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm" }: TimeSliderProps) {
+export function TimeSlider({ className = "" }: TimeSliderProps) {
   const { selectedWeek, selectedYear, isPlaying, setSelectedWeek, setSelectedYear, togglePlaying, advanceWeek } = useMapStore();
   const t = useTranslations("slider");
   const locale = useLocale() as Locale;
@@ -54,36 +44,38 @@ export function TimeSlider({ className = "rounded-xl bg-white/95 px-5 py-4 shado
     };
   }, [isPlaying, advanceWeek]);
 
+  const isCurrentWeek =
+    selectedWeek === getISOWeek(new Date()) && selectedYear === new Date().getFullYear();
+
   return (
     <div className={className}>
-      <div className="mb-1 flex items-center justify-between">
+      <div className="mb-1 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold text-gray-700">
-            {t("week", { week: selectedWeek })}
-          </span>
-          {!(selectedWeek === getISOWeek(new Date()) && selectedYear === new Date().getFullYear()) && (
+          <span className="font-mono text-sm text-ink">{t("week", { week: selectedWeek })}</span>
+          {!isCurrentWeek && (
             <button
               onClick={() => {
                 const now = new Date();
                 setSelectedYear(now.getFullYear());
                 setSelectedWeek(getISOWeek(now));
               }}
-              className="rounded px-1.5 py-0.5 text-xs font-medium text-blue-600 transition-colors hover:bg-blue-50"
+              className="rounded-full border border-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent-2 transition-colors hover:border-accent-2"
             >
               {t("today")}
             </button>
           )}
         </div>
-        <span className="text-sm text-gray-500">
+        <span className="truncate text-sm text-ink-faint">
           {getWeekDateRange(selectedYear, selectedWeek, locale)}
         </span>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1.5 sm:gap-3">
         <button
           onClick={togglePlaying}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white transition-colors hover:bg-blue-700"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-2 text-accent-2-ink transition-colors hover:bg-accent-2-hover sm:h-8 sm:w-8"
           title={isPlaying ? t("pause") : t("play")}
+          aria-label={isPlaying ? t("pause") : t("play")}
         >
           {isPlaying ? (
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -97,27 +89,37 @@ export function TimeSlider({ className = "rounded-xl bg-white/95 px-5 py-4 shado
           )}
         </button>
 
-        <div className="flex-1">
+        <button
+          onClick={() => setSelectedWeek(Math.max(1, selectedWeek - 1))}
+          disabled={selectedWeek <= 1}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[3px] text-ink-muted transition-colors hover:bg-surface-sunken hover:text-ink disabled:opacity-30 sm:hidden"
+          aria-label={t("prevWeek")}
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div className="min-w-0 flex-1 px-1 pb-4">
           <Slider
             min={1}
             max={52}
             value={selectedWeek}
             onChange={(value) => setSelectedWeek(value as number)}
             marks={getMonthMarks(locale)}
-            styles={{
-              track: { backgroundColor: "#3b82f6", height: 4 },
-              rail: { backgroundColor: "#e5e7eb", height: 4 },
-              handle: {
-                borderColor: "#3b82f6",
-                backgroundColor: "#ffffff",
-                width: 16,
-                height: 16,
-                marginTop: -6,
-                opacity: 1,
-              },
-            }}
           />
         </div>
+
+        <button
+          onClick={() => setSelectedWeek(Math.min(52, selectedWeek + 1))}
+          disabled={selectedWeek >= 52}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[3px] text-ink-muted transition-colors hover:bg-surface-sunken hover:text-ink disabled:opacity-30 sm:hidden"
+          aria-label={t("nextWeek")}
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import {
   busynessColor,
   BUSYNESS_BANDS,
 } from "@/lib/busyness-scale";
+import { crowdColor } from "@/lib/crowd-palette";
 
 describe("busynessLabelKey", () => {
   it("maps scores to the map's five bands", () => {
@@ -37,10 +38,17 @@ describe("busynessBand", () => {
 });
 
 describe("busynessColor", () => {
-  it("ramps green → yellow → orange → red", () => {
-    expect(busynessColor(0.1)).toBe("#22c55e");
-    expect(busynessColor(0.3)).toBe("#facc15");
-    expect(busynessColor(0.6)).toBe("#f97316");
-    expect(busynessColor(0.9)).toBe("#dc2626");
+  it("ramps green → ochre → terracotta → brick (crowd palette, light mode)", () => {
+    expect(busynessColor(0.1)).toBe(crowdColor(0.1, "light"));
+    expect(busynessColor(0.3)).toBe(crowdColor(0.3, "light"));
+    expect(busynessColor(0.6)).toBe(crowdColor(0.6, "light"));
+    expect(busynessColor(0.9)).toBe(crowdColor(0.9, "light"));
+  });
+
+  it("returns four distinct ascending-band colours per mode", () => {
+    for (const mode of ["light", "dark"] as const) {
+      const colors = [0.1, 0.3, 0.6, 0.9].map((s) => busynessColor(s, mode));
+      expect(new Set(colors).size).toBe(4);
+    }
   });
 });

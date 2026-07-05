@@ -897,6 +897,26 @@ export const travelPatterns: TravelPattern[] = [
   { sourceRegionId: "AU-NSW", destinationId: "IT-FLORENCE", weight: 0.42, season: null },
 
   // ----------------------------------------
+  // IT-VENICE (Venice) — one of the most visited cities in Europe (~20M+/yr);
+  // SI and GB-ENG flows already live in the south-east / north pattern files.
+  // ----------------------------------------
+  { sourceRegionId: "DE-BY", destinationId: "IT-VENICE", weight: 0.60, season: null },
+  { sourceRegionId: "DE-NW", destinationId: "IT-VENICE", weight: 0.55, season: null },
+  { sourceRegionId: "FR-ZA", destinationId: "IT-VENICE", weight: 0.55, season: null },
+  { sourceRegionId: "US-NE", destinationId: "IT-VENICE", weight: 0.80, season: null },
+  { sourceRegionId: "US-W", destinationId: "IT-VENICE", weight: 0.65, season: null },
+  { sourceRegionId: "JP-KANTO", destinationId: "IT-VENICE", weight: 0.65, season: null },
+  { sourceRegionId: "KR", destinationId: "IT-VENICE", weight: 0.55, season: null },
+  { sourceRegionId: "CN-EAST", destinationId: "IT-VENICE", weight: 0.70, season: null },
+  { sourceRegionId: "AU-NSW", destinationId: "IT-VENICE", weight: 0.50, season: null },
+  { sourceRegionId: "CH-ZH", destinationId: "IT-VENICE", weight: 0.50, season: null },
+  { sourceRegionId: "AT-9", destinationId: "IT-VENICE", weight: 0.48, season: null },
+  { sourceRegionId: "NL-SOUTH", destinationId: "IT-VENICE", weight: 0.50, season: null },
+  { sourceRegionId: "ES-MADRID", destinationId: "IT-VENICE", weight: 0.45, season: null },
+  { sourceRegionId: "IT-NORTH", destinationId: "IT-VENICE", weight: 0.65, season: null },
+  { sourceRegionId: "IT-SOUTH", destinationId: "IT-VENICE", weight: 0.45, season: null },
+
+  // ----------------------------------------
   // IT-MILAN (Milan)
   // ----------------------------------------
   { sourceRegionId: "DE-BY", destinationId: "IT-MILAN", weight: 0.55, season: null },

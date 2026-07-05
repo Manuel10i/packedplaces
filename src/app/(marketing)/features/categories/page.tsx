@@ -47,14 +47,14 @@ function CapacityChart() {
               y1={8}
               x2={x}
               y2={chartH - 32}
-              stroke="#e5e7eb"
+              style={{ stroke: "var(--line)" }}
               strokeWidth={0.5}
             />
             <text
               x={x}
               y={chartH - 18}
               fontSize={9}
-              fill="#9ca3af"
+              style={{ fill: "var(--ink-faint)" }}
               textAnchor="middle"
             >
               {v.toFixed(1)}
@@ -75,7 +75,7 @@ function CapacityChart() {
               x={labelW - 8}
               y={y + 12}
               fontSize={10}
-              fill="#374151"
+              style={{ fill: "var(--ink-muted)" }}
               textAnchor="end"
               fontWeight={500}
             >
@@ -87,9 +87,9 @@ function CapacityChart() {
               y={y + 2}
               width={Math.max(offW, 3)}
               height={14}
-              fill="#93c5fd"
+              style={{ fill: "var(--accent-2)" }}
               rx={3}
-              opacity={0.5}
+              opacity={0.35}
             />
             {/* Peak bar (front, narrower) */}
             <rect
@@ -97,7 +97,7 @@ function CapacityChart() {
               y={y + 4}
               width={Math.max(peakW, 3)}
               height={10}
-              fill="#2563eb"
+              style={{ fill: "var(--accent)" }}
               rx={3}
             />
             {/* Values */}
@@ -105,7 +105,7 @@ function CapacityChart() {
               x={labelW + Math.max(peakW, 3) + 6}
               y={y + 13}
               fontSize={9}
-              fill="#6b7280"
+              style={{ fill: "var(--ink-faint)" }}
             >
               {cat.peak} / {cat.offPeak}
             </text>
@@ -115,10 +115,10 @@ function CapacityChart() {
 
       {/* Legend */}
       <g transform={`translate(${labelW}, ${chartH - 10})`}>
-        <rect width={10} height={10} fill="#2563eb" rx={2} />
-        <text x={14} y={9} fontSize={9} fill="#6b7280">Peak capacity</text>
-        <rect x={100} width={10} height={10} fill="#93c5fd" rx={2} opacity={0.5} />
-        <text x={114} y={9} fontSize={9} fill="#6b7280">Off-peak capacity</text>
+        <rect width={10} height={10} style={{ fill: "var(--accent)" }} rx={2} />
+        <text x={14} y={9} fontSize={9} style={{ fill: "var(--ink-muted)" }}>Peak capacity</text>
+        <rect x={100} width={10} height={10} style={{ fill: "var(--accent-2)" }} rx={2} opacity={0.35} />
+        <text x={114} y={9} fontSize={9} style={{ fill: "var(--ink-muted)" }}>Off-peak capacity</text>
       </g>
     </svg>
   );
@@ -131,51 +131,51 @@ export default async function CategoriesPage() {
   return (
     <FeaturePageShell slug="categories">
       {/* Category Grid */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {CATEGORIES.map((cat) => (
           <div
             key={cat.name}
-            className="rounded-lg border border-gray-200 bg-white p-4"
+            className="bg-surface-raised p-4"
           >
             <div className="flex items-baseline justify-between">
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="font-display text-base text-ink">
                 {cat.name}
               </h3>
-              <span className="text-xs text-gray-400">
+              <span className="font-mono text-xs text-ink-faint">
                 {cat.peak} / {cat.offPeak}
               </span>
             </div>
-            <p className="mt-1 text-xs text-gray-500">{t(cat.descKey)}</p>
-            <p className="mt-2 text-xs text-gray-400">{cat.example}</p>
+            <p className="mt-1 text-xs leading-relaxed text-ink-muted">{t(cat.descKey)}</p>
+            <p className="mt-2 font-mono text-[10px] text-ink-faint">{cat.example}</p>
           </div>
         ))}
       </div>
 
       {/* Capacity Chart */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("capacityChartTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("capacityChartText")}
       </p>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-6">
+      <div className="mt-6 overflow-hidden rounded-[4px] border border-line bg-surface-sunken p-4 sm:p-6">
         <CapacityChart />
       </div>
 
       {/* Key Insight */}
-      <div className="mt-10 rounded-r-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-        <p className="text-sm font-semibold text-blue-900">{s("keyInsight")}</p>
-        <p className="mt-1 text-sm text-blue-800">
+      <div className="mt-10 border-l-2 border-dotted border-accent/50 pl-4">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-widest text-accent">{s("keyInsight")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
           {t("insightText")}
         </p>
       </div>
 
       {/* How categories are assigned */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("assignmentTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("assignmentText")}
       </p>
     </FeaturePageShell>

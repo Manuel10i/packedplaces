@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
+import { Switch } from "@/components/ui/Switch";
 import {
   getConsent,
   setConsent,
@@ -20,6 +21,7 @@ const serverConsent = (): ConsentState => "unknown";
 export function ConsentControls() {
   const t = useTranslations("privacy");
   const state = useSyncExternalStore(subscribeConsent, getConsent, serverConsent);
+  const granted = state === "granted";
 
   const statusLabel =
     state === "granted"
@@ -29,29 +31,24 @@ export function ConsentControls() {
         : t("statusUnknown");
 
   return (
-    <div className="mt-4 rounded-lg border border-gray-200 bg-white p-4">
-      <p className="text-sm text-gray-700">
+    <div className="mt-4 rounded-[4px] border border-line bg-surface-raised p-4">
+      <p className="text-sm text-ink-muted">
         {t("consentStatus")}{" "}
-        <span className="font-semibold text-gray-900">{statusLabel}</span>
+        <span className="font-mono text-[11px] uppercase tracking-widest text-ink">
+          {statusLabel}
+        </span>
       </p>
-      <div className="mt-3 flex flex-wrap gap-3">
-        {state === "granted" ? (
-          <button
-            type="button"
-            onClick={() => setConsent("denied")}
-            className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
-          >
-            {t("revokeConsent")}
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={() => setConsent("granted")}
-            className="rounded-lg bg-cta-gradient px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
-          >
-            {t("grantConsent")}
-          </button>
-        )}
+      <div className="mt-4 flex items-center gap-3 border-t border-line pt-4">
+        <Switch
+          id="analytics-consent"
+          checked={granted}
+          onChange={(checked) => setConsent(checked ? "granted" : "denied")}
+          aria-label={granted ? t("revokeConsent") : t("grantConsent")}
+        />
+        {/* htmlFor forwards label clicks to the switch button — no extra handler needed. */}
+        <label htmlFor="analytics-consent" className="cursor-pointer text-sm text-ink-muted">
+          {granted ? t("revokeConsent") : t("grantConsent")}
+        </label>
       </div>
     </div>
   );

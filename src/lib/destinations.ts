@@ -54,6 +54,19 @@ export interface SlugEntry {
 /** Per-locale slug for a single destination, e.g. { en: "vienna", de: "wien" }. */
 export type LocalizedSlugs = Partial<Record<SlugLocale, string>>;
 
+/**
+ * Display name for a destination in a given UI locale: the curated German
+ * exonym (Wien, München, Rom, …) when rendering German, otherwise the
+ * canonical (English) name. Locales without curated exonyms fall back to the
+ * canonical name.
+ */
+export function localizedDestinationName(d: Destination, locale: string): string {
+  if (locale === "de") {
+    return cityAliases[aliasKey(d.name)]?.[0] ?? d.name;
+  }
+  return d.name;
+}
+
 // Build a deterministic, collision-free slug for every destination.
 // English (primary) slugs come first; German exonym slugs are layered on top so
 // German city names (Wien, München, ...) resolve to the same destination page.

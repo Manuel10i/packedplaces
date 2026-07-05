@@ -33,7 +33,11 @@ export const destinations: Destination[] = [
   { id: "IT-SICILY", name: "Sicilia", country: "IT", lat: 37.60, lng: 14.02, category: "beach", peakMonths: [5, 6, 7, 8, 9], basePopularity: 0.72, region: "europe" },
   { id: "IT-CALABRIA", name: "Calabria", country: "IT", lat: 38.91, lng: 16.59, category: "beach", peakMonths: [5, 6, 7, 8, 9], basePopularity: 0.55, region: "europe" },
   { id: "IT-ROME", name: "Rome", country: "IT", lat: 41.90, lng: 12.50, category: "city", peakMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], basePopularity: 0.88, region: "europe" },
-  { id: "IT-VENICE", name: "Venice", country: "IT", lat: 45.44, lng: 12.34, category: "city", peakMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], basePopularity: 0.80, region: "europe" },
+  // Venice's historic centre is tiny (~50k residents) and famously saturated —
+  // nowhere near the metropolis default of 5.0. 3.0 (like Florence) combined
+  // with its heavy travel-pattern inflow yields packed summers with a real
+  // winter dip; lower values saturate the curve flat at 1.0.
+  { id: "IT-VENICE", name: "Venice", country: "IT", lat: 45.44, lng: 12.34, category: "city", peakMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], basePopularity: 0.80, region: "europe", capacityOverride: 3.0 },
 
   // ========================================
   // SPAIN (11)

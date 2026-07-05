@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { screen } from "@testing-library/react";
 import { renderWithIntl } from "@/test-utils";
+import { crowdCssGradient } from "@/lib/crowd-palette";
 import { Legend } from "../Legend";
 
 describe("Legend", () => {
@@ -15,15 +16,10 @@ describe("Legend", () => {
     expect(screen.getByText("Packed")).toBeInTheDocument();
   });
 
-  it("renders the gradient bar div", () => {
+  it("renders the gradient bar with the crowd-palette ramp", () => {
     const { container } = renderWithIntl(<Legend />);
-    const gradientBar = container.querySelector(
-      ".h-3.flex-1.rounded-full",
-    );
+    const gradientBar = container.querySelector(".flex-1.rounded-full");
     expect(gradientBar).toBeInTheDocument();
-    expect(gradientBar).toHaveStyle({
-      background:
-        "linear-gradient(to right, #22c55e, #facc15, #f97316, #dc2626)",
-    });
+    expect(gradientBar).toHaveStyle({ background: crowdCssGradient("light") });
   });
 });

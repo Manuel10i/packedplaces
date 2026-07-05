@@ -10,6 +10,7 @@ import { DestinationTooltip } from "./DestinationTooltip";
 import { useMapStore } from "@/store/useMapStore";
 import { useHeatmapData, useAllDestinations } from "@/hooks/useHeatmapData";
 import { useLocale } from "next-intl";
+import { useResolvedTheme } from "@/components/theme/useResolvedTheme";
 
 const DEFAULT_VIEW = {
   latitude: 20,
@@ -17,7 +18,11 @@ const DEFAULT_VIEW = {
   zoom: 2,
 };
 
-const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+/** CARTO basemaps: Positron for day paper, Dark Matter for the night atlas. */
+const MAP_STYLE: Record<"light" | "dark", string> = {
+  light: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  dark: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+};
 
 function viewFromParams(params: URLSearchParams): typeof DEFAULT_VIEW {
   const lat = parseFloat(params.get("lat") ?? "");
@@ -65,9 +70,20 @@ function setMapLanguage(map: MapRef, locale: string) {
   }
 }
 
-export function MapView() {
+export interface MapDestinationClick {
+  destinationId: string;
+  name: string;
+  score?: number;
+}
+
+interface MapViewProps {
+  onDestinationClick?: (destination: MapDestinationClick) => void;
+}
+
+export function MapView({ onDestinationClick }: MapViewProps) {
   const mapRef = useRef<MapRef>(null);
   const locale = useLocale();
+  const mode = useResolvedTheme();
   const searchParams = useSearchParams();
   const { selectedWeek, selectedYear, setHoveredDestination, setViewportBounds, setViewportCenter, showHeatmap } = useMapStore();
   const { data } = useHeatmapData(selectedWeek, selectedYear);
@@ -127,6 +143,20 @@ export function MapView() {
     setHoveredDestination(null);
   }, [setHoveredDestination]);
 
+  const onClick = useCallback(
+    (e: MapLayerMouseEvent) => {
+      const feature = e.features?.[0];
+      const props = feature?.properties;
+      if (!props?.destinationId || !onDestinationClick) return;
+      onDestinationClick({
+        destinationId: props.destinationId,
+        name: props.name ?? props.destinationId,
+        score: typeof props.busynessScore === "number" ? props.busynessScore : undefined,
+      });
+    },
+    [onDestinationClick],
+  );
+
   const updateViewport = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -157,6 +187,16 @@ export function MapView() {
     updateViewport();
   }, [updateViewport, locale]);
 
+  // Re-apply the label language whenever new style data arrives — this covers
+  // the theme-driven basemap swap (setStyle replaces all symbol layers) as
+  // well as tile-style reloads. setMapLanguage is idempotent, so extra calls
+  // are harmless.
+  const onStyleData = useCallback(() => {
+    if (mapRef.current) {
+      setMapLanguage(mapRef.current, locale);
+    }
+  }, [locale]);
+
   // Re-apply language when locale changes after map is already loaded
   useEffect(() => {
     if (mapLoaded.current && mapRef.current) {
@@ -173,12 +213,14 @@ export function MapView() {
       <Map
         ref={mapRef}
         initialViewState={initialView}
-        mapStyle={MAP_STYLE}
+        mapStyle={MAP_STYLE[mode]}
         interactiveLayerIds={interactiveLayerIds}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
+        onClick={onClick}
         onMoveEnd={updateViewport}
         onLoad={onLoad}
+        onStyleData={onStyleData}
       >
         <HolidayRegionsLayer regionsOnHoliday={data?.metadata.regionsOnHoliday} />
         <HeatmapLayer data={data} allDestinations={allDestinations} />

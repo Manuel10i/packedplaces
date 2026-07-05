@@ -4,6 +4,8 @@
  * scale is identical everywhere.
  */
 
+import { crowdColor, type ThemeMode } from "./crowd-palette";
+
 export type BusynessLabelKey =
   | "quiet"
   | "moderate"
@@ -34,10 +36,7 @@ export function busynessBand(score: number): number {
   return BUSYNESS_BANDS.indexOf(busynessLabelKey(score));
 }
 
-/** Dot/bar colour for a busyness score (green → yellow → orange → red). */
-export function busynessColor(score: number): string {
-  if (score < 0.25) return "#22c55e";
-  if (score < 0.5) return "#facc15";
-  if (score < 0.75) return "#f97316";
-  return "#dc2626";
+/** Dot/bar colour for a busyness score (green → ochre → terracotta → brick). */
+export function busynessColor(score: number, mode: ThemeMode = "light"): string {
+  return crowdColor(score, mode);
 }

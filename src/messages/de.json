@@ -11,7 +11,8 @@
     "howItWorks": "So funktioniert's",
     "data": "Daten",
     "openSource": "Open Source",
-    "openMap": "Karte öffnen"
+    "openMap": "Karte öffnen",
+    "menu": "Menü"
   },
   "hero": {
     "headline": "Sieh, wie voll Reiseziele\nwirklich werden",
@@ -88,14 +89,18 @@
   },
   "footer": {
     "copyright": "© {year} 10ideen.at",
+    "tagline": "Wissen, wann die Welt reist – und wann nicht.",
     "github": "GitHub",
     "docs": "Dokumentation",
     "privacy": "Datenschutz",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "bestTime": "Beste Reisezeit",
+    "compare": "Orte vergleichen"
   },
   "map": {
     "title": "PackedPlaces.com",
-    "holidays": "Ferien & Events"
+    "holidays": "Ferien & Events",
+    "close": "Schließen"
   },
   "disclaimer": {
     "title": "Datenhinweis",
@@ -107,7 +112,9 @@
     "week": "Woche {week}",
     "play": "Abspielen",
     "pause": "Pause",
-    "today": "Heute"
+    "today": "Heute",
+    "prevWeek": "Vorherige Woche",
+    "nextWeek": "Nächste Woche"
   },
   "holidays": {
     "title": "Schulferien",
@@ -191,7 +198,9 @@
     "changesTitle": "Änderungen dieser Richtlinie",
     "changesText": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.",
     "contactTitle": "Kontakt",
-    "contactText": "Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer DSGVO-Rechte nutzen Sie bitte unser Kontaktformular."
+    "contactText": "Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer DSGVO-Rechte nutzen Sie bitte unser Kontaktformular.",
+    "metaTitle": "Datenschutzerklärung — PackedPlaces.com",
+    "metaDescription": "Datenschutzerklärung von PackedPlaces.com — wie wir mit Ihren Daten, Cookies und Analysen umgehen."
   },
   "contact": {
     "title": "Kontakt",
@@ -212,7 +221,9 @@
     "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     "errorCaptcha": "Bitte schließen Sie die Captcha-Verifizierung ab.",
     "errorServer": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
-    "errorTurnstile": "Captcha-Überprüfung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    "errorTurnstile": "Captcha-Überprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "metaTitle": "Kontakt — PackedPlaces.com",
+    "metaDescription": "Kontaktieren Sie das PackedPlaces.com-Team — Fragen, Feedback und Vorschläge sind willkommen."
   },
   "featurePages": {
     "shell": {
@@ -442,6 +453,72 @@
       "mountain": "Berg",
       "desert": "Wüste",
       "tropical": "Tropen"
-    }
+    },
+    "curveHeading": "Ein typisches Jahr, Woche für Woche",
+    "curveAria": "Wöchentliche Auslastungskurve für {name}: der türkise Ring markiert die ruhigste Woche, der terrakottafarbene Punkt die vollste",
+    "shareText": "Wie voll wird es in {name} wirklich? Sieh die Prognose Woche für Woche."
+  },
+  "theme": {
+    "label": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "meta": {
+    "title": "PackedPlaces.com — Sehen Sie, wie voll Reiseziele wirklich werden",
+    "description": "PackedPlaces.com visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten aus über 100 Ländern.",
+    "ogTitle": "PackedPlaces.com — Sehen Sie, wie voll Reiseziele wirklich werden",
+    "ogDescription": "PackedPlaces.com visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten aus über 100 Ländern."
+  },
+  "bestTime": {
+    "metaTitle": "Beste Reisezeit — PackedPlaces.com",
+    "metaDescription": "Wähle eines von über 700 Reisezielen und sieh auf einen Blick die ruhigsten und vollsten Wochen des Jahres.",
+    "eyebrow": "Beste Reisezeit",
+    "title": "Wann solltest du reisen?",
+    "lede": "Wähle ein Reiseziel und sieh seine Auslastungskurve für das Jahr — die ruhigsten und vollsten Wochen auf einen Blick.",
+    "pickerPlaceholder": "Reiseziel suchen, z. B. Hallstatt",
+    "pickerLabel": "Reiseziel suchen",
+    "noResults": "Kein Reiseziel gefunden",
+    "empty": "Suche ein Reiseziel, um zu sehen, wann es ruhig ist.",
+    "loading": "Auslastungsdaten werden geladen…",
+    "quietestLabel": "Ruhigste Woche",
+    "busiestLabel": "Vollste Woche",
+    "weekN": "Woche {week}",
+    "topWeeksTitle": "Ruhigste Wochen {year}",
+    "openOnMap": "Auf Karte öffnen",
+    "shareText": "Beste Reisezeit für {name}: um den {date}",
+    "curveAria": "Auslastungskurve für {name}: am ruhigsten in Woche {quiet}, am vollsten in Woche {busy}",
+    "teaserCta": "Finde deine ruhige Woche",
+    "sampleCaption": "Ein Jahr in {name} — der türkise Ring markiert die ruhigste Woche, der terrakottafarbene Punkt die vollste.",
+    "flat": "Die Auslastung ändert sich hier übers Jahr kaum — jede Woche ist ungefähr gleich."
+  },
+  "saved": {
+    "save": "Ort merken",
+    "saved": "Gemerkt",
+    "compareCta": "Gemerkte Orte vergleichen"
+  },
+  "compare": {
+    "metaTitle": "Auslastung vergleichen — PackedPlaces.com",
+    "eyebrow": "Vergleichen",
+    "title": "Wo ist es wann ruhiger?",
+    "lede": "Deine gemerkten Orte nebeneinander, Woche für Woche.",
+    "empty": "Noch keine gemerkten Orte.",
+    "emptyHint": "Markiere Reiseziele auf der Karte, auf Zielseiten oder im Reisezeit-Finder, um sie hier zu vergleichen.",
+    "findPlaces": "Ort finden",
+    "openMap": "Karte öffnen",
+    "loading": "Auslastungsdaten werden geladen…",
+    "quietestCol": "Am ruhigsten",
+    "remove": "{name} entfernen",
+    "shareText": "Auslastungsvergleich: {names}",
+    "curveAria": "Wöchentlicher Auslastungsvergleich der ausgewählten Reiseziele"
+  },
+  "share": {
+    "share": "Teilen",
+    "copied": "Link kopiert"
+  },
+  "alternatives": {
+    "title": "Ruhigere Alternativen",
+    "lede": "Ähnliche Orte, die in der Hochsaison ruhiger bleiben.",
+    "calmer": "{bands, plural, one {# Stufe ruhiger} other {# Stufen ruhiger}}"
   }
 }

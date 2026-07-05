@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { FeaturePageShell } from "@/components/features/FeaturePageShell";
+import { crowdColor, crowdCssGradient } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
   title: "Crowdedness, Not Traffic — PackedPlaces.com",
@@ -15,192 +16,202 @@ export default async function CrowdednessPage() {
   return (
     <FeaturePageShell slug="crowdedness">
       {/* The Formula */}
-      <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+      <div className="rounded-[4px] border border-line bg-surface-sunken p-6">
+        <h2 className="font-mono text-[11px] font-medium uppercase tracking-widest text-accent">
           {t("formula")}
         </h2>
         <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <div className="rounded-lg bg-white px-5 py-3 text-center shadow-sm">
-            <p className="text-xs text-gray-500">{t("rawTraffic")}</p>
-            <p className="text-lg font-bold text-gray-900">{t("visitors")}</p>
+          <div className="rounded-[3px] border border-line bg-surface-raised px-5 py-3 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink-faint">{t("rawTraffic")}</p>
+            <p className="mt-1 font-display text-lg text-ink">{t("visitors")}</p>
           </div>
-          <span className="text-2xl font-light text-gray-400">&divide;</span>
-          <div className="rounded-lg bg-white px-5 py-3 text-center shadow-sm">
-            <p className="text-xs text-gray-500">{t("infrastructure")}</p>
-            <p className="text-lg font-bold text-gray-900">{t("capacity")}</p>
+          <span className="font-mono text-2xl text-ink-faint">&divide;</span>
+          <div className="rounded-[3px] border border-line bg-surface-raised px-5 py-3 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink-faint">{t("infrastructure")}</p>
+            <p className="mt-1 font-display text-lg text-ink">{t("capacity")}</p>
           </div>
-          <span className="text-2xl font-light text-gray-400">=</span>
-          <div className="rounded-lg bg-gray-900 px-5 py-3 text-center shadow-sm">
-            <p className="text-xs text-gray-400">{t("theResult")}</p>
-            <p className="text-lg font-bold text-white">{t("crowdedness")}</p>
+          <span className="font-mono text-2xl text-ink-faint">=</span>
+          <div className="rounded-[3px] bg-accent px-5 py-3 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-accent-ink/70">{t("theResult")}</p>
+            <p className="mt-1 font-display text-lg text-accent-ink">{t("crowdedness")}</p>
           </div>
         </div>
       </div>
 
       {/* Comparison */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("misleadingTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("misleadingText")}
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {/* NYC Card */}
-        <div className="rounded-xl border border-gray-200 p-6">
-          <div className="text-xs font-medium uppercase tracking-wide text-gray-400">
+        <div className="rounded-[4px] border border-line bg-surface-raised p-6">
+          <div className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">
             {t("city")}
           </div>
-          <div className="mt-1 text-xl font-bold text-gray-900">
+          <div className="mt-1 font-display text-xl text-ink">
             New York City
           </div>
           <div className="mt-6 space-y-4">
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("annualVisitors")}</span>
-                <span className="font-medium text-gray-900">60M</span>
+                <span className="text-ink-muted">{t("annualVisitors")}</span>
+                <span className="font-mono text-ink">60M</span>
               </div>
-              <div className="mt-1.5 h-2.5 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-2.5 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-blue-500"
+                  className="h-full rounded-full bg-accent-2"
                   style={{ width: "90%" }}
                 />
               </div>
             </div>
             <div className="flex justify-center">
-              <span className="text-lg font-light text-gray-300">&divide;</span>
+              <span className="font-mono text-lg text-ink-faint">&divide;</span>
             </div>
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("capacity")}</span>
-                <span className="font-medium text-gray-900">5.0 ({t("high")})</span>
+                <span className="text-ink-muted">{t("capacity")}</span>
+                <span className="font-mono text-ink">5.0 ({t("high")})</span>
               </div>
-              <div className="mt-1.5 h-2.5 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-2.5 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-blue-300"
+                  className="h-full rounded-full bg-accent-2/40"
                   style={{ width: "100%" }}
                 />
               </div>
             </div>
             <div className="flex justify-center">
-              <span className="text-lg font-light text-gray-300">=</span>
+              <span className="font-mono text-lg text-ink-faint">=</span>
             </div>
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("crowdedness")}</span>
-                <span className="font-medium text-gray-900">35%</span>
+                <span className="text-ink-muted">{t("crowdedness")}</span>
+                <span className="font-mono text-ink">35%</span>
               </div>
-              <div className="mt-1.5 h-3 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-3 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-yellow-400"
-                  style={{ width: "35%" }}
+                  className="h-full rounded-full"
+                  style={{ width: "35%", backgroundColor: crowdColor(0.35, "light") }}
                 />
               </div>
             </div>
           </div>
-          <div className="mt-5 rounded-lg bg-yellow-50 px-3 py-2 text-center text-sm font-medium text-yellow-700">
+          <div
+            className="mt-5 rounded-[3px] border border-line bg-surface-sunken px-3 py-2 text-center font-mono text-xs font-medium uppercase tracking-widest"
+            style={{ color: crowdColor(0.35, "light") }}
+          >
             {t("moderate")}
           </div>
         </div>
 
         {/* Hallstatt Card */}
-        <div className="rounded-xl border border-gray-200 p-6">
-          <div className="text-xs font-medium uppercase tracking-wide text-gray-400">
+        <div className="rounded-[4px] border border-line bg-surface-raised p-6">
+          <div className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">
             {t("lakeVillage")}
           </div>
-          <div className="mt-1 text-xl font-bold text-gray-900">Hallstatt</div>
+          <div className="mt-1 font-display text-xl text-ink">Hallstatt</div>
           <div className="mt-6 space-y-4">
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("annualVisitors")}</span>
-                <span className="font-medium text-gray-900">1M</span>
+                <span className="text-ink-muted">{t("annualVisitors")}</span>
+                <span className="font-mono text-ink">1M</span>
               </div>
-              <div className="mt-1.5 h-2.5 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-2.5 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-blue-500"
+                  className="h-full rounded-full bg-accent-2"
                   style={{ width: "12%" }}
                 />
               </div>
             </div>
             <div className="flex justify-center">
-              <span className="text-lg font-light text-gray-300">&divide;</span>
+              <span className="font-mono text-lg text-ink-faint">&divide;</span>
             </div>
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("capacity")}</span>
-                <span className="font-medium text-gray-900">
+                <span className="text-ink-muted">{t("capacity")}</span>
+                <span className="font-mono text-ink">
                   0.3 ({t("veryLow")})
                 </span>
               </div>
-              <div className="mt-1.5 h-2.5 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-2.5 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-blue-300"
+                  className="h-full rounded-full bg-accent-2/40"
                   style={{ width: "6%" }}
                 />
               </div>
             </div>
             <div className="flex justify-center">
-              <span className="text-lg font-light text-gray-300">=</span>
+              <span className="font-mono text-lg text-ink-faint">=</span>
             </div>
             <div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">{t("crowdedness")}</span>
-                <span className="font-medium text-gray-900">89%</span>
+                <span className="text-ink-muted">{t("crowdedness")}</span>
+                <span className="font-mono text-ink">89%</span>
               </div>
-              <div className="mt-1.5 h-3 rounded-full bg-gray-100">
+              <div className="mt-1.5 h-3 rounded-full bg-surface-sunken">
                 <div
-                  className="h-full rounded-full bg-red-500"
-                  style={{ width: "89%" }}
+                  className="h-full rounded-full"
+                  style={{ width: "89%", backgroundColor: crowdColor(0.89, "light") }}
                 />
               </div>
             </div>
           </div>
-          <div className="mt-5 rounded-lg bg-red-50 px-3 py-2 text-center text-sm font-medium text-red-700">
+          <div
+            className="mt-5 rounded-[3px] border border-line bg-surface-sunken px-3 py-2 text-center font-mono text-xs font-medium uppercase tracking-widest"
+            style={{ color: crowdColor(0.89, "light") }}
+          >
             {t("packed")}
           </div>
         </div>
       </div>
 
       {/* Key Insight */}
-      <div className="mt-10 rounded-r-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-        <p className="text-sm font-semibold text-blue-900">{s("keyInsight")}</p>
-        <p className="mt-1 text-sm text-blue-800">
+      <div className="mt-10 border-l-2 border-dotted border-accent/50 pl-4">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-widest text-accent">{s("keyInsight")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
           {t("insightText")}
         </p>
       </div>
 
       {/* Crowdedness Scale */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("scaleTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("scaleText")}
       </p>
-      <div className="mt-6 overflow-hidden rounded-xl border border-gray-200">
-        <div className="flex">
+      <div className="mt-6 overflow-hidden rounded-[4px] border border-line">
+        <div
+          aria-hidden
+          className="h-2"
+          style={{ background: crowdCssGradient("light") }}
+        />
+        <div className="grid grid-cols-5 gap-px border-t border-line bg-line">
           {[
-            { label: t("quiet"), range: "0–20%", color: "bg-green-500", text: "text-green-900", bg: "bg-green-50" },
-            { label: t("moderate"), range: "20–40%", color: "bg-yellow-400", text: "text-yellow-900", bg: "bg-yellow-50" },
-            { label: t("busy"), range: "40–60%", color: "bg-amber-500", text: "text-amber-900", bg: "bg-amber-50" },
-            { label: t("veryBusy"), range: "60–80%", color: "bg-orange-500", text: "text-orange-900", bg: "bg-orange-50" },
-            { label: t("packed"), range: "80–100%", color: "bg-red-500", text: "text-red-900", bg: "bg-red-50" },
+            { label: t("quiet"), range: "0–20%" },
+            { label: t("moderate"), range: "20–40%" },
+            { label: t("busy"), range: "40–60%" },
+            { label: t("veryBusy"), range: "60–80%" },
+            { label: t("packed"), range: "80–100%" },
           ].map((level) => (
-            <div key={level.label} className={`flex-1 ${level.bg} p-3 text-center`}>
-              <div className={`mx-auto h-2 w-12 rounded-full ${level.color}`} />
-              <p className={`mt-2 text-xs font-semibold ${level.text}`}>
+            <div key={level.label} className="bg-surface-raised p-3 text-center">
+              <p className="text-xs font-medium text-ink">
                 {level.label}
               </p>
-              <p className="mt-0.5 text-xs text-gray-500">{level.range}</p>
+              <p className="mt-0.5 font-mono text-[10px] text-ink-faint">{level.range}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* How capacity is determined */}
-      <h2 className="mt-12 text-xl font-bold text-gray-900">
+      <h2 className="mt-12 font-display text-2xl text-ink">
         {t("howCapacityTitle")}
       </h2>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
         {t("howCapacityText")}
       </p>
     </FeaturePageShell>

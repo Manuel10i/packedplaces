@@ -10,5 +10,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|favicon.ico).*)"],
+  // Skip API routes, Next internals, PWA assets (manifest/icons) and any
+  // static file with an extension so the map-subdomain rewrite never
+  // swallows them.
+  matcher: ["/((?!api|_next|favicon.ico|manifest.webmanifest|icons|.*\\..*).*)"],
 };

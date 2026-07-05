@@ -40,7 +40,7 @@ export function LanguageSwitcher({ variant, hrefByLocale, currentLocale }: Props
       <select
         value={locale}
         onChange={handleChange}
-        className="hidden cursor-pointer border-none bg-transparent text-sm text-gray-600 outline-none hover:text-gray-900 sm:inline"
+        className="hidden cursor-pointer border-none bg-transparent text-sm text-ink-muted outline-none hover:text-ink sm:inline"
         aria-label={t("label")}
       >
         {locales.map((l) => (
@@ -57,7 +57,7 @@ export function LanguageSwitcher({ variant, hrefByLocale, currentLocale }: Props
       <select
         value={locale}
         onChange={handleChange}
-        className="cursor-pointer border-none bg-transparent text-sm font-medium text-gray-600 outline-none hover:text-gray-900"
+        className="cursor-pointer border-none bg-transparent text-sm font-medium text-ink-muted outline-none hover:text-ink"
         aria-label={t("label")}
       >
         {locales.map((l) => (
@@ -73,7 +73,7 @@ export function LanguageSwitcher({ variant, hrefByLocale, currentLocale }: Props
     <select
       value={locale}
       onChange={handleChange}
-      className="w-fit cursor-pointer rounded-lg bg-white/95 px-2 py-1 text-xs font-medium text-gray-700 shadow-lg outline-none backdrop-blur-sm"
+      className="w-fit cursor-pointer rounded-[3px] border border-line bg-surface-raised/95 px-2 py-1 text-xs font-medium text-ink-muted shadow-sm outline-none backdrop-blur-sm hover:text-ink"
       aria-label={t("label")}
     >
       {locales.map((l) => (

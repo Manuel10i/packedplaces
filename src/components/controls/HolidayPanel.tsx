@@ -9,6 +9,7 @@ import { getDateLocale } from "@/i18n/date-locale";
 import { getCountryName, getCountryFlag } from "@/lib/data/countries";
 import { REGION_BOUNDS, boundsOverlap } from "@/lib/data/region-bounds";
 import { destinations } from "@/lib/data/destinations";
+import { CATEGORY_EMOJI } from "@/lib/event-categories";
 import type { WorldRegion, MajorEvent } from "@/types";
 
 const DEST_NAME_MAP = new Map(destinations.map((d) => [d.id, d.name]));
@@ -26,14 +27,6 @@ const REGION_LABEL_KEYS: Record<WorldRegion, string> = {
 
 const REGION_ORDER: WorldRegion[] = ["europe", "middle-east", "asia", "americas", "oceania", "africa"];
 
-const CATEGORY_EMOJI: Record<MajorEvent["category"], string> = {
-  sports: "\u26BD",
-  festival: "\uD83C\uDF89",
-  cultural: "\uD83C\uDFAD",
-  music: "\uD83C\uDFB5",
-  trade: "\uD83D\uDCBC",
-};
-
 const CATEGORY_ORDER: MajorEvent["category"][] = ["sports", "festival", "cultural", "music", "trade"];
 
 // Map country codes to world regions for grouping
@@ -47,7 +40,7 @@ interface HolidayPanelProps {
   className?: string;
 }
 
-export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded-xl bg-white/95 p-4 shadow-lg backdrop-blur-sm" }: HolidayPanelProps) {
+export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded-[4px] border border-line bg-surface-raised/95 p-4 backdrop-blur-sm" }: HolidayPanelProps) {
   const { selectedWeek, selectedYear, viewportBounds } = useMapStore();
   const { data: holidays } = useHolidayData(selectedWeek, selectedYear);
   const { data: heatmapData } = useHeatmapData(selectedWeek, selectedYear);
@@ -129,7 +122,7 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
       {/* ===== School Holidays section ===== */}
       <button
         onClick={() => setHolidaysOpen((v) => !v)}
-        className="flex w-full items-center gap-2 text-sm font-semibold text-gray-700 hover:text-gray-900"
+        className="flex w-full items-center gap-2 font-display text-sm text-ink hover:text-accent"
       >
         <span
           className="text-[10px] transition-transform"
@@ -138,7 +131,7 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
           &#9662;
         </span>
         {tH("title")}
-        <span className="ml-auto rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-normal text-gray-500">
+        <span className="ml-auto rounded-full border border-line bg-surface-sunken px-2 py-0.5 font-mono text-[10px] text-ink-muted">
           {holidayCount}
         </span>
       </button>
@@ -146,7 +139,7 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
       {holidaysOpen && (
         <div className="mt-2">
           {holidayCount === 0 ? (
-            <p className="text-xs text-gray-400">{tH("noHolidays")}</p>
+            <p className="text-xs text-ink-faint">{tH("noHolidays")}</p>
           ) : (
             activeRegions.map((worldRegion) => {
               const countryCodes = byWorldRegion.get(worldRegion)!;
@@ -158,7 +151,7 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
                   {showRegionHeaders && (
                     <button
                       onClick={() => toggleRegion(worldRegion)}
-                      className="mb-1.5 flex w-full items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-400 hover:text-gray-600"
+                      className="mb-1.5 flex w-full items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-ink-faint hover:text-ink-muted"
                     >
                       <span className="transition-transform" style={{ transform: isCollapsed ? "rotate(-90deg)" : "rotate(0)" }}>
                         &#9662;
@@ -176,14 +169,14 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
                         <div key={countryCode} className="mb-3 last:mb-0">
                           <button
                             onClick={() => toggleCountry(countryCode)}
-                            className="mb-1.5 flex w-full items-center gap-1 text-xs font-semibold text-gray-500 hover:text-gray-700"
+                            className="mb-1.5 flex w-full items-center gap-1 text-xs font-semibold text-ink-muted hover:text-ink"
                           >
                             <span className="text-[10px] transition-transform" style={{ transform: isCountryCollapsed ? "rotate(-90deg)" : "rotate(0)" }}>
                               &#9662;
                             </span>
                             {getCountryFlag(countryCode)} {getCountryName(countryCode)}
                             {isCountryCollapsed && (
-                              <span className="ml-auto rounded-full bg-gray-100 px-1.5 py-0.5 text-[10px] font-normal text-gray-400">
+                              <span className="ml-auto rounded-full bg-surface-sunken px-1.5 py-0.5 font-mono text-[10px] font-normal text-ink-faint">
                                 {countryHolidays.length}
                               </span>
                             )}
@@ -192,10 +185,10 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
                             countryHolidays.map((h, i) => (
                               <div
                                 key={`${h.regionId}-${i}`}
-                                className="mb-1 rounded-md bg-gray-50 px-2.5 py-1.5 last:mb-0"
+                                className="mb-1 rounded-[3px] border-l-2 border-brand-400/60 bg-surface-sunken px-2.5 py-1.5 last:mb-0"
                               >
-                                <div className="text-xs font-medium text-gray-700">{h.regionName}</div>
-                                <div className="text-xs text-gray-500">
+                                <div className="text-xs font-medium text-ink">{h.regionName}</div>
+                                <div className="text-xs text-ink-muted">
                                   {h.holidayName} &middot; {formatRange(h.startDate, h.endDate, dateLocale)}
                                 </div>
                               </div>
@@ -211,12 +204,12 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
       )}
 
       {/* ===== Divider ===== */}
-      <div className="my-3 border-t border-gray-100" />
+      <div className="my-3 border-t border-line" />
 
       {/* ===== Major Events section ===== */}
       <button
         onClick={() => setEventsOpen((v) => !v)}
-        className="flex w-full items-center gap-2 text-sm font-semibold text-gray-700 hover:text-gray-900"
+        className="flex w-full items-center gap-2 font-display text-sm text-ink hover:text-accent"
       >
         <span
           className="text-[10px] transition-transform"
@@ -225,7 +218,7 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
           &#9662;
         </span>
         {tE("title")}
-        <span className="ml-auto rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-normal text-orange-600">
+        <span className="ml-auto rounded-full border border-sunset-200 bg-sunset-50 px-2 py-0.5 font-mono text-[10px] text-accent">
           {eventCount}
         </span>
       </button>
@@ -233,23 +226,23 @@ export function HolidayPanel({ className = "max-h-[70vh] overflow-y-auto rounded
       {eventsOpen && (
         <div className="mt-2">
           {eventCount === 0 ? (
-            <p className="text-xs text-gray-400">{tE("noEvents")}</p>
+            <p className="text-xs text-ink-faint">{tE("noEvents")}</p>
           ) : (
             activeCategories.map((category) => {
               const categoryEvents = byCategory.get(category)!;
               return (
                 <div key={category} className="mb-2 last:mb-0">
-                  <div className="mb-1.5 flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-gray-400">
+                  <div className="mb-1.5 flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-ink-faint">
                     <span>{CATEGORY_EMOJI[category]}</span>
                     {tE(category)}
                   </div>
                   {categoryEvents.map((event) => (
                     <div
                       key={event.id}
-                      className="mb-1 rounded-md bg-orange-50 px-2.5 py-1.5 last:mb-0"
+                      className="mb-1 rounded-[3px] border-l-2 border-accent/60 bg-surface-sunken px-2.5 py-1.5 last:mb-0"
                     >
-                      <div className="text-xs font-medium text-gray-700">{event.name}</div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs font-medium text-ink">{event.name}</div>
+                      <div className="text-xs text-ink-muted">
                         {DEST_NAME_MAP.get(event.destinationId) ?? event.destinationId}
                         {" \u00b7 "}
                         {formatRange(event.startDate, event.endDate, dateLocale)}

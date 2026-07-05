@@ -9,7 +9,9 @@ interface YearSelectorProps {
   className?: string;
 }
 
-export function YearSelector({ className = "flex w-fit gap-1 rounded-lg bg-white/95 p-1 shadow-lg backdrop-blur-sm" }: YearSelectorProps) {
+export function YearSelector({
+  className = "flex w-fit gap-1 rounded-[3px] border border-line bg-surface-sunken p-1",
+}: YearSelectorProps) {
   const { selectedYear, setSelectedYear } = useMapStore();
 
   return (
@@ -18,10 +20,10 @@ export function YearSelector({ className = "flex w-fit gap-1 rounded-lg bg-white
         <button
           key={year}
           onClick={() => setSelectedYear(year)}
-          className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+          className={`rounded-[2px] px-3 py-1.5 font-mono text-sm transition-colors ${
             selectedYear === year
-              ? "bg-blue-600 text-white"
-              : "text-gray-600 hover:bg-gray-100"
+              ? "bg-accent-2 text-accent-2-ink"
+              : "text-ink-muted hover:bg-surface-raised hover:text-ink"
           }`}
         >
           {year}

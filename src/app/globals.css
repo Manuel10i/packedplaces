@@ -1,56 +1,176 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────────────────────────────────────────────
+   Atlas Editorial — semantic theme tokens
+   Day: warm paper + ink. Night: "night atlas" ink-navy + warm light.
+   Components use the semantic utilities (bg-surface, text-ink, …)
+   and flip automatically when `.dark` is set on <html>.
+   ─────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f6f1e7;
+  --surface-raised: #fdfaf3;
+  --surface-sunken: #ece4d4;
+  --ink: #22303a;
+  --ink-muted: #5c6a72;
+  --ink-faint: #97998c;
+  --line: #d8cdb8;
+  --line-strong: #b4a889;
+  --accent: #c2542f;
+  --accent-hover: #a8452a;
+  --accent-ink: #fdfaf3;
+  --accent-2: #175e5a;
+  --accent-2-hover: #144e4b;
+  --accent-2-ink: #f2f7f6;
+  --grid-line: rgba(34, 48, 58, 0.06);
+  --shadow-ink: rgba(34, 48, 58, 0.12);
+  color-scheme: light;
+}
+
+.dark {
+  --surface: #0f1922;
+  --surface-raised: #16232e;
+  --surface-sunken: #0a121a;
+  --ink: #ede4d3;
+  --ink-muted: #a8a294;
+  --ink-faint: #6e7a72;
+  --line: #2b3a45;
+  --line-strong: #445866;
+  --accent: #d97c55;
+  --accent-hover: #e08d69;
+  --accent-ink: #1a120c;
+  --accent-2: #4fa8a0;
+  --accent-2-hover: #64b8b0;
+  --accent-2-ink: #08201e;
+  --grid-line: rgba(237, 228, 211, 0.05);
+  --shadow-ink: rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* semantic */
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-hover: var(--accent-2-hover);
+  --color-accent-2-ink: var(--accent-2-ink);
+  --color-background: var(--surface);
+  --color-foreground: var(--ink);
 
-  /* Brand teal — ocean / travel primary */
-  --color-brand-50: #effcfc;
-  --color-brand-100: #d7f6f7;
-  --color-brand-200: #b3ecef;
-  --color-brand-300: #7edde3;
-  --color-brand-400: #41c5cf;
-  --color-brand-500: #25a9b5;
-  --color-brand-600: #228998;
-  --color-brand-700: #226f7c;
-  --color-brand-800: #245a66;
-  --color-brand-900: #224b57;
+  /* fonts */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-instrument);
+  --font-mono: var(--font-plex-mono);
 
-  /* Sunset orange — warm CTA accent */
-  --color-sunset-50: #fff7ed;
-  --color-sunset-100: #ffedd5;
-  --color-sunset-200: #fed7aa;
-  --color-sunset-300: #fdba74;
-  --color-sunset-400: #fb923c;
-  --color-sunset-500: #f97316;
-  --color-sunset-600: #ea580c;
-  --color-sunset-700: #c2410c;
+  /* Deep teal scale (was "brand") — static tints for chips/hovers */
+  --color-brand-50: #eef6f5;
+  --color-brand-100: #d9eae8;
+  --color-brand-200: #b3d5d1;
+  --color-brand-300: #83bab4;
+  --color-brand-400: #4f9a93;
+  --color-brand-500: #2f7d77;
+  --color-brand-600: #175e5a;
+  --color-brand-700: #144e4b;
+  --color-brand-800: #123f3d;
+  --color-brand-900: #103432;
 
-  /* Sand — warm neutral */
-  --color-sand-50: #faf8f5;
-  --color-sand-100: #f3efe8;
-  --color-sand-200: #e8e0d4;
+  /* Terracotta scale (was "sunset") */
+  --color-sunset-50: #faf0ea;
+  --color-sunset-100: #f4ddd0;
+  --color-sunset-200: #e8bda6;
+  --color-sunset-300: #dc9a78;
+  --color-sunset-400: #cf7750;
+  --color-sunset-500: #c2542f;
+  --color-sunset-600: #a8452a;
+  --color-sunset-700: #8a3a26;
+
+  /* Paper scale (was "sand") */
+  --color-sand-50: #f6f1e7;
+  --color-sand-100: #ece4d4;
+  --color-sand-200: #d8cdb8;
 }
+
+/* ─── Base ─── */
 
 body {
   margin: 0;
   padding: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
-/* rc-slider mark label styling */
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* ─── rc-slider (map time slider) ─── */
+
+.rc-slider-rail {
+  background-color: var(--line) !important;
+  height: 4px !important;
+}
+
+.rc-slider-track {
+  background-color: var(--accent-2) !important;
+  height: 4px !important;
+}
+
+.rc-slider-handle {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: -7px !important;
+  border: 2px solid var(--accent-2) !important;
+  background-color: var(--surface-raised) !important;
+  opacity: 1 !important;
+  box-shadow: 0 1px 3px var(--shadow-ink) !important;
+}
+
+.rc-slider-handle:active,
+.rc-slider-handle-dragging {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent-2) 25%, transparent) !important;
+}
+
+.rc-slider-dot {
+  border-color: var(--line) !important;
+  background-color: var(--surface) !important;
+}
+
+.rc-slider-dot-active {
+  border-color: var(--accent-2) !important;
+}
+
 .rc-slider-mark-text {
+  font-family: var(--font-plex-mono), monospace;
   font-size: 10px !important;
-  color: #9ca3af !important;
+  color: var(--ink-faint) !important;
+}
+
+.rc-slider-mark-text-active {
+  color: var(--ink-muted) !important;
 }
 
 /* ─── Keyframes ─── */
@@ -58,7 +178,7 @@ body {
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -81,16 +201,10 @@ body {
   50% { opacity: 0.6; }
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 @keyframes scale-in {
   from {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -98,69 +212,145 @@ body {
   }
 }
 
-/* ─── Utility classes ─── */
+@keyframes dash-travel {
+  to { stroke-dashoffset: -24; }
+}
+
+/* ─── Motion utilities (names are load-bearing across marketing pages) ─── */
 
 @utility animate-on-scroll {
-  animation: fade-in-up 0.6s ease-out both;
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-on-scroll-delay-1 {
-  animation: fade-in-up 0.6s ease-out 0.1s both;
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-on-scroll-delay-2 {
-  animation: fade-in-up 0.6s ease-out 0.2s both;
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-on-scroll-delay-3 {
-  animation: fade-in-up 0.6s ease-out 0.3s both;
+  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-float {
   animation: float 4s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 @utility animate-pulse-dot {
   animation: pulse-dot 3s ease-in-out infinite;
-}
-
-@utility animate-scale-in {
-  animation: scale-in 0.5s ease-out both;
-}
-
-@utility card-hover-lift {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  &:hover {
-    transform: translateY(-4px) rotate(-0.5deg) scale(1.02);
-    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }
 
+@utility animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility animate-dash-travel {
+  animation: dash-travel 1.6s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* ─── Surfaces, textures, ornaments ─── */
+
+@utility card-hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  &:hover {
+    transform: translateY(-3px) rotate(-0.4deg);
+    box-shadow: 0 14px 28px -12px var(--shadow-ink);
+    border-color: var(--line-strong);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover { transform: none; }
+  }
+}
+
+/* Fine paper-grain noise (neutral grey — works on day paper and night navy). */
+@utility bg-paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+/* Faint cartographic graticule. */
+@utility bg-map-grid {
+  background-image:
+    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 56px);
+}
+
+/* Grain + graticule in one layer stack. */
+@utility bg-atlas-field {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 56px);
+}
+
+@utility border-dotted-route {
+  border: 2px dotted color-mix(in srgb, var(--accent) 65%, transparent);
+}
+
+/* Postage-stamp perforated edge. Requires an opaque background on the element. */
+@utility stamp-edge {
+  --stamp-r: 5px;
+  padding: calc(var(--stamp-r) * 2);
+  mask:
+    radial-gradient(var(--stamp-r), transparent 97%, black 100%) round
+      calc(-1 * var(--stamp-r)) calc(-1 * var(--stamp-r)) / calc(var(--stamp-r) * 4)
+      calc(var(--stamp-r) * 4),
+    linear-gradient(black 0 0) content-box;
+}
+
+/* ─── Legacy background utilities (re-pointed to the Atlas palette;
+       removed once all marketing pages migrate to primitives) ─── */
+
 @utility bg-hero-gradient {
-  background: linear-gradient(135deg, var(--color-brand-50) 0%, #e0f2fe 40%, var(--color-sunset-50) 100%);
+  background-color: var(--surface);
 }
 
 @utility bg-section-warm {
-  background-color: var(--color-sand-50);
+  background-color: var(--surface-sunken);
 }
 
 @utility bg-section-cool {
-  background: linear-gradient(180deg, var(--color-brand-50) 0%, #ffffff 100%);
+  background-color: var(--surface);
 }
 
 @utility bg-cta-gradient {
-  background: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-500) 50%, #0ea5e9 100%);
+  background-color: var(--accent);
 }
 
 @utility text-gradient-hero {
-  background: linear-gradient(135deg, var(--color-brand-700), var(--color-brand-500), #0ea5e9, var(--color-sunset-500));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shift 6s ease infinite;
+  color: var(--accent);
+  font-style: italic;
 }

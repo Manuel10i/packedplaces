@@ -25,9 +25,14 @@ import {
 const WEEKS = 53;
 const MONTHS = 12;
 
-let matrix: Map<string, number[]> | null = null;
+interface Matrices {
+  monthly: Map<string, number[]>;
+  weekly: Map<string, number[]>;
+}
 
-function buildMatrix(): Map<string, number[]> {
+let matrices: Matrices | null = null;
+
+function buildMatrices(): Matrices {
   const maxPopulation = Math.max(...sourceRegions.map((r) => r.population));
 
   const regionMap = new Map<string, BusynessRegionInfo>(
@@ -60,9 +65,11 @@ function buildMatrix(): Map<string, number[]> {
   // Accumulate weekly normalized scores into their month, then average.
   const monthSums = new Map<string, number[]>();
   const monthCounts = new Map<string, number[]>();
+  const weekly = new Map<string, number[]>();
   for (const d of destinations) {
     monthSums.set(d.id, new Array(MONTHS).fill(0));
     monthCounts.set(d.id, new Array(MONTHS).fill(0));
+    weekly.set(d.id, new Array(WEEKS).fill(0));
   }
 
   for (let week = 1; week <= WEEKS; week++) {
@@ -78,25 +85,26 @@ function buildMatrix(): Map<string, number[]> {
       const normalized = weekResult.get(d.id)?.normalized ?? 0;
       monthSums.get(d.id)![monthIdx] += normalized;
       monthCounts.get(d.id)![monthIdx] += 1;
+      weekly.get(d.id)![week - 1] = Math.round(normalized * 1000) / 1000;
     }
   }
 
-  const result = new Map<string, number[]>();
+  const monthly = new Map<string, number[]>();
   for (const d of destinations) {
     const sums = monthSums.get(d.id)!;
     const counts = monthCounts.get(d.id)!;
-    result.set(
+    monthly.set(
       d.id,
       sums.map((s, i) => (counts[i] > 0 ? Math.round((s / counts[i]) * 1000) / 1000 : 0)),
     );
   }
-  return result;
+  return { monthly, weekly };
 }
 
-/** Lazily build the full destination × month matrix once, then memoize. */
-function getMatrix(): Map<string, number[]> {
-  if (!matrix) matrix = buildMatrix();
-  return matrix;
+/** Lazily build the destination × month/week matrices once, then memoize. */
+function getMatrices(): Matrices {
+  if (!matrices) matrices = buildMatrices();
+  return matrices;
 }
 
 /**
@@ -104,5 +112,14 @@ function getMatrix(): Map<string, number[]> {
  * same normalized scale the map uses. Returns all zeros for unknown ids.
  */
 export function getMonthlyBusyness(destinationId: string): number[] {
-  return getMatrix().get(destinationId) ?? new Array(MONTHS).fill(0);
+  return getMatrices().monthly.get(destinationId) ?? new Array(MONTHS).fill(0);
+}
+
+/**
+ * Weekly baseline busyness for one destination as 53 values (ISO week 1..53),
+ * each 0-1 on the same normalized scale the map uses (no live holiday/event
+ * boosts — the "typical year" curve). Returns all zeros for unknown ids.
+ */
+export function getWeeklyBusyness(destinationId: string): number[] {
+  return getMatrices().weekly.get(destinationId) ?? new Array(WEEKS).fill(0);
 }
