@@ -9,6 +9,7 @@ import {
   setConsent,
   subscribeConsent,
   markGtagReady,
+  setGaId,
   type ConsentState,
 } from "@/lib/analytics";
 
@@ -29,6 +30,11 @@ export function CookieConsent({ gaId }: Props) {
   const t = useTranslations("consent");
   const state = useSyncExternalStore(subscribeConsent, getConsent, serverConsent);
   const granted = state === "granted";
+
+  // Register the GA id so withdrawing consent later can disable an already-loaded GA.
+  useEffect(() => {
+    setGaId(gaId);
+  }, [gaId]);
 
   // Once analytics is granted, wait for gtag to exist, then drain the queue.
   useEffect(() => {

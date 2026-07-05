@@ -92,4 +92,20 @@ describe("consent-aware analytics", () => {
     a.setConsent("denied");
     expect(cb).toHaveBeenCalledTimes(1);
   });
+
+  it("toggles Google Analytics' opt-out flag when consent changes", async () => {
+    const key = "ga-disable-G-TESTID";
+    const a = await load();
+    a.setGaId("G-TESTID");
+
+    // Before any grant, GA is disabled.
+    expect((window as unknown as Record<string, boolean>)[key]).toBe(true);
+
+    a.setConsent("granted");
+    expect((window as unknown as Record<string, boolean>)[key]).toBe(false);
+
+    // Withdrawing consent re-disables an already-loaded GA.
+    a.setConsent("denied");
+    expect((window as unknown as Record<string, boolean>)[key]).toBe(true);
+  });
 });
