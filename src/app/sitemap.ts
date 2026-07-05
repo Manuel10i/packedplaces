@@ -1,23 +1,17 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/i18n/config";
 import { allDestinationSlugs, hreflangSlugMap } from "@/lib/destinations";
 
 const BASE_URL = "https://packedplaces.com";
 
-function langAlternates(path: string) {
-  const url = path ? `${BASE_URL}/${path}` : BASE_URL;
-  return {
-    languages: Object.fromEntries([
-      ...locales.map((l) => [l, url]),
-      ["x-default", url],
-    ]),
-  };
-}
-
-/** hreflang cluster for a destination slug (German exonym slugs get their own de URL). */
+/**
+ * hreflang cluster for a destination slug. Only destinations with a German
+ * exonym slug have genuinely distinct per-language URLs; those get a de/en
+ * cluster. Everything else is served from a single URL in every language, so
+ * emitting same-URL alternates would signal nothing — return undefined instead.
+ */
 function destinationAlternates(slug: string) {
   const map = hreflangSlugMap(slug);
-  if (!map) return langAlternates(`destination/${slug}`);
+  if (!map) return undefined;
   return {
     languages: Object.fromEntries(
       Object.entries(map).map(([lang, s]) => [lang, `${BASE_URL}/destination/${s}`]),
@@ -39,12 +33,13 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Static pages are served from a single URL in every language (locale is
+  // negotiated, not path-prefixed), so they carry no hreflang alternates.
   const staticEntries = PATHS.map(({ path, changeFrequency, priority }) => ({
     url: path ? `${BASE_URL}/${path}` : BASE_URL,
     lastModified: new Date(),
     changeFrequency,
     priority,
-    alternates: langAlternates(path),
   }));
 
   const destinationEntries = allDestinationSlugs().map((slug) => {

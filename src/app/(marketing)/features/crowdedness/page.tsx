@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor, crowdCssGradient } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/crowdedness" },
   title: "Crowdedness, Not Traffic — PackedPlaces.com",
   description:
     "PackedPlaces measures congestion relative to capacity, not raw visitor numbers. A packed ski village scores higher than a busy metropolis.",

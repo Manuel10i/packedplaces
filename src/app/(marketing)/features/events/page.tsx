@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/events" },
   title: "50+ Major Events — PackedPlaces.com",
   description:
     "Olympics, FIFA World Cup, Oktoberfest, Carnival, Grand Slams, and more — major events that drive millions of visitors are tracked and shown on the map.",

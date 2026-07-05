@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/holiday-providers" },
   title: "Multi-Provider Holidays — PackedPlaces.com",
   description:
     "Three cascading providers — manual, OpenHolidaysAPI, and date-holidays — ensure global school holiday coverage for 127 regions.",
