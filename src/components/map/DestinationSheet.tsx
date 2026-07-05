@@ -19,14 +19,10 @@ import type { Locale } from "@/i18n/config";
 
 const DEST_BY_ID = new Map(destinations.map((d) => [d.id, d]));
 
-export interface SelectedDestination {
-  destinationId: string;
-  name: string;
-  score?: number;
-}
+import type { MapDestinationClick } from "./MapView";
 
 interface Props {
-  selected: SelectedDestination | null;
+  selected: MapDestinationClick | null;
   onClose: () => void;
 }
 
@@ -118,6 +114,39 @@ export function DestinationSheet({ selected, onClose }: Props) {
               monthLabels={getShortMonthNames(locale)}
               className="h-24"
             />
+          </div>
+        )}
+
+        {selected.activeEvents.length > 0 && (
+          <div className="mt-4 border-t border-line pt-3">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink-faint">
+              {tip("activeEvents")}
+            </p>
+            <ul className="mt-1.5 space-y-0.5">
+              {selected.activeEvents.map((name, i) => (
+                <li key={i} className="text-sm text-accent">
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {selected.sources.length > 0 && (
+          <div className="mt-4 border-t border-line pt-3">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink-faint">
+              {tip("topSources")}
+            </p>
+            <ul className="mt-1.5 space-y-0.5">
+              {selected.sources.map((s, i) => (
+                <li key={i} className="flex items-baseline gap-3 text-sm text-ink-muted">
+                  <span className="font-mono text-[10px] text-accent-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {s.regionName}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 

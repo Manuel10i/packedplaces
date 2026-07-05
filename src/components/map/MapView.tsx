@@ -74,13 +74,47 @@ export interface MapDestinationClick {
   destinationId: string;
   name: string;
   score?: number;
+  /** Top contributing source regions (same data as the hover tooltip). */
+  sources: { regionName: string; weight: number }[];
+  /** Names of events active at this destination in the selected week. */
+  activeEvents: string[];
+}
+
+/** Top contributing sources from a feature's (possibly JSON-string) property. */
+function parseSources(props: Record<string, unknown>): { regionName: string; weight: number }[] {
+  try {
+    const raw =
+      typeof props.contributingSources === "string"
+        ? JSON.parse(props.contributingSources)
+        : props.contributingSources;
+    if (Array.isArray(raw)) {
+      return raw
+        .sort((a: { weight: number }, b: { weight: number }) => b.weight - a.weight)
+        .slice(0, 5);
+    }
+  } catch {
+    // ignore parse errors
+  }
+  return [];
+}
+
+/**
+ * Whether the device has a hover-capable pointer (mouse/trackpad). On touch
+ * devices MapLibre synthesizes a mousemove right before the tap's click, which
+ * would flash the hover tooltip on top of the destination sheet — so the
+ * tooltip is desktop-only.
+ */
+function hasHoverPointer(): boolean {
+  return typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
 }
 
 interface MapViewProps {
   onDestinationClick?: (destination: MapDestinationClick) => void;
+  /** While true (e.g. the destination sheet is open), the hover tooltip stays hidden. */
+  suppressTooltip?: boolean;
 }
 
-export function MapView({ onDestinationClick }: MapViewProps) {
+export function MapView({ onDestinationClick, suppressTooltip = false }: MapViewProps) {
   const mapRef = useRef<MapRef>(null);
   const locale = useLocale();
   const mode = useResolvedTheme();
@@ -102,6 +136,7 @@ export function MapView({ onDestinationClick }: MapViewProps) {
 
   const onMouseMove = useCallback(
     (e: MapLayerMouseEvent) => {
+      if (!hasHoverPointer() || suppressTooltip) return;
       if (!e.features || e.features.length === 0) {
         setTooltipInfo(null);
         setHoveredDestination(null);
@@ -111,31 +146,17 @@ export function MapView({ onDestinationClick }: MapViewProps) {
       const props = feature.properties;
       if (!props) return;
 
-      let sources: { regionName: string; weight: number }[] = [];
-      try {
-        const raw = typeof props.contributingSources === "string"
-          ? JSON.parse(props.contributingSources)
-          : props.contributingSources;
-        if (Array.isArray(raw)) {
-          sources = raw
-            .sort((a: { weight: number }, b: { weight: number }) => b.weight - a.weight)
-            .slice(0, 5);
-        }
-      } catch {
-        // ignore parse errors
-      }
-
       setTooltipInfo({
         x: e.point.x,
         y: e.point.y,
         name: props.name,
         score: props.busynessScore ?? 0,
-        sources,
+        sources: parseSources(props),
         destinationId: props.destinationId,
       });
       setHoveredDestination(props.destinationId);
     },
-    [setHoveredDestination],
+    [setHoveredDestination, suppressTooltip],
   );
 
   const onMouseLeave = useCallback(() => {
@@ -148,13 +169,20 @@ export function MapView({ onDestinationClick }: MapViewProps) {
       const feature = e.features?.[0];
       const props = feature?.properties;
       if (!props?.destinationId || !onDestinationClick) return;
+      // The sheet supersedes the hover tooltip (relevant on touch devices,
+      // where the tap also synthesized a mousemove).
+      setTooltipInfo(null);
       onDestinationClick({
         destinationId: props.destinationId,
         name: props.name ?? props.destinationId,
         score: typeof props.busynessScore === "number" ? props.busynessScore : undefined,
+        sources: parseSources(props),
+        activeEvents: (data?.metadata.activeEvents ?? [])
+          .filter((ev) => ev.destinationId === props.destinationId)
+          .map((ev) => ev.name),
       });
     },
-    [onDestinationClick],
+    [onDestinationClick, data],
   );
 
   const updateViewport = useCallback(() => {
