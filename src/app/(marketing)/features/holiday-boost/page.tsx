@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/holiday-boost" },
   title: "Holiday Boost Effect — PackedPlaces.com",
   description:
     "A 1.5x multiplier during school breaks captures the surge in travel demand when families hit the road.",

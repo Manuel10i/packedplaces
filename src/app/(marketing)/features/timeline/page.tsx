@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/timeline" },
   title: "Week-by-Week Timeline — PackedPlaces.com",
   description:
     "Scrub or animate through every week of the year to see crowdedness shift in real time across 700+ destinations.",

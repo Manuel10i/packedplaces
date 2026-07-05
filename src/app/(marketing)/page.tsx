@@ -30,6 +30,7 @@ const webAppJsonLd = {
 
 export const metadata: Metadata = {
   title: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+  alternates: { canonical: "https://packedplaces.com" },
 };
 
 /* Dot-grid world map — small circles placed at land positions (equirectangular, viewBox 0 0 100 50) */

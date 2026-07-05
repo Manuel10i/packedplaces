@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/categories" },
   title: "11 Destination Categories — PackedPlaces.com",
   description:
     "Ski, beach, city, island, safari, desert, tropical, lake, nature, cultural, and mountain — each category has tuned peak and off-peak capacity.",

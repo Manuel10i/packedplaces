@@ -4,6 +4,7 @@ import { FeaturePageShell } from "@/components/features/FeaturePageShell";
 import { crowdColor } from "@/lib/crowd-palette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://packedplaces.com/features/seasonality" },
   title: "Weather-Aware Seasonality — PackedPlaces.com",
   description:
     "Each destination has month-by-month peak season data reflecting real-world weather conditions — monsoons, dry seasons, extreme heat, and polar winters.",
