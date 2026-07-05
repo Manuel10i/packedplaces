@@ -76,6 +76,16 @@ export interface MapDestinationClick {
   score?: number;
 }
 
+/**
+ * Whether the device has a hover-capable pointer (mouse/trackpad). On touch
+ * devices MapLibre synthesizes a mousemove right before the tap's click, which
+ * would flash the hover tooltip on top of the destination sheet — so the
+ * tooltip is desktop-only.
+ */
+function hasHoverPointer(): boolean {
+  return typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
+}
+
 interface MapViewProps {
   onDestinationClick?: (destination: MapDestinationClick) => void;
 }
@@ -102,6 +112,7 @@ export function MapView({ onDestinationClick }: MapViewProps) {
 
   const onMouseMove = useCallback(
     (e: MapLayerMouseEvent) => {
+      if (!hasHoverPointer()) return;
       if (!e.features || e.features.length === 0) {
         setTooltipInfo(null);
         setHoveredDestination(null);
@@ -148,6 +159,9 @@ export function MapView({ onDestinationClick }: MapViewProps) {
       const feature = e.features?.[0];
       const props = feature?.properties;
       if (!props?.destinationId || !onDestinationClick) return;
+      // The sheet supersedes the hover tooltip (relevant on touch devices,
+      // where the tap also synthesized a mousemove).
+      setTooltipInfo(null);
       onDestinationClick({
         destinationId: props.destinationId,
         name: props.name ?? props.destinationId,
