@@ -3,53 +3,20 @@ import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { startOfISOWeek, endOfISOWeek, format } from "date-fns";
 import * as schema from "../db/schema";
 import type { Hemisphere } from "@/types";
-import { getSeasonalCapacity, getAttractiveness } from "../data/capacity";
 import { destinations as staticDestinations } from "../data/destinations";
+import {
+  computeWeekBusyness,
+  getSeasonForWeek,
+  seasonMatches,
+  DEFAULT_HOLIDAY_BOOST,
+  type BusynessDestInfo,
+  type BusynessRegionInfo,
+  type BusynessPatternInfo,
+} from "./busyness-core";
 
-interface ContributingSource {
-  regionId: string;
-  regionName: string;
-  weight: number;
-}
-
-/**
- * Determines the season for a given ISO week number, accounting for hemisphere.
- * Northern hemisphere: Winter weeks 44-14 (Nov-Apr), Summer weeks 22-36 (Jun-Sep)
- * Southern hemisphere: Inverted — Summer weeks 44-14, Winter weeks 22-36
- * Equatorial: Always "shoulder" (all patterns match)
- */
-export function getSeasonForWeek(
-  week: number,
-  hemisphere: Hemisphere = "northern",
-): "winter" | "summer" | "shoulder" {
-  if (hemisphere === "equatorial") return "shoulder";
-
-  const isNorthernWinter = week >= 44 || week <= 14;
-  const isNorthernSummer = week >= 22 && week <= 36;
-
-  if (hemisphere === "southern") {
-    if (isNorthernWinter) return "summer";
-    if (isNorthernSummer) return "winter";
-    return "shoulder";
-  }
-
-  // Northern hemisphere (default)
-  if (isNorthernWinter) return "winter";
-  if (isNorthernSummer) return "summer";
-  return "shoulder";
-}
-
-/**
- * Check if a travel pattern's season matches the current week's season
- * for the source region's hemisphere.
- * - null season = year-round, always matches
- * - shoulder season: both winter and summer patterns apply
- */
-export function seasonMatches(patternSeason: string | null, weekSeason: string): boolean {
-  if (patternSeason === null) return true;
-  if (weekSeason === "shoulder") return true;
-  return patternSeason === weekSeason;
-}
+// Re-exported so existing importers (and tests) keep resolving these from the
+// heatmap service; the implementations live in the shared busyness core.
+export { getSeasonForWeek, seasonMatches };
 
 /**
  * Precompute heatmap data for all weeks in a given year.
@@ -79,31 +46,44 @@ export async function precomputeHeatmap(
     peakMonthsMap.set(d.id, d.peakMonths);
   }
 
-  // Build lookup maps
-  const regionMap = new Map(allRegions.map((r) => [r.id, r]));
-  const patternsByRegion = new Map<string, typeof allPatterns>();
-  for (const pattern of allPatterns) {
-    const existing = patternsByRegion.get(pattern.sourceRegionId) ?? [];
-    existing.push(pattern);
-    patternsByRegion.set(pattern.sourceRegionId, existing);
-  }
+  // Shape DB rows into the pure core's inputs.
+  const regionMap = new Map<string, BusynessRegionInfo>(
+    allRegions.map((r) => [
+      r.id,
+      {
+        id: r.id,
+        name: r.name,
+        population: r.population,
+        hemisphere: (r.hemisphere as Hemisphere) ?? "northern",
+      },
+    ]),
+  );
 
-  // Build index: destination -> patterns pointing at it
-  const patternsByDest = new Map<string, { regionId: string; weight: number; season: string | null }[]>();
+  const patternsByDest = new Map<string, BusynessPatternInfo[]>();
   for (const pattern of allPatterns) {
     const existing = patternsByDest.get(pattern.destinationId) ?? [];
-    existing.push({ regionId: pattern.sourceRegionId, weight: pattern.weight, season: pattern.season });
+    existing.push({
+      regionId: pattern.sourceRegionId,
+      weight: pattern.weight,
+      season: pattern.season,
+    });
     patternsByDest.set(pattern.destinationId, existing);
   }
+
+  const destInfos: BusynessDestInfo[] = allDestinations.map((d) => ({
+    id: d.id,
+    category: d.category,
+    basePopularity: d.basePopularity,
+    peakMonths: peakMonthsMap.get(d.id) ?? Array.from({ length: 12 }, (_, i) => i + 1),
+    capacityOverride: capacityOverrides.get(d.id),
+  }));
+  const destById = new Map(allDestinations.map((d) => [d.id, d]));
 
   // Load events for this year
   const allEvents = await db
     .select()
     .from(schema.majorEvents)
     .where(eq(schema.majorEvents.year, year));
-
-  // Holiday boost: regions on school holiday contribute 1.5x vs baseline 1.0x
-  const HOLIDAY_BOOST = 1.5;
 
   // Clear existing cache for this year
   await db.delete(schema.heatmapCache).where(eq(schema.heatmapCache.year, year));
@@ -130,95 +110,38 @@ export async function precomputeHeatmap(
     const onHolidayRegionIds = new Set(holidayRegions.map((r) => r.sourceRegionId));
 
     // Find events active during this week
-    const activeEventBoosts = new Map<string, number>();
+    const eventBoosts = new Map<string, number>();
     for (const event of allEvents) {
       if (event.startDate <= weekEndStr && event.endDate >= weekStartStr) {
-        const existing = activeEventBoosts.get(event.destinationId) ?? 0;
-        activeEventBoosts.set(event.destinationId, existing + event.trafficBoost);
+        const existing = eventBoosts.get(event.destinationId) ?? 0;
+        eventBoosts.set(event.destinationId, existing + event.trafficBoost);
       }
     }
 
-    // Calculate busyness for each destination
-    // ALL regions contribute a baseline; holiday regions get a boost
-    const destScores = new Map<string, { score: number; congestion: number; sources: ContributingSource[] }>();
-
-    for (const dest of allDestinations) {
-      let totalScore = 0;
-      const sources: ContributingSource[] = [];
-      const patterns = patternsByDest.get(dest.id) ?? [];
-
-      const peakMonths = peakMonthsMap.get(dest.id) ?? Array.from({length: 12}, (_, i) => i + 1);
-      const attractiveness = getAttractiveness(peakMonths, week);
-
-      for (const pattern of patterns) {
-        const region = regionMap.get(pattern.regionId);
-        if (!region) continue;
-
-        const hemisphere = (region.hemisphere as Hemisphere) ?? "northern";
-        const season = getSeasonForWeek(week, hemisphere);
-        if (!seasonMatches(pattern.season, season)) continue;
-
-        const populationFactor = region.population / maxPopulation;
-        const isOnHoliday = onHolidayRegionIds.has(region.id);
-        const boost = isOnHoliday ? HOLIDAY_BOOST : 1.0;
-        const contribution = pattern.weight * populationFactor * dest.basePopularity * boost * attractiveness;
-
-        totalScore += contribution;
-        sources.push({
-          regionId: region.id,
-          regionName: region.name,
-          weight: Math.round(contribution * 1000) / 1000,
-        });
-      }
-
-      // Add event boost: trafficBoost × basePopularity
-      const eventBoost = activeEventBoosts.get(dest.id);
-      if (eventBoost) {
-        totalScore += eventBoost * dest.basePopularity;
-      }
-
-      if (totalScore > 0) {
-        // Compute congestion: raw traffic divided by seasonal capacity
-        const capacity = getSeasonalCapacity(
-          dest.category,
-          peakMonths,
-          week,
-          capacityOverrides.get(dest.id),
-        );
-        const congestion = totalScore / capacity;
-
-        destScores.set(dest.id, { score: totalScore, congestion, sources });
-      }
-    }
-
-    // Normalize congestion per-week using 95th percentile (not max)
-    // This prevents a single extreme outlier from compressing the whole scale
-    const congestionValues = [...destScores.values()]
-      .map((e) => e.congestion)
-      .sort((a, b) => a - b);
-    const p95Index = Math.floor(congestionValues.length * 0.95);
-    const weekNorm = congestionValues[p95Index] ?? 1;
+    const busyness = computeWeekBusyness(
+      week,
+      destInfos,
+      regionMap,
+      patternsByDest,
+      maxPopulation,
+      { onHolidayRegionIds, eventBoosts, holidayBoost: DEFAULT_HOLIDAY_BOOST },
+    );
 
     const rows: (typeof schema.heatmapCache.$inferInsert)[] = [];
-
-    for (const dest of allDestinations) {
-      const entry = destScores.get(dest.id);
-      const normalizedScore = entry && weekNorm > 0
-        ? Math.round(Math.min(entry.congestion / weekNorm, 1) * 1000) / 1000
-        : 0;
-
-      if (normalizedScore > 0) {
-        rows.push({
-          destinationId: dest.id,
-          year,
-          week,
-          busynessScore: normalizedScore,
-          contributingSources: entry?.sources ?? [],
-          lat: dest.lat,
-          lng: dest.lng,
-          destinationName: dest.name,
-        });
-      }
+    for (const [destId, entry] of busyness) {
+      if (entry.normalized <= 0) continue;
+      const dest = destById.get(destId);
+      if (!dest) continue;
+      rows.push({
+        destinationId: destId,
+        year,
+        week,
+        busynessScore: entry.normalized,
+        contributingSources: entry.sources,
+        lat: dest.lat,
+        lng: dest.lng,
+        destinationName: dest.name,
+      });
     }
 
     if (rows.length > 0) {

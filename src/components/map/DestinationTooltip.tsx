@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { busynessLabelKey, busynessColor } from "@/lib/busyness-scale";
 
 interface Props {
   x: number;
@@ -16,11 +17,7 @@ export function DestinationTooltip({ x, y, name, score, sources, activeEvents }:
   const scorePercent = Math.round(score * 100);
 
   function getCrowdednessLabel(s: number): string {
-    if (s < 0.2) return t("quiet");
-    if (s < 0.4) return t("moderate");
-    if (s < 0.6) return t("busy");
-    if (s < 0.8) return t("veryBusy");
-    return t("packed");
+    return t(busynessLabelKey(s));
   }
 
   return (
@@ -32,7 +29,7 @@ export function DestinationTooltip({ x, y, name, score, sources, activeEvents }:
       <div className="mt-1 flex items-center gap-2">
         <div
           className="h-2.5 w-2.5 rounded-full"
-          style={{ backgroundColor: getScoreColor(score) }}
+          style={{ backgroundColor: busynessColor(score) }}
         />
         <span className="text-gray-600">
           {t("crowdedness", { score: scorePercent, label: getCrowdednessLabel(score) })}
@@ -60,11 +57,4 @@ export function DestinationTooltip({ x, y, name, score, sources, activeEvents }:
       )}
     </div>
   );
-}
-
-function getScoreColor(score: number): string {
-  if (score < 0.25) return "#22c55e";
-  if (score < 0.5) return "#facc15";
-  if (score < 0.75) return "#f97316";
-  return "#dc2626";
 }

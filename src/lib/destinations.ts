@@ -128,24 +128,3 @@ export function hreflangSlugMap(slug: string): Record<string, string> | undefine
   }
   return map;
 }
-
-export type CrowdLevel = "high" | "medium" | "low";
-
-/**
- * Month-level crowd level, derived from the destination's peakMonths using the
- * same peak / adjacent / off-season logic as getAttractiveness in capacity.ts
- * (peak -> high, month next to a peak -> medium, otherwise -> low).
- */
-export function monthCrowdLevel(peakMonths: number[], month: number): CrowdLevel {
-  if (peakMonths.length === 12) return "high";
-  if (peakMonths.includes(month)) return "high";
-  const prev = month === 1 ? 12 : month - 1;
-  const next = month === 12 ? 1 : month + 1;
-  if (peakMonths.includes(prev) || peakMonths.includes(next)) return "medium";
-  return "low";
-}
-
-/** Months (1-12) at each crowd level for a destination. */
-export function crowdByMonth(peakMonths: number[]): CrowdLevel[] {
-  return Array.from({ length: 12 }, (_, i) => monthCrowdLevel(peakMonths, i + 1));
-}
