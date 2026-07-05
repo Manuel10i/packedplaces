@@ -158,7 +158,7 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: March 2026",
+    "lastUpdated": "Last updated: July 2026",
     "controllerTitle": "Data Controller",
     "controllerText": "PackedPlaces.com is operated by 10ideen.at. For any privacy-related inquiries, please use our contact form.",
     "collectTitle": "What Data We Collect",
@@ -167,7 +167,7 @@
     "cookiesText": "We use a single functional cookie to remember your language preference:",
     "cookieLocale": "Stores your preferred language (en, de, es, fr). Expires after 1 year.",
     "analyticsTitle": "Google Analytics",
-    "analyticsText": "We use Google Analytics 4 to understand how visitors use our site. Google Analytics collects anonymized usage data including pages visited, time on site, and general geographic region. No personally identifiable information is collected. You can opt out by using a browser extension or enabling Do Not Track.",
+    "analyticsText": "We use Google Analytics 4 to understand how visitors use our site. It is only loaded after you accept analytics cookies in our consent banner. Until you accept, no analytics run and no analytics cookies are set, and if you decline it is never loaded. When enabled, Google Analytics collects anonymized usage data such as pages visited, time on site, and general geographic region. No personally identifiable information is collected. You can withdraw your consent at any time by clearing this site's data in your browser, which brings the consent banner back.",
     "contactDataTitle": "Contact Form Data",
     "contactDataText": "When you submit our contact form, we collect your name, email address, and message. This data is sent via email using Resend and is used solely to respond to your inquiry. We do not store contact form submissions in a database or share them with third parties.",
     "rightsTitle": "Your Rights (GDPR)",

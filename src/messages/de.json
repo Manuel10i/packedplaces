@@ -158,7 +158,7 @@
   },
   "privacy": {
     "title": "Datenschutzerklärung",
-    "lastUpdated": "Zuletzt aktualisiert: März 2026",
+    "lastUpdated": "Zuletzt aktualisiert: Juli 2026",
     "controllerTitle": "Verantwortlicher",
     "controllerText": "PackedPlaces.com wird von 10ideen.at betrieben. Für datenschutzbezogene Anfragen nutzen Sie bitte unser Kontaktformular.",
     "collectTitle": "Welche Daten wir erheben",
@@ -167,7 +167,7 @@
     "cookiesText": "Wir verwenden ein einziges funktionales Cookie, um Ihre Spracheinstellung zu speichern:",
     "cookieLocale": "Speichert Ihre bevorzugte Sprache (en, de, es, fr). Läuft nach 1 Jahr ab.",
     "analyticsTitle": "Google Analytics",
-    "analyticsText": "Wir verwenden Google Analytics 4, um zu verstehen, wie Besucher unsere Website nutzen. Google Analytics erfasst anonymisierte Nutzungsdaten wie besuchte Seiten, Verweildauer und allgemeine geografische Region. Es werden keine personenbezogenen Daten erhoben. Sie können die Erfassung durch eine Browser-Erweiterung oder die Aktivierung von Do Not Track deaktivieren.",
+    "analyticsText": "Wir verwenden Google Analytics 4, um zu verstehen, wie Besucher unsere Website nutzen. Es wird erst geladen, nachdem Sie im Consent-Banner der Analyse zugestimmt haben. Bis zur Zustimmung läuft keine Analyse und es werden keine Analyse-Cookies gesetzt; lehnen Sie ab, wird es nie geladen. Bei aktivierter Analyse erfasst Google Analytics anonymisierte Nutzungsdaten wie besuchte Seiten, Verweildauer und allgemeine geografische Region. Es werden keine personenbezogenen Daten erhoben. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Websitedaten dieser Seite in Ihrem Browser löschen; danach erscheint der Consent-Banner erneut.",
     "contactDataTitle": "Kontaktformular-Daten",
     "contactDataText": "Wenn Sie unser Kontaktformular absenden, erheben wir Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht. Diese Daten werden per E-Mail über Resend gesendet und ausschließlich zur Beantwortung Ihrer Anfrage verwendet. Wir speichern Kontaktformular-Eingaben nicht in einer Datenbank und geben sie nicht an Dritte weiter.",
     "rightsTitle": "Ihre Rechte (DSGVO)",

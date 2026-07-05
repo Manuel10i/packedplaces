@@ -158,7 +158,7 @@
   },
   "privacy": {
     "title": "Politique de confidentialité",
-    "lastUpdated": "Dernière mise à jour : mars 2026",
+    "lastUpdated": "Dernière mise à jour : juillet 2026",
     "controllerTitle": "Responsable du traitement",
     "controllerText": "PackedPlaces.com est exploité par 10ideen.at. Pour toute question relative à la confidentialité, veuillez utiliser notre formulaire de contact.",
     "collectTitle": "Données que nous collectons",
@@ -167,7 +167,7 @@
     "cookiesText": "Nous utilisons un seul cookie fonctionnel pour mémoriser votre préférence linguistique :",
     "cookieLocale": "Stocke votre langue préférée (en, de, es, fr). Expire après 1 an.",
     "analyticsTitle": "Google Analytics",
-    "analyticsText": "Nous utilisons Google Analytics 4 pour comprendre comment les visiteurs utilisent notre site. Google Analytics collecte des données d'utilisation anonymisées telles que les pages visitées, le temps passé sur le site et la région géographique générale. Aucune information personnellement identifiable n'est collectée. Vous pouvez vous désinscrire en utilisant une extension de navigateur ou en activant Do Not Track.",
+    "analyticsText": "Nous utilisons Google Analytics 4 pour comprendre comment les visiteurs utilisent notre site. Il n'est chargé qu'après votre acceptation des cookies d'analyse dans notre bannière de consentement. Tant que vous n'avez pas accepté, aucune analyse ne s'exécute et aucun cookie d'analyse n'est déposé; si vous refusez, il n'est jamais chargé. Lorsqu'il est activé, Google Analytics collecte des données d'utilisation anonymisées telles que les pages visitées, le temps passé sur le site et la région géographique générale. Aucune information personnellement identifiable n'est collectée. Vous pouvez retirer votre consentement à tout moment en effaçant les données de ce site dans votre navigateur, ce qui fait réapparaître la bannière de consentement.",
     "contactDataTitle": "Données du formulaire de contact",
     "contactDataText": "Lorsque vous soumettez notre formulaire de contact, nous collectons votre nom, adresse e-mail et message. Ces données sont envoyées par e-mail via Resend et sont utilisées uniquement pour répondre à votre demande. Nous ne stockons pas les soumissions du formulaire de contact dans une base de données et ne les partageons pas avec des tiers.",
     "rightsTitle": "Vos droits (RGPD)",
