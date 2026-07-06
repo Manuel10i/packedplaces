@@ -200,7 +200,7 @@
     "contactTitle": "Contacto",
     "contactText": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos RGPD, contáctenos a través de nuestro formulario de contacto.",
     "metaTitle": "Política de privacidad — PackedPlaces.com",
-    "metaDescription": "Política de privacidad de PackedPlaces.com — cómo tratamos sus datos, cookies y analíticas."
+    "metaDescription": "Política de privacidad de PackedPlaces.com: cómo tratamos sus datos, cookies y analíticas."
   },
   "contact": {
     "title": "Contacto",
@@ -223,7 +223,7 @@
     "errorServer": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
     "errorTurnstile": "La verificación captcha falló. Por favor, inténtelo de nuevo.",
     "metaTitle": "Contacto — PackedPlaces.com",
-    "metaDescription": "Póngase en contacto con el equipo de PackedPlaces.com — preguntas, comentarios y sugerencias son bienvenidos."
+    "metaDescription": "Póngase en contacto con el equipo de PackedPlaces.com: preguntas, comentarios y sugerencias son bienvenidos."
   },
   "featurePages": {
     "shell": {
@@ -465,9 +465,9 @@
     "system": "Sistema"
   },
   "meta": {
-    "title": "PackedPlaces.com — Descubra lo masificados que están realmente los destinos turísticos",
+    "title": "PackedPlaces.com: Descubra lo masificados que están realmente los destinos turísticos",
     "description": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de más de 100 países.",
-    "ogTitle": "PackedPlaces.com — Descubra lo masificados que están realmente los destinos turísticos",
+    "ogTitle": "PackedPlaces.com: Descubra lo masificados que están realmente los destinos turísticos",
     "ogDescription": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de más de 100 países."
   },
   "bestTime": {

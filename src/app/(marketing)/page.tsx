@@ -29,7 +29,7 @@ const webAppJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+  title: "PackedPlaces.com: See How Crowded Travel Destinations Really Get",
   alternates: { canonical: "https://packedplaces.com" },
 };
 

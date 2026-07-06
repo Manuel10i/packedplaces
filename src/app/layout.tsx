@@ -48,6 +48,24 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "https://packedplaces.com",
       siteName: "PackedPlaces.com",
       type: "website",
+      images: [
+        {
+          // Generated 1200x630 card (next/og), resolved against metadataBase.
+          url: "/api/og",
+          width: 1200,
+          height: 630,
+          alt: t("ogTitle"),
+        },
+      ],
+    },
+    twitter: {
+      // Large-image card so shared links render a full-width preview instead of
+      // the tiny bild-less "summary" thumbnail. twitter.images is omitted on
+      // purpose: with it absent, X falls back to og:image, so destination pages
+      // that set their own og:image get the correct card without touching twitter.
+      card: "summary_large_image",
+      title: t("ogTitle"),
+      description: t("ogDescription"),
     },
     // No hreflang alternates: the site serves every language from the same URL
     // (locale is negotiated, not path-prefixed), so per-language alternates would

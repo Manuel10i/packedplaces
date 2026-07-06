@@ -200,7 +200,7 @@
     "contactTitle": "Nous contacter",
     "contactText": "Si vous avez des questions sur cette politique de confidentialité ou souhaitez exercer vos droits RGPD, contactez-nous via notre formulaire de contact.",
     "metaTitle": "Politique de confidentialité — PackedPlaces.com",
-    "metaDescription": "Politique de confidentialité de PackedPlaces.com — comment nous traitons vos données, cookies et analyses."
+    "metaDescription": "Politique de confidentialité de PackedPlaces.com: comment nous traitons vos données, cookies et analyses."
   },
   "contact": {
     "title": "Contact",
@@ -223,7 +223,7 @@
     "errorServer": "Une erreur est survenue. Veuillez réessayer plus tard.",
     "errorTurnstile": "La vérification captcha a échoué. Veuillez réessayer.",
     "metaTitle": "Contact — PackedPlaces.com",
-    "metaDescription": "Contactez l'équipe de PackedPlaces.com — questions, retours et suggestions bienvenus."
+    "metaDescription": "Contactez l'équipe de PackedPlaces.com: questions, retours et suggestions bienvenus."
   },
   "featurePages": {
     "shell": {
@@ -465,9 +465,9 @@
     "system": "Système"
   },
   "meta": {
-    "title": "PackedPlaces.com — Découvrez l'affluence réelle des destinations touristiques",
+    "title": "PackedPlaces.com: Découvrez l'affluence réelle des destinations touristiques",
     "description": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de plus de 100 pays.",
-    "ogTitle": "PackedPlaces.com — Découvrez l'affluence réelle des destinations touristiques",
+    "ogTitle": "PackedPlaces.com: Découvrez l'affluence réelle des destinations touristiques",
     "ogDescription": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de plus de 100 pays."
   },
   "bestTime": {
