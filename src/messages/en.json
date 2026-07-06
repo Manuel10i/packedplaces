@@ -200,7 +200,7 @@
     "contactTitle": "Contact Us",
     "contactText": "If you have questions about this privacy policy or wish to exercise your GDPR rights, please reach out via our contact form.",
     "metaTitle": "Privacy Policy — PackedPlaces.com",
-    "metaDescription": "Privacy policy for PackedPlaces.com — how we handle your data, cookies, and analytics."
+    "metaDescription": "Privacy policy for PackedPlaces.com: how we handle your data, cookies, and analytics."
   },
   "contact": {
     "title": "Contact Us",
@@ -465,9 +465,9 @@
     "system": "System"
   },
   "meta": {
-    "title": "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    "title": "PackedPlaces.com: See How Crowded Travel Destinations Really Get",
     "description": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data from 100+ countries.",
-    "ogTitle": "PackedPlaces.com — See How Crowded Travel Destinations Really Get",
+    "ogTitle": "PackedPlaces.com: See How Crowded Travel Destinations Really Get",
     "ogDescription": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data from 100+ countries."
   },
   "bestTime": {
