@@ -520,5 +520,48 @@
     "title": "Alternativas más tranquilas",
     "lede": "Lugares similares que se mantienen más tranquilos en temporada alta.",
     "calmer": "{bands, plural, one {# nivel más tranquilo} other {# niveles más tranquilo}}"
+  },
+  "guides": {
+    "kicker": "Guía de multitudes",
+    "hubMetaTitle": "Guías de multitudes de viaje: adónde ir en vez de a los sitios abarrotados",
+    "hubMetaDescription": "Guías basadas en datos sobre destinos menos abarrotados, con las estimaciones de multitudes de PackedPlaces para más de 700 lugares.",
+    "hubTitle": "Guías",
+    "hubLede": "Guías prácticas y basadas en datos para viajar esquivando las multitudes. Cada elección es un destino real de nuestro conjunto de datos, valorado con el mismo modelo de multitudes que el mapa.",
+    "readGuide": "Leer la guía",
+    "busiestLabel": "Más lleno",
+    "quietestLabel": "Más tranquilo",
+    "viewDestination": "Ver el calendario de multitudes de {name}",
+    "openMap": "Abrir en el mapa",
+    "faqTitle": "Preguntas frecuentes",
+    "disclaimer": "Los niveles de multitud son estimaciones de un modelo estacional de demanda de viajes, no recuentos de visitantes en tiempo real. Muestran lo lleno que se pone un lugar respecto a su propia capacidad, para que compares el momento de ir, no cifras exactas de personas.",
+    "hallstatt": {
+      "cardTitle": "5 alternativas menos abarrotadas a Hallstatt (2026)",
+      "cardBlurb": "Pueblos con encanto junto a lagos y montañas que se mantienen más tranquilos que Hallstatt, ordenados según nuestros datos de multitudes.",
+      "metaTitle": "5 alternativas menos abarrotadas a Hallstatt (2026)",
+      "metaDescription": "Hallstatt atrae hasta 10.000 visitantes al día. Aquí tienes 5 cascos históricos europeos parecidos que se mantienen mucho más tranquilos, elegidos con los datos de PackedPlaces.",
+      "h1": "5 alternativas menos abarrotadas a Hallstatt (2026)",
+      "intro": "Hallstatt es uno de los pueblos pequeños más abarrotados de Europa: en un día punta pasan hasta 10.000 visitantes, para unos 750 habitantes. Nuestro modelo de multitudes lo califica como abarrotado en todos los meses del año. Si te encanta la estampa de lago y montaña pero no el gentío, estos 5 destinos figuran en nuestros datos como opciones realmente más tranquilas. Cada uno se mantiene por debajo del nivel de multitud de Hallstatt en todos y cada uno de los meses.",
+      "methodology": "Cómo elegimos: tomamos la puntuación de masificación que nuestro modelo asigna a cada lugar, mes a mes (el mismo modelo que hay detrás del mapa y de las páginas de destino), y nos quedamos con pueblos culturales parecidos que nunca alcanzan el nivel de lleno de Hallstatt. Los meses más llenos y más tranquilos de abajo se calculan en vivo a partir de esos datos, así que se actualizan cuando lo hace el conjunto de datos.",
+      "calmerBadge": "Por debajo del nivel de Hallstatt cada mes",
+      "picks": {
+        "cesky-krumlov": "Una ciudad-castillo renacentista abrazada por un meandro cerrado del río Moldava, con un casco antiguo tan fotogénico como el de Hallstatt. Es la opción más concurrida de esta lista en pleno verano, así que ve en primavera u otoño para tener las callejuelas para ti.",
+        "colmar": "Casas de entramado de madera y canales bordeados de flores en Alsacia, la estampa de cuento que se busca en Hallstatt, con una fracción de la densidad. Nuestros datos lo mantienen tranquilo incluso en su mes más concurrido.",
+        "karlovy-vary": "Una ciudad balneario de tonos pastel a lo largo de un valle fluvial en las colinas de Bohemia, con columnatas y bosque en las laderas. En el modelo se mantiene tranquila todo el año.",
+        "eger": "Una ciudad barroca de baños termales, un castillo en lo alto y valles vinícolas llenos de bodegas en el norte de Hungría. Una de las opciones más tranquilas de esta lista, mes tras mes.",
+        "mostar": "El reconstruido puente otomano se arquea sobre el turquesa Neretva, enmarcado por calles de piedra del casco antiguo. En nuestros datos resulta tranquilo incluso en su punta de verano."
+      },
+      "faq": {
+        "q1": "¿De verdad está Hallstatt tan abarrotado?",
+        "a1": "En temporada alta Hallstatt recibe hasta 10.000 visitantes al día frente a unos 750 habitantes, y nuestro modelo estacional lo califica como abarrotado en los doce meses. Por eso los vecinos han pedido un sistema de reserva de visitas.",
+        "q2": "¿Cuál es la mejor época para visitar estas alternativas?",
+        "a2": "Cada opción indica arriba sus meses más llenos y más tranquilos, calculados con nuestros datos. Como regla, el final de la primavera y el principio del otoño dan las menores multitudes en las cinco con buen tiempo aún. Solo Český Krumlov se llena de verdad en pleno verano.",
+        "q3": "¿Cómo se calculan los niveles de multitud?",
+        "a3": "Proceden de un modelo de demanda de viajes que combina la popularidad y la capacidad de cada lugar con el calendario de vacaciones escolares de más de 100 países, el mismo modelo que impulsa el mapa de PackedPlaces. Son estimaciones relativas de multitud, no recuentos de visitantes en tiempo real."
+      },
+      "ctaTitle": "Comprueba las multitudes tú mismo",
+      "ctaText": "Abre el mapa en vivo para comparar cualquiera de estos pueblos semana a semana, o consulta el propio calendario de multitudes de Hallstatt.",
+      "ctaButton": "Explorar el mapa de multitudes",
+      "ctaCompare": "Ver el calendario de Hallstatt"
+    }
   }
 }

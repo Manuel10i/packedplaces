@@ -520,5 +520,48 @@
     "title": "Alternatives plus calmes",
     "lede": "Des lieux similaires qui restent plus calmes en haute saison.",
     "calmer": "{bands, plural, one {# niveau plus calme} other {# niveaux plus calmes}}"
+  },
+  "guides": {
+    "kicker": "Guide affluence",
+    "hubMetaTitle": "Guides d'affluence voyage : où aller plutôt que dans les lieux bondés",
+    "hubMetaDescription": "Des guides fondés sur les données vers des destinations moins bondées, à partir des estimations d'affluence PackedPlaces pour plus de 700 lieux.",
+    "hubTitle": "Guides",
+    "hubLede": "Des guides pratiques et fondés sur les données pour voyager en évitant la foule. Chaque choix est une destination réelle de notre jeu de données, évaluée avec le même modèle d'affluence que la carte.",
+    "readGuide": "Lire le guide",
+    "busiestLabel": "Plus fréquenté",
+    "quietestLabel": "Plus calme",
+    "viewDestination": "Voir le calendrier d'affluence de {name}",
+    "openMap": "Ouvrir sur la carte",
+    "faqTitle": "Questions fréquentes",
+    "disclaimer": "Les niveaux d'affluence sont des estimations issues d'un modèle saisonnier de demande touristique, pas des comptages de visiteurs en temps réel. Ils montrent à quel point un lieu se remplit par rapport à sa propre capacité, pour comparer le moment où partir, pas des effectifs exacts.",
+    "hallstatt": {
+      "cardTitle": "5 alternatives moins bondées à Hallstatt (2026)",
+      "cardBlurb": "Des villages de charme entre lac et montagnes qui restent plus calmes que Hallstatt, classés selon nos données d'affluence.",
+      "metaTitle": "5 alternatives moins bondées à Hallstatt (2026)",
+      "metaDescription": "Hallstatt attire jusqu'à 10 000 visiteurs par jour. Voici 5 villes historiques européennes similaires qui restent bien plus calmes, choisies avec les données PackedPlaces.",
+      "h1": "5 alternatives moins bondées à Hallstatt (2026)",
+      "intro": "Hallstatt est l'un des petits villages les plus bondés d'Europe : jusqu'à 10 000 visiteurs y passent un jour de pointe, pour environ 750 habitants. Notre modèle d'affluence le classe comme bondé chaque mois de l'année. Si vous aimez le décor de lac au pied des montagnes mais pas la cohue, ces 5 destinations figurent dans nos données comme des choix vraiment plus calmes. Chacune reste sous le niveau d'affluence de Hallstatt tous les mois sans exception.",
+      "methodology": "Comment nous avons choisi : nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et gardé des villes culturelles similaires qui n'atteignent jamais le niveau bondé de Hallstatt. Les mois les plus fréquentés et les plus calmes ci-dessous sont calculés en direct à partir de ces données, donc ils se mettent à jour dès que le jeu de données change.",
+      "calmerBadge": "Sous le niveau de Hallstatt chaque mois",
+      "picks": {
+        "cesky-krumlov": "Une ville-château Renaissance lovée dans un méandre serré de la Vltava, avec un cœur de vieille ville aussi photogénique que celui de Hallstatt. C'est le choix le plus fréquenté de cette liste en plein été, visez donc le printemps ou l'automne pour avoir les ruelles à vous.",
+        "colmar": "Maisons à colombages et canaux bordés de fleurs en Alsace, le décor de conte que l'on cherche à Hallstatt, avec une fraction de la densité. Nos données le gardent calme même lors de son mois le plus fréquenté.",
+        "karlovy-vary": "Une ville thermale aux tons pastel le long d'une vallée fluviale dans les collines de Bohême, entre colonnades et coteaux boisés. Dans le modèle, elle reste calme toute l'année.",
+        "eger": "Une ville baroque de bains thermaux, un château sur la colline et des vallées viticoles bordées de caves dans le nord de la Hongrie. L'un des choix les plus calmes de cette liste, mois après mois.",
+        "mostar": "Le pont ottoman reconstruit s'arque au-dessus de la Neretva turquoise, encadré par les ruelles de pierre de la vieille ville. Dans nos données, le lieu paraît calme même à son pic estival."
+      },
+      "faq": {
+        "q1": "Hallstatt est-il vraiment aussi bondé ?",
+        "a1": "En haute saison, Hallstatt voit jusqu'à 10 000 visiteurs par jour pour environ 750 habitants, et notre modèle saisonnier le classe comme bondé les douze mois. C'est pourquoi les habitants réclament un système de réservation des visites.",
+        "q2": "Quelle est la meilleure période pour visiter ces alternatives ?",
+        "a2": "Chaque choix indique plus haut ses mois les plus fréquentés et les plus calmes, calculés à partir de nos données. En règle générale, la fin du printemps et le début de l'automne offrent le moins de foule sur les cinq, avec un temps encore agréable. Seule Český Krumlov devient vraiment fréquentée en plein été.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés ?",
+        "a3": "Ils proviennent d'un modèle de demande touristique qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en temps réel."
+      },
+      "ctaTitle": "Voyez la foule par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer ces villes semaine par semaine, ou consultez le calendrier d'affluence de Hallstatt.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier de Hallstatt"
+    }
   }
 }
