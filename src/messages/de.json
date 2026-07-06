@@ -520,5 +520,48 @@
     "title": "Ruhigere Alternativen",
     "lede": "Ähnliche Orte, die in der Hochsaison ruhiger bleiben.",
     "calmer": "{bands, plural, one {# Stufe ruhiger} other {# Stufen ruhiger}}"
+  },
+  "guides": {
+    "kicker": "Reise-Ratgeber",
+    "hubMetaTitle": "Reise-Guides zu Menschenmassen: wohin statt an die überlaufenen Orte",
+    "hubMetaDescription": "Datenbasierte Guides zu weniger überlaufenen Reisezielen, auf Basis der PackedPlaces-Crowd-Schätzungen für über 700 Orte.",
+    "hubTitle": "Guides",
+    "hubLede": "Praktische, datenbasierte Guides, um den Menschenmassen auszuweichen. Jede Empfehlung ist ein echtes Ziel aus unserem Datensatz, bewertet mit demselben Crowd-Modell wie die Karte.",
+    "readGuide": "Zum Guide",
+    "busiestLabel": "Am vollsten",
+    "quietestLabel": "Am ruhigsten",
+    "viewDestination": "Crowd-Kalender von {name} ansehen",
+    "openMap": "Auf der Karte öffnen",
+    "faqTitle": "Häufige Fragen",
+    "disclaimer": "Die Crowd-Werte sind Schätzungen aus einem saisonalen Reisenachfrage-Modell, keine Live-Besucherzahlen. Sie zeigen, wie voll ein Ort im Verhältnis zu seiner eigenen Kapazität wird, damit Sie das Timing vergleichen können, nicht exakte Kopfzahlen.",
+    "hallstatt": {
+      "cardTitle": "5 weniger überlaufene Alternativen zu Hallstatt (2026)",
+      "cardBlurb": "Historische Orte an See und Bergen, die ruhiger bleiben als Hallstatt, sortiert nach unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zu Hallstatt (2026)",
+      "metaDescription": "Hallstatt zieht bis zu 10.000 Besucher pro Tag an. Hier sind 5 ähnliche europäische Altstädte, die deutlich ruhiger bleiben, ausgewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zu Hallstatt (2026)",
+      "intro": "Hallstatt ist eines der überlaufensten kleinen Dörfer Europas: An einem Spitzentag strömen bis zu 10.000 Besucher durch die Gassen, bei rund 750 Einwohnern. Unser Crowd-Modell bewertet den Ort in jedem Monat des Jahres als voll ausgelastet. Wenn Sie den Look von See und Bergen lieben, aber nicht das Gedränge, sind diese 5 Ziele in unserem Datensatz echte, ruhigere Alternativen. Jedes bleibt in jedem einzelnen Monat unter dem Crowd-Niveau von Hallstatt.",
+      "methodology": "Die Auswahl: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Ziel-Seiten), und ähnliche Kulturstädte behalten, die nie das volle Niveau von Hallstatt erreichen. Die vollsten und ruhigsten Monate unten werden live aus diesen Daten berechnet und aktualisieren sich, sobald sich der Datensatz ändert.",
+      "calmerBadge": "Jeden Monat unter Hallstatts Crowd-Niveau",
+      "picks": {
+        "cesky-krumlov": "Eine Renaissance-Schlossstadt in einer engen Moldau-Schleife, mit einem fotogenen Altstadtkern ganz ähnlich wie Hallstatt. Sie ist die vollste Empfehlung hier im Hochsommer, planen Sie daher Frühling oder Herbst, um die Gassen für sich zu haben.",
+        "colmar": "Fachwerkhäuser und blumengesäumte Kanäle im Elsass, der Bilderbuch-Look, den man in Hallstatt sucht, bei einem Bruchteil der Dichte. Unsere Daten halten den Ort selbst im vollsten Monat ruhig.",
+        "karlovy-vary": "Eine pastellfarbene Kurstadt entlang eines Flusstals im böhmischen Hügelland, mit Kolonnaden und bewaldeten Hängen. Im Modell bleibt sie das ganze Jahr über ruhig.",
+        "eger": "Eine Barockstadt mit Thermalbädern, einer Burg auf dem Hügel und kellergesäumten Weintälern in Nordungarn. Eine der ruhigsten Empfehlungen dieser Liste, Monat für Monat.",
+        "mostar": "Die wiederaufgebaute osmanische Brücke spannt sich über die türkise Neretva, gerahmt von steinernen Altstadtgassen. In unseren Daten wirkt der Ort selbst im Sommerhoch ruhig."
+      },
+      "faq": {
+        "q1": "Ist Hallstatt wirklich so überlaufen?",
+        "a1": "In der Hochsaison zählt Hallstatt bis zu 10.000 Besucher pro Tag bei rund 750 Einwohnern, und unser saisonales Crowd-Modell bewertet den Ort in allen zwölf Monaten als voll. Deshalb fordern Einheimische ein Besucher-Buchungssystem.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jede Empfehlung nennt oben ihre vollsten und ruhigsten Monate, berechnet aus unseren Crowd-Daten. Als Faustregel bieten der späte Frühling und der frühe Herbst an allen fünf Orten die geringsten Menschenmengen bei noch gutem Wetter. Nur Český Krumlov wird im Hochsommer wirklich voll.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das Beliebtheit und Kapazität jedes Orts mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell hinter der PackedPlaces-Karte. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sehen Sie die Crowds selbst",
+      "ctaText": "Öffnen Sie die Live-Karte, um diese Orte Woche für Woche zu vergleichen, oder prüfen Sie Hallstatts eigenen Crowd-Kalender.",
+      "ctaButton": "Crowd-Karte erkunden",
+      "ctaCompare": "Hallstatts Crowd-Kalender ansehen"
+    }
   }
 }

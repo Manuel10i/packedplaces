@@ -520,5 +520,48 @@
     "title": "Quieter alternatives",
     "lede": "Similar places that stay calmer in peak season.",
     "calmer": "{bands, plural, one {# band calmer} other {# bands calmer}}"
+  },
+  "guides": {
+    "kicker": "Crowd guide",
+    "hubMetaTitle": "Travel crowd guides: where to go instead of the packed spots",
+    "hubMetaDescription": "Data-backed guides to less crowded travel destinations, built on PackedPlaces crowd estimates for 700+ places.",
+    "hubTitle": "Guides",
+    "hubLede": "Practical, data-backed guides to travelling around the crowds. Every pick is a real destination in our dataset, rated with the same crowd model as the map.",
+    "readGuide": "Read the guide",
+    "busiestLabel": "Busiest",
+    "quietestLabel": "Quietest",
+    "viewDestination": "See {name}'s crowd calendar",
+    "openMap": "Open on the map",
+    "faqTitle": "Frequently asked questions",
+    "disclaimer": "Crowd levels are estimates from a seasonal travel-demand model, not live visitor counts. They show how busy a place gets relative to its own capacity, so you can compare timing rather than exact head counts.",
+    "hallstatt": {
+      "cardTitle": "5 Less Crowded Alternatives to Hallstatt (2026)",
+      "cardBlurb": "Lake-and-mountain heritage towns that stay calmer than Hallstatt, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to Hallstatt (2026)",
+      "metaDescription": "Hallstatt draws up to 10,000 visitors a day. Here are 5 similar European heritage towns that stay far calmer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to Hallstatt (2026)",
+      "intro": "Hallstatt is one of Europe's most crowded small villages: up to 10,000 visitors pass through on a peak day, for around 750 residents. Our crowd model rates it packed in every month of the year. If you love the lake-below-the-mountains look but not the crush, these 5 destinations sit in our dataset as genuinely calmer picks. Each one stays below Hallstatt's crowd level in every single month.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept similar cultural towns that never reach Hallstatt's packed level. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below Hallstatt's crowd level every month",
+      "picks": {
+        "cesky-krumlov": "A Renaissance castle town wrapped in a tight bend of the Vltava, with a photogenic old-town core much like Hallstatt's. It is the busiest pick here in midsummer, so aim for spring or autumn to have the lanes to yourself.",
+        "colmar": "Half-timbered houses and flower-lined canals in Alsace, the storybook look people chase in Hallstatt, at a fraction of the density. Our data keeps it quiet even in its busiest month.",
+        "karlovy-vary": "A pastel spa town strung along a river valley in the Bohemian hills, all colonnades and wooded slopes. It stays calm across the whole year in our model.",
+        "eger": "A baroque town of thermal baths, a hilltop castle and cellar-lined wine valleys in northern Hungary. One of the quietest picks on this list, month in, month out.",
+        "mostar": "The rebuilt Ottoman bridge arcs over the turquoise Neretva, framed by stone old-town streets. It reads as quiet in our data even at its summer peak."
+      },
+      "faq": {
+        "q1": "Is Hallstatt really that crowded?",
+        "a1": "In peak season Hallstatt sees up to 10,000 visitors a day against roughly 750 residents, and our seasonal crowd model rates it packed in all twelve months. That is why locals have pushed for a visitor-booking system.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you the mildest crowds at all five while the weather is still good. Only Cesky Krumlov gets genuinely busy in midsummer.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these towns week by week, or check Hallstatt's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See Hallstatt's crowd calendar"
+    }
   }
 }
