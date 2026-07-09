@@ -40,6 +40,20 @@ export const guides: Guide[] = [
     publishedISO: "2026-07-06",
     i18nKey: "hallstatt",
   },
+  {
+    slug: "less-crowded-alternatives-to-venice",
+    targetId: "IT-VENICE",
+    targetSlug: "venice",
+    alternativeSlugs: [
+      "bruges",
+      "lake-annecy",
+      "giethoorn",
+      "piran",
+      "rovinj",
+    ],
+    publishedISO: "2026-07-09",
+    i18nKey: "venice",
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

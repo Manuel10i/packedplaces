@@ -562,6 +562,35 @@
       "ctaText": "Open the live map to compare any of these towns week by week, or check Hallstatt's own crowd calendar.",
       "ctaButton": "Explore the crowd map",
       "ctaCompare": "See Hallstatt's crowd calendar"
+    },
+    "venice": {
+      "cardTitle": "5 Less Crowded Alternatives to Venice (2026)",
+      "cardBlurb": "Canal towns and Venetian-heritage ports that stay calmer than Venice, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to Venice (2026)",
+      "metaDescription": "Venice now charges day-trippers to enter its historic center. Here are 5 canal towns and Venetian ports that stay far calmer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to Venice (2026)",
+      "intro": "Venice is the postcard of overtourism: it now charges day visitors a Contributo di Accesso, an access fee of 5 to 10 euros to enter the historic center on peak days. Our crowd model rates it very busy to packed in every month of the year. If you love the water-and-old-stone feeling but not the crush, these 5 destinations sit in our dataset as genuinely calmer picks. Each one stays below Venice's crowd level in every single month.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept canal towns and Venetian-heritage ports that never reach Venice's crowd level. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below Venice's crowd level every month",
+      "picks": {
+        "bruges": "The Venice of the North: a lattice of medieval canals, stepped gable houses and a market square in Flanders. It is the busiest pick here, so aim for spring or autumn rather than the July peak to keep the bridges to yourself.",
+        "lake-annecy": "The Venice of the Alps, where pastel houses lean over flower-lined canals that run down to a startlingly clear turquoise lake. Our data keeps it moderate even in its busiest month.",
+        "giethoorn": "A car-free village in the Dutch polders where the only streets are canals, crossed by wooden footbridges between thatched farmhouses. It reads as quiet in our model for most of the year.",
+        "piran": "A Venetian-Gothic port on the tip of Slovenia's short coast, all narrow lanes and a sea-facing square named for the composer Tartini. Four centuries under Venice, a fraction of the crowds.",
+        "rovinj": "A former Venetian harbour town in Istria, its old quarter rising to a bell tower modelled on the campanile of San Marco. The quietest pick on this list, month in, month out."
+      },
+      "faq": {
+        "q1": "Does Venice really charge visitors to enter?",
+        "a1": "Yes. Since 2024 Venice runs an official access fee (the Contributo di Accesso) for day visitors to the historic center on busy days, currently 5 euros if booked ahead and 10 euros last minute. Our seasonal crowd model rates the city very busy to packed in all twelve months.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you the mildest crowds while the weather is still good. Only Bruges gets genuinely busy in midsummer.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these towns week by week, or check Venice's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See Venice's crowd calendar"
     }
   }
 }

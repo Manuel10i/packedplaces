@@ -562,6 +562,35 @@
       "ctaText": "Öffnen Sie die Live-Karte, um diese Orte Woche für Woche zu vergleichen, oder prüfen Sie Hallstatts eigenen Crowd-Kalender.",
       "ctaButton": "Crowd-Karte erkunden",
       "ctaCompare": "Hallstatts Crowd-Kalender ansehen"
+    },
+    "venice": {
+      "cardTitle": "5 weniger überlaufene Alternativen zu Venedig (2026)",
+      "cardBlurb": "Kanalstädte und venezianisch geprägte Häfen, die ruhiger bleiben als Venedig, sortiert nach unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zu Venedig (2026)",
+      "metaDescription": "Venedig verlangt inzwischen eine Zutrittsgebühr von Tagesgästen. Hier sind 5 Kanalstädte und venezianische Häfen, die deutlich ruhiger bleiben, gewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zu Venedig (2026)",
+      "intro": "Venedig ist das Sinnbild für Übertourismus: Für Tagesgäste gilt inzwischen ein Contributo di Accesso, eine Zutrittsgebühr von 5 bis 10 Euro, um an Spitzentagen in die Altstadt zu gelangen. Unser Crowd-Modell bewertet die Stadt in jedem Monat des Jahres als sehr voll bis überfüllt. Wenn Sie das Gefühl von Wasser und altem Stein lieben, aber nicht das Gedränge, sind diese 5 Ziele in unserem Datensatz echte, ruhigere Alternativen. Jedes bleibt in wirklich jedem Monat unter Venedigs Crowd-Niveau.",
+      "methodology": "So haben wir gewählt: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Zielseiten), und Kanalstädte sowie venezianisch geprägte Häfen behalten, die nie Venedigs Niveau erreichen. Der vollste und der ruhigste Monat unten werden live aus diesen Daten berechnet und aktualisieren sich, sobald sich der Datensatz ändert.",
+      "calmerBadge": "Jeden Monat unter Venedigs Crowd-Niveau",
+      "picks": {
+        "bruges": "Das Venedig des Nordens: ein Geflecht mittelalterlicher Kanäle, Treppengiebelhäuser und ein Marktplatz in Flandern. Es ist der vollste Tipp hier, planen Sie also lieber Frühling oder Herbst statt der Juli-Spitze, um die Brücken für sich zu haben.",
+        "lake-annecy": "Das Venedig der Alpen, wo pastellfarbene Häuser sich über blumengesäumte Kanäle neigen, die zu einem erstaunlich klaren, türkisen See hinabführen. Unsere Daten halten es selbst im vollsten Monat moderat.",
+        "giethoorn": "Ein autofreies Dorf in den niederländischen Poldern, in dem die einzigen Straßen Kanäle sind, überspannt von hölzernen Fußbrücken zwischen reetgedeckten Bauernhäusern. In unserem Modell bleibt es die meiste Zeit des Jahres ruhig.",
+        "piran": "Ein venezianisch-gotischer Hafen an der Spitze von Sloweniens kurzer Küste, mit engen Gassen und einem zum Meer offenen Platz, benannt nach dem Komponisten Tartini. Vier Jahrhunderte unter Venedig, ein Bruchteil des Andrangs.",
+        "rovinj": "Eine ehemalige venezianische Hafenstadt in Istrien, deren Altstadt zu einem Glockenturm ansteigt, der dem Campanile von San Marco nachempfunden ist. Der ruhigste Tipp dieser Liste, Monat für Monat."
+      },
+      "faq": {
+        "q1": "Verlangt Venedig wirklich Eintritt?",
+        "a1": "Ja. Seit 2024 erhebt Venedig an vielen Tagen eine offizielle Zutrittsgebühr (den Contributo di Accesso) für Tagesgäste der Altstadt, derzeit 5 Euro bei Vorabbuchung und 10 Euro kurzfristig. Unser saisonales Crowd-Modell bewertet die Stadt in allen zwölf Monaten als sehr voll bis überfüllt.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jeder Tipp nennt oben seinen vollsten und ruhigsten Monat, berechnet aus unseren Crowd-Daten. Als Faustregel bieten später Frühling und früher Herbst das mildeste Gedränge bei noch gutem Wetter. Nur Brügge wird im Hochsommer wirklich voll.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das Beliebtheit und Kapazität jedes Orts mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell hinter der PackedPlaces-Karte. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sehen Sie die Crowds selbst",
+      "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Städte Woche für Woche zu vergleichen, oder prüfen Sie Venedigs eigenen Crowd-Kalender.",
+      "ctaButton": "Crowd-Karte erkunden",
+      "ctaCompare": "Venedigs Crowd-Kalender ansehen"
     }
   }
 }
