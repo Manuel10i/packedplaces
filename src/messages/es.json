@@ -562,6 +562,35 @@
       "ctaText": "Abre el mapa en vivo para comparar cualquiera de estos pueblos semana a semana, o consulta el propio calendario de multitudes de Hallstatt.",
       "ctaButton": "Explorar el mapa de multitudes",
       "ctaCompare": "Ver el calendario de Hallstatt"
+    },
+    "venice": {
+      "cardTitle": "5 alternativas menos concurridas a Venecia (2026)",
+      "cardBlurb": "Ciudades de canales y puertos de herencia veneciana que se mantienen más tranquilos que Venecia, ordenados con nuestros datos de multitudes.",
+      "metaTitle": "5 alternativas menos concurridas a Venecia (2026)",
+      "metaDescription": "Venecia ya cobra a los visitantes de un día por entrar en su centro histórico. Aquí tienes 5 ciudades de canales y puertos venecianos mucho más tranquilos, elegidos con datos de PackedPlaces.",
+      "h1": "5 alternativas menos concurridas a Venecia (2026)",
+      "intro": "Venecia es la postal del turismo masivo: ahora cobra a los visitantes de un día un Contributo di Accesso, una tasa de acceso de 5 a 10 euros para entrar en el centro histórico en los días punta. Nuestro modelo de multitudes la califica de muy llena a abarrotada en todos los meses del año. Si te gusta la sensación de agua y piedra antigua pero no el gentío, estos 5 destinos figuran en nuestros datos como opciones realmente más tranquilas. Cada uno se mantiene por debajo del nivel de Venecia todos y cada uno de los meses.",
+      "methodology": "Cómo elegimos: tomamos la puntuación de masificación que nuestro modelo asigna a cada lugar, mes a mes (el mismo modelo que hay detrás del mapa y de las páginas de destino), y nos quedamos con ciudades de canales y puertos de herencia veneciana que nunca alcanzan el nivel de Venecia. Los meses más llenos y más tranquilos de abajo se calculan en vivo a partir de esos datos, así que se actualizan cuando lo hace el conjunto de datos.",
+      "calmerBadge": "Por debajo del nivel de Venecia cada mes",
+      "picks": {
+        "bruges": "La Venecia del Norte: una red de canales medievales, casas de gablete escalonado y una plaza del mercado en Flandes. Es la opción más concurrida de la lista, así que apunta a primavera u otoño en lugar del pico de julio para tener los puentes para ti.",
+        "lake-annecy": "La Venecia de los Alpes, donde casas pastel se asoman sobre canales llenos de flores que bajan hasta un lago turquesa asombrosamente claro. Nuestros datos la mantienen moderada incluso en su mes más lleno.",
+        "giethoorn": "Un pueblo sin coches en los pólders holandeses donde las únicas calles son canales, cruzados por puentes de madera entre granjas con techo de paja. En nuestro modelo se mantiene tranquilo la mayor parte del año.",
+        "piran": "Un puerto de gótico veneciano en la punta de la corta costa de Eslovenia, todo callejones estrechos y una plaza frente al mar con el nombre del compositor Tartini. Cuatro siglos bajo Venecia, una fracción del gentío.",
+        "rovinj": "Una antigua ciudad portuaria veneciana en Istria, con un casco antiguo que asciende hasta un campanario inspirado en el de San Marcos. La opción más tranquila de esta lista, mes tras mes."
+      },
+      "faq": {
+        "q1": "¿De verdad Venecia cobra por entrar?",
+        "a1": "Sí. Desde 2024 Venecia aplica una tasa de acceso oficial (el Contributo di Accesso) a los visitantes de un día del centro histórico en los días concurridos, actualmente 5 euros con reserva previa y 10 euros a última hora. Nuestro modelo estacional de multitudes califica la ciudad de muy llena a abarrotada en los doce meses.",
+        "q2": "¿Cuándo es mejor visitar estas alternativas?",
+        "a2": "Cada opción indica arriba su mes más lleno y más tranquilo, calculado a partir de nuestros datos. Como regla, el final de la primavera y el principio del otoño ofrecen el menor gentío con buen tiempo. Solo Brujas se llena de verdad a pleno verano.",
+        "q3": "¿Cómo se calculan los niveles de multitud?",
+        "a3": "Proceden de un modelo de demanda de viajes que combina la popularidad y la capacidad de cada lugar con el calendario de vacaciones escolares de más de 100 países, el mismo modelo que impulsa el mapa de PackedPlaces. Son estimaciones relativas de multitud, no recuentos de visitantes en tiempo real."
+      },
+      "ctaTitle": "Ve las multitudes por ti mismo",
+      "ctaText": "Abre el mapa en vivo para comparar cualquiera de estos pueblos semana a semana, o consulta el propio calendario de multitudes de Venecia.",
+      "ctaButton": "Explorar el mapa de multitudes",
+      "ctaCompare": "Ver el calendario de multitudes de Venecia"
     }
   }
 }

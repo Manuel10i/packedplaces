@@ -562,6 +562,35 @@
       "ctaText": "Ouvrez la carte en direct pour comparer ces villes semaine par semaine, ou consultez le calendrier d'affluence de Hallstatt.",
       "ctaButton": "Explorer la carte d'affluence",
       "ctaCompare": "Voir le calendrier de Hallstatt"
+    },
+    "venice": {
+      "cardTitle": "5 alternatives moins fréquentées à Venise (2026)",
+      "cardBlurb": "Des villes de canaux et des ports d'héritage vénitien qui restent plus calmes que Venise, classés avec nos données d'affluence.",
+      "metaTitle": "5 alternatives moins fréquentées à Venise (2026)",
+      "metaDescription": "Venise fait désormais payer les visiteurs d'un jour pour entrer dans son centre historique. Voici 5 villes de canaux et ports vénitiens bien plus calmes, choisis avec les données PackedPlaces.",
+      "h1": "5 alternatives moins fréquentées à Venise (2026)",
+      "intro": "Venise est la carte postale du surtourisme : elle fait désormais payer aux visiteurs d'un jour un Contributo di Accesso, un droit d'accès de 5 à 10 euros pour entrer dans le centre historique les jours d'affluence. Notre modèle d'affluence la classe de très fréquentée à bondée chaque mois de l'année. Si vous aimez la sensation d'eau et de vieilles pierres mais pas la cohue, ces 5 destinations figurent dans nos données comme des choix vraiment plus calmes. Chacune reste sous le niveau de Venise chaque mois sans exception.",
+      "methodology": "Comment nous avons choisi : nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et gardé des villes de canaux et des ports d'héritage vénitien qui n'atteignent jamais le niveau de Venise. Les mois les plus fréquentés et les plus calmes ci-dessous sont calculés en direct à partir de ces données, donc ils se mettent à jour dès que le jeu de données change.",
+      "calmerBadge": "Sous le niveau de Venise chaque mois",
+      "picks": {
+        "bruges": "La Venise du Nord : un lacis de canaux médiévaux, des maisons à pignons à redents et une place du marché en Flandre. C'est le choix le plus fréquenté de la liste, visez donc le printemps ou l'automne plutôt que le pic de juillet pour avoir les ponts à vous.",
+        "lake-annecy": "La Venise des Alpes, où des maisons pastel se penchent sur des canaux fleuris qui descendent vers un lac turquoise d'une clarté saisissante. Nos données la maintiennent modérée même à son mois le plus chargé.",
+        "giethoorn": "Un village sans voiture dans les polders néerlandais où les seules rues sont des canaux, franchis par des passerelles en bois entre des fermes au toit de chaume. Dans notre modèle, il reste calme la majeure partie de l'année.",
+        "piran": "Un port de style gothique vénitien à la pointe de la courte côte slovène, tout en ruelles étroites et en une place tournée vers la mer portant le nom du compositeur Tartini. Quatre siècles sous Venise, une fraction de la foule.",
+        "rovinj": "Une ancienne ville portuaire vénitienne d'Istrie, dont la vieille ville s'élève vers un clocher inspiré du campanile de Saint-Marc. Le choix le plus calme de cette liste, mois après mois."
+      },
+      "faq": {
+        "q1": "Venise fait-elle vraiment payer l'entrée ?",
+        "a1": "Oui. Depuis 2024, Venise applique un droit d'accès officiel (le Contributo di Accesso) aux visiteurs d'un jour du centre historique les jours d'affluence, actuellement 5 euros en réservant à l'avance et 10 euros à la dernière minute. Notre modèle saisonnier classe la ville de très fréquentée à bondée les douze mois.",
+        "q2": "Quand vaut-il mieux visiter ces alternatives ?",
+        "a2": "Chaque choix indique ci-dessus son mois le plus fréquenté et le plus calme, calculé à partir de nos données. En règle générale, la fin du printemps et le début de l'automne offrent la moindre affluence avec un temps encore agréable. Seule Bruges devient vraiment fréquentée en plein été.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés ?",
+        "a3": "Ils proviennent d'un modèle de demande touristique qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en temps réel."
+      },
+      "ctaTitle": "Voyez les foules par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer ces villes semaine par semaine, ou consultez le calendrier d'affluence de Venise.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier d'affluence de Venise"
     }
   }
 }
