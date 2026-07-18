@@ -591,6 +591,93 @@
       "ctaText": "Open the live map to compare any of these towns week by week, or check Venice's own crowd calendar.",
       "ctaButton": "Explore the crowd map",
       "ctaCompare": "See Venice's crowd calendar"
+    },
+    "santorini": {
+      "cardTitle": "5 Less Crowded Alternatives to Santorini (2026)",
+      "cardBlurb": "Greek islands with the same Aegean beauty that stay calmer than Santorini in peak season, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to Santorini (2026)",
+      "metaDescription": "Santorini caps daily cruise arrivals to fight overtourism. Here are 5 Greek islands that stay far calmer in summer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to Santorini (2026)",
+      "intro": "Santorini is the poster child of Greek overtourism: its caldera villages get so packed that authorities now cap cruise arrivals at 8,000 a day. Our crowd model rates the island packed right through its May to September peak. If you love the whitewashed-cliffs-over-blue-sea look but not the summer crush, these 5 Greek islands sit in our dataset as genuinely calmer picks. Each one stays below Santorini's crowd level in every month of its peak season.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept Greek islands that never reach Santorini's level during its May to September peak. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below Santorini's crowd level all through peak season",
+      "picks": {
+        "paros": "A Cycladic island of whitewashed lanes, blue-domed chapels and windmills, with the same Aegean-cube look as Santorini and a genuine harbour town in Naoussa. It is the busiest pick here, so aim for June or September rather than the August peak.",
+        "milos": "A volcanic island born of the same geology as Santorini, ringed by pastel cliffs, lunar coves and the sculpted rock of Sarakiniko. It keeps far below Santorini's crush across the whole summer in our data.",
+        "naxos": "The largest of the Cyclades, with a marble-gateway harbour, mountain villages and long sandy beaches that soak up crowds without ever feeling packed. A calm all-rounder in our model right through the season.",
+        "skiathos": "A pine-green Sporades island fringed by dozens of sandy bays, with a lively but small harbour town facing the mainland. It reads as calm in our model even at its midsummer high.",
+        "cephalonia": "The biggest Ionian island, all turquoise coves, cypress ridges and the show-stopping beach of Myrtos below white cliffs. The quietest pick on this list, month in, month out."
+      },
+      "faq": {
+        "q1": "Is Santorini really that crowded?",
+        "a1": "In peak season Santorini draws enormous cruise and day-tripper numbers into a handful of small caldera villages, and local authorities cap cruise arrivals at 8,000 a day to ease the pressure. Our seasonal crowd model rates it packed across its whole May to September peak.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you the warmest sea with the mildest crowds. Only Paros gets genuinely busy at the August peak.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these islands week by week, or check Santorini's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See Santorini's crowd calendar"
+    },
+    "barcelona": {
+      "cardTitle": "5 Less Crowded Alternatives to Barcelona (2026)",
+      "cardBlurb": "Mediterranean and Iberian cities with the same architecture-and-sea appeal that stay calmer than Barcelona, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to Barcelona (2026)",
+      "metaDescription": "Barcelona is phasing out short-term tourist rentals to curb overtourism. Here are 5 Mediterranean cities that stay far calmer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to Barcelona (2026)",
+      "intro": "Barcelona has become a symbol of European overtourism: the city plans to scrap all of its short-term tourist rental licences by 2028 and has seen residents protest crowding in the streets. Our crowd model rates it very busy in the summer and busy the rest of the year, in every single month. If you love the mix of architecture, tapas culture and a city beach but not the crush, these 5 Mediterranean and Iberian cities sit in our dataset as genuinely calmer picks. Each one stays below Barcelona's crowd level in every single month.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept southern-European cities with a comparable culture-and-coast draw that never reach Barcelona's level. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below Barcelona's crowd level every month",
+      "picks": {
+        "valencia": "Spain's third city trades Barcelona's crush for a walkable old town, the futuristic City of Arts and Sciences and a broad city beach, plus the birthplace of paella. It sits well below Barcelona in our data every month of the year.",
+        "seville": "The heart of Andalusia, with a colossal Gothic cathedral, the Moorish Alcazar and orange-tree courtyards, a warmer-toned rival to Barcelona's architecture. Our model keeps it moderate all year.",
+        "porto": "A tiled Atlantic city stacked above the Douro, all baroque churches, port-wine cellars and a UNESCO old town, with the same layered street energy as Barcelona. It stays calm across the whole year in our data.",
+        "split": "A Dalmatian port built inside and around a Roman emperor's palace, where cafe life spills through 1,700-year-old walls to a palm-lined seafront. Firmly below Barcelona in our data in every month.",
+        "marseille": "France's oldest city and its Mediterranean counterweight to Barcelona: a working Vieux-Port, the hilltop Notre-Dame de la Garde, the Calanques on the doorstep and a bouillabaisse tradition. The quietest pick on this list in our model."
+      },
+      "faq": {
+        "q1": "Is Barcelona really that crowded?",
+        "a1": "Barcelona is one of Europe's most visited cities and has become a focal point for the overtourism debate, with plans to phase out its roughly 10,000 short-term tourist rental licences by 2028. Our seasonal crowd model rates it busy to very busy in all twelve months.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you the mildest crowds while the Mediterranean weather is still warm.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these cities week by week, or check Barcelona's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See Barcelona's crowd calendar"
+    },
+    "dubrovnik": {
+      "cardTitle": "5 Less Crowded Alternatives to Dubrovnik (2026)",
+      "cardBlurb": "Walled Adriatic old towns with the same stone-and-sea beauty that stay calmer than Dubrovnik in peak season, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to Dubrovnik (2026)",
+      "metaDescription": "Dubrovnik caps visitors inside its walls to fight overtourism. Here are 5 Adriatic walled towns that stay far calmer in summer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to Dubrovnik (2026)",
+      "intro": "Dubrovnik is one of the Mediterranean's most crowded old towns: the Game of Thrones effect and daily cruise arrivals push so many people through its walls that the city limits numbers inside the historic core to around 8,000 at a time. Our crowd model rates it packed right through its May to September peak. If you love the walled-stone-town-over-turquoise-sea look but not the summer crush, these 5 Adriatic old towns sit in our dataset as genuinely calmer picks. Each one stays below Dubrovnik's crowd level in every month of its peak season.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept walled Adriatic old towns that never reach Dubrovnik's level during its May to September peak. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below Dubrovnik's crowd level all through peak season",
+      "picks": {
+        "split": "The other great walled city of the Dalmatian coast, its old town threaded through a Roman emperor's palace instead of ramparts. It is the busiest pick here, so favour June or September over the August peak.",
+        "kotor-bay": "A walled medieval town at the foot of a dramatic bay in Montenegro, with the same tight stone lanes and sea-facing ramparts as Dubrovnik, an hour and a half down the coast. It reads as quiet in our model even in high summer.",
+        "zadar": "A Dalmatian port layered from Roman forum to Venetian gates, with a sea organ that plays the waves and some of the coast's best sunsets. Well below Dubrovnik in our data through the whole summer.",
+        "piran": "A Venetian-Gothic port on the tip of Slovenia's short coast, all narrow lanes and a sea-facing square named for the composer Tartini. The compact stone old town gives you the Adriatic-walled-town feel at a fraction of the crowds.",
+        "rovinj": "A former Venetian harbour town in Istria, its old quarter rising to a bell tower modelled on the campanile of San Marco. The quietest pick on this list, month in, month out."
+      },
+      "faq": {
+        "q1": "Is Dubrovnik really that crowded?",
+        "a1": "In peak season cruise ships and day-trippers pour into Dubrovnik's compact walled old town, and the city works to cap the number of visitors inside the historic core at around 8,000 at once. Our seasonal crowd model rates it packed across its whole May to September peak.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you the warm Adriatic with the mildest crowds. Only Split gets genuinely busy at the August peak.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these towns week by week, or check Dubrovnik's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See Dubrovnik's crowd calendar"
     }
   }
 }
