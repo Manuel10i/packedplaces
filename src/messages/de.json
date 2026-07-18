@@ -591,6 +591,93 @@
       "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Städte Woche für Woche zu vergleichen, oder prüfen Sie Venedigs eigenen Crowd-Kalender.",
       "ctaButton": "Crowd-Karte erkunden",
       "ctaCompare": "Venedigs Crowd-Kalender ansehen"
+    },
+    "santorini": {
+      "cardTitle": "5 weniger überlaufene Alternativen zu Santorini (2026)",
+      "cardBlurb": "Griechische Inseln mit derselben ägäischen Schönheit, die in der Hauptsaison ruhiger bleiben als Santorini, geordnet mit unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zu Santorini (2026)",
+      "metaDescription": "Santorini begrenzt die täglichen Kreuzfahrtankünfte gegen den Massentourismus. Hier sind 5 griechische Inseln, die im Sommer weit ruhiger bleiben, gewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zu Santorini (2026)",
+      "intro": "Santorini ist das Aushängeschild des griechischen Massentourismus: Seine Caldera-Dörfer sind so überfüllt, dass die Behörden die Kreuzfahrtankünfte inzwischen auf 8.000 pro Tag begrenzen. Unser Crowd-Modell bewertet die Insel während ihrer Hauptsaison von Mai bis September durchgehend als überfüllt. Wenn Sie den Look weiss getünchter Klippen über blauem Meer lieben, aber nicht das Sommergedränge, sitzen diese 5 griechischen Inseln in unserem Datensatz als wirklich ruhigere Tipps. Jede bleibt in jedem Monat ihrer Hauptsaison unter dem Crowd-Niveau von Santorini.",
+      "methodology": "So haben wir gewählt: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Zielseiten), und griechische Inseln behalten, die während der Hochsaison von Mai bis September nie das Niveau von Santorini erreichen. Die belebtesten und ruhigsten Monate unten werden live aus diesen Daten berechnet und aktualisieren sich, wann immer sich der Datensatz ändert.",
+      "calmerBadge": "In der gesamten Hauptsaison unter dem Crowd-Niveau von Santorini",
+      "picks": {
+        "paros": "Eine Kykladeninsel mit weiss getünchten Gassen, blau gekuppelten Kapellen und Windmühlen, im selben ägäischen Würfellook wie Santorini und mit einem echten Hafenort in Naoussa. Es ist der belebteste Tipp hier, planen Sie also eher Juni oder September als die Augustspitze ein.",
+        "milos": "Eine Vulkaninsel aus derselben Geologie wie Santorini, umringt von pastellfarbenen Klippen, mondartigen Buchten und dem geformten Fels von Sarakiniko. In unseren Daten bleibt sie den ganzen Sommer über weit unter dem Gedränge von Santorini.",
+        "naxos": "Die grösste der Kykladen, mit einem Hafen aus Marmortor, Bergdörfern und langen Sandstränden, die Besucher aufnehmen, ohne je überfüllt zu wirken. In unserem Modell ein ruhiger Allrounder durch die ganze Saison.",
+        "skiathos": "Eine kieferngrüne Sporadeninsel, gesäumt von Dutzenden Sandbuchten, mit einem lebhaften, aber kleinen Hafenort gegenüber dem Festland. In unserem Modell wirkt sie selbst auf ihrem Hochsommerhoch ruhig.",
+        "cephalonia": "Die grösste Ionische Insel, ganz aus türkisfarbenen Buchten, Zypressenkämmen und dem atemberaubenden Strand von Myrtos unter weissen Klippen. Der ruhigste Tipp auf dieser Liste, Monat für Monat."
+      },
+      "faq": {
+        "q1": "Ist Santorini wirklich so überlaufen?",
+        "a1": "In der Hauptsaison strömen enorme Zahlen von Kreuzfahrt- und Tagesgästen in eine Handvoll kleiner Caldera-Dörfer, und die örtlichen Behörden begrenzen die Kreuzfahrtankünfte auf 8.000 pro Tag, um den Druck zu mindern. Unser saisonales Crowd-Modell bewertet die Insel über die gesamte Hauptsaison von Mai bis September als überfüllt.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jeder Tipp nennt oben seine belebtesten und ruhigsten Monate, berechnet aus unseren Crowd-Daten. In der Regel bieten der späte Frühling und der frühe Herbst das wärmste Meer bei den mildesten Menschenmengen. Nur Paros wird zur Augustspitze wirklich voll.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das die Beliebtheit und Kapazität jedes Ortes mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell, das die PackedPlaces-Karte antreibt. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sehen Sie die Menschenmengen selbst",
+      "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Inseln Woche für Woche zu vergleichen, oder prüfen Sie Santorinis eigenen Crowd-Kalender.",
+      "ctaButton": "Crowd-Karte erkunden",
+      "ctaCompare": "Santorinis Crowd-Kalender ansehen"
+    },
+    "barcelona": {
+      "cardTitle": "5 weniger überlaufene Alternativen zu Barcelona (2026)",
+      "cardBlurb": "Mittelmeer- und iberische Städte mit demselben Reiz aus Architektur und Meer, die ruhiger bleiben als Barcelona, geordnet mit unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zu Barcelona (2026)",
+      "metaDescription": "Barcelona schafft Kurzzeit-Ferienvermietungen gegen den Massentourismus ab. Hier sind 5 Mittelmeerstädte, die weit ruhiger bleiben, gewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zu Barcelona (2026)",
+      "intro": "Barcelona ist zum Sinnbild des europäischen Massentourismus geworden: Die Stadt will bis 2028 alle Lizenzen für Kurzzeit-Ferienvermietungen streichen, und Anwohner haben gegen die Überfüllung der Strassen protestiert. Unser Crowd-Modell bewertet sie im Sommer als sehr voll und im Rest des Jahres als voll, in jedem einzelnen Monat. Wenn Sie die Mischung aus Architektur, Tapas-Kultur und Stadtstrand lieben, aber nicht das Gedränge, sitzen diese 5 Mittelmeer- und iberischen Städte in unserem Datensatz als wirklich ruhigere Tipps. Jede bleibt in jedem einzelnen Monat unter dem Crowd-Niveau von Barcelona.",
+      "methodology": "So haben wir gewählt: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Zielseiten), und südeuropäische Städte mit vergleichbarem Reiz aus Kultur und Küste behalten, die nie das Niveau von Barcelona erreichen. Die belebtesten und ruhigsten Monate unten werden live aus diesen Daten berechnet und aktualisieren sich, wann immer sich der Datensatz ändert.",
+      "calmerBadge": "In jedem Monat unter dem Crowd-Niveau von Barcelona",
+      "picks": {
+        "valencia": "Spaniens drittgrösste Stadt tauscht das Gedränge Barcelonas gegen eine begehbare Altstadt, die futuristische Stadt der Künste und Wissenschaften und einen breiten Stadtstrand, dazu die Geburtsstätte der Paella. In unseren Daten liegt sie jeden Monat des Jahres deutlich unter Barcelona.",
+        "seville": "Das Herz Andalusiens, mit einer kolossalen gotischen Kathedrale, dem maurischen Alcázar und Orangenbaumhöfen, ein wärmer getönter Rivale zu Barcelonas Architektur. Unser Modell hält sie ganzjährig auf mässigem Niveau.",
+        "porto": "Eine gekachelte Atlantikstadt, gestaffelt über dem Douro, ganz aus barocken Kirchen, Portweinkellern und einer UNESCO-Altstadt, mit derselben vielschichtigen Strassenenergie wie Barcelona. In unseren Daten bleibt sie das ganze Jahr über ruhig.",
+        "split": "Ein dalmatinischer Hafen, gebaut in und um den Palast eines römischen Kaisers, wo das Café-Leben durch 1.700 Jahre alte Mauern zu einer palmengesäumten Uferpromenade strömt. In unseren Daten in jedem Monat klar unter Barcelona.",
+        "marseille": "Frankreichs älteste Stadt und sein mediterranes Gegengewicht zu Barcelona: ein arbeitender Vieux-Port, die Notre-Dame de la Garde auf dem Hügel, die Calanques vor der Tür und eine Bouillabaisse-Tradition. Der ruhigste Tipp auf dieser Liste in unserem Modell."
+      },
+      "faq": {
+        "q1": "Ist Barcelona wirklich so überlaufen?",
+        "a1": "Barcelona ist eine der meistbesuchten Städte Europas und zu einem Brennpunkt der Debatte um den Massentourismus geworden, mit dem Plan, seine rund 10.000 Lizenzen für Kurzzeit-Ferienvermietungen bis 2028 auslaufen zu lassen. Unser saisonales Crowd-Modell bewertet sie in allen zwölf Monaten als voll bis sehr voll.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jeder Tipp nennt oben seine belebtesten und ruhigsten Monate, berechnet aus unseren Crowd-Daten. In der Regel bieten der späte Frühling und der frühe Herbst die mildesten Menschenmengen, während das Mittelmeerwetter noch warm ist.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das die Beliebtheit und Kapazität jedes Ortes mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell, das die PackedPlaces-Karte antreibt. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sehen Sie die Menschenmengen selbst",
+      "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Städte Woche für Woche zu vergleichen, oder prüfen Sie Barcelonas eigenen Crowd-Kalender.",
+      "ctaButton": "Crowd-Karte erkunden",
+      "ctaCompare": "Barcelonas Crowd-Kalender ansehen"
+    },
+    "dubrovnik": {
+      "cardTitle": "5 weniger überlaufene Alternativen zu Dubrovnik (2026)",
+      "cardBlurb": "Ummauerte Adria-Altstädte mit derselben Schönheit aus Stein und Meer, die in der Hauptsaison ruhiger bleiben als Dubrovnik, geordnet mit unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zu Dubrovnik (2026)",
+      "metaDescription": "Dubrovnik begrenzt die Besucherzahl in seinen Mauern gegen den Massentourismus. Hier sind 5 Adria-Städte, die im Sommer weit ruhiger bleiben, gewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zu Dubrovnik (2026)",
+      "intro": "Dubrovnik ist eine der überlaufensten Altstädte des Mittelmeers: Der Game-of-Thrones-Effekt und die täglichen Kreuzfahrtankünfte schleusen so viele Menschen durch seine Mauern, dass die Stadt die Zahl innerhalb des historischen Kerns auf rund 8.000 gleichzeitig begrenzt. Unser Crowd-Modell bewertet sie während ihrer Hauptsaison von Mai bis September durchgehend als überfüllt. Wenn Sie den Look ummauerter Steinstädte über türkisfarbenem Meer lieben, aber nicht das Sommergedränge, sitzen diese 5 Adria-Altstädte in unserem Datensatz als wirklich ruhigere Tipps. Jede bleibt in jedem Monat ihrer Hauptsaison unter dem Crowd-Niveau von Dubrovnik.",
+      "methodology": "So haben wir gewählt: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Zielseiten), und ummauerte Adria-Altstädte behalten, die während der Hochsaison von Mai bis September nie das Niveau von Dubrovnik erreichen. Die belebtesten und ruhigsten Monate unten werden live aus diesen Daten berechnet und aktualisieren sich, wann immer sich der Datensatz ändert.",
+      "calmerBadge": "In der gesamten Hauptsaison unter dem Crowd-Niveau von Dubrovnik",
+      "picks": {
+        "split": "Die andere grosse Mauerstadt der dalmatinischen Küste, deren Altstadt sich durch den Palast eines römischen Kaisers statt durch Wälle zieht. Es ist der belebteste Tipp hier, bevorzugen Sie also Juni oder September gegenüber der Augustspitze.",
+        "kotor-bay": "Eine ummauerte mittelalterliche Stadt am Fuss einer dramatischen Bucht in Montenegro, mit denselben engen Steingassen und zum Meer gewandten Wällen wie Dubrovnik, anderthalb Stunden die Küste hinunter. In unserem Modell wirkt sie selbst im Hochsommer ruhig.",
+        "zadar": "Ein dalmatinischer Hafen, geschichtet vom römischen Forum bis zu venezianischen Toren, mit einer Meeresorgel, die die Wellen spielt, und einigen der schönsten Sonnenuntergänge der Küste. In unseren Daten den ganzen Sommer über weit unter Dubrovnik.",
+        "piran": "Ein venezianisch-gotischer Hafen an der Spitze von Sloweniens kurzer Küste, ganz aus schmalen Gassen und einem zum Meer gewandten Platz, benannt nach dem Komponisten Tartini. Die kompakte Steinaltstadt bietet das Adria-Mauerstadt-Gefühl bei einem Bruchteil der Menschenmengen.",
+        "rovinj": "Eine ehemalige venezianische Hafenstadt in Istrien, deren Altstadt zu einem Glockenturm ansteigt, der dem Campanile von San Marco nachempfunden ist. Der ruhigste Tipp auf dieser Liste, Monat für Monat."
+      },
+      "faq": {
+        "q1": "Ist Dubrovnik wirklich so überlaufen?",
+        "a1": "In der Hauptsaison strömen Kreuzfahrtschiffe und Tagesgäste in Dubrovniks kompakte ummauerte Altstadt, und die Stadt arbeitet daran, die Zahl der Besucher im historischen Kern auf rund 8.000 gleichzeitig zu begrenzen. Unser saisonales Crowd-Modell bewertet sie über die gesamte Hauptsaison von Mai bis September als überfüllt.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jeder Tipp nennt oben seine belebtesten und ruhigsten Monate, berechnet aus unseren Crowd-Daten. In der Regel bieten der späte Frühling und der frühe Herbst die warme Adria bei den mildesten Menschenmengen. Nur Split wird zur Augustspitze wirklich voll.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das die Beliebtheit und Kapazität jedes Ortes mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell, das die PackedPlaces-Karte antreibt. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sehen Sie die Menschenmengen selbst",
+      "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Städte Woche für Woche zu vergleichen, oder prüfen Sie Dubrovniks eigenen Crowd-Kalender.",
+      "ctaButton": "Crowd-Karte erkunden",
+      "ctaCompare": "Dubrovniks Crowd-Kalender ansehen"
     }
   }
 }

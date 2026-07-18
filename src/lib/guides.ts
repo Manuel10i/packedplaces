@@ -54,6 +54,48 @@ export const guides: Guide[] = [
     publishedISO: "2026-07-09",
     i18nKey: "venice",
   },
+  {
+    slug: "less-crowded-alternatives-to-santorini",
+    targetId: "GR-SANTORINI",
+    targetSlug: "santorini",
+    alternativeSlugs: [
+      "paros",
+      "milos",
+      "naxos",
+      "skiathos",
+      "cephalonia",
+    ],
+    publishedISO: "2026-07-18",
+    i18nKey: "santorini",
+  },
+  {
+    slug: "less-crowded-alternatives-to-barcelona",
+    targetId: "ES-BARCELONA",
+    targetSlug: "barcelona",
+    alternativeSlugs: [
+      "valencia",
+      "seville",
+      "porto",
+      "split",
+      "marseille",
+    ],
+    publishedISO: "2026-07-18",
+    i18nKey: "barcelona",
+  },
+  {
+    slug: "less-crowded-alternatives-to-dubrovnik",
+    targetId: "HR-DUBROVNIK",
+    targetSlug: "dubrovnik",
+    alternativeSlugs: [
+      "split",
+      "kotor-bay",
+      "zadar",
+      "piran",
+      "rovinj",
+    ],
+    publishedISO: "2026-07-18",
+    i18nKey: "dubrovnik",
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

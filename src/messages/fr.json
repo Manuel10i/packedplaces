@@ -591,6 +591,93 @@
       "ctaText": "Ouvrez la carte en direct pour comparer ces villes semaine par semaine, ou consultez le calendrier d'affluence de Venise.",
       "ctaButton": "Explorer la carte d'affluence",
       "ctaCompare": "Voir le calendrier d'affluence de Venise"
+    },
+    "santorini": {
+      "cardTitle": "5 alternatives moins fréquentées à Santorin (2026)",
+      "cardBlurb": "Des îles grecques à la même beauté égéenne qui restent plus calmes que Santorin en haute saison, classées avec nos données d'affluence.",
+      "metaTitle": "5 alternatives moins fréquentées à Santorin (2026)",
+      "metaDescription": "Santorin plafonne les arrivées quotidiennes de croisiéristes pour lutter contre le surtourisme. Voici 5 îles grecques bien plus calmes en été, choisies avec les données d'affluence de PackedPlaces.",
+      "h1": "5 alternatives moins fréquentées à Santorin (2026)",
+      "intro": "Santorin est le symbole du surtourisme grec : ses villages perchés sur la caldeira sont si bondés que les autorités plafonnent désormais les arrivées de croisiéristes à 8 000 par jour. Notre modèle d'affluence la juge bondée tout au long de son pic de mai à septembre. Si vous aimez l'image des falaises blanchies au-dessus de la mer bleue mais pas la cohue de l'été, ces 5 îles grecques figurent dans nos données comme des choix véritablement plus calmes. Chacune reste sous le niveau d'affluence de Santorin à chaque mois de sa haute saison.",
+      "methodology": "Comment nous avons choisi : nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et retenu des îles grecques qui n'atteignent jamais le niveau de Santorin pendant son pic de mai à septembre. Les mois les plus et les moins fréquentés ci-dessous sont calculés en direct à partir de ces données, et se mettent à jour dès que le jeu de données change.",
+      "calmerBadge": "Sous le niveau d'affluence de Santorin pendant toute la haute saison",
+      "picks": {
+        "paros": "Une île des Cyclades aux ruelles blanchies à la chaux, aux chapelles à dôme bleu et aux moulins, avec la même esthétique cubique de la mer Égée que Santorin et un vrai port à Naoussa. C'est le choix le plus fréquenté ici, alors visez juin ou septembre plutôt que le pic d'août.",
+        "milos": "Une île volcanique née de la même géologie que Santorin, cernée de falaises pastel, de criques lunaires et de la roche sculptée de Sarakiniko. Dans nos données, elle reste bien en dessous de la cohue de Santorin tout l'été.",
+        "naxos": "La plus grande des Cyclades, avec un port à la porte de marbre, des villages de montagne et de longues plages de sable qui absorbent les visiteurs sans jamais paraître bondées. Une valeur sûre et paisible dans notre modèle, toute la saison durant.",
+        "skiathos": "Une île des Sporades d'un vert de pins, bordée de dizaines de baies de sable, avec un port animé mais petit face au continent. Dans notre modèle, elle paraît paisible même à son sommet de plein été.",
+        "cephalonia": "La plus grande des îles Ioniennes, tout en criques turquoise, crêtes de cyprès et la spectaculaire plage de Myrtos sous des falaises blanches. Le choix le plus paisible de cette liste, mois après mois."
+      },
+      "faq": {
+        "q1": "Santorin est-elle vraiment si fréquentée ?",
+        "a1": "En haute saison, d'énormes flux de croisiéristes et d'excursionnistes se concentrent dans une poignée de petits villages de la caldeira, et les autorités locales plafonnent les arrivées de croisiéristes à 8 000 par jour pour alléger la pression. Notre modèle saisonnier la juge bondée pendant tout son pic de mai à septembre.",
+        "q2": "Quel est le meilleur moment pour visiter ces alternatives ?",
+        "a2": "Chaque choix indique ci-dessus ses mois les plus et les moins fréquentés, calculés à partir de nos données. En règle générale, la fin du printemps et le début de l'automne offrent la mer la plus chaude avec le moins de monde. Seule Paros devient vraiment bondée au pic d'août.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés ?",
+        "a3": "Ils proviennent d'un modèle de demande touristique qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en direct."
+      },
+      "ctaTitle": "Constatez l'affluence par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer chacune de ces îles semaine par semaine, ou consultez le calendrier d'affluence de Santorin.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier d'affluence de Santorin"
+    },
+    "barcelona": {
+      "cardTitle": "5 alternatives moins fréquentées à Barcelone (2026)",
+      "cardBlurb": "Des villes méditerranéennes et ibériques au même attrait d'architecture et de mer qui restent plus calmes que Barcelone, classées avec nos données d'affluence.",
+      "metaTitle": "5 alternatives moins fréquentées à Barcelone (2026)",
+      "metaDescription": "Barcelone supprime les locations touristiques de courte durée pour freiner le surtourisme. Voici 5 villes méditerranéennes bien plus calmes, choisies avec les données d'affluence de PackedPlaces.",
+      "h1": "5 alternatives moins fréquentées à Barcelone (2026)",
+      "intro": "Barcelone est devenue un symbole du surtourisme européen : la ville prévoit de supprimer toutes ses licences de location touristique de courte durée d'ici 2028 et a vu ses habitants manifester contre l'affluence dans les rues. Notre modèle d'affluence la juge très fréquentée l'été et fréquentée le reste de l'année, chaque mois sans exception. Si vous aimez le mélange d'architecture, de culture des tapas et de plage urbaine mais pas la cohue, ces 5 villes méditerranéennes et ibériques figurent dans nos données comme des choix véritablement plus calmes. Chacune reste sous le niveau d'affluence de Barcelone chaque mois sans exception.",
+      "methodology": "Comment nous avons choisi : nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et retenu des villes du sud de l'Europe au pouvoir d'attraction comparable de culture et de côte qui n'atteignent jamais le niveau de Barcelone. Les mois les plus et les moins fréquentés ci-dessous sont calculés en direct à partir de ces données, et se mettent à jour dès que le jeu de données change.",
+      "calmerBadge": "Sous le niveau d'affluence de Barcelone chaque mois",
+      "picks": {
+        "valencia": "La troisième ville d'Espagne troque la cohue de Barcelone contre une vieille ville à parcourir à pied, la futuriste Cité des arts et des sciences et une large plage urbaine, sans oublier le berceau de la paella. Dans nos données, elle reste bien en dessous de Barcelone chaque mois de l'année.",
+        "seville": "Le cœur de l'Andalousie, avec une colossale cathédrale gothique, l'Alcazar mauresque et des cours plantées d'orangers, une rivale aux tons plus chauds de l'architecture de Barcelone. Notre modèle la maintient modérée toute l'année.",
+        "porto": "Une ville atlantique aux azulejos étagée au-dessus du Douro, tout en églises baroques, caves de porto et une vieille ville classée à l'UNESCO, avec la même énergie de rue en strates que Barcelone. Dans nos données, elle reste paisible toute l'année.",
+        "split": "Un port dalmate bâti à l'intérieur et autour du palais d'un empereur romain, où la vie des cafés se glisse entre des murs vieux de 1 700 ans jusqu'à un front de mer bordé de palmiers. Nettement en dessous de Barcelone dans nos données, chaque mois.",
+        "marseille": "La plus ancienne ville de France et son contrepoids méditerranéen à Barcelone : un Vieux-Port en activité, Notre-Dame de la Garde sur sa colline, les Calanques à la porte et une tradition de bouillabaisse. Le choix le plus paisible de cette liste dans notre modèle."
+      },
+      "faq": {
+        "q1": "Barcelone est-elle vraiment si fréquentée ?",
+        "a1": "Barcelone est l'une des villes les plus visitées d'Europe et est devenue un point focal du débat sur le surtourisme, avec le projet de supprimer ses quelque 10 000 licences de location touristique de courte durée d'ici 2028. Notre modèle saisonnier la juge fréquentée à très fréquentée les douze mois de l'année.",
+        "q2": "Quel est le meilleur moment pour visiter ces alternatives ?",
+        "a2": "Chaque choix indique ci-dessus ses mois les plus et les moins fréquentés, calculés à partir de nos données. En règle générale, la fin du printemps et le début de l'automne offrent le moins de monde alors que le climat méditerranéen est encore chaud.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés ?",
+        "a3": "Ils proviennent d'un modèle de demande touristique qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en direct."
+      },
+      "ctaTitle": "Constatez l'affluence par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer chacune de ces villes semaine par semaine, ou consultez le calendrier d'affluence de Barcelone.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier d'affluence de Barcelone"
+    },
+    "dubrovnik": {
+      "cardTitle": "5 alternatives moins fréquentées à Dubrovnik (2026)",
+      "cardBlurb": "Des vieilles villes fortifiées de l'Adriatique à la même beauté de pierre et de mer qui restent plus calmes que Dubrovnik en haute saison, classées avec nos données d'affluence.",
+      "metaTitle": "5 alternatives moins fréquentées à Dubrovnik (2026)",
+      "metaDescription": "Dubrovnik plafonne les visiteurs dans ses murs pour freiner le surtourisme. Voici 5 villes fortifiées de l'Adriatique bien plus calmes en été, choisies avec les données d'affluence de PackedPlaces.",
+      "h1": "5 alternatives moins fréquentées à Dubrovnik (2026)",
+      "intro": "Dubrovnik est l'une des vieilles villes les plus fréquentées de la Méditerranée : l'effet Game of Thrones et les arrivées quotidiennes de croisiéristes font passer tant de monde dans ses murs que la ville plafonne le nombre de personnes dans le cœur historique à environ 8 000 à la fois. Notre modèle d'affluence la juge bondée tout au long de son pic de mai à septembre. Si vous aimez l'image des villes de pierre fortifiées au-dessus de la mer turquoise mais pas la cohue de l'été, ces 5 vieilles villes de l'Adriatique figurent dans nos données comme des choix véritablement plus calmes. Chacune reste sous le niveau d'affluence de Dubrovnik à chaque mois de sa haute saison.",
+      "methodology": "Comment nous avons choisi : nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et retenu des vieilles villes fortifiées de l'Adriatique qui n'atteignent jamais le niveau de Dubrovnik pendant son pic de mai à septembre. Les mois les plus et les moins fréquentés ci-dessous sont calculés en direct à partir de ces données, et se mettent à jour dès que le jeu de données change.",
+      "calmerBadge": "Sous le niveau d'affluence de Dubrovnik pendant toute la haute saison",
+      "picks": {
+        "split": "L'autre grande ville fortifiée de la côte dalmate, sa vieille ville se faufilant à travers le palais d'un empereur romain plutôt que des remparts. C'est le choix le plus fréquenté ici, alors privilégiez juin ou septembre plutôt que le pic d'août.",
+        "kotor-bay": "Une ville médiévale fortifiée au pied d'une baie spectaculaire au Monténégro, avec les mêmes ruelles de pierre étroites et remparts face à la mer que Dubrovnik, à une heure et demie plus bas sur la côte. Dans notre modèle, elle paraît paisible même en plein été.",
+        "zadar": "Un port dalmate stratifié du forum romain aux portes vénitiennes, avec un orgue marin qui joue les vagues et quelques-uns des plus beaux couchers de soleil de la côte. Bien en dessous de Dubrovnik dans nos données tout l'été.",
+        "piran": "Un port vénitien-gothique à la pointe de la courte côte slovène, tout en ruelles étroites et une place face à la mer portant le nom du compositeur Tartini. La compacte vieille ville de pierre offre l'ambiance de ville fortifiée de l'Adriatique pour une fraction de la foule.",
+        "rovinj": "Une ancienne ville portuaire vénitienne en Istrie, dont le vieux quartier s'élève vers un clocher inspiré du campanile de Saint-Marc. Le choix le plus paisible de cette liste, mois après mois."
+      },
+      "faq": {
+        "q1": "Dubrovnik est-elle vraiment si fréquentée ?",
+        "a1": "En haute saison, les navires de croisière et les excursionnistes envahissent la compacte vieille ville fortifiée de Dubrovnik, et la ville s'efforce de plafonner le nombre de visiteurs dans le cœur historique à environ 8 000 à la fois. Notre modèle saisonnier la juge bondée pendant tout son pic de mai à septembre.",
+        "q2": "Quel est le meilleur moment pour visiter ces alternatives ?",
+        "a2": "Chaque choix indique ci-dessus ses mois les plus et les moins fréquentés, calculés à partir de nos données. En règle générale, la fin du printemps et le début de l'automne offrent l'Adriatique chaude avec le moins de monde. Seule Split devient vraiment bondée au pic d'août.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés ?",
+        "a3": "Ils proviennent d'un modèle de demande touristique qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en direct."
+      },
+      "ctaTitle": "Constatez l'affluence par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer chacune de ces villes semaine par semaine, ou consultez le calendrier d'affluence de Dubrovnik.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier d'affluence de Dubrovnik"
     }
   }
 }
