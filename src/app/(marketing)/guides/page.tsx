@@ -26,6 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function GuidesHubPage() {
   const t = await getTranslations("guides");
+  const tc = await getTranslations("crowdIndex");
 
   return (
     <>
@@ -58,6 +59,13 @@ export default async function GuidesHubPage() {
               </li>
             ))}
           </ul>
+
+          <p className="mt-8 text-sm leading-relaxed text-ink-faint">
+            {tc("kicker")}:{" "}
+            <Link href="/crowd-index" className="text-accent underline">
+              {tc("h1")}
+            </Link>
+          </p>
         </div>
       </section>
 

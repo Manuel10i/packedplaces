@@ -1,4 +1,29 @@
 {
+    "crowdIndex": {
+      "metaTitle": "Die vollsten Reiseziele der Welt, sortiert nach Crowd-Daten",
+      "metaDescription": "Die 30 vollsten Reiseziele in unserem Datensatz, sortiert danach, wie voll sie in ihrer Hochsaison werden. Basierend auf dem PackedPlaces-Crowd-Modell hinter der Karte.",
+      "kicker": "Crowd-Daten-Report",
+      "h1": "Die vollsten Reiseziele der Welt",
+      "intro": "Das sind die 30 Reiseziele, die unser Crowd-Modell in ihrer Hochsaison als am vollsten einstuft, aus einem Datensatz von über 700 Orten weltweit. Die Rangliste aktualisiert sich mit den Daten, ganz ohne handgetippte Zahlen.",
+      "methodology": "So sortieren wir: Für jedes Ziel nehmen wir den monatlichen Crowd-Wert unseres Modells, behalten den vollsten Monat und sortieren nach diesem Höchstwert. Es ist dasselbe Saison-Modell, das auch die Karte und die Zielseiten speist. Es verbindet Beliebtheit und Kapazität jedes Ortes mit den Schulferien in über 100 Ländern. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen.",
+      "busiestPrefix": "Höhepunkt im",
+      "faqTitle": "Häufige Fragen",
+      "faq": {
+        "q1": "Wie wird die Rangliste berechnet?",
+        "a1": "Jedes Ziel erhält von unserem Saison-Modell einen monatlichen Crowd-Wert. Wir nehmen den vollsten Monat und sortieren alle Ziele nach diesem Höchstwert. Die Liste zeigt also, wie voll ein Ort wird, wenn er am vollsten ist.",
+        "q2": "Sind das Live-Besucherzahlen?",
+        "a2": "Nein. Die Werte sind relative Crowd-Schätzungen aus einem Nachfragemodell, keine Echtzeit-Zahlen. Sie helfen, Orte zu vergleichen und bessere Reisedaten zu finden, nicht Menschen am Eingang zu zählen.",
+        "q3": "Wie umgehe ich diese Menschenmassen?",
+        "a3": "Öffne ein beliebiges Ziel, um seinen Crowd-Kalender Monat für Monat zu sehen und das ruhigste Zeitfenster zu finden, oder stöbere in unseren Guides nach ruhigeren Alternativen zu den vollsten Orten."
+      },
+      "guidesLink": {
+        "text": "Willst du die ruhigere Version dieser Orte?",
+        "anchor": "Lies unsere Guides zu weniger überlaufenen Reisezielen."
+      },
+      "ctaTitle": "Sieh die Auslastung Woche für Woche",
+      "ctaText": "Öffne die Live-Karte, um jedes Ziel Monat für Monat zu vergleichen, oder suche einen Ort und sieh genau, wann er voll wird.",
+      "ctaButton": "Crowd-Karte öffnen"
+    },
   "consent": {
     "title": "Cookie-Hinweis",
     "message": "Wir verwenden Cookies für anonyme Statistik, um die Seite zu verbessern. Bis du zustimmst, wird nichts getrackt.",
