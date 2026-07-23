@@ -1,4 +1,29 @@
 {
+    "crowdIndex": {
+      "metaTitle": "Los destinos turísticos más concurridos, según los datos de afluencia",
+      "metaDescription": "Los 30 destinos más concurridos de nuestro conjunto de datos, ordenados por lo llenos que se ponen en su temporada alta. Basado en el modelo de afluencia de PackedPlaces.",
+      "kicker": "Informe de datos de afluencia",
+      "h1": "Los destinos turísticos más concurridos",
+      "intro": "Estos son los 30 destinos que nuestro modelo de afluencia considera más concurridos en su temporada alta, de un conjunto de más de 700 lugares en todo el mundo. La clasificación se actualiza con los datos, sin ninguna cifra escrita a mano.",
+      "methodology": "Cómo clasificamos: para cada destino tomamos la puntuación de afluencia mensual de nuestro modelo, nos quedamos con el mes más concurrido y ordenamos por ese máximo. Es el mismo modelo estacional que impulsa el mapa y las páginas de destino, que combina la popularidad y la capacidad de cada lugar con el calendario escolar de más de 100 países. Son estimaciones relativas de afluencia, no recuentos de visitantes en tiempo real.",
+      "busiestPrefix": "Pico en",
+      "faqTitle": "Preguntas frecuentes",
+      "faq": {
+        "q1": "¿Cómo se calcula la clasificación?",
+        "a1": "Cada destino recibe una puntuación de afluencia mensual de nuestro modelo estacional. Tomamos su mes más concurrido y ordenamos todos los destinos por ese máximo, de modo que la lista refleja lo lleno que llega a estar un lugar en su punto álgido.",
+        "q2": "¿Son recuentos de visitantes en tiempo real?",
+        "a2": "No. Las puntuaciones son estimaciones relativas de afluencia de un modelo de demanda, no cifras en tiempo real. Sirven para comparar lugares y elegir mejores fechas, no para contar personas en la entrada.",
+        "q3": "¿Cómo evito estas multitudes?",
+        "a3": "Abre cualquier destino para ver su calendario de afluencia mes a mes y encontrar su ventana más tranquila, o consulta nuestras guías para alternativas menos concurridas a los lugares más llenos."
+      },
+      "guidesLink": {
+        "text": "¿Quieres la versión más tranquila de estos lugares?",
+        "anchor": "Lee nuestras guías de viajes menos concurridos."
+      },
+      "ctaTitle": "Mira la afluencia semana a semana",
+      "ctaText": "Abre el mapa en vivo para comparar cualquier destino mes a mes, o busca un lugar y ve exactamente cuándo se llena.",
+      "ctaButton": "Explorar el mapa de afluencia"
+    },
   "consent": {
     "title": "Aviso de cookies",
     "message": "Usamos cookies para analítica anónima y mejorar el sitio. No se rastrea nada hasta que aceptes.",

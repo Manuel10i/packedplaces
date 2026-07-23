@@ -1,4 +1,29 @@
 {
+    "crowdIndex": {
+      "metaTitle": "The Most Crowded Tourist Destinations, Ranked by Crowd Data",
+      "metaDescription": "The 30 most crowded destinations in our dataset, ranked by how packed each one gets at its seasonal peak. Built from the PackedPlaces crowd model behind the map.",
+      "kicker": "Crowd data report",
+      "h1": "The Most Crowded Tourist Destinations",
+      "intro": "These are the 30 destinations our crowd model rates as the most packed at their seasonal peak, drawn from a dataset of more than 700 places worldwide. The ranking updates whenever the data does, so it stays current without a hand-typed figure in sight.",
+      "methodology": "How we rank: for every destination we take the crowdedness score our model assigns each month, keep the single busiest month, and sort by that peak. It is the same seasonal model that powers the map and the destination pages, blending each place's popularity and capacity with school-holiday timing across 100+ countries. These are relative crowd estimates, not live visitor counts.",
+      "busiestPrefix": "Peaks in",
+      "faqTitle": "Frequently asked questions",
+      "faq": {
+        "q1": "How is the ranking calculated?",
+        "a1": "Each destination gets a monthly crowdedness score from our seasonal model. We take its busiest month and rank all destinations by that peak, so the list reflects how packed a place gets when it is at its most crowded.",
+        "q2": "Are these live visitor counts?",
+        "a2": "No. The scores are relative crowd estimates from a travel-demand model, not real-time footfall. They are meant for comparing places and picking better dates, not for counting people at a gate.",
+        "q3": "How do I avoid these crowds?",
+        "a3": "Open any destination to see its month-by-month crowd calendar and find its quietest window, or browse our guides for calmer alternatives to the busiest spots."
+      },
+      "guidesLink": {
+        "text": "Want the calmer version of these places?",
+        "anchor": "Read our less-crowded travel guides."
+      },
+      "ctaTitle": "See the crowds week by week",
+      "ctaText": "Open the live map to compare any destination month by month, or search a place to see exactly when it fills up.",
+      "ctaButton": "Explore the crowd map"
+    },
   "consent": {
     "title": "Cookie notice",
     "message": "We use cookies for anonymous analytics to improve the site. Nothing is tracked until you accept.",
