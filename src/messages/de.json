@@ -481,7 +481,16 @@
     },
     "curveHeading": "Ein typisches Jahr, Woche für Woche",
     "curveAria": "Wöchentliche Auslastungskurve für {name}: der türkise Ring markiert die ruhigste Woche, der terrakottafarbene Punkt die vollste",
-    "shareText": "Wie voll wird es in {name} wirklich? Sieh die Prognose Woche für Woche."
+    "shareText": "Wie voll wird es in {name} wirklich? Sieh die Prognose Woche für Woche.",
+    "faqTitle": "Häufige Fragen",
+    "faqBusyQ": "Ist {name} überlaufen?",
+    "faqBusyA": "In {name} ist am meisten los in {months}. Außerhalb dieser Zeit lassen die Menschenmengen nach, sodass du deinen Besuch um die Hauptsaison herum planen kannst.",
+    "faqBusyAYearRound": "{name} ist fast das ganze Jahr über gut besucht. Einige Monate sind etwas ruhiger als andere, aber Menschenmengen triffst du in jeder Saison.",
+    "faqBestTimeQ": "Wann ist die beste Reisezeit für {name}?",
+    "faqBestTimeA": "Für weniger Andrang besuchst du {name} am besten in {months}, wenn die Reisenachfrage am niedrigsten ist.",
+    "faqBestTimeAYearRound": "{name} zieht das ganze Jahr über Besucher an, eine echte Nebensaison gibt es nicht. Wähle die Monate, die zu deinen Plänen passen, und rechne jederzeit mit Gesellschaft.",
+    "faqQuietQ": "Wann ist es in {name} am ruhigsten?",
+    "faqQuietA": "In {name} ist es in {months} am ruhigsten."
   },
   "theme": {
     "label": "Design",

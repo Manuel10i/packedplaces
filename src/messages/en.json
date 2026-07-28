@@ -481,7 +481,16 @@
     },
     "curveHeading": "A typical year, week by week",
     "curveAria": "Weekly crowd curve for {name}: teal ring marks the quietest week, terracotta dot the busiest",
-    "shareText": "How crowded does {name} really get? See the week-by-week forecast."
+    "shareText": "How crowded does {name} really get? See the week-by-week forecast.",
+    "faqTitle": "Common questions",
+    "faqBusyQ": "Is {name} busy?",
+    "faqBusyA": "{name} gets busiest in {months}. Crowd levels ease off outside that window, so you can time a trip around the peak.",
+    "faqBusyAYearRound": "{name} stays busy for most of the year. Some months run a little calmer than others, but you will meet crowds in every season.",
+    "faqBestTimeQ": "When is the best time to visit {name}?",
+    "faqBestTimeA": "For thinner crowds, visit {name} in {months}, when travel demand is at its lowest.",
+    "faqBestTimeAYearRound": "{name} draws visitors all year, so there is no true off-season. Pick the months that suit your plans and expect company whenever you go.",
+    "faqQuietQ": "When is {name} least crowded?",
+    "faqQuietA": "{name} is least crowded in {months}."
   },
   "theme": {
     "label": "Theme",

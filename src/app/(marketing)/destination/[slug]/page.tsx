@@ -181,9 +181,48 @@ export default async function DestinationPage({
     url: destUrl(slug),
   };
 
+  // FAQ: answers are derived from the same busiest/quietest model shown above,
+  // so nothing here is hand-asserted. It targets the "is X busy", "best time to
+  // visit X" and "when is X least crowded" phrasings these pages already surface
+  // for, and the FAQPage JSON-LD mirrors exactly what is rendered.
+  const hasQuiet = quietest.length > 0;
+  const faqs = [
+    {
+      q: t("faqBusyQ", { name: displayName }),
+      a: yearRound
+        ? t("faqBusyAYearRound", { name: displayName })
+        : t("faqBusyA", { name: displayName, months: joinList(locale, busiest) }),
+    },
+    {
+      q: t("faqBestTimeQ", { name: displayName }),
+      a: hasQuiet
+        ? t("faqBestTimeA", { name: displayName, months: joinList(locale, quietest) })
+        : t("faqBestTimeAYearRound", { name: displayName }),
+    },
+    ...(hasQuiet
+      ? [
+          {
+            q: t("faqQuietQ", { name: displayName }),
+            a: t("faqQuietA", { name: displayName, months: joinList(locale, quietest) }),
+          },
+        ]
+      : []),
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd data={faqJsonLd} />
       <SiteHeader
         locale={locale}
         currentLocale={locale}
@@ -319,6 +358,18 @@ export default async function DestinationPage({
               </div>
             </div>
           )}
+
+          <div className="mt-14">
+            <h2 className="font-display text-2xl text-ink">{t("faqTitle")}</h2>
+            <dl className="mt-6 divide-y divide-line border-y border-line">
+              {faqs.map((f) => (
+                <div key={f.q} className="py-5">
+                  <dt className="font-display text-lg text-ink">{f.q}</dt>
+                  <dd className="mt-2 leading-relaxed text-ink-muted">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
 
           <p className="mt-6 text-xs leading-relaxed text-ink-faint">{t("disclaimer")}</p>
 
