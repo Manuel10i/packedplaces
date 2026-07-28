@@ -481,7 +481,16 @@
     },
     "curveHeading": "Un año típico, semana a semana",
     "curveAria": "Curva semanal de afluencia de {name}: el anillo verde azulado marca la semana más tranquila, el punto terracota la más concurrida",
-    "shareText": "¿Cuánta gente hay realmente en {name}? Mira la previsión semana a semana."
+    "shareText": "¿Cuánta gente hay realmente en {name}? Mira la previsión semana a semana.",
+    "faqTitle": "Preguntas frecuentes",
+    "faqBusyQ": "¿Hay aglomeraciones en {name}?",
+    "faqBusyA": "{name} tiene más afluencia en {months}. Fuera de esos meses las multitudes disminuyen, así que puedes planear tu viaje evitando la temporada alta.",
+    "faqBusyAYearRound": "{name} está concurrido durante casi todo el año. Algunos meses son algo más tranquilos que otros, pero encontrarás gente en cualquier temporada.",
+    "faqBestTimeQ": "¿Cuál es la mejor época para visitar {name}?",
+    "faqBestTimeA": "Para encontrar menos gente, visita {name} en {months}, cuando la demanda de viajes es más baja.",
+    "faqBestTimeAYearRound": "{name} recibe visitantes todo el año, así que no hay una temporada baja real. Elige los meses que mejor te convengan y cuenta con compañía en cualquier momento.",
+    "faqQuietQ": "¿Cuándo hay menos gente en {name}?",
+    "faqQuietA": "En {name} hay menos gente en {months}."
   },
   "theme": {
     "label": "Tema",

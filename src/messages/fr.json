@@ -481,7 +481,16 @@
     },
     "curveHeading": "Une année typique, semaine par semaine",
     "curveAria": "Courbe d'affluence hebdomadaire de {name} : l'anneau sarcelle marque la semaine la plus calme, le point terracotta la plus fréquentée",
-    "shareText": "Quelle affluence à {name}, vraiment ? Voyez la prévision semaine par semaine."
+    "shareText": "Quelle affluence à {name}, vraiment ? Voyez la prévision semaine par semaine.",
+    "faqTitle": "Questions fréquentes",
+    "faqBusyQ": "Y a-t-il foule à {name} ?",
+    "faqBusyA": "{name} est le plus fréquenté en {months}. En dehors de cette période, l'affluence diminue, ce qui vous permet d'organiser votre visite autour de la haute saison.",
+    "faqBusyAYearRound": "{name} reste fréquenté une grande partie de l'année. Certains mois sont un peu plus calmes que d'autres, mais vous croiserez du monde en toute saison.",
+    "faqBestTimeQ": "Quelle est la meilleure période pour visiter {name} ?",
+    "faqBestTimeA": "Pour éviter la foule, visitez {name} en {months}, lorsque la demande touristique est au plus bas.",
+    "faqBestTimeAYearRound": "{name} attire des visiteurs toute l'année, il n'y a donc pas de véritable basse saison. Choisissez les mois qui vous conviennent et attendez-vous à du monde à tout moment.",
+    "faqQuietQ": "Quand y a-t-il le moins de monde à {name} ?",
+    "faqQuietA": "C'est en {months} qu'il y a le moins de monde à {name}."
   },
   "theme": {
     "label": "Thème",
