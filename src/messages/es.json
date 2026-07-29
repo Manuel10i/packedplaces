@@ -712,6 +712,35 @@
       "ctaText": "Abre el mapa en vivo para comparar cualquiera de estas ciudades semana a semana, o consulta el propio calendario de afluencia de Dubrovnik.",
       "ctaButton": "Explorar el mapa de afluencia",
       "ctaCompare": "Ver el calendario de afluencia de Dubrovnik"
+    },
+    "amalfi":     {
+      "cardTitle": "5 alternativas menos concurridas a la Costa Amalfitana (2026)",
+      "cardBlurb": "Costas e islas italianas con el mismo drama de acantilados sobre mar azul que se mantienen mucho más tranquilas que la Costa Amalfitana en pleno verano, ordenadas con nuestros datos de afluencia.",
+      "metaTitle": "5 alternativas menos concurridas a la Costa Amalfitana (2026)",
+      "metaDescription": "La Costa Amalfitana aplica un sistema de matrículas alternas contra los atascos de verano. Aquí tienes 5 costas e islas italianas mucho más tranquilas, elegidas con datos de PackedPlaces.",
+      "h1": "5 alternativas menos concurridas a la Costa Amalfitana (2026)",
+      "intro": "La Costa Amalfitana es uno de los focos de turismo masivo de Italia: una única carretera pegada al acantilado une sus pueblos y, en los días más cargados del verano, las autoridades aplican un sistema de matrículas alternas para mantener el tráfico en movimiento. Nuestro modelo de afluencia la califica como concurrida durante todo su pico de mayo a septiembre. Si te gusta la estampa de pueblos pastel sobre mar azul pero no el gentío veraniego, estos 5 lugares figuran en nuestro conjunto de datos como opciones realmente más tranquilas. Cada uno se mantiene por debajo del nivel de afluencia de la Costa Amalfitana en pleno verano.",
+      "methodology": "Cómo los elegimos: tomamos la puntuación de afluencia que nuestro modelo asigna a cada lugar, mes a mes (el mismo modelo que hay detrás del mapa y de las páginas de destino), y conservamos las costas e islas italianas que nunca alcanzan el nivel de la Costa Amalfitana durante su pico de mayo a septiembre. El mes más concurrido y el más tranquilo de abajo se calculan en vivo a partir de esos datos, así que se actualizan cuando lo hace el conjunto de datos.",
+      "calmerBadge": "Por debajo del nivel de afluencia de la Costa Amalfitana en pleno verano",
+      "picks": {
+        "sicilia": "La isla más grande de Italia luce el mismo drama en un lienzo mayor: las terrazas sobre el acantilado de Taormina frente al mar Jónico, la bahía dorada de Cefalù y, detrás, el cono humeante del Etna. El espacio reparte a la gente, aunque sigue siendo la opción más concurrida de la lista, así que apunta a junio o septiembre antes que al pico de agosto.",
+        "puglia": "El tacón soleado de Italia, donde Polignano a Mare se equilibra sobre acantilados de piedra caliza junto al Adriático y los trulli de Alberobello quedan tierra adentro. Tienes la sensación de pueblo blanco sobre agua turquesa con las largas playas del Salento para absorber el verano, y nada del atasco de Amalfi.",
+        "ischia": "La isla termal justo al otro lado de la bahía de la Costa Amalfitana, con jardines termales volcánicos, el castillo aragonés sobre su islote y tranquilas calas verdes. Es el cambio más directo si quieres el entorno de Amalfi sin el gentío de excursionistas.",
+        "elba": "Una isla del archipiélago toscano rodeada de calas turquesa, colinas de castaños y pequeños puertos, a un fácil ferry del continente. Una de las opciones más tranquilas de nuestros datos, serena incluso en su punto alto de pleno verano.",
+        "calabria": "La punta de Italia, donde el casco antiguo de Tropea se asoma desde un acantilado sobre arena blanca y un agua tan clara que los locales llaman las Maldivas italianas. La opción más tranquila de esta lista, mes tras mes."
+      },
+      "faq": {
+        "q1": "¿Está la Costa Amalfitana realmente tan concurrida?",
+        "a1": "En temporada alta la Costa Amalfitana canaliza a enormes cantidades de visitantes por una única carretera costera estrecha y, en los días más cargados del verano, las autoridades aplican un sistema de matrículas alternas para aliviar el atasco. Nuestro modelo estacional de afluencia la califica como concurrida durante todo su pico de mayo a septiembre.",
+        "q2": "¿Cuándo es mejor visitar estas alternativas?",
+        "a2": "Cada opción indica arriba su mes más concurrido y el más tranquilo, calculados con nuestros datos de afluencia. Por regla general, finales de primavera y principios de otoño ofrecen mar cálido con la afluencia más suave. Sicilia y Puglia son las más concurridas de las cinco, así que para ellas conviene junio o septiembre.",
+        "q3": "¿Cómo se calculan los niveles de afluencia?",
+        "a3": "Provienen de un modelo de demanda de viajes que combina la popularidad y la capacidad de cada lugar con el calendario de vacaciones escolares de más de 100 países, el mismo modelo que impulsa el mapa de PackedPlaces. Son estimaciones relativas de afluencia, no recuentos de visitantes en vivo."
+      },
+      "ctaTitle": "Comprueba tú mismo la afluencia",
+      "ctaText": "Abre el mapa en vivo para comparar cualquiera de estas costas semana a semana, o consulta el calendario de afluencia de la propia Costa Amalfitana.",
+      "ctaButton": "Explorar el mapa de afluencia",
+      "ctaCompare": "Ver el calendario de afluencia de la Costa Amalfitana"
     }
   }
 }

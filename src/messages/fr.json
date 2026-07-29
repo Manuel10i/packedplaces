@@ -712,6 +712,35 @@
       "ctaText": "Ouvrez la carte en direct pour comparer chacune de ces villes semaine par semaine, ou consultez le calendrier d'affluence de Dubrovnik.",
       "ctaButton": "Explorer la carte d'affluence",
       "ctaCompare": "Voir le calendrier d'affluence de Dubrovnik"
+    },
+    "amalfi":     {
+      "cardTitle": "5 alternatives moins fréquentées à la côte amalfitaine (2026)",
+      "cardBlurb": "Des côtes et des îles italiennes avec le même spectacle de falaises au-dessus d'une mer bleue, bien plus calmes que la côte amalfitaine au coeur de l'été, classées avec nos données d'affluence.",
+      "metaTitle": "5 alternatives moins fréquentées à la côte amalfitaine (2026)",
+      "metaDescription": "La côte amalfitaine applique un système de plaques alternées contre les embouteillages estivaux. Voici 5 côtes et îles italiennes bien plus calmes, choisies avec les données PackedPlaces.",
+      "h1": "5 alternatives moins fréquentées à la côte amalfitaine (2026)",
+      "intro": "La côte amalfitaine est l'un des points chauds du surtourisme en Italie: une seule route accrochée à la falaise relie ses villages et, les jours d'été les plus chargés, les autorités appliquent un système de plaques alternées pour fluidifier la circulation. Notre modèle d'affluence la juge chargée pendant toute sa pointe de mai à septembre. Si vous aimez le tableau des villages pastel au-dessus de la mer bleue mais pas la cohue estivale, ces 5 lieux figurent dans nos données comme des choix vraiment plus calmes. Chacun reste sous le niveau d'affluence de la côte amalfitaine au coeur de l'été.",
+      "methodology": "Comment nous avons choisi: nous avons pris le score d'affluence que notre modèle attribue à chaque lieu, mois par mois (le même modèle que derrière la carte et les pages de destination), et gardé les côtes et îles italiennes qui n'atteignent jamais le niveau de la côte amalfitaine pendant sa pointe de mai à septembre. Le mois le plus chargé et le plus calme ci-dessous sont calculés en direct à partir de ces données et se mettent à jour avec le jeu de données.",
+      "calmerBadge": "Sous le niveau d'affluence de la côte amalfitaine au coeur de l'été",
+      "picks": {
+        "sicilia": "La plus grande île d'Italie déploie le même spectacle sur une toile plus vaste: les terrasses en surplomb de Taormine au-dessus de la mer Ionienne, la baie dorée de Cefalù et, en arrière-plan, le cône fumant de l'Etna. L'espace disperse la foule, mais cela reste le choix le plus fréquenté ici, alors visez juin ou septembre plutôt que la pointe d'août.",
+        "puglia": "Le talon ensoleillé de l'Italie, où Polignano a Mare se dresse en équilibre sur des falaises calcaires au-dessus de l'Adriatique et où les trulli d'Alberobello se nichent dans les terres. Vous retrouvez l'impression de ville blanche au-dessus d'une eau turquoise, avec les longues plages du Salento pour absorber l'été, et aucun des embouteillages d'Amalfi.",
+        "ischia": "L'île thermale juste en face de la côte amalfitaine, avec ses jardins thermaux volcaniques, le château aragonais sur son îlot et ses calmes criques verdoyantes. C'est l'échange le plus direct si vous voulez le décor d'Amalfi sans la cohue des excursionnistes.",
+        "elba": "Une île de l'archipel toscan ceinturée de criques turquoise, de collines de châtaigniers et de petits ports, à un simple ferry du continent. L'un des choix les plus calmes de nos données, serein même à son pic de plein été.",
+        "calabria": "La pointe de l'Italie, où la vieille ville de Tropea se perche sur une falaise au-dessus du sable blanc et d'une eau si claire que les habitants l'appellent les Maldives italiennes. Le choix le plus calme de cette liste, mois après mois."
+      },
+      "faq": {
+        "q1": "La côte amalfitaine est-elle vraiment si fréquentée?",
+        "a1": "En haute saison, la côte amalfitaine canalise d'énormes flux de visiteurs sur une seule route côtière étroite et, les jours d'été les plus chargés, les autorités appliquent un système de plaques alternées pour désengorger. Notre modèle saisonnier d'affluence la juge chargée pendant toute sa pointe de mai à septembre.",
+        "q2": "Quand vaut-il mieux visiter ces alternatives?",
+        "a2": "Chaque choix indique ci-dessus son mois le plus chargé et le plus calme, calculés à partir de nos données d'affluence. En règle générale, la fin du printemps et le début de l'automne offrent une mer chaude avec l'affluence la plus douce. La Sicile et les Pouilles sont les plus fréquentées des cinq, privilégiez donc juin ou septembre pour elles.",
+        "q3": "Comment les niveaux d'affluence sont-ils calculés?",
+        "a3": "Ils proviennent d'un modèle de demande de voyage qui combine la popularité et la capacité de chaque lieu avec le calendrier des vacances scolaires de plus de 100 pays, le même modèle qui alimente la carte PackedPlaces. Ce sont des estimations relatives d'affluence, et non des comptages de visiteurs en direct."
+      },
+      "ctaTitle": "Voyez l'affluence par vous-même",
+      "ctaText": "Ouvrez la carte en direct pour comparer chacune de ces côtes semaine par semaine, ou consultez le calendrier d'affluence de la côte amalfitaine elle-même.",
+      "ctaButton": "Explorer la carte d'affluence",
+      "ctaCompare": "Voir le calendrier d'affluence de la côte amalfitaine"
     }
   }
 }

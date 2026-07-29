@@ -96,6 +96,20 @@ export const guides: Guide[] = [
     publishedISO: "2026-07-18",
     i18nKey: "dubrovnik",
   },
+  {
+    slug: "less-crowded-alternatives-to-amalfi-coast",
+    targetId: "IT-AMALFI",
+    targetSlug: "amalfi-coast",
+    alternativeSlugs: [
+      "sicilia",
+      "puglia",
+      "ischia",
+      "elba",
+      "calabria",
+    ],
+    publishedISO: "2026-07-29",
+    i18nKey: "amalfi",
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
