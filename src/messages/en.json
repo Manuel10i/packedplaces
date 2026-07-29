@@ -712,6 +712,35 @@
       "ctaText": "Open the live map to compare any of these towns week by week, or check Dubrovnik's own crowd calendar.",
       "ctaButton": "Explore the crowd map",
       "ctaCompare": "See Dubrovnik's crowd calendar"
+    },
+    "amalfi":     {
+      "cardTitle": "5 Less Crowded Alternatives to the Amalfi Coast (2026)",
+      "cardBlurb": "Italian coasts and islands with the same cliffs-over-blue-sea drama that stay far calmer than the Amalfi Coast at the height of summer, ranked with our crowd data.",
+      "metaTitle": "5 Less Crowded Alternatives to the Amalfi Coast (2026)",
+      "metaDescription": "The Amalfi Coast runs an alternate number-plate system to fight summer gridlock. Here are 5 Italian coasts and islands that stay far calmer, chosen with PackedPlaces crowd data.",
+      "h1": "5 Less Crowded Alternatives to the Amalfi Coast (2026)",
+      "intro": "The Amalfi Coast is one of Italy's overtourism flashpoints: a single cliff-hugging road links its villages, and on peak summer days authorities run an alternate number-plate system to keep traffic moving. Our crowd model rates the coast busy right through its May to September peak. If you love the pastel-villages-above-blue-sea look but not the summer crush, these 5 spots sit in our dataset as genuinely calmer picks. Each one stays below the Amalfi Coast's crowd level through the height of summer.",
+      "methodology": "How we chose: we took the crowdedness score our model assigns each place, month by month (the same model behind the map and the destination pages), and kept Italian coasts and islands that never reach the Amalfi Coast's level during its May to September peak. The busiest and quietest months below are computed live from that data, so they update whenever the dataset does.",
+      "calmerBadge": "Below the Amalfi Coast's crowd level through peak summer",
+      "picks": {
+        "sicilia": "Italy's largest island wears the same drama on a bigger canvas: Taormina's clifftop terraces over the Ionian Sea, the golden bay of Cefalu, and the smoking cone of Etna behind it. The space spreads the crowds out, though it is still the busiest pick here, so aim for June or September over the August peak.",
+        "puglia": "The sun-bleached heel of Italy, where Polignano a Mare balances on limestone cliffs above the Adriatic and the trulli of Alberobello sit just inland. You get the whitewashed-town-over-turquoise-water feel with long Salento beaches to soak up the summer, and none of the Amalfi gridlock.",
+        "ischia": "The thermal island just across the bay from the Amalfi Coast, with volcanic spa gardens, the Aragonese castle on its islet and quiet green coves. It is the closest swap here if you want Amalfi's setting without the day-tripper crush.",
+        "elba": "A Tuscan-archipelago island ringed by turquoise coves, chestnut hills and small harbour towns, an easy ferry from the mainland. One of the quietest picks in our data, calm even at its midsummer high.",
+        "calabria": "The toe of Italy, where Tropea's old town perches on a cliff above white sand and impossibly clear water that locals call the Italian Maldives. The quietest pick on this list, month in, month out."
+      },
+      "faq": {
+        "q1": "Is the Amalfi Coast really that crowded?",
+        "a1": "In peak season the Amalfi Coast funnels huge numbers of visitors along one narrow coastal road, and on the busiest summer days authorities run an alternate number-plate system to ease the gridlock. Our seasonal crowd model rates it busy across its whole May to September peak.",
+        "q2": "When is the best time to visit these alternatives?",
+        "a2": "Each pick lists its busiest and quietest months above, computed from our crowd data. As a rule, late spring and early autumn give you warm sea with the mildest crowds. Sicily and Puglia are the busiest of these five, so lean toward June or September for those.",
+        "q3": "How are the crowd levels calculated?",
+        "a3": "They come from a travel-demand model that combines each place's popularity and capacity with school-holiday timing across 100+ countries, the same model that powers the PackedPlaces map. They are relative crowd estimates, not live visitor counts."
+      },
+      "ctaTitle": "See the crowds for yourself",
+      "ctaText": "Open the live map to compare any of these coasts week by week, or check the Amalfi Coast's own crowd calendar.",
+      "ctaButton": "Explore the crowd map",
+      "ctaCompare": "See the Amalfi Coast's crowd calendar"
     }
   }
 }

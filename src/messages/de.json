@@ -712,6 +712,35 @@
       "ctaText": "Öffnen Sie die Live-Karte, um jede dieser Städte Woche für Woche zu vergleichen, oder prüfen Sie Dubrovniks eigenen Crowd-Kalender.",
       "ctaButton": "Crowd-Karte erkunden",
       "ctaCompare": "Dubrovniks Crowd-Kalender ansehen"
+    },
+    "amalfi":     {
+      "cardTitle": "5 weniger überlaufene Alternativen zur Amalfiküste (2026)",
+      "cardBlurb": "Italienische Küsten und Inseln mit derselben Dramatik aus Klippen über blauem Meer, die im Hochsommer deutlich ruhiger bleiben als die Amalfiküste, sortiert mit unseren Crowd-Daten.",
+      "metaTitle": "5 weniger überlaufene Alternativen zur Amalfiküste (2026)",
+      "metaDescription": "Die Amalfiküste fährt im Sommer ein Kennzeichen-Wechselsystem gegen den Stau. Hier sind 5 italienische Küsten und Inseln, die deutlich ruhiger bleiben, ausgewählt mit PackedPlaces-Crowd-Daten.",
+      "h1": "5 weniger überlaufene Alternativen zur Amalfiküste (2026)",
+      "intro": "Die Amalfiküste ist einer der Overtourism-Brennpunkte Italiens: Eine einzige Klippenstraße verbindet ihre Dörfer, und an den vollsten Sommertagen regeln die Behörden den Verkehr mit einem Kennzeichen-Wechselsystem. Unser Crowd-Modell bewertet die Küste über ihren gesamten Höhepunkt von Mai bis September als voll. Wer den Look aus pastellfarbenen Dörfern über blauem Meer liebt, aber nicht das sommerliche Gedränge, findet in unserem Datensatz diese 5 echt ruhigeren Ziele. Jedes bleibt im Hochsommer unter dem Crowd-Niveau der Amalfiküste.",
+      "methodology": "So haben wir gewählt: Wir haben den Crowd-Wert genommen, den unser Modell jedem Ort Monat für Monat zuweist (dasselbe Modell hinter der Karte und den Zielseiten), und italienische Küsten und Inseln behalten, die während des Amalfi-Höhepunkts von Mai bis September nie deren Niveau erreichen. Der vollste und der ruhigste Monat unten werden live aus diesen Daten berechnet und aktualisieren sich mit dem Datensatz.",
+      "calmerBadge": "Im Hochsommer unter dem Crowd-Niveau der Amalfiküste",
+      "picks": {
+        "sicilia": "Italiens größte Insel zeigt dieselbe Dramatik auf größerer Leinwand: die Klippenterrassen von Taormina über dem Ionischen Meer, die goldene Bucht von Cefalù und dahinter der rauchende Kegel des Ätna. Die Weite verteilt die Menschen, dennoch ist es der vollste Pick hier, also lieber Juni oder September statt der Augustspitze.",
+        "puglia": "Der sonnengebleichte Absatz Italiens, wo Polignano a Mare auf Kalksteinklippen über der Adria balanciert und landeinwärts die Trulli von Alberobello stehen. Das Gefühl der weißen Stadt über türkisem Wasser gibt es hier mit langen Salento-Stränden, die den Sommer schlucken, ganz ohne Amalfi-Stau.",
+        "ischia": "Die Thermalinsel gleich gegenüber der Amalfiküste, mit vulkanischen Thermalgärten, dem Aragonesischen Kastell auf seinem Felsen und stillen grünen Buchten. Der direkteste Tausch, wenn du Amalfis Kulisse ohne den Tagesausflügler-Andrang willst.",
+        "elba": "Eine Insel des toskanischen Archipels, umgeben von türkisen Buchten, Kastanienhügeln und kleinen Hafenorten, per Fähre leicht vom Festland erreichbar. Einer der ruhigsten Picks in unseren Daten, selbst auf dem Hochsommer-Höhepunkt gelassen.",
+        "calabria": "Die Fußspitze Italiens, wo die Altstadt von Tropea auf einer Klippe über weißem Sand und unfassbar klarem Wasser thront, das Einheimische die italienischen Malediven nennen. Der ruhigste Pick dieser Liste, Monat für Monat."
+      },
+      "faq": {
+        "q1": "Ist die Amalfiküste wirklich so voll?",
+        "a1": "In der Hochsaison schleust die Amalfiküste riesige Besuchermengen über eine einzige schmale Küstenstraße, und an den vollsten Sommertagen regeln die Behörden den Andrang mit einem Kennzeichen-Wechselsystem. Unser saisonales Crowd-Modell bewertet sie über ihren gesamten Höhepunkt von Mai bis September als voll.",
+        "q2": "Wann besucht man diese Alternativen am besten?",
+        "a2": "Jeder Pick nennt oben seinen vollsten und ruhigsten Monat, berechnet aus unseren Crowd-Daten. Als Faustregel bieten später Frühling und früher Herbst warmes Meer bei mildestem Andrang. Sizilien und Puglia sind die vollsten der fünf, für sie also eher Juni oder September wählen.",
+        "q3": "Wie werden die Crowd-Werte berechnet?",
+        "a3": "Sie stammen aus einem Reisenachfrage-Modell, das Beliebtheit und Kapazität jedes Ortes mit dem Timing der Schulferien in über 100 Ländern kombiniert, dasselbe Modell hinter der PackedPlaces-Karte. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen."
+      },
+      "ctaTitle": "Sieh dir die Crowds selbst an",
+      "ctaText": "Öffne die Live-Karte und vergleiche jede dieser Küsten Woche für Woche, oder sieh dir den Crowd-Kalender der Amalfiküste an.",
+      "ctaButton": "Crowd-Karte öffnen",
+      "ctaCompare": "Crowd-Kalender der Amalfiküste ansehen"
     }
   }
 }
