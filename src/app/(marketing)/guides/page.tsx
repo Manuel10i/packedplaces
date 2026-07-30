@@ -14,7 +14,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("hubMetaTitle"),
     description: t("hubMetaDescription"),
-    alternates: { canonical: `${BASE_URL}/guides` },
+    alternates: {
+      canonical: `${BASE_URL}/guides`,
+      types: {
+        "application/atom+xml": `${BASE_URL}/guides/feed.xml`,
+      },
+    },
     openGraph: {
       title: t("hubMetaTitle"),
       description: t("hubMetaDescription"),
