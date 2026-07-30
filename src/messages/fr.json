@@ -1,29 +1,29 @@
 {
-    "crowdIndex": {
-      "metaTitle": "Les destinations touristiques les plus fréquentées, selon les données d'affluence",
-      "metaDescription": "Les 30 destinations les plus fréquentées de notre jeu de données, classées selon leur affluence au pic de saison. Basé sur le modèle d'affluence PackedPlaces derrière la carte.",
-      "kicker": "Rapport de données d'affluence",
-      "h1": "Les destinations touristiques les plus fréquentées",
-      "intro": "Voici les 30 destinations que notre modèle d'affluence juge les plus fréquentées à leur pic de saison, tirées d'un jeu de plus de 700 lieux dans le monde. Le classement se met à jour avec les données, sans aucun chiffre saisi à la main.",
-      "methodology": "Notre méthode de classement : pour chaque destination, nous prenons le score d'affluence mensuel de notre modèle, gardons le mois le plus chargé et trions par ce pic. C'est le même modèle saisonnier qui alimente la carte et les pages de destination, combinant la popularité et la capacité de chaque lieu avec le calendrier scolaire de plus de 100 pays. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en temps réel.",
-      "busiestPrefix": "Pic en",
-      "faqTitle": "Questions fréquentes",
-      "faq": {
-        "q1": "Comment le classement est-il calculé ?",
-        "a1": "Chaque destination reçoit un score d'affluence mensuel de notre modèle saisonnier. Nous prenons son mois le plus chargé et classons toutes les destinations selon ce pic, de sorte que la liste reflète à quel point un lieu se remplit à son maximum.",
-        "q2": "S'agit-il de comptages de visiteurs en temps réel ?",
-        "a2": "Non. Les scores sont des estimations relatives d'affluence issues d'un modèle de demande, pas des chiffres en temps réel. Ils servent à comparer les lieux et à choisir de meilleures dates, pas à compter les gens à l'entrée.",
-        "q3": "Comment éviter ces foules ?",
-        "a3": "Ouvrez n'importe quelle destination pour voir son calendrier d'affluence mois par mois et trouver sa période la plus calme, ou parcourez nos guides pour des alternatives moins fréquentées aux lieux les plus bondés."
-      },
-      "guidesLink": {
-        "text": "Vous voulez la version plus calme de ces lieux ?",
-        "anchor": "Lisez nos guides de voyages moins fréquentés."
-      },
-      "ctaTitle": "Voyez l'affluence semaine après semaine",
-      "ctaText": "Ouvrez la carte en direct pour comparer n'importe quelle destination mois par mois, ou recherchez un lieu et voyez exactement quand il se remplit.",
-      "ctaButton": "Explorer la carte d'affluence"
+  "crowdIndex": {
+    "metaTitle": "Les destinations touristiques les plus fréquentées, selon les données d'affluence",
+    "metaDescription": "Les 30 destinations les plus fréquentées de notre jeu de données, classées selon leur affluence au pic de saison. Basé sur le modèle d'affluence PackedPlaces derrière la carte.",
+    "kicker": "Rapport de données d'affluence",
+    "h1": "Les destinations touristiques les plus fréquentées",
+    "intro": "Voici les 30 destinations que notre modèle d'affluence juge les plus fréquentées à leur pic de saison, tirées d'un jeu de plus de 700 lieux dans le monde. Le classement se met à jour avec les données, sans aucun chiffre saisi à la main.",
+    "methodology": "Notre méthode de classement : pour chaque destination, nous prenons le score d'affluence mensuel de notre modèle, gardons le mois le plus chargé et trions par ce pic. C'est le même modèle saisonnier qui alimente la carte et les pages de destination, combinant la popularité et la capacité de chaque lieu avec le calendrier scolaire de plus de 100 pays. Ce sont des estimations relatives d'affluence, pas des comptages de visiteurs en temps réel.",
+    "busiestPrefix": "Pic en",
+    "faqTitle": "Questions fréquentes",
+    "faq": {
+      "q1": "Comment le classement est-il calculé ?",
+      "a1": "Chaque destination reçoit un score d'affluence mensuel de notre modèle saisonnier. Nous prenons son mois le plus chargé et classons toutes les destinations selon ce pic, de sorte que la liste reflète à quel point un lieu se remplit à son maximum.",
+      "q2": "S'agit-il de comptages de visiteurs en temps réel ?",
+      "a2": "Non. Les scores sont des estimations relatives d'affluence issues d'un modèle de demande, pas des chiffres en temps réel. Ils servent à comparer les lieux et à choisir de meilleures dates, pas à compter les gens à l'entrée.",
+      "q3": "Comment éviter ces foules ?",
+      "a3": "Ouvrez n'importe quelle destination pour voir son calendrier d'affluence mois par mois et trouver sa période la plus calme, ou parcourez nos guides pour des alternatives moins fréquentées aux lieux les plus bondés."
     },
+    "guidesLink": {
+      "text": "Vous voulez la version plus calme de ces lieux ?",
+      "anchor": "Lisez nos guides de voyages moins fréquentés."
+    },
+    "ctaTitle": "Voyez l'affluence semaine après semaine",
+    "ctaText": "Ouvrez la carte en direct pour comparer n'importe quelle destination mois par mois, ou recherchez un lieu et voyez exactement quand il se remplit.",
+    "ctaButton": "Explorer la carte d'affluence"
+  },
   "consent": {
     "title": "Avis sur les cookies",
     "message": "Nous utilisons des cookies pour des statistiques anonymes afin d'améliorer le site. Rien n'est suivi tant que vous n'avez pas accepté.",
@@ -713,7 +713,7 @@
       "ctaButton": "Explorer la carte d'affluence",
       "ctaCompare": "Voir le calendrier d'affluence de Dubrovnik"
     },
-    "amalfi":     {
+    "amalfi": {
       "cardTitle": "5 alternatives moins fréquentées à la côte amalfitaine (2026)",
       "cardBlurb": "Des côtes et des îles italiennes avec le même spectacle de falaises au-dessus d'une mer bleue, bien plus calmes que la côte amalfitaine au coeur de l'été, classées avec nos données d'affluence.",
       "metaTitle": "5 alternatives moins fréquentées à la côte amalfitaine (2026)",
@@ -742,5 +742,35 @@
       "ctaButton": "Explorer la carte d'affluence",
       "ctaCompare": "Voir le calendrier d'affluence de la côte amalfitaine"
     }
+  },
+  "monthHub": {
+    "hubMetaTitle": "Les endroits les moins fréquentés à visiter, mois par mois",
+    "hubMetaDescription": "Où voyager chaque mois pour éviter la foule. Douze sélections de lieux appréciés dans leur basse saison tranquille, à partir de données réelles de fréquentation.",
+    "hubKicker": "Mois par mois",
+    "hubTitle": "Où aller pour éviter la foule, mois par mois",
+    "hubLede": "Choisissez un mois et découvrez les destinations connues qui sont alors dans leur intersaison tranquille, assez proches du pic pour que la météo tienne encore, mais loin de la foule.",
+    "hubCardCta": "Voir les suggestions",
+    "hubFootnote": "Vous préférez un lieu précis ? Consultez ses semaines les plus calmes avec",
+    "hubFootnoteLink": "le chercheur de meilleure période",
+    "kicker": "Basse saison",
+    "metaTitle": "Les endroits les moins fréquentés à visiter en {month}",
+    "metaDescription": "Où voyager en {month} pour éviter la foule : des destinations connues dans leur intersaison tranquille, choisies à partir de données réelles de fréquentation.",
+    "title": "Les endroits les moins fréquentés à visiter en {month}",
+    "lede": "Où voyager en {month} pour le calme de la basse saison : des lieux connus qui ont passé leur pic de foule mais restent en bonne saison.",
+    "intro": "Ce sont des destinations appréciées qui, en {month}, se trouvent dans leur intersaison, assez calmes pour en profiter mais assez proches du pic pour que la météo et le lieu tiennent leurs promesses. Chaque suggestion et chaque niveau de fréquentation vient du même modèle saisonnier que le reste du site, calculé à la volée, jamais à la main.",
+    "picksHeading": "Lieux appréciés les plus calmes en {month}",
+    "crowdLine": "En {month} : {monthBand}. À son pic : {peakBand}.",
+    "viewDestination": "Voir la destination",
+    "allMonths": "Tous les mois",
+    "faqTitle": "Questions",
+    "faq1Q": "Quelle est la meilleure période pour voyager en évitant la foule ?",
+    "faq1A": "L'intersaison, les semaines juste avant ou après le pic de fréquentation d'une destination, est le moment idéal : la météo est souvent encore bonne mais la foule s'est clairsemée. Cette page réunit les lieux appréciés dont l'intersaison tombe en {month}.",
+    "faq2Q": "Comment les suggestions de {month} sont-elles choisies ?",
+    "faq2A": "Avec le même modèle saisonnier de fréquentation que le reste du site. Nous prenons des destinations connues, gardons celles qui, en {month}, sont dans un mois calme proche de leur haute saison, classons les plus calmes en premier et les répartissons entre pays. Rien n'est choisi ni classé à la main.",
+    "faq3Q": "Où voyager en {month} pour moins d'affluence ?",
+    "faq3A": "Chacun des lieux ci-dessus est calme en {month} sans être dans sa saison morte. Ouvrez une destination pour voir son calendrier mensuel complet, ou utilisez le chercheur de meilleure période pour des dates précises.",
+    "ctaBestTime": "Trouver la meilleure période pour un lieu",
+    "ctaMap": "Ouvrir la carte de fréquentation",
+    "disclaimer": "Les niveaux de fréquentation sont des estimations saisonnières relatives issues de notre modèle, pas des comptages en direct. La météo et les horaires varient ; vérifiez les conditions avant de réserver."
   }
 }
