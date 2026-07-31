@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allDestinationSlugs, hreflangSlugMap } from "@/lib/destinations";
 import { allGuideSlugs } from "@/lib/guides";
+import { allMonthSlugs } from "@/lib/quiet-months";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -15,7 +16,10 @@ function destinationAlternates(slug: string) {
   if (!map) return undefined;
   return {
     languages: Object.fromEntries(
-      Object.entries(map).map(([lang, s]) => [lang, `${BASE_URL}/destination/${s}`]),
+      Object.entries(map).map(([lang, s]) => [
+        lang,
+        `${BASE_URL}/destination/${s}`,
+      ]),
     ),
   };
 }
@@ -25,14 +29,43 @@ const PATHS = [
   { path: "map", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "best-time", changeFrequency: "weekly" as const, priority: 0.8 },
   { path: "guides", changeFrequency: "weekly" as const, priority: 0.8 },
+  { path: "least-crowded", changeFrequency: "weekly" as const, priority: 0.8 },
   { path: "crowd-index", changeFrequency: "weekly" as const, priority: 0.8 },
-  { path: "features/crowdedness", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/seasonality", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/categories", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/holiday-boost", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/timeline", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/holiday-providers", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "features/events", changeFrequency: "monthly" as const, priority: 0.7 },
+  {
+    path: "features/crowdedness",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/seasonality",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/categories",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/holiday-boost",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/timeline",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/holiday-providers",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
+  {
+    path: "features/events",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -66,5 +99,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...destinationEntries, ...guideEntries];
+  // Month-by-month "least crowded" pages (single URL each, locale negotiated).
+  const monthHubEntries = allMonthSlugs().map((month) => ({
+    url: `${BASE_URL}/least-crowded/${month}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticEntries,
+    ...destinationEntries,
+    ...guideEntries,
+    ...monthHubEntries,
+  ];
 }

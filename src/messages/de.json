@@ -1,29 +1,29 @@
 {
-    "crowdIndex": {
-      "metaTitle": "Die vollsten Reiseziele der Welt, sortiert nach Crowd-Daten",
-      "metaDescription": "Die 30 vollsten Reiseziele in unserem Datensatz, sortiert danach, wie voll sie in ihrer Hochsaison werden. Basierend auf dem PackedPlaces-Crowd-Modell hinter der Karte.",
-      "kicker": "Crowd-Daten-Report",
-      "h1": "Die vollsten Reiseziele der Welt",
-      "intro": "Das sind die 30 Reiseziele, die unser Crowd-Modell in ihrer Hochsaison als am vollsten einstuft, aus einem Datensatz von über 700 Orten weltweit. Die Rangliste aktualisiert sich mit den Daten, ganz ohne handgetippte Zahlen.",
-      "methodology": "So sortieren wir: Für jedes Ziel nehmen wir den monatlichen Crowd-Wert unseres Modells, behalten den vollsten Monat und sortieren nach diesem Höchstwert. Es ist dasselbe Saison-Modell, das auch die Karte und die Zielseiten speist. Es verbindet Beliebtheit und Kapazität jedes Ortes mit den Schulferien in über 100 Ländern. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen.",
-      "busiestPrefix": "Höhepunkt im",
-      "faqTitle": "Häufige Fragen",
-      "faq": {
-        "q1": "Wie wird die Rangliste berechnet?",
-        "a1": "Jedes Ziel erhält von unserem Saison-Modell einen monatlichen Crowd-Wert. Wir nehmen den vollsten Monat und sortieren alle Ziele nach diesem Höchstwert. Die Liste zeigt also, wie voll ein Ort wird, wenn er am vollsten ist.",
-        "q2": "Sind das Live-Besucherzahlen?",
-        "a2": "Nein. Die Werte sind relative Crowd-Schätzungen aus einem Nachfragemodell, keine Echtzeit-Zahlen. Sie helfen, Orte zu vergleichen und bessere Reisedaten zu finden, nicht Menschen am Eingang zu zählen.",
-        "q3": "Wie umgehe ich diese Menschenmassen?",
-        "a3": "Öffne ein beliebiges Ziel, um seinen Crowd-Kalender Monat für Monat zu sehen und das ruhigste Zeitfenster zu finden, oder stöbere in unseren Guides nach ruhigeren Alternativen zu den vollsten Orten."
-      },
-      "guidesLink": {
-        "text": "Willst du die ruhigere Version dieser Orte?",
-        "anchor": "Lies unsere Guides zu weniger überlaufenen Reisezielen."
-      },
-      "ctaTitle": "Sieh die Auslastung Woche für Woche",
-      "ctaText": "Öffne die Live-Karte, um jedes Ziel Monat für Monat zu vergleichen, oder suche einen Ort und sieh genau, wann er voll wird.",
-      "ctaButton": "Crowd-Karte öffnen"
+  "crowdIndex": {
+    "metaTitle": "Die vollsten Reiseziele der Welt, sortiert nach Crowd-Daten",
+    "metaDescription": "Die 30 vollsten Reiseziele in unserem Datensatz, sortiert danach, wie voll sie in ihrer Hochsaison werden. Basierend auf dem PackedPlaces-Crowd-Modell hinter der Karte.",
+    "kicker": "Crowd-Daten-Report",
+    "h1": "Die vollsten Reiseziele der Welt",
+    "intro": "Das sind die 30 Reiseziele, die unser Crowd-Modell in ihrer Hochsaison als am vollsten einstuft, aus einem Datensatz von über 700 Orten weltweit. Die Rangliste aktualisiert sich mit den Daten, ganz ohne handgetippte Zahlen.",
+    "methodology": "So sortieren wir: Für jedes Ziel nehmen wir den monatlichen Crowd-Wert unseres Modells, behalten den vollsten Monat und sortieren nach diesem Höchstwert. Es ist dasselbe Saison-Modell, das auch die Karte und die Zielseiten speist. Es verbindet Beliebtheit und Kapazität jedes Ortes mit den Schulferien in über 100 Ländern. Es sind relative Crowd-Schätzungen, keine Live-Besucherzahlen.",
+    "busiestPrefix": "Höhepunkt im",
+    "faqTitle": "Häufige Fragen",
+    "faq": {
+      "q1": "Wie wird die Rangliste berechnet?",
+      "a1": "Jedes Ziel erhält von unserem Saison-Modell einen monatlichen Crowd-Wert. Wir nehmen den vollsten Monat und sortieren alle Ziele nach diesem Höchstwert. Die Liste zeigt also, wie voll ein Ort wird, wenn er am vollsten ist.",
+      "q2": "Sind das Live-Besucherzahlen?",
+      "a2": "Nein. Die Werte sind relative Crowd-Schätzungen aus einem Nachfragemodell, keine Echtzeit-Zahlen. Sie helfen, Orte zu vergleichen und bessere Reisedaten zu finden, nicht Menschen am Eingang zu zählen.",
+      "q3": "Wie umgehe ich diese Menschenmassen?",
+      "a3": "Öffne ein beliebiges Ziel, um seinen Crowd-Kalender Monat für Monat zu sehen und das ruhigste Zeitfenster zu finden, oder stöbere in unseren Guides nach ruhigeren Alternativen zu den vollsten Orten."
     },
+    "guidesLink": {
+      "text": "Willst du die ruhigere Version dieser Orte?",
+      "anchor": "Lies unsere Guides zu weniger überlaufenen Reisezielen."
+    },
+    "ctaTitle": "Sieh die Auslastung Woche für Woche",
+    "ctaText": "Öffne die Live-Karte, um jedes Ziel Monat für Monat zu vergleichen, oder suche einen Ort und sieh genau, wann er voll wird.",
+    "ctaButton": "Crowd-Karte öffnen"
+  },
   "consent": {
     "title": "Cookie-Hinweis",
     "message": "Wir verwenden Cookies für anonyme Statistik, um die Seite zu verbessern. Bis du zustimmst, wird nichts getrackt.",
@@ -713,7 +713,7 @@
       "ctaButton": "Crowd-Karte erkunden",
       "ctaCompare": "Dubrovniks Crowd-Kalender ansehen"
     },
-    "amalfi":     {
+    "amalfi": {
       "cardTitle": "5 weniger überlaufene Alternativen zur Amalfiküste (2026)",
       "cardBlurb": "Italienische Küsten und Inseln mit derselben Dramatik aus Klippen über blauem Meer, die im Hochsommer deutlich ruhiger bleiben als die Amalfiküste, sortiert mit unseren Crowd-Daten.",
       "metaTitle": "5 weniger überlaufene Alternativen zur Amalfiküste (2026)",
@@ -742,5 +742,35 @@
       "ctaButton": "Crowd-Karte öffnen",
       "ctaCompare": "Crowd-Kalender der Amalfiküste ansehen"
     }
+  },
+  "monthHub": {
+    "hubMetaTitle": "Die am wenigsten überlaufenen Reiseziele, Monat für Monat",
+    "hubMetaDescription": "Wohin du in jedem Monat reist, um den Massen zu entgehen. Zwölf Shortlists beliebter Orte in ihrer ruhigen Nebensaison, aus echten Crowd-Daten.",
+    "hubKicker": "Monat für Monat",
+    "hubTitle": "Wohin, um den Massen zu entgehen, Monat für Monat",
+    "hubLede": "Wähle einen Monat und sieh die beliebten Ziele, die dann in ihrer ruhigen Nebensaison liegen, nah genug an der Hauptsaison, dass Wetter und Ort noch stimmen, aber vorbei an den Massen.",
+    "hubCardCta": "Zu den Empfehlungen",
+    "hubFootnote": "Lieber ein bestimmtes Ziel? Prüfe seine ruhigsten Wochen mit",
+    "hubFootnoteLink": "dem Beste-Zeit-Finder",
+    "kicker": "Nebensaison",
+    "metaTitle": "Die ruhigsten Reiseziele im {month}",
+    "metaDescription": "Wohin du im {month} reist, um den Massen zu entgehen: beliebte Ziele in ihrer ruhigen Nebensaison, aus echten Crowd-Daten, nicht handverlesen.",
+    "title": "Die ruhigsten Reiseziele im {month}",
+    "lede": "Wohin du im {month} für Nebensaison-Ruhe reist: bekannte Orte, die ihren Crowd-Peak hinter sich haben, aber noch in guter Saison liegen.",
+    "intro": "Das sind beliebte Ziele, die im {month} in ihrer Nebensaison liegen, ruhig genug zum Genießen, aber nah genug an der Hauptsaison, dass Wetter und Ort noch liefern. Jede Empfehlung und jeder Crowd-Wert kommt aus demselben Saison-Modell wie der Rest der Seite, frisch berechnet, nie handverlesen.",
+    "picksHeading": "Ruhigste beliebte Orte im {month}",
+    "crowdLine": "Im {month}: {monthBand}. Zum Peak: {peakBand}.",
+    "viewDestination": "Zum Reiseziel",
+    "allMonths": "Alle Monate",
+    "faqTitle": "Fragen",
+    "faq1Q": "Wann reist man am besten, um Massen zu vermeiden?",
+    "faq1A": "Die Nebensaison, die Wochen kurz vor oder nach dem Crowd-Peak eines Ziels, ist der Sweet Spot: Das Wetter ist meist noch gut, die Massen sind aber dünner. Diese Seite listet die beliebten Orte, deren Nebensaison in den {month} fällt.",
+    "faq2Q": "Wie werden die Empfehlungen für {month} gewählt?",
+    "faq2A": "Aus demselben Saison-Crowd-Modell wie der Rest der Seite. Wir nehmen bekannte Ziele, behalten die, die im {month} in einem ruhigen Monat nahe ihrer Hauptsaison liegen, sortieren die ruhigsten nach vorn und verteilen sie über Länder. Nichts ist handverlesen oder handsortiert.",
+    "faq3Q": "Wohin sollte ich im {month} für weniger Andrang reisen?",
+    "faq3A": "Jeder der Orte oben ist im {month} ruhig, ohne in seiner toten Nebensaison zu stecken. Öffne ein Ziel für seinen vollständigen Monatskalender oder nutze den Beste-Zeit-Finder für konkrete Daten.",
+    "ctaBestTime": "Beste Zeit für einen Ort finden",
+    "ctaMap": "Crowd-Karte öffnen",
+    "disclaimer": "Crowd-Werte sind relative Saison-Schätzungen aus unserem Modell, keine Live-Besucherzahlen. Wetter und Öffnungszeiten variieren; prüfe die Bedingungen vor der Buchung."
   }
 }
