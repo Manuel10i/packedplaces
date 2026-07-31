@@ -450,8 +450,8 @@
   },
   "destination": {
     "metaTitle": "{name}: best time to visit and when it is crowded",
-    "metaDescription": "See month by month when {name} is busiest and quietest. Peak season is {months}. Plan your visit around the crowds.",
-    "metaDescriptionYearRound": "See how crowded {name} gets month by month across the year, and plan your visit around the crowds.",
+    "metaDescription": "Is {name} busy? Peak crowds hit in {months}. See {name}’s month-by-month crowd calendar and find the quietest time to visit.",
+    "metaDescriptionYearRound": "Is {name} busy? It draws crowds all year. See {name}’s month-by-month crowd calendar and find its calmest stretches before you go.",
     "h1": "When is {name} crowded?",
     "intro": "{name} is a {category} destination in {country}. Its peak season is {months}. Here is how busy it gets across the year, so you can pick the right time to go.",
     "introYearRound": "{name} is a {category} destination in {country} that stays busy year-round. Here is how the crowds shift across the months.",
