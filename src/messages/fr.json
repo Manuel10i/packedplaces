@@ -450,8 +450,8 @@
   },
   "destination": {
     "metaTitle": "{name} : meilleure période pour visiter et quand il y a foule",
-    "metaDescription": "Découvrez mois par mois quand {name} est le plus fréquenté et le plus calme. La haute saison est {months}. Planifiez votre visite en évitant la foule.",
-    "metaDescriptionYearRound": "Découvrez la fréquentation de {name} mois par mois et planifiez votre visite en évitant la foule.",
+    "metaDescription": "Y a-t-il foule à {name} ? L’affluence culmine en {months}. Consultez l’affluence de {name} mois par mois et trouvez la période la plus calme pour visiter.",
+    "metaDescriptionYearRound": "Y a-t-il foule à {name} ? L’affluence dure toute l’année. Consultez l’affluence de {name} mois par mois et trouvez ses moments les plus calmes avant de partir.",
     "h1": "Quand y a-t-il foule à {name} ?",
     "intro": "{name} est une destination de type {category} en {country}. Sa haute saison est {months}. Voici sa fréquentation au fil des mois, pour choisir le bon moment pour partir.",
     "introYearRound": "{name} est une destination de type {category} en {country}, fréquentée en permanence. Voici comment la foule évolue au fil des mois.",
