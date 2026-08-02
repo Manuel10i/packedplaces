@@ -772,5 +772,12 @@
     "ctaBestTime": "Find the best time for a place",
     "ctaMap": "Open the crowd map",
     "disclaimer": "Crowd levels are relative seasonal estimates from our model, not live visitor counts. Weather and opening times vary; check local conditions before you book."
+  },
+  "explore": {
+    "title": "Keep exploring",
+    "monthHub": "Where to go in {month} to avoid the crowds",
+    "monthHubGeneric": "Find the least crowded month for any destination",
+    "crowdIndex": "See the most crowded destinations, ranked by crowd data",
+    "guides": "Read our less crowded travel guides"
   }
 }

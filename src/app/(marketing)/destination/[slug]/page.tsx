@@ -20,6 +20,7 @@ import {
   getWeeklyBusyness,
 } from "@/lib/services/destination-busyness";
 import { quietAlternatives } from "@/lib/quiet-alternatives";
+import { MONTH_SLUGS } from "@/lib/quiet-months";
 import { slugForDestination } from "@/lib/destinations";
 import { getCountryFlag } from "@/lib/data";
 import {
@@ -155,6 +156,7 @@ export default async function DestinationPage({
   const tSaved = await getTranslations({ locale, namespace: "saved" });
   const tShare = await getTranslations({ locale, namespace: "share" });
   const tAlt = await getTranslations({ locale, namespace: "alternatives" });
+  const tExplore = await getTranslations({ locale, namespace: "explore" });
   const alts = localizedSlugsForSlug(slug);
   const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
 
@@ -358,6 +360,38 @@ export default async function DestinationPage({
               </div>
             </div>
           )}
+
+          <div className="mt-12">
+            <h2 className="font-display text-2xl text-ink">{tExplore("title")}</h2>
+            <ul className="mt-5 divide-y divide-line border-y border-line">
+              <li className="py-4">
+                <Link
+                  href={hasQuiet ? `/least-crowded/${MONTH_SLUGS[quietIdx[0]]}` : "/least-crowded"}
+                  className="text-accent underline underline-offset-2 hover:text-accent-2"
+                >
+                  {hasQuiet
+                    ? tExplore("monthHub", { month: long[quietIdx[0]] })
+                    : tExplore("monthHubGeneric")}
+                </Link>
+              </li>
+              <li className="py-4">
+                <Link
+                  href="/crowd-index"
+                  className="text-accent underline underline-offset-2 hover:text-accent-2"
+                >
+                  {tExplore("crowdIndex")}
+                </Link>
+              </li>
+              <li className="py-4">
+                <Link
+                  href="/guides"
+                  className="text-accent underline underline-offset-2 hover:text-accent-2"
+                >
+                  {tExplore("guides")}
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <div className="mt-14">
             <h2 className="font-display text-2xl text-ink">{t("faqTitle")}</h2>

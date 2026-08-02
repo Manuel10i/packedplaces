@@ -772,5 +772,12 @@
     "ctaBestTime": "Beste Zeit für einen Ort finden",
     "ctaMap": "Crowd-Karte öffnen",
     "disclaimer": "Crowd-Werte sind relative Saison-Schätzungen aus unserem Modell, keine Live-Besucherzahlen. Wetter und Öffnungszeiten variieren; prüfe die Bedingungen vor der Buchung."
+  },
+  "explore": {
+    "title": "Weiter erkunden",
+    "monthHub": "Wohin im {month}, um Menschenmassen zu vermeiden",
+    "monthHubGeneric": "Den ruhigsten Monat für jedes Reiseziel finden",
+    "crowdIndex": "Die vollsten Reiseziele, nach Crowd-Daten sortiert",
+    "guides": "Unsere Reiseführer zu weniger überlaufenen Zielen lesen"
   }
 }
