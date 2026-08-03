@@ -772,5 +772,12 @@
     "ctaBestTime": "Trouver la meilleure période pour un lieu",
     "ctaMap": "Ouvrir la carte de fréquentation",
     "disclaimer": "Les niveaux de fréquentation sont des estimations saisonnières relatives issues de notre modèle, pas des comptages en direct. La météo et les horaires varient ; vérifiez les conditions avant de réserver."
+  },
+  "explore": {
+    "title": "Continuer l'exploration",
+    "monthHub": "Où aller en {month} pour éviter la foule",
+    "monthHubGeneric": "Trouvez le mois le moins fréquenté pour chaque destination",
+    "crowdIndex": "Les destinations les plus fréquentées, classées par données d'affluence",
+    "guides": "Lisez nos guides des destinations moins fréquentées"
   }
 }

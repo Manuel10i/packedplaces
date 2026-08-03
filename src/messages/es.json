@@ -772,5 +772,12 @@
     "ctaBestTime": "Encontrar la mejor época para un lugar",
     "ctaMap": "Abrir el mapa de afluencia",
     "disclaimer": "Los niveles de afluencia son estimaciones estacionales relativas de nuestro modelo, no recuentos de visitantes en vivo. El clima y los horarios varían; comprueba las condiciones antes de reservar."
+  },
+  "explore": {
+    "title": "Sigue explorando",
+    "monthHub": "Adónde ir en {month} para evitar las multitudes",
+    "monthHubGeneric": "Encuentra el mes con menos gente para cualquier destino",
+    "crowdIndex": "Los destinos más concurridos, clasificados por datos de afluencia",
+    "guides": "Lee nuestras guías de destinos menos concurridos"
   }
 }
