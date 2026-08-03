@@ -779,5 +779,14 @@
     "monthHubGeneric": "Trouvez le mois le moins fréquenté pour chaque destination",
     "crowdIndex": "Les destinations les plus fréquentées, classées par données d'affluence",
     "guides": "Lisez nos guides des destinations moins fréquentées"
+  },
+  "embed": {
+    "heading": "Intégrez ce graphique de fréquentation",
+    "intro": "Vous tenez un blog ou un guide de voyage ? Ajoutez le graphique de fréquentation de {name} à votre site. Il se met à jour avec nos données et renvoie ici.",
+    "previewTitle": "Niveau de fréquentation de {name}",
+    "snippetLabel": "Code d'intégration",
+    "copy": "Copier",
+    "copied": "Copié",
+    "attribution": "Quand {name} est bondé"
   }
 }

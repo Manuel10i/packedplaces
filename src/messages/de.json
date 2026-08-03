@@ -779,5 +779,14 @@
     "monthHubGeneric": "Den ruhigsten Monat für jedes Reiseziel finden",
     "crowdIndex": "Die vollsten Reiseziele, nach Crowd-Daten sortiert",
     "guides": "Unsere Reiseführer zu weniger überlaufenen Zielen lesen"
+  },
+  "embed": {
+    "heading": "Diesen Crowd-Chart einbetten",
+    "intro": "Du betreibst einen Reiseblog oder Guide? Setz den Crowd-Chart von {name} auf deine Seite. Er aktualisiert sich aus unseren Daten und verlinkt hierher zurück.",
+    "previewTitle": "Crowd-Level von {name}",
+    "snippetLabel": "Embed-Code",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "attribution": "Wann {name} voll ist"
   }
 }

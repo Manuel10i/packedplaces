@@ -779,5 +779,14 @@
     "monthHubGeneric": "Encuentra el mes con menos gente para cualquier destino",
     "crowdIndex": "Los destinos más concurridos, clasificados por datos de afluencia",
     "guides": "Lee nuestras guías de destinos menos concurridos"
+  },
+  "embed": {
+    "heading": "Inserta este gráfico de afluencia",
+    "intro": "¿Tienes un blog o una guía de viajes? Añade el gráfico de afluencia de {name} a tu sitio. Se actualiza con nuestros datos y enlaza de vuelta aquí.",
+    "previewTitle": "Nivel de afluencia de {name}",
+    "snippetLabel": "Código para insertar",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "attribution": "Cuándo {name} está lleno"
   }
 }

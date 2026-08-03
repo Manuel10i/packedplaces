@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { EmbedSnippet } from "@/components/embed/EmbedSnippet";
 import { getCountryName } from "@/lib/data";
 import {
   allDestinationSlugs,
@@ -72,7 +73,10 @@ function monthNames(locale: string, style: "long" | "short"): string[] {
 }
 
 function joinList(locale: string, items: string[]): string {
-  const lf = new Intl.ListFormat(locale, { style: "long", type: "conjunction" });
+  const lf = new Intl.ListFormat(locale, {
+    style: "long",
+    type: "conjunction",
+  });
   return lf.format(items);
 }
 
@@ -86,8 +90,10 @@ function summarizeBusyness(scores: number[]) {
   const min = Math.min(...scores);
   const range = max - min;
   const near = range * 0.15;
-  const peakIdx = range > 0 ? scores.flatMap((s, i) => (s >= max - near ? [i] : [])) : [];
-  const quietIdx = range > 0 ? scores.flatMap((s, i) => (s <= min + near ? [i] : [])) : [];
+  const peakIdx =
+    range > 0 ? scores.flatMap((s, i) => (s >= max - near ? [i] : [])) : [];
+  const quietIdx =
+    range > 0 ? scores.flatMap((s, i) => (s <= min + near ? [i] : [])) : [];
   // Busy in every month (even the quietest stays "busy"), or a perfectly flat
   // profile with no month to single out — either way, use the year-round copy.
   const yearRound = min >= 0.4 || range === 0;
@@ -107,7 +113,8 @@ export async function generateMetadata({
   // the hreflang="de" URL genuinely serves German content.
   const locale = entry.locale === "de" ? "de" : await getLocale();
   // German rendering (via slug or via the language switcher) uses the exonym.
-  const displayName = locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
+  const displayName =
+    locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
   const t = await getTranslations({ locale, namespace: "destination" });
   const long = monthNames(locale, "long");
   const { peakIdx, yearRound } = summarizeBusyness(getMonthlyBusyness(d.id));
@@ -118,7 +125,10 @@ export async function generateMetadata({
     title: t("metaTitle", { name: displayName }),
     description: yearRound
       ? t("metaDescriptionYearRound", { name: displayName })
-      : t("metaDescription", { name: displayName, months: joinList(locale, busiest) }),
+      : t("metaDescription", {
+          name: displayName,
+          months: joinList(locale, busiest),
+        }),
     alternates: {
       canonical,
       ...(languages ? { languages } : {}),
@@ -150,13 +160,15 @@ export default async function DestinationPage({
 
   // German slugs force German rendering (see generateMetadata).
   const locale = entry.locale === "de" ? "de" : await getLocale();
-  const displayName = locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
+  const displayName =
+    locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
   const t = await getTranslations({ locale, namespace: "destination" });
   const tip = await getTranslations({ locale, namespace: "tooltip" });
   const tSaved = await getTranslations({ locale, namespace: "saved" });
   const tShare = await getTranslations({ locale, namespace: "share" });
   const tAlt = await getTranslations({ locale, namespace: "alternatives" });
   const tExplore = await getTranslations({ locale, namespace: "explore" });
+  const tEmbed = await getTranslations({ locale, namespace: "embed" });
   const alts = localizedSlugsForSlug(slug);
   const hrefByLocale = alts ? switcherHrefs(alts) : undefined;
 
@@ -173,6 +185,12 @@ export default async function DestinationPage({
   const category = t(`categories.${d.category}`);
   const country = getCountryName(d.country, locale);
   const mapUrl = `/map?lat=${d.lat.toFixed(1)}&lng=${d.lng.toFixed(1)}&zoom=6`;
+  const embedSrc = `${BASE_URL}/embed/${slug}?lang=${locale}`;
+  // The attribution <a> lives in the host page's HTML (not inside the iframe),
+  // so it is the real, followable backlink each embed places to this page.
+  const embedSnippet =
+    `<iframe src="${embedSrc}" width="360" height="200" loading="lazy" style="border:0;max-width:100%" title="${displayName}"></iframe>\n` +
+    `<a href="${destUrl(slug)}">${tEmbed("attribution", { name: displayName })} · packedplaces</a>`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -193,19 +211,28 @@ export default async function DestinationPage({
       q: t("faqBusyQ", { name: displayName }),
       a: yearRound
         ? t("faqBusyAYearRound", { name: displayName })
-        : t("faqBusyA", { name: displayName, months: joinList(locale, busiest) }),
+        : t("faqBusyA", {
+            name: displayName,
+            months: joinList(locale, busiest),
+          }),
     },
     {
       q: t("faqBestTimeQ", { name: displayName }),
       a: hasQuiet
-        ? t("faqBestTimeA", { name: displayName, months: joinList(locale, quietest) })
+        ? t("faqBestTimeA", {
+            name: displayName,
+            months: joinList(locale, quietest),
+          })
         : t("faqBestTimeAYearRound", { name: displayName }),
     },
     ...(hasQuiet
       ? [
           {
             q: t("faqQuietQ", { name: displayName }),
-            a: t("faqQuietA", { name: displayName, months: joinList(locale, quietest) }),
+            a: t("faqQuietA", {
+              name: displayName,
+              months: joinList(locale, quietest),
+            }),
           },
         ]
       : []),
@@ -235,7 +262,8 @@ export default async function DestinationPage({
       <section className="bg-atlas-field pb-10 pt-12">
         <div className="mx-auto max-w-4xl px-6">
           <p className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">
-            {category} &middot; {country} &middot; {formatCoordinates(d.lat, d.lng)}
+            {category} &middot; {country} &middot;{" "}
+            {formatCoordinates(d.lat, d.lng)}
           </p>
           <h1 className="mt-4 font-display text-4xl leading-[1.08] text-ink sm:text-5xl">
             {t("h1", { name: displayName })}
@@ -269,7 +297,9 @@ export default async function DestinationPage({
 
       <section className="bg-surface pb-16 pt-10">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="font-display text-2xl text-ink">{t("calendarHeading")}</h2>
+          <h2 className="font-display text-2xl text-ink">
+            {t("calendarHeading")}
+          </h2>
           <div className="mt-6 grid grid-cols-6 gap-px sm:grid-cols-12">
             {scores.map((score, i) => {
               const label = tip(busynessLabelKey(score));
@@ -320,7 +350,9 @@ export default async function DestinationPage({
           </div>
 
           <div className="mt-12">
-            <h2 className="font-display text-2xl text-ink">{t("curveHeading")}</h2>
+            <h2 className="font-display text-2xl text-ink">
+              {t("curveHeading")}
+            </h2>
             <div className="mt-5 text-ink">
               <CrowdCurve
                 series={[{ id: d.id, values: weekly }]}
@@ -334,7 +366,9 @@ export default async function DestinationPage({
 
           {alternatives.length > 0 && (
             <div className="mt-12">
-              <h2 className="font-display text-2xl text-ink">{tAlt("title")}</h2>
+              <h2 className="font-display text-2xl text-ink">
+                {tAlt("title")}
+              </h2>
               <p className="mt-1 text-sm text-ink-muted">{tAlt("lede")}</p>
               <div className="mt-5 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2">
                 {alternatives.map((alt) => (
@@ -362,11 +396,17 @@ export default async function DestinationPage({
           )}
 
           <div className="mt-12">
-            <h2 className="font-display text-2xl text-ink">{tExplore("title")}</h2>
+            <h2 className="font-display text-2xl text-ink">
+              {tExplore("title")}
+            </h2>
             <ul className="mt-5 divide-y divide-line border-y border-line">
               <li className="py-4">
                 <Link
-                  href={hasQuiet ? `/least-crowded/${MONTH_SLUGS[quietIdx[0]]}` : "/least-crowded"}
+                  href={
+                    hasQuiet
+                      ? `/least-crowded/${MONTH_SLUGS[quietIdx[0]]}`
+                      : "/least-crowded"
+                  }
                   className="text-accent underline underline-offset-2 hover:text-accent-2"
                 >
                   {hasQuiet
@@ -405,12 +445,34 @@ export default async function DestinationPage({
             </dl>
           </div>
 
-          <p className="mt-6 text-xs leading-relaxed text-ink-faint">{t("disclaimer")}</p>
+          <p className="mt-6 text-xs leading-relaxed text-ink-faint">
+            {t("disclaimer")}
+          </p>
 
           <div className="mt-10">
             <Button href={mapUrl} size="lg">
               {t("mapCta", { name: displayName })} &rarr;
             </Button>
+          </div>
+
+          <div className="mt-16 border-t border-line pt-10">
+            <h2 className="font-display text-2xl text-ink">
+              {tEmbed("heading")}
+            </h2>
+            <p className="mt-2 max-w-2xl leading-relaxed text-ink-muted">
+              {tEmbed("intro", { name: displayName })}
+            </p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-[auto_1fr] sm:items-start">
+              <iframe
+                src={embedSrc}
+                width={360}
+                height={200}
+                loading="lazy"
+                style={{ border: 0, maxWidth: "100%" }}
+                title={tEmbed("previewTitle", { name: displayName })}
+              />
+              <EmbedSnippet snippet={embedSnippet} />
+            </div>
           </div>
         </div>
       </section>
