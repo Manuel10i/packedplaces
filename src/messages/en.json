@@ -779,5 +779,14 @@
     "monthHubGeneric": "Find the least crowded month for any destination",
     "crowdIndex": "See the most crowded destinations, ranked by crowd data",
     "guides": "Read our less crowded travel guides"
+  },
+  "embed": {
+    "heading": "Embed this crowd chart",
+    "intro": "Running a travel blog or guide? Drop {name}'s live crowd chart on your site. It updates from our data and links back here.",
+    "previewTitle": "{name} crowd levels",
+    "snippetLabel": "Embed code",
+    "copy": "Copy",
+    "copied": "Copied",
+    "attribution": "See when {name} is busy"
   }
 }

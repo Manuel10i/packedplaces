@@ -28,10 +28,25 @@ const securityHeaders = [
   },
 ];
 
+// The embeddable crowd widget (/embed/*) is meant to be framed by other sites,
+// so it must NOT carry the site-wide X-Frame-Options: SAMEORIGIN. It keeps the
+// rest of the baseline headers and opens framing via CSP frame-ancestors, and
+// it is marked noindex so the thin widget documents never compete with the real
+// destination pages in search.
+const embedHeaders = [
+  ...securityHeaders.filter((h) => h.key !== "X-Frame-Options"),
+  { key: "Content-Security-Policy", value: "frame-ancestors *" },
+  { key: "X-Robots-Tag", value: "noindex" },
+];
+
 const nextConfig: NextConfig = {
   output: "standalone",
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      // Everything except the embed widget gets the clickjacking-protected set.
+      { source: "/((?!embed/).*)", headers: securityHeaders },
+      { source: "/embed/:path*", headers: embedHeaders },
+    ];
   },
 };
 
