@@ -452,7 +452,7 @@
     "metaTitle": "{name}: beste Reisezeit und wann es voll ist",
     "metaDescription": "Ist {name} voll? Am vollsten wird es in {months}. Sieh dir den Andrang in {name} Monat für Monat an und finde die ruhigste Reisezeit.",
     "metaDescriptionYearRound": "Ist {name} voll? Andrang herrscht das ganze Jahr. Sieh dir den Andrang in {name} Monat für Monat an und finde vorab die ruhigsten Zeiten.",
-    "h1": "Wann ist {name} voll?",
+    "h1": "Beste Reisezeit für {name} (und wann es voll ist)",
     "intro": "{name} ist ein Reiseziel der Kategorie {category} in {country}. Die Hauptsaison ist {months}. So voll wird es übers Jahr, damit du den richtigen Zeitpunkt wählen kannst.",
     "introYearRound": "{name} ist ein Reiseziel der Kategorie {category} in {country} und ganzjährig gut besucht. So verschieben sich die Menschenmengen über die Monate.",
     "calendarHeading": "Andrang nach Monat",

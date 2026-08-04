@@ -452,7 +452,7 @@
     "metaTitle": "{name}: mejor época para visitar y cuándo hay aglomeraciones",
     "metaDescription": "¿Está lleno {name}? Las aglomeraciones llegan en {months}. Consulta mes a mes la afluencia de {name} y encuentra la época más tranquila para visitarlo.",
     "metaDescriptionYearRound": "¿Está lleno {name}? Hay afluencia todo el año. Consulta mes a mes la afluencia de {name} y encuentra sus momentos más tranquilos antes de ir.",
-    "h1": "¿Cuándo hay aglomeraciones en {name}?",
+    "h1": "Mejor época para visitar {name} (y cuándo hay aglomeraciones)",
     "intro": "{name} es un destino de {category} en {country}. Su temporada alta es {months}. Así de concurrido está durante el año, para que elijas el mejor momento para ir.",
     "introYearRound": "{name} es un destino de {category} en {country} que está concurrido todo el año. Así cambian las aglomeraciones a lo largo de los meses.",
     "calendarHeading": "Nivel de aglomeración por mes",
