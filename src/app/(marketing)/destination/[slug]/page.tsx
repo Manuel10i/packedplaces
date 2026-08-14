@@ -271,12 +271,20 @@ export default async function DestinationPage({
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">
             {yearRound
               ? t("introYearRound", { name: displayName, category, country })
-              : t("intro", {
-                  name: displayName,
-                  category,
-                  country,
-                  months: joinList(locale, busiest),
-                })}
+              : hasQuiet
+                ? t("intro", {
+                    name: displayName,
+                    category,
+                    country,
+                    months: joinList(locale, busiest),
+                    quiet: joinList(locale, quietest),
+                  })
+                : t("introNoQuiet", {
+                    name: displayName,
+                    category,
+                    country,
+                    months: joinList(locale, busiest),
+                  })}
           </p>
           <div className="mt-6">
             <DestinationActions
