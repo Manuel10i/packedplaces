@@ -39,7 +39,7 @@ export default async function GuidesHubPage() {
 
       <section className="bg-atlas-field pb-10 pt-14">
         <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading eyebrow={t("kicker")} title={t("hubTitle")} lede={t("hubLede")} />
+          <SectionHeading as="h1" eyebrow={t("kicker")} title={t("hubTitle")} lede={t("hubLede")} />
         </div>
       </section>
 

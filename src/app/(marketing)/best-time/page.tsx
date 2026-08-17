@@ -25,6 +25,7 @@ export default async function BestTimePage() {
       <main className="min-h-screen bg-atlas-field">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
           <SectionHeading
+            as="h1"
             eyebrow={<span className="inline-flex items-center gap-2">✦ {t("eyebrow")}</span>}
             title={t("title")}
             lede={t("lede")}
