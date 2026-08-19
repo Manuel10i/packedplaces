@@ -40,7 +40,7 @@ export default async function LeastCrowdedHubPage() {
 
       <section className="bg-atlas-field pb-10 pt-14">
         <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading eyebrow={t("hubKicker")} title={t("hubTitle")} lede={t("hubLede")} />
+          <SectionHeading as="h1" eyebrow={t("hubKicker")} title={t("hubTitle")} lede={t("hubLede")} />
         </div>
       </section>
 

@@ -105,6 +105,7 @@ export default async function LeastCrowdedMonthPage({
       <section className="bg-atlas-field pb-10 pt-14">
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
+            as="h1"
             eyebrow={t("kicker")}
             title={t("title", { month: m })}
             lede={t("lede", { month: m })}

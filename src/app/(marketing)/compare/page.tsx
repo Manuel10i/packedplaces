@@ -25,6 +25,7 @@ export default async function ComparePage() {
       <main className="min-h-screen bg-atlas-field">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
           <SectionHeading
+            as="h1"
             eyebrow={<span>⇄ {t("eyebrow")}</span>}
             title={t("title")}
             lede={t("lede")}
