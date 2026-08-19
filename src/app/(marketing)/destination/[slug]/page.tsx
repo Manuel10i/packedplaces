@@ -351,6 +351,40 @@ export default async function DestinationPage({
 
           <div className="mt-12">
             <h2 className="font-display text-2xl text-ink">
+              {t("monthByMonthHeading", { name: displayName })}
+            </h2>
+            <p className="mt-1 text-sm text-ink-muted">
+              {t("monthByMonthLede", { name: displayName })}
+            </p>
+            <dl className="mt-5 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2">
+              {scores.map((score, i) => {
+                const label = tip(busynessLabelKey(score));
+                return (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between gap-3 bg-surface-raised px-4 py-3"
+                  >
+                    <dt className="text-ink">
+                      {t("monthByMonthRow", {
+                        name: displayName,
+                        month: long[i],
+                      })}
+                    </dt>
+                    <dd className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                      <span
+                        className="inline-block h-3 w-3 rounded-[2px]"
+                        style={{ backgroundColor: busynessColor(score) }}
+                      />
+                      {label}
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+
+          <div className="mt-12">
+            <h2 className="font-display text-2xl text-ink">
               {t("curveHeading")}
             </h2>
             <div className="mt-5 text-ink">
