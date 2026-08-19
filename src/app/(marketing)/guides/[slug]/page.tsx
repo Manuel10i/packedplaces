@@ -84,15 +84,35 @@ export async function generateMetadata({
   const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "guides" });
   const canonical = guideUrl(slug);
+  const metaTitle = t(`${guide.i18nKey}.metaTitle`);
+  const metaDescription = t(`${guide.i18nKey}.metaDescription`);
   return {
-    title: t(`${guide.i18nKey}.metaTitle`),
-    description: t(`${guide.i18nKey}.metaDescription`),
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical },
     openGraph: {
-      title: t(`${guide.i18nKey}.metaTitle`),
-      description: t(`${guide.i18nKey}.metaDescription`),
+      title: metaTitle,
+      description: metaDescription,
       url: canonical,
       type: "article",
+      // A child openGraph replaces (not deep-merges) the root layout's, so its
+      // default /api/og image is dropped here unless we set our own. Point at a
+      // guide-specific card so shared links get a real preview image.
+      images: [
+        {
+          url: `${BASE_URL}/api/og/guide/${slug}`,
+          width: 1200,
+          height: 630,
+          alt: metaTitle,
+        },
+      ],
+    },
+    // Root layout sets a generic twitter title/description; override so the
+    // shared card headline matches the article. twitter.images stays omitted on
+    // purpose (X falls back to the og:image above), per the site's card pattern.
+    twitter: {
+      title: metaTitle,
+      description: metaDescription,
     },
   };
 }
