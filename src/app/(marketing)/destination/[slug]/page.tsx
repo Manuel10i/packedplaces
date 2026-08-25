@@ -117,8 +117,14 @@ export async function generateMetadata({
     locale === "de" ? localizedDestinationName(d, "de") : entry.displayName;
   const t = await getTranslations({ locale, namespace: "destination" });
   const long = monthNames(locale, "long");
-  const { peakIdx, yearRound } = summarizeBusyness(getMonthlyBusyness(d.id));
-  const busiest = peakIdx.map((i) => long[i]);
+  const { peakIdx, quietIdx, yearRound } = summarizeBusyness(
+    getMonthlyBusyness(d.id),
+  );
+  // Cap both lists at three months so the description stays within the SERP
+  // truncation length and the quietest month (which answers the "best time to
+  // visit {name}" search intent) is never pushed out of view by a long peak.
+  const busiest = peakIdx.slice(0, 3).map((i) => long[i]);
+  const quietest = quietIdx.slice(0, 3).map((i) => long[i]);
   const canonical = destUrl(slug);
   const languages = hreflangLanguages(slug);
   return {
@@ -128,6 +134,7 @@ export async function generateMetadata({
       : t("metaDescription", {
           name: displayName,
           months: joinList(locale, busiest),
+          quietMonths: joinList(locale, quietest),
         }),
     alternates: {
       canonical,
