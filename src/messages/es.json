@@ -528,7 +528,9 @@
     "curveAria": "Curva de afluencia de {name}: más tranquila en la semana {quiet}, más concurrida en la semana {busy}",
     "teaserCta": "Encuentra tu semana tranquila",
     "sampleCaption": "Un año en {name} — el anillo verde azulado marca la semana más tranquila, el punto terracota la más concurrida.",
-    "flat": "La afluencia apenas cambia aquí a lo largo del año — cualquier semana es parecida."
+    "flat": "La afluencia apenas cambia aquí a lo largo del año — cualquier semana es parecida.",
+    "browseTitle": "Explorar todos los destinos",
+    "browseLede": "Los {count} destinos que seguimos, desde los rincones más tranquilos hasta los puntos más concurridos. Elige uno para ver su calendario de afluencia."
   },
   "saved": {
     "save": "Guardar lugar",

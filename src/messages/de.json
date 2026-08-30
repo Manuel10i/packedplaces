@@ -528,7 +528,9 @@
     "curveAria": "Auslastungskurve für {name}: am ruhigsten in Woche {quiet}, am vollsten in Woche {busy}",
     "teaserCta": "Finde deine ruhige Woche",
     "sampleCaption": "Ein Jahr in {name} — der türkise Ring markiert die ruhigste Woche, der terrakottafarbene Punkt die vollste.",
-    "flat": "Die Auslastung ändert sich hier übers Jahr kaum — jede Woche ist ungefähr gleich."
+    "flat": "Die Auslastung ändert sich hier übers Jahr kaum — jede Woche ist ungefähr gleich.",
+    "browseTitle": "Alle Reiseziele durchsuchen",
+    "browseLede": "Alle {count} Ziele, die wir verfolgen, von den ruhigsten Ecken bis zu den vollsten Hotspots. Wähle eines und sieh dir seinen Andrang-Kalender an."
   },
   "saved": {
     "save": "Ort merken",

@@ -528,7 +528,9 @@
     "curveAria": "Courbe d'affluence de {name} : la plus calme en semaine {quiet}, la plus fréquentée en semaine {busy}",
     "teaserCta": "Trouvez votre semaine calme",
     "sampleCaption": "Une année à {name} — l'anneau sarcelle marque la semaine la plus calme, le point terracotta la plus fréquentée.",
-    "flat": "L'affluence varie à peine ici au fil de l'année — toutes les semaines se valent."
+    "flat": "L'affluence varie à peine ici au fil de l'année — toutes les semaines se valent.",
+    "browseTitle": "Parcourir toutes les destinations",
+    "browseLede": "Les {count} destinations que nous suivons, des coins les plus calmes aux lieux les plus fréquentés. Choisissez-en une pour voir son calendrier d'affluence."
   },
   "saved": {
     "save": "Enregistrer le lieu",
