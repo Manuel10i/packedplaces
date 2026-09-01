@@ -224,7 +224,7 @@
     "changesText": "Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada.",
     "contactTitle": "Contacto",
     "contactText": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos RGPD, contáctenos a través de nuestro formulario de contacto.",
-    "metaTitle": "Política de privacidad — PackedPlaces.com",
+    "metaTitle": "Política de privacidad | PackedPlaces.com",
     "metaDescription": "Política de privacidad de PackedPlaces.com: cómo tratamos sus datos, cookies y analíticas."
   },
   "contact": {
@@ -247,7 +247,7 @@
     "errorCaptcha": "Por favor, complete la verificación captcha.",
     "errorServer": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
     "errorTurnstile": "La verificación captcha falló. Por favor, inténtelo de nuevo.",
-    "metaTitle": "Contacto — PackedPlaces.com",
+    "metaTitle": "Contacto | PackedPlaces.com",
     "metaDescription": "Póngase en contacto con el equipo de PackedPlaces.com: preguntas, comentarios y sugerencias son bienvenidos."
   },
   "featurePages": {
@@ -509,7 +509,7 @@
     "ogDescription": "PackedPlaces.com visualiza la masificación turística de más de 700 destinos en todo el mundo, semana a semana, basándose en datos de vacaciones escolares de más de 100 países."
   },
   "bestTime": {
-    "metaTitle": "Mejor época para viajar — PackedPlaces.com",
+    "metaTitle": "Mejor época para viajar: afluencia de más de 700 destinos",
     "metaDescription": "Elige uno de los más de 700 destinos y ve de un vistazo sus semanas más tranquilas y más concurridas del año.",
     "eyebrow": "Mejor época",
     "title": "¿Cuándo deberías ir?",
@@ -536,7 +536,7 @@
     "compareCta": "Comparar lugares guardados"
   },
   "compare": {
-    "metaTitle": "Comparar afluencia — PackedPlaces.com",
+    "metaTitle": "Compara la afluencia de destinos, semana a semana",
     "eyebrow": "Comparar",
     "title": "¿Dónde hay menos gente, y cuándo?",
     "lede": "Tus lugares guardados lado a lado, semana a semana.",
