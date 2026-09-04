@@ -559,6 +559,11 @@
     "lede": "Lugares similares que se mantienen más tranquilos en temporada alta.",
     "calmer": "{bands, plural, one {# nivel más tranquilo} other {# niveles más tranquilo}}"
   },
+  "nearby": {
+    "title": "Cerca de {name}",
+    "lede": "Otros destinos cercanos, con el mes más tranquilo para visitar cada uno.",
+    "quietest": "Más tranquilo en {month}"
+  },
   "guides": {
     "kicker": "Guía de multitudes",
     "hubMetaTitle": "Guías de multitudes de viaje: adónde ir en vez de a los sitios abarrotados",

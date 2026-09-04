@@ -21,6 +21,7 @@ import {
   getWeeklyBusyness,
 } from "@/lib/services/destination-busyness";
 import { quietAlternatives } from "@/lib/quiet-alternatives";
+import { nearbyDestinations } from "@/lib/nearby-destinations";
 import { MONTH_SLUGS } from "@/lib/quiet-months";
 import { slugForDestination } from "@/lib/destinations";
 import { getCountryFlag } from "@/lib/data";
@@ -174,6 +175,7 @@ export default async function DestinationPage({
   const tSaved = await getTranslations({ locale, namespace: "saved" });
   const tShare = await getTranslations({ locale, namespace: "share" });
   const tAlt = await getTranslations({ locale, namespace: "alternatives" });
+  const tNearby = await getTranslations({ locale, namespace: "nearby" });
   const tExplore = await getTranslations({ locale, namespace: "explore" });
   const tEmbed = await getTranslations({ locale, namespace: "embed" });
   const alts = localizedSlugsForSlug(slug);
@@ -186,6 +188,13 @@ export default async function DestinationPage({
   const scores = getMonthlyBusyness(d.id);
   const weekly = getWeeklyBusyness(d.id).slice(0, 52);
   const alternatives = quietAlternatives(d.id);
+  // Nearest destinations by distance, any category. Always populated (unlike the
+  // quiet-alternatives module), so every destination page offers an onward path
+  // and the 700+ pages cross-link to each other instead of only via /best-time.
+  const nearby = nearbyDestinations(d.id).map((n) => {
+    const q = summarizeBusyness(getMonthlyBusyness(n.id));
+    return { destination: n, quietMonth: q.quietIdx.length ? long[q.quietIdx[0]] : null };
+  });
   const { peakIdx, quietIdx, yearRound } = summarizeBusyness(scores);
   const busiest = peakIdx.map((i) => long[i]);
   const quietest = quietIdx.map((i) => long[i]);
@@ -437,6 +446,39 @@ export default async function DestinationPage({
                       <span className="font-mono text-[10px] uppercase tracking-wider text-accent-2">
                         {tAlt("calmer", { bands: alt.bandsCalmer })}
                       </span>
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {nearby.length > 0 && (
+            <div className="mt-12">
+              <h2 className="font-display text-2xl text-ink">
+                {tNearby("title", { name: displayName })}
+              </h2>
+              <p className="mt-1 text-sm text-ink-muted">{tNearby("lede")}</p>
+              <div className="mt-5 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line sm:grid-cols-2">
+                {nearby.map(({ destination: n, quietMonth }) => (
+                  <Link
+                    key={n.id}
+                    href={`/destination/${slugForDestination(n)}`}
+                    className="group bg-surface-raised p-4 transition-colors hover:bg-surface-sunken"
+                  >
+                    <p className="font-display text-lg text-ink transition-colors group-hover:text-accent">
+                      {getCountryFlag(n.country)}{" "}
+                      {localizedDestinationName(n, locale)}
+                    </p>
+                    <p className="mt-1 flex items-center justify-between gap-3">
+                      <span className="text-xs text-ink-faint">
+                        {getCountryName(n.country, locale)}
+                      </span>
+                      {quietMonth && (
+                        <span className="font-mono text-[10px] uppercase tracking-wider text-accent-2">
+                          {tNearby("quietest", { month: quietMonth })}
+                        </span>
+                      )}
                     </p>
                   </Link>
                 ))}
