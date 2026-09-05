@@ -528,7 +528,9 @@
     "curveAria": "Crowd curve for {name}: quietest in week {quiet}, busiest in week {busy}",
     "teaserCta": "Find your quiet week",
     "sampleCaption": "A year in {name} — the teal ring marks the quietest week, the terracotta dot the busiest.",
-    "flat": "Crowd levels barely change here over the year — any week is about the same."
+    "flat": "Crowd levels barely change here over the year — any week is about the same.",
+    "browseTitle": "Browse all destinations",
+    "browseLede": "All {count} destinations we track, from the quietest corners to the busiest hotspots. Pick one to see its crowd calendar."
   },
   "saved": {
     "save": "Save place",
