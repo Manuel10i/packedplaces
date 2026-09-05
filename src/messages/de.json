@@ -224,7 +224,7 @@
     "changesText": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite mit aktualisiertem Datum veröffentlicht.",
     "contactTitle": "Kontakt",
     "contactText": "Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer DSGVO-Rechte nutzen Sie bitte unser Kontaktformular.",
-    "metaTitle": "Datenschutzerklärung — PackedPlaces.com",
+    "metaTitle": "Datenschutzerklärung | PackedPlaces.com",
     "metaDescription": "Datenschutzerklärung von PackedPlaces.com: wie wir mit Ihren Daten, Cookies und Analysen umgehen."
   },
   "contact": {
@@ -247,8 +247,8 @@
     "errorCaptcha": "Bitte schließen Sie die Captcha-Verifizierung ab.",
     "errorServer": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
     "errorTurnstile": "Captcha-Überprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "metaTitle": "Kontakt — PackedPlaces.com",
-    "metaDescription": "Kontaktieren Sie das PackedPlaces.com-Team — Fragen, Feedback und Vorschläge sind willkommen."
+    "metaTitle": "Kontakt | PackedPlaces.com",
+    "metaDescription": "Kontaktieren Sie das PackedPlaces.com-Team. Fragen, Feedback und Vorschläge sind willkommen."
   },
   "featurePages": {
     "shell": {
@@ -509,7 +509,7 @@
     "ogDescription": "PackedPlaces.com visualisiert die Auslastung von über 700 Reisezielen weltweit, Woche für Woche, basierend auf Schulferien-Daten aus über 100 Ländern."
   },
   "bestTime": {
-    "metaTitle": "Beste Reisezeit — PackedPlaces.com",
+    "metaTitle": "Beste Reisezeit: Auslastungskalender für über 700 Reiseziele",
     "metaDescription": "Wähle eines von über 700 Reisezielen und sieh auf einen Blick die ruhigsten und vollsten Wochen des Jahres.",
     "eyebrow": "Beste Reisezeit",
     "title": "Wann solltest du reisen?",
@@ -538,7 +538,7 @@
     "compareCta": "Gemerkte Orte vergleichen"
   },
   "compare": {
-    "metaTitle": "Auslastung vergleichen — PackedPlaces.com",
+    "metaTitle": "Reiseziele nach Auslastung vergleichen, Woche für Woche",
     "eyebrow": "Vergleichen",
     "title": "Wo ist es wann ruhiger?",
     "lede": "Deine gemerkten Orte nebeneinander, Woche für Woche.",

@@ -224,7 +224,7 @@
     "changesText": "Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Les modifications seront publiées sur cette page avec une date mise à jour.",
     "contactTitle": "Nous contacter",
     "contactText": "Si vous avez des questions sur cette politique de confidentialité ou souhaitez exercer vos droits RGPD, contactez-nous via notre formulaire de contact.",
-    "metaTitle": "Politique de confidentialité — PackedPlaces.com",
+    "metaTitle": "Politique de confidentialité | PackedPlaces.com",
     "metaDescription": "Politique de confidentialité de PackedPlaces.com: comment nous traitons vos données, cookies et analyses."
   },
   "contact": {
@@ -247,7 +247,7 @@
     "errorCaptcha": "Veuillez compléter la vérification captcha.",
     "errorServer": "Une erreur est survenue. Veuillez réessayer plus tard.",
     "errorTurnstile": "La vérification captcha a échoué. Veuillez réessayer.",
-    "metaTitle": "Contact — PackedPlaces.com",
+    "metaTitle": "Contact | PackedPlaces.com",
     "metaDescription": "Contactez l'équipe de PackedPlaces.com: questions, retours et suggestions bienvenus."
   },
   "featurePages": {
@@ -509,7 +509,7 @@
     "ogDescription": "PackedPlaces.com visualise l'affluence touristique de plus de 700 destinations dans le monde, semaine par semaine, à partir des données de vacances scolaires de plus de 100 pays."
   },
   "bestTime": {
-    "metaTitle": "Meilleure période pour partir — PackedPlaces.com",
+    "metaTitle": "Meilleure période pour partir : affluence de 700+ destinations",
     "metaDescription": "Choisissez l'une des 700+ destinations et voyez d'un coup d'œil ses semaines les plus calmes et les plus fréquentées de l'année.",
     "eyebrow": "Meilleure période",
     "title": "Quand partir ?",
@@ -538,7 +538,7 @@
     "compareCta": "Comparer les lieux enregistrés"
   },
   "compare": {
-    "metaTitle": "Comparer l'affluence — PackedPlaces.com",
+    "metaTitle": "Comparer l'affluence des destinations, semaine par semaine",
     "eyebrow": "Comparer",
     "title": "Où est-ce plus calme, et quand ?",
     "lede": "Vos lieux enregistrés côte à côte, semaine par semaine.",

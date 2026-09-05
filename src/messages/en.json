@@ -224,7 +224,7 @@
     "changesText": "We may update this privacy policy from time to time. Changes will be posted on this page with an updated date.",
     "contactTitle": "Contact Us",
     "contactText": "If you have questions about this privacy policy or wish to exercise your GDPR rights, please reach out via our contact form.",
-    "metaTitle": "Privacy Policy — PackedPlaces.com",
+    "metaTitle": "Privacy Policy | PackedPlaces.com",
     "metaDescription": "Privacy policy for PackedPlaces.com: how we handle your data, cookies, and analytics."
   },
   "contact": {
@@ -247,8 +247,8 @@
     "errorCaptcha": "Please complete the captcha verification.",
     "errorServer": "Something went wrong. Please try again later.",
     "errorTurnstile": "Captcha verification failed. Please try again.",
-    "metaTitle": "Contact — PackedPlaces.com",
-    "metaDescription": "Get in touch with the PackedPlaces.com team — questions, feedback, and suggestions welcome."
+    "metaTitle": "Contact | PackedPlaces.com",
+    "metaDescription": "Get in touch with the PackedPlaces.com team. Questions, feedback, and suggestions welcome."
   },
   "featurePages": {
     "shell": {
@@ -509,7 +509,7 @@
     "ogDescription": "PackedPlaces.com visualizes tourist crowdedness for 700+ destinations worldwide, week by week, powered by school holiday data from 100+ countries."
   },
   "bestTime": {
-    "metaTitle": "Best Time to Visit — PackedPlaces.com",
+    "metaTitle": "Best Time to Visit: Crowd Calendars for 700+ Destinations",
     "metaDescription": "Pick any of 700+ destinations and see its quietest and busiest weeks of the year at a glance.",
     "eyebrow": "Best time",
     "title": "When should you go?",
@@ -538,7 +538,7 @@
     "compareCta": "Compare saved places"
   },
   "compare": {
-    "metaTitle": "Compare Crowds — PackedPlaces.com",
+    "metaTitle": "Compare How Crowded Destinations Are, Week by Week",
     "eyebrow": "Compare",
     "title": "Which is calmer, when?",
     "lede": "Your saved places side by side, week by week.",
