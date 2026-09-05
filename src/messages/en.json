@@ -561,6 +561,11 @@
     "lede": "Similar places that stay calmer in peak season.",
     "calmer": "{bands, plural, one {# band calmer} other {# bands calmer}}"
   },
+  "nearby": {
+    "title": "Near {name}",
+    "lede": "Other destinations close by, with the calmest month to visit each.",
+    "quietest": "Quietest in {month}"
+  },
   "guides": {
     "kicker": "Crowd guide",
     "hubMetaTitle": "Travel crowd guides: where to go instead of the packed spots",

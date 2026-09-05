@@ -561,6 +561,11 @@
     "lede": "Ähnliche Orte, die in der Hochsaison ruhiger bleiben.",
     "calmer": "{bands, plural, one {# Stufe ruhiger} other {# Stufen ruhiger}}"
   },
+  "nearby": {
+    "title": "In der Nähe von {name}",
+    "lede": "Weitere Ziele in der Nähe, mit dem ruhigsten Reisemonat für jedes.",
+    "quietest": "Am ruhigsten im {month}"
+  },
   "guides": {
     "kicker": "Reise-Ratgeber",
     "hubMetaTitle": "Reise-Guides zu Menschenmassen: wohin statt an die überlaufenen Orte",
