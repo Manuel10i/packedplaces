@@ -175,6 +175,10 @@ export default async function DestinationPage({
   const tSaved = await getTranslations({ locale, namespace: "saved" });
   const tShare = await getTranslations({ locale, namespace: "share" });
   const tAlt = await getTranslations({ locale, namespace: "alternatives" });
+  const tAltPage = await getTranslations({
+    locale,
+    namespace: "alternativesPage",
+  });
   const tNearby = await getTranslations({ locale, namespace: "nearby" });
   const tExplore = await getTranslations({ locale, namespace: "explore" });
   const tEmbed = await getTranslations({ locale, namespace: "embed" });
@@ -193,7 +197,10 @@ export default async function DestinationPage({
   // and the 700+ pages cross-link to each other instead of only via /best-time.
   const nearby = nearbyDestinations(d.id).map((n) => {
     const q = summarizeBusyness(getMonthlyBusyness(n.id));
-    return { destination: n, quietMonth: q.quietIdx.length ? long[q.quietIdx[0]] : null };
+    return {
+      destination: n,
+      quietMonth: q.quietIdx.length ? long[q.quietIdx[0]] : null,
+    };
   });
   const { peakIdx, quietIdx, yearRound } = summarizeBusyness(scores);
   const busiest = peakIdx.map((i) => long[i]);
@@ -450,6 +457,14 @@ export default async function DestinationPage({
                   </Link>
                 ))}
               </div>
+              <p className="mt-4">
+                <Link
+                  href={`/alternatives/${slug}`}
+                  className="text-accent underline underline-offset-2 hover:text-accent-2"
+                >
+                  {tAltPage("seeAllLink", { name: displayName })} &rarr;
+                </Link>
+              </p>
             </div>
           )}
 

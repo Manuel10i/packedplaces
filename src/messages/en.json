@@ -566,6 +566,28 @@
     "lede": "Other destinations close by, with the calmest month to visit each.",
     "quietest": "Quietest in {month}"
   },
+  "alternativesPage": {
+    "seeAllLink": "See all less crowded alternatives to {name}",
+    "metaTitle": "Less Crowded Alternatives to {name}",
+    "metaDescription": "{count} similar places to {name} that stay calmer in peak season, each with its own quietest month, ranked by our crowd data. Skip the crowds, keep the trip.",
+    "h1": "Less crowded alternatives to {name}",
+    "intro": "Love the idea of {name} but not the crowds? These {category} destinations offer a similar trip while staying noticeably calmer during the busiest weeks in {name}.",
+    "backToDestinationLead": "Want the month-by-month crowd calendar first?",
+    "backToDestinationLink": "See when {name} is busy",
+    "listHeading": "Calmer places to visit instead of {name}",
+    "calmer": "{bands, plural, one {# band calmer} other {# bands calmer}}",
+    "quietest": "Quietest in {month}",
+    "methodHeading": "How we pick these",
+    "methodBody": "Every alternative is a same-category destination from our dataset that sits at least one crowd band lower during the peak weeks in {name}. The ranking comes from the same seasonal crowd model as the map, not editorial opinion, and we favour places in the same region so the swap stays realistic.",
+    "faqWhichQ": "What are the least crowded alternatives to {name}?",
+    "faqWhichA": "{first} is the closest calmer match, and the full list below ranks similar destinations that stay quieter than {name} during its busiest weeks.",
+    "faqWhyQ": "Why visit an alternative to {name}?",
+    "faqWhyA": "Popular spots like {name} get crowded, pricier and harder to enjoy in peak season. A similar but quieter destination gives you the same kind of trip with shorter queues and more room to breathe.",
+    "faqHowQ": "How are these alternatives chosen?",
+    "faqHowA": "We compare our crowd estimates for hundreds of destinations and surface same-category places that are measurably calmer than {name} when it peaks, preferring ones nearby or in the same region.",
+    "calendarCta": "See the crowd calendar for {name}",
+    "leastCrowdedCta": "Browse the least crowded months"
+  },
   "guides": {
     "kicker": "Crowd guide",
     "hubMetaTitle": "Travel crowd guides: where to go instead of the packed spots",

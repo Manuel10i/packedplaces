@@ -566,6 +566,28 @@
     "lede": "D'autres destinations à proximité, avec le mois le plus calme pour visiter chacune.",
     "quietest": "Plus calme en {month}"
   },
+  "alternativesPage": {
+    "seeAllLink": "Voir toutes les alternatives moins fréquentées à {name}",
+    "metaTitle": "Alternatives moins fréquentées à {name}",
+    "metaDescription": "{count} lieux semblables à {name} qui restent plus calmes en haute saison, chacun avec son mois le plus calme, classés selon nos données d'affluence. Voyagez sans la foule.",
+    "h1": "Alternatives moins fréquentées à {name}",
+    "intro": "L'idée de {name} vous plaît mais pas la foule ? Ces destinations de type {category} offrent un voyage semblable tout en restant nettement plus calmes pendant les semaines les plus chargées de {name}.",
+    "backToDestinationLead": "Vous préférez d'abord le calendrier d'affluence mois par mois ?",
+    "backToDestinationLink": "Voir quand {name} est bondé",
+    "listHeading": "Lieux plus calmes à visiter plutôt que {name}",
+    "calmer": "{bands, plural, one {# niveau plus calme} other {# niveaux plus calmes}}",
+    "quietest": "Plus calme en {month}",
+    "methodHeading": "Comment nous les choisissons",
+    "methodBody": "Chaque alternative est une destination de la même catégorie issue de nos données, située au moins un niveau d'affluence en dessous pendant les semaines de pointe de {name}. Le classement provient du même modèle saisonnier d'affluence que la carte, pas d'un avis éditorial, et nous privilégions les lieux de la même région pour que l'échange reste réaliste.",
+    "faqWhichQ": "Quelles sont les alternatives les moins fréquentées à {name} ?",
+    "faqWhichA": "{first} est l'option plus calme la plus proche, et la liste ci-dessous classe des destinations semblables qui restent plus calmes que {name} pendant ses semaines les plus chargées.",
+    "faqWhyQ": "Pourquoi visiter une alternative à {name} ?",
+    "faqWhyA": "Les lieux populaires comme {name} deviennent bondés, plus chers et moins agréables en haute saison. Une destination semblable mais plus calme offre le même type de voyage avec moins de files et plus d'espace.",
+    "faqHowQ": "Comment ces alternatives sont-elles choisies ?",
+    "faqHowA": "Nous comparons nos estimations d'affluence pour des centaines de destinations et mettons en avant des lieux de la même catégorie nettement plus calmes que {name} à son pic, en privilégiant les plus proches ou de la même région.",
+    "calendarCta": "Voir le calendrier d'affluence de {name}",
+    "leastCrowdedCta": "Parcourir les mois les moins fréquentés"
+  },
   "guides": {
     "kicker": "Guide affluence",
     "hubMetaTitle": "Guides d'affluence voyage : où aller plutôt que dans les lieux bondés",

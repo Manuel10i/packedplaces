@@ -566,6 +566,28 @@
     "lede": "Weitere Ziele in der Nähe, mit dem ruhigsten Reisemonat für jedes.",
     "quietest": "Am ruhigsten im {month}"
   },
+  "alternativesPage": {
+    "seeAllLink": "Alle weniger überlaufenen Alternativen zu {name} ansehen",
+    "metaTitle": "Weniger überlaufene Alternativen zu {name}",
+    "metaDescription": "{count} ähnliche Orte wie {name}, die in der Hochsaison ruhiger bleiben, jeweils mit dem ruhigsten Monat und nach unseren Crowd-Daten sortiert. Reise ohne Gedränge.",
+    "h1": "Weniger überlaufene Alternativen zu {name}",
+    "intro": "Die Idee von {name} gefällt dir, das Gedränge nicht? Diese {category}-Ziele bieten eine ähnliche Reise und bleiben in den stärksten Wochen von {name} spürbar ruhiger.",
+    "backToDestinationLead": "Zuerst den Crowd-Kalender Monat für Monat?",
+    "backToDestinationLink": "Sehen, wann {name} voll ist",
+    "listHeading": "Ruhigere Orte statt {name}",
+    "calmer": "{bands, plural, one {# Stufe ruhiger} other {# Stufen ruhiger}}",
+    "quietest": "Am ruhigsten im {month}",
+    "methodHeading": "Wie wir auswählen",
+    "methodBody": "Jede Alternative ist ein Ziel derselben Kategorie aus unserem Datensatz, das in den Hauptwochen von {name} mindestens eine Crowd-Stufe niedriger liegt. Die Reihenfolge stammt aus demselben saisonalen Crowd-Modell wie die Karte, nicht aus einer Redaktionsmeinung, und wir bevorzugen Orte in derselben Region, damit der Wechsel realistisch bleibt.",
+    "faqWhichQ": "Was sind die am wenigsten überlaufenen Alternativen zu {name}?",
+    "faqWhichA": "{first} ist die naheliegendste ruhigere Wahl, und die Liste unten sortiert ähnliche Ziele, die während der stärksten Wochen von {name} ruhiger bleiben.",
+    "faqWhyQ": "Warum eine Alternative zu {name} besuchen?",
+    "faqWhyA": "Beliebte Orte wie {name} werden in der Hochsaison voll, teurer und anstrengender. Ein ähnliches, aber ruhigeres Ziel bietet die gleiche Art von Reise mit kürzeren Schlangen und mehr Raum.",
+    "faqHowQ": "Wie werden diese Alternativen ausgewählt?",
+    "faqHowA": "Wir vergleichen unsere Crowd-Schätzungen für hunderte Ziele und zeigen Orte derselben Kategorie, die messbar ruhiger sind als {name} zur Hochphase, bevorzugt in der Nähe oder in derselben Region.",
+    "calendarCta": "Crowd-Kalender für {name} ansehen",
+    "leastCrowdedCta": "Die ruhigsten Monate durchstöbern"
+  },
   "guides": {
     "kicker": "Reise-Ratgeber",
     "hubMetaTitle": "Reise-Guides zu Menschenmassen: wohin statt an die überlaufenen Orte",
