@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { allDestinationSlugs, hreflangSlugMap } from "@/lib/destinations";
 import { allGuideSlugs } from "@/lib/guides";
 import { allMonthSlugs } from "@/lib/quiet-months";
+import { slugsWithAlternatives } from "@/lib/quiet-alternatives";
 
 const BASE_URL = "https://packedplaces.com";
 
@@ -107,10 +108,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // "Less crowded alternatives to {name}" pages, one per destination that has at
+  // least one quieter same-category peer (same slug cluster as the destination
+  // page, so German exonym slugs carry a de/en hreflang pair).
+  const alternativesEntries = slugsWithAlternatives().map((slug) => ({
+    url: `${BASE_URL}/alternatives/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+    alternates: destinationAlternates(slug),
+  }));
+
   return [
     ...staticEntries,
     ...destinationEntries,
     ...guideEntries,
     ...monthHubEntries,
+    ...alternativesEntries,
   ];
 }

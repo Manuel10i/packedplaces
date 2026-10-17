@@ -566,6 +566,28 @@
     "lede": "Otros destinos cercanos, con el mes más tranquilo para visitar cada uno.",
     "quietest": "Más tranquilo en {month}"
   },
+  "alternativesPage": {
+    "seeAllLink": "Ver todas las alternativas menos concurridas a {name}",
+    "metaTitle": "Alternativas menos concurridas a {name}",
+    "metaDescription": "{count} lugares parecidos a {name} que siguen tranquilos en temporada alta, cada uno con su mes más tranquilo y ordenados según nuestros datos de afluencia. Viaja sin aglomeraciones.",
+    "h1": "Alternativas menos concurridas a {name}",
+    "intro": "¿Te gusta la idea de {name} pero no las multitudes? Estos destinos de tipo {category} ofrecen un viaje parecido y se mantienen bastante más tranquilos durante las semanas de mayor afluencia de {name}.",
+    "backToDestinationLead": "¿Prefieres primero el calendario de afluencia mes a mes?",
+    "backToDestinationLink": "Ver cuándo {name} está lleno",
+    "listHeading": "Lugares más tranquilos para visitar en vez de {name}",
+    "calmer": "{bands, plural, one {# nivel más tranquilo} other {# niveles más tranquilos}}",
+    "quietest": "Más tranquilo en {month}",
+    "methodHeading": "Cómo elegimos estos",
+    "methodBody": "Cada alternativa es un destino de la misma categoría de nuestro conjunto de datos que se sitúa al menos un nivel de afluencia por debajo durante las semanas punta de {name}. El orden procede del mismo modelo estacional de afluencia que el mapa, no de una opinión editorial, y damos preferencia a lugares de la misma región para que el cambio sea realista.",
+    "faqWhichQ": "¿Cuáles son las alternativas menos concurridas a {name}?",
+    "faqWhichA": "{first} es la opción más tranquila más cercana, y la lista de abajo ordena destinos parecidos que se mantienen más tranquilos que {name} durante sus semanas de mayor afluencia.",
+    "faqWhyQ": "¿Por qué visitar una alternativa a {name}?",
+    "faqWhyA": "Los lugares populares como {name} se llenan, se encarecen y cuesta más disfrutarlos en temporada alta. Un destino parecido pero más tranquilo ofrece el mismo tipo de viaje con menos colas y más espacio.",
+    "faqHowQ": "¿Cómo se eligen estas alternativas?",
+    "faqHowA": "Comparamos nuestras estimaciones de afluencia de cientos de destinos y mostramos lugares de la misma categoría que son notablemente más tranquilos que {name} en su punto álgido, dando preferencia a los cercanos o de la misma región.",
+    "calendarCta": "Ver el calendario de afluencia de {name}",
+    "leastCrowdedCta": "Explorar los meses menos concurridos"
+  },
   "guides": {
     "kicker": "Guía de multitudes",
     "hubMetaTitle": "Guías de multitudes de viaje: adónde ir en vez de a los sitios abarrotados",

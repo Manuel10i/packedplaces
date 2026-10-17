@@ -1,6 +1,7 @@
 import { destinations } from "@/lib/data/destinations";
 import { getWeeklyBusyness } from "@/lib/services/destination-busyness";
 import { busynessBand } from "@/lib/busyness-scale";
+import { allDestinationSlugs, getSlugEntry } from "@/lib/destinations";
 import type { Destination } from "@/types";
 
 export interface QuietAlternative {
@@ -17,13 +18,20 @@ interface Options {
 
 const PEAK_WINDOW = 6; // weeks around the target's busiest week
 
-function haversineKm(aLat: number, aLng: number, bLat: number, bLng: number): number {
+function haversineKm(
+  aLat: number,
+  aLng: number,
+  bLat: number,
+  bLng: number,
+): number {
   const R = 6371;
   const dLat = ((bLat - aLat) * Math.PI) / 180;
   const dLng = ((bLng - aLng) * Math.PI) / 180;
   const s =
     Math.sin(dLat / 2) ** 2 +
-    Math.cos((aLat * Math.PI) / 180) * Math.cos((bLat * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+    Math.cos((aLat * Math.PI) / 180) *
+      Math.cos((bLat * Math.PI) / 180) *
+      Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(s));
 }
 
@@ -92,4 +100,17 @@ export function quietAlternatives(
     peakWindowBusyness,
     bandsCalmer,
   }));
+}
+
+/**
+ * Destination slugs (English and German exonym) that have at least one quieter
+ * same-category peer, i.e. the ones for which a dedicated "less crowded
+ * alternatives" page carries real content. Used by both the /alternatives/[slug]
+ * route params and the sitemap so the two never drift. Pure and deterministic.
+ */
+export function slugsWithAlternatives(): string[] {
+  return allDestinationSlugs().filter((slug) => {
+    const entry = getSlugEntry(slug);
+    return entry ? quietAlternatives(entry.destination.id).length > 0 : false;
+  });
 }
